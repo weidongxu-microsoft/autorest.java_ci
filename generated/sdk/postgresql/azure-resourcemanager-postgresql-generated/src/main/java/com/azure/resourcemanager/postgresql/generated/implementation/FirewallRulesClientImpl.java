@@ -138,7 +138,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return represents a server firewall rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName, String serverName, String firewallRuleName, FirewallRuleInner parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -264,7 +264,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return the {@link PollerFlux} for polling of represents a server firewall rule.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<FirewallRuleInner>, FirewallRuleInner> beginCreateOrUpdateAsync(
+    public PollerFlux<PollResult<FirewallRuleInner>, FirewallRuleInner> beginCreateOrUpdateAsync(
         String resourceGroupName, String serverName, String firewallRuleName, FirewallRuleInner parameters) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             createOrUpdateWithResponseAsync(resourceGroupName, serverName, firewallRuleName, parameters);
@@ -365,7 +365,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return represents a server firewall rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<FirewallRuleInner> createOrUpdateAsync(
+    public Mono<FirewallRuleInner> createOrUpdateAsync(
         String resourceGroupName, String serverName, String firewallRuleName, FirewallRuleInner parameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, serverName, firewallRuleName, parameters)
             .last()
@@ -450,7 +450,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
         String resourceGroupName, String serverName, String firewallRuleName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -558,7 +558,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
+    public PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
         String resourceGroupName, String serverName, String firewallRuleName) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             deleteWithResponseAsync(resourceGroupName, serverName, firewallRuleName);
@@ -638,7 +638,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String resourceGroupName, String serverName, String firewallRuleName) {
+    public Mono<Void> deleteAsync(String resourceGroupName, String serverName, String firewallRuleName) {
         return beginDeleteAsync(resourceGroupName, serverName, firewallRuleName)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
@@ -708,7 +708,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<FirewallRuleInner>> getWithResponseAsync(
+    public Mono<Response<FirewallRuleInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, String firewallRuleName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -817,7 +817,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return information about a server firewall rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<FirewallRuleInner> getAsync(String resourceGroupName, String serverName, String firewallRuleName) {
+    public Mono<FirewallRuleInner> getAsync(String resourceGroupName, String serverName, String firewallRuleName) {
         return getWithResponseAsync(resourceGroupName, serverName, firewallRuleName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -971,7 +971,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @return a list of firewall rules as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<FirewallRuleInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<FirewallRuleInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(() -> listByServerSinglePageAsync(resourceGroupName, serverName));
     }
 

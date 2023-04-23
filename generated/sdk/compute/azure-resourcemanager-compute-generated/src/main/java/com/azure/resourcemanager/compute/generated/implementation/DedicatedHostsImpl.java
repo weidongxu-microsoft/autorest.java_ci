@@ -81,6 +81,15 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
         this.serviceClient().restart(resourceGroupName, hostGroupName, hostname, context);
     }
 
+    public PagedIterable<String> listAvailableSizes(String resourceGroupName, String hostGroupName, String hostname) {
+        return this.serviceClient().listAvailableSizes(resourceGroupName, hostGroupName, hostname);
+    }
+
+    public PagedIterable<String> listAvailableSizes(
+        String resourceGroupName, String hostGroupName, String hostname, Context context) {
+        return this.serviceClient().listAvailableSizes(resourceGroupName, hostGroupName, hostname, context);
+    }
+
     public DedicatedHost getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

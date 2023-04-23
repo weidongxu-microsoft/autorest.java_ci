@@ -112,6 +112,8 @@ public interface VirtualMachineScaleSets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @param hibernate Optional parameter to hibernate a virtual machine from the VM scale set. (This feature is
+     *     available for VMSS with Flexible OrchestrationMode only).
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -122,6 +124,7 @@ public interface VirtualMachineScaleSets {
     void deallocate(
         String resourceGroupName,
         String vmScaleSetName,
+        Boolean hibernate,
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context);
 
@@ -396,6 +399,31 @@ public interface VirtualMachineScaleSets {
         String vmScaleSetName,
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context);
+
+    /**
+     * Reapplies the Virtual Machine Scale Set Virtual Machine Profile to the Virtual Machine Instances.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reapply(String resourceGroupName, String vmScaleSetName);
+
+    /**
+     * Reapplies the Virtual Machine Scale Set Virtual Machine Profile to the Virtual Machine Instances.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reapply(String resourceGroupName, String vmScaleSetName, Context context);
 
     /**
      * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them

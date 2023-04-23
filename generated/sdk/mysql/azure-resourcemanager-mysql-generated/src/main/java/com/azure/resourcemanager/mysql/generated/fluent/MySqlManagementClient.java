@@ -38,6 +38,48 @@ public interface MySqlManagementClient {
     Duration getDefaultPollInterval();
 
     /**
+     * Gets the AzureADAdministratorsClient object to access its operations.
+     *
+     * @return the AzureADAdministratorsClient object.
+     */
+    AzureADAdministratorsClient getAzureADAdministrators();
+
+    /**
+     * Gets the BackupsClient object to access its operations.
+     *
+     * @return the BackupsClient object.
+     */
+    BackupsClient getBackups();
+
+    /**
+     * Gets the BackupAndExportsClient object to access its operations.
+     *
+     * @return the BackupAndExportsClient object.
+     */
+    BackupAndExportsClient getBackupAndExports();
+
+    /**
+     * Gets the ConfigurationsClient object to access its operations.
+     *
+     * @return the ConfigurationsClient object.
+     */
+    ConfigurationsClient getConfigurations();
+
+    /**
+     * Gets the DatabasesClient object to access its operations.
+     *
+     * @return the DatabasesClient object.
+     */
+    DatabasesClient getDatabases();
+
+    /**
+     * Gets the FirewallRulesClient object to access its operations.
+     *
+     * @return the FirewallRulesClient object.
+     */
+    FirewallRulesClient getFirewallRules();
+
+    /**
      * Gets the ServersClient object to access its operations.
      *
      * @return the ServersClient object.
@@ -52,41 +94,6 @@ public interface MySqlManagementClient {
     ReplicasClient getReplicas();
 
     /**
-     * Gets the FirewallRulesClient object to access its operations.
-     *
-     * @return the FirewallRulesClient object.
-     */
-    FirewallRulesClient getFirewallRules();
-
-    /**
-     * Gets the VirtualNetworkRulesClient object to access its operations.
-     *
-     * @return the VirtualNetworkRulesClient object.
-     */
-    VirtualNetworkRulesClient getVirtualNetworkRules();
-
-    /**
-     * Gets the DatabasesClient object to access its operations.
-     *
-     * @return the DatabasesClient object.
-     */
-    DatabasesClient getDatabases();
-
-    /**
-     * Gets the ConfigurationsClient object to access its operations.
-     *
-     * @return the ConfigurationsClient object.
-     */
-    ConfigurationsClient getConfigurations();
-
-    /**
-     * Gets the ServerParametersClient object to access its operations.
-     *
-     * @return the ServerParametersClient object.
-     */
-    ServerParametersClient getServerParameters();
-
-    /**
      * Gets the LogFilesClient object to access its operations.
      *
      * @return the LogFilesClient object.
@@ -94,32 +101,18 @@ public interface MySqlManagementClient {
     LogFilesClient getLogFiles();
 
     /**
-     * Gets the ServerAdministratorsClient object to access its operations.
+     * Gets the LocationBasedCapabilitiesClient object to access its operations.
      *
-     * @return the ServerAdministratorsClient object.
+     * @return the LocationBasedCapabilitiesClient object.
      */
-    ServerAdministratorsClient getServerAdministrators();
+    LocationBasedCapabilitiesClient getLocationBasedCapabilities();
 
     /**
-     * Gets the RecoverableServersClient object to access its operations.
+     * Gets the CheckVirtualNetworkSubnetUsagesClient object to access its operations.
      *
-     * @return the RecoverableServersClient object.
+     * @return the CheckVirtualNetworkSubnetUsagesClient object.
      */
-    RecoverableServersClient getRecoverableServers();
-
-    /**
-     * Gets the ServerBasedPerformanceTiersClient object to access its operations.
-     *
-     * @return the ServerBasedPerformanceTiersClient object.
-     */
-    ServerBasedPerformanceTiersClient getServerBasedPerformanceTiers();
-
-    /**
-     * Gets the LocationBasedPerformanceTiersClient object to access its operations.
-     *
-     * @return the LocationBasedPerformanceTiersClient object.
-     */
-    LocationBasedPerformanceTiersClient getLocationBasedPerformanceTiers();
+    CheckVirtualNetworkSubnetUsagesClient getCheckVirtualNetworkSubnetUsages();
 
     /**
      * Gets the CheckNameAvailabilitiesClient object to access its operations.
@@ -129,94 +122,23 @@ public interface MySqlManagementClient {
     CheckNameAvailabilitiesClient getCheckNameAvailabilities();
 
     /**
+     * Gets the CheckNameAvailabilityWithoutLocationsClient object to access its operations.
+     *
+     * @return the CheckNameAvailabilityWithoutLocationsClient object.
+     */
+    CheckNameAvailabilityWithoutLocationsClient getCheckNameAvailabilityWithoutLocations();
+
+    /**
+     * Gets the GetPrivateDnsZoneSuffixesClient object to access its operations.
+     *
+     * @return the GetPrivateDnsZoneSuffixesClient object.
+     */
+    GetPrivateDnsZoneSuffixesClient getGetPrivateDnsZoneSuffixes();
+
+    /**
      * Gets the OperationsClient object to access its operations.
      *
      * @return the OperationsClient object.
      */
     OperationsClient getOperations();
-
-    /**
-     * Gets the ServerSecurityAlertPoliciesClient object to access its operations.
-     *
-     * @return the ServerSecurityAlertPoliciesClient object.
-     */
-    ServerSecurityAlertPoliciesClient getServerSecurityAlertPolicies();
-
-    /**
-     * Gets the QueryTextsClient object to access its operations.
-     *
-     * @return the QueryTextsClient object.
-     */
-    QueryTextsClient getQueryTexts();
-
-    /**
-     * Gets the TopQueryStatisticsClient object to access its operations.
-     *
-     * @return the TopQueryStatisticsClient object.
-     */
-    TopQueryStatisticsClient getTopQueryStatistics();
-
-    /**
-     * Gets the WaitStatisticsClient object to access its operations.
-     *
-     * @return the WaitStatisticsClient object.
-     */
-    WaitStatisticsClient getWaitStatistics();
-
-    /**
-     * Gets the ResourceProvidersClient object to access its operations.
-     *
-     * @return the ResourceProvidersClient object.
-     */
-    ResourceProvidersClient getResourceProviders();
-
-    /**
-     * Gets the AdvisorsClient object to access its operations.
-     *
-     * @return the AdvisorsClient object.
-     */
-    AdvisorsClient getAdvisors();
-
-    /**
-     * Gets the RecommendedActionsClient object to access its operations.
-     *
-     * @return the RecommendedActionsClient object.
-     */
-    RecommendedActionsClient getRecommendedActions();
-
-    /**
-     * Gets the LocationBasedRecommendedActionSessionsOperationStatusClient object to access its operations.
-     *
-     * @return the LocationBasedRecommendedActionSessionsOperationStatusClient object.
-     */
-    LocationBasedRecommendedActionSessionsOperationStatusClient
-        getLocationBasedRecommendedActionSessionsOperationStatus();
-
-    /**
-     * Gets the LocationBasedRecommendedActionSessionsResultsClient object to access its operations.
-     *
-     * @return the LocationBasedRecommendedActionSessionsResultsClient object.
-     */
-    LocationBasedRecommendedActionSessionsResultsClient getLocationBasedRecommendedActionSessionsResults();
-
-    /**
-     * Gets the PrivateEndpointConnectionsClient object to access its operations.
-     *
-     * @return the PrivateEndpointConnectionsClient object.
-     */
-    PrivateEndpointConnectionsClient getPrivateEndpointConnections();
-
-    /**
-     * Gets the PrivateLinkResourcesClient object to access its operations.
-     *
-     * @return the PrivateLinkResourcesClient object.
-     */
-    PrivateLinkResourcesClient getPrivateLinkResources();
-
-    /**
-     * Gets the ServerKeysClient object to access its operations.
-     *
-     * @return the ServerKeysClient object.
-     */
-    ServerKeysClient getServerKeys();
 }

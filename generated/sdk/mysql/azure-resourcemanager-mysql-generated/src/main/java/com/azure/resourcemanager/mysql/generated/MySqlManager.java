@@ -24,59 +24,37 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.MySqlManagementClient;
-import com.azure.resourcemanager.mysql.generated.implementation.AdvisorsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.AzureADAdministratorsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.BackupAndExportsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.BackupsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.CheckNameAvailabilitiesImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.CheckNameAvailabilityWithoutLocationsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.CheckVirtualNetworkSubnetUsagesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ConfigurationsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.DatabasesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.FirewallRulesImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.LocationBasedPerformanceTiersImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.LocationBasedRecommendedActionSessionsOperationStatusImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.LocationBasedRecommendedActionSessionsResultsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.GetPrivateDnsZoneSuffixesImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.LocationBasedCapabilitiesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.LogFilesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.MySqlManagementClientBuilder;
 import com.azure.resourcemanager.mysql.generated.implementation.OperationsImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.PrivateEndpointConnectionsImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.PrivateLinkResourcesImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.QueryTextsImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.RecommendedActionsImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.RecoverableServersImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ReplicasImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.ResourceProvidersImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.ServerAdministratorsImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.ServerBasedPerformanceTiersImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.ServerKeysImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.ServerParametersImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.ServerSecurityAlertPoliciesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServersImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.TopQueryStatisticsImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.VirtualNetworkRulesImpl;
-import com.azure.resourcemanager.mysql.generated.implementation.WaitStatisticsImpl;
-import com.azure.resourcemanager.mysql.generated.models.Advisors;
+import com.azure.resourcemanager.mysql.generated.models.AzureADAdministrators;
+import com.azure.resourcemanager.mysql.generated.models.BackupAndExports;
+import com.azure.resourcemanager.mysql.generated.models.Backups;
 import com.azure.resourcemanager.mysql.generated.models.CheckNameAvailabilities;
+import com.azure.resourcemanager.mysql.generated.models.CheckNameAvailabilityWithoutLocations;
+import com.azure.resourcemanager.mysql.generated.models.CheckVirtualNetworkSubnetUsages;
 import com.azure.resourcemanager.mysql.generated.models.Configurations;
 import com.azure.resourcemanager.mysql.generated.models.Databases;
 import com.azure.resourcemanager.mysql.generated.models.FirewallRules;
-import com.azure.resourcemanager.mysql.generated.models.LocationBasedPerformanceTiers;
-import com.azure.resourcemanager.mysql.generated.models.LocationBasedRecommendedActionSessionsOperationStatus;
-import com.azure.resourcemanager.mysql.generated.models.LocationBasedRecommendedActionSessionsResults;
+import com.azure.resourcemanager.mysql.generated.models.GetPrivateDnsZoneSuffixes;
+import com.azure.resourcemanager.mysql.generated.models.LocationBasedCapabilities;
 import com.azure.resourcemanager.mysql.generated.models.LogFiles;
 import com.azure.resourcemanager.mysql.generated.models.Operations;
-import com.azure.resourcemanager.mysql.generated.models.PrivateEndpointConnections;
-import com.azure.resourcemanager.mysql.generated.models.PrivateLinkResources;
-import com.azure.resourcemanager.mysql.generated.models.QueryTexts;
-import com.azure.resourcemanager.mysql.generated.models.RecommendedActions;
-import com.azure.resourcemanager.mysql.generated.models.RecoverableServers;
 import com.azure.resourcemanager.mysql.generated.models.Replicas;
-import com.azure.resourcemanager.mysql.generated.models.ResourceProviders;
-import com.azure.resourcemanager.mysql.generated.models.ServerAdministrators;
-import com.azure.resourcemanager.mysql.generated.models.ServerBasedPerformanceTiers;
-import com.azure.resourcemanager.mysql.generated.models.ServerKeys;
-import com.azure.resourcemanager.mysql.generated.models.ServerParameters;
-import com.azure.resourcemanager.mysql.generated.models.ServerSecurityAlertPolicies;
 import com.azure.resourcemanager.mysql.generated.models.Servers;
-import com.azure.resourcemanager.mysql.generated.models.TopQueryStatistics;
-import com.azure.resourcemanager.mysql.generated.models.VirtualNetworkRules;
-import com.azure.resourcemanager.mysql.generated.models.WaitStatistics;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -90,57 +68,35 @@ import java.util.stream.Collectors;
  * configurations with new business model.
  */
 public final class MySqlManager {
+    private AzureADAdministrators azureADAdministrators;
+
+    private Backups backups;
+
+    private BackupAndExports backupAndExports;
+
+    private Configurations configurations;
+
+    private Databases databases;
+
+    private FirewallRules firewallRules;
+
     private Servers servers;
 
     private Replicas replicas;
 
-    private FirewallRules firewallRules;
-
-    private VirtualNetworkRules virtualNetworkRules;
-
-    private Databases databases;
-
-    private Configurations configurations;
-
-    private ServerParameters serverParameters;
-
     private LogFiles logFiles;
 
-    private ServerAdministrators serverAdministrators;
+    private LocationBasedCapabilities locationBasedCapabilities;
 
-    private RecoverableServers recoverableServers;
-
-    private ServerBasedPerformanceTiers serverBasedPerformanceTiers;
-
-    private LocationBasedPerformanceTiers locationBasedPerformanceTiers;
+    private CheckVirtualNetworkSubnetUsages checkVirtualNetworkSubnetUsages;
 
     private CheckNameAvailabilities checkNameAvailabilities;
 
+    private CheckNameAvailabilityWithoutLocations checkNameAvailabilityWithoutLocations;
+
+    private GetPrivateDnsZoneSuffixes getPrivateDnsZoneSuffixes;
+
     private Operations operations;
-
-    private ServerSecurityAlertPolicies serverSecurityAlertPolicies;
-
-    private QueryTexts queryTexts;
-
-    private TopQueryStatistics topQueryStatistics;
-
-    private WaitStatistics waitStatistics;
-
-    private ResourceProviders resourceProviders;
-
-    private Advisors advisors;
-
-    private RecommendedActions recommendedActions;
-
-    private LocationBasedRecommendedActionSessionsOperationStatus locationBasedRecommendedActionSessionsOperationStatus;
-
-    private LocationBasedRecommendedActionSessionsResults locationBasedRecommendedActionSessionsResults;
-
-    private PrivateEndpointConnections privateEndpointConnections;
-
-    private PrivateLinkResources privateLinkResources;
-
-    private ServerKeys serverKeys;
 
     private final MySqlManagementClient clientObject;
 
@@ -365,6 +321,78 @@ public final class MySqlManager {
     }
 
     /**
+     * Gets the resource collection API of AzureADAdministrators. It manages AzureADAdministrator.
+     *
+     * @return Resource collection API of AzureADAdministrators.
+     */
+    public AzureADAdministrators azureADAdministrators() {
+        if (this.azureADAdministrators == null) {
+            this.azureADAdministrators = new AzureADAdministratorsImpl(clientObject.getAzureADAdministrators(), this);
+        }
+        return azureADAdministrators;
+    }
+
+    /**
+     * Gets the resource collection API of Backups.
+     *
+     * @return Resource collection API of Backups.
+     */
+    public Backups backups() {
+        if (this.backups == null) {
+            this.backups = new BackupsImpl(clientObject.getBackups(), this);
+        }
+        return backups;
+    }
+
+    /**
+     * Gets the resource collection API of BackupAndExports.
+     *
+     * @return Resource collection API of BackupAndExports.
+     */
+    public BackupAndExports backupAndExports() {
+        if (this.backupAndExports == null) {
+            this.backupAndExports = new BackupAndExportsImpl(clientObject.getBackupAndExports(), this);
+        }
+        return backupAndExports;
+    }
+
+    /**
+     * Gets the resource collection API of Configurations. It manages Configuration.
+     *
+     * @return Resource collection API of Configurations.
+     */
+    public Configurations configurations() {
+        if (this.configurations == null) {
+            this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
+        }
+        return configurations;
+    }
+
+    /**
+     * Gets the resource collection API of Databases. It manages Database.
+     *
+     * @return Resource collection API of Databases.
+     */
+    public Databases databases() {
+        if (this.databases == null) {
+            this.databases = new DatabasesImpl(clientObject.getDatabases(), this);
+        }
+        return databases;
+    }
+
+    /**
+     * Gets the resource collection API of FirewallRules. It manages FirewallRule.
+     *
+     * @return Resource collection API of FirewallRules.
+     */
+    public FirewallRules firewallRules() {
+        if (this.firewallRules == null) {
+            this.firewallRules = new FirewallRulesImpl(clientObject.getFirewallRules(), this);
+        }
+        return firewallRules;
+    }
+
+    /**
      * Gets the resource collection API of Servers. It manages Server.
      *
      * @return Resource collection API of Servers.
@@ -389,66 +417,6 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of FirewallRules. It manages FirewallRule.
-     *
-     * @return Resource collection API of FirewallRules.
-     */
-    public FirewallRules firewallRules() {
-        if (this.firewallRules == null) {
-            this.firewallRules = new FirewallRulesImpl(clientObject.getFirewallRules(), this);
-        }
-        return firewallRules;
-    }
-
-    /**
-     * Gets the resource collection API of VirtualNetworkRules. It manages VirtualNetworkRule.
-     *
-     * @return Resource collection API of VirtualNetworkRules.
-     */
-    public VirtualNetworkRules virtualNetworkRules() {
-        if (this.virtualNetworkRules == null) {
-            this.virtualNetworkRules = new VirtualNetworkRulesImpl(clientObject.getVirtualNetworkRules(), this);
-        }
-        return virtualNetworkRules;
-    }
-
-    /**
-     * Gets the resource collection API of Databases. It manages Database.
-     *
-     * @return Resource collection API of Databases.
-     */
-    public Databases databases() {
-        if (this.databases == null) {
-            this.databases = new DatabasesImpl(clientObject.getDatabases(), this);
-        }
-        return databases;
-    }
-
-    /**
-     * Gets the resource collection API of Configurations. It manages Configuration.
-     *
-     * @return Resource collection API of Configurations.
-     */
-    public Configurations configurations() {
-        if (this.configurations == null) {
-            this.configurations = new ConfigurationsImpl(clientObject.getConfigurations(), this);
-        }
-        return configurations;
-    }
-
-    /**
-     * Gets the resource collection API of ServerParameters.
-     *
-     * @return Resource collection API of ServerParameters.
-     */
-    public ServerParameters serverParameters() {
-        if (this.serverParameters == null) {
-            this.serverParameters = new ServerParametersImpl(clientObject.getServerParameters(), this);
-        }
-        return serverParameters;
-    }
-
-    /**
      * Gets the resource collection API of LogFiles.
      *
      * @return Resource collection API of LogFiles.
@@ -461,53 +429,29 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets the resource collection API of ServerAdministrators.
+     * Gets the resource collection API of LocationBasedCapabilities.
      *
-     * @return Resource collection API of ServerAdministrators.
+     * @return Resource collection API of LocationBasedCapabilities.
      */
-    public ServerAdministrators serverAdministrators() {
-        if (this.serverAdministrators == null) {
-            this.serverAdministrators = new ServerAdministratorsImpl(clientObject.getServerAdministrators(), this);
+    public LocationBasedCapabilities locationBasedCapabilities() {
+        if (this.locationBasedCapabilities == null) {
+            this.locationBasedCapabilities =
+                new LocationBasedCapabilitiesImpl(clientObject.getLocationBasedCapabilities(), this);
         }
-        return serverAdministrators;
+        return locationBasedCapabilities;
     }
 
     /**
-     * Gets the resource collection API of RecoverableServers.
+     * Gets the resource collection API of CheckVirtualNetworkSubnetUsages.
      *
-     * @return Resource collection API of RecoverableServers.
+     * @return Resource collection API of CheckVirtualNetworkSubnetUsages.
      */
-    public RecoverableServers recoverableServers() {
-        if (this.recoverableServers == null) {
-            this.recoverableServers = new RecoverableServersImpl(clientObject.getRecoverableServers(), this);
+    public CheckVirtualNetworkSubnetUsages checkVirtualNetworkSubnetUsages() {
+        if (this.checkVirtualNetworkSubnetUsages == null) {
+            this.checkVirtualNetworkSubnetUsages =
+                new CheckVirtualNetworkSubnetUsagesImpl(clientObject.getCheckVirtualNetworkSubnetUsages(), this);
         }
-        return recoverableServers;
-    }
-
-    /**
-     * Gets the resource collection API of ServerBasedPerformanceTiers.
-     *
-     * @return Resource collection API of ServerBasedPerformanceTiers.
-     */
-    public ServerBasedPerformanceTiers serverBasedPerformanceTiers() {
-        if (this.serverBasedPerformanceTiers == null) {
-            this.serverBasedPerformanceTiers =
-                new ServerBasedPerformanceTiersImpl(clientObject.getServerBasedPerformanceTiers(), this);
-        }
-        return serverBasedPerformanceTiers;
-    }
-
-    /**
-     * Gets the resource collection API of LocationBasedPerformanceTiers.
-     *
-     * @return Resource collection API of LocationBasedPerformanceTiers.
-     */
-    public LocationBasedPerformanceTiers locationBasedPerformanceTiers() {
-        if (this.locationBasedPerformanceTiers == null) {
-            this.locationBasedPerformanceTiers =
-                new LocationBasedPerformanceTiersImpl(clientObject.getLocationBasedPerformanceTiers(), this);
-        }
-        return locationBasedPerformanceTiers;
+        return checkVirtualNetworkSubnetUsages;
     }
 
     /**
@@ -524,6 +468,33 @@ public final class MySqlManager {
     }
 
     /**
+     * Gets the resource collection API of CheckNameAvailabilityWithoutLocations.
+     *
+     * @return Resource collection API of CheckNameAvailabilityWithoutLocations.
+     */
+    public CheckNameAvailabilityWithoutLocations checkNameAvailabilityWithoutLocations() {
+        if (this.checkNameAvailabilityWithoutLocations == null) {
+            this.checkNameAvailabilityWithoutLocations =
+                new CheckNameAvailabilityWithoutLocationsImpl(
+                    clientObject.getCheckNameAvailabilityWithoutLocations(), this);
+        }
+        return checkNameAvailabilityWithoutLocations;
+    }
+
+    /**
+     * Gets the resource collection API of GetPrivateDnsZoneSuffixes.
+     *
+     * @return Resource collection API of GetPrivateDnsZoneSuffixes.
+     */
+    public GetPrivateDnsZoneSuffixes getPrivateDnsZoneSuffixes() {
+        if (this.getPrivateDnsZoneSuffixes == null) {
+            this.getPrivateDnsZoneSuffixes =
+                new GetPrivateDnsZoneSuffixesImpl(clientObject.getGetPrivateDnsZoneSuffixes(), this);
+        }
+        return getPrivateDnsZoneSuffixes;
+    }
+
+    /**
      * Gets the resource collection API of Operations.
      *
      * @return Resource collection API of Operations.
@@ -533,157 +504,6 @@ public final class MySqlManager {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
-    }
-
-    /**
-     * Gets the resource collection API of ServerSecurityAlertPolicies. It manages ServerSecurityAlertPolicy.
-     *
-     * @return Resource collection API of ServerSecurityAlertPolicies.
-     */
-    public ServerSecurityAlertPolicies serverSecurityAlertPolicies() {
-        if (this.serverSecurityAlertPolicies == null) {
-            this.serverSecurityAlertPolicies =
-                new ServerSecurityAlertPoliciesImpl(clientObject.getServerSecurityAlertPolicies(), this);
-        }
-        return serverSecurityAlertPolicies;
-    }
-
-    /**
-     * Gets the resource collection API of QueryTexts.
-     *
-     * @return Resource collection API of QueryTexts.
-     */
-    public QueryTexts queryTexts() {
-        if (this.queryTexts == null) {
-            this.queryTexts = new QueryTextsImpl(clientObject.getQueryTexts(), this);
-        }
-        return queryTexts;
-    }
-
-    /**
-     * Gets the resource collection API of TopQueryStatistics.
-     *
-     * @return Resource collection API of TopQueryStatistics.
-     */
-    public TopQueryStatistics topQueryStatistics() {
-        if (this.topQueryStatistics == null) {
-            this.topQueryStatistics = new TopQueryStatisticsImpl(clientObject.getTopQueryStatistics(), this);
-        }
-        return topQueryStatistics;
-    }
-
-    /**
-     * Gets the resource collection API of WaitStatistics.
-     *
-     * @return Resource collection API of WaitStatistics.
-     */
-    public WaitStatistics waitStatistics() {
-        if (this.waitStatistics == null) {
-            this.waitStatistics = new WaitStatisticsImpl(clientObject.getWaitStatistics(), this);
-        }
-        return waitStatistics;
-    }
-
-    /**
-     * Gets the resource collection API of ResourceProviders.
-     *
-     * @return Resource collection API of ResourceProviders.
-     */
-    public ResourceProviders resourceProviders() {
-        if (this.resourceProviders == null) {
-            this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
-        }
-        return resourceProviders;
-    }
-
-    /**
-     * Gets the resource collection API of Advisors.
-     *
-     * @return Resource collection API of Advisors.
-     */
-    public Advisors advisors() {
-        if (this.advisors == null) {
-            this.advisors = new AdvisorsImpl(clientObject.getAdvisors(), this);
-        }
-        return advisors;
-    }
-
-    /**
-     * Gets the resource collection API of RecommendedActions.
-     *
-     * @return Resource collection API of RecommendedActions.
-     */
-    public RecommendedActions recommendedActions() {
-        if (this.recommendedActions == null) {
-            this.recommendedActions = new RecommendedActionsImpl(clientObject.getRecommendedActions(), this);
-        }
-        return recommendedActions;
-    }
-
-    /**
-     * Gets the resource collection API of LocationBasedRecommendedActionSessionsOperationStatus.
-     *
-     * @return Resource collection API of LocationBasedRecommendedActionSessionsOperationStatus.
-     */
-    public LocationBasedRecommendedActionSessionsOperationStatus
-        locationBasedRecommendedActionSessionsOperationStatus() {
-        if (this.locationBasedRecommendedActionSessionsOperationStatus == null) {
-            this.locationBasedRecommendedActionSessionsOperationStatus =
-                new LocationBasedRecommendedActionSessionsOperationStatusImpl(
-                    clientObject.getLocationBasedRecommendedActionSessionsOperationStatus(), this);
-        }
-        return locationBasedRecommendedActionSessionsOperationStatus;
-    }
-
-    /**
-     * Gets the resource collection API of LocationBasedRecommendedActionSessionsResults.
-     *
-     * @return Resource collection API of LocationBasedRecommendedActionSessionsResults.
-     */
-    public LocationBasedRecommendedActionSessionsResults locationBasedRecommendedActionSessionsResults() {
-        if (this.locationBasedRecommendedActionSessionsResults == null) {
-            this.locationBasedRecommendedActionSessionsResults =
-                new LocationBasedRecommendedActionSessionsResultsImpl(
-                    clientObject.getLocationBasedRecommendedActionSessionsResults(), this);
-        }
-        return locationBasedRecommendedActionSessionsResults;
-    }
-
-    /**
-     * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
-     *
-     * @return Resource collection API of PrivateEndpointConnections.
-     */
-    public PrivateEndpointConnections privateEndpointConnections() {
-        if (this.privateEndpointConnections == null) {
-            this.privateEndpointConnections =
-                new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
-        }
-        return privateEndpointConnections;
-    }
-
-    /**
-     * Gets the resource collection API of PrivateLinkResources.
-     *
-     * @return Resource collection API of PrivateLinkResources.
-     */
-    public PrivateLinkResources privateLinkResources() {
-        if (this.privateLinkResources == null) {
-            this.privateLinkResources = new PrivateLinkResourcesImpl(clientObject.getPrivateLinkResources(), this);
-        }
-        return privateLinkResources;
-    }
-
-    /**
-     * Gets the resource collection API of ServerKeys. It manages ServerKey.
-     *
-     * @return Resource collection API of ServerKeys.
-     */
-    public ServerKeys serverKeys() {
-        if (this.serverKeys == null) {
-            this.serverKeys = new ServerKeysImpl(clientObject.getServerKeys(), this);
-        }
-        return serverKeys;
     }
 
     /**

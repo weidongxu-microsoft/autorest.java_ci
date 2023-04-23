@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineRunCommandInner;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInputParameter;
+import com.azure.resourcemanager.compute.generated.models.RunCommandManagedIdentity;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommand;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandScriptSource;
@@ -93,12 +94,24 @@ public final class VirtualMachineRunCommandImpl
         return this.innerModel().errorBlobUri();
     }
 
+    public RunCommandManagedIdentity outputBlobManagedIdentity() {
+        return this.innerModel().outputBlobManagedIdentity();
+    }
+
+    public RunCommandManagedIdentity errorBlobManagedIdentity() {
+        return this.innerModel().errorBlobManagedIdentity();
+    }
+
     public String provisioningState() {
         return this.innerModel().provisioningState();
     }
 
     public VirtualMachineRunCommandInstanceView instanceView() {
         return this.innerModel().instanceView();
+    }
+
+    public Boolean treatFailureAsDeploymentFailure() {
+        return this.innerModel().treatFailureAsDeploymentFailure();
     }
 
     public Region region() {
@@ -321,6 +334,38 @@ public final class VirtualMachineRunCommandImpl
             return this;
         } else {
             this.updateRunCommand.withErrorBlobUri(errorBlobUri);
+            return this;
+        }
+    }
+
+    public VirtualMachineRunCommandImpl withOutputBlobManagedIdentity(
+        RunCommandManagedIdentity outputBlobManagedIdentity) {
+        if (isInCreateMode()) {
+            this.innerModel().withOutputBlobManagedIdentity(outputBlobManagedIdentity);
+            return this;
+        } else {
+            this.updateRunCommand.withOutputBlobManagedIdentity(outputBlobManagedIdentity);
+            return this;
+        }
+    }
+
+    public VirtualMachineRunCommandImpl withErrorBlobManagedIdentity(
+        RunCommandManagedIdentity errorBlobManagedIdentity) {
+        if (isInCreateMode()) {
+            this.innerModel().withErrorBlobManagedIdentity(errorBlobManagedIdentity);
+            return this;
+        } else {
+            this.updateRunCommand.withErrorBlobManagedIdentity(errorBlobManagedIdentity);
+            return this;
+        }
+    }
+
+    public VirtualMachineRunCommandImpl withTreatFailureAsDeploymentFailure(Boolean treatFailureAsDeploymentFailure) {
+        if (isInCreateMode()) {
+            this.innerModel().withTreatFailureAsDeploymentFailure(treatFailureAsDeploymentFailure);
+            return this;
+        } else {
+            this.updateRunCommand.withTreatFailureAsDeploymentFailure(treatFailureAsDeploymentFailure);
             return this;
         }
     }

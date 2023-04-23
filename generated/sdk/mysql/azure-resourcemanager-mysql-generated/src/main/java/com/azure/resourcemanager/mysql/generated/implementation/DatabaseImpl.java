@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mysql.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.mysql.generated.models.Database;
@@ -23,6 +24,10 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String charset() {
@@ -51,7 +56,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
 
     private String databaseName;
 
-    public DatabaseImpl withExistingServer(String resourceGroupName, String serverName) {
+    public DatabaseImpl withExistingFlexibleServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;
         this.serverName = serverName;
         return this;
@@ -107,7 +112,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");
+        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "flexibleServers");
         this.databaseName = Utils.getValueFromIdByName(innerObject.id(), "databases");
     }
 

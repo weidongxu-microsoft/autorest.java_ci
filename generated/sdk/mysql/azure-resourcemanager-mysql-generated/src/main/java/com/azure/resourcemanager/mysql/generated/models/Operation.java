@@ -4,87 +4,43 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.resourcemanager.mysql.generated.fluent.models.OperationInner;
 import java.util.Map;
 
-/** REST API operation definition. */
-@Immutable
-public final class Operation {
-    /*
-     * The name of the operation being performed on this particular object.
-     */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
-    private String name;
-
-    /*
-     * The localized display information for this particular operation or action.
-     */
-    @JsonProperty(value = "display", access = JsonProperty.Access.WRITE_ONLY)
-    private OperationDisplay display;
-
-    /*
-     * The intended executor of the operation.
-     */
-    @JsonProperty(value = "origin", access = JsonProperty.Access.WRITE_ONLY)
-    private OperationOrigin origin;
-
-    /*
-     * Additional descriptions for the operation.
-     */
-    @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
-    private Map<String, Object> properties;
-
-    /** Creates an instance of Operation class. */
-    public Operation() {
-    }
-
+/** An immutable client-side representation of Operation. */
+public interface Operation {
     /**
-     * Get the name property: The name of the operation being performed on this particular object.
+     * Gets the name property: The name of the operation being performed on this particular object.
      *
      * @return the name value.
      */
-    public String name() {
-        return this.name;
-    }
+    String name();
 
     /**
-     * Get the display property: The localized display information for this particular operation or action.
+     * Gets the display property: The localized display information for this particular operation or action.
      *
      * @return the display value.
      */
-    public OperationDisplay display() {
-        return this.display;
-    }
+    OperationDisplay display();
 
     /**
-     * Get the origin property: The intended executor of the operation.
+     * Gets the origin property: The intended executor of the operation.
      *
      * @return the origin value.
      */
-    public OperationOrigin origin() {
-        return this.origin;
-    }
+    String origin();
 
     /**
-     * Get the properties property: Additional descriptions for the operation.
+     * Gets the properties property: Additional descriptions for the operation.
      *
      * @return the properties value.
      */
-    public Map<String, Object> properties() {
-        return this.properties;
-    }
+    Map<String, Object> properties();
 
     /**
-     * Validates the instance.
+     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.OperationInner object.
      *
-     * @throws IllegalArgumentException thrown if the instance is not valid.
+     * @return the inner object.
      */
-    public void validate() {
-        if (display() != null) {
-            display().validate();
-        }
-    }
+    OperationInner innerModel();
 }

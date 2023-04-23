@@ -122,7 +122,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @return represents a Configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName, String serverName, String configurationName, ConfigurationInner parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -248,7 +248,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @return the {@link PollerFlux} for polling of represents a Configuration.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ConfigurationInner>, ConfigurationInner> beginCreateOrUpdateAsync(
+    public PollerFlux<PollResult<ConfigurationInner>, ConfigurationInner> beginCreateOrUpdateAsync(
         String resourceGroupName, String serverName, String configurationName, ConfigurationInner parameters) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             createOrUpdateWithResponseAsync(resourceGroupName, serverName, configurationName, parameters);
@@ -349,7 +349,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @return represents a Configuration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ConfigurationInner> createOrUpdateAsync(
+    public Mono<ConfigurationInner> createOrUpdateAsync(
         String resourceGroupName, String serverName, String configurationName, ConfigurationInner parameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, serverName, configurationName, parameters)
             .last()
@@ -435,7 +435,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ConfigurationInner>> getWithResponseAsync(
+    public Mono<Response<ConfigurationInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, String configurationName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -544,7 +544,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @return information about a configuration of server on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ConfigurationInner> getAsync(String resourceGroupName, String serverName, String configurationName) {
+    public Mono<ConfigurationInner> getAsync(String resourceGroupName, String serverName, String configurationName) {
         return getWithResponseAsync(resourceGroupName, serverName, configurationName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -700,7 +700,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @return a list of server configurations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ConfigurationInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<ConfigurationInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(() -> listByServerSinglePageAsync(resourceGroupName, serverName));
     }
 

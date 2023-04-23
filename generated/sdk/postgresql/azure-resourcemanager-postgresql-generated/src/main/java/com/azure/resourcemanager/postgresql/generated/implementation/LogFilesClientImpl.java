@@ -184,7 +184,7 @@ public final class LogFilesClientImpl implements LogFilesClient {
      * @return a list of log files as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<LogFileInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<LogFileInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(() -> listByServerSinglePageAsync(resourceGroupName, serverName));
     }
 

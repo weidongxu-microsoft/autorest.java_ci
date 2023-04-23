@@ -4,8 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
+import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionInner;
+import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineScaleSetVMExtension. */
 public interface VirtualMachineScaleSetVMExtension {
@@ -29,6 +31,13 @@ public interface VirtualMachineScaleSetVMExtension {
      * @return the type value.
      */
     String type();
+
+    /**
+     * Gets the location property: The location of the extension.
+     *
+     * @return the location value.
+     */
+    String location();
 
     /**
      * Gets the forceUpdateTag property: How the extension handler should be forced to update even if the extension
@@ -123,6 +132,28 @@ public interface VirtualMachineScaleSetVMExtension {
     KeyVaultSecretReference protectedSettingsFromKeyVault();
 
     /**
+     * Gets the provisionAfterExtensions property: Collection of extension names after which this extension needs to be
+     * provisioned.
+     *
+     * @return the provisionAfterExtensions value.
+     */
+    List<String> provisionAfterExtensions();
+
+    /**
+     * Gets the region of the resource.
+     *
+     * @return the region of the resource.
+     */
+    Region region();
+
+    /**
+     * Gets the name of the resource region.
+     *
+     * @return the name of the resource region.
+     */
+    String regionName();
+
+    /**
      * Gets the name of the resource group.
      *
      * @return the name of the resource group.
@@ -163,7 +194,8 @@ public interface VirtualMachineScaleSetVMExtension {
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithForceUpdateTag,
+            extends DefinitionStages.WithLocation,
+                DefinitionStages.WithForceUpdateTag,
                 DefinitionStages.WithPublisher,
                 DefinitionStages.WithTypePropertiesType,
                 DefinitionStages.WithTypeHandlerVersion,
@@ -173,7 +205,8 @@ public interface VirtualMachineScaleSetVMExtension {
                 DefinitionStages.WithProtectedSettings,
                 DefinitionStages.WithInstanceView,
                 DefinitionStages.WithSuppressFailures,
-                DefinitionStages.WithProtectedSettingsFromKeyVault {
+                DefinitionStages.WithProtectedSettingsFromKeyVault,
+                DefinitionStages.WithProvisionAfterExtensions {
             /**
              * Executes the create request.
              *
@@ -188,6 +221,24 @@ public interface VirtualMachineScaleSetVMExtension {
              * @return the created resource.
              */
             VirtualMachineScaleSetVMExtension create(Context context);
+        }
+        /** The stage of the VirtualMachineScaleSetVMExtension definition allowing to specify location. */
+        interface WithLocation {
+            /**
+             * Specifies the region for the resource.
+             *
+             * @param location The location of the extension.
+             * @return the next definition stage.
+             */
+            WithCreate withRegion(Region location);
+
+            /**
+             * Specifies the region for the resource.
+             *
+             * @param location The location of the extension.
+             * @return the next definition stage.
+             */
+            WithCreate withRegion(String location);
         }
         /** The stage of the VirtualMachineScaleSetVMExtension definition allowing to specify forceUpdateTag. */
         interface WithForceUpdateTag {
@@ -320,6 +371,20 @@ public interface VirtualMachineScaleSetVMExtension {
              * @return the next definition stage.
              */
             WithCreate withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
+        }
+        /**
+         * The stage of the VirtualMachineScaleSetVMExtension definition allowing to specify provisionAfterExtensions.
+         */
+        interface WithProvisionAfterExtensions {
+            /**
+             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension
+             * needs to be provisioned..
+             *
+             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be
+             *     provisioned.
+             * @return the next definition stage.
+             */
+            WithCreate withProvisionAfterExtensions(List<String> provisionAfterExtensions);
         }
     }
     /**

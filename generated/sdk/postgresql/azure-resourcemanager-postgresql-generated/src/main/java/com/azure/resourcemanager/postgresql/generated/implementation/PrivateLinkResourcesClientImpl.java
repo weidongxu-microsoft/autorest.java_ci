@@ -224,7 +224,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @return the private link resources for PostgreSQL server as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PrivateLinkResourceInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<PrivateLinkResourceInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(
             () -> listByServerSinglePageAsync(resourceGroupName, serverName),
             nextLink -> listByServerNextSinglePageAsync(nextLink));
@@ -294,7 +294,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(
+    public Mono<Response<PrivateLinkResourceInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, String groupName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -401,7 +401,7 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @return a private link resource for PostgreSQL server on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PrivateLinkResourceInner> getAsync(String resourceGroupName, String serverName, String groupName) {
+    public Mono<PrivateLinkResourceInner> getAsync(String resourceGroupName, String serverName, String groupName) {
         return getWithResponseAsync(resourceGroupName, serverName, groupName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }

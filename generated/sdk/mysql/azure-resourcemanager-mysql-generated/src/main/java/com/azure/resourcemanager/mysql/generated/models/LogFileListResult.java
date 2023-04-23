@@ -9,21 +9,27 @@ import com.azure.resourcemanager.mysql.generated.fluent.models.LogFileInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of log files. */
+/** A List of logFiles. */
 @Fluent
 public final class LogFileListResult {
     /*
-     * The list of log files.
+     * The list of logFiles in a server
      */
     @JsonProperty(value = "value")
     private List<LogFileInner> value;
+
+    /*
+     * The link used to get the next page of operations.
+     */
+    @JsonProperty(value = "nextLink")
+    private String nextLink;
 
     /** Creates an instance of LogFileListResult class. */
     public LogFileListResult() {
     }
 
     /**
-     * Get the value property: The list of log files.
+     * Get the value property: The list of logFiles in a server.
      *
      * @return the value value.
      */
@@ -32,13 +38,33 @@ public final class LogFileListResult {
     }
 
     /**
-     * Set the value property: The list of log files.
+     * Set the value property: The list of logFiles in a server.
      *
      * @param value the value value to set.
      * @return the LogFileListResult object itself.
      */
     public LogFileListResult withValue(List<LogFileInner> value) {
         this.value = value;
+        return this;
+    }
+
+    /**
+     * Get the nextLink property: The link used to get the next page of operations.
+     *
+     * @return the nextLink value.
+     */
+    public String nextLink() {
+        return this.nextLink;
+    }
+
+    /**
+     * Set the nextLink property: The link used to get the next page of operations.
+     *
+     * @param nextLink the nextLink value to set.
+     * @return the LogFileListResult object itself.
+     */
+    public LogFileListResult withNextLink(String nextLink) {
+        this.nextLink = nextLink;
         return this;
     }
 

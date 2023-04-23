@@ -188,7 +188,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @return a list of performance tiers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PerformanceTierPropertiesInner> listAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<PerformanceTierPropertiesInner> listAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, serverName));
     }
 

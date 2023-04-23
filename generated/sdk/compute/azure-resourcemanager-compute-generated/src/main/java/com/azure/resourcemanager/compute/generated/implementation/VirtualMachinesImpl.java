@@ -18,6 +18,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineI
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstallPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
+import com.azure.resourcemanager.compute.generated.models.ExpandTypeForListVMs;
+import com.azure.resourcemanager.compute.generated.models.ExpandTypesForListVMs;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
@@ -162,9 +164,10 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualMachine> listByResourceGroup(String resourceGroupName, String filter, Context context) {
+    public PagedIterable<VirtualMachine> listByResourceGroup(
+        String resourceGroupName, String filter, ExpandTypeForListVMs expand, Context context) {
         PagedIterable<VirtualMachineInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
+            this.serviceClient().listByResourceGroup(resourceGroupName, filter, expand, context);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
@@ -173,8 +176,9 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualMachine> list(String statusOnly, String filter, Context context) {
-        PagedIterable<VirtualMachineInner> inner = this.serviceClient().list(statusOnly, filter, context);
+    public PagedIterable<VirtualMachine> list(
+        String statusOnly, String filter, ExpandTypesForListVMs expand, Context context) {
+        PagedIterable<VirtualMachineInner> inner = this.serviceClient().list(statusOnly, filter, expand, context);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 

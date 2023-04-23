@@ -6,24 +6,31 @@ package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.core.management.SystemData;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Represents a log file. */
+/** Represents a logFile. */
 @Fluent
 public final class LogFileInner extends ProxyResource {
     /*
-     * The properties of the log file.
+     * The properties of a logFile.
      */
     @JsonProperty(value = "properties")
     private LogFileProperties innerProperties;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /** Creates an instance of LogFileInner class. */
     public LogFileInner() {
     }
 
     /**
-     * Get the innerProperties property: The properties of the log file.
+     * Get the innerProperties property: The properties of a logFile.
      *
      * @return the innerProperties value.
      */
@@ -32,7 +39,16 @@ public final class LogFileInner extends ProxyResource {
     }
 
     /**
-     * Get the sizeInKB property: Size of the log file.
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
+    /**
+     * Get the sizeInKB property: The size in kb of the logFile.
      *
      * @return the sizeInKB value.
      */
@@ -41,7 +57,7 @@ public final class LogFileInner extends ProxyResource {
     }
 
     /**
-     * Set the sizeInKB property: Size of the log file.
+     * Set the sizeInKB property: The size in kb of the logFile.
      *
      * @param sizeInKB the sizeInKB value to set.
      * @return the LogFileInner object itself.
@@ -64,12 +80,17 @@ public final class LogFileInner extends ProxyResource {
     }
 
     /**
-     * Get the lastModifiedTime property: Last modified timestamp of the log file.
+     * Set the createdTime property: Creation timestamp of the log file.
      *
-     * @return the lastModifiedTime value.
+     * @param createdTime the createdTime value to set.
+     * @return the LogFileInner object itself.
      */
-    public OffsetDateTime lastModifiedTime() {
-        return this.innerProperties() == null ? null : this.innerProperties().lastModifiedTime();
+    public LogFileInner withCreatedTime(OffsetDateTime createdTime) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new LogFileProperties();
+        }
+        this.innerProperties().withCreatedTime(createdTime);
+        return this;
     }
 
     /**
@@ -92,6 +113,29 @@ public final class LogFileInner extends ProxyResource {
             this.innerProperties = new LogFileProperties();
         }
         this.innerProperties().withType(type);
+        return this;
+    }
+
+    /**
+     * Get the lastModifiedTime property: Last modified timestamp of the log file.
+     *
+     * @return the lastModifiedTime value.
+     */
+    public OffsetDateTime lastModifiedTime() {
+        return this.innerProperties() == null ? null : this.innerProperties().lastModifiedTime();
+    }
+
+    /**
+     * Set the lastModifiedTime property: Last modified timestamp of the log file.
+     *
+     * @param lastModifiedTime the lastModifiedTime value to set.
+     * @return the LogFileInner object itself.
+     */
+    public LogFileInner withLastModifiedTime(OffsetDateTime lastModifiedTime) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new LogFileProperties();
+        }
+        this.innerProperties().withLastModifiedTime(lastModifiedTime);
         return this;
     }
 

@@ -82,15 +82,15 @@ public interface DedicatedHostGroup {
      * Gets the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can
      * be placed automatically on the dedicated host group. Automatic placement means resources are allocated on
      * dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when
-     * not provided. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01.
+     * not provided. Minimum api-version: 2020-06-01.
      *
      * @return the supportAutomaticPlacement value.
      */
     Boolean supportAutomaticPlacement();
 
     /**
-     * Gets the additionalCapabilities property: Enables or disables a capability on the dedicated host
-     * group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+     * Gets the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum
+     * api-version: 2022-03-01.
      *
      * @return the additionalCapabilities value.
      */
@@ -229,12 +229,12 @@ public interface DedicatedHostGroup {
              * Specifies the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine
              * scale sets can be placed automatically on the dedicated host group. Automatic placement means resources
              * are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is
-             * defaulted to 'false' when not provided. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01..
+             * defaulted to 'false' when not provided. Minimum api-version: 2020-06-01..
              *
              * @param supportAutomaticPlacement Specifies whether virtual machines or virtual machine scale sets can be
              *     placed automatically on the dedicated host group. Automatic placement means resources are allocated
              *     on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted
-             *     to 'false' when not provided. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01.
+             *     to 'false' when not provided. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
@@ -243,10 +243,10 @@ public interface DedicatedHostGroup {
         interface WithAdditionalCapabilities {
             /**
              * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host
-             * group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01..
+             * group. Minimum api-version: 2022-03-01..
              *
-             * @param additionalCapabilities Enables or disables a capability on the dedicated host
-             *     group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+             * @param additionalCapabilities Enables or disables a capability on the dedicated host group. Minimum
+             *     api-version: 2022-03-01.
              * @return the next definition stage.
              */
             WithCreate withAdditionalCapabilities(
@@ -324,12 +324,12 @@ public interface DedicatedHostGroup {
              * Specifies the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine
              * scale sets can be placed automatically on the dedicated host group. Automatic placement means resources
              * are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is
-             * defaulted to 'false' when not provided. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01..
+             * defaulted to 'false' when not provided. Minimum api-version: 2020-06-01..
              *
              * @param supportAutomaticPlacement Specifies whether virtual machines or virtual machine scale sets can be
              *     placed automatically on the dedicated host group. Automatic placement means resources are allocated
              *     on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted
-             *     to 'false' when not provided. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01.
+             *     to 'false' when not provided. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             Update withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
@@ -338,10 +338,10 @@ public interface DedicatedHostGroup {
         interface WithAdditionalCapabilities {
             /**
              * Specifies the additionalCapabilities property: Enables or disables a capability on the dedicated host
-             * group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01..
+             * group. Minimum api-version: 2022-03-01..
              *
-             * @param additionalCapabilities Enables or disables a capability on the dedicated host
-             *     group.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+             * @param additionalCapabilities Enables or disables a capability on the dedicated host group. Minimum
+             *     api-version: 2022-03-01.
              * @return the next definition stage.
              */
             Update withAdditionalCapabilities(

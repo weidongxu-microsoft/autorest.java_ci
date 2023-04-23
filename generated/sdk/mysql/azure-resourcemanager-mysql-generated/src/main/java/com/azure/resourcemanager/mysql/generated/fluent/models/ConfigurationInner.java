@@ -6,6 +6,11 @@ package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.core.management.SystemData;
+import com.azure.resourcemanager.mysql.generated.models.ConfigurationSource;
+import com.azure.resourcemanager.mysql.generated.models.IsConfigPendingRestart;
+import com.azure.resourcemanager.mysql.generated.models.IsDynamicConfig;
+import com.azure.resourcemanager.mysql.generated.models.IsReadOnly;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Represents a Configuration. */
@@ -16,6 +21,12 @@ public final class ConfigurationInner extends ProxyResource {
      */
     @JsonProperty(value = "properties")
     private ConfigurationProperties innerProperties;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /** Creates an instance of ConfigurationInner class. */
     public ConfigurationInner() {
@@ -28,6 +39,15 @@ public final class ConfigurationInner extends ProxyResource {
      */
     private ConfigurationProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -54,12 +74,44 @@ public final class ConfigurationInner extends ProxyResource {
     }
 
     /**
+     * Get the currentValue property: Current value of the configuration.
+     *
+     * @return the currentValue value.
+     */
+    public String currentValue() {
+        return this.innerProperties() == null ? null : this.innerProperties().currentValue();
+    }
+
+    /**
+     * Set the currentValue property: Current value of the configuration.
+     *
+     * @param currentValue the currentValue value to set.
+     * @return the ConfigurationInner object itself.
+     */
+    public ConfigurationInner withCurrentValue(String currentValue) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ConfigurationProperties();
+        }
+        this.innerProperties().withCurrentValue(currentValue);
+        return this;
+    }
+
+    /**
      * Get the description property: Description of the configuration.
      *
      * @return the description value.
      */
     public String description() {
         return this.innerProperties() == null ? null : this.innerProperties().description();
+    }
+
+    /**
+     * Get the documentationLink property: The link used to get the document from community or Azure site.
+     *
+     * @return the documentationLink value.
+     */
+    public String documentationLink() {
+        return this.innerProperties() == null ? null : this.innerProperties().documentationLink();
     }
 
     /**
@@ -94,7 +146,7 @@ public final class ConfigurationInner extends ProxyResource {
      *
      * @return the source value.
      */
-    public String source() {
+    public ConfigurationSource source() {
         return this.innerProperties() == null ? null : this.innerProperties().source();
     }
 
@@ -104,12 +156,39 @@ public final class ConfigurationInner extends ProxyResource {
      * @param source the source value to set.
      * @return the ConfigurationInner object itself.
      */
-    public ConfigurationInner withSource(String source) {
+    public ConfigurationInner withSource(ConfigurationSource source) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ConfigurationProperties();
         }
         this.innerProperties().withSource(source);
         return this;
+    }
+
+    /**
+     * Get the isReadOnly property: If is the configuration read only.
+     *
+     * @return the isReadOnly value.
+     */
+    public IsReadOnly isReadOnly() {
+        return this.innerProperties() == null ? null : this.innerProperties().isReadOnly();
+    }
+
+    /**
+     * Get the isConfigPendingRestart property: If is the configuration pending restart or not.
+     *
+     * @return the isConfigPendingRestart value.
+     */
+    public IsConfigPendingRestart isConfigPendingRestart() {
+        return this.innerProperties() == null ? null : this.innerProperties().isConfigPendingRestart();
+    }
+
+    /**
+     * Get the isDynamicConfig property: If is the configuration dynamic.
+     *
+     * @return the isDynamicConfig value.
+     */
+    public IsDynamicConfig isDynamicConfig() {
+        return this.innerProperties() == null ? null : this.innerProperties().isDynamicConfig();
     }
 
     /**

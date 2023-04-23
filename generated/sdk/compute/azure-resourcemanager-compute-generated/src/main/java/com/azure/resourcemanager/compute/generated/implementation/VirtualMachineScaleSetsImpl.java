@@ -91,9 +91,10 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     public void deallocate(
         String resourceGroupName,
         String vmScaleSetName,
+        Boolean hibernate,
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context) {
-        this.serviceClient().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+        this.serviceClient().deallocate(resourceGroupName, vmScaleSetName, hibernate, vmInstanceIDs, context);
     }
 
     public void deleteInstances(
@@ -218,6 +219,14 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context) {
         this.serviceClient().start(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void reapply(String resourceGroupName, String vmScaleSetName) {
+        this.serviceClient().reapply(resourceGroupName, vmScaleSetName);
+    }
+
+    public void reapply(String resourceGroupName, String vmScaleSetName, Context context) {
+        this.serviceClient().reapply(resourceGroupName, vmScaleSetName, context);
     }
 
     public void redeploy(String resourceGroupName, String vmScaleSetName) {

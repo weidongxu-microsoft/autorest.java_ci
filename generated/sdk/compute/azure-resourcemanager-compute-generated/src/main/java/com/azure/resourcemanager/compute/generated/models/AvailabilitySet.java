@@ -80,7 +80,7 @@ public interface AvailabilitySet {
 
     /**
      * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the
-     * availability set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+     * availability set should be assigned to. Minimum api-version: 2018-04-01.
      *
      * @return the proximityPlacementGroup value.
      */
@@ -246,10 +246,10 @@ public interface AvailabilitySet {
         interface WithProximityPlacementGroup {
             /**
              * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
-             * that the availability set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01..
+             * that the availability set should be assigned to. Minimum api-version: 2018-04-01..
              *
              * @param proximityPlacementGroup Specifies information about the proximity placement group that the
-             *     availability set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+             *     availability set should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
@@ -342,10 +342,10 @@ public interface AvailabilitySet {
         interface WithProximityPlacementGroup {
             /**
              * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
-             * that the availability set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01..
+             * that the availability set should be assigned to. Minimum api-version: 2018-04-01..
              *
              * @param proximityPlacementGroup Specifies information about the proximity placement group that the
-             *     availability set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+             *     availability set should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);

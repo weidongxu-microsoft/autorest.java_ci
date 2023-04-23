@@ -12,6 +12,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensio
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionUpdate;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public final class VirtualMachineExtensionImpl
@@ -91,6 +92,15 @@ public final class VirtualMachineExtensionImpl
 
     public KeyVaultSecretReference protectedSettingsFromKeyVault() {
         return this.innerModel().protectedSettingsFromKeyVault();
+    }
+
+    public List<String> provisionAfterExtensions() {
+        List<String> inner = this.innerModel().provisionAfterExtensions();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Region region() {
@@ -326,6 +336,11 @@ public final class VirtualMachineExtensionImpl
             this.updateExtensionParameters.withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;
         }
+    }
+
+    public VirtualMachineExtensionImpl withProvisionAfterExtensions(List<String> provisionAfterExtensions) {
+        this.innerModel().withProvisionAfterExtensions(provisionAfterExtensions);
+        return this;
     }
 
     public VirtualMachineExtensionImpl withType(String type) {

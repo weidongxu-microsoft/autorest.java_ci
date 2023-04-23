@@ -77,7 +77,7 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      * @return a recoverable PostgreSQL Server along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RecoverableServerResourceInner>> getWithResponseAsync(
+    public Mono<Response<RecoverableServerResourceInner>> getWithResponseAsync(
         String resourceGroupName, String serverName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -173,7 +173,7 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      * @return a recoverable PostgreSQL Server on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RecoverableServerResourceInner> getAsync(String resourceGroupName, String serverName) {
+    public Mono<RecoverableServerResourceInner> getAsync(String resourceGroupName, String serverName) {
         return getWithResponseAsync(resourceGroupName, serverName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 

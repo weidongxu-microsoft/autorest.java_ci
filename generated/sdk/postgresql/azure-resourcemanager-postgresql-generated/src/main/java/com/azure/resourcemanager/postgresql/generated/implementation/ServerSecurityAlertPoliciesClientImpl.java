@@ -134,7 +134,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @return a server's security alert policy along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ServerSecurityAlertPolicyInner>> getWithResponseAsync(
+    public Mono<Response<ServerSecurityAlertPolicyInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -244,7 +244,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @return a server's security alert policy on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerSecurityAlertPolicyInner> getAsync(
+    public Mono<ServerSecurityAlertPolicyInner> getAsync(
         String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName) {
         return getWithResponseAsync(resourceGroupName, serverName, securityAlertPolicyName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
@@ -298,7 +298,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @return a server security alert policy along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName,
         String serverName,
         SecurityAlertPolicyName securityAlertPolicyName,
@@ -429,7 +429,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @return the {@link PollerFlux} for polling of a server security alert policy.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ServerSecurityAlertPolicyInner>, ServerSecurityAlertPolicyInner>
+    public PollerFlux<PollResult<ServerSecurityAlertPolicyInner>, ServerSecurityAlertPolicyInner>
         beginCreateOrUpdateAsync(
             String resourceGroupName,
             String serverName,
@@ -543,7 +543,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @return a server security alert policy on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerSecurityAlertPolicyInner> createOrUpdateAsync(
+    public Mono<ServerSecurityAlertPolicyInner> createOrUpdateAsync(
         String resourceGroupName,
         String serverName,
         SecurityAlertPolicyName securityAlertPolicyName,
@@ -749,7 +749,7 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @return the server's threat detection policies as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ServerSecurityAlertPolicyInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<ServerSecurityAlertPolicyInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(
             () -> listByServerSinglePageAsync(resourceGroupName, serverName),
             nextLink -> listByServerNextSinglePageAsync(nextLink));

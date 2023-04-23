@@ -23,6 +23,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMNetworkProfileConfiguration;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProtectionPolicy;
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -175,6 +176,10 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
 
     public String userData() {
         return this.innerModel().userData();
+    }
+
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
     }
 
     public VirtualMachineScaleSetVMInner innerModel() {

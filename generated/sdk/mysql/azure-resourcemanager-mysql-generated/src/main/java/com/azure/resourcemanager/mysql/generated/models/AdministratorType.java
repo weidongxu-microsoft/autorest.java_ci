@@ -4,45 +4,41 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
+import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Collection;
 
-/** The type of administrator. */
-public enum AdministratorType {
-    /** Enum value ActiveDirectory. */
-    ACTIVE_DIRECTORY("ActiveDirectory");
+/** Type of the sever administrator. */
+public final class AdministratorType extends ExpandableStringEnum<AdministratorType> {
+    /** Static value ActiveDirectory for AdministratorType. */
+    public static final AdministratorType ACTIVE_DIRECTORY = fromString("ActiveDirectory");
 
-    /** The actual serialized value for a AdministratorType instance. */
-    private final String value;
-
-    AdministratorType(String value) {
-        this.value = value;
+    /**
+     * Creates a new instance of AdministratorType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AdministratorType() {
     }
 
     /**
-     * Parses a serialized value to a AdministratorType instance.
+     * Creates or finds a AdministratorType from its string representation.
      *
-     * @param value the serialized value to parse.
-     * @return the parsed AdministratorType object, or null if unable to parse.
+     * @param name a name to look for.
+     * @return the corresponding AdministratorType.
      */
     @JsonCreator
-    public static AdministratorType fromString(String value) {
-        if (value == null) {
-            return null;
-        }
-        AdministratorType[] items = AdministratorType.values();
-        for (AdministratorType item : items) {
-            if (item.toString().equalsIgnoreCase(value)) {
-                return item;
-            }
-        }
-        return null;
+    public static AdministratorType fromString(String name) {
+        return fromString(name, AdministratorType.class);
     }
 
-    /** {@inheritDoc} */
-    @JsonValue
-    @Override
-    public String toString() {
-        return this.value;
+    /**
+     * Gets known AdministratorType values.
+     *
+     * @return known AdministratorType values.
+     */
+    public static Collection<AdministratorType> values() {
+        return values(AdministratorType.class);
     }
 }

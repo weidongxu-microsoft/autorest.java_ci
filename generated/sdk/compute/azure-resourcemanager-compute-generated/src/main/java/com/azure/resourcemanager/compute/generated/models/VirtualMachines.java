@@ -213,9 +213,9 @@ public interface VirtualMachines {
 
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
-     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
-     * please refer to [How to create an image of a virtual machine or
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
      * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param resourceGroupName The name of the resource group.
@@ -231,9 +231,9 @@ public interface VirtualMachines {
 
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
-     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
-     * please refer to [How to create an image of a virtual machine or
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
      * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param resourceGroupName The name of the resource group.
@@ -266,6 +266,8 @@ public interface VirtualMachines {
      * @param filter The system query option to filter VMs returned in the response. Allowed value is
      *     'virtualMachineScaleSet/id' eq
      *     /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmssName}'.
+     * @param expand The expand expression to apply on operation. 'instanceView' enables fetching run time status of all
+     *     Virtual Machines, this can only be specified if a valid $filter option is specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -273,7 +275,8 @@ public interface VirtualMachines {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<VirtualMachine> listByResourceGroup(String resourceGroupName, String filter, Context context);
+    PagedIterable<VirtualMachine> listByResourceGroup(
+        String resourceGroupName, String filter, ExpandTypeForListVMs expand, Context context);
 
     /**
      * Lists all of the virtual machines in the specified subscription. Use the nextLink property in the response to get
@@ -294,6 +297,8 @@ public interface VirtualMachines {
      * @param filter The system query option to filter VMs returned in the response. Allowed value is
      *     'virtualMachineScaleSet/id' eq
      *     /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmssName}'.
+     * @param expand The expand expression to apply on operation. 'instanceView' enables fetching run time status of all
+     *     Virtual Machines, this can only be specified if a valid $filter option is specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -301,7 +306,7 @@ public interface VirtualMachines {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<VirtualMachine> list(String statusOnly, String filter, Context context);
+    PagedIterable<VirtualMachine> list(String statusOnly, String filter, ExpandTypesForListVMs expand, Context context);
 
     /**
      * Lists all available virtual machine sizes to which the specified virtual machine can be resized.
@@ -500,8 +505,8 @@ public interface VirtualMachines {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
-     *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
-     *     expiration duration of 120 minutes.
+     *     1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of
+     *     120 minutes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

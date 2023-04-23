@@ -118,6 +118,7 @@ public interface RestorePoint {
          */
         interface WithCreate
             extends DefinitionStages.WithExcludeDisks,
+                DefinitionStages.WithSourceMetadata,
                 DefinitionStages.WithConsistencyMode,
                 DefinitionStages.WithTimeCreated,
                 DefinitionStages.WithSourceRestorePoint {
@@ -147,6 +148,17 @@ public interface RestorePoint {
              * @return the next definition stage.
              */
             WithCreate withExcludeDisks(List<ApiEntityReference> excludeDisks);
+        }
+        /** The stage of the RestorePoint definition allowing to specify sourceMetadata. */
+        interface WithSourceMetadata {
+            /**
+             * Specifies the sourceMetadata property: Gets the details of the VM captured at the time of the restore
+             * point creation..
+             *
+             * @param sourceMetadata Gets the details of the VM captured at the time of the restore point creation.
+             * @return the next definition stage.
+             */
+            WithCreate withSourceMetadata(RestorePointSourceMetadata sourceMetadata);
         }
         /** The stage of the RestorePoint definition allowing to specify consistencyMode. */
         interface WithConsistencyMode {

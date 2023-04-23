@@ -225,8 +225,13 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
     }
 
     public DedicatedHostImpl withSku(Sku sku) {
-        this.innerModel().withSku(sku);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withSku(sku);
+            return this;
+        } else {
+            this.updateParameters.withSku(sku);
+            return this;
+        }
     }
 
     public DedicatedHostImpl withTags(Map<String, String> tags) {

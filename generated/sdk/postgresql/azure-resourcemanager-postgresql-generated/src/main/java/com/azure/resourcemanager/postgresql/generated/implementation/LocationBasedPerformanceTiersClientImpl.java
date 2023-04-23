@@ -169,7 +169,7 @@ public final class LocationBasedPerformanceTiersClientImpl implements LocationBa
      * @return a list of performance tiers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PerformanceTierPropertiesInner> listAsync(String locationName) {
+    public PagedFlux<PerformanceTierPropertiesInner> listAsync(String locationName) {
         return new PagedFlux<>(() -> listSinglePageAsync(locationName));
     }
 

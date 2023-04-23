@@ -361,7 +361,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The createOrUpdate operation.
+     * Creates or Updates an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -423,7 +423,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The createOrUpdate operation.
+     * Creates or Updates an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -487,7 +487,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The createOrUpdate operation.
+     * Creates or Updates an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -506,7 +506,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The createOrUpdate operation.
+     * Creates or Updates an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -530,7 +530,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The createOrUpdate operation.
+     * Creates or Updates an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -549,7 +549,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The delete operation.
+     * Deletes an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -603,7 +603,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The delete operation.
+     * Deletes an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -655,7 +655,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The delete operation.
+     * Deletes an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -672,7 +672,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The delete operation.
+     * Deletes an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -690,7 +690,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The delete operation.
+     * Deletes an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -705,7 +705,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The get operation.
+     * Gets the details of an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -713,8 +713,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return the details of an EventHub schema group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SchemaGroupInner>> getWithResponseAsync(
@@ -760,7 +760,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The get operation.
+     * Gets the details of an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -769,8 +769,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * @return the details of an EventHub schema group along with {@link Response} on successful completion of {@link
+     *     Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SchemaGroupInner>> getWithResponseAsync(
@@ -813,7 +813,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The get operation.
+     * Gets the details of an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -821,7 +821,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation on successful completion of {@link Mono}.
+     * @return the details of an EventHub schema group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SchemaGroupInner> getAsync(String resourceGroupName, String namespaceName, String schemaGroupName) {
@@ -830,7 +830,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The get operation.
+     * Gets the details of an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -839,7 +839,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation along with {@link Response}.
+     * @return the details of an EventHub schema group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SchemaGroupInner> getWithResponse(
@@ -848,7 +848,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
-     * The get operation.
+     * Gets the details of an EventHub schema group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -856,7 +856,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation.
+     * @return the details of an EventHub schema group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public SchemaGroupInner get(String resourceGroupName, String namespaceName, String schemaGroupName) {

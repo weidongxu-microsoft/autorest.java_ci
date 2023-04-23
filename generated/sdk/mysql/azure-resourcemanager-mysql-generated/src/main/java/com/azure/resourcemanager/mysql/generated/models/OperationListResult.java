@@ -4,22 +4,78 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.resourcemanager.mysql.generated.fluent.models.OperationListResultInner;
+import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.mysql.generated.fluent.models.OperationInner;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** An immutable client-side representation of OperationListResult. */
-public interface OperationListResult {
+/** A list of resource provider operations. */
+@Fluent
+public final class OperationListResult {
+    /*
+     * Collection of available operation details
+     */
+    @JsonProperty(value = "value")
+    private List<OperationInner> value;
+
+    /*
+     * URL client should use to fetch the next page (per server side paging).
+     */
+    @JsonProperty(value = "nextLink")
+    private String nextLink;
+
+    /** Creates an instance of OperationListResult class. */
+    public OperationListResult() {
+    }
+
     /**
-     * Gets the value property: The list of resource provider operations.
+     * Get the value property: Collection of available operation details.
      *
      * @return the value value.
      */
-    List<Operation> value();
+    public List<OperationInner> value() {
+        return this.value;
+    }
 
     /**
-     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.OperationListResultInner object.
+     * Set the value property: Collection of available operation details.
      *
-     * @return the inner object.
+     * @param value the value value to set.
+     * @return the OperationListResult object itself.
      */
-    OperationListResultInner innerModel();
+    public OperationListResult withValue(List<OperationInner> value) {
+        this.value = value;
+        return this;
+    }
+
+    /**
+     * Get the nextLink property: URL client should use to fetch the next page (per server side paging).
+     *
+     * @return the nextLink value.
+     */
+    public String nextLink() {
+        return this.nextLink;
+    }
+
+    /**
+     * Set the nextLink property: URL client should use to fetch the next page (per server side paging).
+     *
+     * @param nextLink the nextLink value to set.
+     * @return the OperationListResult object itself.
+     */
+    public OperationListResult withNextLink(String nextLink) {
+        this.nextLink = nextLink;
+        return this;
+    }
+
+    /**
+     * Validates the instance.
+     *
+     * @throws IllegalArgumentException thrown if the instance is not valid.
+     */
+    public void validate() {
+        if (value() != null) {
+            value().forEach(e -> e.validate());
+        }
+    }
 }

@@ -96,7 +96,7 @@ public interface DedicatedHostsClient {
         Context context);
 
     /**
-     * Update an dedicated host .
+     * Update a dedicated host .
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -113,7 +113,7 @@ public interface DedicatedHostsClient {
         String resourceGroupName, String hostGroupName, String hostname, DedicatedHostUpdate parameters);
 
     /**
-     * Update an dedicated host .
+     * Update a dedicated host .
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -135,7 +135,7 @@ public interface DedicatedHostsClient {
         Context context);
 
     /**
-     * Update an dedicated host .
+     * Update a dedicated host .
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -152,7 +152,7 @@ public interface DedicatedHostsClient {
         String resourceGroupName, String hostGroupName, String hostname, DedicatedHostUpdate parameters);
 
     /**
-     * Update an dedicated host .
+     * Update a dedicated host .
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -371,4 +371,38 @@ public interface DedicatedHostsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void restart(String resourceGroupName, String hostGroupName, String hostname, Context context);
+
+    /**
+     * Lists all available dedicated host sizes to which the specified dedicated host can be resized. NOTE: The
+     * dedicated host sizes provided can be used to only scale up the existing dedicated host.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List Dedicated Host sizes operation response as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<String> listAvailableSizes(String resourceGroupName, String hostGroupName, String hostname);
+
+    /**
+     * Lists all available dedicated host sizes to which the specified dedicated host can be resized. NOTE: The
+     * dedicated host sizes provided can be used to only scale up the existing dedicated host.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List Dedicated Host sizes operation response as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<String> listAvailableSizes(
+        String resourceGroupName, String hostGroupName, String hostname, Context context);
 }

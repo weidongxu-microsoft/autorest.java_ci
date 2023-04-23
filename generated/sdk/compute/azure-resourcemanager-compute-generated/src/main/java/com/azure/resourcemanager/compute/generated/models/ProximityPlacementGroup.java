@@ -56,9 +56,9 @@ public interface ProximityPlacementGroup {
     List<String> zones();
 
     /**
-     * Gets the proximityPlacementGroupType property: Specifies the type of the proximity placement group.
-     * &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Standard** : Co-locate resources within an Azure
-     * region or Availability Zone. &lt;br&gt;&lt;br&gt; **Ultra** : For future use.
+     * Gets the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible
+     * values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
+     * future use.
      *
      * @return the proximityPlacementGroupType value.
      */
@@ -220,12 +220,12 @@ public interface ProximityPlacementGroup {
         interface WithProximityPlacementGroupType {
             /**
              * Specifies the proximityPlacementGroupType property: Specifies the type of the proximity placement group.
-             * &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Standard** : Co-locate resources within
-             * an Azure region or Availability Zone. &lt;br&gt;&lt;br&gt; **Ultra** : For future use..
+             * Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone.
+             * **Ultra** : For future use..
              *
-             * @param proximityPlacementGroupType Specifies the type of the proximity placement group.
-             *     &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Standard** : Co-locate resources
-             *     within an Azure region or Availability Zone. &lt;br&gt;&lt;br&gt; **Ultra** : For future use.
+             * @param proximityPlacementGroupType Specifies the type of the proximity placement group. Possible values
+             *     are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
+             *     future use.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroupType(ProximityPlacementGroupType proximityPlacementGroupType);

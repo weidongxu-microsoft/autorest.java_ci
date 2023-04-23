@@ -6,29 +6,31 @@ package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.azure.resourcemanager.mysql.generated.models.InfrastructureEncryption;
-import com.azure.resourcemanager.mysql.generated.models.MinimalTlsVersionEnum;
-import com.azure.resourcemanager.mysql.generated.models.PublicNetworkAccessEnum;
-import com.azure.resourcemanager.mysql.generated.models.ResourceIdentity;
-import com.azure.resourcemanager.mysql.generated.models.ServerPrivateEndpointConnection;
+import com.azure.core.management.SystemData;
+import com.azure.resourcemanager.mysql.generated.models.Backup;
+import com.azure.resourcemanager.mysql.generated.models.CreateMode;
+import com.azure.resourcemanager.mysql.generated.models.DataEncryption;
+import com.azure.resourcemanager.mysql.generated.models.HighAvailability;
+import com.azure.resourcemanager.mysql.generated.models.Identity;
+import com.azure.resourcemanager.mysql.generated.models.MaintenanceWindow;
+import com.azure.resourcemanager.mysql.generated.models.Network;
+import com.azure.resourcemanager.mysql.generated.models.ReplicationRole;
 import com.azure.resourcemanager.mysql.generated.models.ServerState;
 import com.azure.resourcemanager.mysql.generated.models.ServerVersion;
 import com.azure.resourcemanager.mysql.generated.models.Sku;
-import com.azure.resourcemanager.mysql.generated.models.SslEnforcementEnum;
-import com.azure.resourcemanager.mysql.generated.models.StorageProfile;
+import com.azure.resourcemanager.mysql.generated.models.Storage;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
-import java.util.List;
 import java.util.Map;
 
 /** Represents a server. */
 @Fluent
 public final class ServerInner extends Resource {
     /*
-     * The Azure Active Directory identity of the server.
+     * The cmk identity for the server.
      */
     @JsonProperty(value = "identity")
-    private ResourceIdentity identity;
+    private Identity identity;
 
     /*
      * The SKU (pricing tier) of the server.
@@ -42,26 +44,32 @@ public final class ServerInner extends Resource {
     @JsonProperty(value = "properties")
     private ServerProperties innerProperties;
 
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /** Creates an instance of ServerInner class. */
     public ServerInner() {
     }
 
     /**
-     * Get the identity property: The Azure Active Directory identity of the server.
+     * Get the identity property: The cmk identity for the server.
      *
      * @return the identity value.
      */
-    public ResourceIdentity identity() {
+    public Identity identity() {
         return this.identity;
     }
 
     /**
-     * Set the identity property: The Azure Active Directory identity of the server.
+     * Set the identity property: The cmk identity for the server.
      *
      * @param identity the identity value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withIdentity(ResourceIdentity identity) {
+    public ServerInner withIdentity(Identity identity) {
         this.identity = identity;
         return this;
     }
@@ -93,6 +101,15 @@ public final class ServerInner extends Resource {
      */
     private ServerProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /** {@inheritDoc} */
@@ -135,6 +152,31 @@ public final class ServerInner extends Resource {
     }
 
     /**
+     * Get the administratorLoginPassword property: The password of the administrator login (required for server
+     * creation).
+     *
+     * @return the administratorLoginPassword value.
+     */
+    public String administratorLoginPassword() {
+        return this.innerProperties() == null ? null : this.innerProperties().administratorLoginPassword();
+    }
+
+    /**
+     * Set the administratorLoginPassword property: The password of the administrator login (required for server
+     * creation).
+     *
+     * @param administratorLoginPassword the administratorLoginPassword value to set.
+     * @return the ServerInner object itself.
+     */
+    public ServerInner withAdministratorLoginPassword(String administratorLoginPassword) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ServerProperties();
+        }
+        this.innerProperties().withAdministratorLoginPassword(administratorLoginPassword);
+        return this;
+    }
+
+    /**
      * Get the version property: Server version.
      *
      * @return the version value.
@@ -158,105 +200,161 @@ public final class ServerInner extends Resource {
     }
 
     /**
-     * Get the sslEnforcement property: Enable ssl enforcement or not when connect to server.
+     * Get the availabilityZone property: availability Zone information of the server.
      *
-     * @return the sslEnforcement value.
+     * @return the availabilityZone value.
      */
-    public SslEnforcementEnum sslEnforcement() {
-        return this.innerProperties() == null ? null : this.innerProperties().sslEnforcement();
+    public String availabilityZone() {
+        return this.innerProperties() == null ? null : this.innerProperties().availabilityZone();
     }
 
     /**
-     * Set the sslEnforcement property: Enable ssl enforcement or not when connect to server.
+     * Set the availabilityZone property: availability Zone information of the server.
      *
-     * @param sslEnforcement the sslEnforcement value to set.
+     * @param availabilityZone the availabilityZone value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withSslEnforcement(SslEnforcementEnum sslEnforcement) {
+    public ServerInner withAvailabilityZone(String availabilityZone) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withSslEnforcement(sslEnforcement);
+        this.innerProperties().withAvailabilityZone(availabilityZone);
         return this;
     }
 
     /**
-     * Get the minimalTlsVersion property: Enforce a minimal Tls version for the server.
+     * Get the createMode property: The mode to create a new MySQL server.
      *
-     * @return the minimalTlsVersion value.
+     * @return the createMode value.
      */
-    public MinimalTlsVersionEnum minimalTlsVersion() {
-        return this.innerProperties() == null ? null : this.innerProperties().minimalTlsVersion();
+    public CreateMode createMode() {
+        return this.innerProperties() == null ? null : this.innerProperties().createMode();
     }
 
     /**
-     * Set the minimalTlsVersion property: Enforce a minimal Tls version for the server.
+     * Set the createMode property: The mode to create a new MySQL server.
      *
-     * @param minimalTlsVersion the minimalTlsVersion value to set.
+     * @param createMode the createMode value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
+    public ServerInner withCreateMode(CreateMode createMode) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withMinimalTlsVersion(minimalTlsVersion);
+        this.innerProperties().withCreateMode(createMode);
         return this;
     }
 
     /**
-     * Get the byokEnforcement property: Status showing whether the server data encryption is enabled with
-     * customer-managed keys.
+     * Get the sourceServerResourceId property: The source MySQL server id.
      *
-     * @return the byokEnforcement value.
+     * @return the sourceServerResourceId value.
      */
-    public String byokEnforcement() {
-        return this.innerProperties() == null ? null : this.innerProperties().byokEnforcement();
+    public String sourceServerResourceId() {
+        return this.innerProperties() == null ? null : this.innerProperties().sourceServerResourceId();
     }
 
     /**
-     * Get the infrastructureEncryption property: Status showing whether the server enabled infrastructure encryption.
+     * Set the sourceServerResourceId property: The source MySQL server id.
      *
-     * @return the infrastructureEncryption value.
-     */
-    public InfrastructureEncryption infrastructureEncryption() {
-        return this.innerProperties() == null ? null : this.innerProperties().infrastructureEncryption();
-    }
-
-    /**
-     * Set the infrastructureEncryption property: Status showing whether the server enabled infrastructure encryption.
-     *
-     * @param infrastructureEncryption the infrastructureEncryption value to set.
+     * @param sourceServerResourceId the sourceServerResourceId value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withInfrastructureEncryption(InfrastructureEncryption infrastructureEncryption) {
+    public ServerInner withSourceServerResourceId(String sourceServerResourceId) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withInfrastructureEncryption(infrastructureEncryption);
+        this.innerProperties().withSourceServerResourceId(sourceServerResourceId);
         return this;
     }
 
     /**
-     * Get the userVisibleState property: A state of a server that is visible to user.
+     * Get the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
+     * from.
      *
-     * @return the userVisibleState value.
+     * @return the restorePointInTime value.
      */
-    public ServerState userVisibleState() {
-        return this.innerProperties() == null ? null : this.innerProperties().userVisibleState();
+    public OffsetDateTime restorePointInTime() {
+        return this.innerProperties() == null ? null : this.innerProperties().restorePointInTime();
     }
 
     /**
-     * Set the userVisibleState property: A state of a server that is visible to user.
+     * Set the restorePointInTime property: Restore point creation time (ISO8601 format), specifying the time to restore
+     * from.
      *
-     * @param userVisibleState the userVisibleState value to set.
+     * @param restorePointInTime the restorePointInTime value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withUserVisibleState(ServerState userVisibleState) {
+    public ServerInner withRestorePointInTime(OffsetDateTime restorePointInTime) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withUserVisibleState(userVisibleState);
+        this.innerProperties().withRestorePointInTime(restorePointInTime);
         return this;
+    }
+
+    /**
+     * Get the replicationRole property: The replication role.
+     *
+     * @return the replicationRole value.
+     */
+    public ReplicationRole replicationRole() {
+        return this.innerProperties() == null ? null : this.innerProperties().replicationRole();
+    }
+
+    /**
+     * Set the replicationRole property: The replication role.
+     *
+     * @param replicationRole the replicationRole value to set.
+     * @return the ServerInner object itself.
+     */
+    public ServerInner withReplicationRole(ReplicationRole replicationRole) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ServerProperties();
+        }
+        this.innerProperties().withReplicationRole(replicationRole);
+        return this;
+    }
+
+    /**
+     * Get the replicaCapacity property: The maximum number of replicas that a primary server can have.
+     *
+     * @return the replicaCapacity value.
+     */
+    public Integer replicaCapacity() {
+        return this.innerProperties() == null ? null : this.innerProperties().replicaCapacity();
+    }
+
+    /**
+     * Get the dataEncryption property: The Data Encryption for CMK.
+     *
+     * @return the dataEncryption value.
+     */
+    public DataEncryption dataEncryption() {
+        return this.innerProperties() == null ? null : this.innerProperties().dataEncryption();
+    }
+
+    /**
+     * Set the dataEncryption property: The Data Encryption for CMK.
+     *
+     * @param dataEncryption the dataEncryption value to set.
+     * @return the ServerInner object itself.
+     */
+    public ServerInner withDataEncryption(DataEncryption dataEncryption) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ServerProperties();
+        }
+        this.innerProperties().withDataEncryption(dataEncryption);
+        return this;
+    }
+
+    /**
+     * Get the state property: The state of a server.
+     *
+     * @return the state value.
+     */
+    public ServerState state() {
+        return this.innerProperties() == null ? null : this.innerProperties().state();
     }
 
     /**
@@ -269,166 +367,118 @@ public final class ServerInner extends Resource {
     }
 
     /**
-     * Set the fullyQualifiedDomainName property: The fully qualified domain name of a server.
+     * Get the storage property: Storage related properties of a server.
      *
-     * @param fullyQualifiedDomainName the fullyQualifiedDomainName value to set.
+     * @return the storage value.
+     */
+    public Storage storage() {
+        return this.innerProperties() == null ? null : this.innerProperties().storage();
+    }
+
+    /**
+     * Set the storage property: Storage related properties of a server.
+     *
+     * @param storage the storage value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withFullyQualifiedDomainName(String fullyQualifiedDomainName) {
+    public ServerInner withStorage(Storage storage) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withFullyQualifiedDomainName(fullyQualifiedDomainName);
+        this.innerProperties().withStorage(storage);
         return this;
     }
 
     /**
-     * Get the earliestRestoreDate property: Earliest restore point creation time (ISO8601 format).
+     * Get the backup property: Backup related properties of a server.
      *
-     * @return the earliestRestoreDate value.
+     * @return the backup value.
      */
-    public OffsetDateTime earliestRestoreDate() {
-        return this.innerProperties() == null ? null : this.innerProperties().earliestRestoreDate();
+    public Backup backup() {
+        return this.innerProperties() == null ? null : this.innerProperties().backup();
     }
 
     /**
-     * Set the earliestRestoreDate property: Earliest restore point creation time (ISO8601 format).
+     * Set the backup property: Backup related properties of a server.
      *
-     * @param earliestRestoreDate the earliestRestoreDate value to set.
+     * @param backup the backup value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withEarliestRestoreDate(OffsetDateTime earliestRestoreDate) {
+    public ServerInner withBackup(Backup backup) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withEarliestRestoreDate(earliestRestoreDate);
+        this.innerProperties().withBackup(backup);
         return this;
     }
 
     /**
-     * Get the storageProfile property: Storage profile of a server.
+     * Get the highAvailability property: High availability related properties of a server.
      *
-     * @return the storageProfile value.
+     * @return the highAvailability value.
      */
-    public StorageProfile storageProfile() {
-        return this.innerProperties() == null ? null : this.innerProperties().storageProfile();
+    public HighAvailability highAvailability() {
+        return this.innerProperties() == null ? null : this.innerProperties().highAvailability();
     }
 
     /**
-     * Set the storageProfile property: Storage profile of a server.
+     * Set the highAvailability property: High availability related properties of a server.
      *
-     * @param storageProfile the storageProfile value to set.
+     * @param highAvailability the highAvailability value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withStorageProfile(StorageProfile storageProfile) {
+    public ServerInner withHighAvailability(HighAvailability highAvailability) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withStorageProfile(storageProfile);
+        this.innerProperties().withHighAvailability(highAvailability);
         return this;
     }
 
     /**
-     * Get the replicationRole property: The replication role of the server.
+     * Get the network property: Network related properties of a server.
      *
-     * @return the replicationRole value.
+     * @return the network value.
      */
-    public String replicationRole() {
-        return this.innerProperties() == null ? null : this.innerProperties().replicationRole();
+    public Network network() {
+        return this.innerProperties() == null ? null : this.innerProperties().network();
     }
 
     /**
-     * Set the replicationRole property: The replication role of the server.
+     * Set the network property: Network related properties of a server.
      *
-     * @param replicationRole the replicationRole value to set.
+     * @param network the network value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withReplicationRole(String replicationRole) {
+    public ServerInner withNetwork(Network network) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withReplicationRole(replicationRole);
+        this.innerProperties().withNetwork(network);
         return this;
     }
 
     /**
-     * Get the masterServerId property: The master server id of a replica server.
+     * Get the maintenanceWindow property: Maintenance window of a server.
      *
-     * @return the masterServerId value.
+     * @return the maintenanceWindow value.
      */
-    public String masterServerId() {
-        return this.innerProperties() == null ? null : this.innerProperties().masterServerId();
+    public MaintenanceWindow maintenanceWindow() {
+        return this.innerProperties() == null ? null : this.innerProperties().maintenanceWindow();
     }
 
     /**
-     * Set the masterServerId property: The master server id of a replica server.
+     * Set the maintenanceWindow property: Maintenance window of a server.
      *
-     * @param masterServerId the masterServerId value to set.
+     * @param maintenanceWindow the maintenanceWindow value to set.
      * @return the ServerInner object itself.
      */
-    public ServerInner withMasterServerId(String masterServerId) {
+    public ServerInner withMaintenanceWindow(MaintenanceWindow maintenanceWindow) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ServerProperties();
         }
-        this.innerProperties().withMasterServerId(masterServerId);
+        this.innerProperties().withMaintenanceWindow(maintenanceWindow);
         return this;
-    }
-
-    /**
-     * Get the replicaCapacity property: The maximum number of replicas that a master server can have.
-     *
-     * @return the replicaCapacity value.
-     */
-    public Integer replicaCapacity() {
-        return this.innerProperties() == null ? null : this.innerProperties().replicaCapacity();
-    }
-
-    /**
-     * Set the replicaCapacity property: The maximum number of replicas that a master server can have.
-     *
-     * @param replicaCapacity the replicaCapacity value to set.
-     * @return the ServerInner object itself.
-     */
-    public ServerInner withReplicaCapacity(Integer replicaCapacity) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new ServerProperties();
-        }
-        this.innerProperties().withReplicaCapacity(replicaCapacity);
-        return this;
-    }
-
-    /**
-     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
-     * @return the publicNetworkAccess value.
-     */
-    public PublicNetworkAccessEnum publicNetworkAccess() {
-        return this.innerProperties() == null ? null : this.innerProperties().publicNetworkAccess();
-    }
-
-    /**
-     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
-     * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
-     * @param publicNetworkAccess the publicNetworkAccess value to set.
-     * @return the ServerInner object itself.
-     */
-    public ServerInner withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new ServerProperties();
-        }
-        this.innerProperties().withPublicNetworkAccess(publicNetworkAccess);
-        return this;
-    }
-
-    /**
-     * Get the privateEndpointConnections property: List of private endpoint connections on a server.
-     *
-     * @return the privateEndpointConnections value.
-     */
-    public List<ServerPrivateEndpointConnection> privateEndpointConnections() {
-        return this.innerProperties() == null ? null : this.innerProperties().privateEndpointConnections();
     }
 
     /**

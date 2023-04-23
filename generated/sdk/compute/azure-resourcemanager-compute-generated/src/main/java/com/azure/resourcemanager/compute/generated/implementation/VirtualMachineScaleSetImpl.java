@@ -280,8 +280,10 @@ public final class VirtualMachineScaleSetImpl
         serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName);
     }
 
-    public void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
-        serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    public void deallocate(Boolean hibernate, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .deallocate(resourceGroupName, vmScaleSetName, hibernate, vmInstanceIDs, context);
     }
 
     public void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
@@ -319,6 +321,14 @@ public final class VirtualMachineScaleSetImpl
 
     public void start(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         serviceManager.virtualMachineScaleSets().start(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void reapply() {
+        serviceManager.virtualMachineScaleSets().reapply(resourceGroupName, vmScaleSetName);
+    }
+
+    public void reapply(Context context) {
+        serviceManager.virtualMachineScaleSets().reapply(resourceGroupName, vmScaleSetName, context);
     }
 
     public void redeploy() {
@@ -559,13 +569,23 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public VirtualMachineScaleSetImpl withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy) {
-        this.innerModel().withSpotRestorePolicy(spotRestorePolicy);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withSpotRestorePolicy(spotRestorePolicy);
+            return this;
+        } else {
+            this.updateParameters.withSpotRestorePolicy(spotRestorePolicy);
+            return this;
+        }
     }
 
     public VirtualMachineScaleSetImpl withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy) {
-        this.innerModel().withPriorityMixPolicy(priorityMixPolicy);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withPriorityMixPolicy(priorityMixPolicy);
+            return this;
+        } else {
+            this.updateParameters.withPriorityMixPolicy(priorityMixPolicy);
+            return this;
+        }
     }
 
     public VirtualMachineScaleSetImpl withConstrainedMaximumCapacity(Boolean constrainedMaximumCapacity) {

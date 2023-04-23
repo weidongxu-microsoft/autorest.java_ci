@@ -85,7 +85,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @return a list of server configurations along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> listUpdateConfigurationsWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> listUpdateConfigurationsWithResponseAsync(
         String resourceGroupName, String serverName, ConfigurationListResultInner value) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -195,7 +195,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @return the {@link PollerFlux} for polling of a list of server configurations.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
+    public PollerFlux<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
         beginListUpdateConfigurationsAsync(
             String resourceGroupName, String serverName, ConfigurationListResultInner value) {
         Mono<Response<Flux<ByteBuffer>>> mono =
@@ -287,7 +287,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      * @return a list of server configurations on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ConfigurationListResultInner> listUpdateConfigurationsAsync(
+    public Mono<ConfigurationListResultInner> listUpdateConfigurationsAsync(
         String resourceGroupName, String serverName, ConfigurationListResultInner value) {
         return beginListUpdateConfigurationsAsync(resourceGroupName, serverName, value)
             .last()

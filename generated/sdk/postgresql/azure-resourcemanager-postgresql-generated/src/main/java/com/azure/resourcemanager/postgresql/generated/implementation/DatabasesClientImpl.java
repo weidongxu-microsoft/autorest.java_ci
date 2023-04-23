@@ -138,7 +138,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return represents a Database along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName, String serverName, String databaseName, DatabaseInner parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -258,7 +258,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return the {@link PollerFlux} for polling of represents a Database.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<DatabaseInner>, DatabaseInner> beginCreateOrUpdateAsync(
+    public PollerFlux<PollResult<DatabaseInner>, DatabaseInner> beginCreateOrUpdateAsync(
         String resourceGroupName, String serverName, String databaseName, DatabaseInner parameters) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             createOrUpdateWithResponseAsync(resourceGroupName, serverName, databaseName, parameters);
@@ -349,7 +349,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return represents a Database on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<DatabaseInner> createOrUpdateAsync(
+    public Mono<DatabaseInner> createOrUpdateAsync(
         String resourceGroupName, String serverName, String databaseName, DatabaseInner parameters) {
         return beginCreateOrUpdateAsync(resourceGroupName, serverName, databaseName, parameters)
             .last()
@@ -426,7 +426,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
         String resourceGroupName, String serverName, String databaseName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -532,7 +532,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
+    public PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
         String resourceGroupName, String serverName, String databaseName) {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, serverName, databaseName);
         return this
@@ -611,7 +611,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String resourceGroupName, String serverName, String databaseName) {
+    public Mono<Void> deleteAsync(String resourceGroupName, String serverName, String databaseName) {
         return beginDeleteAsync(resourceGroupName, serverName, databaseName)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
@@ -679,7 +679,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return information about a database along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DatabaseInner>> getWithResponseAsync(
+    public Mono<Response<DatabaseInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, String databaseName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -785,7 +785,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return information about a database on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<DatabaseInner> getAsync(String resourceGroupName, String serverName, String databaseName) {
+    public Mono<DatabaseInner> getAsync(String resourceGroupName, String serverName, String databaseName) {
         return getWithResponseAsync(resourceGroupName, serverName, databaseName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -939,7 +939,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @return a List of databases as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<DatabaseInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<DatabaseInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(() -> listByServerSinglePageAsync(resourceGroupName, serverName));
     }
 

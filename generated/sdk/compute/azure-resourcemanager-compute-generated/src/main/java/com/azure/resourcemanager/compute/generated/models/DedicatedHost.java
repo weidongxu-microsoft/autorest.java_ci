@@ -72,8 +72,8 @@ public interface DedicatedHost {
     Boolean autoReplaceOnFailure();
 
     /**
-     * Gets the hostId property: A unique id generated and assigned to the dedicated host by the platform.
-     * &lt;br&gt;&lt;br&gt; Does not change throughout the lifetime of the host.
+     * Gets the hostId property: A unique id generated and assigned to the dedicated host by the platform. Does not
+     * change throughout the lifetime of the host.
      *
      * @return the hostId value.
      */
@@ -88,9 +88,8 @@ public interface DedicatedHost {
 
     /**
      * Gets the licenseType property: Specifies the software license type that will be applied to the VMs deployed on
-     * the dedicated host. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **None** &lt;br&gt;&lt;br&gt;
-     * **Windows_Server_Hybrid** &lt;br&gt;&lt;br&gt; **Windows_Server_Perpetual** &lt;br&gt;&lt;br&gt; Default:
-     * **None**.
+     * the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The
+     * default value is: **None.**.
      *
      * @return the licenseType value.
      */
@@ -118,8 +117,8 @@ public interface DedicatedHost {
     DedicatedHostInstanceView instanceView();
 
     /**
-     * Gets the timeCreated property: Specifies the time at which the Dedicated Host resource was
-     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
+     * Gets the timeCreated property: Specifies the time at which the Dedicated Host resource was created. Minimum
+     * api-version: 2021-11-01.
      *
      * @return the timeCreated value.
      */
@@ -268,14 +267,12 @@ public interface DedicatedHost {
         interface WithLicenseType {
             /**
              * Specifies the licenseType property: Specifies the software license type that will be applied to the VMs
-             * deployed on the dedicated host. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **None**
-             * &lt;br&gt;&lt;br&gt; **Windows_Server_Hybrid** &lt;br&gt;&lt;br&gt; **Windows_Server_Perpetual**
-             * &lt;br&gt;&lt;br&gt; Default: **None**.
+             * deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,**
+             * **Windows_Server_Perpetual.** The default value is: **None.**.
              *
              * @param licenseType Specifies the software license type that will be applied to the VMs deployed on the
-             *     dedicated host. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **None**
-             *     &lt;br&gt;&lt;br&gt; **Windows_Server_Hybrid** &lt;br&gt;&lt;br&gt; **Windows_Server_Perpetual**
-             *     &lt;br&gt;&lt;br&gt; Default: **None**.
+             *     dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,**
+             *     **Windows_Server_Perpetual.** The default value is: **None.**.
              * @return the next definition stage.
              */
             WithCreate withLicenseType(DedicatedHostLicenseTypes licenseType);
@@ -291,6 +288,7 @@ public interface DedicatedHost {
     /** The template for DedicatedHost update. */
     interface Update
         extends UpdateStages.WithTags,
+            UpdateStages.WithSku,
             UpdateStages.WithPlatformFaultDomain,
             UpdateStages.WithAutoReplaceOnFailure,
             UpdateStages.WithLicenseType {
@@ -321,6 +319,20 @@ public interface DedicatedHost {
              */
             Update withTags(Map<String, String> tags);
         }
+        /** The stage of the DedicatedHost update allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: [List all available dedicated host sizes for resizing]
+             * (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be only
+             * used to scale up DedicatedHost. Only name is required to be set. .
+             *
+             * @param sku [List all available dedicated host sizes for resizing]
+             *     (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be
+             *     only used to scale up DedicatedHost. Only name is required to be set.
+             * @return the next definition stage.
+             */
+            Update withSku(Sku sku);
+        }
         /** The stage of the DedicatedHost update allowing to specify platformFaultDomain. */
         interface WithPlatformFaultDomain {
             /**
@@ -348,14 +360,12 @@ public interface DedicatedHost {
         interface WithLicenseType {
             /**
              * Specifies the licenseType property: Specifies the software license type that will be applied to the VMs
-             * deployed on the dedicated host. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **None**
-             * &lt;br&gt;&lt;br&gt; **Windows_Server_Hybrid** &lt;br&gt;&lt;br&gt; **Windows_Server_Perpetual**
-             * &lt;br&gt;&lt;br&gt; Default: **None**.
+             * deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,**
+             * **Windows_Server_Perpetual.** The default value is: **None.**.
              *
              * @param licenseType Specifies the software license type that will be applied to the VMs deployed on the
-             *     dedicated host. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **None**
-             *     &lt;br&gt;&lt;br&gt; **Windows_Server_Hybrid** &lt;br&gt;&lt;br&gt; **Windows_Server_Perpetual**
-             *     &lt;br&gt;&lt;br&gt; Default: **None**.
+             *     dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,**
+             *     **Windows_Server_Perpetual.** The default value is: **None.**.
              * @return the next definition stage.
              */
             Update withLicenseType(DedicatedHostLicenseTypes licenseType);

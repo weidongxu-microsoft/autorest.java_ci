@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationInner;
 
@@ -31,6 +32,13 @@ public interface Configuration {
     String type();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the value property: Value of the configuration.
      *
      * @return the value value.
@@ -38,11 +46,25 @@ public interface Configuration {
     String value();
 
     /**
+     * Gets the currentValue property: Current value of the configuration.
+     *
+     * @return the currentValue value.
+     */
+    String currentValue();
+
+    /**
      * Gets the description property: Description of the configuration.
      *
      * @return the description value.
      */
     String description();
+
+    /**
+     * Gets the documentationLink property: The link used to get the document from community or Azure site.
+     *
+     * @return the documentationLink value.
+     */
+    String documentationLink();
 
     /**
      * Gets the defaultValue property: Default value of the configuration.
@@ -70,7 +92,28 @@ public interface Configuration {
      *
      * @return the source value.
      */
-    String source();
+    ConfigurationSource source();
+
+    /**
+     * Gets the isReadOnly property: If is the configuration read only.
+     *
+     * @return the isReadOnly value.
+     */
+    IsReadOnly isReadOnly();
+
+    /**
+     * Gets the isConfigPendingRestart property: If is the configuration pending restart or not.
+     *
+     * @return the isConfigPendingRestart value.
+     */
+    IsConfigPendingRestart isConfigPendingRestart();
+
+    /**
+     * Gets the isDynamicConfig property: If is the configuration dynamic.
+     *
+     * @return the isDynamicConfig value.
+     */
+    IsDynamicConfig isDynamicConfig();
 
     /**
      * Gets the name of the resource group.
@@ -104,13 +147,14 @@ public interface Configuration {
              * @param serverName The name of the server.
              * @return the next definition stage.
              */
-            WithCreate withExistingServer(String resourceGroupName, String serverName);
+            WithCreate withExistingFlexibleServer(String resourceGroupName, String serverName);
         }
         /**
          * The stage of the Configuration definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithValue, DefinitionStages.WithSource {
+        interface WithCreate
+            extends DefinitionStages.WithValue, DefinitionStages.WithCurrentValue, DefinitionStages.WithSource {
             /**
              * Executes the create request.
              *
@@ -136,6 +180,16 @@ public interface Configuration {
              */
             WithCreate withValue(String value);
         }
+        /** The stage of the Configuration definition allowing to specify currentValue. */
+        interface WithCurrentValue {
+            /**
+             * Specifies the currentValue property: Current value of the configuration..
+             *
+             * @param currentValue Current value of the configuration.
+             * @return the next definition stage.
+             */
+            WithCreate withCurrentValue(String currentValue);
+        }
         /** The stage of the Configuration definition allowing to specify source. */
         interface WithSource {
             /**
@@ -144,7 +198,7 @@ public interface Configuration {
              * @param source Source of the configuration.
              * @return the next definition stage.
              */
-            WithCreate withSource(String source);
+            WithCreate withSource(ConfigurationSource source);
         }
     }
     /**
@@ -155,7 +209,7 @@ public interface Configuration {
     Configuration.Update update();
 
     /** The template for Configuration update. */
-    interface Update extends UpdateStages.WithValue, UpdateStages.WithSource {
+    interface Update extends UpdateStages.WithValue, UpdateStages.WithCurrentValue, UpdateStages.WithSource {
         /**
          * Executes the update request.
          *
@@ -183,6 +237,16 @@ public interface Configuration {
              */
             Update withValue(String value);
         }
+        /** The stage of the Configuration update allowing to specify currentValue. */
+        interface WithCurrentValue {
+            /**
+             * Specifies the currentValue property: Current value of the configuration..
+             *
+             * @param currentValue Current value of the configuration.
+             * @return the next definition stage.
+             */
+            Update withCurrentValue(String currentValue);
+        }
         /** The stage of the Configuration update allowing to specify source. */
         interface WithSource {
             /**
@@ -191,7 +255,7 @@ public interface Configuration {
              * @param source Source of the configuration.
              * @return the next definition stage.
              */
-            Update withSource(String source);
+            Update withSource(ConfigurationSource source);
         }
     }
     /**

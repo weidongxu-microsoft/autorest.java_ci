@@ -5,6 +5,10 @@
 package com.azure.resourcemanager.mysql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.mysql.generated.models.ConfigurationSource;
+import com.azure.resourcemanager.mysql.generated.models.IsConfigPendingRestart;
+import com.azure.resourcemanager.mysql.generated.models.IsDynamicConfig;
+import com.azure.resourcemanager.mysql.generated.models.IsReadOnly;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties of a configuration. */
@@ -17,10 +21,22 @@ public final class ConfigurationProperties {
     private String value;
 
     /*
+     * Current value of the configuration.
+     */
+    @JsonProperty(value = "currentValue")
+    private String currentValue;
+
+    /*
      * Description of the configuration.
      */
     @JsonProperty(value = "description", access = JsonProperty.Access.WRITE_ONLY)
     private String description;
+
+    /*
+     * The link used to get the document from community or Azure site.
+     */
+    @JsonProperty(value = "documentationLink", access = JsonProperty.Access.WRITE_ONLY)
+    private String documentationLink;
 
     /*
      * Default value of the configuration.
@@ -44,7 +60,25 @@ public final class ConfigurationProperties {
      * Source of the configuration.
      */
     @JsonProperty(value = "source")
-    private String source;
+    private ConfigurationSource source;
+
+    /*
+     * If is the configuration read only.
+     */
+    @JsonProperty(value = "isReadOnly", access = JsonProperty.Access.WRITE_ONLY)
+    private IsReadOnly isReadOnly;
+
+    /*
+     * If is the configuration pending restart or not.
+     */
+    @JsonProperty(value = "isConfigPendingRestart", access = JsonProperty.Access.WRITE_ONLY)
+    private IsConfigPendingRestart isConfigPendingRestart;
+
+    /*
+     * If is the configuration dynamic.
+     */
+    @JsonProperty(value = "isDynamicConfig", access = JsonProperty.Access.WRITE_ONLY)
+    private IsDynamicConfig isDynamicConfig;
 
     /** Creates an instance of ConfigurationProperties class. */
     public ConfigurationProperties() {
@@ -71,12 +105,41 @@ public final class ConfigurationProperties {
     }
 
     /**
+     * Get the currentValue property: Current value of the configuration.
+     *
+     * @return the currentValue value.
+     */
+    public String currentValue() {
+        return this.currentValue;
+    }
+
+    /**
+     * Set the currentValue property: Current value of the configuration.
+     *
+     * @param currentValue the currentValue value to set.
+     * @return the ConfigurationProperties object itself.
+     */
+    public ConfigurationProperties withCurrentValue(String currentValue) {
+        this.currentValue = currentValue;
+        return this;
+    }
+
+    /**
      * Get the description property: Description of the configuration.
      *
      * @return the description value.
      */
     public String description() {
         return this.description;
+    }
+
+    /**
+     * Get the documentationLink property: The link used to get the document from community or Azure site.
+     *
+     * @return the documentationLink value.
+     */
+    public String documentationLink() {
+        return this.documentationLink;
     }
 
     /**
@@ -111,7 +174,7 @@ public final class ConfigurationProperties {
      *
      * @return the source value.
      */
-    public String source() {
+    public ConfigurationSource source() {
         return this.source;
     }
 
@@ -121,9 +184,36 @@ public final class ConfigurationProperties {
      * @param source the source value to set.
      * @return the ConfigurationProperties object itself.
      */
-    public ConfigurationProperties withSource(String source) {
+    public ConfigurationProperties withSource(ConfigurationSource source) {
         this.source = source;
         return this;
+    }
+
+    /**
+     * Get the isReadOnly property: If is the configuration read only.
+     *
+     * @return the isReadOnly value.
+     */
+    public IsReadOnly isReadOnly() {
+        return this.isReadOnly;
+    }
+
+    /**
+     * Get the isConfigPendingRestart property: If is the configuration pending restart or not.
+     *
+     * @return the isConfigPendingRestart value.
+     */
+    public IsConfigPendingRestart isConfigPendingRestart() {
+        return this.isConfigPendingRestart;
+    }
+
+    /**
+     * Get the isDynamicConfig property: If is the configuration dynamic.
+     *
+     * @return the isDynamicConfig value.
+     */
+    public IsDynamicConfig isDynamicConfig() {
+        return this.isDynamicConfig;
     }
 
     /**

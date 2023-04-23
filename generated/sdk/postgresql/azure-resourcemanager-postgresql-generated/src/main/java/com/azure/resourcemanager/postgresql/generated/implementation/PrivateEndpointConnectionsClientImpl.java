@@ -167,7 +167,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<PrivateEndpointConnectionInner>> getWithResponseAsync(
+    public Mono<Response<PrivateEndpointConnectionInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, String privateEndpointConnectionName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -279,7 +279,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return a private endpoint connection on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PrivateEndpointConnectionInner> getAsync(
+    public Mono<PrivateEndpointConnectionInner> getAsync(
         String resourceGroupName, String serverName, String privateEndpointConnectionName) {
         return getWithResponseAsync(resourceGroupName, serverName, privateEndpointConnectionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
@@ -333,7 +333,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName,
         String serverName,
         String privateEndpointConnectionName,
@@ -466,7 +466,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return the {@link PollerFlux} for polling of a private endpoint connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
+    public PollerFlux<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
         beginCreateOrUpdateAsync(
             String resourceGroupName,
             String serverName,
@@ -580,7 +580,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return a private endpoint connection on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PrivateEndpointConnectionInner> createOrUpdateAsync(
+    public Mono<PrivateEndpointConnectionInner> createOrUpdateAsync(
         String resourceGroupName,
         String serverName,
         String privateEndpointConnectionName,
@@ -673,7 +673,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
         String resourceGroupName, String serverName, String privateEndpointConnectionName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -785,7 +785,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
+    public PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
         String resourceGroupName, String serverName, String privateEndpointConnectionName) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             deleteWithResponseAsync(resourceGroupName, serverName, privateEndpointConnectionName);
@@ -867,7 +867,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String resourceGroupName, String serverName, String privateEndpointConnectionName) {
+    public Mono<Void> deleteAsync(String resourceGroupName, String serverName, String privateEndpointConnectionName) {
         return beginDeleteAsync(resourceGroupName, serverName, privateEndpointConnectionName)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
@@ -940,7 +940,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return a private endpoint connection along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(
         String resourceGroupName, String serverName, String privateEndpointConnectionName, TagsObject parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -1074,7 +1074,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return the {@link PollerFlux} for polling of a private endpoint connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginUpdateTagsAsync(
+    public PollerFlux<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginUpdateTagsAsync(
         String resourceGroupName, String serverName, String privateEndpointConnectionName, TagsObject parameters) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             updateTagsWithResponseAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters);
@@ -1188,7 +1188,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return a private endpoint connection on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PrivateEndpointConnectionInner> updateTagsAsync(
+    public Mono<PrivateEndpointConnectionInner> updateTagsAsync(
         String resourceGroupName, String serverName, String privateEndpointConnectionName, TagsObject parameters) {
         return beginUpdateTagsAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters)
             .last()
@@ -1395,7 +1395,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return all private endpoint connections on a server as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PrivateEndpointConnectionInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<PrivateEndpointConnectionInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(
             () -> listByServerSinglePageAsync(resourceGroupName, serverName),
             nextLink -> listByServerNextSinglePageAsync(nextLink));

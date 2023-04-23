@@ -146,6 +146,11 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
         return this;
     }
 
+    public RestorePointImpl withSourceMetadata(RestorePointSourceMetadata sourceMetadata) {
+        this.innerModel().withSourceMetadata(sourceMetadata);
+        return this;
+    }
+
     public RestorePointImpl withConsistencyMode(ConsistencyModeTypes consistencyMode) {
         this.innerModel().withConsistencyMode(consistencyMode);
         return this;

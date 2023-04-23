@@ -29,9 +29,9 @@ public final class CheckNameAvailabilitiesImpl implements CheckNameAvailabilitie
     }
 
     public Response<NameAvailability> executeWithResponse(
-        NameAvailabilityRequest nameAvailabilityRequest, Context context) {
+        String locationName, NameAvailabilityRequest nameAvailabilityRequest, Context context) {
         Response<NameAvailabilityInner> inner =
-            this.serviceClient().executeWithResponse(nameAvailabilityRequest, context);
+            this.serviceClient().executeWithResponse(locationName, nameAvailabilityRequest, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -43,8 +43,8 @@ public final class CheckNameAvailabilitiesImpl implements CheckNameAvailabilitie
         }
     }
 
-    public NameAvailability execute(NameAvailabilityRequest nameAvailabilityRequest) {
-        NameAvailabilityInner inner = this.serviceClient().execute(nameAvailabilityRequest);
+    public NameAvailability execute(String locationName, NameAvailabilityRequest nameAvailabilityRequest) {
+        NameAvailabilityInner inner = this.serviceClient().execute(locationName, nameAvailabilityRequest);
         if (inner != null) {
             return new NameAvailabilityImpl(inner, this.manager());
         } else {

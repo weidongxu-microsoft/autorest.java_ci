@@ -12,6 +12,8 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationInner;
+import com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationListResultInner;
+import com.azure.resourcemanager.mysql.generated.models.ConfigurationListForBatchUpdate;
 
 /** An instance of this class provides access to all the operations defined in ConfigurationsClient. */
 public interface ConfigurationsClient {
@@ -90,6 +92,80 @@ public interface ConfigurationsClient {
         Context context);
 
     /**
+     * Updates a configuration of a server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param configurationName The name of the server configuration.
+     * @param parameters The required parameters for updating a server configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of represents a Configuration.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<ConfigurationInner>, ConfigurationInner> beginUpdate(
+        String resourceGroupName, String serverName, String configurationName, ConfigurationInner parameters);
+
+    /**
+     * Updates a configuration of a server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param configurationName The name of the server configuration.
+     * @param parameters The required parameters for updating a server configuration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of represents a Configuration.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<ConfigurationInner>, ConfigurationInner> beginUpdate(
+        String resourceGroupName,
+        String serverName,
+        String configurationName,
+        ConfigurationInner parameters,
+        Context context);
+
+    /**
+     * Updates a configuration of a server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param configurationName The name of the server configuration.
+     * @param parameters The required parameters for updating a server configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConfigurationInner update(
+        String resourceGroupName, String serverName, String configurationName, ConfigurationInner parameters);
+
+    /**
+     * Updates a configuration of a server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param configurationName The name of the server configuration.
+     * @param parameters The required parameters for updating a server configuration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConfigurationInner update(
+        String resourceGroupName,
+        String serverName,
+        String configurationName,
+        ConfigurationInner parameters,
+        Context context);
+
+    /**
      * Gets information about a configuration of server.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -120,6 +196,68 @@ public interface ConfigurationsClient {
     ConfigurationInner get(String resourceGroupName, String serverName, String configurationName);
 
     /**
+     * Update a list of configurations in a given server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The parameters for updating a list of server configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of a list of server configurations.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner> beginBatchUpdate(
+        String resourceGroupName, String serverName, ConfigurationListForBatchUpdate parameters);
+
+    /**
+     * Update a list of configurations in a given server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The parameters for updating a list of server configuration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of a list of server configurations.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner> beginBatchUpdate(
+        String resourceGroupName, String serverName, ConfigurationListForBatchUpdate parameters, Context context);
+
+    /**
+     * Update a list of configurations in a given server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The parameters for updating a list of server configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of server configurations.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConfigurationListResultInner batchUpdate(
+        String resourceGroupName, String serverName, ConfigurationListForBatchUpdate parameters);
+
+    /**
+     * Update a list of configurations in a given server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param parameters The parameters for updating a list of server configuration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of server configurations.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConfigurationListResultInner batchUpdate(
+        String resourceGroupName, String serverName, ConfigurationListForBatchUpdate parameters, Context context);
+
+    /**
      * List all the configurations in a given server.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -137,6 +275,10 @@ public interface ConfigurationsClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
+     * @param tags The tags of the server configuration.
+     * @param keyword The keyword of the server configuration.
+     * @param page The page of the server configuration.
+     * @param pageSize The pageSize of the server configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -144,5 +286,12 @@ public interface ConfigurationsClient {
      * @return a list of server configurations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ConfigurationInner> listByServer(String resourceGroupName, String serverName, Context context);
+    PagedIterable<ConfigurationInner> listByServer(
+        String resourceGroupName,
+        String serverName,
+        String tags,
+        String keyword,
+        Integer page,
+        Integer pageSize,
+        Context context);
 }

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
+import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of VirtualMachineExtension. */
@@ -139,6 +140,14 @@ public interface VirtualMachineExtension {
     KeyVaultSecretReference protectedSettingsFromKeyVault();
 
     /**
+     * Gets the provisionAfterExtensions property: Collection of extension names after which this extension needs to be
+     * provisioned.
+     *
+     * @return the provisionAfterExtensions value.
+     */
+    List<String> provisionAfterExtensions();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -223,7 +232,8 @@ public interface VirtualMachineExtension {
                 DefinitionStages.WithProtectedSettings,
                 DefinitionStages.WithInstanceView,
                 DefinitionStages.WithSuppressFailures,
-                DefinitionStages.WithProtectedSettingsFromKeyVault {
+                DefinitionStages.WithProtectedSettingsFromKeyVault,
+                DefinitionStages.WithProvisionAfterExtensions {
             /**
              * Executes the create request.
              *
@@ -375,6 +385,18 @@ public interface VirtualMachineExtension {
              * @return the next definition stage.
              */
             WithCreate withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
+        }
+        /** The stage of the VirtualMachineExtension definition allowing to specify provisionAfterExtensions. */
+        interface WithProvisionAfterExtensions {
+            /**
+             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension
+             * needs to be provisioned..
+             *
+             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be
+             *     provisioned.
+             * @return the next definition stage.
+             */
+            WithCreate withProvisionAfterExtensions(List<String> provisionAfterExtensions);
         }
     }
     /**

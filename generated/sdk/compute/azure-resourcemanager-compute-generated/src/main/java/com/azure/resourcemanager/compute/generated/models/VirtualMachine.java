@@ -134,8 +134,8 @@ public interface VirtualMachine {
     SecurityProfile securityProfile();
 
     /**
-     * Gets the diagnosticsProfile property: Specifies the boot diagnostic settings state. &lt;br&gt;&lt;br&gt;Minimum
-     * api-version: 2015-06-15.
+     * Gets the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version:
+     * 2015-06-15.
      *
      * @return the diagnosticsProfile value.
      */
@@ -145,13 +145,12 @@ public interface VirtualMachine {
      * Gets the availabilitySet property: Specifies information about the availability set that the virtual machine
      * should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes
      * to maximize availability. For more information about availability sets, see [Availability sets
-     * overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). &lt;br&gt;&lt;br&gt; For
-     * more information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates) &lt;br&gt;&lt;br&gt; Currently,
-     * a VM can only be added to availability set at creation time. The availability set to which the VM is being added
-     * should be under the same resource group as the availability set resource. An existing VM cannot be added to an
-     * availability set. &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null
-     * properties.virtualMachineScaleSet reference.
+     * overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more information on
+     * Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can only be
+     * added to availability set at creation time. The availability set to which the VM is being added should be under
+     * the same resource group as the availability set resource. An existing VM cannot be added to an availability set.
+     * This property cannot exist along with a non-null properties.virtualMachineScaleSet reference.
      *
      * @return the availabilitySet value.
      */
@@ -161,9 +160,8 @@ public interface VirtualMachine {
      * Gets the virtualMachineScaleSet property: Specifies information about the virtual machine scale set that the
      * virtual machine should be assigned to. Virtual machines specified in the same virtual machine scale set are
      * allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale
-     * set at creation time. An existing VM cannot be added to a virtual machine scale set. &lt;br&gt;&lt;br&gt;This
-     * property cannot exist along with a non-null properties.availabilitySet reference. &lt;br&gt;&lt;br&gt;Minimum
-     * api‐version: 2019‐03‐01.
+     * set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist
+     * along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01.
      *
      * @return the virtualMachineScaleSet value.
      */
@@ -171,15 +169,14 @@ public interface VirtualMachine {
 
     /**
      * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the
-     * virtual machine should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+     * virtual machine should be assigned to. Minimum api-version: 2018-04-01.
      *
      * @return the proximityPlacementGroup value.
      */
     SubResource proximityPlacementGroup();
 
     /**
-     * Gets the priority property: Specifies the priority for the virtual machine. &lt;br&gt;&lt;br&gt;Minimum
-     * api-version: 2019-03-01.
+     * Gets the priority property: Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
      *
      * @return the priority value.
      */
@@ -187,17 +184,17 @@ public interface VirtualMachine {
 
     /**
      * Gets the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot
-     * scale set. &lt;br&gt;&lt;br&gt;For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and
-     * the minimum api-version is 2019-03-01. &lt;br&gt;&lt;br&gt;For Azure Spot scale sets, both 'Deallocate' and
-     * 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+     * scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum
+     * api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the
+     * minimum api-version is 2017-10-30-preview.
      *
      * @return the evictionPolicy value.
      */
     VirtualMachineEvictionPolicyTypes evictionPolicy();
 
     /**
-     * Gets the billingProfile property: Specifies the billing related details of a Azure Spot virtual machine.
-     * &lt;br&gt;&lt;br&gt;Minimum api-version: 2019-03-01.
+     * Gets the billingProfile property: Specifies the billing related details of a Azure Spot virtual machine. Minimum
+     * api-version: 2019-03-01.
      *
      * @return the billingProfile value.
      */
@@ -205,7 +202,7 @@ public interface VirtualMachine {
 
     /**
      * Gets the host property: Specifies information about the dedicated host that the virtual machine resides in.
-     * &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-10-01.
+     * Minimum api-version: 2018-10-01.
      *
      * @return the host value.
      */
@@ -213,8 +210,7 @@ public interface VirtualMachine {
 
     /**
      * Gets the hostGroup property: Specifies information about the dedicated host group that the virtual machine
-     * resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01. &lt;br&gt;&lt;br&gt;NOTE: User cannot specify
-     * both host and hostGroup properties.
+     * resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
      *
      * @return the hostGroup value.
      */
@@ -260,7 +256,7 @@ public interface VirtualMachine {
     /**
      * Gets the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The time duration
      * should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default
-     * value is 90 minutes (PT1H30M). &lt;br&gt;&lt;br&gt; Minimum api-version: 2020-06-01.
+     * value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
      *
      * @return the extensionsTimeBudget value.
      */
@@ -269,11 +265,10 @@ public interface VirtualMachine {
     /**
      * Gets the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual
      * Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
-     * best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable only if the
-     * 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual Machine Scale Set that is
-     * referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This property cannot be updated once the
-     * Virtual Machine is created.&lt;li&gt;Fault domain assignment can be viewed in the Virtual Machine Instance
-     * View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
+     * best maintains balance across available fault domains. This is applicable only if the 'virtualMachineScaleSet'
+     * property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have
+     * 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created.
+     * Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01.
      *
      * @return the platformFaultDomain value.
      */
@@ -288,7 +283,7 @@ public interface VirtualMachine {
 
     /**
      * Gets the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any
-     * secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+     * secrets in here. Minimum api-version: 2021-03-01.
      *
      * @return the userData value.
      */
@@ -296,7 +291,7 @@ public interface VirtualMachine {
 
     /**
      * Gets the capacityReservation property: Specifies information about the capacity reservation that is used to
-     * allocate virtual machine. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-04-01.
+     * allocate virtual machine. Minimum api-version: 2021-04-01.
      *
      * @return the capacityReservation value.
      */
@@ -311,8 +306,8 @@ public interface VirtualMachine {
     ApplicationProfile applicationProfile();
 
     /**
-     * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was
-     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
+     * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was created. Minimum
+     * api-version: 2021-11-01.
      *
      * @return the timeCreated value.
      */
@@ -559,11 +554,10 @@ public interface VirtualMachine {
         /** The stage of the VirtualMachine definition allowing to specify diagnosticsProfile. */
         interface WithDiagnosticsProfile {
             /**
-             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state.
-             * &lt;br&gt;&lt;br&gt;Minimum api-version: 2015-06-15..
+             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum
+             * api-version: 2015-06-15..
              *
-             * @param diagnosticsProfile Specifies the boot diagnostic settings state. &lt;br&gt;&lt;br&gt;Minimum
-             *     api-version: 2015-06-15.
+             * @param diagnosticsProfile Specifies the boot diagnostic settings state. Minimum api-version: 2015-06-15.
              * @return the next definition stage.
              */
             WithCreate withDiagnosticsProfile(DiagnosticsProfile diagnosticsProfile);
@@ -574,26 +568,23 @@ public interface VirtualMachine {
              * Specifies the availabilitySet property: Specifies information about the availability set that the virtual
              * machine should be assigned to. Virtual machines specified in the same availability set are allocated to
              * different nodes to maximize availability. For more information about availability sets, see [Availability
-             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
-             * &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates for
-             * Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
-             * &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
-             * availability set to which the VM is being added should be under the same resource group as the
-             * availability set resource. An existing VM cannot be added to an availability set.
-             * &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null properties.virtualMachineScaleSet
-             * reference..
+             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             * information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can
+             * only be added to availability set at creation time. The availability set to which the VM is being added
+             * should be under the same resource group as the availability set resource. An existing VM cannot be added
+             * to an availability set. This property cannot exist along with a non-null
+             * properties.virtualMachineScaleSet reference..
              *
              * @param availabilitySet Specifies information about the availability set that the virtual machine should
              *     be assigned to. Virtual machines specified in the same availability set are allocated to different
              *     nodes to maximize availability. For more information about availability sets, see [Availability sets
-             *     overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
-             *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates
-             *     for Virtual Machines in
-             *     Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
-             *     &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
-             *     availability set to which the VM is being added should be under the same resource group as the
-             *     availability set resource. An existing VM cannot be added to an availability set.
-             *     &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null
+             *     overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             *     information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             *     Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM
+             *     can only be added to availability set at creation time. The availability set to which the VM is being
+             *     added should be under the same resource group as the availability set resource. An existing VM cannot
+             *     be added to an availability set. This property cannot exist along with a non-null
              *     properties.virtualMachineScaleSet reference.
              * @return the next definition stage.
              */
@@ -606,15 +597,15 @@ public interface VirtualMachine {
              * that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine
              * scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to
              * virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale
-             * set. &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null properties.availabilitySet
-             * reference. &lt;br&gt;&lt;br&gt;Minimum api‐version: 2019‐03‐01.
+             * set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum
+             * api‐version: 2019‐03‐01..
              *
              * @param virtualMachineScaleSet Specifies information about the virtual machine scale set that the virtual
              *     machine should be assigned to. Virtual machines specified in the same virtual machine scale set are
              *     allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual
              *     machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set.
-             *     &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null properties.availabilitySet
-             *     reference. &lt;br&gt;&lt;br&gt;Minimum api‐version: 2019‐03‐01.
+             *     This property cannot exist along with a non-null properties.availabilitySet reference. Minimum
+             *     api‐version: 2019‐03‐01.
              * @return the next definition stage.
              */
             WithCreate withVirtualMachineScaleSet(SubResource virtualMachineScaleSet);
@@ -623,10 +614,10 @@ public interface VirtualMachine {
         interface WithProximityPlacementGroup {
             /**
              * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
-             * that the virtual machine should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01..
+             * that the virtual machine should be assigned to. Minimum api-version: 2018-04-01..
              *
              * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual
-             *     machine should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+             *     machine should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
@@ -634,11 +625,10 @@ public interface VirtualMachine {
         /** The stage of the VirtualMachine definition allowing to specify priority. */
         interface WithPriority {
             /**
-             * Specifies the priority property: Specifies the priority for the virtual machine.
-             * &lt;br&gt;&lt;br&gt;Minimum api-version: 2019-03-01.
+             * Specifies the priority property: Specifies the priority for the virtual machine. Minimum api-version:
+             * 2019-03-01.
              *
-             * @param priority Specifies the priority for the virtual machine. &lt;br&gt;&lt;br&gt;Minimum api-version:
-             *     2019-03-01.
+             * @param priority Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
              * @return the next definition stage.
              */
             WithCreate withPriority(VirtualMachinePriorityTypes priority);
@@ -647,15 +637,14 @@ public interface VirtualMachine {
         interface WithEvictionPolicy {
             /**
              * Specifies the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine
-             * and Azure Spot scale set. &lt;br&gt;&lt;br&gt;For Azure Spot virtual machines, both 'Deallocate' and
-             * 'Delete' are supported and the minimum api-version is 2019-03-01. &lt;br&gt;&lt;br&gt;For Azure Spot
-             * scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is
-             * 2017-10-30-preview..
+             * and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported
+             * and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are
+             * supported and the minimum api-version is 2017-10-30-preview..
              *
              * @param evictionPolicy Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot
-             *     scale set. &lt;br&gt;&lt;br&gt;For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are
-             *     supported and the minimum api-version is 2019-03-01. &lt;br&gt;&lt;br&gt;For Azure Spot scale sets,
-             *     both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+             *     scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the
+             *     minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are
+             *     supported and the minimum api-version is 2017-10-30-preview.
              * @return the next definition stage.
              */
             WithCreate withEvictionPolicy(VirtualMachineEvictionPolicyTypes evictionPolicy);
@@ -664,10 +653,10 @@ public interface VirtualMachine {
         interface WithBillingProfile {
             /**
              * Specifies the billingProfile property: Specifies the billing related details of a Azure Spot virtual
-             * machine. &lt;br&gt;&lt;br&gt;Minimum api-version: 2019-03-01..
+             * machine. Minimum api-version: 2019-03-01..
              *
-             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine.
-             *     &lt;br&gt;&lt;br&gt;Minimum api-version: 2019-03-01.
+             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine. Minimum
+             *     api-version: 2019-03-01.
              * @return the next definition stage.
              */
             WithCreate withBillingProfile(BillingProfile billingProfile);
@@ -676,10 +665,10 @@ public interface VirtualMachine {
         interface WithHost {
             /**
              * Specifies the host property: Specifies information about the dedicated host that the virtual machine
-             * resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-10-01..
+             * resides in. Minimum api-version: 2018-10-01..
              *
-             * @param host Specifies information about the dedicated host that the virtual machine resides in.
-             *     &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-10-01.
+             * @param host Specifies information about the dedicated host that the virtual machine resides in. Minimum
+             *     api-version: 2018-10-01.
              * @return the next definition stage.
              */
             WithCreate withHost(SubResource host);
@@ -688,12 +677,12 @@ public interface VirtualMachine {
         interface WithHostGroup {
             /**
              * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual
-             * machine resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01. &lt;br&gt;&lt;br&gt;NOTE: User
-             * cannot specify both host and hostGroup properties..
+             * machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum
+             * api-version: 2020-06-01..
              *
              * @param hostGroup Specifies information about the dedicated host group that the virtual machine resides
-             *     in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01. &lt;br&gt;&lt;br&gt;NOTE: User cannot
-             *     specify both host and hostGroup properties.
+             *     in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version:
+             *     2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withHostGroup(SubResource hostGroup);
@@ -730,12 +719,11 @@ public interface VirtualMachine {
             /**
              * Specifies the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The
              * time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO
-             * 8601 format. The default value is 90 minutes (PT1H30M). &lt;br&gt;&lt;br&gt; Minimum api-version:
-             * 2020-06-01.
+             * 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01..
              *
              * @param extensionsTimeBudget Specifies the time alloted for all extensions to start. The time duration
              *     should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format.
-             *     The default value is 90 minutes (PT1H30M). &lt;br&gt;&lt;br&gt; Minimum api-version: 2020-06-01.
+             *     The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withExtensionsTimeBudget(String extensionsTimeBudget);
@@ -745,20 +733,19 @@ public interface VirtualMachine {
             /**
              * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
              * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
-             * fault domain that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is
-             * applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The
-             * Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt;
-             * 1.&lt;li&gt;This property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain
-             * assignment can be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version:
-             * 2020‐12‐01.
+             * fault domain that best maintains balance across available fault domains. This is applicable only if the
+             * 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is
+             * referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the
+             * Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View.
+             * Minimum api‐version: 2020‐12‐01..
              *
              * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
              *     will be created. By default, the Virtual Machine will by automatically assigned to a fault domain
-             *     that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable
-             *     only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual
-             *     Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This
-             *     property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain assignment can
-             *     be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
+             *     that best maintains balance across available fault domains. This is applicable only if the
+             *     'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that
+             *     is referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated
+             *     once the Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine
+             *     Instance View. Minimum api‐version: 2020‐12‐01.
              * @return the next definition stage.
              */
             WithCreate withPlatformFaultDomain(Integer platformFaultDomain);
@@ -777,10 +764,10 @@ public interface VirtualMachine {
         interface WithUserData {
             /**
              * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not
-             * pass any secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             * pass any secrets in here. Minimum api-version: 2021-03-01..
              *
              * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets
-             *     in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             *     in here. Minimum api-version: 2021-03-01.
              * @return the next definition stage.
              */
             WithCreate withUserData(String userData);
@@ -789,10 +776,10 @@ public interface VirtualMachine {
         interface WithCapacityReservation {
             /**
              * Specifies the capacityReservation property: Specifies information about the capacity reservation that is
-             * used to allocate virtual machine. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-04-01..
+             * used to allocate virtual machine. Minimum api-version: 2021-04-01..
              *
              * @param capacityReservation Specifies information about the capacity reservation that is used to allocate
-             *     virtual machine. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-04-01.
+             *     virtual machine. Minimum api-version: 2021-04-01.
              * @return the next definition stage.
              */
             WithCreate withCapacityReservation(CapacityReservationProfile capacityReservation);
@@ -801,7 +788,7 @@ public interface VirtualMachine {
         interface WithApplicationProfile {
             /**
              * Specifies the applicationProfile property: Specifies the gallery applications that should be made
-             * available to the VM/VMSS.
+             * available to the VM/VMSS..
              *
              * @param applicationProfile Specifies the gallery applications that should be made available to the
              *     VM/VMSS.
@@ -978,11 +965,10 @@ public interface VirtualMachine {
         /** The stage of the VirtualMachine update allowing to specify diagnosticsProfile. */
         interface WithDiagnosticsProfile {
             /**
-             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state.
-             * &lt;br&gt;&lt;br&gt;Minimum api-version: 2015-06-15..
+             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum
+             * api-version: 2015-06-15..
              *
-             * @param diagnosticsProfile Specifies the boot diagnostic settings state. &lt;br&gt;&lt;br&gt;Minimum
-             *     api-version: 2015-06-15.
+             * @param diagnosticsProfile Specifies the boot diagnostic settings state. Minimum api-version: 2015-06-15.
              * @return the next definition stage.
              */
             Update withDiagnosticsProfile(DiagnosticsProfile diagnosticsProfile);
@@ -993,26 +979,23 @@ public interface VirtualMachine {
              * Specifies the availabilitySet property: Specifies information about the availability set that the virtual
              * machine should be assigned to. Virtual machines specified in the same availability set are allocated to
              * different nodes to maximize availability. For more information about availability sets, see [Availability
-             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
-             * &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates for
-             * Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
-             * &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
-             * availability set to which the VM is being added should be under the same resource group as the
-             * availability set resource. An existing VM cannot be added to an availability set.
-             * &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null properties.virtualMachineScaleSet
-             * reference..
+             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             * information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can
+             * only be added to availability set at creation time. The availability set to which the VM is being added
+             * should be under the same resource group as the availability set resource. An existing VM cannot be added
+             * to an availability set. This property cannot exist along with a non-null
+             * properties.virtualMachineScaleSet reference..
              *
              * @param availabilitySet Specifies information about the availability set that the virtual machine should
              *     be assigned to. Virtual machines specified in the same availability set are allocated to different
              *     nodes to maximize availability. For more information about availability sets, see [Availability sets
-             *     overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
-             *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates
-             *     for Virtual Machines in
-             *     Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
-             *     &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
-             *     availability set to which the VM is being added should be under the same resource group as the
-             *     availability set resource. An existing VM cannot be added to an availability set.
-             *     &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null
+             *     overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             *     information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             *     Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM
+             *     can only be added to availability set at creation time. The availability set to which the VM is being
+             *     added should be under the same resource group as the availability set resource. An existing VM cannot
+             *     be added to an availability set. This property cannot exist along with a non-null
              *     properties.virtualMachineScaleSet reference.
              * @return the next definition stage.
              */
@@ -1025,15 +1008,15 @@ public interface VirtualMachine {
              * that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine
              * scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to
              * virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale
-             * set. &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null properties.availabilitySet
-             * reference. &lt;br&gt;&lt;br&gt;Minimum api‐version: 2019‐03‐01.
+             * set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum
+             * api‐version: 2019‐03‐01..
              *
              * @param virtualMachineScaleSet Specifies information about the virtual machine scale set that the virtual
              *     machine should be assigned to. Virtual machines specified in the same virtual machine scale set are
              *     allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual
              *     machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set.
-             *     &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null properties.availabilitySet
-             *     reference. &lt;br&gt;&lt;br&gt;Minimum api‐version: 2019‐03‐01.
+             *     This property cannot exist along with a non-null properties.availabilitySet reference. Minimum
+             *     api‐version: 2019‐03‐01.
              * @return the next definition stage.
              */
             Update withVirtualMachineScaleSet(SubResource virtualMachineScaleSet);
@@ -1042,10 +1025,10 @@ public interface VirtualMachine {
         interface WithProximityPlacementGroup {
             /**
              * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
-             * that the virtual machine should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01..
+             * that the virtual machine should be assigned to. Minimum api-version: 2018-04-01..
              *
              * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual
-             *     machine should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+             *     machine should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
@@ -1053,11 +1036,10 @@ public interface VirtualMachine {
         /** The stage of the VirtualMachine update allowing to specify priority. */
         interface WithPriority {
             /**
-             * Specifies the priority property: Specifies the priority for the virtual machine.
-             * &lt;br&gt;&lt;br&gt;Minimum api-version: 2019-03-01.
+             * Specifies the priority property: Specifies the priority for the virtual machine. Minimum api-version:
+             * 2019-03-01.
              *
-             * @param priority Specifies the priority for the virtual machine. &lt;br&gt;&lt;br&gt;Minimum api-version:
-             *     2019-03-01.
+             * @param priority Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
              * @return the next definition stage.
              */
             Update withPriority(VirtualMachinePriorityTypes priority);
@@ -1066,15 +1048,14 @@ public interface VirtualMachine {
         interface WithEvictionPolicy {
             /**
              * Specifies the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine
-             * and Azure Spot scale set. &lt;br&gt;&lt;br&gt;For Azure Spot virtual machines, both 'Deallocate' and
-             * 'Delete' are supported and the minimum api-version is 2019-03-01. &lt;br&gt;&lt;br&gt;For Azure Spot
-             * scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is
-             * 2017-10-30-preview..
+             * and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported
+             * and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are
+             * supported and the minimum api-version is 2017-10-30-preview..
              *
              * @param evictionPolicy Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot
-             *     scale set. &lt;br&gt;&lt;br&gt;For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are
-             *     supported and the minimum api-version is 2019-03-01. &lt;br&gt;&lt;br&gt;For Azure Spot scale sets,
-             *     both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+             *     scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the
+             *     minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are
+             *     supported and the minimum api-version is 2017-10-30-preview.
              * @return the next definition stage.
              */
             Update withEvictionPolicy(VirtualMachineEvictionPolicyTypes evictionPolicy);
@@ -1083,10 +1064,10 @@ public interface VirtualMachine {
         interface WithBillingProfile {
             /**
              * Specifies the billingProfile property: Specifies the billing related details of a Azure Spot virtual
-             * machine. &lt;br&gt;&lt;br&gt;Minimum api-version: 2019-03-01..
+             * machine. Minimum api-version: 2019-03-01..
              *
-             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine.
-             *     &lt;br&gt;&lt;br&gt;Minimum api-version: 2019-03-01.
+             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine. Minimum
+             *     api-version: 2019-03-01.
              * @return the next definition stage.
              */
             Update withBillingProfile(BillingProfile billingProfile);
@@ -1095,10 +1076,10 @@ public interface VirtualMachine {
         interface WithHost {
             /**
              * Specifies the host property: Specifies information about the dedicated host that the virtual machine
-             * resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-10-01..
+             * resides in. Minimum api-version: 2018-10-01..
              *
-             * @param host Specifies information about the dedicated host that the virtual machine resides in.
-             *     &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-10-01.
+             * @param host Specifies information about the dedicated host that the virtual machine resides in. Minimum
+             *     api-version: 2018-10-01.
              * @return the next definition stage.
              */
             Update withHost(SubResource host);
@@ -1107,12 +1088,12 @@ public interface VirtualMachine {
         interface WithHostGroup {
             /**
              * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual
-             * machine resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01. &lt;br&gt;&lt;br&gt;NOTE: User
-             * cannot specify both host and hostGroup properties..
+             * machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum
+             * api-version: 2020-06-01..
              *
              * @param hostGroup Specifies information about the dedicated host group that the virtual machine resides
-             *     in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01. &lt;br&gt;&lt;br&gt;NOTE: User cannot
-             *     specify both host and hostGroup properties.
+             *     in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version:
+             *     2020-06-01.
              * @return the next definition stage.
              */
             Update withHostGroup(SubResource hostGroup);
@@ -1149,12 +1130,11 @@ public interface VirtualMachine {
             /**
              * Specifies the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The
              * time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO
-             * 8601 format. The default value is 90 minutes (PT1H30M). &lt;br&gt;&lt;br&gt; Minimum api-version:
-             * 2020-06-01.
+             * 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01..
              *
              * @param extensionsTimeBudget Specifies the time alloted for all extensions to start. The time duration
              *     should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format.
-             *     The default value is 90 minutes (PT1H30M). &lt;br&gt;&lt;br&gt; Minimum api-version: 2020-06-01.
+             *     The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             Update withExtensionsTimeBudget(String extensionsTimeBudget);
@@ -1164,20 +1144,19 @@ public interface VirtualMachine {
             /**
              * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
              * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
-             * fault domain that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is
-             * applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The
-             * Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt;
-             * 1.&lt;li&gt;This property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain
-             * assignment can be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version:
-             * 2020‐12‐01.
+             * fault domain that best maintains balance across available fault domains. This is applicable only if the
+             * 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is
+             * referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the
+             * Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View.
+             * Minimum api‐version: 2020‐12‐01..
              *
              * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
              *     will be created. By default, the Virtual Machine will by automatically assigned to a fault domain
-             *     that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable
-             *     only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual
-             *     Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This
-             *     property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain assignment can
-             *     be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
+             *     that best maintains balance across available fault domains. This is applicable only if the
+             *     'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that
+             *     is referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated
+             *     once the Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine
+             *     Instance View. Minimum api‐version: 2020‐12‐01.
              * @return the next definition stage.
              */
             Update withPlatformFaultDomain(Integer platformFaultDomain);
@@ -1196,10 +1175,10 @@ public interface VirtualMachine {
         interface WithUserData {
             /**
              * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not
-             * pass any secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             * pass any secrets in here. Minimum api-version: 2021-03-01..
              *
              * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets
-             *     in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             *     in here. Minimum api-version: 2021-03-01.
              * @return the next definition stage.
              */
             Update withUserData(String userData);
@@ -1208,10 +1187,10 @@ public interface VirtualMachine {
         interface WithCapacityReservation {
             /**
              * Specifies the capacityReservation property: Specifies information about the capacity reservation that is
-             * used to allocate virtual machine. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-04-01..
+             * used to allocate virtual machine. Minimum api-version: 2021-04-01..
              *
              * @param capacityReservation Specifies information about the capacity reservation that is used to allocate
-             *     virtual machine. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-04-01.
+             *     virtual machine. Minimum api-version: 2021-04-01.
              * @return the next definition stage.
              */
             Update withCapacityReservation(CapacityReservationProfile capacityReservation);
@@ -1220,7 +1199,7 @@ public interface VirtualMachine {
         interface WithApplicationProfile {
             /**
              * Specifies the applicationProfile property: Specifies the gallery applications that should be made
-             * available to the VM/VMSS.
+             * available to the VM/VMSS..
              *
              * @param applicationProfile Specifies the gallery applications that should be made available to the
              *     VM/VMSS.
@@ -1318,9 +1297,9 @@ public interface VirtualMachine {
 
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
-     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
-     * please refer to [How to create an image of a virtual machine or
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
      * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param context The context to associate with this operation.
@@ -1334,9 +1313,9 @@ public interface VirtualMachine {
 
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
-     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
-     * please refer to [How to create an image of a virtual machine or
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
      * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -1483,8 +1462,8 @@ public interface VirtualMachine {
      * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
      *
      * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
-     *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
-     *     expiration duration of 120 minutes.
+     *     1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of
+     *     120 minutes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

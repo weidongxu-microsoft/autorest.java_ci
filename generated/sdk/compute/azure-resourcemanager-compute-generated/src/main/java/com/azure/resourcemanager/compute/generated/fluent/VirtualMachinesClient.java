@@ -20,6 +20,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineI
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner;
+import com.azure.resourcemanager.compute.generated.models.ExpandTypeForListVMs;
+import com.azure.resourcemanager.compute.generated.models.ExpandTypesForListVMs;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineCaptureParameters;
@@ -510,9 +512,9 @@ public interface VirtualMachinesClient {
 
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
-     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
-     * please refer to [How to create an image of a virtual machine or
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
      * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param resourceGroupName The name of the resource group.
@@ -529,9 +531,9 @@ public interface VirtualMachinesClient {
 
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
-     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
-     * please refer to [How to create an image of a virtual machine or
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
      * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param resourceGroupName The name of the resource group.
@@ -566,6 +568,8 @@ public interface VirtualMachinesClient {
      * @param filter The system query option to filter VMs returned in the response. Allowed value is
      *     'virtualMachineScaleSet/id' eq
      *     /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmssName}'.
+     * @param expand The expand expression to apply on operation. 'instanceView' enables fetching run time status of all
+     *     Virtual Machines, this can only be specified if a valid $filter option is specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -574,7 +578,8 @@ public interface VirtualMachinesClient {
      * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<VirtualMachineInner> listByResourceGroup(String resourceGroupName, String filter, Context context);
+    PagedIterable<VirtualMachineInner> listByResourceGroup(
+        String resourceGroupName, String filter, ExpandTypeForListVMs expand, Context context);
 
     /**
      * Lists all of the virtual machines in the specified subscription. Use the nextLink property in the response to get
@@ -596,6 +601,8 @@ public interface VirtualMachinesClient {
      * @param filter The system query option to filter VMs returned in the response. Allowed value is
      *     'virtualMachineScaleSet/id' eq
      *     /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmssName}'.
+     * @param expand The expand expression to apply on operation. 'instanceView' enables fetching run time status of all
+     *     Virtual Machines, this can only be specified if a valid $filter option is specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -604,7 +611,8 @@ public interface VirtualMachinesClient {
      * @return the List Virtual Machine operation response as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<VirtualMachineInner> list(String statusOnly, String filter, Context context);
+    PagedIterable<VirtualMachineInner> list(
+        String statusOnly, String filter, ExpandTypesForListVMs expand, Context context);
 
     /**
      * Lists all available virtual machine sizes to which the specified virtual machine can be resized.
@@ -1007,8 +1015,8 @@ public interface VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
-     *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
-     *     expiration duration of 120 minutes.
+     *     1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of
+     *     120 minutes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

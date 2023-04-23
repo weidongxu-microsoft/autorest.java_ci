@@ -18,6 +18,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMNetworkProfileConfiguration;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProperties;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProtectionPolicy;
+import java.time.OffsetDateTime;
 
 public final class VirtualMachineScaleSetVMPropertiesImpl implements VirtualMachineScaleSetVMProperties {
     private VirtualMachineScaleSetVMPropertiesInner innerObject;
@@ -102,6 +103,10 @@ public final class VirtualMachineScaleSetVMPropertiesImpl implements VirtualMach
 
     public String userData() {
         return this.innerModel().userData();
+    }
+
+    public OffsetDateTime timeCreated() {
+        return this.innerModel().timeCreated();
     }
 
     public VirtualMachineScaleSetVMPropertiesInner innerModel() {

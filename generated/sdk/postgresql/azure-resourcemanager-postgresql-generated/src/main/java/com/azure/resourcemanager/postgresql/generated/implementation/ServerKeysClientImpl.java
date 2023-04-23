@@ -259,7 +259,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return a list of Server keys as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ServerKeyInner> listAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<ServerKeyInner> listAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(
             () -> listSinglePageAsync(resourceGroupName, serverName), nextLink -> listNextSinglePageAsync(nextLink));
     }
@@ -325,7 +325,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return a PostgreSQL Server key along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ServerKeyInner>> getWithResponseAsync(
+    public Mono<Response<ServerKeyInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, String keyName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -431,7 +431,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return a PostgreSQL Server key on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerKeyInner> getAsync(String resourceGroupName, String serverName, String keyName) {
+    public Mono<ServerKeyInner> getAsync(String resourceGroupName, String serverName, String keyName) {
         return getWithResponseAsync(resourceGroupName, serverName, keyName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -483,7 +483,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return a PostgreSQL Server key along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -603,7 +603,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return the {@link PollerFlux} for polling of a PostgreSQL Server key.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdateAsync(
+    public PollerFlux<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdateAsync(
         String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             createOrUpdateWithResponseAsync(serverName, keyName, resourceGroupName, parameters);
@@ -694,7 +694,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return a PostgreSQL Server key on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerKeyInner> createOrUpdateAsync(
+    public Mono<ServerKeyInner> createOrUpdateAsync(
         String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters) {
         return beginCreateOrUpdateAsync(serverName, keyName, resourceGroupName, parameters)
             .last()
@@ -771,7 +771,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
         String serverName, String keyName, String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -877,7 +877,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
+    public PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
         String serverName, String keyName, String resourceGroupName) {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(serverName, keyName, resourceGroupName);
         return this
@@ -955,7 +955,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String serverName, String keyName, String resourceGroupName) {
+    public Mono<Void> deleteAsync(String serverName, String keyName, String resourceGroupName) {
         return beginDeleteAsync(serverName, keyName, resourceGroupName)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);

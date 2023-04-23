@@ -135,7 +135,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      *     {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ServerAdministratorResourceInner>> getWithResponseAsync(
+    public Mono<Response<ServerAdministratorResourceInner>> getWithResponseAsync(
         String resourceGroupName, String serverName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -232,7 +232,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @return information about a AAD server administrator on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerAdministratorResourceInner> getAsync(String resourceGroupName, String serverName) {
+    public Mono<ServerAdministratorResourceInner> getAsync(String resourceGroupName, String serverName) {
         return getWithResponseAsync(resourceGroupName, serverName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
@@ -282,7 +282,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName, String serverName, ServerAdministratorResourceInner properties) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -395,7 +395,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @return the {@link PollerFlux} for polling of represents a and external administrator to be created.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ServerAdministratorResourceInner>, ServerAdministratorResourceInner>
+    public PollerFlux<PollResult<ServerAdministratorResourceInner>, ServerAdministratorResourceInner>
         beginCreateOrUpdateAsync(
             String resourceGroupName, String serverName, ServerAdministratorResourceInner properties) {
         Mono<Response<Flux<ByteBuffer>>> mono =
@@ -491,7 +491,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @return represents a and external administrator to be created on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerAdministratorResourceInner> createOrUpdateAsync(
+    public Mono<ServerAdministratorResourceInner> createOrUpdateAsync(
         String resourceGroupName, String serverName, ServerAdministratorResourceInner properties) {
         return beginCreateOrUpdateAsync(resourceGroupName, serverName, properties)
             .last()
@@ -567,7 +567,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String serverName) {
+    public Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String serverName) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -662,7 +662,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String serverName) {
+    public PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String serverName) {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, serverName);
         return this
             .client
@@ -734,7 +734,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String resourceGroupName, String serverName) {
+    public Mono<Void> deleteAsync(String resourceGroupName, String serverName) {
         return beginDeleteAsync(resourceGroupName, serverName).last().flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -903,7 +903,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      *     PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ServerAdministratorResourceInner> listAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<ServerAdministratorResourceInner> listAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, serverName));
     }
 

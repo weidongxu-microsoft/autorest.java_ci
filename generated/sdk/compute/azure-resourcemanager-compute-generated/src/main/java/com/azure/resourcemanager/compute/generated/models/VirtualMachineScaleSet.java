@@ -168,7 +168,7 @@ public interface VirtualMachineScaleSet {
 
     /**
      * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the
-     * virtual machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+     * virtual machine scale set should be assigned to. Minimum api-version: 2018-04-01.
      *
      * @return the proximityPlacementGroup value.
      */
@@ -176,7 +176,7 @@ public interface VirtualMachineScaleSet {
 
     /**
      * Gets the hostGroup property: Specifies information about the dedicated host group that the virtual machine scale
-     * set resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01.
+     * set resides in. Minimum api-version: 2020-06-01.
      *
      * @return the hostGroup value.
      */
@@ -222,8 +222,8 @@ public interface VirtualMachineScaleSet {
     PriorityMixPolicy priorityMixPolicy();
 
     /**
-     * Gets the timeCreated property: Specifies the time at which the Virtual Machine Scale Set resource was
-     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
+     * Gets the timeCreated property: Specifies the time at which the Virtual Machine Scale Set resource was created.
+     * Minimum api-version: 2021-11-01.
      *
      * @return the timeCreated value.
      */
@@ -518,11 +518,10 @@ public interface VirtualMachineScaleSet {
         interface WithProximityPlacementGroup {
             /**
              * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
-             * that the virtual machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version:
-             * 2018-04-01..
+             * that the virtual machine scale set should be assigned to. Minimum api-version: 2018-04-01..
              *
              * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual
-             *     machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+             *     machine scale set should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
@@ -531,10 +530,10 @@ public interface VirtualMachineScaleSet {
         interface WithHostGroup {
             /**
              * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual
-             * machine scale set resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01..
+             * machine scale set resides in. Minimum api-version: 2020-06-01..
              *
              * @param hostGroup Specifies information about the dedicated host group that the virtual machine scale set
-             *     resides in. &lt;br&gt;&lt;br&gt;Minimum api-version: 2020-06-01.
+             *     resides in. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withHostGroup(SubResource hostGroup);
@@ -632,7 +631,9 @@ public interface VirtualMachineScaleSet {
             UpdateStages.WithSinglePlacementGroup,
             UpdateStages.WithAdditionalCapabilities,
             UpdateStages.WithScaleInPolicy,
-            UpdateStages.WithProximityPlacementGroup {
+            UpdateStages.WithProximityPlacementGroup,
+            UpdateStages.WithPriorityMixPolicy,
+            UpdateStages.WithSpotRestorePolicy {
         /**
          * Executes the update request.
          *
@@ -801,6 +802,29 @@ public interface VirtualMachineScaleSet {
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
+        /** The stage of the VirtualMachineScaleSet update allowing to specify priorityMixPolicy. */
+        interface WithPriorityMixPolicy {
+            /**
+             * Specifies the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular
+             * priority VMs within the same VMSS Flex instance..
+             *
+             * @param priorityMixPolicy Specifies the desired targets for mixing Spot and Regular priority VMs within
+             *     the same VMSS Flex instance.
+             * @return the next definition stage.
+             */
+            Update withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy);
+        }
+        /** The stage of the VirtualMachineScaleSet update allowing to specify spotRestorePolicy. */
+        interface WithSpotRestorePolicy {
+            /**
+             * Specifies the spotRestorePolicy property: Specifies the Spot Restore properties for the virtual machine
+             * scale set..
+             *
+             * @param spotRestorePolicy Specifies the Spot Restore properties for the virtual machine scale set.
+             * @return the next definition stage.
+             */
+            Update withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy);
+        }
     }
     /**
      * Refreshes the resource to sync with Azure.
@@ -831,6 +855,8 @@ public interface VirtualMachineScaleSet {
      * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
      * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
      *
+     * @param hibernate Optional parameter to hibernate a virtual machine from the VM scale set. (This feature is
+     *     available for VMSS with Flexible OrchestrationMode only).
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -838,7 +864,7 @@ public interface VirtualMachineScaleSet {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
+    void deallocate(Boolean hibernate, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Deletes virtual machines in a VM scale set.
@@ -933,6 +959,26 @@ public interface VirtualMachineScaleSet {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
+
+    /**
+     * Reapplies the Virtual Machine Scale Set Virtual Machine Profile to the Virtual Machine Instances.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reapply();
+
+    /**
+     * Reapplies the Virtual Machine Scale Set Virtual Machine Profile to the Virtual Machine Instances.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reapply(Context context);
 
     /**
      * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them

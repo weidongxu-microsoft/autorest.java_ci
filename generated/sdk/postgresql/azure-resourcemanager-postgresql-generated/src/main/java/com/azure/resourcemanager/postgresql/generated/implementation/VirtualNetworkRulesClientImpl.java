@@ -146,7 +146,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return a virtual network rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<VirtualNetworkRuleInner>> getWithResponseAsync(
+    public Mono<Response<VirtualNetworkRuleInner>> getWithResponseAsync(
         String resourceGroupName, String serverName, String virtualNetworkRuleName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -256,7 +256,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return a virtual network rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<VirtualNetworkRuleInner> getAsync(
+    public Mono<VirtualNetworkRuleInner> getAsync(
         String resourceGroupName, String serverName, String virtualNetworkRuleName) {
         return getWithResponseAsync(resourceGroupName, serverName, virtualNetworkRuleName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
@@ -309,7 +309,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return a virtual network rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
         String resourceGroupName,
         String serverName,
         String virtualNetworkRuleName,
@@ -440,7 +440,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return the {@link PollerFlux} for polling of a virtual network rule.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<VirtualNetworkRuleInner>, VirtualNetworkRuleInner> beginCreateOrUpdateAsync(
+    public PollerFlux<PollResult<VirtualNetworkRuleInner>, VirtualNetworkRuleInner> beginCreateOrUpdateAsync(
         String resourceGroupName,
         String serverName,
         String virtualNetworkRuleName,
@@ -551,7 +551,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return a virtual network rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<VirtualNetworkRuleInner> createOrUpdateAsync(
+    public Mono<VirtualNetworkRuleInner> createOrUpdateAsync(
         String resourceGroupName,
         String serverName,
         String virtualNetworkRuleName,
@@ -642,7 +642,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
+    public Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
         String resourceGroupName, String serverName, String virtualNetworkRuleName) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -748,7 +748,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
+    public PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
         String resourceGroupName, String serverName, String virtualNetworkRuleName) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             deleteWithResponseAsync(resourceGroupName, serverName, virtualNetworkRuleName);
@@ -828,7 +828,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String resourceGroupName, String serverName, String virtualNetworkRuleName) {
+    public Mono<Void> deleteAsync(String resourceGroupName, String serverName, String virtualNetworkRuleName) {
         return beginDeleteAsync(resourceGroupName, serverName, virtualNetworkRuleName)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
@@ -1012,7 +1012,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @return a list of virtual network rules in a server as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<VirtualNetworkRuleInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<VirtualNetworkRuleInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(
             () -> listByServerSinglePageAsync(resourceGroupName, serverName),
             nextLink -> listByServerNextSinglePageAsync(nextLink));

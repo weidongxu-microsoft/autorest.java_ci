@@ -4,12 +4,15 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
+import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionInner;
 import com.azure.resourcemanager.compute.generated.models.KeyVaultSecretReference;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMExtension;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMExtensionUpdate;
+import java.util.Collections;
+import java.util.List;
 
 public final class VirtualMachineScaleSetVMExtensionImpl
     implements VirtualMachineScaleSetVMExtension,
@@ -29,6 +32,10 @@ public final class VirtualMachineScaleSetVMExtensionImpl
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public String location() {
+        return this.innerModel().location();
     }
 
     public String forceUpdateTag() {
@@ -77,6 +84,23 @@ public final class VirtualMachineScaleSetVMExtensionImpl
 
     public KeyVaultSecretReference protectedSettingsFromKeyVault() {
         return this.innerModel().protectedSettingsFromKeyVault();
+    }
+
+    public List<String> provisionAfterExtensions() {
+        List<String> inner = this.innerModel().provisionAfterExtensions();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public Region region() {
+        return Region.fromName(this.regionName());
+    }
+
+    public String regionName() {
+        return this.location();
     }
 
     public String resourceGroupName() {
@@ -200,6 +224,16 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         return this;
     }
 
+    public VirtualMachineScaleSetVMExtensionImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public VirtualMachineScaleSetVMExtensionImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public VirtualMachineScaleSetVMExtensionImpl withForceUpdateTag(String forceUpdateTag) {
         if (isInCreateMode()) {
             this.innerModel().withForceUpdateTag(forceUpdateTag);
@@ -304,6 +338,11 @@ public final class VirtualMachineScaleSetVMExtensionImpl
             this.updateExtensionParameters.withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;
         }
+    }
+
+    public VirtualMachineScaleSetVMExtensionImpl withProvisionAfterExtensions(List<String> provisionAfterExtensions) {
+        this.innerModel().withProvisionAfterExtensions(provisionAfterExtensions);
+        return this;
     }
 
     private boolean isInCreateMode() {

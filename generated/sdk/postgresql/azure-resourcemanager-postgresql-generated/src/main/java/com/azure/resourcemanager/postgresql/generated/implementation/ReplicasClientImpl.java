@@ -184,7 +184,7 @@ public final class ReplicasClientImpl implements ReplicasClient {
      * @return a list of servers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ServerInner> listByServerAsync(String resourceGroupName, String serverName) {
+    public PagedFlux<ServerInner> listByServerAsync(String resourceGroupName, String serverName) {
         return new PagedFlux<>(() -> listByServerSinglePageAsync(resourceGroupName, serverName));
     }
 
