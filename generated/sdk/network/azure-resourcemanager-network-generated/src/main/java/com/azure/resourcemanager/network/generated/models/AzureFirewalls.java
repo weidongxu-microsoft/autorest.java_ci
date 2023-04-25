@@ -128,6 +128,35 @@ public interface AzureFirewalls {
     IpPrefixesList listLearnedPrefixes(String resourceGroupName, String azureFirewallName, Context context);
 
     /**
+     * Runs a packet capture on AzureFirewall.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param azureFirewallName The name of the Azure Firewall.
+     * @param parameters Parameters supplied to run packet capture on azure firewall.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void packetCapture(String resourceGroupName, String azureFirewallName, FirewallPacketCaptureParameters parameters);
+
+    /**
+     * Runs a packet capture on AzureFirewall.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param azureFirewallName The name of the Azure Firewall.
+     * @param parameters Parameters supplied to run packet capture on azure firewall.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void packetCapture(
+        String resourceGroupName,
+        String azureFirewallName,
+        FirewallPacketCaptureParameters parameters,
+        Context context);
+
+    /**
      * Gets the specified Azure Firewall.
      *
      * @param id the resource ID.

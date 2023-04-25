@@ -60,6 +60,10 @@ public final class PrivateEndpointConnectionImpl implements PrivateEndpointConne
         return this.innerModel().linkIdentifier();
     }
 
+    public String privateEndpointLocation() {
+        return this.innerModel().privateEndpointLocation();
+    }
+
     public PrivateEndpointConnectionInner innerModel() {
         return this.innerObject;
     }

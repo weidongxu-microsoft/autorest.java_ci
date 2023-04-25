@@ -161,6 +161,13 @@ public interface NetworkInterfacePropertiesFormat {
     NetworkInterfaceAuxiliaryMode auxiliaryMode();
 
     /**
+     * Gets the auxiliarySku property: Auxiliary sku of Network Interface resource.
+     *
+     * @return the auxiliarySku value.
+     */
+    NetworkInterfaceAuxiliarySku auxiliarySku();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfacePropertiesFormatInner
      * object.
      *

@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.models.AzureFirewallNatRuleCo
 import com.azure.resourcemanager.network.generated.models.AzureFirewallNetworkRuleCollection;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallSku;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
+import com.azure.resourcemanager.network.generated.models.FirewallPacketCaptureParameters;
 import com.azure.resourcemanager.network.generated.models.HubIpAddresses;
 import com.azure.resourcemanager.network.generated.models.IpPrefixesList;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -261,6 +262,14 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
 
     public IpPrefixesList listLearnedPrefixes(Context context) {
         return serviceManager.azureFirewalls().listLearnedPrefixes(resourceGroupName, azureFirewallName, context);
+    }
+
+    public void packetCapture(FirewallPacketCaptureParameters parameters) {
+        serviceManager.azureFirewalls().packetCapture(resourceGroupName, azureFirewallName, parameters);
+    }
+
+    public void packetCapture(FirewallPacketCaptureParameters parameters, Context context) {
+        serviceManager.azureFirewalls().packetCapture(resourceGroupName, azureFirewallName, parameters, context);
     }
 
     public AzureFirewallImpl withRegion(Region location) {

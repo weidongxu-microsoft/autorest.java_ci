@@ -95,6 +95,7 @@ import com.azure.resourcemanager.network.generated.fluent.NetworkManagerDeployme
 import com.azure.resourcemanager.network.generated.fluent.NetworkManagersClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkProfilesClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkSecurityGroupsClient;
+import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualApplianceConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualAppliancesClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkWatchersClient;
 import com.azure.resourcemanager.network.generated.fluent.OperationsClient;
@@ -1744,6 +1745,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.expressRouteConnections;
     }
 
+    /** The NetworkVirtualApplianceConnectionsClient object to access its operations. */
+    private final NetworkVirtualApplianceConnectionsClient networkVirtualApplianceConnections;
+
+    /**
+     * Gets the NetworkVirtualApplianceConnectionsClient object to access its operations.
+     *
+     * @return the NetworkVirtualApplianceConnectionsClient object.
+     */
+    public NetworkVirtualApplianceConnectionsClient getNetworkVirtualApplianceConnections() {
+        return this.networkVirtualApplianceConnections;
+    }
+
     /** The VirtualHubBgpConnectionsClient object to access its operations. */
     private final VirtualHubBgpConnectionsClient virtualHubBgpConnections;
 
@@ -1956,6 +1969,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.virtualHubRouteTableV2S = new VirtualHubRouteTableV2SClientImpl(this);
         this.expressRouteGateways = new ExpressRouteGatewaysClientImpl(this);
         this.expressRouteConnections = new ExpressRouteConnectionsClientImpl(this);
+        this.networkVirtualApplianceConnections = new NetworkVirtualApplianceConnectionsClientImpl(this);
         this.virtualHubBgpConnections = new VirtualHubBgpConnectionsClientImpl(this);
         this.virtualHubIpConfigurations = new VirtualHubIpConfigurationsClientImpl(this);
         this.hubRouteTables = new HubRouteTablesClientImpl(this);

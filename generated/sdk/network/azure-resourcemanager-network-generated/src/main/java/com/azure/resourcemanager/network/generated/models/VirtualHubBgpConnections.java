@@ -7,6 +7,8 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import java.util.List;
+import java.util.Map;
 
 /** Resource collection API of VirtualHubBgpConnections. */
 public interface VirtualHubBgpConnections {
@@ -97,9 +99,9 @@ public interface VirtualHubBgpConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual router peer routes.
+     * @return map from virtual router instance to list of peer routes.
      */
-    PeerRouteList listLearnedRoutes(String resourceGroupName, String hubName, String connectionName);
+    Map<String, List<PeerRoute>> listLearnedRoutes(String resourceGroupName, String hubName, String connectionName);
 
     /**
      * Retrieves a list of routes the virtual hub bgp connection has learned.
@@ -111,9 +113,10 @@ public interface VirtualHubBgpConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual router peer routes.
+     * @return map from virtual router instance to list of peer routes.
      */
-    PeerRouteList listLearnedRoutes(String resourceGroupName, String hubName, String connectionName, Context context);
+    Map<String, List<PeerRoute>> listLearnedRoutes(
+        String resourceGroupName, String hubName, String connectionName, Context context);
 
     /**
      * Retrieves a list of routes the virtual hub bgp connection is advertising to the specified peer.
@@ -124,9 +127,9 @@ public interface VirtualHubBgpConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual router peer routes.
+     * @return map from virtual router instance to list of peer routes.
      */
-    PeerRouteList listAdvertisedRoutes(String resourceGroupName, String hubName, String connectionName);
+    Map<String, List<PeerRoute>> listAdvertisedRoutes(String resourceGroupName, String hubName, String connectionName);
 
     /**
      * Retrieves a list of routes the virtual hub bgp connection is advertising to the specified peer.
@@ -138,9 +141,9 @@ public interface VirtualHubBgpConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual router peer routes.
+     * @return map from virtual router instance to list of peer routes.
      */
-    PeerRouteList listAdvertisedRoutes(
+    Map<String, List<PeerRoute>> listAdvertisedRoutes(
         String resourceGroupName, String hubName, String connectionName, Context context);
 
     /**

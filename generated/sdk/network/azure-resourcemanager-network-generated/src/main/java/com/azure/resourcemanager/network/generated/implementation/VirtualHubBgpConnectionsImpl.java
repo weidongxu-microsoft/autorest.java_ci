@@ -11,10 +11,12 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.VirtualHubBgpConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpConnectionInner;
-import com.azure.resourcemanager.network.generated.fluent.models.PeerRouteListInner;
 import com.azure.resourcemanager.network.generated.models.BgpConnection;
-import com.azure.resourcemanager.network.generated.models.PeerRouteList;
+import com.azure.resourcemanager.network.generated.models.PeerRoute;
 import com.azure.resourcemanager.network.generated.models.VirtualHubBgpConnections;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnections {
     private static final ClientLogger LOGGER = new ClientLogger(VirtualHubBgpConnectionsImpl.class);
@@ -72,44 +74,47 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         return Utils.mapPage(inner, inner1 -> new BgpConnectionImpl(inner1, this.manager()));
     }
 
-    public PeerRouteList listLearnedRoutes(String resourceGroupName, String hubName, String connectionName) {
-        PeerRouteListInner inner = this.serviceClient().listLearnedRoutes(resourceGroupName, hubName, connectionName);
+    public Map<String, List<PeerRoute>> listLearnedRoutes(
+        String resourceGroupName, String hubName, String connectionName) {
+        Map<String, List<PeerRoute>> inner =
+            this.serviceClient().listLearnedRoutes(resourceGroupName, hubName, connectionName);
         if (inner != null) {
-            return new PeerRouteListImpl(inner, this.manager());
+            return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
-    public PeerRouteList listLearnedRoutes(
+    public Map<String, List<PeerRoute>> listLearnedRoutes(
         String resourceGroupName, String hubName, String connectionName, Context context) {
-        PeerRouteListInner inner =
+        Map<String, List<PeerRoute>> inner =
             this.serviceClient().listLearnedRoutes(resourceGroupName, hubName, connectionName, context);
         if (inner != null) {
-            return new PeerRouteListImpl(inner, this.manager());
+            return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
-    public PeerRouteList listAdvertisedRoutes(String resourceGroupName, String hubName, String connectionName) {
-        PeerRouteListInner inner =
+    public Map<String, List<PeerRoute>> listAdvertisedRoutes(
+        String resourceGroupName, String hubName, String connectionName) {
+        Map<String, List<PeerRoute>> inner =
             this.serviceClient().listAdvertisedRoutes(resourceGroupName, hubName, connectionName);
         if (inner != null) {
-            return new PeerRouteListImpl(inner, this.manager());
+            return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
-    public PeerRouteList listAdvertisedRoutes(
+    public Map<String, List<PeerRoute>> listAdvertisedRoutes(
         String resourceGroupName, String hubName, String connectionName, Context context) {
-        PeerRouteListInner inner =
+        Map<String, List<PeerRoute>> inner =
             this.serviceClient().listAdvertisedRoutes(resourceGroupName, hubName, connectionName, context);
         if (inner != null) {
-            return new PeerRouteListImpl(inner, this.manager());
+            return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

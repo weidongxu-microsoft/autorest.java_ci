@@ -95,6 +95,10 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this.innerModel().enableTunneling();
     }
 
+    public Boolean enableKerberos() {
+        return this.innerModel().enableKerberos();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -263,6 +267,11 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
 
     public BastionHostImpl withEnableTunneling(Boolean enableTunneling) {
         this.innerModel().withEnableTunneling(enableTunneling);
+        return this;
+    }
+
+    public BastionHostImpl withEnableKerberos(Boolean enableKerberos) {
+        this.innerModel().withEnableKerberos(enableKerberos);
         return this;
     }
 

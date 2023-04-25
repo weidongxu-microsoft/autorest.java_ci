@@ -97,6 +97,7 @@ import com.azure.resourcemanager.network.generated.implementation.NetworkManager
 import com.azure.resourcemanager.network.generated.implementation.NetworkManagersImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkProfilesImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkSecurityGroupsImpl;
+import com.azure.resourcemanager.network.generated.implementation.NetworkVirtualApplianceConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkVirtualAppliancesImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkWatchersImpl;
 import com.azure.resourcemanager.network.generated.implementation.OperationsImpl;
@@ -228,6 +229,7 @@ import com.azure.resourcemanager.network.generated.models.NetworkManagerDeployme
 import com.azure.resourcemanager.network.generated.models.NetworkManagers;
 import com.azure.resourcemanager.network.generated.models.NetworkProfiles;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroups;
+import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceConnections;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliances;
 import com.azure.resourcemanager.network.generated.models.NetworkWatchers;
 import com.azure.resourcemanager.network.generated.models.Operations;
@@ -547,6 +549,8 @@ public final class NetworkManager {
     private ExpressRouteGateways expressRouteGateways;
 
     private ExpressRouteConnections expressRouteConnections;
+
+    private NetworkVirtualApplianceConnections networkVirtualApplianceConnections;
 
     private VirtualHubBgpConnections virtualHubBgpConnections;
 
@@ -2361,6 +2365,19 @@ public final class NetworkManager {
                 new ExpressRouteConnectionsImpl(clientObject.getExpressRouteConnections(), this);
         }
         return expressRouteConnections;
+    }
+
+    /**
+     * Gets the resource collection API of NetworkVirtualApplianceConnections.
+     *
+     * @return Resource collection API of NetworkVirtualApplianceConnections.
+     */
+    public NetworkVirtualApplianceConnections networkVirtualApplianceConnections() {
+        if (this.networkVirtualApplianceConnections == null) {
+            this.networkVirtualApplianceConnections =
+                new NetworkVirtualApplianceConnectionsImpl(clientObject.getNetworkVirtualApplianceConnections(), this);
+        }
+        return networkVirtualApplianceConnections;
     }
 
     /**

@@ -216,6 +216,13 @@ public interface NetworkInterface {
     NetworkInterfaceAuxiliaryMode auxiliaryMode();
 
     /**
+     * Gets the auxiliarySku property: Auxiliary sku of Network Interface resource.
+     *
+     * @return the auxiliarySku value.
+     */
+    NetworkInterfaceAuxiliarySku auxiliarySku();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -300,7 +307,8 @@ public interface NetworkInterface {
                 DefinitionStages.WithNicType,
                 DefinitionStages.WithPrivateLinkService,
                 DefinitionStages.WithMigrationPhase,
-                DefinitionStages.WithAuxiliaryMode {
+                DefinitionStages.WithAuxiliaryMode,
+                DefinitionStages.WithAuxiliarySku {
             /**
              * Executes the create request.
              *
@@ -448,6 +456,16 @@ public interface NetworkInterface {
              * @return the next definition stage.
              */
             WithCreate withAuxiliaryMode(NetworkInterfaceAuxiliaryMode auxiliaryMode);
+        }
+        /** The stage of the NetworkInterface definition allowing to specify auxiliarySku. */
+        interface WithAuxiliarySku {
+            /**
+             * Specifies the auxiliarySku property: Auxiliary sku of Network Interface resource..
+             *
+             * @param auxiliarySku Auxiliary sku of Network Interface resource.
+             * @return the next definition stage.
+             */
+            WithCreate withAuxiliarySku(NetworkInterfaceAuxiliarySku auxiliarySku);
         }
     }
     /**

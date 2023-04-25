@@ -44,6 +44,10 @@ public final class PrivateEndpointConnectionPropertiesImpl implements PrivateEnd
         return this.innerModel().linkIdentifier();
     }
 
+    public String privateEndpointLocation() {
+        return this.innerModel().privateEndpointLocation();
+    }
+
     public PrivateEndpointConnectionPropertiesInner innerModel() {
         return this.innerObject;
     }

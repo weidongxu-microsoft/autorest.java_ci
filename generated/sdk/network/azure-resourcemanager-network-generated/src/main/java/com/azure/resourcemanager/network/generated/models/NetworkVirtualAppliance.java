@@ -127,11 +127,25 @@ public interface NetworkVirtualAppliance {
     List<VirtualApplianceNicProperties> virtualApplianceNics();
 
     /**
+     * Gets the additionalNics property: Details required for Additional Network Interface.
+     *
+     * @return the additionalNics value.
+     */
+    List<VirtualApplianceAdditionalNicProperties> additionalNics();
+
+    /**
      * Gets the virtualApplianceSites property: List of references to VirtualApplianceSite.
      *
      * @return the virtualApplianceSites value.
      */
     List<SubResource> virtualApplianceSites();
+
+    /**
+     * Gets the virtualApplianceConnections property: List of references to VirtualApplianceConnections.
+     *
+     * @return the virtualApplianceConnections value.
+     */
+    List<SubResource> virtualApplianceConnections();
 
     /**
      * Gets the inboundSecurityRules property: List of references to InboundSecurityRules.
@@ -250,6 +264,7 @@ public interface NetworkVirtualAppliance {
                 DefinitionStages.WithCloudInitConfiguration,
                 DefinitionStages.WithVirtualApplianceAsn,
                 DefinitionStages.WithSshPublicKey,
+                DefinitionStages.WithAdditionalNics,
                 DefinitionStages.WithDelegation,
                 DefinitionStages.WithPartnerManagedResource {
             /**
@@ -359,6 +374,16 @@ public interface NetworkVirtualAppliance {
              * @return the next definition stage.
              */
             WithCreate withSshPublicKey(String sshPublicKey);
+        }
+        /** The stage of the NetworkVirtualAppliance definition allowing to specify additionalNics. */
+        interface WithAdditionalNics {
+            /**
+             * Specifies the additionalNics property: Details required for Additional Network Interface..
+             *
+             * @param additionalNics Details required for Additional Network Interface.
+             * @return the next definition stage.
+             */
+            WithCreate withAdditionalNics(List<VirtualApplianceAdditionalNicProperties> additionalNics);
         }
         /** The stage of the NetworkVirtualAppliance definition allowing to specify delegation. */
         interface WithDelegation {

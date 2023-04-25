@@ -67,6 +67,13 @@ public interface PrivateEndpointConnection {
     String linkIdentifier();
 
     /**
+     * Gets the privateEndpointLocation property: The location of the private endpoint.
+     *
+     * @return the privateEndpointLocation value.
+     */
+    String privateEndpointLocation();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionInner object.
      *
      * @return the inner object.

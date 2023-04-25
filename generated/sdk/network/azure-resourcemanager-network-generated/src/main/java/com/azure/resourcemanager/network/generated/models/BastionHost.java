@@ -125,6 +125,13 @@ public interface BastionHost {
     Boolean enableTunneling();
 
     /**
+     * Gets the enableKerberos property: Enable/Disable Kerberos feature of the Bastion Host resource.
+     *
+     * @return the enableKerberos value.
+     */
+    Boolean enableKerberos();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -206,7 +213,8 @@ public interface BastionHost {
                 DefinitionStages.WithEnableFileCopy,
                 DefinitionStages.WithEnableIpConnect,
                 DefinitionStages.WithEnableShareableLink,
-                DefinitionStages.WithEnableTunneling {
+                DefinitionStages.WithEnableTunneling,
+                DefinitionStages.WithEnableKerberos {
             /**
              * Executes the create request.
              *
@@ -321,6 +329,16 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             WithCreate withEnableTunneling(Boolean enableTunneling);
+        }
+        /** The stage of the BastionHost definition allowing to specify enableKerberos. */
+        interface WithEnableKerberos {
+            /**
+             * Specifies the enableKerberos property: Enable/Disable Kerberos feature of the Bastion Host resource..
+             *
+             * @param enableKerberos Enable/Disable Kerberos feature of the Bastion Host resource.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableKerberos(Boolean enableKerberos);
         }
     }
     /**

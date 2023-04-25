@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallIn
 import com.azure.resourcemanager.network.generated.fluent.models.IpPrefixesListInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewall;
 import com.azure.resourcemanager.network.generated.models.AzureFirewalls;
+import com.azure.resourcemanager.network.generated.models.FirewallPacketCaptureParameters;
 import com.azure.resourcemanager.network.generated.models.IpPrefixesList;
 
 public final class AzureFirewallsImpl implements AzureFirewalls {
@@ -98,6 +99,19 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         } else {
             return null;
         }
+    }
+
+    public void packetCapture(
+        String resourceGroupName, String azureFirewallName, FirewallPacketCaptureParameters parameters) {
+        this.serviceClient().packetCapture(resourceGroupName, azureFirewallName, parameters);
+    }
+
+    public void packetCapture(
+        String resourceGroupName,
+        String azureFirewallName,
+        FirewallPacketCaptureParameters parameters,
+        Context context) {
+        this.serviceClient().packetCapture(resourceGroupName, azureFirewallName, parameters, context);
     }
 
     public AzureFirewall getById(String id) {

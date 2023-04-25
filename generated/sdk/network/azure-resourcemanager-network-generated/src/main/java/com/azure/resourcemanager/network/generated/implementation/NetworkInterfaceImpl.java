@@ -18,6 +18,7 @@ import com.azure.resourcemanager.network.generated.models.EffectiveRouteListResu
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceAuxiliaryMode;
+import com.azure.resourcemanager.network.generated.models.NetworkInterfaceAuxiliarySku;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceDnsSettings;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceMigrationPhase;
@@ -194,6 +195,10 @@ public final class NetworkInterfaceImpl
 
     public NetworkInterfaceAuxiliaryMode auxiliaryMode() {
         return this.innerModel().auxiliaryMode();
+    }
+
+    public NetworkInterfaceAuxiliarySku auxiliarySku() {
+        return this.innerModel().auxiliarySku();
     }
 
     public Region region() {
@@ -405,6 +410,11 @@ public final class NetworkInterfaceImpl
 
     public NetworkInterfaceImpl withAuxiliaryMode(NetworkInterfaceAuxiliaryMode auxiliaryMode) {
         this.innerModel().withAuxiliaryMode(auxiliaryMode);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withAuxiliarySku(NetworkInterfaceAuxiliarySku auxiliarySku) {
+        this.innerModel().withAuxiliarySku(auxiliarySku);
         return this;
     }
 

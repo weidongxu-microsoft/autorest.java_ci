@@ -462,4 +462,25 @@ public interface AzureFirewall {
      * @return list of SNAT IP Prefixes learnt by firewall to not SNAT.
      */
     IpPrefixesList listLearnedPrefixes(Context context);
+
+    /**
+     * Runs a packet capture on AzureFirewall.
+     *
+     * @param parameters Parameters supplied to run packet capture on azure firewall.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void packetCapture(FirewallPacketCaptureParameters parameters);
+
+    /**
+     * Runs a packet capture on AzureFirewall.
+     *
+     * @param parameters Parameters supplied to run packet capture on azure firewall.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void packetCapture(FirewallPacketCaptureParameters parameters, Context context);
 }

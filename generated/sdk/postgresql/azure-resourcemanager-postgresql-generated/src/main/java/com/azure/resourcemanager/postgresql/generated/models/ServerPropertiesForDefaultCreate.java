@@ -25,7 +25,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     /*
      * The password of the administrator login.
      */
-    @JsonProperty(value = "administratorLoginPassword", required = true)
+    @JsonProperty(value = "administratorLoginPassword")
     private String administratorLoginPassword;
 
     /** Creates an instance of ServerPropertiesForDefaultCreate class. */

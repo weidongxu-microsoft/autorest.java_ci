@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianc
 import com.azure.resourcemanager.network.generated.models.PartnerManagedResourceProperties;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
+import com.azure.resourcemanager.network.generated.models.VirtualApplianceAdditionalNicProperties;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceNicProperties;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkuProperties;
 import java.util.Collections;
@@ -110,8 +111,26 @@ public final class NetworkVirtualApplianceImpl
         }
     }
 
+    public List<VirtualApplianceAdditionalNicProperties> additionalNics() {
+        List<VirtualApplianceAdditionalNicProperties> inner = this.innerModel().additionalNics();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public List<SubResource> virtualApplianceSites() {
         List<SubResource> inner = this.innerModel().virtualApplianceSites();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<SubResource> virtualApplianceConnections() {
+        List<SubResource> inner = this.innerModel().virtualApplianceConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -314,6 +333,12 @@ public final class NetworkVirtualApplianceImpl
 
     public NetworkVirtualApplianceImpl withSshPublicKey(String sshPublicKey) {
         this.innerModel().withSshPublicKey(sshPublicKey);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl withAdditionalNics(
+        List<VirtualApplianceAdditionalNicProperties> additionalNics) {
+        this.innerModel().withAdditionalNics(additionalNics);
         return this;
     }
 
