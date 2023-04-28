@@ -567,8 +567,9 @@ public interface VirtualHub {
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource.
      */
-    void getEffectiveVirtualHubRoutes();
+    VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes();
 
     /**
      * Gets the effective routes configured for the Virtual Hub resource or the specified resource .
@@ -578,8 +579,10 @@ public interface VirtualHub {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource.
      */
-    void getEffectiveVirtualHubRoutes(EffectiveRoutesParameters effectiveRoutesParameters, Context context);
+    VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(
+        EffectiveRoutesParameters effectiveRoutesParameters, Context context);
 
     /**
      * Gets the inbound routes configured for the Virtual Hub on a particular connection.
@@ -588,8 +591,9 @@ public interface VirtualHub {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters);
+    EffectiveRouteMapRouteList getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters);
 
     /**
      * Gets the inbound routes configured for the Virtual Hub on a particular connection.
@@ -599,8 +603,9 @@ public interface VirtualHub {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters, Context context);
+    EffectiveRouteMapRouteList getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters, Context context);
 
     /**
      * Gets the outbound routes configured for the Virtual Hub on a particular connection.
@@ -609,8 +614,9 @@ public interface VirtualHub {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters);
+    EffectiveRouteMapRouteList getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters);
 
     /**
      * Gets the outbound routes configured for the Virtual Hub on a particular connection.
@@ -620,6 +626,8 @@ public interface VirtualHub {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters, Context context);
+    EffectiveRouteMapRouteList getOutboundRoutes(
+        GetOutboundRoutesParameters getOutboundRoutesParameters, Context context);
 }

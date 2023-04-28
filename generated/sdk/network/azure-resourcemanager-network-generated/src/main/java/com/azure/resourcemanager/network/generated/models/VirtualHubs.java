@@ -110,8 +110,9 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource.
      */
-    void getEffectiveVirtualHubRoutes(String resourceGroupName, String virtualHubName);
+    VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(String resourceGroupName, String virtualHubName);
 
     /**
      * Gets the effective routes configured for the Virtual Hub resource or the specified resource .
@@ -123,8 +124,9 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource.
      */
-    void getEffectiveVirtualHubRoutes(
+    VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(
         String resourceGroupName,
         String virtualHubName,
         EffectiveRoutesParameters effectiveRoutesParameters,
@@ -139,8 +141,9 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getInboundRoutes(
+    EffectiveRouteMapRouteList getInboundRoutes(
         String resourceGroupName, String virtualHubName, GetInboundRoutesParameters getInboundRoutesParameters);
 
     /**
@@ -153,8 +156,9 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getInboundRoutes(
+    EffectiveRouteMapRouteList getInboundRoutes(
         String resourceGroupName,
         String virtualHubName,
         GetInboundRoutesParameters getInboundRoutesParameters,
@@ -169,8 +173,9 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getOutboundRoutes(
+    EffectiveRouteMapRouteList getOutboundRoutes(
         String resourceGroupName, String virtualHubName, GetOutboundRoutesParameters getOutboundRoutesParameters);
 
     /**
@@ -183,8 +188,9 @@ public interface VirtualHubs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection.
      */
-    void getOutboundRoutes(
+    EffectiveRouteMapRouteList getOutboundRoutes(
         String resourceGroupName,
         String virtualHubName,
         GetOutboundRoutesParameters getOutboundRoutesParameters,

@@ -91,7 +91,8 @@ public interface SqlVirtualMachine {
     SqlServerLicenseType sqlServerLicenseType();
 
     /**
-     * Gets the sqlManagement property: SQL Server Management type.
+     * Gets the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used anymore. API will
+     * automatically detect the Sql Management, refrain from using it.
      *
      * @return the sqlManagement value.
      */
@@ -353,9 +354,11 @@ public interface SqlVirtualMachine {
         /** The stage of the SqlVirtualMachine definition allowing to specify sqlManagement. */
         interface WithSqlManagement {
             /**
-             * Specifies the sqlManagement property: SQL Server Management type..
+             * Specifies the sqlManagement property: SQL Server Management type. NOTE: This parameter is not used
+             * anymore. API will automatically detect the Sql Management, refrain from using it..
              *
-             * @param sqlManagement SQL Server Management type.
+             * @param sqlManagement SQL Server Management type. NOTE: This parameter is not used anymore. API will
+             *     automatically detect the Sql Management, refrain from using it.
              * @return the next definition stage.
              */
             WithCreate withSqlManagement(SqlManagementMode sqlManagement);

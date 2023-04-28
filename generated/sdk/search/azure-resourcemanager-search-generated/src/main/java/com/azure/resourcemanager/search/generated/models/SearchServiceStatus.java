@@ -34,10 +34,7 @@ public enum SearchServiceStatus {
     DISABLED("disabled"),
 
     /** Enum value error. */
-    ERROR("error"),
-
-    /** Enum value stopped. */
-    STOPPED("stopped");
+    ERROR("error");
 
     /** The actual serialized value for a SearchServiceStatus instance. */
     private final String value;

@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
+import com.azure.resourcemanager.network.generated.models.EffectiveRouteMapRouteList;
 import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
 import com.azure.resourcemanager.network.generated.models.GetInboundRoutesParameters;
 import com.azure.resourcemanager.network.generated.models.GetOutboundRoutesParameters;
@@ -18,6 +19,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualHub;
+import com.azure.resourcemanager.network.generated.models.VirtualHubEffectiveRouteList;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTable;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTableV2;
 import com.azure.resourcemanager.network.generated.models.VirtualRouterAutoScaleConfiguration;
@@ -290,32 +292,39 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    public void getEffectiveVirtualHubRoutes() {
-        serviceManager.virtualHubs().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
+    public VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes() {
+        return serviceManager.virtualHubs().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
     }
 
-    public void getEffectiveVirtualHubRoutes(EffectiveRoutesParameters effectiveRoutesParameters, Context context) {
-        serviceManager
+    public VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(
+        EffectiveRoutesParameters effectiveRoutesParameters, Context context) {
+        return serviceManager
             .virtualHubs()
             .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
     }
 
-    public void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters) {
-        serviceManager.virtualHubs().getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters);
+    public EffectiveRouteMapRouteList getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters) {
+        return serviceManager
+            .virtualHubs()
+            .getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters);
     }
 
-    public void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters, Context context) {
-        serviceManager
+    public EffectiveRouteMapRouteList getInboundRoutes(
+        GetInboundRoutesParameters getInboundRoutesParameters, Context context) {
+        return serviceManager
             .virtualHubs()
             .getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters, context);
     }
 
-    public void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters) {
-        serviceManager.virtualHubs().getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters);
+    public EffectiveRouteMapRouteList getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters) {
+        return serviceManager
+            .virtualHubs()
+            .getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters);
     }
 
-    public void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters, Context context) {
-        serviceManager
+    public EffectiveRouteMapRouteList getOutboundRoutes(
+        GetOutboundRoutesParameters getOutboundRoutesParameters, Context context) {
+        return serviceManager
             .virtualHubs()
             .getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context);
     }
