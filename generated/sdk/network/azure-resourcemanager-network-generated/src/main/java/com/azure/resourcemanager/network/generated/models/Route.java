@@ -93,11 +93,13 @@ public interface Route {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Route definition stages. */
     interface DefinitionStages {
         /** The first stage of the Route definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Route definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -109,6 +111,7 @@ public interface Route {
              */
             WithCreate withExistingRouteTable(String resourceGroupName, String routeTableName);
         }
+
         /**
          * The stage of the Route definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -135,6 +138,7 @@ public interface Route {
              */
             Route create(Context context);
         }
+
         /** The stage of the Route definition allowing to specify name. */
         interface WithName {
             /**
@@ -147,6 +151,7 @@ public interface Route {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the Route definition allowing to specify type. */
         interface WithType {
             /**
@@ -157,6 +162,7 @@ public interface Route {
              */
             WithCreate withType(String type);
         }
+
         /** The stage of the Route definition allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -167,6 +173,7 @@ public interface Route {
              */
             WithCreate withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the Route definition allowing to specify nextHopType. */
         interface WithNextHopType {
             /**
@@ -177,6 +184,7 @@ public interface Route {
              */
             WithCreate withNextHopType(RouteNextHopType nextHopType);
         }
+
         /** The stage of the Route definition allowing to specify nextHopIpAddress. */
         interface WithNextHopIpAddress {
             /**
@@ -189,6 +197,7 @@ public interface Route {
              */
             WithCreate withNextHopIpAddress(String nextHopIpAddress);
         }
+
         /** The stage of the Route definition allowing to specify hasBgpOverride. */
         interface WithHasBgpOverride {
             /**
@@ -202,6 +211,7 @@ public interface Route {
             WithCreate withHasBgpOverride(Boolean hasBgpOverride);
         }
     }
+
     /**
      * Begins update for the Route resource.
      *
@@ -232,6 +242,7 @@ public interface Route {
          */
         Route apply(Context context);
     }
+
     /** The Route update stages. */
     interface UpdateStages {
         /** The stage of the Route update allowing to specify name. */
@@ -246,6 +257,7 @@ public interface Route {
              */
             Update withName(String name);
         }
+
         /** The stage of the Route update allowing to specify type. */
         interface WithType {
             /**
@@ -256,6 +268,7 @@ public interface Route {
              */
             Update withType(String type);
         }
+
         /** The stage of the Route update allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -266,6 +279,7 @@ public interface Route {
              */
             Update withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the Route update allowing to specify nextHopType. */
         interface WithNextHopType {
             /**
@@ -276,6 +290,7 @@ public interface Route {
              */
             Update withNextHopType(RouteNextHopType nextHopType);
         }
+
         /** The stage of the Route update allowing to specify nextHopIpAddress. */
         interface WithNextHopIpAddress {
             /**
@@ -288,6 +303,7 @@ public interface Route {
              */
             Update withNextHopIpAddress(String nextHopIpAddress);
         }
+
         /** The stage of the Route update allowing to specify hasBgpOverride. */
         interface WithHasBgpOverride {
             /**
@@ -301,6 +317,7 @@ public interface Route {
             Update withHasBgpOverride(Boolean hasBgpOverride);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

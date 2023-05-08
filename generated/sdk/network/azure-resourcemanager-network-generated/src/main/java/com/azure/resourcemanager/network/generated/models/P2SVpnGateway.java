@@ -147,11 +147,13 @@ public interface P2SVpnGateway {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The P2SVpnGateway definition stages. */
     interface DefinitionStages {
         /** The first stage of the P2SVpnGateway definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -170,6 +172,7 @@ public interface P2SVpnGateway {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -180,6 +183,7 @@ public interface P2SVpnGateway {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the P2SVpnGateway definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -207,6 +211,7 @@ public interface P2SVpnGateway {
              */
             P2SVpnGateway create(Context context);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -217,6 +222,7 @@ public interface P2SVpnGateway {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify virtualHub. */
         interface WithVirtualHub {
             /**
@@ -227,6 +233,7 @@ public interface P2SVpnGateway {
              */
             WithCreate withVirtualHub(SubResource virtualHub);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify p2SConnectionConfigurations. */
         interface WithP2SConnectionConfigurations {
             /**
@@ -238,6 +245,7 @@ public interface P2SVpnGateway {
              */
             WithCreate withP2SConnectionConfigurations(List<P2SConnectionConfiguration> p2SConnectionConfigurations);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify vpnGatewayScaleUnit. */
         interface WithVpnGatewayScaleUnit {
             /**
@@ -248,6 +256,7 @@ public interface P2SVpnGateway {
              */
             WithCreate withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify vpnServerConfiguration. */
         interface WithVpnServerConfiguration {
             /**
@@ -259,6 +268,7 @@ public interface P2SVpnGateway {
              */
             WithCreate withVpnServerConfiguration(SubResource vpnServerConfiguration);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify customDnsServers. */
         interface WithCustomDnsServers {
             /**
@@ -269,6 +279,7 @@ public interface P2SVpnGateway {
              */
             WithCreate withCustomDnsServers(List<String> customDnsServers);
         }
+
         /** The stage of the P2SVpnGateway definition allowing to specify isRoutingPreferenceInternet. */
         interface WithIsRoutingPreferenceInternet {
             /**
@@ -282,6 +293,7 @@ public interface P2SVpnGateway {
             WithCreate withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet);
         }
     }
+
     /**
      * Begins update for the P2SVpnGateway resource.
      *
@@ -306,6 +318,7 @@ public interface P2SVpnGateway {
          */
         P2SVpnGateway apply(Context context);
     }
+
     /** The P2SVpnGateway update stages. */
     interface UpdateStages {
         /** The stage of the P2SVpnGateway update allowing to specify tags. */
@@ -319,6 +332,7 @@ public interface P2SVpnGateway {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

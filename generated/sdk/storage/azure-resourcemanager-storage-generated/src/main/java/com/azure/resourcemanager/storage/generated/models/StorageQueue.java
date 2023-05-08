@@ -64,11 +64,13 @@ public interface StorageQueue {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The StorageQueue definition stages. */
     interface DefinitionStages {
         /** The first stage of the StorageQueue definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the StorageQueue definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -82,6 +84,7 @@ public interface StorageQueue {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the StorageQueue definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -102,6 +105,7 @@ public interface StorageQueue {
              */
             StorageQueue create(Context context);
         }
+
         /** The stage of the StorageQueue definition allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -113,6 +117,7 @@ public interface StorageQueue {
             WithCreate withMetadata(Map<String, String> metadata);
         }
     }
+
     /**
      * Begins update for the StorageQueue resource.
      *
@@ -137,6 +142,7 @@ public interface StorageQueue {
          */
         StorageQueue apply(Context context);
     }
+
     /** The StorageQueue update stages. */
     interface UpdateStages {
         /** The stage of the StorageQueue update allowing to specify metadata. */
@@ -150,6 +156,7 @@ public interface StorageQueue {
             Update withMetadata(Map<String, String> metadata);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

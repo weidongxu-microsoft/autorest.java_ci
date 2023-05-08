@@ -144,11 +144,13 @@ public interface AlertRuleResource {
             DefinitionStages.WithCondition,
             DefinitionStages.WithCreate {
     }
+
     /** The AlertRuleResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the AlertRuleResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -167,6 +169,7 @@ public interface AlertRuleResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -177,6 +180,7 @@ public interface AlertRuleResource {
              */
             WithNamePropertiesName withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify namePropertiesName. */
         interface WithNamePropertiesName {
             /**
@@ -187,6 +191,7 @@ public interface AlertRuleResource {
              */
             WithIsEnabled withNamePropertiesName(String namePropertiesName);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify isEnabled. */
         interface WithIsEnabled {
             /**
@@ -197,6 +202,7 @@ public interface AlertRuleResource {
              */
             WithCondition withIsEnabled(boolean isEnabled);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify condition. */
         interface WithCondition {
             /**
@@ -207,6 +213,7 @@ public interface AlertRuleResource {
              */
             WithCreate withCondition(RuleCondition condition);
         }
+
         /**
          * The stage of the AlertRuleResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -232,6 +239,7 @@ public interface AlertRuleResource {
              */
             AlertRuleResource create(Context context);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -242,6 +250,7 @@ public interface AlertRuleResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -253,6 +262,7 @@ public interface AlertRuleResource {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify provisioningState. */
         interface WithProvisioningState {
             /**
@@ -263,6 +273,7 @@ public interface AlertRuleResource {
              */
             WithCreate withProvisioningState(String provisioningState);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify action. */
         interface WithAction {
             /**
@@ -275,6 +286,7 @@ public interface AlertRuleResource {
              */
             WithCreate withAction(RuleAction action);
         }
+
         /** The stage of the AlertRuleResource definition allowing to specify actions. */
         interface WithActions {
             /**
@@ -288,6 +300,7 @@ public interface AlertRuleResource {
             WithCreate withActions(List<RuleAction> actions);
         }
     }
+
     /**
      * Begins update for the AlertRuleResource resource.
      *
@@ -320,6 +333,7 @@ public interface AlertRuleResource {
          */
         AlertRuleResource apply(Context context);
     }
+
     /** The AlertRuleResource update stages. */
     interface UpdateStages {
         /** The stage of the AlertRuleResource update allowing to specify tags. */
@@ -332,6 +346,7 @@ public interface AlertRuleResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the AlertRuleResource update allowing to specify name. */
         interface WithName {
             /**
@@ -342,6 +357,7 @@ public interface AlertRuleResource {
              */
             Update withName(String name);
         }
+
         /** The stage of the AlertRuleResource update allowing to specify description. */
         interface WithDescription {
             /**
@@ -353,6 +369,7 @@ public interface AlertRuleResource {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the AlertRuleResource update allowing to specify provisioningState. */
         interface WithProvisioningState {
             /**
@@ -363,6 +380,7 @@ public interface AlertRuleResource {
              */
             Update withProvisioningState(String provisioningState);
         }
+
         /** The stage of the AlertRuleResource update allowing to specify isEnabled. */
         interface WithIsEnabled {
             /**
@@ -373,6 +391,7 @@ public interface AlertRuleResource {
              */
             Update withIsEnabled(boolean isEnabled);
         }
+
         /** The stage of the AlertRuleResource update allowing to specify condition. */
         interface WithCondition {
             /**
@@ -383,6 +402,7 @@ public interface AlertRuleResource {
              */
             Update withCondition(RuleCondition condition);
         }
+
         /** The stage of the AlertRuleResource update allowing to specify action. */
         interface WithAction {
             /**
@@ -395,6 +415,7 @@ public interface AlertRuleResource {
              */
             Update withAction(RuleAction action);
         }
+
         /** The stage of the AlertRuleResource update allowing to specify actions. */
         interface WithActions {
             /**
@@ -408,6 +429,7 @@ public interface AlertRuleResource {
             Update withActions(List<RuleAction> actions);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

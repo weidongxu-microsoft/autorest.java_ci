@@ -123,11 +123,13 @@ public interface BlobServiceProperties {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The BlobServiceProperties definition stages. */
     interface DefinitionStages {
         /** The first stage of the BlobServiceProperties definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -141,6 +143,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the BlobServiceProperties definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -170,6 +173,7 @@ public interface BlobServiceProperties {
              */
             BlobServiceProperties create(Context context);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify cors. */
         interface WithCors {
             /**
@@ -184,6 +188,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withCors(CorsRules cors);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify defaultServiceVersion. */
         interface WithDefaultServiceVersion {
             /**
@@ -198,6 +203,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withDefaultServiceVersion(String defaultServiceVersion);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify deleteRetentionPolicy. */
         interface WithDeleteRetentionPolicy {
             /**
@@ -208,6 +214,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withDeleteRetentionPolicy(DeleteRetentionPolicy deleteRetentionPolicy);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify isVersioningEnabled. */
         interface WithIsVersioningEnabled {
             /**
@@ -218,6 +225,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withIsVersioningEnabled(Boolean isVersioningEnabled);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify automaticSnapshotPolicyEnabled. */
         interface WithAutomaticSnapshotPolicyEnabled {
             /**
@@ -229,6 +237,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withAutomaticSnapshotPolicyEnabled(Boolean automaticSnapshotPolicyEnabled);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify changeFeed. */
         interface WithChangeFeed {
             /**
@@ -239,6 +248,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withChangeFeed(ChangeFeed changeFeed);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify restorePolicy. */
         interface WithRestorePolicy {
             /**
@@ -249,6 +259,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withRestorePolicy(RestorePolicyProperties restorePolicy);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify containerDeleteRetentionPolicy. */
         interface WithContainerDeleteRetentionPolicy {
             /**
@@ -260,6 +271,7 @@ public interface BlobServiceProperties {
              */
             WithCreate withContainerDeleteRetentionPolicy(DeleteRetentionPolicy containerDeleteRetentionPolicy);
         }
+
         /** The stage of the BlobServiceProperties definition allowing to specify lastAccessTimeTrackingPolicy. */
         interface WithLastAccessTimeTrackingPolicy {
             /**
@@ -273,6 +285,7 @@ public interface BlobServiceProperties {
             WithCreate withLastAccessTimeTrackingPolicy(LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy);
         }
     }
+
     /**
      * Begins update for the BlobServiceProperties resource.
      *
@@ -306,6 +319,7 @@ public interface BlobServiceProperties {
          */
         BlobServiceProperties apply(Context context);
     }
+
     /** The BlobServiceProperties update stages. */
     interface UpdateStages {
         /** The stage of the BlobServiceProperties update allowing to specify cors. */
@@ -322,6 +336,7 @@ public interface BlobServiceProperties {
              */
             Update withCors(CorsRules cors);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify defaultServiceVersion. */
         interface WithDefaultServiceVersion {
             /**
@@ -336,6 +351,7 @@ public interface BlobServiceProperties {
              */
             Update withDefaultServiceVersion(String defaultServiceVersion);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify deleteRetentionPolicy. */
         interface WithDeleteRetentionPolicy {
             /**
@@ -346,6 +362,7 @@ public interface BlobServiceProperties {
              */
             Update withDeleteRetentionPolicy(DeleteRetentionPolicy deleteRetentionPolicy);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify isVersioningEnabled. */
         interface WithIsVersioningEnabled {
             /**
@@ -356,6 +373,7 @@ public interface BlobServiceProperties {
              */
             Update withIsVersioningEnabled(Boolean isVersioningEnabled);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify automaticSnapshotPolicyEnabled. */
         interface WithAutomaticSnapshotPolicyEnabled {
             /**
@@ -367,6 +385,7 @@ public interface BlobServiceProperties {
              */
             Update withAutomaticSnapshotPolicyEnabled(Boolean automaticSnapshotPolicyEnabled);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify changeFeed. */
         interface WithChangeFeed {
             /**
@@ -377,6 +396,7 @@ public interface BlobServiceProperties {
              */
             Update withChangeFeed(ChangeFeed changeFeed);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify restorePolicy. */
         interface WithRestorePolicy {
             /**
@@ -387,6 +407,7 @@ public interface BlobServiceProperties {
              */
             Update withRestorePolicy(RestorePolicyProperties restorePolicy);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify containerDeleteRetentionPolicy. */
         interface WithContainerDeleteRetentionPolicy {
             /**
@@ -398,6 +419,7 @@ public interface BlobServiceProperties {
              */
             Update withContainerDeleteRetentionPolicy(DeleteRetentionPolicy containerDeleteRetentionPolicy);
         }
+
         /** The stage of the BlobServiceProperties update allowing to specify lastAccessTimeTrackingPolicy. */
         interface WithLastAccessTimeTrackingPolicy {
             /**
@@ -411,6 +433,7 @@ public interface BlobServiceProperties {
             Update withLastAccessTimeTrackingPolicy(LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

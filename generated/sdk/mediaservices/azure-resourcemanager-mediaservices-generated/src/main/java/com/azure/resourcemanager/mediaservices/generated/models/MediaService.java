@@ -165,11 +165,13 @@ public interface MediaService {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The MediaService definition stages. */
     interface DefinitionStages {
         /** The first stage of the MediaService definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the MediaService definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -188,6 +190,7 @@ public interface MediaService {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the MediaService definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -198,6 +201,7 @@ public interface MediaService {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the MediaService definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -226,6 +230,7 @@ public interface MediaService {
              */
             MediaService create(Context context);
         }
+
         /** The stage of the MediaService definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -236,6 +241,7 @@ public interface MediaService {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the MediaService definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -246,6 +252,7 @@ public interface MediaService {
              */
             WithCreate withIdentity(MediaServiceIdentity identity);
         }
+
         /** The stage of the MediaService definition allowing to specify storageAccounts. */
         interface WithStorageAccounts {
             /**
@@ -256,6 +263,7 @@ public interface MediaService {
              */
             WithCreate withStorageAccounts(List<StorageAccount> storageAccounts);
         }
+
         /** The stage of the MediaService definition allowing to specify storageAuthentication. */
         interface WithStorageAuthentication {
             /**
@@ -266,6 +274,7 @@ public interface MediaService {
              */
             WithCreate withStorageAuthentication(StorageAuthentication storageAuthentication);
         }
+
         /** The stage of the MediaService definition allowing to specify encryption. */
         interface WithEncryption {
             /**
@@ -276,6 +285,7 @@ public interface MediaService {
              */
             WithCreate withEncryption(AccountEncryption encryption);
         }
+
         /** The stage of the MediaService definition allowing to specify keyDelivery. */
         interface WithKeyDelivery {
             /**
@@ -286,6 +296,7 @@ public interface MediaService {
              */
             WithCreate withKeyDelivery(KeyDelivery keyDelivery);
         }
+
         /** The stage of the MediaService definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -298,6 +309,7 @@ public interface MediaService {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the MediaService definition allowing to specify minimumTlsVersion. */
         interface WithMinimumTlsVersion {
             /**
@@ -311,6 +323,7 @@ public interface MediaService {
             WithCreate withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
         }
     }
+
     /**
      * Begins update for the MediaService resource.
      *
@@ -343,6 +356,7 @@ public interface MediaService {
          */
         MediaService apply(Context context);
     }
+
     /** The MediaService update stages. */
     interface UpdateStages {
         /** The stage of the MediaService update allowing to specify tags. */
@@ -355,6 +369,7 @@ public interface MediaService {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the MediaService update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -365,6 +380,7 @@ public interface MediaService {
              */
             Update withIdentity(MediaServiceIdentity identity);
         }
+
         /** The stage of the MediaService update allowing to specify storageAccounts. */
         interface WithStorageAccounts {
             /**
@@ -375,6 +391,7 @@ public interface MediaService {
              */
             Update withStorageAccounts(List<StorageAccount> storageAccounts);
         }
+
         /** The stage of the MediaService update allowing to specify storageAuthentication. */
         interface WithStorageAuthentication {
             /**
@@ -385,6 +402,7 @@ public interface MediaService {
              */
             Update withStorageAuthentication(StorageAuthentication storageAuthentication);
         }
+
         /** The stage of the MediaService update allowing to specify encryption. */
         interface WithEncryption {
             /**
@@ -395,6 +413,7 @@ public interface MediaService {
              */
             Update withEncryption(AccountEncryption encryption);
         }
+
         /** The stage of the MediaService update allowing to specify keyDelivery. */
         interface WithKeyDelivery {
             /**
@@ -405,6 +424,7 @@ public interface MediaService {
              */
             Update withKeyDelivery(KeyDelivery keyDelivery);
         }
+
         /** The stage of the MediaService update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -417,6 +437,7 @@ public interface MediaService {
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the MediaService update allowing to specify minimumTlsVersion. */
         interface WithMinimumTlsVersion {
             /**
@@ -430,6 +451,7 @@ public interface MediaService {
             Update withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -84,11 +84,13 @@ public interface StaticMember {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The StaticMember definition stages. */
     interface DefinitionStages {
         /** The first stage of the StaticMember definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the StaticMember definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -102,6 +104,7 @@ public interface StaticMember {
             WithCreate withExistingNetworkGroup(
                 String resourceGroupName, String networkManagerName, String networkGroupName);
         }
+
         /**
          * The stage of the StaticMember definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -122,6 +125,7 @@ public interface StaticMember {
              */
             StaticMember create(Context context);
         }
+
         /** The stage of the StaticMember definition allowing to specify resourceId. */
         interface WithResourceId {
             /**
@@ -133,6 +137,7 @@ public interface StaticMember {
             WithCreate withResourceId(String resourceId);
         }
     }
+
     /**
      * Begins update for the StaticMember resource.
      *
@@ -157,6 +162,7 @@ public interface StaticMember {
          */
         StaticMember apply(Context context);
     }
+
     /** The StaticMember update stages. */
     interface UpdateStages {
         /** The stage of the StaticMember update allowing to specify resourceId. */
@@ -170,6 +176,7 @@ public interface StaticMember {
             Update withResourceId(String resourceId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

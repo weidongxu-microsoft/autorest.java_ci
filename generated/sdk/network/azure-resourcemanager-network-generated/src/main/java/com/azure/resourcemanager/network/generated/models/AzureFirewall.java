@@ -188,11 +188,13 @@ public interface AzureFirewall {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The AzureFirewall definition stages. */
     interface DefinitionStages {
         /** The first stage of the AzureFirewall definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the AzureFirewall definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -211,6 +213,7 @@ public interface AzureFirewall {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -221,6 +224,7 @@ public interface AzureFirewall {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the AzureFirewall definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -254,6 +258,7 @@ public interface AzureFirewall {
              */
             AzureFirewall create(Context context);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -264,6 +269,7 @@ public interface AzureFirewall {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -275,6 +281,7 @@ public interface AzureFirewall {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify applicationRuleCollections. */
         interface WithApplicationRuleCollections {
             /**
@@ -287,6 +294,7 @@ public interface AzureFirewall {
             WithCreate withApplicationRuleCollections(
                 List<AzureFirewallApplicationRuleCollection> applicationRuleCollections);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify natRuleCollections. */
         interface WithNatRuleCollections {
             /**
@@ -297,6 +305,7 @@ public interface AzureFirewall {
              */
             WithCreate withNatRuleCollections(List<AzureFirewallNatRuleCollection> natRuleCollections);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify networkRuleCollections. */
         interface WithNetworkRuleCollections {
             /**
@@ -308,6 +317,7 @@ public interface AzureFirewall {
              */
             WithCreate withNetworkRuleCollections(List<AzureFirewallNetworkRuleCollection> networkRuleCollections);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
             /**
@@ -318,6 +328,7 @@ public interface AzureFirewall {
              */
             WithCreate withIpConfigurations(List<AzureFirewallIpConfiguration> ipConfigurations);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify managementIpConfiguration. */
         interface WithManagementIpConfiguration {
             /**
@@ -329,6 +340,7 @@ public interface AzureFirewall {
              */
             WithCreate withManagementIpConfiguration(AzureFirewallIpConfiguration managementIpConfiguration);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify threatIntelMode. */
         interface WithThreatIntelMode {
             /**
@@ -339,6 +351,7 @@ public interface AzureFirewall {
              */
             WithCreate withThreatIntelMode(AzureFirewallThreatIntelMode threatIntelMode);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify virtualHub. */
         interface WithVirtualHub {
             /**
@@ -349,6 +362,7 @@ public interface AzureFirewall {
              */
             WithCreate withVirtualHub(SubResource virtualHub);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify firewallPolicy. */
         interface WithFirewallPolicy {
             /**
@@ -359,6 +373,7 @@ public interface AzureFirewall {
              */
             WithCreate withFirewallPolicy(SubResource firewallPolicy);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify hubIpAddresses. */
         interface WithHubIpAddresses {
             /**
@@ -369,6 +384,7 @@ public interface AzureFirewall {
              */
             WithCreate withHubIpAddresses(HubIpAddresses hubIpAddresses);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -379,6 +395,7 @@ public interface AzureFirewall {
              */
             WithCreate withSku(AzureFirewallSku sku);
         }
+
         /** The stage of the AzureFirewall definition allowing to specify additionalProperties. */
         interface WithAdditionalProperties {
             /**
@@ -391,6 +408,7 @@ public interface AzureFirewall {
             WithCreate withAdditionalProperties(Map<String, String> additionalProperties);
         }
     }
+
     /**
      * Begins update for the AzureFirewall resource.
      *
@@ -415,6 +433,7 @@ public interface AzureFirewall {
          */
         AzureFirewall apply(Context context);
     }
+
     /** The AzureFirewall update stages. */
     interface UpdateStages {
         /** The stage of the AzureFirewall update allowing to specify tags. */
@@ -428,6 +447,7 @@ public interface AzureFirewall {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

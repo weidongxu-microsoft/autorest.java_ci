@@ -78,11 +78,13 @@ public interface AccountFilter {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The AccountFilter definition stages. */
     interface DefinitionStages {
         /** The first stage of the AccountFilter definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the AccountFilter definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -94,6 +96,7 @@ public interface AccountFilter {
              */
             WithCreate withExistingMediaService(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the AccountFilter definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -117,6 +120,7 @@ public interface AccountFilter {
              */
             AccountFilter create(Context context);
         }
+
         /** The stage of the AccountFilter definition allowing to specify presentationTimeRange. */
         interface WithPresentationTimeRange {
             /**
@@ -127,6 +131,7 @@ public interface AccountFilter {
              */
             WithCreate withPresentationTimeRange(PresentationTimeRange presentationTimeRange);
         }
+
         /** The stage of the AccountFilter definition allowing to specify firstQuality. */
         interface WithFirstQuality {
             /**
@@ -137,6 +142,7 @@ public interface AccountFilter {
              */
             WithCreate withFirstQuality(FirstQuality firstQuality);
         }
+
         /** The stage of the AccountFilter definition allowing to specify tracks. */
         interface WithTracks {
             /**
@@ -148,6 +154,7 @@ public interface AccountFilter {
             WithCreate withTracks(List<FilterTrackSelection> tracks);
         }
     }
+
     /**
      * Begins update for the AccountFilter resource.
      *
@@ -173,6 +180,7 @@ public interface AccountFilter {
          */
         AccountFilter apply(Context context);
     }
+
     /** The AccountFilter update stages. */
     interface UpdateStages {
         /** The stage of the AccountFilter update allowing to specify presentationTimeRange. */
@@ -185,6 +193,7 @@ public interface AccountFilter {
              */
             Update withPresentationTimeRange(PresentationTimeRange presentationTimeRange);
         }
+
         /** The stage of the AccountFilter update allowing to specify firstQuality. */
         interface WithFirstQuality {
             /**
@@ -195,6 +204,7 @@ public interface AccountFilter {
              */
             Update withFirstQuality(FirstQuality firstQuality);
         }
+
         /** The stage of the AccountFilter update allowing to specify tracks. */
         interface WithTracks {
             /**
@@ -206,6 +216,7 @@ public interface AccountFilter {
             Update withTracks(List<FilterTrackSelection> tracks);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

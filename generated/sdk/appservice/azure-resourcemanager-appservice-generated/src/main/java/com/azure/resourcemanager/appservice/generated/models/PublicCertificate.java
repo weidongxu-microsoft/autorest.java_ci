@@ -76,11 +76,13 @@ public interface PublicCertificate {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The PublicCertificate definition stages. */
     interface DefinitionStages {
         /** The first stage of the PublicCertificate definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the PublicCertificate definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -92,6 +94,7 @@ public interface PublicCertificate {
              */
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the PublicCertificate definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -115,6 +118,7 @@ public interface PublicCertificate {
              */
             PublicCertificate create(Context context);
         }
+
         /** The stage of the PublicCertificate definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -125,6 +129,7 @@ public interface PublicCertificate {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the PublicCertificate definition allowing to specify blob. */
         interface WithBlob {
             /**
@@ -135,6 +140,7 @@ public interface PublicCertificate {
              */
             WithCreate withBlob(byte[] blob);
         }
+
         /** The stage of the PublicCertificate definition allowing to specify publicCertificateLocation. */
         interface WithPublicCertificateLocation {
             /**
@@ -146,6 +152,7 @@ public interface PublicCertificate {
             WithCreate withPublicCertificateLocation(PublicCertificateLocation publicCertificateLocation);
         }
     }
+
     /**
      * Begins update for the PublicCertificate resource.
      *
@@ -170,6 +177,7 @@ public interface PublicCertificate {
          */
         PublicCertificate apply(Context context);
     }
+
     /** The PublicCertificate update stages. */
     interface UpdateStages {
         /** The stage of the PublicCertificate update allowing to specify kind. */
@@ -182,6 +190,7 @@ public interface PublicCertificate {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the PublicCertificate update allowing to specify blob. */
         interface WithBlob {
             /**
@@ -192,6 +201,7 @@ public interface PublicCertificate {
              */
             Update withBlob(byte[] blob);
         }
+
         /** The stage of the PublicCertificate update allowing to specify publicCertificateLocation. */
         interface WithPublicCertificateLocation {
             /**
@@ -203,6 +213,7 @@ public interface PublicCertificate {
             Update withPublicCertificateLocation(PublicCertificateLocation publicCertificateLocation);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

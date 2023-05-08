@@ -92,11 +92,13 @@ public interface HubIpConfiguration {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The HubIpConfiguration definition stages. */
     interface DefinitionStages {
         /** The first stage of the HubIpConfiguration definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the HubIpConfiguration definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -108,6 +110,7 @@ public interface HubIpConfiguration {
              */
             WithCreate withExistingVirtualHub(String resourceGroupName, String virtualHubName);
         }
+
         /**
          * The stage of the HubIpConfiguration definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -133,6 +136,7 @@ public interface HubIpConfiguration {
              */
             HubIpConfiguration create(Context context);
         }
+
         /** The stage of the HubIpConfiguration definition allowing to specify name. */
         interface WithName {
             /**
@@ -143,6 +147,7 @@ public interface HubIpConfiguration {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the HubIpConfiguration definition allowing to specify privateIpAddress. */
         interface WithPrivateIpAddress {
             /**
@@ -153,6 +158,7 @@ public interface HubIpConfiguration {
              */
             WithCreate withPrivateIpAddress(String privateIpAddress);
         }
+
         /** The stage of the HubIpConfiguration definition allowing to specify privateIpAllocationMethod. */
         interface WithPrivateIpAllocationMethod {
             /**
@@ -163,6 +169,7 @@ public interface HubIpConfiguration {
              */
             WithCreate withPrivateIpAllocationMethod(IpAllocationMethod privateIpAllocationMethod);
         }
+
         /** The stage of the HubIpConfiguration definition allowing to specify subnet. */
         interface WithSubnet {
             /**
@@ -173,6 +180,7 @@ public interface HubIpConfiguration {
              */
             WithCreate withSubnet(SubnetInner subnet);
         }
+
         /** The stage of the HubIpConfiguration definition allowing to specify publicIpAddress. */
         interface WithPublicIpAddress {
             /**
@@ -184,6 +192,7 @@ public interface HubIpConfiguration {
             WithCreate withPublicIpAddress(PublicIpAddressInner publicIpAddress);
         }
     }
+
     /**
      * Begins update for the HubIpConfiguration resource.
      *
@@ -213,6 +222,7 @@ public interface HubIpConfiguration {
          */
         HubIpConfiguration apply(Context context);
     }
+
     /** The HubIpConfiguration update stages. */
     interface UpdateStages {
         /** The stage of the HubIpConfiguration update allowing to specify name. */
@@ -225,6 +235,7 @@ public interface HubIpConfiguration {
              */
             Update withName(String name);
         }
+
         /** The stage of the HubIpConfiguration update allowing to specify privateIpAddress. */
         interface WithPrivateIpAddress {
             /**
@@ -235,6 +246,7 @@ public interface HubIpConfiguration {
              */
             Update withPrivateIpAddress(String privateIpAddress);
         }
+
         /** The stage of the HubIpConfiguration update allowing to specify privateIpAllocationMethod. */
         interface WithPrivateIpAllocationMethod {
             /**
@@ -245,6 +257,7 @@ public interface HubIpConfiguration {
              */
             Update withPrivateIpAllocationMethod(IpAllocationMethod privateIpAllocationMethod);
         }
+
         /** The stage of the HubIpConfiguration update allowing to specify subnet. */
         interface WithSubnet {
             /**
@@ -255,6 +268,7 @@ public interface HubIpConfiguration {
              */
             Update withSubnet(SubnetInner subnet);
         }
+
         /** The stage of the HubIpConfiguration update allowing to specify publicIpAddress. */
         interface WithPublicIpAddress {
             /**
@@ -266,6 +280,7 @@ public interface HubIpConfiguration {
             Update withPublicIpAddress(PublicIpAddressInner publicIpAddress);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

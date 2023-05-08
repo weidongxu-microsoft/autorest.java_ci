@@ -129,11 +129,13 @@ public interface AutoscaleSettingResource {
             DefinitionStages.WithProfiles,
             DefinitionStages.WithCreate {
     }
+
     /** The AutoscaleSettingResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the AutoscaleSettingResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -152,6 +154,7 @@ public interface AutoscaleSettingResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -162,6 +165,7 @@ public interface AutoscaleSettingResource {
              */
             WithProfiles withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify profiles. */
         interface WithProfiles {
             /**
@@ -174,6 +178,7 @@ public interface AutoscaleSettingResource {
              */
             WithCreate withProfiles(List<AutoscaleProfile> profiles);
         }
+
         /**
          * The stage of the AutoscaleSettingResource definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -200,6 +205,7 @@ public interface AutoscaleSettingResource {
              */
             AutoscaleSettingResource create(Context context);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -210,6 +216,7 @@ public interface AutoscaleSettingResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify notifications. */
         interface WithNotifications {
             /**
@@ -220,6 +227,7 @@ public interface AutoscaleSettingResource {
              */
             WithCreate withNotifications(List<AutoscaleNotification> notifications);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -232,6 +240,7 @@ public interface AutoscaleSettingResource {
              */
             WithCreate withEnabled(Boolean enabled);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify namePropertiesName. */
         interface WithNamePropertiesName {
             /**
@@ -242,6 +251,7 @@ public interface AutoscaleSettingResource {
              */
             WithCreate withNamePropertiesName(String namePropertiesName);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify targetResourceUri. */
         interface WithTargetResourceUri {
             /**
@@ -254,6 +264,7 @@ public interface AutoscaleSettingResource {
              */
             WithCreate withTargetResourceUri(String targetResourceUri);
         }
+
         /** The stage of the AutoscaleSettingResource definition allowing to specify targetResourceLocation. */
         interface WithTargetResourceLocation {
             /**
@@ -266,6 +277,7 @@ public interface AutoscaleSettingResource {
             WithCreate withTargetResourceLocation(String targetResourceLocation);
         }
     }
+
     /**
      * Begins update for the AutoscaleSettingResource resource.
      *
@@ -297,6 +309,7 @@ public interface AutoscaleSettingResource {
          */
         AutoscaleSettingResource apply(Context context);
     }
+
     /** The AutoscaleSettingResource update stages. */
     interface UpdateStages {
         /** The stage of the AutoscaleSettingResource update allowing to specify tags. */
@@ -309,6 +322,7 @@ public interface AutoscaleSettingResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the AutoscaleSettingResource update allowing to specify profiles. */
         interface WithProfiles {
             /**
@@ -321,6 +335,7 @@ public interface AutoscaleSettingResource {
              */
             Update withProfiles(List<AutoscaleProfile> profiles);
         }
+
         /** The stage of the AutoscaleSettingResource update allowing to specify notifications. */
         interface WithNotifications {
             /**
@@ -331,6 +346,7 @@ public interface AutoscaleSettingResource {
              */
             Update withNotifications(List<AutoscaleNotification> notifications);
         }
+
         /** The stage of the AutoscaleSettingResource update allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -343,6 +359,7 @@ public interface AutoscaleSettingResource {
              */
             Update withEnabled(Boolean enabled);
         }
+
         /** The stage of the AutoscaleSettingResource update allowing to specify name. */
         interface WithName {
             /**
@@ -353,6 +370,7 @@ public interface AutoscaleSettingResource {
              */
             Update withName(String name);
         }
+
         /** The stage of the AutoscaleSettingResource update allowing to specify targetResourceUri. */
         interface WithTargetResourceUri {
             /**
@@ -365,6 +383,7 @@ public interface AutoscaleSettingResource {
              */
             Update withTargetResourceUri(String targetResourceUri);
         }
+
         /** The stage of the AutoscaleSettingResource update allowing to specify targetResourceLocation. */
         interface WithTargetResourceLocation {
             /**
@@ -377,6 +396,7 @@ public interface AutoscaleSettingResource {
             Update withTargetResourceLocation(String targetResourceLocation);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -163,11 +163,13 @@ public interface Workbook {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Workbook definition stages. */
     interface DefinitionStages {
         /** The first stage of the Workbook definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Workbook definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -186,6 +188,7 @@ public interface Workbook {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Workbook definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -196,6 +199,7 @@ public interface Workbook {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Workbook definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -227,6 +231,7 @@ public interface Workbook {
              */
             Workbook create(Context context);
         }
+
         /** The stage of the Workbook definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -237,6 +242,7 @@ public interface Workbook {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Workbook definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -247,6 +253,7 @@ public interface Workbook {
              */
             WithCreate withKind(SharedTypeKind kind);
         }
+
         /** The stage of the Workbook definition allowing to specify namePropertiesName. */
         interface WithNamePropertiesName {
             /**
@@ -257,6 +264,7 @@ public interface Workbook {
              */
             WithCreate withNamePropertiesName(String namePropertiesName);
         }
+
         /** The stage of the Workbook definition allowing to specify serializedData. */
         interface WithSerializedData {
             /**
@@ -269,6 +277,7 @@ public interface Workbook {
              */
             WithCreate withSerializedData(String serializedData);
         }
+
         /** The stage of the Workbook definition allowing to specify version. */
         interface WithVersion {
             /**
@@ -281,6 +290,7 @@ public interface Workbook {
              */
             WithCreate withVersion(String version);
         }
+
         /** The stage of the Workbook definition allowing to specify workbookId. */
         interface WithWorkbookId {
             /**
@@ -291,6 +301,7 @@ public interface Workbook {
              */
             WithCreate withWorkbookId(String workbookId);
         }
+
         /** The stage of the Workbook definition allowing to specify sharedTypeKind. */
         interface WithSharedTypeKind {
             /**
@@ -303,6 +314,7 @@ public interface Workbook {
              */
             WithCreate withSharedTypeKind(SharedTypeKind sharedTypeKind);
         }
+
         /** The stage of the Workbook definition allowing to specify category. */
         interface WithCategory {
             /**
@@ -313,6 +325,7 @@ public interface Workbook {
              */
             WithCreate withCategory(String category);
         }
+
         /** The stage of the Workbook definition allowing to specify tagsPropertiesTags. */
         interface WithTagsPropertiesTags {
             /**
@@ -324,6 +337,7 @@ public interface Workbook {
              */
             WithCreate withTagsPropertiesTags(List<String> tagsPropertiesTags);
         }
+
         /** The stage of the Workbook definition allowing to specify userId. */
         interface WithUserId {
             /**
@@ -334,6 +348,7 @@ public interface Workbook {
              */
             WithCreate withUserId(String userId);
         }
+
         /** The stage of the Workbook definition allowing to specify sourceResourceId. */
         interface WithSourceResourceId {
             /**
@@ -345,6 +360,7 @@ public interface Workbook {
             WithCreate withSourceResourceId(String sourceResourceId);
         }
     }
+
     /**
      * Begins update for the Workbook resource.
      *
@@ -380,6 +396,7 @@ public interface Workbook {
          */
         Workbook apply(Context context);
     }
+
     /** The Workbook update stages. */
     interface UpdateStages {
         /** The stage of the Workbook update allowing to specify tags. */
@@ -392,6 +409,7 @@ public interface Workbook {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the Workbook update allowing to specify kind. */
         interface WithKind {
             /**
@@ -402,6 +420,7 @@ public interface Workbook {
              */
             Update withKind(SharedTypeKind kind);
         }
+
         /** The stage of the Workbook update allowing to specify namePropertiesName. */
         interface WithNamePropertiesName {
             /**
@@ -412,6 +431,7 @@ public interface Workbook {
              */
             Update withNamePropertiesName(String namePropertiesName);
         }
+
         /** The stage of the Workbook update allowing to specify serializedData. */
         interface WithSerializedData {
             /**
@@ -424,6 +444,7 @@ public interface Workbook {
              */
             Update withSerializedData(String serializedData);
         }
+
         /** The stage of the Workbook update allowing to specify version. */
         interface WithVersion {
             /**
@@ -436,6 +457,7 @@ public interface Workbook {
              */
             Update withVersion(String version);
         }
+
         /** The stage of the Workbook update allowing to specify workbookId. */
         interface WithWorkbookId {
             /**
@@ -446,6 +468,7 @@ public interface Workbook {
              */
             Update withWorkbookId(String workbookId);
         }
+
         /** The stage of the Workbook update allowing to specify sharedTypeKind. */
         interface WithSharedTypeKind {
             /**
@@ -458,6 +481,7 @@ public interface Workbook {
              */
             Update withSharedTypeKind(SharedTypeKind sharedTypeKind);
         }
+
         /** The stage of the Workbook update allowing to specify category. */
         interface WithCategory {
             /**
@@ -468,6 +492,7 @@ public interface Workbook {
              */
             Update withCategory(String category);
         }
+
         /** The stage of the Workbook update allowing to specify tagsPropertiesTags. */
         interface WithTagsPropertiesTags {
             /**
@@ -479,6 +504,7 @@ public interface Workbook {
              */
             Update withTagsPropertiesTags(List<String> tagsPropertiesTags);
         }
+
         /** The stage of the Workbook update allowing to specify userId. */
         interface WithUserId {
             /**
@@ -489,6 +515,7 @@ public interface Workbook {
              */
             Update withUserId(String userId);
         }
+
         /** The stage of the Workbook update allowing to specify sourceResourceId. */
         interface WithSourceResourceId {
             /**
@@ -500,6 +527,7 @@ public interface Workbook {
             Update withSourceResourceId(String sourceResourceId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

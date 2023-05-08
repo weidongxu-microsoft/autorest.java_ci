@@ -151,11 +151,13 @@ public interface InboundNatRule {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The InboundNatRule definition stages. */
     interface DefinitionStages {
         /** The first stage of the InboundNatRule definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the InboundNatRule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -167,6 +169,7 @@ public interface InboundNatRule {
              */
             WithCreate withExistingLoadBalancer(String resourceGroupName, String loadBalancerName);
         }
+
         /**
          * The stage of the InboundNatRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -198,6 +201,7 @@ public interface InboundNatRule {
              */
             InboundNatRule create(Context context);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify name. */
         interface WithName {
             /**
@@ -210,6 +214,7 @@ public interface InboundNatRule {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify frontendIpConfiguration. */
         interface WithFrontendIpConfiguration {
             /**
@@ -220,6 +225,7 @@ public interface InboundNatRule {
              */
             WithCreate withFrontendIpConfiguration(SubResource frontendIpConfiguration);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify protocol. */
         interface WithProtocol {
             /**
@@ -231,6 +237,7 @@ public interface InboundNatRule {
              */
             WithCreate withProtocol(TransportProtocol protocol);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify frontendPort. */
         interface WithFrontendPort {
             /**
@@ -243,6 +250,7 @@ public interface InboundNatRule {
              */
             WithCreate withFrontendPort(Integer frontendPort);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify backendPort. */
         interface WithBackendPort {
             /**
@@ -254,6 +262,7 @@ public interface InboundNatRule {
              */
             WithCreate withBackendPort(Integer backendPort);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify idleTimeoutInMinutes. */
         interface WithIdleTimeoutInMinutes {
             /**
@@ -268,6 +277,7 @@ public interface InboundNatRule {
              */
             WithCreate withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify enableFloatingIp. */
         interface WithEnableFloatingIp {
             /**
@@ -283,6 +293,7 @@ public interface InboundNatRule {
              */
             WithCreate withEnableFloatingIp(Boolean enableFloatingIp);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify enableTcpReset. */
         interface WithEnableTcpReset {
             /**
@@ -295,6 +306,7 @@ public interface InboundNatRule {
              */
             WithCreate withEnableTcpReset(Boolean enableTcpReset);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify frontendPortRangeStart. */
         interface WithFrontendPortRangeStart {
             /**
@@ -311,6 +323,7 @@ public interface InboundNatRule {
              */
             WithCreate withFrontendPortRangeStart(Integer frontendPortRangeStart);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify frontendPortRangeEnd. */
         interface WithFrontendPortRangeEnd {
             /**
@@ -326,6 +339,7 @@ public interface InboundNatRule {
              */
             WithCreate withFrontendPortRangeEnd(Integer frontendPortRangeEnd);
         }
+
         /** The stage of the InboundNatRule definition allowing to specify backendAddressPool. */
         interface WithBackendAddressPool {
             /**
@@ -337,6 +351,7 @@ public interface InboundNatRule {
             WithCreate withBackendAddressPool(SubResource backendAddressPool);
         }
     }
+
     /**
      * Begins update for the InboundNatRule resource.
      *
@@ -372,6 +387,7 @@ public interface InboundNatRule {
          */
         InboundNatRule apply(Context context);
     }
+
     /** The InboundNatRule update stages. */
     interface UpdateStages {
         /** The stage of the InboundNatRule update allowing to specify name. */
@@ -386,6 +402,7 @@ public interface InboundNatRule {
              */
             Update withName(String name);
         }
+
         /** The stage of the InboundNatRule update allowing to specify frontendIpConfiguration. */
         interface WithFrontendIpConfiguration {
             /**
@@ -396,6 +413,7 @@ public interface InboundNatRule {
              */
             Update withFrontendIpConfiguration(SubResource frontendIpConfiguration);
         }
+
         /** The stage of the InboundNatRule update allowing to specify protocol. */
         interface WithProtocol {
             /**
@@ -407,6 +425,7 @@ public interface InboundNatRule {
              */
             Update withProtocol(TransportProtocol protocol);
         }
+
         /** The stage of the InboundNatRule update allowing to specify frontendPort. */
         interface WithFrontendPort {
             /**
@@ -419,6 +438,7 @@ public interface InboundNatRule {
              */
             Update withFrontendPort(Integer frontendPort);
         }
+
         /** The stage of the InboundNatRule update allowing to specify backendPort. */
         interface WithBackendPort {
             /**
@@ -430,6 +450,7 @@ public interface InboundNatRule {
              */
             Update withBackendPort(Integer backendPort);
         }
+
         /** The stage of the InboundNatRule update allowing to specify idleTimeoutInMinutes. */
         interface WithIdleTimeoutInMinutes {
             /**
@@ -444,6 +465,7 @@ public interface InboundNatRule {
              */
             Update withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes);
         }
+
         /** The stage of the InboundNatRule update allowing to specify enableFloatingIp. */
         interface WithEnableFloatingIp {
             /**
@@ -459,6 +481,7 @@ public interface InboundNatRule {
              */
             Update withEnableFloatingIp(Boolean enableFloatingIp);
         }
+
         /** The stage of the InboundNatRule update allowing to specify enableTcpReset. */
         interface WithEnableTcpReset {
             /**
@@ -471,6 +494,7 @@ public interface InboundNatRule {
              */
             Update withEnableTcpReset(Boolean enableTcpReset);
         }
+
         /** The stage of the InboundNatRule update allowing to specify frontendPortRangeStart. */
         interface WithFrontendPortRangeStart {
             /**
@@ -487,6 +511,7 @@ public interface InboundNatRule {
              */
             Update withFrontendPortRangeStart(Integer frontendPortRangeStart);
         }
+
         /** The stage of the InboundNatRule update allowing to specify frontendPortRangeEnd. */
         interface WithFrontendPortRangeEnd {
             /**
@@ -502,6 +527,7 @@ public interface InboundNatRule {
              */
             Update withFrontendPortRangeEnd(Integer frontendPortRangeEnd);
         }
+
         /** The stage of the InboundNatRule update allowing to specify backendAddressPool. */
         interface WithBackendAddressPool {
             /**
@@ -513,6 +539,7 @@ public interface InboundNatRule {
             Update withBackendAddressPool(SubResource backendAddressPool);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

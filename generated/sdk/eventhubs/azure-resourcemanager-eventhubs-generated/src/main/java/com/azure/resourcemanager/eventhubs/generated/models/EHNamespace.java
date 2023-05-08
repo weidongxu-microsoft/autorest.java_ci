@@ -229,11 +229,13 @@ public interface EHNamespace {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The EHNamespace definition stages. */
     interface DefinitionStages {
         /** The first stage of the EHNamespace definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the EHNamespace definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -252,6 +254,7 @@ public interface EHNamespace {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the EHNamespace definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -262,6 +265,7 @@ public interface EHNamespace {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the EHNamespace definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -296,6 +300,7 @@ public interface EHNamespace {
              */
             EHNamespace create(Context context);
         }
+
         /** The stage of the EHNamespace definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -306,6 +311,7 @@ public interface EHNamespace {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the EHNamespace definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -316,6 +322,7 @@ public interface EHNamespace {
              */
             WithCreate withSku(Sku sku);
         }
+
         /** The stage of the EHNamespace definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -326,6 +333,7 @@ public interface EHNamespace {
              */
             WithCreate withIdentity(Identity identity);
         }
+
         /** The stage of the EHNamespace definition allowing to specify minimumTlsVersion. */
         interface WithMinimumTlsVersion {
             /**
@@ -336,6 +344,7 @@ public interface EHNamespace {
              */
             WithCreate withMinimumTlsVersion(TlsVersion minimumTlsVersion);
         }
+
         /** The stage of the EHNamespace definition allowing to specify clusterArmId. */
         interface WithClusterArmId {
             /**
@@ -346,6 +355,7 @@ public interface EHNamespace {
              */
             WithCreate withClusterArmId(String clusterArmId);
         }
+
         /** The stage of the EHNamespace definition allowing to specify isAutoInflateEnabled. */
         interface WithIsAutoInflateEnabled {
             /**
@@ -357,6 +367,7 @@ public interface EHNamespace {
              */
             WithCreate withIsAutoInflateEnabled(Boolean isAutoInflateEnabled);
         }
+
         /** The stage of the EHNamespace definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -369,6 +380,7 @@ public interface EHNamespace {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the EHNamespace definition allowing to specify maximumThroughputUnits. */
         interface WithMaximumThroughputUnits {
             /**
@@ -381,6 +393,7 @@ public interface EHNamespace {
              */
             WithCreate withMaximumThroughputUnits(Integer maximumThroughputUnits);
         }
+
         /** The stage of the EHNamespace definition allowing to specify kafkaEnabled. */
         interface WithKafkaEnabled {
             /**
@@ -392,6 +405,7 @@ public interface EHNamespace {
              */
             WithCreate withKafkaEnabled(Boolean kafkaEnabled);
         }
+
         /** The stage of the EHNamespace definition allowing to specify zoneRedundant. */
         interface WithZoneRedundant {
             /**
@@ -404,6 +418,7 @@ public interface EHNamespace {
              */
             WithCreate withZoneRedundant(Boolean zoneRedundant);
         }
+
         /** The stage of the EHNamespace definition allowing to specify encryption. */
         interface WithEncryption {
             /**
@@ -414,6 +429,7 @@ public interface EHNamespace {
              */
             WithCreate withEncryption(Encryption encryption);
         }
+
         /** The stage of the EHNamespace definition allowing to specify privateEndpointConnections. */
         interface WithPrivateEndpointConnections {
             /**
@@ -424,6 +440,7 @@ public interface EHNamespace {
              */
             WithCreate withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections);
         }
+
         /** The stage of the EHNamespace definition allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -435,6 +452,7 @@ public interface EHNamespace {
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the EHNamespace definition allowing to specify alternateName. */
         interface WithAlternateName {
             /**
@@ -446,6 +464,7 @@ public interface EHNamespace {
             WithCreate withAlternateName(String alternateName);
         }
     }
+
     /**
      * Begins update for the EHNamespace resource.
      *
@@ -484,6 +503,7 @@ public interface EHNamespace {
          */
         EHNamespace apply(Context context);
     }
+
     /** The EHNamespace update stages. */
     interface UpdateStages {
         /** The stage of the EHNamespace update allowing to specify tags. */
@@ -496,6 +516,7 @@ public interface EHNamespace {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the EHNamespace update allowing to specify sku. */
         interface WithSku {
             /**
@@ -506,6 +527,7 @@ public interface EHNamespace {
              */
             Update withSku(Sku sku);
         }
+
         /** The stage of the EHNamespace update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -516,6 +538,7 @@ public interface EHNamespace {
              */
             Update withIdentity(Identity identity);
         }
+
         /** The stage of the EHNamespace update allowing to specify minimumTlsVersion. */
         interface WithMinimumTlsVersion {
             /**
@@ -526,6 +549,7 @@ public interface EHNamespace {
              */
             Update withMinimumTlsVersion(TlsVersion minimumTlsVersion);
         }
+
         /** The stage of the EHNamespace update allowing to specify clusterArmId. */
         interface WithClusterArmId {
             /**
@@ -536,6 +560,7 @@ public interface EHNamespace {
              */
             Update withClusterArmId(String clusterArmId);
         }
+
         /** The stage of the EHNamespace update allowing to specify isAutoInflateEnabled. */
         interface WithIsAutoInflateEnabled {
             /**
@@ -547,6 +572,7 @@ public interface EHNamespace {
              */
             Update withIsAutoInflateEnabled(Boolean isAutoInflateEnabled);
         }
+
         /** The stage of the EHNamespace update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -559,6 +585,7 @@ public interface EHNamespace {
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the EHNamespace update allowing to specify maximumThroughputUnits. */
         interface WithMaximumThroughputUnits {
             /**
@@ -571,6 +598,7 @@ public interface EHNamespace {
              */
             Update withMaximumThroughputUnits(Integer maximumThroughputUnits);
         }
+
         /** The stage of the EHNamespace update allowing to specify kafkaEnabled. */
         interface WithKafkaEnabled {
             /**
@@ -582,6 +610,7 @@ public interface EHNamespace {
              */
             Update withKafkaEnabled(Boolean kafkaEnabled);
         }
+
         /** The stage of the EHNamespace update allowing to specify zoneRedundant. */
         interface WithZoneRedundant {
             /**
@@ -594,6 +623,7 @@ public interface EHNamespace {
              */
             Update withZoneRedundant(Boolean zoneRedundant);
         }
+
         /** The stage of the EHNamespace update allowing to specify encryption. */
         interface WithEncryption {
             /**
@@ -604,6 +634,7 @@ public interface EHNamespace {
              */
             Update withEncryption(Encryption encryption);
         }
+
         /** The stage of the EHNamespace update allowing to specify privateEndpointConnections. */
         interface WithPrivateEndpointConnections {
             /**
@@ -614,6 +645,7 @@ public interface EHNamespace {
              */
             Update withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections);
         }
+
         /** The stage of the EHNamespace update allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -625,6 +657,7 @@ public interface EHNamespace {
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the EHNamespace update allowing to specify alternateName. */
         interface WithAlternateName {
             /**
@@ -636,6 +669,7 @@ public interface EHNamespace {
             Update withAlternateName(String alternateName);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

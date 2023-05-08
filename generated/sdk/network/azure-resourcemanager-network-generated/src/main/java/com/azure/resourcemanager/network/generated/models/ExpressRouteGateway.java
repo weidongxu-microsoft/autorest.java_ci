@@ -126,11 +126,13 @@ public interface ExpressRouteGateway {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ExpressRouteGateway definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRouteGateway definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ExpressRouteGateway definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -149,6 +151,7 @@ public interface ExpressRouteGateway {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ExpressRouteGateway definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -159,6 +162,7 @@ public interface ExpressRouteGateway {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ExpressRouteGateway definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -184,6 +188,7 @@ public interface ExpressRouteGateway {
              */
             ExpressRouteGateway create(Context context);
         }
+
         /** The stage of the ExpressRouteGateway definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -194,6 +199,7 @@ public interface ExpressRouteGateway {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ExpressRouteGateway definition allowing to specify autoScaleConfiguration. */
         interface WithAutoScaleConfiguration {
             /**
@@ -205,6 +211,7 @@ public interface ExpressRouteGateway {
             WithCreate withAutoScaleConfiguration(
                 ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration);
         }
+
         /** The stage of the ExpressRouteGateway definition allowing to specify expressRouteConnections. */
         interface WithExpressRouteConnections {
             /**
@@ -216,6 +223,7 @@ public interface ExpressRouteGateway {
              */
             WithCreate withExpressRouteConnections(List<ExpressRouteConnectionInner> expressRouteConnections);
         }
+
         /** The stage of the ExpressRouteGateway definition allowing to specify virtualHub. */
         interface WithVirtualHub {
             /**
@@ -227,6 +235,7 @@ public interface ExpressRouteGateway {
              */
             WithCreate withVirtualHub(VirtualHubId virtualHub);
         }
+
         /** The stage of the ExpressRouteGateway definition allowing to specify allowNonVirtualWanTraffic. */
         interface WithAllowNonVirtualWanTraffic {
             /**
@@ -239,6 +248,7 @@ public interface ExpressRouteGateway {
             WithCreate withAllowNonVirtualWanTraffic(Boolean allowNonVirtualWanTraffic);
         }
     }
+
     /**
      * Begins update for the ExpressRouteGateway resource.
      *
@@ -263,6 +273,7 @@ public interface ExpressRouteGateway {
          */
         ExpressRouteGateway apply(Context context);
     }
+
     /** The ExpressRouteGateway update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRouteGateway update allowing to specify tags. */
@@ -276,6 +287,7 @@ public interface ExpressRouteGateway {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -146,11 +146,13 @@ public interface VirtualWan {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualWan definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualWan definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualWan definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -169,6 +171,7 @@ public interface VirtualWan {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VirtualWan definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -179,6 +182,7 @@ public interface VirtualWan {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VirtualWan definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -204,6 +208,7 @@ public interface VirtualWan {
              */
             VirtualWan create(Context context);
         }
+
         /** The stage of the VirtualWan definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -214,6 +219,7 @@ public interface VirtualWan {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualWan definition allowing to specify disableVpnEncryption. */
         interface WithDisableVpnEncryption {
             /**
@@ -224,6 +230,7 @@ public interface VirtualWan {
              */
             WithCreate withDisableVpnEncryption(Boolean disableVpnEncryption);
         }
+
         /** The stage of the VirtualWan definition allowing to specify allowBranchToBranchTraffic. */
         interface WithAllowBranchToBranchTraffic {
             /**
@@ -234,6 +241,7 @@ public interface VirtualWan {
              */
             WithCreate withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic);
         }
+
         /** The stage of the VirtualWan definition allowing to specify allowVnetToVnetTraffic. */
         interface WithAllowVnetToVnetTraffic {
             /**
@@ -244,6 +252,7 @@ public interface VirtualWan {
              */
             WithCreate withAllowVnetToVnetTraffic(Boolean allowVnetToVnetTraffic);
         }
+
         /** The stage of the VirtualWan definition allowing to specify typePropertiesType. */
         interface WithTypePropertiesType {
             /**
@@ -255,6 +264,7 @@ public interface VirtualWan {
             WithCreate withTypePropertiesType(String typePropertiesType);
         }
     }
+
     /**
      * Begins update for the VirtualWan resource.
      *
@@ -279,6 +289,7 @@ public interface VirtualWan {
          */
         VirtualWan apply(Context context);
     }
+
     /** The VirtualWan update stages. */
     interface UpdateStages {
         /** The stage of the VirtualWan update allowing to specify tags. */
@@ -292,6 +303,7 @@ public interface VirtualWan {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -71,11 +71,13 @@ public interface BlobInventoryPolicy {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The BlobInventoryPolicy definition stages. */
     interface DefinitionStages {
         /** The first stage of the BlobInventoryPolicy definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the BlobInventoryPolicy definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -89,6 +91,7 @@ public interface BlobInventoryPolicy {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the BlobInventoryPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -109,6 +112,7 @@ public interface BlobInventoryPolicy {
              */
             BlobInventoryPolicy create(Context context);
         }
+
         /** The stage of the BlobInventoryPolicy definition allowing to specify policy. */
         interface WithPolicy {
             /**
@@ -121,6 +125,7 @@ public interface BlobInventoryPolicy {
             WithCreate withPolicy(BlobInventoryPolicySchema policy);
         }
     }
+
     /**
      * Begins update for the BlobInventoryPolicy resource.
      *
@@ -145,6 +150,7 @@ public interface BlobInventoryPolicy {
          */
         BlobInventoryPolicy apply(Context context);
     }
+
     /** The BlobInventoryPolicy update stages. */
     interface UpdateStages {
         /** The stage of the BlobInventoryPolicy update allowing to specify policy. */
@@ -159,6 +165,7 @@ public interface BlobInventoryPolicy {
             Update withPolicy(BlobInventoryPolicySchema policy);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

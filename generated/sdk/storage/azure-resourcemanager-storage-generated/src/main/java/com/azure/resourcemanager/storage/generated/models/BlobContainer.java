@@ -200,11 +200,13 @@ public interface BlobContainer {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The BlobContainer definition stages. */
     interface DefinitionStages {
         /** The first stage of the BlobContainer definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the BlobContainer definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -218,6 +220,7 @@ public interface BlobContainer {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the BlobContainer definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -245,6 +248,7 @@ public interface BlobContainer {
              */
             BlobContainer create(Context context);
         }
+
         /** The stage of the BlobContainer definition allowing to specify defaultEncryptionScope. */
         interface WithDefaultEncryptionScope {
             /**
@@ -256,6 +260,7 @@ public interface BlobContainer {
              */
             WithCreate withDefaultEncryptionScope(String defaultEncryptionScope);
         }
+
         /** The stage of the BlobContainer definition allowing to specify denyEncryptionScopeOverride. */
         interface WithDenyEncryptionScopeOverride {
             /**
@@ -267,6 +272,7 @@ public interface BlobContainer {
              */
             WithCreate withDenyEncryptionScopeOverride(Boolean denyEncryptionScopeOverride);
         }
+
         /** The stage of the BlobContainer definition allowing to specify publicAccess. */
         interface WithPublicAccess {
             /**
@@ -279,6 +285,7 @@ public interface BlobContainer {
              */
             WithCreate withPublicAccess(PublicAccess publicAccess);
         }
+
         /** The stage of the BlobContainer definition allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -289,6 +296,7 @@ public interface BlobContainer {
              */
             WithCreate withMetadata(Map<String, String> metadata);
         }
+
         /** The stage of the BlobContainer definition allowing to specify immutableStorageWithVersioning. */
         interface WithImmutableStorageWithVersioning {
             /**
@@ -304,6 +312,7 @@ public interface BlobContainer {
             WithCreate withImmutableStorageWithVersioning(
                 ImmutableStorageWithVersioning immutableStorageWithVersioning);
         }
+
         /** The stage of the BlobContainer definition allowing to specify enableNfsV3RootSquash. */
         interface WithEnableNfsV3RootSquash {
             /**
@@ -314,6 +323,7 @@ public interface BlobContainer {
              */
             WithCreate withEnableNfsV3RootSquash(Boolean enableNfsV3RootSquash);
         }
+
         /** The stage of the BlobContainer definition allowing to specify enableNfsV3AllSquash. */
         interface WithEnableNfsV3AllSquash {
             /**
@@ -325,6 +335,7 @@ public interface BlobContainer {
             WithCreate withEnableNfsV3AllSquash(Boolean enableNfsV3AllSquash);
         }
     }
+
     /**
      * Begins update for the BlobContainer resource.
      *
@@ -356,6 +367,7 @@ public interface BlobContainer {
          */
         BlobContainer apply(Context context);
     }
+
     /** The BlobContainer update stages. */
     interface UpdateStages {
         /** The stage of the BlobContainer update allowing to specify defaultEncryptionScope. */
@@ -369,6 +381,7 @@ public interface BlobContainer {
              */
             Update withDefaultEncryptionScope(String defaultEncryptionScope);
         }
+
         /** The stage of the BlobContainer update allowing to specify denyEncryptionScopeOverride. */
         interface WithDenyEncryptionScopeOverride {
             /**
@@ -380,6 +393,7 @@ public interface BlobContainer {
              */
             Update withDenyEncryptionScopeOverride(Boolean denyEncryptionScopeOverride);
         }
+
         /** The stage of the BlobContainer update allowing to specify publicAccess. */
         interface WithPublicAccess {
             /**
@@ -392,6 +406,7 @@ public interface BlobContainer {
              */
             Update withPublicAccess(PublicAccess publicAccess);
         }
+
         /** The stage of the BlobContainer update allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -402,6 +417,7 @@ public interface BlobContainer {
              */
             Update withMetadata(Map<String, String> metadata);
         }
+
         /** The stage of the BlobContainer update allowing to specify immutableStorageWithVersioning. */
         interface WithImmutableStorageWithVersioning {
             /**
@@ -416,6 +432,7 @@ public interface BlobContainer {
              */
             Update withImmutableStorageWithVersioning(ImmutableStorageWithVersioning immutableStorageWithVersioning);
         }
+
         /** The stage of the BlobContainer update allowing to specify enableNfsV3RootSquash. */
         interface WithEnableNfsV3RootSquash {
             /**
@@ -426,6 +443,7 @@ public interface BlobContainer {
              */
             Update withEnableNfsV3RootSquash(Boolean enableNfsV3RootSquash);
         }
+
         /** The stage of the BlobContainer update allowing to specify enableNfsV3AllSquash. */
         interface WithEnableNfsV3AllSquash {
             /**
@@ -437,6 +455,7 @@ public interface BlobContainer {
             Update withEnableNfsV3AllSquash(Boolean enableNfsV3AllSquash);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

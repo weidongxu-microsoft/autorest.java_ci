@@ -85,11 +85,13 @@ public interface StaticSiteLinkedBackendArmResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The StaticSiteLinkedBackendArmResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the StaticSiteLinkedBackendArmResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the StaticSiteLinkedBackendArmResource definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -101,6 +103,7 @@ public interface StaticSiteLinkedBackendArmResource {
              */
             WithCreate withExistingStaticSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the StaticSiteLinkedBackendArmResource definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -122,6 +125,7 @@ public interface StaticSiteLinkedBackendArmResource {
              */
             StaticSiteLinkedBackendArmResource create(Context context);
         }
+
         /** The stage of the StaticSiteLinkedBackendArmResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -132,6 +136,7 @@ public interface StaticSiteLinkedBackendArmResource {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the StaticSiteLinkedBackendArmResource definition allowing to specify backendResourceId. */
         interface WithBackendResourceId {
             /**
@@ -142,6 +147,7 @@ public interface StaticSiteLinkedBackendArmResource {
              */
             WithCreate withBackendResourceId(String backendResourceId);
         }
+
         /** The stage of the StaticSiteLinkedBackendArmResource definition allowing to specify region. */
         interface WithRegion {
             /**
@@ -153,6 +159,7 @@ public interface StaticSiteLinkedBackendArmResource {
             WithCreate withRegion(String region);
         }
     }
+
     /**
      * Begins update for the StaticSiteLinkedBackendArmResource resource.
      *
@@ -177,6 +184,7 @@ public interface StaticSiteLinkedBackendArmResource {
          */
         StaticSiteLinkedBackendArmResource apply(Context context);
     }
+
     /** The StaticSiteLinkedBackendArmResource update stages. */
     interface UpdateStages {
         /** The stage of the StaticSiteLinkedBackendArmResource update allowing to specify kind. */
@@ -189,6 +197,7 @@ public interface StaticSiteLinkedBackendArmResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the StaticSiteLinkedBackendArmResource update allowing to specify backendResourceId. */
         interface WithBackendResourceId {
             /**
@@ -199,6 +208,7 @@ public interface StaticSiteLinkedBackendArmResource {
              */
             Update withBackendResourceId(String backendResourceId);
         }
+
         /** The stage of the StaticSiteLinkedBackendArmResource update allowing to specify region. */
         interface WithRegion {
             /**
@@ -210,6 +220,7 @@ public interface StaticSiteLinkedBackendArmResource {
             Update withRegion(String region);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

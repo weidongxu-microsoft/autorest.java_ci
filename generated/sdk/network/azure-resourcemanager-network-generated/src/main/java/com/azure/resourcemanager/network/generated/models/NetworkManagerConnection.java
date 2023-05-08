@@ -76,11 +76,13 @@ public interface NetworkManagerConnection {
     /** The entirety of the NetworkManagerConnection definition. */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithCreate {
     }
+
     /** The NetworkManagerConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the NetworkManagerConnection definition. */
         interface Blank extends WithCreate {
         }
+
         /**
          * The stage of the NetworkManagerConnection definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -101,6 +103,7 @@ public interface NetworkManagerConnection {
              */
             NetworkManagerConnection create(Context context);
         }
+
         /** The stage of the NetworkManagerConnection definition allowing to specify networkManagerId. */
         interface WithNetworkManagerId {
             /**
@@ -111,6 +114,7 @@ public interface NetworkManagerConnection {
              */
             WithCreate withNetworkManagerId(String networkManagerId);
         }
+
         /** The stage of the NetworkManagerConnection definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -122,6 +126,7 @@ public interface NetworkManagerConnection {
             WithCreate withDescription(String description);
         }
     }
+
     /**
      * Begins update for the NetworkManagerConnection resource.
      *
@@ -146,6 +151,7 @@ public interface NetworkManagerConnection {
          */
         NetworkManagerConnection apply(Context context);
     }
+
     /** The NetworkManagerConnection update stages. */
     interface UpdateStages {
         /** The stage of the NetworkManagerConnection update allowing to specify networkManagerId. */
@@ -158,6 +164,7 @@ public interface NetworkManagerConnection {
              */
             Update withNetworkManagerId(String networkManagerId);
         }
+
         /** The stage of the NetworkManagerConnection update allowing to specify description. */
         interface WithDescription {
             /**
@@ -169,6 +176,7 @@ public interface NetworkManagerConnection {
             Update withDescription(String description);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

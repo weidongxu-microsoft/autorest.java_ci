@@ -153,11 +153,13 @@ public interface BackendAddressPool {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The BackendAddressPool definition stages. */
     interface DefinitionStages {
         /** The first stage of the BackendAddressPool definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the BackendAddressPool definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -169,6 +171,7 @@ public interface BackendAddressPool {
              */
             WithCreate withExistingLoadBalancer(String resourceGroupName, String loadBalancerName);
         }
+
         /**
          * The stage of the BackendAddressPool definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -195,6 +198,7 @@ public interface BackendAddressPool {
              */
             BackendAddressPool create(Context context);
         }
+
         /** The stage of the BackendAddressPool definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -213,6 +217,7 @@ public interface BackendAddressPool {
              */
             WithCreate withRegion(String location);
         }
+
         /** The stage of the BackendAddressPool definition allowing to specify name. */
         interface WithName {
             /**
@@ -225,6 +230,7 @@ public interface BackendAddressPool {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the BackendAddressPool definition allowing to specify tunnelInterfaces. */
         interface WithTunnelInterfaces {
             /**
@@ -235,6 +241,7 @@ public interface BackendAddressPool {
              */
             WithCreate withTunnelInterfaces(List<GatewayLoadBalancerTunnelInterface> tunnelInterfaces);
         }
+
         /** The stage of the BackendAddressPool definition allowing to specify loadBalancerBackendAddresses. */
         interface WithLoadBalancerBackendAddresses {
             /**
@@ -245,6 +252,7 @@ public interface BackendAddressPool {
              */
             WithCreate withLoadBalancerBackendAddresses(List<LoadBalancerBackendAddress> loadBalancerBackendAddresses);
         }
+
         /** The stage of the BackendAddressPool definition allowing to specify drainPeriodInSeconds. */
         interface WithDrainPeriodInSeconds {
             /**
@@ -257,6 +265,7 @@ public interface BackendAddressPool {
              */
             WithCreate withDrainPeriodInSeconds(Integer drainPeriodInSeconds);
         }
+
         /** The stage of the BackendAddressPool definition allowing to specify virtualNetwork. */
         interface WithVirtualNetwork {
             /**
@@ -268,6 +277,7 @@ public interface BackendAddressPool {
             WithCreate withVirtualNetwork(SubResource virtualNetwork);
         }
     }
+
     /**
      * Begins update for the BackendAddressPool resource.
      *
@@ -297,6 +307,7 @@ public interface BackendAddressPool {
          */
         BackendAddressPool apply(Context context);
     }
+
     /** The BackendAddressPool update stages. */
     interface UpdateStages {
         /** The stage of the BackendAddressPool update allowing to specify name. */
@@ -311,6 +322,7 @@ public interface BackendAddressPool {
              */
             Update withName(String name);
         }
+
         /** The stage of the BackendAddressPool update allowing to specify tunnelInterfaces. */
         interface WithTunnelInterfaces {
             /**
@@ -321,6 +333,7 @@ public interface BackendAddressPool {
              */
             Update withTunnelInterfaces(List<GatewayLoadBalancerTunnelInterface> tunnelInterfaces);
         }
+
         /** The stage of the BackendAddressPool update allowing to specify loadBalancerBackendAddresses. */
         interface WithLoadBalancerBackendAddresses {
             /**
@@ -331,6 +344,7 @@ public interface BackendAddressPool {
              */
             Update withLoadBalancerBackendAddresses(List<LoadBalancerBackendAddress> loadBalancerBackendAddresses);
         }
+
         /** The stage of the BackendAddressPool update allowing to specify drainPeriodInSeconds. */
         interface WithDrainPeriodInSeconds {
             /**
@@ -343,6 +357,7 @@ public interface BackendAddressPool {
              */
             Update withDrainPeriodInSeconds(Integer drainPeriodInSeconds);
         }
+
         /** The stage of the BackendAddressPool update allowing to specify virtualNetwork. */
         interface WithVirtualNetwork {
             /**
@@ -354,6 +369,7 @@ public interface BackendAddressPool {
             Update withVirtualNetwork(SubResource virtualNetwork);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

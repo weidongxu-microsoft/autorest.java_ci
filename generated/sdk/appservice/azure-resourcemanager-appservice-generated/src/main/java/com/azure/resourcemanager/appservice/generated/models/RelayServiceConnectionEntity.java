@@ -105,11 +105,13 @@ public interface RelayServiceConnectionEntity {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The RelayServiceConnectionEntity definition stages. */
     interface DefinitionStages {
         /** The first stage of the RelayServiceConnectionEntity definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -121,6 +123,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the RelayServiceConnectionEntity definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -149,6 +152,7 @@ public interface RelayServiceConnectionEntity {
              */
             RelayServiceConnectionEntity create(Context context);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -159,6 +163,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify entityName. */
         interface WithEntityName {
             /**
@@ -169,6 +174,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withEntityName(String entityName);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify entityConnectionString. */
         interface WithEntityConnectionString {
             /**
@@ -179,6 +185,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withEntityConnectionString(String entityConnectionString);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify resourceType. */
         interface WithResourceType {
             /**
@@ -189,6 +196,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withResourceType(String resourceType);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify resourceConnectionString. */
         interface WithResourceConnectionString {
             /**
@@ -199,6 +207,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withResourceConnectionString(String resourceConnectionString);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify hostname. */
         interface WithHostname {
             /**
@@ -209,6 +218,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withHostname(String hostname);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify port. */
         interface WithPort {
             /**
@@ -219,6 +229,7 @@ public interface RelayServiceConnectionEntity {
              */
             WithCreate withPort(Integer port);
         }
+
         /** The stage of the RelayServiceConnectionEntity definition allowing to specify biztalkUri. */
         interface WithBiztalkUri {
             /**
@@ -230,6 +241,7 @@ public interface RelayServiceConnectionEntity {
             WithCreate withBiztalkUri(String biztalkUri);
         }
     }
+
     /**
      * Begins update for the RelayServiceConnectionEntity resource.
      *
@@ -262,6 +274,7 @@ public interface RelayServiceConnectionEntity {
          */
         RelayServiceConnectionEntity apply(Context context);
     }
+
     /** The RelayServiceConnectionEntity update stages. */
     interface UpdateStages {
         /** The stage of the RelayServiceConnectionEntity update allowing to specify kind. */
@@ -274,6 +287,7 @@ public interface RelayServiceConnectionEntity {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the RelayServiceConnectionEntity update allowing to specify entityName. */
         interface WithEntityName {
             /**
@@ -284,6 +298,7 @@ public interface RelayServiceConnectionEntity {
              */
             Update withEntityName(String entityName);
         }
+
         /** The stage of the RelayServiceConnectionEntity update allowing to specify entityConnectionString. */
         interface WithEntityConnectionString {
             /**
@@ -294,6 +309,7 @@ public interface RelayServiceConnectionEntity {
              */
             Update withEntityConnectionString(String entityConnectionString);
         }
+
         /** The stage of the RelayServiceConnectionEntity update allowing to specify resourceType. */
         interface WithResourceType {
             /**
@@ -304,6 +320,7 @@ public interface RelayServiceConnectionEntity {
              */
             Update withResourceType(String resourceType);
         }
+
         /** The stage of the RelayServiceConnectionEntity update allowing to specify resourceConnectionString. */
         interface WithResourceConnectionString {
             /**
@@ -314,6 +331,7 @@ public interface RelayServiceConnectionEntity {
              */
             Update withResourceConnectionString(String resourceConnectionString);
         }
+
         /** The stage of the RelayServiceConnectionEntity update allowing to specify hostname. */
         interface WithHostname {
             /**
@@ -324,6 +342,7 @@ public interface RelayServiceConnectionEntity {
              */
             Update withHostname(String hostname);
         }
+
         /** The stage of the RelayServiceConnectionEntity update allowing to specify port. */
         interface WithPort {
             /**
@@ -334,6 +353,7 @@ public interface RelayServiceConnectionEntity {
              */
             Update withPort(Integer port);
         }
+
         /** The stage of the RelayServiceConnectionEntity update allowing to specify biztalkUri. */
         interface WithBiztalkUri {
             /**
@@ -345,6 +365,7 @@ public interface RelayServiceConnectionEntity {
             Update withBiztalkUri(String biztalkUri);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

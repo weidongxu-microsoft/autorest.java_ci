@@ -69,11 +69,13 @@ public interface VnetGateway {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VnetGateway definition stages. */
     interface DefinitionStages {
         /** The first stage of the VnetGateway definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VnetGateway definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -89,6 +91,7 @@ public interface VnetGateway {
             WithCreate withExistingVirtualNetworkConnection(
                 String resourceGroupName, String name, String vnetName, String slot);
         }
+
         /**
          * The stage of the VnetGateway definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -110,6 +113,7 @@ public interface VnetGateway {
              */
             VnetGateway create(Context context);
         }
+
         /** The stage of the VnetGateway definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -120,6 +124,7 @@ public interface VnetGateway {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the VnetGateway definition allowing to specify vnetName. */
         interface WithVnetName {
             /**
@@ -130,6 +135,7 @@ public interface VnetGateway {
              */
             WithCreate withVnetName(String vnetName);
         }
+
         /** The stage of the VnetGateway definition allowing to specify vpnPackageUri. */
         interface WithVpnPackageUri {
             /**
@@ -141,6 +147,7 @@ public interface VnetGateway {
             WithCreate withVpnPackageUri(String vpnPackageUri);
         }
     }
+
     /**
      * Begins update for the VnetGateway resource.
      *
@@ -165,6 +172,7 @@ public interface VnetGateway {
          */
         VnetGateway apply(Context context);
     }
+
     /** The VnetGateway update stages. */
     interface UpdateStages {
         /** The stage of the VnetGateway update allowing to specify kind. */
@@ -177,6 +185,7 @@ public interface VnetGateway {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the VnetGateway update allowing to specify vpnPackageUri. */
         interface WithVpnPackageUri {
             /**
@@ -188,6 +197,7 @@ public interface VnetGateway {
             Update withVpnPackageUri(String vpnPackageUri);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -112,11 +112,13 @@ public interface Deployment {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Deployment definition stages. */
     interface DefinitionStages {
         /** The first stage of the Deployment definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Deployment definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -128,6 +130,7 @@ public interface Deployment {
              */
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the Deployment definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -158,6 +161,7 @@ public interface Deployment {
              */
             Deployment create(Context context);
         }
+
         /** The stage of the Deployment definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -168,6 +172,7 @@ public interface Deployment {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the Deployment definition allowing to specify status. */
         interface WithStatus {
             /**
@@ -178,6 +183,7 @@ public interface Deployment {
              */
             WithCreate withStatus(Integer status);
         }
+
         /** The stage of the Deployment definition allowing to specify message. */
         interface WithMessage {
             /**
@@ -188,6 +194,7 @@ public interface Deployment {
              */
             WithCreate withMessage(String message);
         }
+
         /** The stage of the Deployment definition allowing to specify author. */
         interface WithAuthor {
             /**
@@ -198,6 +205,7 @@ public interface Deployment {
              */
             WithCreate withAuthor(String author);
         }
+
         /** The stage of the Deployment definition allowing to specify deployer. */
         interface WithDeployer {
             /**
@@ -208,6 +216,7 @@ public interface Deployment {
              */
             WithCreate withDeployer(String deployer);
         }
+
         /** The stage of the Deployment definition allowing to specify authorEmail. */
         interface WithAuthorEmail {
             /**
@@ -218,6 +227,7 @@ public interface Deployment {
              */
             WithCreate withAuthorEmail(String authorEmail);
         }
+
         /** The stage of the Deployment definition allowing to specify startTime. */
         interface WithStartTime {
             /**
@@ -228,6 +238,7 @@ public interface Deployment {
              */
             WithCreate withStartTime(OffsetDateTime startTime);
         }
+
         /** The stage of the Deployment definition allowing to specify endTime. */
         interface WithEndTime {
             /**
@@ -238,6 +249,7 @@ public interface Deployment {
              */
             WithCreate withEndTime(OffsetDateTime endTime);
         }
+
         /** The stage of the Deployment definition allowing to specify active. */
         interface WithActive {
             /**
@@ -249,6 +261,7 @@ public interface Deployment {
              */
             WithCreate withActive(Boolean active);
         }
+
         /** The stage of the Deployment definition allowing to specify details. */
         interface WithDetails {
             /**
@@ -260,6 +273,7 @@ public interface Deployment {
             WithCreate withDetails(String details);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

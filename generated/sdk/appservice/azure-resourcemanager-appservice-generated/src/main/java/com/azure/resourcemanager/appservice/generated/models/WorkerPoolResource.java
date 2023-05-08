@@ -98,11 +98,13 @@ public interface WorkerPoolResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The WorkerPoolResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the WorkerPoolResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the WorkerPoolResource definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -114,6 +116,7 @@ public interface WorkerPoolResource {
              */
             WithCreate withExistingHostingEnvironment(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the WorkerPoolResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -140,6 +143,7 @@ public interface WorkerPoolResource {
              */
             WorkerPoolResource create(Context context);
         }
+
         /** The stage of the WorkerPoolResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -150,6 +154,7 @@ public interface WorkerPoolResource {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the WorkerPoolResource definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -160,6 +165,7 @@ public interface WorkerPoolResource {
              */
             WithCreate withSku(SkuDescription sku);
         }
+
         /** The stage of the WorkerPoolResource definition allowing to specify workerSizeId. */
         interface WithWorkerSizeId {
             /**
@@ -170,6 +176,7 @@ public interface WorkerPoolResource {
              */
             WithCreate withWorkerSizeId(Integer workerSizeId);
         }
+
         /** The stage of the WorkerPoolResource definition allowing to specify computeMode. */
         interface WithComputeMode {
             /**
@@ -180,6 +187,7 @@ public interface WorkerPoolResource {
              */
             WithCreate withComputeMode(ComputeModeOptions computeMode);
         }
+
         /** The stage of the WorkerPoolResource definition allowing to specify workerSize. */
         interface WithWorkerSize {
             /**
@@ -190,6 +198,7 @@ public interface WorkerPoolResource {
              */
             WithCreate withWorkerSize(String workerSize);
         }
+
         /** The stage of the WorkerPoolResource definition allowing to specify workerCount. */
         interface WithWorkerCount {
             /**
@@ -201,6 +210,7 @@ public interface WorkerPoolResource {
             WithCreate withWorkerCount(Integer workerCount);
         }
     }
+
     /**
      * Begins update for the WorkerPoolResource resource.
      *
@@ -231,6 +241,7 @@ public interface WorkerPoolResource {
          */
         WorkerPoolResource apply(Context context);
     }
+
     /** The WorkerPoolResource update stages. */
     interface UpdateStages {
         /** The stage of the WorkerPoolResource update allowing to specify kind. */
@@ -243,6 +254,7 @@ public interface WorkerPoolResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the WorkerPoolResource update allowing to specify sku. */
         interface WithSku {
             /**
@@ -253,6 +265,7 @@ public interface WorkerPoolResource {
              */
             Update withSku(SkuDescription sku);
         }
+
         /** The stage of the WorkerPoolResource update allowing to specify workerSizeId. */
         interface WithWorkerSizeId {
             /**
@@ -263,6 +276,7 @@ public interface WorkerPoolResource {
              */
             Update withWorkerSizeId(Integer workerSizeId);
         }
+
         /** The stage of the WorkerPoolResource update allowing to specify computeMode. */
         interface WithComputeMode {
             /**
@@ -273,6 +287,7 @@ public interface WorkerPoolResource {
              */
             Update withComputeMode(ComputeModeOptions computeMode);
         }
+
         /** The stage of the WorkerPoolResource update allowing to specify workerSize. */
         interface WithWorkerSize {
             /**
@@ -283,6 +298,7 @@ public interface WorkerPoolResource {
              */
             Update withWorkerSize(String workerSize);
         }
+
         /** The stage of the WorkerPoolResource update allowing to specify workerCount. */
         interface WithWorkerCount {
             /**
@@ -294,6 +310,7 @@ public interface WorkerPoolResource {
             Update withWorkerCount(Integer workerCount);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -86,11 +86,13 @@ public interface ServiceEndpointPolicyDefinition {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ServiceEndpointPolicyDefinition definition stages. */
     interface DefinitionStages {
         /** The first stage of the ServiceEndpointPolicyDefinition definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -102,6 +104,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             WithCreate withExistingServiceEndpointPolicy(String resourceGroupName, String serviceEndpointPolicyName);
         }
+
         /**
          * The stage of the ServiceEndpointPolicyDefinition definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -127,6 +130,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             ServiceEndpointPolicyDefinition create(Context context);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition definition allowing to specify name. */
         interface WithName {
             /**
@@ -139,6 +143,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition definition allowing to specify type. */
         interface WithType {
             /**
@@ -149,6 +154,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             WithCreate withType(String type);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -159,6 +165,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition definition allowing to specify service. */
         interface WithService {
             /**
@@ -169,6 +176,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             WithCreate withService(String service);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition definition allowing to specify serviceResources. */
         interface WithServiceResources {
             /**
@@ -180,6 +188,7 @@ public interface ServiceEndpointPolicyDefinition {
             WithCreate withServiceResources(List<String> serviceResources);
         }
     }
+
     /**
      * Begins update for the ServiceEndpointPolicyDefinition resource.
      *
@@ -209,6 +218,7 @@ public interface ServiceEndpointPolicyDefinition {
          */
         ServiceEndpointPolicyDefinition apply(Context context);
     }
+
     /** The ServiceEndpointPolicyDefinition update stages. */
     interface UpdateStages {
         /** The stage of the ServiceEndpointPolicyDefinition update allowing to specify name. */
@@ -223,6 +233,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             Update withName(String name);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition update allowing to specify type. */
         interface WithType {
             /**
@@ -233,6 +244,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             Update withType(String type);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition update allowing to specify description. */
         interface WithDescription {
             /**
@@ -243,6 +255,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition update allowing to specify service. */
         interface WithService {
             /**
@@ -253,6 +266,7 @@ public interface ServiceEndpointPolicyDefinition {
              */
             Update withService(String service);
         }
+
         /** The stage of the ServiceEndpointPolicyDefinition update allowing to specify serviceResources. */
         interface WithServiceResources {
             /**
@@ -264,6 +278,7 @@ public interface ServiceEndpointPolicyDefinition {
             Update withServiceResources(List<String> serviceResources);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

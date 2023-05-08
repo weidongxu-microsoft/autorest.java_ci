@@ -57,11 +57,13 @@ public interface SharedPrivateLinkResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The SharedPrivateLinkResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the SharedPrivateLinkResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the SharedPrivateLinkResource definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -75,6 +77,7 @@ public interface SharedPrivateLinkResource {
              */
             WithCreate withExistingSearchService(String resourceGroupName, String searchServiceName);
         }
+
         /**
          * The stage of the SharedPrivateLinkResource definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -95,6 +98,7 @@ public interface SharedPrivateLinkResource {
              */
             SharedPrivateLinkResource create(Context context);
         }
+
         /** The stage of the SharedPrivateLinkResource definition allowing to specify properties. */
         interface WithProperties {
             /**
@@ -107,6 +111,7 @@ public interface SharedPrivateLinkResource {
              */
             WithCreate withProperties(SharedPrivateLinkResourceProperties properties);
         }
+
         /** The stage of the SharedPrivateLinkResource definition allowing to specify clientRequestId. */
         interface WithClientRequestId {
             /**
@@ -120,6 +125,7 @@ public interface SharedPrivateLinkResource {
             WithCreate withClientRequestId(UUID clientRequestId);
         }
     }
+
     /**
      * Begins update for the SharedPrivateLinkResource resource.
      *
@@ -144,6 +150,7 @@ public interface SharedPrivateLinkResource {
          */
         SharedPrivateLinkResource apply(Context context);
     }
+
     /** The SharedPrivateLinkResource update stages. */
     interface UpdateStages {
         /** The stage of the SharedPrivateLinkResource update allowing to specify properties. */
@@ -158,6 +165,7 @@ public interface SharedPrivateLinkResource {
              */
             Update withProperties(SharedPrivateLinkResourceProperties properties);
         }
+
         /** The stage of the SharedPrivateLinkResource update allowing to specify clientRequestId. */
         interface WithClientRequestId {
             /**
@@ -171,6 +179,7 @@ public interface SharedPrivateLinkResource {
             Update withClientRequestId(UUID clientRequestId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

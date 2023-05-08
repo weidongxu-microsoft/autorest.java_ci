@@ -113,11 +113,13 @@ public interface ConnectivityConfiguration {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ConnectivityConfiguration definition stages. */
     interface DefinitionStages {
         /** The first stage of the ConnectivityConfiguration definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ConnectivityConfiguration definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -129,6 +131,7 @@ public interface ConnectivityConfiguration {
              */
             WithCreate withExistingNetworkManager(String resourceGroupName, String networkManagerName);
         }
+
         /**
          * The stage of the ConnectivityConfiguration definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -155,6 +158,7 @@ public interface ConnectivityConfiguration {
              */
             ConnectivityConfiguration create(Context context);
         }
+
         /** The stage of the ConnectivityConfiguration definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -165,6 +169,7 @@ public interface ConnectivityConfiguration {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the ConnectivityConfiguration definition allowing to specify connectivityTopology. */
         interface WithConnectivityTopology {
             /**
@@ -175,6 +180,7 @@ public interface ConnectivityConfiguration {
              */
             WithCreate withConnectivityTopology(ConnectivityTopology connectivityTopology);
         }
+
         /** The stage of the ConnectivityConfiguration definition allowing to specify hubs. */
         interface WithHubs {
             /**
@@ -185,6 +191,7 @@ public interface ConnectivityConfiguration {
              */
             WithCreate withHubs(List<Hub> hubs);
         }
+
         /** The stage of the ConnectivityConfiguration definition allowing to specify isGlobal. */
         interface WithIsGlobal {
             /**
@@ -195,6 +202,7 @@ public interface ConnectivityConfiguration {
              */
             WithCreate withIsGlobal(IsGlobal isGlobal);
         }
+
         /** The stage of the ConnectivityConfiguration definition allowing to specify appliesToGroups. */
         interface WithAppliesToGroups {
             /**
@@ -205,6 +213,7 @@ public interface ConnectivityConfiguration {
              */
             WithCreate withAppliesToGroups(List<ConnectivityGroupItem> appliesToGroups);
         }
+
         /** The stage of the ConnectivityConfiguration definition allowing to specify deleteExistingPeering. */
         interface WithDeleteExistingPeering {
             /**
@@ -216,6 +225,7 @@ public interface ConnectivityConfiguration {
             WithCreate withDeleteExistingPeering(DeleteExistingPeering deleteExistingPeering);
         }
     }
+
     /**
      * Begins update for the ConnectivityConfiguration resource.
      *
@@ -246,6 +256,7 @@ public interface ConnectivityConfiguration {
          */
         ConnectivityConfiguration apply(Context context);
     }
+
     /** The ConnectivityConfiguration update stages. */
     interface UpdateStages {
         /** The stage of the ConnectivityConfiguration update allowing to specify description. */
@@ -258,6 +269,7 @@ public interface ConnectivityConfiguration {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the ConnectivityConfiguration update allowing to specify connectivityTopology. */
         interface WithConnectivityTopology {
             /**
@@ -268,6 +280,7 @@ public interface ConnectivityConfiguration {
              */
             Update withConnectivityTopology(ConnectivityTopology connectivityTopology);
         }
+
         /** The stage of the ConnectivityConfiguration update allowing to specify hubs. */
         interface WithHubs {
             /**
@@ -278,6 +291,7 @@ public interface ConnectivityConfiguration {
              */
             Update withHubs(List<Hub> hubs);
         }
+
         /** The stage of the ConnectivityConfiguration update allowing to specify isGlobal. */
         interface WithIsGlobal {
             /**
@@ -288,6 +302,7 @@ public interface ConnectivityConfiguration {
              */
             Update withIsGlobal(IsGlobal isGlobal);
         }
+
         /** The stage of the ConnectivityConfiguration update allowing to specify appliesToGroups. */
         interface WithAppliesToGroups {
             /**
@@ -298,6 +313,7 @@ public interface ConnectivityConfiguration {
              */
             Update withAppliesToGroups(List<ConnectivityGroupItem> appliesToGroups);
         }
+
         /** The stage of the ConnectivityConfiguration update allowing to specify deleteExistingPeering. */
         interface WithDeleteExistingPeering {
             /**
@@ -309,6 +325,7 @@ public interface ConnectivityConfiguration {
             Update withDeleteExistingPeering(DeleteExistingPeering deleteExistingPeering);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

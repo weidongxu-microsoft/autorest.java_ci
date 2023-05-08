@@ -123,11 +123,13 @@ public interface SchemaGroup {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The SchemaGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the SchemaGroup definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the SchemaGroup definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -139,6 +141,7 @@ public interface SchemaGroup {
              */
             WithCreate withExistingNamespace(String resourceGroupName, String namespaceName);
         }
+
         /**
          * The stage of the SchemaGroup definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -162,6 +165,7 @@ public interface SchemaGroup {
              */
             SchemaGroup create(Context context);
         }
+
         /** The stage of the SchemaGroup definition allowing to specify groupProperties. */
         interface WithGroupProperties {
             /**
@@ -172,6 +176,7 @@ public interface SchemaGroup {
              */
             WithCreate withGroupProperties(Map<String, String> groupProperties);
         }
+
         /** The stage of the SchemaGroup definition allowing to specify schemaCompatibility. */
         interface WithSchemaCompatibility {
             /**
@@ -182,6 +187,7 @@ public interface SchemaGroup {
              */
             WithCreate withSchemaCompatibility(SchemaCompatibility schemaCompatibility);
         }
+
         /** The stage of the SchemaGroup definition allowing to specify schemaType. */
         interface WithSchemaType {
             /**
@@ -193,6 +199,7 @@ public interface SchemaGroup {
             WithCreate withSchemaType(SchemaType schemaType);
         }
     }
+
     /**
      * Begins update for the SchemaGroup resource.
      *
@@ -218,6 +225,7 @@ public interface SchemaGroup {
          */
         SchemaGroup apply(Context context);
     }
+
     /** The SchemaGroup update stages. */
     interface UpdateStages {
         /** The stage of the SchemaGroup update allowing to specify groupProperties. */
@@ -230,6 +238,7 @@ public interface SchemaGroup {
              */
             Update withGroupProperties(Map<String, String> groupProperties);
         }
+
         /** The stage of the SchemaGroup update allowing to specify schemaCompatibility. */
         interface WithSchemaCompatibility {
             /**
@@ -240,6 +249,7 @@ public interface SchemaGroup {
              */
             Update withSchemaCompatibility(SchemaCompatibility schemaCompatibility);
         }
+
         /** The stage of the SchemaGroup update allowing to specify schemaType. */
         interface WithSchemaType {
             /**
@@ -251,6 +261,7 @@ public interface SchemaGroup {
             Update withSchemaType(SchemaType schemaType);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

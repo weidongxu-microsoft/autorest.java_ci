@@ -161,11 +161,13 @@ public interface ExpressRouteCrossConnection {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ExpressRouteCrossConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRouteCrossConnection definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ExpressRouteCrossConnection definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -184,6 +186,7 @@ public interface ExpressRouteCrossConnection {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ExpressRouteCrossConnection definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -194,6 +197,7 @@ public interface ExpressRouteCrossConnection {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ExpressRouteCrossConnection definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -219,6 +223,7 @@ public interface ExpressRouteCrossConnection {
              */
             ExpressRouteCrossConnection create(Context context);
         }
+
         /** The stage of the ExpressRouteCrossConnection definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -229,6 +234,7 @@ public interface ExpressRouteCrossConnection {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ExpressRouteCrossConnection definition allowing to specify expressRouteCircuit. */
         interface WithExpressRouteCircuit {
             /**
@@ -239,6 +245,7 @@ public interface ExpressRouteCrossConnection {
              */
             WithCreate withExpressRouteCircuit(ExpressRouteCircuitReference expressRouteCircuit);
         }
+
         /**
          * The stage of the ExpressRouteCrossConnection definition allowing to specify serviceProviderProvisioningState.
          */
@@ -254,6 +261,7 @@ public interface ExpressRouteCrossConnection {
             WithCreate withServiceProviderProvisioningState(
                 ServiceProviderProvisioningState serviceProviderProvisioningState);
         }
+
         /** The stage of the ExpressRouteCrossConnection definition allowing to specify serviceProviderNotes. */
         interface WithServiceProviderNotes {
             /**
@@ -265,6 +273,7 @@ public interface ExpressRouteCrossConnection {
              */
             WithCreate withServiceProviderNotes(String serviceProviderNotes);
         }
+
         /** The stage of the ExpressRouteCrossConnection definition allowing to specify peerings. */
         interface WithPeerings {
             /**
@@ -276,6 +285,7 @@ public interface ExpressRouteCrossConnection {
             WithCreate withPeerings(List<ExpressRouteCrossConnectionPeeringInner> peerings);
         }
     }
+
     /**
      * Begins update for the ExpressRouteCrossConnection resource.
      *
@@ -300,6 +310,7 @@ public interface ExpressRouteCrossConnection {
          */
         ExpressRouteCrossConnection apply(Context context);
     }
+
     /** The ExpressRouteCrossConnection update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRouteCrossConnection update allowing to specify tags. */
@@ -313,6 +324,7 @@ public interface ExpressRouteCrossConnection {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

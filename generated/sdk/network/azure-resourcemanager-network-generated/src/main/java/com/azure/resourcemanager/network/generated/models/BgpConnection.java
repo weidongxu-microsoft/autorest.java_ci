@@ -91,11 +91,13 @@ public interface BgpConnection {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The BgpConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the BgpConnection definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the BgpConnection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -107,6 +109,7 @@ public interface BgpConnection {
              */
             WithCreate withExistingVirtualHub(String resourceGroupName, String virtualHubName);
         }
+
         /**
          * The stage of the BgpConnection definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -131,6 +134,7 @@ public interface BgpConnection {
              */
             BgpConnection create(Context context);
         }
+
         /** The stage of the BgpConnection definition allowing to specify name. */
         interface WithName {
             /**
@@ -141,6 +145,7 @@ public interface BgpConnection {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the BgpConnection definition allowing to specify peerAsn. */
         interface WithPeerAsn {
             /**
@@ -151,6 +156,7 @@ public interface BgpConnection {
              */
             WithCreate withPeerAsn(Long peerAsn);
         }
+
         /** The stage of the BgpConnection definition allowing to specify peerIp. */
         interface WithPeerIp {
             /**
@@ -161,6 +167,7 @@ public interface BgpConnection {
              */
             WithCreate withPeerIp(String peerIp);
         }
+
         /** The stage of the BgpConnection definition allowing to specify hubVirtualNetworkConnection. */
         interface WithHubVirtualNetworkConnection {
             /**
@@ -173,6 +180,7 @@ public interface BgpConnection {
             WithCreate withHubVirtualNetworkConnection(SubResource hubVirtualNetworkConnection);
         }
     }
+
     /**
      * Begins update for the BgpConnection resource.
      *
@@ -201,6 +209,7 @@ public interface BgpConnection {
          */
         BgpConnection apply(Context context);
     }
+
     /** The BgpConnection update stages. */
     interface UpdateStages {
         /** The stage of the BgpConnection update allowing to specify name. */
@@ -213,6 +222,7 @@ public interface BgpConnection {
              */
             Update withName(String name);
         }
+
         /** The stage of the BgpConnection update allowing to specify peerAsn. */
         interface WithPeerAsn {
             /**
@@ -223,6 +233,7 @@ public interface BgpConnection {
              */
             Update withPeerAsn(Long peerAsn);
         }
+
         /** The stage of the BgpConnection update allowing to specify peerIp. */
         interface WithPeerIp {
             /**
@@ -233,6 +244,7 @@ public interface BgpConnection {
              */
             Update withPeerIp(String peerIp);
         }
+
         /** The stage of the BgpConnection update allowing to specify hubVirtualNetworkConnection. */
         interface WithHubVirtualNetworkConnection {
             /**
@@ -245,6 +257,7 @@ public interface BgpConnection {
             Update withHubVirtualNetworkConnection(SubResource hubVirtualNetworkConnection);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

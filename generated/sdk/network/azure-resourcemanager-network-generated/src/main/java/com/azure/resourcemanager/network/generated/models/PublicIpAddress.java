@@ -225,11 +225,13 @@ public interface PublicIpAddress {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The PublicIpAddress definition stages. */
     interface DefinitionStages {
         /** The first stage of the PublicIpAddress definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -248,6 +250,7 @@ public interface PublicIpAddress {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -258,6 +261,7 @@ public interface PublicIpAddress {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the PublicIpAddress definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -295,6 +299,7 @@ public interface PublicIpAddress {
              */
             PublicIpAddress create(Context context);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -305,6 +310,7 @@ public interface PublicIpAddress {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -315,6 +321,7 @@ public interface PublicIpAddress {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -325,6 +332,7 @@ public interface PublicIpAddress {
              */
             WithCreate withSku(PublicIpAddressSku sku);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -336,6 +344,7 @@ public interface PublicIpAddress {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify publicIpAllocationMethod. */
         interface WithPublicIpAllocationMethod {
             /**
@@ -346,6 +355,7 @@ public interface PublicIpAddress {
              */
             WithCreate withPublicIpAllocationMethod(IpAllocationMethod publicIpAllocationMethod);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify publicIpAddressVersion. */
         interface WithPublicIpAddressVersion {
             /**
@@ -356,6 +366,7 @@ public interface PublicIpAddress {
              */
             WithCreate withPublicIpAddressVersion(IpVersion publicIpAddressVersion);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify dnsSettings. */
         interface WithDnsSettings {
             /**
@@ -366,6 +377,7 @@ public interface PublicIpAddress {
              */
             WithCreate withDnsSettings(PublicIpAddressDnsSettings dnsSettings);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify ddosSettings. */
         interface WithDdosSettings {
             /**
@@ -377,6 +389,7 @@ public interface PublicIpAddress {
              */
             WithCreate withDdosSettings(DdosSettings ddosSettings);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify ipTags. */
         interface WithIpTags {
             /**
@@ -387,6 +400,7 @@ public interface PublicIpAddress {
              */
             WithCreate withIpTags(List<IpTag> ipTags);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify ipAddress. */
         interface WithIpAddress {
             /**
@@ -397,6 +411,7 @@ public interface PublicIpAddress {
              */
             WithCreate withIpAddress(String ipAddress);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify publicIpPrefix. */
         interface WithPublicIpPrefix {
             /**
@@ -408,6 +423,7 @@ public interface PublicIpAddress {
              */
             WithCreate withPublicIpPrefix(SubResource publicIpPrefix);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify idleTimeoutInMinutes. */
         interface WithIdleTimeoutInMinutes {
             /**
@@ -418,6 +434,7 @@ public interface PublicIpAddress {
              */
             WithCreate withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify servicePublicIpAddress. */
         interface WithServicePublicIpAddress {
             /**
@@ -429,6 +446,7 @@ public interface PublicIpAddress {
              */
             WithCreate withServicePublicIpAddress(PublicIpAddressInner servicePublicIpAddress);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify natGateway. */
         interface WithNatGateway {
             /**
@@ -439,6 +457,7 @@ public interface PublicIpAddress {
              */
             WithCreate withNatGateway(NatGatewayInner natGateway);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify migrationPhase. */
         interface WithMigrationPhase {
             /**
@@ -449,6 +468,7 @@ public interface PublicIpAddress {
              */
             WithCreate withMigrationPhase(PublicIpAddressMigrationPhase migrationPhase);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify linkedPublicIpAddress. */
         interface WithLinkedPublicIpAddress {
             /**
@@ -460,6 +480,7 @@ public interface PublicIpAddress {
              */
             WithCreate withLinkedPublicIpAddress(PublicIpAddressInner linkedPublicIpAddress);
         }
+
         /** The stage of the PublicIpAddress definition allowing to specify deleteOption. */
         interface WithDeleteOption {
             /**
@@ -472,6 +493,7 @@ public interface PublicIpAddress {
             WithCreate withDeleteOption(DeleteOptions deleteOption);
         }
     }
+
     /**
      * Begins update for the PublicIpAddress resource.
      *
@@ -496,6 +518,7 @@ public interface PublicIpAddress {
          */
         PublicIpAddress apply(Context context);
     }
+
     /** The PublicIpAddress update stages. */
     interface UpdateStages {
         /** The stage of the PublicIpAddress update allowing to specify tags. */
@@ -509,6 +532,7 @@ public interface PublicIpAddress {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

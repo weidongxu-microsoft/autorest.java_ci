@@ -136,11 +136,13 @@ public interface VirtualNetworkTap {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualNetworkTap definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualNetworkTap definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualNetworkTap definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -159,6 +161,7 @@ public interface VirtualNetworkTap {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VirtualNetworkTap definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -169,6 +172,7 @@ public interface VirtualNetworkTap {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VirtualNetworkTap definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -193,6 +197,7 @@ public interface VirtualNetworkTap {
              */
             VirtualNetworkTap create(Context context);
         }
+
         /** The stage of the VirtualNetworkTap definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -203,6 +208,7 @@ public interface VirtualNetworkTap {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /**
          * The stage of the VirtualNetworkTap definition allowing to specify destinationNetworkInterfaceIpConfiguration.
          */
@@ -218,6 +224,7 @@ public interface VirtualNetworkTap {
             WithCreate withDestinationNetworkInterfaceIpConfiguration(
                 NetworkInterfaceIpConfigurationInner destinationNetworkInterfaceIpConfiguration);
         }
+
         /**
          * The stage of the VirtualNetworkTap definition allowing to specify
          * destinationLoadBalancerFrontEndIpConfiguration.
@@ -234,6 +241,7 @@ public interface VirtualNetworkTap {
             WithCreate withDestinationLoadBalancerFrontEndIpConfiguration(
                 FrontendIpConfigurationInner destinationLoadBalancerFrontEndIpConfiguration);
         }
+
         /** The stage of the VirtualNetworkTap definition allowing to specify destinationPort. */
         interface WithDestinationPort {
             /**
@@ -245,6 +253,7 @@ public interface VirtualNetworkTap {
             WithCreate withDestinationPort(Integer destinationPort);
         }
     }
+
     /**
      * Begins update for the VirtualNetworkTap resource.
      *
@@ -269,6 +278,7 @@ public interface VirtualNetworkTap {
          */
         VirtualNetworkTap apply(Context context);
     }
+
     /** The VirtualNetworkTap update stages. */
     interface UpdateStages {
         /** The stage of the VirtualNetworkTap update allowing to specify tags. */
@@ -282,6 +292,7 @@ public interface VirtualNetworkTap {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

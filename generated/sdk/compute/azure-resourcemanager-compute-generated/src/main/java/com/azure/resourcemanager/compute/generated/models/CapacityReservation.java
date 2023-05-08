@@ -159,11 +159,13 @@ public interface CapacityReservation {
             DefinitionStages.WithSku,
             DefinitionStages.WithCreate {
     }
+
     /** The CapacityReservation definition stages. */
     interface DefinitionStages {
         /** The first stage of the CapacityReservation definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the CapacityReservation definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -182,6 +184,7 @@ public interface CapacityReservation {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the CapacityReservation definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -193,6 +196,7 @@ public interface CapacityReservation {
              */
             WithSku withExistingCapacityReservationGroup(String resourceGroupName, String capacityReservationGroupName);
         }
+
         /** The stage of the CapacityReservation definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -209,6 +213,7 @@ public interface CapacityReservation {
              */
             WithCreate withSku(Sku sku);
         }
+
         /**
          * The stage of the CapacityReservation definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -229,6 +234,7 @@ public interface CapacityReservation {
              */
             CapacityReservation create(Context context);
         }
+
         /** The stage of the CapacityReservation definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -239,6 +245,7 @@ public interface CapacityReservation {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the CapacityReservation definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -258,6 +265,7 @@ public interface CapacityReservation {
             WithCreate withZones(List<String> zones);
         }
     }
+
     /**
      * Begins update for the CapacityReservation resource.
      *
@@ -282,6 +290,7 @@ public interface CapacityReservation {
          */
         CapacityReservation apply(Context context);
     }
+
     /** The CapacityReservation update stages. */
     interface UpdateStages {
         /** The stage of the CapacityReservation update allowing to specify tags. */
@@ -294,6 +303,7 @@ public interface CapacityReservation {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the CapacityReservation update allowing to specify sku. */
         interface WithSku {
             /**
@@ -311,6 +321,7 @@ public interface CapacityReservation {
             Update withSku(Sku sku);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

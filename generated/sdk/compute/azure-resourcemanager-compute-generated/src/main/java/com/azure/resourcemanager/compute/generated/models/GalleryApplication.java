@@ -137,11 +137,13 @@ public interface GalleryApplication {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The GalleryApplication definition stages. */
     interface DefinitionStages {
         /** The first stage of the GalleryApplication definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the GalleryApplication definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -160,6 +162,7 @@ public interface GalleryApplication {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -172,6 +175,7 @@ public interface GalleryApplication {
              */
             WithCreate withExistingGallery(String resourceGroupName, String galleryName);
         }
+
         /**
          * The stage of the GalleryApplication definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -200,6 +204,7 @@ public interface GalleryApplication {
              */
             GalleryApplication create(Context context);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -210,6 +215,7 @@ public interface GalleryApplication {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -222,6 +228,7 @@ public interface GalleryApplication {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify eula. */
         interface WithEula {
             /**
@@ -232,6 +239,7 @@ public interface GalleryApplication {
              */
             WithCreate withEula(String eula);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify privacyStatementUri. */
         interface WithPrivacyStatementUri {
             /**
@@ -242,6 +250,7 @@ public interface GalleryApplication {
              */
             WithCreate withPrivacyStatementUri(String privacyStatementUri);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify releaseNoteUri. */
         interface WithReleaseNoteUri {
             /**
@@ -252,6 +261,7 @@ public interface GalleryApplication {
              */
             WithCreate withReleaseNoteUri(String releaseNoteUri);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify endOfLifeDate. */
         interface WithEndOfLifeDate {
             /**
@@ -264,6 +274,7 @@ public interface GalleryApplication {
              */
             WithCreate withEndOfLifeDate(OffsetDateTime endOfLifeDate);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify supportedOSType. */
         interface WithSupportedOSType {
             /**
@@ -278,6 +289,7 @@ public interface GalleryApplication {
              */
             WithCreate withSupportedOSType(OperatingSystemTypes supportedOSType);
         }
+
         /** The stage of the GalleryApplication definition allowing to specify customActions. */
         interface WithCustomActions {
             /**
@@ -291,6 +303,7 @@ public interface GalleryApplication {
             WithCreate withCustomActions(List<GalleryApplicationCustomAction> customActions);
         }
     }
+
     /**
      * Begins update for the GalleryApplication resource.
      *
@@ -323,6 +336,7 @@ public interface GalleryApplication {
          */
         GalleryApplication apply(Context context);
     }
+
     /** The GalleryApplication update stages. */
     interface UpdateStages {
         /** The stage of the GalleryApplication update allowing to specify tags. */
@@ -335,6 +349,7 @@ public interface GalleryApplication {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the GalleryApplication update allowing to specify description. */
         interface WithDescription {
             /**
@@ -347,6 +362,7 @@ public interface GalleryApplication {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the GalleryApplication update allowing to specify eula. */
         interface WithEula {
             /**
@@ -357,6 +373,7 @@ public interface GalleryApplication {
              */
             Update withEula(String eula);
         }
+
         /** The stage of the GalleryApplication update allowing to specify privacyStatementUri. */
         interface WithPrivacyStatementUri {
             /**
@@ -367,6 +384,7 @@ public interface GalleryApplication {
              */
             Update withPrivacyStatementUri(String privacyStatementUri);
         }
+
         /** The stage of the GalleryApplication update allowing to specify releaseNoteUri. */
         interface WithReleaseNoteUri {
             /**
@@ -377,6 +395,7 @@ public interface GalleryApplication {
              */
             Update withReleaseNoteUri(String releaseNoteUri);
         }
+
         /** The stage of the GalleryApplication update allowing to specify endOfLifeDate. */
         interface WithEndOfLifeDate {
             /**
@@ -389,6 +408,7 @@ public interface GalleryApplication {
              */
             Update withEndOfLifeDate(OffsetDateTime endOfLifeDate);
         }
+
         /** The stage of the GalleryApplication update allowing to specify supportedOSType. */
         interface WithSupportedOSType {
             /**
@@ -403,6 +423,7 @@ public interface GalleryApplication {
              */
             Update withSupportedOSType(OperatingSystemTypes supportedOSType);
         }
+
         /** The stage of the GalleryApplication update allowing to specify customActions. */
         interface WithCustomActions {
             /**
@@ -416,6 +437,7 @@ public interface GalleryApplication {
             Update withCustomActions(List<GalleryApplicationCustomAction> customActions);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

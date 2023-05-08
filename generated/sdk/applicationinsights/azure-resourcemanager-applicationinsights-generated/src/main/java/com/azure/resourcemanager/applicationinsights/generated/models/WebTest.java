@@ -170,11 +170,13 @@ public interface WebTest {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The WebTest definition stages. */
     interface DefinitionStages {
         /** The first stage of the WebTest definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the WebTest definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -193,6 +195,7 @@ public interface WebTest {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the WebTest definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -203,6 +206,7 @@ public interface WebTest {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the WebTest definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -235,6 +239,7 @@ public interface WebTest {
              */
             WebTest create(Context context);
         }
+
         /** The stage of the WebTest definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -245,6 +250,7 @@ public interface WebTest {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the WebTest definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -256,6 +262,7 @@ public interface WebTest {
              */
             WithCreate withKind(WebTestKind kind);
         }
+
         /** The stage of the WebTest definition allowing to specify syntheticMonitorId. */
         interface WithSyntheticMonitorId {
             /**
@@ -267,6 +274,7 @@ public interface WebTest {
              */
             WithCreate withSyntheticMonitorId(String syntheticMonitorId);
         }
+
         /** The stage of the WebTest definition allowing to specify webTestName. */
         interface WithWebTestName {
             /**
@@ -277,6 +285,7 @@ public interface WebTest {
              */
             WithCreate withWebTestName(String webTestName);
         }
+
         /** The stage of the WebTest definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -287,6 +296,7 @@ public interface WebTest {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the WebTest definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -297,6 +307,7 @@ public interface WebTest {
              */
             WithCreate withEnabled(Boolean enabled);
         }
+
         /** The stage of the WebTest definition allowing to specify frequency. */
         interface WithFrequency {
             /**
@@ -308,6 +319,7 @@ public interface WebTest {
              */
             WithCreate withFrequency(Integer frequency);
         }
+
         /** The stage of the WebTest definition allowing to specify timeout. */
         interface WithTimeout {
             /**
@@ -318,6 +330,7 @@ public interface WebTest {
              */
             WithCreate withTimeout(Integer timeout);
         }
+
         /** The stage of the WebTest definition allowing to specify webTestKind. */
         interface WithWebTestKind {
             /**
@@ -328,6 +341,7 @@ public interface WebTest {
              */
             WithCreate withWebTestKind(WebTestKind webTestKind);
         }
+
         /** The stage of the WebTest definition allowing to specify retryEnabled. */
         interface WithRetryEnabled {
             /**
@@ -338,6 +352,7 @@ public interface WebTest {
              */
             WithCreate withRetryEnabled(Boolean retryEnabled);
         }
+
         /** The stage of the WebTest definition allowing to specify locations. */
         interface WithLocations {
             /**
@@ -350,6 +365,7 @@ public interface WebTest {
              */
             WithCreate withLocations(List<WebTestGeolocation> locations);
         }
+
         /** The stage of the WebTest definition allowing to specify configuration. */
         interface WithConfiguration {
             /**
@@ -361,6 +377,7 @@ public interface WebTest {
             WithCreate withConfiguration(WebTestPropertiesConfiguration configuration);
         }
     }
+
     /**
      * Begins update for the WebTest resource.
      *
@@ -385,6 +402,7 @@ public interface WebTest {
          */
         WebTest apply(Context context);
     }
+
     /** The WebTest update stages. */
     interface UpdateStages {
         /** The stage of the WebTest update allowing to specify tags. */
@@ -398,6 +416,7 @@ public interface WebTest {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

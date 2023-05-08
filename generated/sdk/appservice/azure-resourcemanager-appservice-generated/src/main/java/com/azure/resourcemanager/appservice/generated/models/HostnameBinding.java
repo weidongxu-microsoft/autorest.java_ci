@@ -118,11 +118,13 @@ public interface HostnameBinding {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The HostnameBinding definition stages. */
     interface DefinitionStages {
         /** The first stage of the HostnameBinding definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the HostnameBinding definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -134,6 +136,7 @@ public interface HostnameBinding {
              */
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the HostnameBinding definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -163,6 +166,7 @@ public interface HostnameBinding {
              */
             HostnameBinding create(Context context);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -173,6 +177,7 @@ public interface HostnameBinding {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify siteName. */
         interface WithSiteName {
             /**
@@ -183,6 +188,7 @@ public interface HostnameBinding {
              */
             WithCreate withSiteName(String siteName);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify domainId. */
         interface WithDomainId {
             /**
@@ -193,6 +199,7 @@ public interface HostnameBinding {
              */
             WithCreate withDomainId(String domainId);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify azureResourceName. */
         interface WithAzureResourceName {
             /**
@@ -203,6 +210,7 @@ public interface HostnameBinding {
              */
             WithCreate withAzureResourceName(String azureResourceName);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify azureResourceType. */
         interface WithAzureResourceType {
             /**
@@ -213,6 +221,7 @@ public interface HostnameBinding {
              */
             WithCreate withAzureResourceType(AzureResourceType azureResourceType);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify customHostnameDnsRecordType. */
         interface WithCustomHostnameDnsRecordType {
             /**
@@ -223,6 +232,7 @@ public interface HostnameBinding {
              */
             WithCreate withCustomHostnameDnsRecordType(CustomHostnameDnsRecordType customHostnameDnsRecordType);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify hostnameType. */
         interface WithHostnameType {
             /**
@@ -233,6 +243,7 @@ public interface HostnameBinding {
              */
             WithCreate withHostnameType(HostnameType hostnameType);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify sslState. */
         interface WithSslState {
             /**
@@ -243,6 +254,7 @@ public interface HostnameBinding {
              */
             WithCreate withSslState(SslState sslState);
         }
+
         /** The stage of the HostnameBinding definition allowing to specify thumbprint. */
         interface WithThumbprint {
             /**
@@ -254,6 +266,7 @@ public interface HostnameBinding {
             WithCreate withThumbprint(String thumbprint);
         }
     }
+
     /**
      * Begins update for the HostnameBinding resource.
      *
@@ -278,6 +291,7 @@ public interface HostnameBinding {
          */
         HostnameBinding apply(Context context);
     }
+
     /** The HostnameBinding update stages. */
     interface UpdateStages {
         /** The stage of the HostnameBinding update allowing to specify kind. */
@@ -291,6 +305,7 @@ public interface HostnameBinding {
             Update withKind(String kind);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

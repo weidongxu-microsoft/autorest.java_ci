@@ -138,11 +138,13 @@ public interface Eventhub {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Eventhub definition stages. */
     interface DefinitionStages {
         /** The first stage of the Eventhub definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Eventhub definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -154,6 +156,7 @@ public interface Eventhub {
              */
             WithCreate withExistingNamespace(String resourceGroupName, String namespaceName);
         }
+
         /**
          * The stage of the Eventhub definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -179,6 +182,7 @@ public interface Eventhub {
              */
             Eventhub create(Context context);
         }
+
         /** The stage of the Eventhub definition allowing to specify messageRetentionInDays. */
         interface WithMessageRetentionInDays {
             /**
@@ -191,6 +195,7 @@ public interface Eventhub {
              */
             WithCreate withMessageRetentionInDays(Long messageRetentionInDays);
         }
+
         /** The stage of the Eventhub definition allowing to specify partitionCount. */
         interface WithPartitionCount {
             /**
@@ -203,6 +208,7 @@ public interface Eventhub {
              */
             WithCreate withPartitionCount(Long partitionCount);
         }
+
         /** The stage of the Eventhub definition allowing to specify status. */
         interface WithStatus {
             /**
@@ -213,6 +219,7 @@ public interface Eventhub {
              */
             WithCreate withStatus(EntityStatus status);
         }
+
         /** The stage of the Eventhub definition allowing to specify captureDescription. */
         interface WithCaptureDescription {
             /**
@@ -223,6 +230,7 @@ public interface Eventhub {
              */
             WithCreate withCaptureDescription(CaptureDescription captureDescription);
         }
+
         /** The stage of the Eventhub definition allowing to specify retentionDescription. */
         interface WithRetentionDescription {
             /**
@@ -234,6 +242,7 @@ public interface Eventhub {
             WithCreate withRetentionDescription(RetentionDescription retentionDescription);
         }
     }
+
     /**
      * Begins update for the Eventhub resource.
      *
@@ -263,6 +272,7 @@ public interface Eventhub {
          */
         Eventhub apply(Context context);
     }
+
     /** The Eventhub update stages. */
     interface UpdateStages {
         /** The stage of the Eventhub update allowing to specify messageRetentionInDays. */
@@ -277,6 +287,7 @@ public interface Eventhub {
              */
             Update withMessageRetentionInDays(Long messageRetentionInDays);
         }
+
         /** The stage of the Eventhub update allowing to specify partitionCount. */
         interface WithPartitionCount {
             /**
@@ -289,6 +300,7 @@ public interface Eventhub {
              */
             Update withPartitionCount(Long partitionCount);
         }
+
         /** The stage of the Eventhub update allowing to specify status. */
         interface WithStatus {
             /**
@@ -299,6 +311,7 @@ public interface Eventhub {
              */
             Update withStatus(EntityStatus status);
         }
+
         /** The stage of the Eventhub update allowing to specify captureDescription. */
         interface WithCaptureDescription {
             /**
@@ -309,6 +322,7 @@ public interface Eventhub {
              */
             Update withCaptureDescription(CaptureDescription captureDescription);
         }
+
         /** The stage of the Eventhub update allowing to specify retentionDescription. */
         interface WithRetentionDescription {
             /**
@@ -320,6 +334,7 @@ public interface Eventhub {
             Update withRetentionDescription(RetentionDescription retentionDescription);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -95,11 +95,13 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The StaticSiteBasicAuthPropertiesArmResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the StaticSiteBasicAuthPropertiesArmResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -111,6 +113,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             WithCreate withExistingStaticSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the StaticSiteBasicAuthPropertiesArmResource definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -136,6 +139,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             StaticSiteBasicAuthPropertiesArmResource create(Context context);
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -146,6 +150,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify password. */
         interface WithPassword {
             /**
@@ -156,6 +161,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             WithCreate withPassword(String password);
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify secretUrl. */
         interface WithSecretUrl {
             /**
@@ -166,6 +172,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             WithCreate withSecretUrl(String secretUrl);
         }
+
         /**
          * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify
          * applicableEnvironmentsMode.
@@ -181,6 +188,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             WithCreate withApplicableEnvironmentsMode(String applicableEnvironmentsMode);
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify environments. */
         interface WithEnvironments {
             /**
@@ -194,6 +202,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
             WithCreate withEnvironments(List<String> environments);
         }
     }
+
     /**
      * Begins update for the StaticSiteBasicAuthPropertiesArmResource resource.
      *
@@ -223,6 +232,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
          */
         StaticSiteBasicAuthPropertiesArmResource apply(Context context);
     }
+
     /** The StaticSiteBasicAuthPropertiesArmResource update stages. */
     interface UpdateStages {
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify kind. */
@@ -235,6 +245,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify password. */
         interface WithPassword {
             /**
@@ -245,6 +256,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             Update withPassword(String password);
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify secretUrl. */
         interface WithSecretUrl {
             /**
@@ -255,6 +267,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             Update withSecretUrl(String secretUrl);
         }
+
         /**
          * The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify
          * applicableEnvironmentsMode.
@@ -270,6 +283,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
              */
             Update withApplicableEnvironmentsMode(String applicableEnvironmentsMode);
         }
+
         /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify environments. */
         interface WithEnvironments {
             /**
@@ -283,6 +297,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
             Update withEnvironments(List<String> environments);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

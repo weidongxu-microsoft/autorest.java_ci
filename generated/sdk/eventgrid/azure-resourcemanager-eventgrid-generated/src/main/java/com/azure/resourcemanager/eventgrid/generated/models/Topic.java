@@ -176,11 +176,13 @@ public interface Topic {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Topic definition stages. */
     interface DefinitionStages {
         /** The first stage of the Topic definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Topic definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -199,6 +201,7 @@ public interface Topic {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Topic definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -209,6 +212,7 @@ public interface Topic {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Topic definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -237,6 +241,7 @@ public interface Topic {
              */
             Topic create(Context context);
         }
+
         /** The stage of the Topic definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -247,6 +252,7 @@ public interface Topic {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Topic definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -257,6 +263,7 @@ public interface Topic {
              */
             WithCreate withIdentity(IdentityInfo identity);
         }
+
         /** The stage of the Topic definition allowing to specify inputSchema. */
         interface WithInputSchema {
             /**
@@ -269,6 +276,7 @@ public interface Topic {
              */
             WithCreate withInputSchema(InputSchema inputSchema);
         }
+
         /** The stage of the Topic definition allowing to specify inputSchemaMapping. */
         interface WithInputSchemaMapping {
             /**
@@ -283,6 +291,7 @@ public interface Topic {
              */
             WithCreate withInputSchemaMapping(InputSchemaMapping inputSchemaMapping);
         }
+
         /** The stage of the Topic definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -298,6 +307,7 @@ public interface Topic {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the Topic definition allowing to specify inboundIpRules. */
         interface WithInboundIpRules {
             /**
@@ -310,6 +320,7 @@ public interface Topic {
              */
             WithCreate withInboundIpRules(List<InboundIpRule> inboundIpRules);
         }
+
         /** The stage of the Topic definition allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -324,6 +335,7 @@ public interface Topic {
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the Topic definition allowing to specify dataResidencyBoundary. */
         interface WithDataResidencyBoundary {
             /**
@@ -335,6 +347,7 @@ public interface Topic {
             WithCreate withDataResidencyBoundary(DataResidencyBoundary dataResidencyBoundary);
         }
     }
+
     /**
      * Begins update for the Topic resource.
      *
@@ -365,6 +378,7 @@ public interface Topic {
          */
         Topic apply(Context context);
     }
+
     /** The Topic update stages. */
     interface UpdateStages {
         /** The stage of the Topic update allowing to specify tags. */
@@ -377,6 +391,7 @@ public interface Topic {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the Topic update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -387,6 +402,7 @@ public interface Topic {
              */
             Update withIdentity(IdentityInfo identity);
         }
+
         /** The stage of the Topic update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -403,6 +419,7 @@ public interface Topic {
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the Topic update allowing to specify inboundIpRules. */
         interface WithInboundIpRules {
             /**
@@ -415,6 +432,7 @@ public interface Topic {
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);
         }
+
         /** The stage of the Topic update allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -429,6 +447,7 @@ public interface Topic {
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the Topic update allowing to specify dataResidencyBoundary. */
         interface WithDataResidencyBoundary {
             /**
@@ -440,6 +459,7 @@ public interface Topic {
             Update withDataResidencyBoundary(DataResidencyBoundary dataResidencyBoundary);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

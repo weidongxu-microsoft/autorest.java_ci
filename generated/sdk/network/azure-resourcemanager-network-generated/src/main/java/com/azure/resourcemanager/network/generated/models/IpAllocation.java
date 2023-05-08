@@ -145,11 +145,13 @@ public interface IpAllocation {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The IpAllocation definition stages. */
     interface DefinitionStages {
         /** The first stage of the IpAllocation definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the IpAllocation definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -168,6 +170,7 @@ public interface IpAllocation {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the IpAllocation definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -178,6 +181,7 @@ public interface IpAllocation {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the IpAllocation definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -205,6 +209,7 @@ public interface IpAllocation {
              */
             IpAllocation create(Context context);
         }
+
         /** The stage of the IpAllocation definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -215,6 +220,7 @@ public interface IpAllocation {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the IpAllocation definition allowing to specify typePropertiesType. */
         interface WithTypePropertiesType {
             /**
@@ -225,6 +231,7 @@ public interface IpAllocation {
              */
             WithCreate withTypePropertiesType(IpAllocationType typePropertiesType);
         }
+
         /** The stage of the IpAllocation definition allowing to specify prefix. */
         interface WithPrefix {
             /**
@@ -235,6 +242,7 @@ public interface IpAllocation {
              */
             WithCreate withPrefix(String prefix);
         }
+
         /** The stage of the IpAllocation definition allowing to specify prefixLength. */
         interface WithPrefixLength {
             /**
@@ -245,6 +253,7 @@ public interface IpAllocation {
              */
             WithCreate withPrefixLength(Integer prefixLength);
         }
+
         /** The stage of the IpAllocation definition allowing to specify prefixType. */
         interface WithPrefixType {
             /**
@@ -255,6 +264,7 @@ public interface IpAllocation {
              */
             WithCreate withPrefixType(IpVersion prefixType);
         }
+
         /** The stage of the IpAllocation definition allowing to specify ipamAllocationId. */
         interface WithIpamAllocationId {
             /**
@@ -265,6 +275,7 @@ public interface IpAllocation {
              */
             WithCreate withIpamAllocationId(String ipamAllocationId);
         }
+
         /** The stage of the IpAllocation definition allowing to specify allocationTags. */
         interface WithAllocationTags {
             /**
@@ -276,6 +287,7 @@ public interface IpAllocation {
             WithCreate withAllocationTags(Map<String, String> allocationTags);
         }
     }
+
     /**
      * Begins update for the IpAllocation resource.
      *
@@ -300,6 +312,7 @@ public interface IpAllocation {
          */
         IpAllocation apply(Context context);
     }
+
     /** The IpAllocation update stages. */
     interface UpdateStages {
         /** The stage of the IpAllocation update allowing to specify tags. */
@@ -313,6 +326,7 @@ public interface IpAllocation {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

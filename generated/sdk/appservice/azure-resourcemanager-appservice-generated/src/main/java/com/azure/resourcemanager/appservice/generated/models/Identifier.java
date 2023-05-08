@@ -62,11 +62,13 @@ public interface Identifier {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Identifier definition stages. */
     interface DefinitionStages {
         /** The first stage of the Identifier definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Identifier definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -78,6 +80,7 @@ public interface Identifier {
              */
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the Identifier definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -98,6 +101,7 @@ public interface Identifier {
              */
             Identifier create(Context context);
         }
+
         /** The stage of the Identifier definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -108,6 +112,7 @@ public interface Identifier {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the Identifier definition allowing to specify value. */
         interface WithValue {
             /**
@@ -119,6 +124,7 @@ public interface Identifier {
             WithCreate withValue(String value);
         }
     }
+
     /**
      * Begins update for the Identifier resource.
      *
@@ -143,6 +149,7 @@ public interface Identifier {
          */
         Identifier apply(Context context);
     }
+
     /** The Identifier update stages. */
     interface UpdateStages {
         /** The stage of the Identifier update allowing to specify kind. */
@@ -155,6 +162,7 @@ public interface Identifier {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the Identifier update allowing to specify value. */
         interface WithValue {
             /**
@@ -166,6 +174,7 @@ public interface Identifier {
             Update withValue(String value);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

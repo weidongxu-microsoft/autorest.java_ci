@@ -91,11 +91,13 @@ public interface BandwidthSchedule {
             DefinitionStages.WithDays,
             DefinitionStages.WithCreate {
     }
+
     /** The BandwidthSchedule definition stages. */
     interface DefinitionStages {
         /** The first stage of the BandwidthSchedule definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the BandwidthSchedule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -107,6 +109,7 @@ public interface BandwidthSchedule {
              */
             WithStart withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName);
         }
+
         /** The stage of the BandwidthSchedule definition allowing to specify start. */
         interface WithStart {
             /**
@@ -117,6 +120,7 @@ public interface BandwidthSchedule {
              */
             WithStop withStart(String start);
         }
+
         /** The stage of the BandwidthSchedule definition allowing to specify stop. */
         interface WithStop {
             /**
@@ -127,6 +131,7 @@ public interface BandwidthSchedule {
              */
             WithRateInMbps withStop(String stop);
         }
+
         /** The stage of the BandwidthSchedule definition allowing to specify rateInMbps. */
         interface WithRateInMbps {
             /**
@@ -137,6 +142,7 @@ public interface BandwidthSchedule {
              */
             WithDays withRateInMbps(int rateInMbps);
         }
+
         /** The stage of the BandwidthSchedule definition allowing to specify days. */
         interface WithDays {
             /**
@@ -147,6 +153,7 @@ public interface BandwidthSchedule {
              */
             WithCreate withDays(List<DayOfWeek> days);
         }
+
         /**
          * The stage of the BandwidthSchedule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -168,6 +175,7 @@ public interface BandwidthSchedule {
             BandwidthSchedule create(Context context);
         }
     }
+
     /**
      * Begins update for the BandwidthSchedule resource.
      *
@@ -193,6 +201,7 @@ public interface BandwidthSchedule {
          */
         BandwidthSchedule apply(Context context);
     }
+
     /** The BandwidthSchedule update stages. */
     interface UpdateStages {
         /** The stage of the BandwidthSchedule update allowing to specify start. */
@@ -205,6 +214,7 @@ public interface BandwidthSchedule {
              */
             Update withStart(String start);
         }
+
         /** The stage of the BandwidthSchedule update allowing to specify stop. */
         interface WithStop {
             /**
@@ -215,6 +225,7 @@ public interface BandwidthSchedule {
              */
             Update withStop(String stop);
         }
+
         /** The stage of the BandwidthSchedule update allowing to specify rateInMbps. */
         interface WithRateInMbps {
             /**
@@ -225,6 +236,7 @@ public interface BandwidthSchedule {
              */
             Update withRateInMbps(int rateInMbps);
         }
+
         /** The stage of the BandwidthSchedule update allowing to specify days. */
         interface WithDays {
             /**
@@ -236,6 +248,7 @@ public interface BandwidthSchedule {
             Update withDays(List<DayOfWeek> days);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

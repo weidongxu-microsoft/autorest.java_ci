@@ -131,11 +131,13 @@ public interface DedicatedHostGroup {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The DedicatedHostGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the DedicatedHostGroup definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the DedicatedHostGroup definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -154,6 +156,7 @@ public interface DedicatedHostGroup {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the DedicatedHostGroup definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -164,6 +167,7 @@ public interface DedicatedHostGroup {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the DedicatedHostGroup definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -189,6 +193,7 @@ public interface DedicatedHostGroup {
              */
             DedicatedHostGroup create(Context context);
         }
+
         /** The stage of the DedicatedHostGroup definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -199,6 +204,7 @@ public interface DedicatedHostGroup {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the DedicatedHostGroup definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -213,6 +219,7 @@ public interface DedicatedHostGroup {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the DedicatedHostGroup definition allowing to specify platformFaultDomainCount. */
         interface WithPlatformFaultDomainCount {
             /**
@@ -223,6 +230,7 @@ public interface DedicatedHostGroup {
              */
             WithCreate withPlatformFaultDomainCount(int platformFaultDomainCount);
         }
+
         /** The stage of the DedicatedHostGroup definition allowing to specify supportAutomaticPlacement. */
         interface WithSupportAutomaticPlacement {
             /**
@@ -239,6 +247,7 @@ public interface DedicatedHostGroup {
              */
             WithCreate withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
         }
+
         /** The stage of the DedicatedHostGroup definition allowing to specify additionalCapabilities. */
         interface WithAdditionalCapabilities {
             /**
@@ -253,6 +262,7 @@ public interface DedicatedHostGroup {
                 DedicatedHostGroupPropertiesAdditionalCapabilities additionalCapabilities);
         }
     }
+
     /**
      * Begins update for the DedicatedHostGroup resource.
      *
@@ -282,6 +292,7 @@ public interface DedicatedHostGroup {
          */
         DedicatedHostGroup apply(Context context);
     }
+
     /** The DedicatedHostGroup update stages. */
     interface UpdateStages {
         /** The stage of the DedicatedHostGroup update allowing to specify tags. */
@@ -294,6 +305,7 @@ public interface DedicatedHostGroup {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the DedicatedHostGroup update allowing to specify zones. */
         interface WithZones {
             /**
@@ -308,6 +320,7 @@ public interface DedicatedHostGroup {
              */
             Update withZones(List<String> zones);
         }
+
         /** The stage of the DedicatedHostGroup update allowing to specify platformFaultDomainCount. */
         interface WithPlatformFaultDomainCount {
             /**
@@ -318,6 +331,7 @@ public interface DedicatedHostGroup {
              */
             Update withPlatformFaultDomainCount(int platformFaultDomainCount);
         }
+
         /** The stage of the DedicatedHostGroup update allowing to specify supportAutomaticPlacement. */
         interface WithSupportAutomaticPlacement {
             /**
@@ -334,6 +348,7 @@ public interface DedicatedHostGroup {
              */
             Update withSupportAutomaticPlacement(Boolean supportAutomaticPlacement);
         }
+
         /** The stage of the DedicatedHostGroup update allowing to specify additionalCapabilities. */
         interface WithAdditionalCapabilities {
             /**
@@ -348,6 +363,7 @@ public interface DedicatedHostGroup {
                 DedicatedHostGroupPropertiesAdditionalCapabilities additionalCapabilities);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

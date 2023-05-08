@@ -77,11 +77,13 @@ public interface RoleDefinition {
     /** The entirety of the RoleDefinition definition. */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScope, DefinitionStages.WithCreate {
     }
+
     /** The RoleDefinition definition stages. */
     interface DefinitionStages {
         /** The first stage of the RoleDefinition definition. */
         interface Blank extends WithScope {
         }
+
         /** The stage of the RoleDefinition definition allowing to specify parent resource. */
         interface WithScope {
             /**
@@ -92,6 +94,7 @@ public interface RoleDefinition {
              */
             WithCreate withExistingScope(String scope);
         }
+
         /**
          * The stage of the RoleDefinition definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -117,6 +120,7 @@ public interface RoleDefinition {
              */
             RoleDefinition create(Context context);
         }
+
         /** The stage of the RoleDefinition definition allowing to specify roleName. */
         interface WithRoleName {
             /**
@@ -127,6 +131,7 @@ public interface RoleDefinition {
              */
             WithCreate withRoleName(String roleName);
         }
+
         /** The stage of the RoleDefinition definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -137,6 +142,7 @@ public interface RoleDefinition {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the RoleDefinition definition allowing to specify roleType. */
         interface WithRoleType {
             /**
@@ -147,6 +153,7 @@ public interface RoleDefinition {
              */
             WithCreate withRoleType(String roleType);
         }
+
         /** The stage of the RoleDefinition definition allowing to specify permissions. */
         interface WithPermissions {
             /**
@@ -157,6 +164,7 @@ public interface RoleDefinition {
              */
             WithCreate withPermissions(List<PermissionInner> permissions);
         }
+
         /** The stage of the RoleDefinition definition allowing to specify assignableScopes. */
         interface WithAssignableScopes {
             /**
@@ -168,6 +176,7 @@ public interface RoleDefinition {
             WithCreate withAssignableScopes(List<String> assignableScopes);
         }
     }
+
     /**
      * Begins update for the RoleDefinition resource.
      *
@@ -197,6 +206,7 @@ public interface RoleDefinition {
          */
         RoleDefinition apply(Context context);
     }
+
     /** The RoleDefinition update stages. */
     interface UpdateStages {
         /** The stage of the RoleDefinition update allowing to specify roleName. */
@@ -209,6 +219,7 @@ public interface RoleDefinition {
              */
             Update withRoleName(String roleName);
         }
+
         /** The stage of the RoleDefinition update allowing to specify description. */
         interface WithDescription {
             /**
@@ -219,6 +230,7 @@ public interface RoleDefinition {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the RoleDefinition update allowing to specify roleType. */
         interface WithRoleType {
             /**
@@ -229,6 +241,7 @@ public interface RoleDefinition {
              */
             Update withRoleType(String roleType);
         }
+
         /** The stage of the RoleDefinition update allowing to specify permissions. */
         interface WithPermissions {
             /**
@@ -239,6 +252,7 @@ public interface RoleDefinition {
              */
             Update withPermissions(List<PermissionInner> permissions);
         }
+
         /** The stage of the RoleDefinition update allowing to specify assignableScopes. */
         interface WithAssignableScopes {
             /**
@@ -250,6 +264,7 @@ public interface RoleDefinition {
             Update withAssignableScopes(List<String> assignableScopes);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

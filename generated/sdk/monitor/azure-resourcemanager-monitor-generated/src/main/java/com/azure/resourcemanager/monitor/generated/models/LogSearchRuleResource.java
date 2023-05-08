@@ -183,11 +183,13 @@ public interface LogSearchRuleResource {
             DefinitionStages.WithAction,
             DefinitionStages.WithCreate {
     }
+
     /** The LogSearchRuleResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the LogSearchRuleResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -206,6 +208,7 @@ public interface LogSearchRuleResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -216,6 +219,7 @@ public interface LogSearchRuleResource {
              */
             WithSource withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify source. */
         interface WithSource {
             /**
@@ -226,6 +230,7 @@ public interface LogSearchRuleResource {
              */
             WithAction withSource(Source source);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify action. */
         interface WithAction {
             /**
@@ -236,6 +241,7 @@ public interface LogSearchRuleResource {
              */
             WithCreate withAction(Action action);
         }
+
         /**
          * The stage of the LogSearchRuleResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -262,6 +268,7 @@ public interface LogSearchRuleResource {
              */
             LogSearchRuleResource create(Context context);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -272,6 +279,7 @@ public interface LogSearchRuleResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -282,6 +290,7 @@ public interface LogSearchRuleResource {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -292,6 +301,7 @@ public interface LogSearchRuleResource {
              */
             WithCreate withDisplayName(String displayName);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify autoMitigate. */
         interface WithAutoMitigate {
             /**
@@ -304,6 +314,7 @@ public interface LogSearchRuleResource {
              */
             WithCreate withAutoMitigate(Boolean autoMitigate);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -316,6 +327,7 @@ public interface LogSearchRuleResource {
              */
             WithCreate withEnabled(Enabled enabled);
         }
+
         /** The stage of the LogSearchRuleResource definition allowing to specify schedule. */
         interface WithSchedule {
             /**
@@ -328,6 +340,7 @@ public interface LogSearchRuleResource {
             WithCreate withSchedule(Schedule schedule);
         }
     }
+
     /**
      * Begins update for the LogSearchRuleResource resource.
      *
@@ -352,6 +365,7 @@ public interface LogSearchRuleResource {
          */
         LogSearchRuleResource apply(Context context);
     }
+
     /** The LogSearchRuleResource update stages. */
     interface UpdateStages {
         /** The stage of the LogSearchRuleResource update allowing to specify tags. */
@@ -364,6 +378,7 @@ public interface LogSearchRuleResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the LogSearchRuleResource update allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -377,6 +392,7 @@ public interface LogSearchRuleResource {
             Update withEnabled(Enabled enabled);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

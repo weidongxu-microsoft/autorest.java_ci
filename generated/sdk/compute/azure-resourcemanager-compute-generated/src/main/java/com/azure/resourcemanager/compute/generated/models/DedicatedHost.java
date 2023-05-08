@@ -160,11 +160,13 @@ public interface DedicatedHost {
             DefinitionStages.WithSku,
             DefinitionStages.WithCreate {
     }
+
     /** The DedicatedHost definition stages. */
     interface DefinitionStages {
         /** The first stage of the DedicatedHost definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the DedicatedHost definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -183,6 +185,7 @@ public interface DedicatedHost {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the DedicatedHost definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -194,6 +197,7 @@ public interface DedicatedHost {
              */
             WithSku withExistingHostGroup(String resourceGroupName, String hostGroupName);
         }
+
         /** The stage of the DedicatedHost definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -206,6 +210,7 @@ public interface DedicatedHost {
              */
             WithCreate withSku(Sku sku);
         }
+
         /**
          * The stage of the DedicatedHost definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -230,6 +235,7 @@ public interface DedicatedHost {
              */
             DedicatedHost create(Context context);
         }
+
         /** The stage of the DedicatedHost definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -240,6 +246,7 @@ public interface DedicatedHost {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the DedicatedHost definition allowing to specify platformFaultDomain. */
         interface WithPlatformFaultDomain {
             /**
@@ -251,6 +258,7 @@ public interface DedicatedHost {
              */
             WithCreate withPlatformFaultDomain(Integer platformFaultDomain);
         }
+
         /** The stage of the DedicatedHost definition allowing to specify autoReplaceOnFailure. */
         interface WithAutoReplaceOnFailure {
             /**
@@ -263,6 +271,7 @@ public interface DedicatedHost {
              */
             WithCreate withAutoReplaceOnFailure(Boolean autoReplaceOnFailure);
         }
+
         /** The stage of the DedicatedHost definition allowing to specify licenseType. */
         interface WithLicenseType {
             /**
@@ -278,6 +287,7 @@ public interface DedicatedHost {
             WithCreate withLicenseType(DedicatedHostLicenseTypes licenseType);
         }
     }
+
     /**
      * Begins update for the DedicatedHost resource.
      *
@@ -307,6 +317,7 @@ public interface DedicatedHost {
          */
         DedicatedHost apply(Context context);
     }
+
     /** The DedicatedHost update stages. */
     interface UpdateStages {
         /** The stage of the DedicatedHost update allowing to specify tags. */
@@ -319,6 +330,7 @@ public interface DedicatedHost {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the DedicatedHost update allowing to specify sku. */
         interface WithSku {
             /**
@@ -333,6 +345,7 @@ public interface DedicatedHost {
              */
             Update withSku(Sku sku);
         }
+
         /** The stage of the DedicatedHost update allowing to specify platformFaultDomain. */
         interface WithPlatformFaultDomain {
             /**
@@ -344,6 +357,7 @@ public interface DedicatedHost {
              */
             Update withPlatformFaultDomain(Integer platformFaultDomain);
         }
+
         /** The stage of the DedicatedHost update allowing to specify autoReplaceOnFailure. */
         interface WithAutoReplaceOnFailure {
             /**
@@ -356,6 +370,7 @@ public interface DedicatedHost {
              */
             Update withAutoReplaceOnFailure(Boolean autoReplaceOnFailure);
         }
+
         /** The stage of the DedicatedHost update allowing to specify licenseType. */
         interface WithLicenseType {
             /**
@@ -371,6 +386,7 @@ public interface DedicatedHost {
             Update withLicenseType(DedicatedHostLicenseTypes licenseType);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -112,11 +112,13 @@ public interface RestorePointCollection {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The RestorePointCollection definition stages. */
     interface DefinitionStages {
         /** The first stage of the RestorePointCollection definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the RestorePointCollection definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -135,6 +137,7 @@ public interface RestorePointCollection {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the RestorePointCollection definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -145,6 +148,7 @@ public interface RestorePointCollection {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the RestorePointCollection definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -165,6 +169,7 @@ public interface RestorePointCollection {
              */
             RestorePointCollection create(Context context);
         }
+
         /** The stage of the RestorePointCollection definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -175,6 +180,7 @@ public interface RestorePointCollection {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the RestorePointCollection definition allowing to specify source. */
         interface WithSource {
             /**
@@ -187,6 +193,7 @@ public interface RestorePointCollection {
             WithCreate withSource(RestorePointCollectionSourceProperties source);
         }
     }
+
     /**
      * Begins update for the RestorePointCollection resource.
      *
@@ -211,6 +218,7 @@ public interface RestorePointCollection {
          */
         RestorePointCollection apply(Context context);
     }
+
     /** The RestorePointCollection update stages. */
     interface UpdateStages {
         /** The stage of the RestorePointCollection update allowing to specify tags. */
@@ -223,6 +231,7 @@ public interface RestorePointCollection {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the RestorePointCollection update allowing to specify source. */
         interface WithSource {
             /**
@@ -235,6 +244,7 @@ public interface RestorePointCollection {
             Update withSource(RestorePointCollectionSourceProperties source);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

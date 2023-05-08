@@ -117,11 +117,13 @@ public interface LogProfileResource {
             DefinitionStages.WithRetentionPolicy,
             DefinitionStages.WithCreate {
     }
+
     /** The LogProfileResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the LogProfileResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the LogProfileResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -140,6 +142,7 @@ public interface LogProfileResource {
              */
             WithLocations withRegion(String location);
         }
+
         /** The stage of the LogProfileResource definition allowing to specify locations. */
         interface WithLocations {
             /**
@@ -152,6 +155,7 @@ public interface LogProfileResource {
              */
             WithCategories withLocations(List<String> locations);
         }
+
         /** The stage of the LogProfileResource definition allowing to specify categories. */
         interface WithCategories {
             /**
@@ -164,6 +168,7 @@ public interface LogProfileResource {
              */
             WithRetentionPolicy withCategories(List<String> categories);
         }
+
         /** The stage of the LogProfileResource definition allowing to specify retentionPolicy. */
         interface WithRetentionPolicy {
             /**
@@ -174,6 +179,7 @@ public interface LogProfileResource {
              */
             WithCreate withRetentionPolicy(RetentionPolicy retentionPolicy);
         }
+
         /**
          * The stage of the LogProfileResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -197,6 +203,7 @@ public interface LogProfileResource {
              */
             LogProfileResource create(Context context);
         }
+
         /** The stage of the LogProfileResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -207,6 +214,7 @@ public interface LogProfileResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the LogProfileResource definition allowing to specify storageAccountId. */
         interface WithStorageAccountId {
             /**
@@ -219,6 +227,7 @@ public interface LogProfileResource {
              */
             WithCreate withStorageAccountId(String storageAccountId);
         }
+
         /** The stage of the LogProfileResource definition allowing to specify serviceBusRuleId. */
         interface WithServiceBusRuleId {
             /**
@@ -234,6 +243,7 @@ public interface LogProfileResource {
             WithCreate withServiceBusRuleId(String serviceBusRuleId);
         }
     }
+
     /**
      * Begins update for the LogProfileResource resource.
      *
@@ -264,6 +274,7 @@ public interface LogProfileResource {
          */
         LogProfileResource apply(Context context);
     }
+
     /** The LogProfileResource update stages. */
     interface UpdateStages {
         /** The stage of the LogProfileResource update allowing to specify tags. */
@@ -276,6 +287,7 @@ public interface LogProfileResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the LogProfileResource update allowing to specify storageAccountId. */
         interface WithStorageAccountId {
             /**
@@ -288,6 +300,7 @@ public interface LogProfileResource {
              */
             Update withStorageAccountId(String storageAccountId);
         }
+
         /** The stage of the LogProfileResource update allowing to specify serviceBusRuleId. */
         interface WithServiceBusRuleId {
             /**
@@ -302,6 +315,7 @@ public interface LogProfileResource {
              */
             Update withServiceBusRuleId(String serviceBusRuleId);
         }
+
         /** The stage of the LogProfileResource update allowing to specify locations. */
         interface WithLocations {
             /**
@@ -314,6 +328,7 @@ public interface LogProfileResource {
              */
             Update withLocations(List<String> locations);
         }
+
         /** The stage of the LogProfileResource update allowing to specify categories. */
         interface WithCategories {
             /**
@@ -326,6 +341,7 @@ public interface LogProfileResource {
              */
             Update withCategories(List<String> categories);
         }
+
         /** The stage of the LogProfileResource update allowing to specify retentionPolicy. */
         interface WithRetentionPolicy {
             /**
@@ -337,6 +353,7 @@ public interface LogProfileResource {
             Update withRetentionPolicy(RetentionPolicy retentionPolicy);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

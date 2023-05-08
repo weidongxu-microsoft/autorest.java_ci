@@ -94,11 +94,13 @@ public interface VpnServerConfigurationPolicyGroup {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VpnServerConfigurationPolicyGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the VpnServerConfigurationPolicyGroup definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -110,6 +112,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             WithCreate withExistingVpnServerConfiguration(String resourceGroupName, String vpnServerConfigurationName);
         }
+
         /**
          * The stage of the VpnServerConfigurationPolicyGroup definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -134,6 +137,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             VpnServerConfigurationPolicyGroup create(Context context);
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup definition allowing to specify name. */
         interface WithName {
             /**
@@ -146,6 +150,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup definition allowing to specify isDefault. */
         interface WithIsDefault {
             /**
@@ -156,6 +161,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             WithCreate withIsDefault(Boolean isDefault);
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup definition allowing to specify priority. */
         interface WithPriority {
             /**
@@ -166,6 +172,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             WithCreate withPriority(Integer priority);
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup definition allowing to specify policyMembers. */
         interface WithPolicyMembers {
             /**
@@ -177,6 +184,7 @@ public interface VpnServerConfigurationPolicyGroup {
             WithCreate withPolicyMembers(List<VpnServerConfigurationPolicyGroupMember> policyMembers);
         }
     }
+
     /**
      * Begins update for the VpnServerConfigurationPolicyGroup resource.
      *
@@ -205,6 +213,7 @@ public interface VpnServerConfigurationPolicyGroup {
          */
         VpnServerConfigurationPolicyGroup apply(Context context);
     }
+
     /** The VpnServerConfigurationPolicyGroup update stages. */
     interface UpdateStages {
         /** The stage of the VpnServerConfigurationPolicyGroup update allowing to specify name. */
@@ -219,6 +228,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             Update withName(String name);
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup update allowing to specify isDefault. */
         interface WithIsDefault {
             /**
@@ -229,6 +239,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             Update withIsDefault(Boolean isDefault);
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup update allowing to specify priority. */
         interface WithPriority {
             /**
@@ -239,6 +250,7 @@ public interface VpnServerConfigurationPolicyGroup {
              */
             Update withPriority(Integer priority);
         }
+
         /** The stage of the VpnServerConfigurationPolicyGroup update allowing to specify policyMembers. */
         interface WithPolicyMembers {
             /**
@@ -250,6 +262,7 @@ public interface VpnServerConfigurationPolicyGroup {
             Update withPolicyMembers(List<VpnServerConfigurationPolicyGroupMember> policyMembers);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

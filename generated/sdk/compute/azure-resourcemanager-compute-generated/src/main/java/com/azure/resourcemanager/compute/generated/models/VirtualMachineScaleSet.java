@@ -271,11 +271,13 @@ public interface VirtualMachineScaleSet {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualMachineScaleSet definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualMachineScaleSet definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -294,6 +296,7 @@ public interface VirtualMachineScaleSet {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -304,6 +307,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VirtualMachineScaleSet definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -346,6 +350,7 @@ public interface VirtualMachineScaleSet {
              */
             VirtualMachineScaleSet create(Context context);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -356,6 +361,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -366,6 +372,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withSku(Sku sku);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify plan. */
         interface WithPlan {
             /**
@@ -384,6 +391,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withPlan(Plan plan);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -394,6 +402,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withIdentity(VirtualMachineScaleSetIdentity identity);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -406,6 +415,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -416,6 +426,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify upgradePolicy. */
         interface WithUpgradePolicy {
             /**
@@ -426,6 +437,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withUpgradePolicy(UpgradePolicy upgradePolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify automaticRepairsPolicy. */
         interface WithAutomaticRepairsPolicy {
             /**
@@ -436,6 +448,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withAutomaticRepairsPolicy(AutomaticRepairsPolicy automaticRepairsPolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify virtualMachineProfile. */
         interface WithVirtualMachineProfile {
             /**
@@ -446,6 +459,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withVirtualMachineProfile(VirtualMachineScaleSetVMProfile virtualMachineProfile);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify overprovision. */
         interface WithOverprovision {
             /**
@@ -457,6 +471,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withOverprovision(Boolean overprovision);
         }
+
         /**
          * The stage of the VirtualMachineScaleSet definition allowing to specify
          * doNotRunExtensionsOnOverprovisionedVMs.
@@ -474,6 +489,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withDoNotRunExtensionsOnOverprovisionedVMs(Boolean doNotRunExtensionsOnOverprovisionedVMs);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify singlePlacementGroup. */
         interface WithSinglePlacementGroup {
             /**
@@ -488,6 +504,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withSinglePlacementGroup(Boolean singlePlacementGroup);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify zoneBalance. */
         interface WithZoneBalance {
             /**
@@ -504,6 +521,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withZoneBalance(Boolean zoneBalance);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify platformFaultDomainCount. */
         interface WithPlatformFaultDomainCount {
             /**
@@ -514,6 +532,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withPlatformFaultDomainCount(Integer platformFaultDomainCount);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify proximityPlacementGroup. */
         interface WithProximityPlacementGroup {
             /**
@@ -526,6 +545,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify hostGroup. */
         interface WithHostGroup {
             /**
@@ -538,6 +558,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withHostGroup(SubResource hostGroup);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify additionalCapabilities. */
         interface WithAdditionalCapabilities {
             /**
@@ -552,6 +573,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify scaleInPolicy. */
         interface WithScaleInPolicy {
             /**
@@ -564,6 +586,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withScaleInPolicy(ScaleInPolicy scaleInPolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify orchestrationMode. */
         interface WithOrchestrationMode {
             /**
@@ -575,6 +598,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withOrchestrationMode(OrchestrationMode orchestrationMode);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify spotRestorePolicy. */
         interface WithSpotRestorePolicy {
             /**
@@ -586,6 +610,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify priorityMixPolicy. */
         interface WithPriorityMixPolicy {
             /**
@@ -598,6 +623,7 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet definition allowing to specify constrainedMaximumCapacity. */
         interface WithConstrainedMaximumCapacity {
             /**
@@ -610,6 +636,7 @@ public interface VirtualMachineScaleSet {
             WithCreate withConstrainedMaximumCapacity(Boolean constrainedMaximumCapacity);
         }
     }
+
     /**
      * Begins update for the VirtualMachineScaleSet resource.
      *
@@ -649,6 +676,7 @@ public interface VirtualMachineScaleSet {
          */
         VirtualMachineScaleSet apply(Context context);
     }
+
     /** The VirtualMachineScaleSet update stages. */
     interface UpdateStages {
         /** The stage of the VirtualMachineScaleSet update allowing to specify tags. */
@@ -661,6 +689,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify sku. */
         interface WithSku {
             /**
@@ -671,6 +700,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withSku(Sku sku);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify plan. */
         interface WithPlan {
             /**
@@ -682,6 +712,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withPlan(Plan plan);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -692,6 +723,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withIdentity(VirtualMachineScaleSetIdentity identity);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify upgradePolicy. */
         interface WithUpgradePolicy {
             /**
@@ -702,6 +734,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withUpgradePolicy(UpgradePolicy upgradePolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify automaticRepairsPolicy. */
         interface WithAutomaticRepairsPolicy {
             /**
@@ -712,6 +745,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withAutomaticRepairsPolicy(AutomaticRepairsPolicy automaticRepairsPolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify virtualMachineProfile. */
         interface WithVirtualMachineProfile {
             /**
@@ -722,6 +756,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withVirtualMachineProfile(VirtualMachineScaleSetUpdateVMProfile virtualMachineProfile);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify overprovision. */
         interface WithOverprovision {
             /**
@@ -733,6 +768,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withOverprovision(Boolean overprovision);
         }
+
         /**
          * The stage of the VirtualMachineScaleSet update allowing to specify doNotRunExtensionsOnOverprovisionedVMs.
          */
@@ -749,6 +785,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withDoNotRunExtensionsOnOverprovisionedVMs(Boolean doNotRunExtensionsOnOverprovisionedVMs);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify singlePlacementGroup. */
         interface WithSinglePlacementGroup {
             /**
@@ -763,6 +800,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withSinglePlacementGroup(Boolean singlePlacementGroup);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify additionalCapabilities. */
         interface WithAdditionalCapabilities {
             /**
@@ -777,6 +815,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify scaleInPolicy. */
         interface WithScaleInPolicy {
             /**
@@ -789,6 +828,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withScaleInPolicy(ScaleInPolicy scaleInPolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify proximityPlacementGroup. */
         interface WithProximityPlacementGroup {
             /**
@@ -802,6 +842,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify priorityMixPolicy. */
         interface WithPriorityMixPolicy {
             /**
@@ -814,6 +855,7 @@ public interface VirtualMachineScaleSet {
              */
             Update withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy);
         }
+
         /** The stage of the VirtualMachineScaleSet update allowing to specify spotRestorePolicy. */
         interface WithSpotRestorePolicy {
             /**
@@ -826,6 +868,7 @@ public interface VirtualMachineScaleSet {
             Update withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -100,11 +100,13 @@ public interface VirtualNetworkGatewayNatRule {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VirtualNetworkGatewayNatRule definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualNetworkGatewayNatRule definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -116,6 +118,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             WithCreate withExistingVirtualNetworkGateway(String resourceGroupName, String virtualNetworkGatewayName);
         }
+
         /**
          * The stage of the VirtualNetworkGatewayNatRule definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -142,6 +145,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             VirtualNetworkGatewayNatRule create(Context context);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule definition allowing to specify name. */
         interface WithName {
             /**
@@ -154,6 +158,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule definition allowing to specify typePropertiesType. */
         interface WithTypePropertiesType {
             /**
@@ -164,6 +169,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             WithCreate withTypePropertiesType(VpnNatRuleType typePropertiesType);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule definition allowing to specify mode. */
         interface WithMode {
             /**
@@ -174,6 +180,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             WithCreate withMode(VpnNatRuleMode mode);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule definition allowing to specify internalMappings. */
         interface WithInternalMappings {
             /**
@@ -184,6 +191,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             WithCreate withInternalMappings(List<VpnNatRuleMapping> internalMappings);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule definition allowing to specify externalMappings. */
         interface WithExternalMappings {
             /**
@@ -194,6 +202,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             WithCreate withExternalMappings(List<VpnNatRuleMapping> externalMappings);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule definition allowing to specify ipConfigurationId. */
         interface WithIpConfigurationId {
             /**
@@ -205,6 +214,7 @@ public interface VirtualNetworkGatewayNatRule {
             WithCreate withIpConfigurationId(String ipConfigurationId);
         }
     }
+
     /**
      * Begins update for the VirtualNetworkGatewayNatRule resource.
      *
@@ -235,6 +245,7 @@ public interface VirtualNetworkGatewayNatRule {
          */
         VirtualNetworkGatewayNatRule apply(Context context);
     }
+
     /** The VirtualNetworkGatewayNatRule update stages. */
     interface UpdateStages {
         /** The stage of the VirtualNetworkGatewayNatRule update allowing to specify name. */
@@ -249,6 +260,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             Update withName(String name);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule update allowing to specify typePropertiesType. */
         interface WithTypePropertiesType {
             /**
@@ -259,6 +271,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             Update withTypePropertiesType(VpnNatRuleType typePropertiesType);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule update allowing to specify mode. */
         interface WithMode {
             /**
@@ -269,6 +282,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             Update withMode(VpnNatRuleMode mode);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule update allowing to specify internalMappings. */
         interface WithInternalMappings {
             /**
@@ -279,6 +293,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             Update withInternalMappings(List<VpnNatRuleMapping> internalMappings);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule update allowing to specify externalMappings. */
         interface WithExternalMappings {
             /**
@@ -289,6 +304,7 @@ public interface VirtualNetworkGatewayNatRule {
              */
             Update withExternalMappings(List<VpnNatRuleMapping> externalMappings);
         }
+
         /** The stage of the VirtualNetworkGatewayNatRule update allowing to specify ipConfigurationId. */
         interface WithIpConfigurationId {
             /**
@@ -300,6 +316,7 @@ public interface VirtualNetworkGatewayNatRule {
             Update withIpConfigurationId(String ipConfigurationId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

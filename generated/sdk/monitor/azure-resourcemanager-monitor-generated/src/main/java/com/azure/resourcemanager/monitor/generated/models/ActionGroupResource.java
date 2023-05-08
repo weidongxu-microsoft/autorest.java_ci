@@ -171,11 +171,13 @@ public interface ActionGroupResource {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ActionGroupResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the ActionGroupResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -194,6 +196,7 @@ public interface ActionGroupResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -204,6 +207,7 @@ public interface ActionGroupResource {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ActionGroupResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -237,6 +241,7 @@ public interface ActionGroupResource {
              */
             ActionGroupResource create(Context context);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -247,6 +252,7 @@ public interface ActionGroupResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify groupShortName. */
         interface WithGroupShortName {
             /**
@@ -258,6 +264,7 @@ public interface ActionGroupResource {
              */
             WithCreate withGroupShortName(String groupShortName);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -270,6 +277,7 @@ public interface ActionGroupResource {
              */
             WithCreate withEnabled(boolean enabled);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify emailReceivers. */
         interface WithEmailReceivers {
             /**
@@ -280,6 +288,7 @@ public interface ActionGroupResource {
              */
             WithCreate withEmailReceivers(List<EmailReceiver> emailReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify smsReceivers. */
         interface WithSmsReceivers {
             /**
@@ -290,6 +299,7 @@ public interface ActionGroupResource {
              */
             WithCreate withSmsReceivers(List<SmsReceiver> smsReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify webhookReceivers. */
         interface WithWebhookReceivers {
             /**
@@ -301,6 +311,7 @@ public interface ActionGroupResource {
              */
             WithCreate withWebhookReceivers(List<WebhookReceiver> webhookReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify itsmReceivers. */
         interface WithItsmReceivers {
             /**
@@ -311,6 +322,7 @@ public interface ActionGroupResource {
              */
             WithCreate withItsmReceivers(List<ItsmReceiver> itsmReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify azureAppPushReceivers. */
         interface WithAzureAppPushReceivers {
             /**
@@ -322,6 +334,7 @@ public interface ActionGroupResource {
              */
             WithCreate withAzureAppPushReceivers(List<AzureAppPushReceiver> azureAppPushReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify automationRunbookReceivers. */
         interface WithAutomationRunbookReceivers {
             /**
@@ -334,6 +347,7 @@ public interface ActionGroupResource {
              */
             WithCreate withAutomationRunbookReceivers(List<AutomationRunbookReceiver> automationRunbookReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify voiceReceivers. */
         interface WithVoiceReceivers {
             /**
@@ -344,6 +358,7 @@ public interface ActionGroupResource {
              */
             WithCreate withVoiceReceivers(List<VoiceReceiver> voiceReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify logicAppReceivers. */
         interface WithLogicAppReceivers {
             /**
@@ -355,6 +370,7 @@ public interface ActionGroupResource {
              */
             WithCreate withLogicAppReceivers(List<LogicAppReceiver> logicAppReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify azureFunctionReceivers. */
         interface WithAzureFunctionReceivers {
             /**
@@ -366,6 +382,7 @@ public interface ActionGroupResource {
              */
             WithCreate withAzureFunctionReceivers(List<AzureFunctionReceiver> azureFunctionReceivers);
         }
+
         /** The stage of the ActionGroupResource definition allowing to specify armRoleReceivers. */
         interface WithArmRoleReceivers {
             /**
@@ -379,6 +396,7 @@ public interface ActionGroupResource {
             WithCreate withArmRoleReceivers(List<ArmRoleReceiver> armRoleReceivers);
         }
     }
+
     /**
      * Begins update for the ActionGroupResource resource.
      *
@@ -403,6 +421,7 @@ public interface ActionGroupResource {
          */
         ActionGroupResource apply(Context context);
     }
+
     /** The ActionGroupResource update stages. */
     interface UpdateStages {
         /** The stage of the ActionGroupResource update allowing to specify tags. */
@@ -415,6 +434,7 @@ public interface ActionGroupResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the ActionGroupResource update allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -428,6 +448,7 @@ public interface ActionGroupResource {
             Update withEnabled(Boolean enabled);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

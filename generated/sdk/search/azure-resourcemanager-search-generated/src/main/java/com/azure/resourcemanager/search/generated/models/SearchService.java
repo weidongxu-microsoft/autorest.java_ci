@@ -217,11 +217,13 @@ public interface SearchService {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The SearchService definition stages. */
     interface DefinitionStages {
         /** The first stage of the SearchService definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the SearchService definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -240,6 +242,7 @@ public interface SearchService {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the SearchService definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -251,6 +254,7 @@ public interface SearchService {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the SearchService definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -283,6 +287,7 @@ public interface SearchService {
              */
             SearchService create(Context context);
         }
+
         /** The stage of the SearchService definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -293,6 +298,7 @@ public interface SearchService {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the SearchService definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -305,6 +311,7 @@ public interface SearchService {
              */
             WithCreate withSku(Sku sku);
         }
+
         /** The stage of the SearchService definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -315,6 +322,7 @@ public interface SearchService {
              */
             WithCreate withIdentity(Identity identity);
         }
+
         /** The stage of the SearchService definition allowing to specify replicaCount. */
         interface WithReplicaCount {
             /**
@@ -327,6 +335,7 @@ public interface SearchService {
              */
             WithCreate withReplicaCount(Integer replicaCount);
         }
+
         /** The stage of the SearchService definition allowing to specify partitionCount. */
         interface WithPartitionCount {
             /**
@@ -341,6 +350,7 @@ public interface SearchService {
              */
             WithCreate withPartitionCount(Integer partitionCount);
         }
+
         /** The stage of the SearchService definition allowing to specify hostingMode. */
         interface WithHostingMode {
             /**
@@ -357,6 +367,7 @@ public interface SearchService {
              */
             WithCreate withHostingMode(HostingMode hostingMode);
         }
+
         /** The stage of the SearchService definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -371,6 +382,7 @@ public interface SearchService {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the SearchService definition allowing to specify networkRuleSet. */
         interface WithNetworkRuleSet {
             /**
@@ -383,6 +395,7 @@ public interface SearchService {
              */
             WithCreate withNetworkRuleSet(NetworkRuleSet networkRuleSet);
         }
+
         /** The stage of the SearchService definition allowing to specify encryptionWithCmk. */
         interface WithEncryptionWithCmk {
             /**
@@ -395,6 +408,7 @@ public interface SearchService {
              */
             WithCreate withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
         }
+
         /** The stage of the SearchService definition allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -408,6 +422,7 @@ public interface SearchService {
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the SearchService definition allowing to specify authOptions. */
         interface WithAuthOptions {
             /**
@@ -420,6 +435,7 @@ public interface SearchService {
              */
             WithCreate withAuthOptions(DataPlaneAuthOptions authOptions);
         }
+
         /** The stage of the SearchService definition allowing to specify clientRequestId. */
         interface WithClientRequestId {
             /**
@@ -433,6 +449,7 @@ public interface SearchService {
             WithCreate withClientRequestId(UUID clientRequestId);
         }
     }
+
     /**
      * Begins update for the SearchService resource.
      *
@@ -469,6 +486,7 @@ public interface SearchService {
          */
         SearchService apply(Context context);
     }
+
     /** The SearchService update stages. */
     interface UpdateStages {
         /** The stage of the SearchService update allowing to specify tags. */
@@ -481,6 +499,7 @@ public interface SearchService {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the SearchService update allowing to specify sku. */
         interface WithSku {
             /**
@@ -493,6 +512,7 @@ public interface SearchService {
              */
             Update withSku(Sku sku);
         }
+
         /** The stage of the SearchService update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -503,6 +523,7 @@ public interface SearchService {
              */
             Update withIdentity(Identity identity);
         }
+
         /** The stage of the SearchService update allowing to specify replicaCount. */
         interface WithReplicaCount {
             /**
@@ -515,6 +536,7 @@ public interface SearchService {
              */
             Update withReplicaCount(Integer replicaCount);
         }
+
         /** The stage of the SearchService update allowing to specify partitionCount. */
         interface WithPartitionCount {
             /**
@@ -529,6 +551,7 @@ public interface SearchService {
              */
             Update withPartitionCount(Integer partitionCount);
         }
+
         /** The stage of the SearchService update allowing to specify hostingMode. */
         interface WithHostingMode {
             /**
@@ -545,6 +568,7 @@ public interface SearchService {
              */
             Update withHostingMode(HostingMode hostingMode);
         }
+
         /** The stage of the SearchService update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -559,6 +583,7 @@ public interface SearchService {
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the SearchService update allowing to specify networkRuleSet. */
         interface WithNetworkRuleSet {
             /**
@@ -571,6 +596,7 @@ public interface SearchService {
              */
             Update withNetworkRuleSet(NetworkRuleSet networkRuleSet);
         }
+
         /** The stage of the SearchService update allowing to specify encryptionWithCmk. */
         interface WithEncryptionWithCmk {
             /**
@@ -583,6 +609,7 @@ public interface SearchService {
              */
             Update withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
         }
+
         /** The stage of the SearchService update allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -596,6 +623,7 @@ public interface SearchService {
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the SearchService update allowing to specify authOptions. */
         interface WithAuthOptions {
             /**
@@ -608,6 +636,7 @@ public interface SearchService {
              */
             Update withAuthOptions(DataPlaneAuthOptions authOptions);
         }
+
         /** The stage of the SearchService update allowing to specify clientRequestId. */
         interface WithClientRequestId {
             /**
@@ -621,6 +650,7 @@ public interface SearchService {
             Update withClientRequestId(UUID clientRequestId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

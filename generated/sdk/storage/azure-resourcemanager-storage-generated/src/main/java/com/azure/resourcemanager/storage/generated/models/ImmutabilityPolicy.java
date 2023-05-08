@@ -92,11 +92,13 @@ public interface ImmutabilityPolicy {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ImmutabilityPolicy definition stages. */
     interface DefinitionStages {
         /** The first stage of the ImmutabilityPolicy definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ImmutabilityPolicy definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -113,6 +115,7 @@ public interface ImmutabilityPolicy {
              */
             WithCreate withExistingContainer(String resourceGroupName, String accountName, String containerName);
         }
+
         /**
          * The stage of the ImmutabilityPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -137,6 +140,7 @@ public interface ImmutabilityPolicy {
              */
             ImmutabilityPolicy create(Context context);
         }
+
         /** The stage of the ImmutabilityPolicy definition allowing to specify immutabilityPeriodSinceCreationInDays. */
         interface WithImmutabilityPeriodSinceCreationInDays {
             /**
@@ -149,6 +153,7 @@ public interface ImmutabilityPolicy {
              */
             WithCreate withImmutabilityPeriodSinceCreationInDays(Integer immutabilityPeriodSinceCreationInDays);
         }
+
         /** The stage of the ImmutabilityPolicy definition allowing to specify allowProtectedAppendWrites. */
         interface WithAllowProtectedAppendWrites {
             /**
@@ -165,6 +170,7 @@ public interface ImmutabilityPolicy {
              */
             WithCreate withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites);
         }
+
         /** The stage of the ImmutabilityPolicy definition allowing to specify allowProtectedAppendWritesAll. */
         interface WithAllowProtectedAppendWritesAll {
             /**
@@ -183,6 +189,7 @@ public interface ImmutabilityPolicy {
              */
             WithCreate withAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll);
         }
+
         /** The stage of the ImmutabilityPolicy definition allowing to specify ifMatch. */
         interface WithIfMatch {
             /**
@@ -198,6 +205,7 @@ public interface ImmutabilityPolicy {
             WithCreate withIfMatch(String ifMatch);
         }
     }
+
     /**
      * Begins update for the ImmutabilityPolicy resource.
      *
@@ -226,6 +234,7 @@ public interface ImmutabilityPolicy {
          */
         ImmutabilityPolicy apply(Context context);
     }
+
     /** The ImmutabilityPolicy update stages. */
     interface UpdateStages {
         /** The stage of the ImmutabilityPolicy update allowing to specify immutabilityPeriodSinceCreationInDays. */
@@ -240,6 +249,7 @@ public interface ImmutabilityPolicy {
              */
             Update withImmutabilityPeriodSinceCreationInDays(Integer immutabilityPeriodSinceCreationInDays);
         }
+
         /** The stage of the ImmutabilityPolicy update allowing to specify allowProtectedAppendWrites. */
         interface WithAllowProtectedAppendWrites {
             /**
@@ -256,6 +266,7 @@ public interface ImmutabilityPolicy {
              */
             Update withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites);
         }
+
         /** The stage of the ImmutabilityPolicy update allowing to specify allowProtectedAppendWritesAll. */
         interface WithAllowProtectedAppendWritesAll {
             /**
@@ -274,6 +285,7 @@ public interface ImmutabilityPolicy {
              */
             Update withAllowProtectedAppendWritesAll(Boolean allowProtectedAppendWritesAll);
         }
+
         /** The stage of the ImmutabilityPolicy update allowing to specify ifMatch. */
         interface WithIfMatch {
             /**
@@ -289,6 +301,7 @@ public interface ImmutabilityPolicy {
             Update withIfMatch(String ifMatch);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

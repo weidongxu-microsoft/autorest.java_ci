@@ -186,11 +186,13 @@ public interface ExpressRoutePort {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ExpressRoutePort definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRoutePort definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -209,6 +211,7 @@ public interface ExpressRoutePort {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -219,6 +222,7 @@ public interface ExpressRoutePort {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ExpressRoutePort definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -246,6 +250,7 @@ public interface ExpressRoutePort {
              */
             ExpressRoutePort create(Context context);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -256,6 +261,7 @@ public interface ExpressRoutePort {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -266,6 +272,7 @@ public interface ExpressRoutePort {
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify peeringLocation. */
         interface WithPeeringLocation {
             /**
@@ -278,6 +285,7 @@ public interface ExpressRoutePort {
              */
             WithCreate withPeeringLocation(String peeringLocation);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify bandwidthInGbps. */
         interface WithBandwidthInGbps {
             /**
@@ -288,6 +296,7 @@ public interface ExpressRoutePort {
              */
             WithCreate withBandwidthInGbps(Integer bandwidthInGbps);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify encapsulation. */
         interface WithEncapsulation {
             /**
@@ -298,6 +307,7 @@ public interface ExpressRoutePort {
              */
             WithCreate withEncapsulation(ExpressRoutePortsEncapsulation encapsulation);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify links. */
         interface WithLinks {
             /**
@@ -311,6 +321,7 @@ public interface ExpressRoutePort {
              */
             WithCreate withLinks(List<ExpressRouteLinkInner> links);
         }
+
         /** The stage of the ExpressRoutePort definition allowing to specify billingType. */
         interface WithBillingType {
             /**
@@ -322,6 +333,7 @@ public interface ExpressRoutePort {
             WithCreate withBillingType(ExpressRoutePortsBillingType billingType);
         }
     }
+
     /**
      * Begins update for the ExpressRoutePort resource.
      *
@@ -346,6 +358,7 @@ public interface ExpressRoutePort {
          */
         ExpressRoutePort apply(Context context);
     }
+
     /** The ExpressRoutePort update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRoutePort update allowing to specify tags. */
@@ -359,6 +372,7 @@ public interface ExpressRoutePort {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

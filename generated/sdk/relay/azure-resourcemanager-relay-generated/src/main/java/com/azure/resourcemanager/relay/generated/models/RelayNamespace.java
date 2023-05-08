@@ -156,11 +156,13 @@ public interface RelayNamespace {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The RelayNamespace definition stages. */
     interface DefinitionStages {
         /** The first stage of the RelayNamespace definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the RelayNamespace definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -179,6 +181,7 @@ public interface RelayNamespace {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the RelayNamespace definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -189,6 +192,7 @@ public interface RelayNamespace {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the RelayNamespace definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -213,6 +217,7 @@ public interface RelayNamespace {
              */
             RelayNamespace create(Context context);
         }
+
         /** The stage of the RelayNamespace definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -223,6 +228,7 @@ public interface RelayNamespace {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the RelayNamespace definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -233,6 +239,7 @@ public interface RelayNamespace {
              */
             WithCreate withSku(Sku sku);
         }
+
         /** The stage of the RelayNamespace definition allowing to specify privateEndpointConnections. */
         interface WithPrivateEndpointConnections {
             /**
@@ -243,6 +250,7 @@ public interface RelayNamespace {
              */
             WithCreate withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections);
         }
+
         /** The stage of the RelayNamespace definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -256,6 +264,7 @@ public interface RelayNamespace {
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
     }
+
     /**
      * Begins update for the RelayNamespace resource.
      *
@@ -284,6 +293,7 @@ public interface RelayNamespace {
          */
         RelayNamespace apply(Context context);
     }
+
     /** The RelayNamespace update stages. */
     interface UpdateStages {
         /** The stage of the RelayNamespace update allowing to specify tags. */
@@ -296,6 +306,7 @@ public interface RelayNamespace {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the RelayNamespace update allowing to specify sku. */
         interface WithSku {
             /**
@@ -306,6 +317,7 @@ public interface RelayNamespace {
              */
             Update withSku(Sku sku);
         }
+
         /** The stage of the RelayNamespace update allowing to specify privateEndpointConnections. */
         interface WithPrivateEndpointConnections {
             /**
@@ -316,6 +328,7 @@ public interface RelayNamespace {
              */
             Update withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections);
         }
+
         /** The stage of the RelayNamespace update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -329,6 +342,7 @@ public interface RelayNamespace {
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -146,11 +146,13 @@ public interface EventSubscription {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The EventSubscription definition stages. */
     interface DefinitionStages {
         /** The first stage of the EventSubscription definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the EventSubscription definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -162,6 +164,7 @@ public interface EventSubscription {
              */
             WithCreate withExistingTopic(String resourceGroupName, String topicName);
         }
+
         /**
          * The stage of the EventSubscription definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -191,6 +194,7 @@ public interface EventSubscription {
              */
             EventSubscription create(Context context);
         }
+
         /** The stage of the EventSubscription definition allowing to specify destination. */
         interface WithDestination {
             /**
@@ -205,6 +209,7 @@ public interface EventSubscription {
              */
             WithCreate withDestination(EventSubscriptionDestination destination);
         }
+
         /** The stage of the EventSubscription definition allowing to specify deliveryWithResourceIdentity. */
         interface WithDeliveryWithResourceIdentity {
             /**
@@ -220,6 +225,7 @@ public interface EventSubscription {
              */
             WithCreate withDeliveryWithResourceIdentity(DeliveryWithResourceIdentity deliveryWithResourceIdentity);
         }
+
         /** The stage of the EventSubscription definition allowing to specify filter. */
         interface WithFilter {
             /**
@@ -230,6 +236,7 @@ public interface EventSubscription {
              */
             WithCreate withFilter(EventSubscriptionFilter filter);
         }
+
         /** The stage of the EventSubscription definition allowing to specify labels. */
         interface WithLabels {
             /**
@@ -240,6 +247,7 @@ public interface EventSubscription {
              */
             WithCreate withLabels(List<String> labels);
         }
+
         /** The stage of the EventSubscription definition allowing to specify expirationTimeUtc. */
         interface WithExpirationTimeUtc {
             /**
@@ -250,6 +258,7 @@ public interface EventSubscription {
              */
             WithCreate withExpirationTimeUtc(OffsetDateTime expirationTimeUtc);
         }
+
         /** The stage of the EventSubscription definition allowing to specify eventDeliverySchema. */
         interface WithEventDeliverySchema {
             /**
@@ -260,6 +269,7 @@ public interface EventSubscription {
              */
             WithCreate withEventDeliverySchema(EventDeliverySchema eventDeliverySchema);
         }
+
         /** The stage of the EventSubscription definition allowing to specify retryPolicy. */
         interface WithRetryPolicy {
             /**
@@ -272,6 +282,7 @@ public interface EventSubscription {
              */
             WithCreate withRetryPolicy(RetryPolicy retryPolicy);
         }
+
         /** The stage of the EventSubscription definition allowing to specify deadLetterDestination. */
         interface WithDeadLetterDestination {
             /**
@@ -286,6 +297,7 @@ public interface EventSubscription {
              */
             WithCreate withDeadLetterDestination(DeadLetterDestination deadLetterDestination);
         }
+
         /** The stage of the EventSubscription definition allowing to specify deadLetterWithResourceIdentity. */
         interface WithDeadLetterWithResourceIdentity {
             /**
@@ -304,6 +316,7 @@ public interface EventSubscription {
                 DeadLetterWithResourceIdentity deadLetterWithResourceIdentity);
         }
     }
+
     /**
      * Begins update for the EventSubscription resource.
      *
@@ -337,6 +350,7 @@ public interface EventSubscription {
          */
         EventSubscription apply(Context context);
     }
+
     /** The EventSubscription update stages. */
     interface UpdateStages {
         /** The stage of the EventSubscription update allowing to specify destination. */
@@ -353,6 +367,7 @@ public interface EventSubscription {
              */
             Update withDestination(EventSubscriptionDestination destination);
         }
+
         /** The stage of the EventSubscription update allowing to specify deliveryWithResourceIdentity. */
         interface WithDeliveryWithResourceIdentity {
             /**
@@ -367,6 +382,7 @@ public interface EventSubscription {
              */
             Update withDeliveryWithResourceIdentity(DeliveryWithResourceIdentity deliveryWithResourceIdentity);
         }
+
         /** The stage of the EventSubscription update allowing to specify filter. */
         interface WithFilter {
             /**
@@ -377,6 +393,7 @@ public interface EventSubscription {
              */
             Update withFilter(EventSubscriptionFilter filter);
         }
+
         /** The stage of the EventSubscription update allowing to specify labels. */
         interface WithLabels {
             /**
@@ -387,6 +404,7 @@ public interface EventSubscription {
              */
             Update withLabels(List<String> labels);
         }
+
         /** The stage of the EventSubscription update allowing to specify expirationTimeUtc. */
         interface WithExpirationTimeUtc {
             /**
@@ -398,6 +416,7 @@ public interface EventSubscription {
              */
             Update withExpirationTimeUtc(OffsetDateTime expirationTimeUtc);
         }
+
         /** The stage of the EventSubscription update allowing to specify eventDeliverySchema. */
         interface WithEventDeliverySchema {
             /**
@@ -408,6 +427,7 @@ public interface EventSubscription {
              */
             Update withEventDeliverySchema(EventDeliverySchema eventDeliverySchema);
         }
+
         /** The stage of the EventSubscription update allowing to specify retryPolicy. */
         interface WithRetryPolicy {
             /**
@@ -420,6 +440,7 @@ public interface EventSubscription {
              */
             Update withRetryPolicy(RetryPolicy retryPolicy);
         }
+
         /** The stage of the EventSubscription update allowing to specify deadLetterDestination. */
         interface WithDeadLetterDestination {
             /**
@@ -434,6 +455,7 @@ public interface EventSubscription {
              */
             Update withDeadLetterDestination(DeadLetterDestination deadLetterDestination);
         }
+
         /** The stage of the EventSubscription update allowing to specify deadLetterWithResourceIdentity. */
         interface WithDeadLetterWithResourceIdentity {
             /**
@@ -451,6 +473,7 @@ public interface EventSubscription {
             Update withDeadLetterWithResourceIdentity(DeadLetterWithResourceIdentity deadLetterWithResourceIdentity);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -184,11 +184,13 @@ public interface PublicIpPrefix {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The PublicIpPrefix definition stages. */
     interface DefinitionStages {
         /** The first stage of the PublicIpPrefix definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -207,6 +209,7 @@ public interface PublicIpPrefix {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -217,6 +220,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the PublicIpPrefix definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -246,6 +250,7 @@ public interface PublicIpPrefix {
              */
             PublicIpPrefix create(Context context);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -256,6 +261,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -266,6 +272,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -276,6 +283,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withSku(PublicIpPrefixSku sku);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -287,6 +295,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify publicIpAddressVersion. */
         interface WithPublicIpAddressVersion {
             /**
@@ -297,6 +306,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withPublicIpAddressVersion(IpVersion publicIpAddressVersion);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify ipTags. */
         interface WithIpTags {
             /**
@@ -307,6 +317,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withIpTags(List<IpTag> ipTags);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify prefixLength. */
         interface WithPrefixLength {
             /**
@@ -317,6 +328,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withPrefixLength(Integer prefixLength);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify customIpPrefix. */
         interface WithCustomIpPrefix {
             /**
@@ -327,6 +339,7 @@ public interface PublicIpPrefix {
              */
             WithCreate withCustomIpPrefix(SubResource customIpPrefix);
         }
+
         /** The stage of the PublicIpPrefix definition allowing to specify natGateway. */
         interface WithNatGateway {
             /**
@@ -338,6 +351,7 @@ public interface PublicIpPrefix {
             WithCreate withNatGateway(NatGatewayInner natGateway);
         }
     }
+
     /**
      * Begins update for the PublicIpPrefix resource.
      *
@@ -362,6 +376,7 @@ public interface PublicIpPrefix {
          */
         PublicIpPrefix apply(Context context);
     }
+
     /** The PublicIpPrefix update stages. */
     interface UpdateStages {
         /** The stage of the PublicIpPrefix update allowing to specify tags. */
@@ -375,6 +390,7 @@ public interface PublicIpPrefix {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

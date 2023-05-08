@@ -198,11 +198,13 @@ public interface GalleryImage {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The GalleryImage definition stages. */
     interface DefinitionStages {
         /** The first stage of the GalleryImage definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the GalleryImage definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -221,6 +223,7 @@ public interface GalleryImage {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the GalleryImage definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -232,6 +235,7 @@ public interface GalleryImage {
              */
             WithCreate withExistingGallery(String resourceGroupName, String galleryName);
         }
+
         /**
          * The stage of the GalleryImage definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -267,6 +271,7 @@ public interface GalleryImage {
              */
             GalleryImage create(Context context);
         }
+
         /** The stage of the GalleryImage definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -277,6 +282,7 @@ public interface GalleryImage {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the GalleryImage definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -288,6 +294,7 @@ public interface GalleryImage {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the GalleryImage definition allowing to specify eula. */
         interface WithEula {
             /**
@@ -298,6 +305,7 @@ public interface GalleryImage {
              */
             WithCreate withEula(String eula);
         }
+
         /** The stage of the GalleryImage definition allowing to specify privacyStatementUri. */
         interface WithPrivacyStatementUri {
             /**
@@ -308,6 +316,7 @@ public interface GalleryImage {
              */
             WithCreate withPrivacyStatementUri(String privacyStatementUri);
         }
+
         /** The stage of the GalleryImage definition allowing to specify releaseNoteUri. */
         interface WithReleaseNoteUri {
             /**
@@ -318,6 +327,7 @@ public interface GalleryImage {
              */
             WithCreate withReleaseNoteUri(String releaseNoteUri);
         }
+
         /** The stage of the GalleryImage definition allowing to specify osType. */
         interface WithOsType {
             /**
@@ -332,6 +342,7 @@ public interface GalleryImage {
              */
             WithCreate withOsType(OperatingSystemTypes osType);
         }
+
         /** The stage of the GalleryImage definition allowing to specify osState. */
         interface WithOsState {
             /**
@@ -344,6 +355,7 @@ public interface GalleryImage {
              */
             WithCreate withOsState(OperatingSystemStateTypes osState);
         }
+
         /** The stage of the GalleryImage definition allowing to specify hyperVGeneration. */
         interface WithHyperVGeneration {
             /**
@@ -355,6 +367,7 @@ public interface GalleryImage {
              */
             WithCreate withHyperVGeneration(HyperVGeneration hyperVGeneration);
         }
+
         /** The stage of the GalleryImage definition allowing to specify endOfLifeDate. */
         interface WithEndOfLifeDate {
             /**
@@ -367,6 +380,7 @@ public interface GalleryImage {
              */
             WithCreate withEndOfLifeDate(OffsetDateTime endOfLifeDate);
         }
+
         /** The stage of the GalleryImage definition allowing to specify identifier. */
         interface WithIdentifier {
             /**
@@ -377,6 +391,7 @@ public interface GalleryImage {
              */
             WithCreate withIdentifier(GalleryImageIdentifier identifier);
         }
+
         /** The stage of the GalleryImage definition allowing to specify recommended. */
         interface WithRecommended {
             /**
@@ -389,6 +404,7 @@ public interface GalleryImage {
              */
             WithCreate withRecommended(RecommendedMachineConfiguration recommended);
         }
+
         /** The stage of the GalleryImage definition allowing to specify disallowed. */
         interface WithDisallowed {
             /**
@@ -399,6 +415,7 @@ public interface GalleryImage {
              */
             WithCreate withDisallowed(Disallowed disallowed);
         }
+
         /** The stage of the GalleryImage definition allowing to specify purchasePlan. */
         interface WithPurchasePlan {
             /**
@@ -411,6 +428,7 @@ public interface GalleryImage {
              */
             WithCreate withPurchasePlan(ImagePurchasePlan purchasePlan);
         }
+
         /** The stage of the GalleryImage definition allowing to specify features. */
         interface WithFeatures {
             /**
@@ -421,6 +439,7 @@ public interface GalleryImage {
              */
             WithCreate withFeatures(List<GalleryImageFeature> features);
         }
+
         /** The stage of the GalleryImage definition allowing to specify architecture. */
         interface WithArchitecture {
             /**
@@ -432,6 +451,7 @@ public interface GalleryImage {
             WithCreate withArchitecture(Architecture architecture);
         }
     }
+
     /**
      * Begins update for the GalleryImage resource.
      *
@@ -471,6 +491,7 @@ public interface GalleryImage {
          */
         GalleryImage apply(Context context);
     }
+
     /** The GalleryImage update stages. */
     interface UpdateStages {
         /** The stage of the GalleryImage update allowing to specify tags. */
@@ -483,6 +504,7 @@ public interface GalleryImage {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the GalleryImage update allowing to specify description. */
         interface WithDescription {
             /**
@@ -494,6 +516,7 @@ public interface GalleryImage {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the GalleryImage update allowing to specify eula. */
         interface WithEula {
             /**
@@ -504,6 +527,7 @@ public interface GalleryImage {
              */
             Update withEula(String eula);
         }
+
         /** The stage of the GalleryImage update allowing to specify privacyStatementUri. */
         interface WithPrivacyStatementUri {
             /**
@@ -514,6 +538,7 @@ public interface GalleryImage {
              */
             Update withPrivacyStatementUri(String privacyStatementUri);
         }
+
         /** The stage of the GalleryImage update allowing to specify releaseNoteUri. */
         interface WithReleaseNoteUri {
             /**
@@ -524,6 +549,7 @@ public interface GalleryImage {
              */
             Update withReleaseNoteUri(String releaseNoteUri);
         }
+
         /** The stage of the GalleryImage update allowing to specify osType. */
         interface WithOsType {
             /**
@@ -538,6 +564,7 @@ public interface GalleryImage {
              */
             Update withOsType(OperatingSystemTypes osType);
         }
+
         /** The stage of the GalleryImage update allowing to specify osState. */
         interface WithOsState {
             /**
@@ -550,6 +577,7 @@ public interface GalleryImage {
              */
             Update withOsState(OperatingSystemStateTypes osState);
         }
+
         /** The stage of the GalleryImage update allowing to specify hyperVGeneration. */
         interface WithHyperVGeneration {
             /**
@@ -561,6 +589,7 @@ public interface GalleryImage {
              */
             Update withHyperVGeneration(HyperVGeneration hyperVGeneration);
         }
+
         /** The stage of the GalleryImage update allowing to specify endOfLifeDate. */
         interface WithEndOfLifeDate {
             /**
@@ -573,6 +602,7 @@ public interface GalleryImage {
              */
             Update withEndOfLifeDate(OffsetDateTime endOfLifeDate);
         }
+
         /** The stage of the GalleryImage update allowing to specify identifier. */
         interface WithIdentifier {
             /**
@@ -583,6 +613,7 @@ public interface GalleryImage {
              */
             Update withIdentifier(GalleryImageIdentifier identifier);
         }
+
         /** The stage of the GalleryImage update allowing to specify recommended. */
         interface WithRecommended {
             /**
@@ -595,6 +626,7 @@ public interface GalleryImage {
              */
             Update withRecommended(RecommendedMachineConfiguration recommended);
         }
+
         /** The stage of the GalleryImage update allowing to specify disallowed. */
         interface WithDisallowed {
             /**
@@ -605,6 +637,7 @@ public interface GalleryImage {
              */
             Update withDisallowed(Disallowed disallowed);
         }
+
         /** The stage of the GalleryImage update allowing to specify purchasePlan. */
         interface WithPurchasePlan {
             /**
@@ -617,6 +650,7 @@ public interface GalleryImage {
              */
             Update withPurchasePlan(ImagePurchasePlan purchasePlan);
         }
+
         /** The stage of the GalleryImage update allowing to specify features. */
         interface WithFeatures {
             /**
@@ -627,6 +661,7 @@ public interface GalleryImage {
              */
             Update withFeatures(List<GalleryImageFeature> features);
         }
+
         /** The stage of the GalleryImage update allowing to specify architecture. */
         interface WithArchitecture {
             /**
@@ -638,6 +673,7 @@ public interface GalleryImage {
             Update withArchitecture(Architecture architecture);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

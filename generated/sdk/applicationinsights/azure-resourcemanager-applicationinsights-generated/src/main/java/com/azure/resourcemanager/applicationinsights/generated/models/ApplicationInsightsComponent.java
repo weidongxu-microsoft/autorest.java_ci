@@ -245,11 +245,13 @@ public interface ApplicationInsightsComponent {
             DefinitionStages.WithKind,
             DefinitionStages.WithCreate {
     }
+
     /** The ApplicationInsightsComponent definition stages. */
     interface DefinitionStages {
         /** The first stage of the ApplicationInsightsComponent definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -268,6 +270,7 @@ public interface ApplicationInsightsComponent {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -278,6 +281,7 @@ public interface ApplicationInsightsComponent {
              */
             WithKind withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -292,6 +296,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withKind(String kind);
         }
+
         /**
          * The stage of the ApplicationInsightsComponent definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -324,6 +329,7 @@ public interface ApplicationInsightsComponent {
              */
             ApplicationInsightsComponent create(Context context);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -334,6 +340,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify applicationType. */
         interface WithApplicationType {
             /**
@@ -344,6 +351,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withApplicationType(ApplicationType applicationType);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify flowType. */
         interface WithFlowType {
             /**
@@ -357,6 +365,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withFlowType(FlowType flowType);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify requestSource. */
         interface WithRequestSource {
             /**
@@ -369,6 +378,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withRequestSource(RequestSource requestSource);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify hockeyAppId. */
         interface WithHockeyAppId {
             /**
@@ -381,6 +391,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withHockeyAppId(String hockeyAppId);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify samplingPercentage. */
         interface WithSamplingPercentage {
             /**
@@ -393,6 +404,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withSamplingPercentage(Double samplingPercentage);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify retentionInDays. */
         interface WithRetentionInDays {
             /**
@@ -403,6 +415,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withRetentionInDays(Integer retentionInDays);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify disableIpMasking. */
         interface WithDisableIpMasking {
             /**
@@ -413,6 +426,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withDisableIpMasking(Boolean disableIpMasking);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify immediatePurgeDataOn30Days. */
         interface WithImmediatePurgeDataOn30Days {
             /**
@@ -423,6 +437,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withImmediatePurgeDataOn30Days(Boolean immediatePurgeDataOn30Days);
         }
+
         /**
          * The stage of the ApplicationInsightsComponent definition allowing to specify publicNetworkAccessForIngestion.
          */
@@ -437,6 +452,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withPublicNetworkAccessForIngestion(PublicNetworkAccessType publicNetworkAccessForIngestion);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify publicNetworkAccessForQuery. */
         interface WithPublicNetworkAccessForQuery {
             /**
@@ -448,6 +464,7 @@ public interface ApplicationInsightsComponent {
              */
             WithCreate withPublicNetworkAccessForQuery(PublicNetworkAccessType publicNetworkAccessForQuery);
         }
+
         /** The stage of the ApplicationInsightsComponent definition allowing to specify ingestionMode. */
         interface WithIngestionMode {
             /**
@@ -459,6 +476,7 @@ public interface ApplicationInsightsComponent {
             WithCreate withIngestionMode(IngestionMode ingestionMode);
         }
     }
+
     /**
      * Begins update for the ApplicationInsightsComponent resource.
      *
@@ -483,6 +501,7 @@ public interface ApplicationInsightsComponent {
          */
         ApplicationInsightsComponent apply(Context context);
     }
+
     /** The ApplicationInsightsComponent update stages. */
     interface UpdateStages {
         /** The stage of the ApplicationInsightsComponent update allowing to specify tags. */
@@ -496,6 +515,7 @@ public interface ApplicationInsightsComponent {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

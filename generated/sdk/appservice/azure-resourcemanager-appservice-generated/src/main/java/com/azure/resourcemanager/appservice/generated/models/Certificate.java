@@ -239,11 +239,13 @@ public interface Certificate {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Certificate definition stages. */
     interface DefinitionStages {
         /** The first stage of the Certificate definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Certificate definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -262,6 +264,7 @@ public interface Certificate {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Certificate definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -272,6 +275,7 @@ public interface Certificate {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Certificate definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -302,6 +306,7 @@ public interface Certificate {
              */
             Certificate create(Context context);
         }
+
         /** The stage of the Certificate definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -312,6 +317,7 @@ public interface Certificate {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Certificate definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -322,6 +328,7 @@ public interface Certificate {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the Certificate definition allowing to specify password. */
         interface WithPassword {
             /**
@@ -332,6 +339,7 @@ public interface Certificate {
              */
             WithCreate withPassword(String password);
         }
+
         /** The stage of the Certificate definition allowing to specify hostNames. */
         interface WithHostNames {
             /**
@@ -342,6 +350,7 @@ public interface Certificate {
              */
             WithCreate withHostNames(List<String> hostNames);
         }
+
         /** The stage of the Certificate definition allowing to specify pfxBlob. */
         interface WithPfxBlob {
             /**
@@ -352,6 +361,7 @@ public interface Certificate {
              */
             WithCreate withPfxBlob(byte[] pfxBlob);
         }
+
         /** The stage of the Certificate definition allowing to specify keyVaultId. */
         interface WithKeyVaultId {
             /**
@@ -362,6 +372,7 @@ public interface Certificate {
              */
             WithCreate withKeyVaultId(String keyVaultId);
         }
+
         /** The stage of the Certificate definition allowing to specify keyVaultSecretName. */
         interface WithKeyVaultSecretName {
             /**
@@ -372,6 +383,7 @@ public interface Certificate {
              */
             WithCreate withKeyVaultSecretName(String keyVaultSecretName);
         }
+
         /** The stage of the Certificate definition allowing to specify serverFarmId. */
         interface WithServerFarmId {
             /**
@@ -384,6 +396,7 @@ public interface Certificate {
              */
             WithCreate withServerFarmId(String serverFarmId);
         }
+
         /** The stage of the Certificate definition allowing to specify canonicalName. */
         interface WithCanonicalName {
             /**
@@ -394,6 +407,7 @@ public interface Certificate {
              */
             WithCreate withCanonicalName(String canonicalName);
         }
+
         /** The stage of the Certificate definition allowing to specify domainValidationMethod. */
         interface WithDomainValidationMethod {
             /**
@@ -405,6 +419,7 @@ public interface Certificate {
             WithCreate withDomainValidationMethod(String domainValidationMethod);
         }
     }
+
     /**
      * Begins update for the Certificate resource.
      *
@@ -437,6 +452,7 @@ public interface Certificate {
          */
         Certificate apply(Context context);
     }
+
     /** The Certificate update stages. */
     interface UpdateStages {
         /** The stage of the Certificate update allowing to specify kind. */
@@ -449,6 +465,7 @@ public interface Certificate {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the Certificate update allowing to specify hostNames. */
         interface WithHostNames {
             /**
@@ -459,6 +476,7 @@ public interface Certificate {
              */
             Update withHostNames(List<String> hostNames);
         }
+
         /** The stage of the Certificate update allowing to specify pfxBlob. */
         interface WithPfxBlob {
             /**
@@ -469,6 +487,7 @@ public interface Certificate {
              */
             Update withPfxBlob(byte[] pfxBlob);
         }
+
         /** The stage of the Certificate update allowing to specify keyVaultId. */
         interface WithKeyVaultId {
             /**
@@ -479,6 +498,7 @@ public interface Certificate {
              */
             Update withKeyVaultId(String keyVaultId);
         }
+
         /** The stage of the Certificate update allowing to specify keyVaultSecretName. */
         interface WithKeyVaultSecretName {
             /**
@@ -489,6 +509,7 @@ public interface Certificate {
              */
             Update withKeyVaultSecretName(String keyVaultSecretName);
         }
+
         /** The stage of the Certificate update allowing to specify serverFarmId. */
         interface WithServerFarmId {
             /**
@@ -501,6 +522,7 @@ public interface Certificate {
              */
             Update withServerFarmId(String serverFarmId);
         }
+
         /** The stage of the Certificate update allowing to specify canonicalName. */
         interface WithCanonicalName {
             /**
@@ -511,6 +533,7 @@ public interface Certificate {
              */
             Update withCanonicalName(String canonicalName);
         }
+
         /** The stage of the Certificate update allowing to specify domainValidationMethod. */
         interface WithDomainValidationMethod {
             /**
@@ -522,6 +545,7 @@ public interface Certificate {
             Update withDomainValidationMethod(String domainValidationMethod);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

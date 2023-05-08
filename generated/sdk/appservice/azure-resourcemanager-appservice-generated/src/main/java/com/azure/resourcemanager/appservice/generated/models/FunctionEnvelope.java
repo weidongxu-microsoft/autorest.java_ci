@@ -141,11 +141,13 @@ public interface FunctionEnvelope {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The FunctionEnvelope definition stages. */
     interface DefinitionStages {
         /** The first stage of the FunctionEnvelope definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -157,6 +159,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the FunctionEnvelope definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -191,6 +194,7 @@ public interface FunctionEnvelope {
              */
             FunctionEnvelope create(Context context);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -201,6 +205,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify functionAppId. */
         interface WithFunctionAppId {
             /**
@@ -211,6 +216,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withFunctionAppId(String functionAppId);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify scriptRootPathHref. */
         interface WithScriptRootPathHref {
             /**
@@ -221,6 +227,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withScriptRootPathHref(String scriptRootPathHref);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify scriptHref. */
         interface WithScriptHref {
             /**
@@ -231,6 +238,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withScriptHref(String scriptHref);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify configHref. */
         interface WithConfigHref {
             /**
@@ -241,6 +249,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withConfigHref(String configHref);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify testDataHref. */
         interface WithTestDataHref {
             /**
@@ -251,6 +260,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withTestDataHref(String testDataHref);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify secretsFileHref. */
         interface WithSecretsFileHref {
             /**
@@ -261,6 +271,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withSecretsFileHref(String secretsFileHref);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify href. */
         interface WithHref {
             /**
@@ -271,6 +282,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withHref(String href);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify config. */
         interface WithConfig {
             /**
@@ -281,6 +293,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withConfig(Object config);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify files. */
         interface WithFiles {
             /**
@@ -291,6 +304,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withFiles(Map<String, String> files);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify testData. */
         interface WithTestData {
             /**
@@ -301,6 +315,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withTestData(String testData);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify invokeUrlTemplate. */
         interface WithInvokeUrlTemplate {
             /**
@@ -311,6 +326,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withInvokeUrlTemplate(String invokeUrlTemplate);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify language. */
         interface WithLanguage {
             /**
@@ -321,6 +337,7 @@ public interface FunctionEnvelope {
              */
             WithCreate withLanguage(String language);
         }
+
         /** The stage of the FunctionEnvelope definition allowing to specify isDisabled. */
         interface WithIsDisabled {
             /**
@@ -332,6 +349,7 @@ public interface FunctionEnvelope {
             WithCreate withIsDisabled(Boolean isDisabled);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

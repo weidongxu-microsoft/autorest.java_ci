@@ -77,11 +77,13 @@ public interface Export {
     /** The entirety of the Export definition. */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScope, DefinitionStages.WithCreate {
     }
+
     /** The Export definition stages. */
     interface DefinitionStages {
         /** The first stage of the Export definition. */
         interface Blank extends WithScope {
         }
+
         /** The stage of the Export definition allowing to specify parent resource. */
         interface WithScope {
             /**
@@ -106,6 +108,7 @@ public interface Export {
              */
             WithCreate withExistingScope(String scope);
         }
+
         /**
          * The stage of the Export definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -131,6 +134,7 @@ public interface Export {
              */
             Export create(Context context);
         }
+
         /** The stage of the Export definition allowing to specify etag. */
         interface WithEtag {
             /**
@@ -143,6 +147,7 @@ public interface Export {
              */
             WithCreate withEtag(String etag);
         }
+
         /** The stage of the Export definition allowing to specify schedule. */
         interface WithSchedule {
             /**
@@ -153,6 +158,7 @@ public interface Export {
              */
             WithCreate withSchedule(ExportSchedule schedule);
         }
+
         /** The stage of the Export definition allowing to specify format. */
         interface WithFormat {
             /**
@@ -163,6 +169,7 @@ public interface Export {
              */
             WithCreate withFormat(FormatType format);
         }
+
         /** The stage of the Export definition allowing to specify deliveryInfo. */
         interface WithDeliveryInfo {
             /**
@@ -173,6 +180,7 @@ public interface Export {
              */
             WithCreate withDeliveryInfo(ExportDeliveryInfo deliveryInfo);
         }
+
         /** The stage of the Export definition allowing to specify definition. */
         interface WithDefinition {
             /**
@@ -184,6 +192,7 @@ public interface Export {
             WithCreate withDefinition(ExportDefinition definition);
         }
     }
+
     /**
      * Begins update for the Export resource.
      *
@@ -213,6 +222,7 @@ public interface Export {
          */
         Export apply(Context context);
     }
+
     /** The Export update stages. */
     interface UpdateStages {
         /** The stage of the Export update allowing to specify etag. */
@@ -227,6 +237,7 @@ public interface Export {
              */
             Update withEtag(String etag);
         }
+
         /** The stage of the Export update allowing to specify schedule. */
         interface WithSchedule {
             /**
@@ -237,6 +248,7 @@ public interface Export {
              */
             Update withSchedule(ExportSchedule schedule);
         }
+
         /** The stage of the Export update allowing to specify format. */
         interface WithFormat {
             /**
@@ -247,6 +259,7 @@ public interface Export {
              */
             Update withFormat(FormatType format);
         }
+
         /** The stage of the Export update allowing to specify deliveryInfo. */
         interface WithDeliveryInfo {
             /**
@@ -257,6 +270,7 @@ public interface Export {
              */
             Update withDeliveryInfo(ExportDeliveryInfo deliveryInfo);
         }
+
         /** The stage of the Export update allowing to specify definition. */
         interface WithDefinition {
             /**
@@ -268,6 +282,7 @@ public interface Export {
             Update withDefinition(ExportDefinition definition);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

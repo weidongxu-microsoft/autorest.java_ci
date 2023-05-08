@@ -197,11 +197,13 @@ public interface Workspace {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Workspace definition stages. */
     interface DefinitionStages {
         /** The first stage of the Workspace definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Workspace definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -220,6 +222,7 @@ public interface Workspace {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Workspace definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -230,6 +233,7 @@ public interface Workspace {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Workspace definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -261,6 +265,7 @@ public interface Workspace {
              */
             Workspace create(Context context);
         }
+
         /** The stage of the Workspace definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -271,6 +276,7 @@ public interface Workspace {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Workspace definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -281,6 +287,7 @@ public interface Workspace {
              */
             WithCreate withIdentity(Identity identity);
         }
+
         /** The stage of the Workspace definition allowing to specify etag. */
         interface WithEtag {
             /**
@@ -291,6 +298,7 @@ public interface Workspace {
              */
             WithCreate withEtag(String etag);
         }
+
         /** The stage of the Workspace definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -301,6 +309,7 @@ public interface Workspace {
              */
             WithCreate withSku(WorkspaceSku sku);
         }
+
         /** The stage of the Workspace definition allowing to specify retentionInDays. */
         interface WithRetentionInDays {
             /**
@@ -313,6 +322,7 @@ public interface Workspace {
              */
             WithCreate withRetentionInDays(Integer retentionInDays);
         }
+
         /** The stage of the Workspace definition allowing to specify workspaceCapping. */
         interface WithWorkspaceCapping {
             /**
@@ -323,6 +333,7 @@ public interface Workspace {
              */
             WithCreate withWorkspaceCapping(WorkspaceCapping workspaceCapping);
         }
+
         /** The stage of the Workspace definition allowing to specify publicNetworkAccessForIngestion. */
         interface WithPublicNetworkAccessForIngestion {
             /**
@@ -334,6 +345,7 @@ public interface Workspace {
              */
             WithCreate withPublicNetworkAccessForIngestion(PublicNetworkAccessType publicNetworkAccessForIngestion);
         }
+
         /** The stage of the Workspace definition allowing to specify publicNetworkAccessForQuery. */
         interface WithPublicNetworkAccessForQuery {
             /**
@@ -345,6 +357,7 @@ public interface Workspace {
              */
             WithCreate withPublicNetworkAccessForQuery(PublicNetworkAccessType publicNetworkAccessForQuery);
         }
+
         /** The stage of the Workspace definition allowing to specify forceCmkForQuery. */
         interface WithForceCmkForQuery {
             /**
@@ -356,6 +369,7 @@ public interface Workspace {
              */
             WithCreate withForceCmkForQuery(Boolean forceCmkForQuery);
         }
+
         /** The stage of the Workspace definition allowing to specify features. */
         interface WithFeatures {
             /**
@@ -366,6 +380,7 @@ public interface Workspace {
              */
             WithCreate withFeatures(WorkspaceFeatures features);
         }
+
         /** The stage of the Workspace definition allowing to specify defaultDataCollectionRuleResourceId. */
         interface WithDefaultDataCollectionRuleResourceId {
             /**
@@ -381,6 +396,7 @@ public interface Workspace {
             WithCreate withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId);
         }
     }
+
     /**
      * Begins update for the Workspace resource.
      *
@@ -415,6 +431,7 @@ public interface Workspace {
          */
         Workspace apply(Context context);
     }
+
     /** The Workspace update stages. */
     interface UpdateStages {
         /** The stage of the Workspace update allowing to specify tags. */
@@ -427,6 +444,7 @@ public interface Workspace {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the Workspace update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -437,6 +455,7 @@ public interface Workspace {
              */
             Update withIdentity(Identity identity);
         }
+
         /** The stage of the Workspace update allowing to specify sku. */
         interface WithSku {
             /**
@@ -447,6 +466,7 @@ public interface Workspace {
              */
             Update withSku(WorkspaceSku sku);
         }
+
         /** The stage of the Workspace update allowing to specify retentionInDays. */
         interface WithRetentionInDays {
             /**
@@ -459,6 +479,7 @@ public interface Workspace {
              */
             Update withRetentionInDays(Integer retentionInDays);
         }
+
         /** The stage of the Workspace update allowing to specify workspaceCapping. */
         interface WithWorkspaceCapping {
             /**
@@ -469,6 +490,7 @@ public interface Workspace {
              */
             Update withWorkspaceCapping(WorkspaceCapping workspaceCapping);
         }
+
         /** The stage of the Workspace update allowing to specify publicNetworkAccessForIngestion. */
         interface WithPublicNetworkAccessForIngestion {
             /**
@@ -480,6 +502,7 @@ public interface Workspace {
              */
             Update withPublicNetworkAccessForIngestion(PublicNetworkAccessType publicNetworkAccessForIngestion);
         }
+
         /** The stage of the Workspace update allowing to specify publicNetworkAccessForQuery. */
         interface WithPublicNetworkAccessForQuery {
             /**
@@ -491,6 +514,7 @@ public interface Workspace {
              */
             Update withPublicNetworkAccessForQuery(PublicNetworkAccessType publicNetworkAccessForQuery);
         }
+
         /** The stage of the Workspace update allowing to specify forceCmkForQuery. */
         interface WithForceCmkForQuery {
             /**
@@ -502,6 +526,7 @@ public interface Workspace {
              */
             Update withForceCmkForQuery(Boolean forceCmkForQuery);
         }
+
         /** The stage of the Workspace update allowing to specify features. */
         interface WithFeatures {
             /**
@@ -512,6 +537,7 @@ public interface Workspace {
              */
             Update withFeatures(WorkspaceFeatures features);
         }
+
         /** The stage of the Workspace update allowing to specify defaultDataCollectionRuleResourceId. */
         interface WithDefaultDataCollectionRuleResourceId {
             /**
@@ -527,6 +553,7 @@ public interface Workspace {
             Update withDefaultDataCollectionRuleResourceId(String defaultDataCollectionRuleResourceId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

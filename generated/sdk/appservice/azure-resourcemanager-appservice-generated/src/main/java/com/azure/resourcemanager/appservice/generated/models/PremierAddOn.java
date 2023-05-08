@@ -123,11 +123,13 @@ public interface PremierAddOn {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The PremierAddOn definition stages. */
     interface DefinitionStages {
         /** The first stage of the PremierAddOn definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the PremierAddOn definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -146,6 +148,7 @@ public interface PremierAddOn {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -157,6 +160,7 @@ public interface PremierAddOn {
              */
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the PremierAddOn definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -184,6 +188,7 @@ public interface PremierAddOn {
              */
             PremierAddOn create(Context context);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -194,6 +199,7 @@ public interface PremierAddOn {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -204,6 +210,7 @@ public interface PremierAddOn {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -214,6 +221,7 @@ public interface PremierAddOn {
              */
             WithCreate withSku(String sku);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify product. */
         interface WithProduct {
             /**
@@ -224,6 +232,7 @@ public interface PremierAddOn {
              */
             WithCreate withProduct(String product);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify vendor. */
         interface WithVendor {
             /**
@@ -234,6 +243,7 @@ public interface PremierAddOn {
              */
             WithCreate withVendor(String vendor);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify marketplacePublisher. */
         interface WithMarketplacePublisher {
             /**
@@ -244,6 +254,7 @@ public interface PremierAddOn {
              */
             WithCreate withMarketplacePublisher(String marketplacePublisher);
         }
+
         /** The stage of the PremierAddOn definition allowing to specify marketplaceOffer. */
         interface WithMarketplaceOffer {
             /**
@@ -255,6 +266,7 @@ public interface PremierAddOn {
             WithCreate withMarketplaceOffer(String marketplaceOffer);
         }
     }
+
     /**
      * Begins update for the PremierAddOn resource.
      *
@@ -285,6 +297,7 @@ public interface PremierAddOn {
          */
         PremierAddOn apply(Context context);
     }
+
     /** The PremierAddOn update stages. */
     interface UpdateStages {
         /** The stage of the PremierAddOn update allowing to specify kind. */
@@ -297,6 +310,7 @@ public interface PremierAddOn {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the PremierAddOn update allowing to specify sku. */
         interface WithSku {
             /**
@@ -307,6 +321,7 @@ public interface PremierAddOn {
              */
             Update withSku(String sku);
         }
+
         /** The stage of the PremierAddOn update allowing to specify product. */
         interface WithProduct {
             /**
@@ -317,6 +332,7 @@ public interface PremierAddOn {
              */
             Update withProduct(String product);
         }
+
         /** The stage of the PremierAddOn update allowing to specify vendor. */
         interface WithVendor {
             /**
@@ -327,6 +343,7 @@ public interface PremierAddOn {
              */
             Update withVendor(String vendor);
         }
+
         /** The stage of the PremierAddOn update allowing to specify marketplacePublisher. */
         interface WithMarketplacePublisher {
             /**
@@ -337,6 +354,7 @@ public interface PremierAddOn {
              */
             Update withMarketplacePublisher(String marketplacePublisher);
         }
+
         /** The stage of the PremierAddOn update allowing to specify marketplaceOffer. */
         interface WithMarketplaceOffer {
             /**
@@ -348,6 +366,7 @@ public interface PremierAddOn {
             Update withMarketplaceOffer(String marketplaceOffer);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

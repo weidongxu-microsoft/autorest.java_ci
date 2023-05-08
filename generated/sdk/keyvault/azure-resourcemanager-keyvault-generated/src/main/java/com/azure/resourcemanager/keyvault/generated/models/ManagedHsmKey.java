@@ -119,11 +119,13 @@ public interface ManagedHsmKey {
             DefinitionStages.WithProperties,
             DefinitionStages.WithCreate {
     }
+
     /** The ManagedHsmKey definition stages. */
     interface DefinitionStages {
         /** The first stage of the ManagedHsmKey definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ManagedHsmKey definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -135,6 +137,7 @@ public interface ManagedHsmKey {
              */
             WithProperties withExistingManagedHSM(String resourceGroupName, String name);
         }
+
         /** The stage of the ManagedHsmKey definition allowing to specify properties. */
         interface WithProperties {
             /**
@@ -145,6 +148,7 @@ public interface ManagedHsmKey {
              */
             WithCreate withProperties(ManagedHsmKeyProperties properties);
         }
+
         /**
          * The stage of the ManagedHsmKey definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -165,6 +169,7 @@ public interface ManagedHsmKey {
              */
             ManagedHsmKey create(Context context);
         }
+
         /** The stage of the ManagedHsmKey definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -176,6 +181,7 @@ public interface ManagedHsmKey {
             WithCreate withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

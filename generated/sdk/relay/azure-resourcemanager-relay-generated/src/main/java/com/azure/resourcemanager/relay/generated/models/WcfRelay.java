@@ -140,11 +140,13 @@ public interface WcfRelay {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The WcfRelay definition stages. */
     interface DefinitionStages {
         /** The first stage of the WcfRelay definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the WcfRelay definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -156,6 +158,7 @@ public interface WcfRelay {
              */
             WithCreate withExistingNamespace(String resourceGroupName, String namespaceName);
         }
+
         /**
          * The stage of the WcfRelay definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -180,6 +183,7 @@ public interface WcfRelay {
              */
             WcfRelay create(Context context);
         }
+
         /** The stage of the WcfRelay definition allowing to specify relayType. */
         interface WithRelayType {
             /**
@@ -190,6 +194,7 @@ public interface WcfRelay {
              */
             WithCreate withRelayType(Relaytype relayType);
         }
+
         /** The stage of the WcfRelay definition allowing to specify requiresClientAuthorization. */
         interface WithRequiresClientAuthorization {
             /**
@@ -202,6 +207,7 @@ public interface WcfRelay {
              */
             WithCreate withRequiresClientAuthorization(Boolean requiresClientAuthorization);
         }
+
         /** The stage of the WcfRelay definition allowing to specify requiresTransportSecurity. */
         interface WithRequiresTransportSecurity {
             /**
@@ -214,6 +220,7 @@ public interface WcfRelay {
              */
             WithCreate withRequiresTransportSecurity(Boolean requiresTransportSecurity);
         }
+
         /** The stage of the WcfRelay definition allowing to specify userMetadata. */
         interface WithUserMetadata {
             /**
@@ -229,6 +236,7 @@ public interface WcfRelay {
             WithCreate withUserMetadata(String userMetadata);
         }
     }
+
     /**
      * Begins update for the WcfRelay resource.
      *
@@ -257,6 +265,7 @@ public interface WcfRelay {
          */
         WcfRelay apply(Context context);
     }
+
     /** The WcfRelay update stages. */
     interface UpdateStages {
         /** The stage of the WcfRelay update allowing to specify relayType. */
@@ -269,6 +278,7 @@ public interface WcfRelay {
              */
             Update withRelayType(Relaytype relayType);
         }
+
         /** The stage of the WcfRelay update allowing to specify requiresClientAuthorization. */
         interface WithRequiresClientAuthorization {
             /**
@@ -281,6 +291,7 @@ public interface WcfRelay {
              */
             Update withRequiresClientAuthorization(Boolean requiresClientAuthorization);
         }
+
         /** The stage of the WcfRelay update allowing to specify requiresTransportSecurity. */
         interface WithRequiresTransportSecurity {
             /**
@@ -293,6 +304,7 @@ public interface WcfRelay {
              */
             Update withRequiresTransportSecurity(Boolean requiresTransportSecurity);
         }
+
         /** The stage of the WcfRelay update allowing to specify userMetadata. */
         interface WithUserMetadata {
             /**
@@ -308,6 +320,7 @@ public interface WcfRelay {
             Update withUserMetadata(String userMetadata);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

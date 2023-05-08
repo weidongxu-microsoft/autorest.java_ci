@@ -138,11 +138,13 @@ public interface PolicyAssignment {
     /** The entirety of the PolicyAssignment definition. */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScope, DefinitionStages.WithCreate {
     }
+
     /** The PolicyAssignment definition stages. */
     interface DefinitionStages {
         /** The first stage of the PolicyAssignment definition. */
         interface Blank extends WithScope {
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify parent resource. */
         interface WithScope {
             /**
@@ -157,6 +159,7 @@ public interface PolicyAssignment {
              */
             WithCreate withExistingScope(String scope);
         }
+
         /**
          * The stage of the PolicyAssignment definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -187,6 +190,7 @@ public interface PolicyAssignment {
              */
             PolicyAssignment create(Context context);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -205,6 +209,7 @@ public interface PolicyAssignment {
              */
             WithCreate withRegion(String location);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -215,6 +220,7 @@ public interface PolicyAssignment {
              */
             WithCreate withIdentity(Identity identity);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -225,6 +231,7 @@ public interface PolicyAssignment {
              */
             WithCreate withDisplayName(String displayName);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify policyDefinitionId. */
         interface WithPolicyDefinitionId {
             /**
@@ -236,6 +243,7 @@ public interface PolicyAssignment {
              */
             WithCreate withPolicyDefinitionId(String policyDefinitionId);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify notScopes. */
         interface WithNotScopes {
             /**
@@ -246,6 +254,7 @@ public interface PolicyAssignment {
              */
             WithCreate withNotScopes(List<String> notScopes);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify parameters. */
         interface WithParameters {
             /**
@@ -257,6 +266,7 @@ public interface PolicyAssignment {
              */
             WithCreate withParameters(Map<String, ParameterValuesValue> parameters);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -267,6 +277,7 @@ public interface PolicyAssignment {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -279,6 +290,7 @@ public interface PolicyAssignment {
              */
             WithCreate withMetadata(Object metadata);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify enforcementMode. */
         interface WithEnforcementMode {
             /**
@@ -291,6 +303,7 @@ public interface PolicyAssignment {
              */
             WithCreate withEnforcementMode(EnforcementMode enforcementMode);
         }
+
         /** The stage of the PolicyAssignment definition allowing to specify nonComplianceMessages. */
         interface WithNonComplianceMessages {
             /**
@@ -303,6 +316,7 @@ public interface PolicyAssignment {
             WithCreate withNonComplianceMessages(List<NonComplianceMessage> nonComplianceMessages);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -193,11 +193,13 @@ public interface LiveEvent {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The LiveEvent definition stages. */
     interface DefinitionStages {
         /** The first stage of the LiveEvent definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the LiveEvent definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -216,6 +218,7 @@ public interface LiveEvent {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the LiveEvent definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -227,6 +230,7 @@ public interface LiveEvent {
              */
             WithCreate withExistingMediaservice(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the LiveEvent definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -258,6 +262,7 @@ public interface LiveEvent {
              */
             LiveEvent create(Context context);
         }
+
         /** The stage of the LiveEvent definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -268,6 +273,7 @@ public interface LiveEvent {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the LiveEvent definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -278,6 +284,7 @@ public interface LiveEvent {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the LiveEvent definition allowing to specify input. */
         interface WithInput {
             /**
@@ -290,6 +297,7 @@ public interface LiveEvent {
              */
             WithCreate withInput(LiveEventInput input);
         }
+
         /** The stage of the LiveEvent definition allowing to specify preview. */
         interface WithPreview {
             /**
@@ -302,6 +310,7 @@ public interface LiveEvent {
              */
             WithCreate withPreview(LiveEventPreview preview);
         }
+
         /** The stage of the LiveEvent definition allowing to specify encoding. */
         interface WithEncoding {
             /**
@@ -314,6 +323,7 @@ public interface LiveEvent {
              */
             WithCreate withEncoding(LiveEventEncoding encoding);
         }
+
         /** The stage of the LiveEvent definition allowing to specify transcriptions. */
         interface WithTranscriptions {
             /**
@@ -328,6 +338,7 @@ public interface LiveEvent {
              */
             WithCreate withTranscriptions(List<LiveEventTranscription> transcriptions);
         }
+
         /** The stage of the LiveEvent definition allowing to specify crossSiteAccessPolicies. */
         interface WithCrossSiteAccessPolicies {
             /**
@@ -338,6 +349,7 @@ public interface LiveEvent {
              */
             WithCreate withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies);
         }
+
         /** The stage of the LiveEvent definition allowing to specify useStaticHostname. */
         interface WithUseStaticHostname {
             /**
@@ -351,6 +363,7 @@ public interface LiveEvent {
              */
             WithCreate withUseStaticHostname(Boolean useStaticHostname);
         }
+
         /** The stage of the LiveEvent definition allowing to specify hostnamePrefix. */
         interface WithHostnamePrefix {
             /**
@@ -367,6 +380,7 @@ public interface LiveEvent {
              */
             WithCreate withHostnamePrefix(String hostnamePrefix);
         }
+
         /** The stage of the LiveEvent definition allowing to specify streamOptions. */
         interface WithStreamOptions {
             /**
@@ -380,6 +394,7 @@ public interface LiveEvent {
              */
             WithCreate withStreamOptions(List<StreamOptionsFlag> streamOptions);
         }
+
         /** The stage of the LiveEvent definition allowing to specify autoStart. */
         interface WithAutoStart {
             /**
@@ -392,6 +407,7 @@ public interface LiveEvent {
             WithCreate withAutoStart(Boolean autoStart);
         }
     }
+
     /**
      * Begins update for the LiveEvent resource.
      *
@@ -426,6 +442,7 @@ public interface LiveEvent {
          */
         LiveEvent apply(Context context);
     }
+
     /** The LiveEvent update stages. */
     interface UpdateStages {
         /** The stage of the LiveEvent update allowing to specify tags. */
@@ -438,6 +455,7 @@ public interface LiveEvent {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the LiveEvent update allowing to specify description. */
         interface WithDescription {
             /**
@@ -448,6 +466,7 @@ public interface LiveEvent {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the LiveEvent update allowing to specify input. */
         interface WithInput {
             /**
@@ -460,6 +479,7 @@ public interface LiveEvent {
              */
             Update withInput(LiveEventInput input);
         }
+
         /** The stage of the LiveEvent update allowing to specify preview. */
         interface WithPreview {
             /**
@@ -472,6 +492,7 @@ public interface LiveEvent {
              */
             Update withPreview(LiveEventPreview preview);
         }
+
         /** The stage of the LiveEvent update allowing to specify encoding. */
         interface WithEncoding {
             /**
@@ -484,6 +505,7 @@ public interface LiveEvent {
              */
             Update withEncoding(LiveEventEncoding encoding);
         }
+
         /** The stage of the LiveEvent update allowing to specify transcriptions. */
         interface WithTranscriptions {
             /**
@@ -498,6 +520,7 @@ public interface LiveEvent {
              */
             Update withTranscriptions(List<LiveEventTranscription> transcriptions);
         }
+
         /** The stage of the LiveEvent update allowing to specify crossSiteAccessPolicies. */
         interface WithCrossSiteAccessPolicies {
             /**
@@ -508,6 +531,7 @@ public interface LiveEvent {
              */
             Update withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies);
         }
+
         /** The stage of the LiveEvent update allowing to specify useStaticHostname. */
         interface WithUseStaticHostname {
             /**
@@ -521,6 +545,7 @@ public interface LiveEvent {
              */
             Update withUseStaticHostname(Boolean useStaticHostname);
         }
+
         /** The stage of the LiveEvent update allowing to specify hostnamePrefix. */
         interface WithHostnamePrefix {
             /**
@@ -537,6 +562,7 @@ public interface LiveEvent {
              */
             Update withHostnamePrefix(String hostnamePrefix);
         }
+
         /** The stage of the LiveEvent update allowing to specify streamOptions. */
         interface WithStreamOptions {
             /**
@@ -551,6 +577,7 @@ public interface LiveEvent {
             Update withStreamOptions(List<StreamOptionsFlag> streamOptions);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

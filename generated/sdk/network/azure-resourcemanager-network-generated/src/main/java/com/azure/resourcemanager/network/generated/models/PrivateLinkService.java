@@ -170,11 +170,13 @@ public interface PrivateLinkService {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The PrivateLinkService definition stages. */
     interface DefinitionStages {
         /** The first stage of the PrivateLinkService definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -193,6 +195,7 @@ public interface PrivateLinkService {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -203,6 +206,7 @@ public interface PrivateLinkService {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the PrivateLinkService definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -231,6 +235,7 @@ public interface PrivateLinkService {
              */
             PrivateLinkService create(Context context);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -241,6 +246,7 @@ public interface PrivateLinkService {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -251,6 +257,7 @@ public interface PrivateLinkService {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify loadBalancerFrontendIpConfigurations. */
         interface WithLoadBalancerFrontendIpConfigurations {
             /**
@@ -264,6 +271,7 @@ public interface PrivateLinkService {
             WithCreate withLoadBalancerFrontendIpConfigurations(
                 List<FrontendIpConfigurationInner> loadBalancerFrontendIpConfigurations);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
             /**
@@ -274,6 +282,7 @@ public interface PrivateLinkService {
              */
             WithCreate withIpConfigurations(List<PrivateLinkServiceIpConfigurationInner> ipConfigurations);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify visibility. */
         interface WithVisibility {
             /**
@@ -284,6 +293,7 @@ public interface PrivateLinkService {
              */
             WithCreate withVisibility(PrivateLinkServicePropertiesVisibility visibility);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify autoApproval. */
         interface WithAutoApproval {
             /**
@@ -294,6 +304,7 @@ public interface PrivateLinkService {
              */
             WithCreate withAutoApproval(PrivateLinkServicePropertiesAutoApproval autoApproval);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify fqdns. */
         interface WithFqdns {
             /**
@@ -304,6 +315,7 @@ public interface PrivateLinkService {
              */
             WithCreate withFqdns(List<String> fqdns);
         }
+
         /** The stage of the PrivateLinkService definition allowing to specify enableProxyProtocol. */
         interface WithEnableProxyProtocol {
             /**
@@ -316,6 +328,7 @@ public interface PrivateLinkService {
             WithCreate withEnableProxyProtocol(Boolean enableProxyProtocol);
         }
     }
+
     /**
      * Begins update for the PrivateLinkService resource.
      *
@@ -348,6 +361,7 @@ public interface PrivateLinkService {
          */
         PrivateLinkService apply(Context context);
     }
+
     /** The PrivateLinkService update stages. */
     interface UpdateStages {
         /** The stage of the PrivateLinkService update allowing to specify tags. */
@@ -360,6 +374,7 @@ public interface PrivateLinkService {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the PrivateLinkService update allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -370,6 +385,7 @@ public interface PrivateLinkService {
              */
             Update withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the PrivateLinkService update allowing to specify loadBalancerFrontendIpConfigurations. */
         interface WithLoadBalancerFrontendIpConfigurations {
             /**
@@ -383,6 +399,7 @@ public interface PrivateLinkService {
             Update withLoadBalancerFrontendIpConfigurations(
                 List<FrontendIpConfigurationInner> loadBalancerFrontendIpConfigurations);
         }
+
         /** The stage of the PrivateLinkService update allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
             /**
@@ -393,6 +410,7 @@ public interface PrivateLinkService {
              */
             Update withIpConfigurations(List<PrivateLinkServiceIpConfigurationInner> ipConfigurations);
         }
+
         /** The stage of the PrivateLinkService update allowing to specify visibility. */
         interface WithVisibility {
             /**
@@ -403,6 +421,7 @@ public interface PrivateLinkService {
              */
             Update withVisibility(PrivateLinkServicePropertiesVisibility visibility);
         }
+
         /** The stage of the PrivateLinkService update allowing to specify autoApproval. */
         interface WithAutoApproval {
             /**
@@ -413,6 +432,7 @@ public interface PrivateLinkService {
              */
             Update withAutoApproval(PrivateLinkServicePropertiesAutoApproval autoApproval);
         }
+
         /** The stage of the PrivateLinkService update allowing to specify fqdns. */
         interface WithFqdns {
             /**
@@ -423,6 +443,7 @@ public interface PrivateLinkService {
              */
             Update withFqdns(List<String> fqdns);
         }
+
         /** The stage of the PrivateLinkService update allowing to specify enableProxyProtocol. */
         interface WithEnableProxyProtocol {
             /**
@@ -435,6 +456,7 @@ public interface PrivateLinkService {
             Update withEnableProxyProtocol(Boolean enableProxyProtocol);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

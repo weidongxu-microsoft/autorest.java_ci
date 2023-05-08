@@ -182,11 +182,13 @@ public interface VirtualMachineExtension {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualMachineExtension definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualMachineExtension definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -205,6 +207,7 @@ public interface VirtualMachineExtension {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -216,6 +219,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withExistingVirtualMachine(String resourceGroupName, String vmName);
         }
+
         /**
          * The stage of the VirtualMachineExtension definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -249,6 +253,7 @@ public interface VirtualMachineExtension {
              */
             VirtualMachineExtension create(Context context);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -259,6 +264,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify forceUpdateTag. */
         interface WithForceUpdateTag {
             /**
@@ -271,6 +277,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withForceUpdateTag(String forceUpdateTag);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify publisher. */
         interface WithPublisher {
             /**
@@ -281,6 +288,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withPublisher(String publisher);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify typePropertiesType. */
         interface WithTypePropertiesType {
             /**
@@ -292,6 +300,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withTypePropertiesType(String typePropertiesType);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify typeHandlerVersion. */
         interface WithTypeHandlerVersion {
             /**
@@ -302,6 +311,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withTypeHandlerVersion(String typeHandlerVersion);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify autoUpgradeMinorVersion. */
         interface WithAutoUpgradeMinorVersion {
             /**
@@ -316,6 +326,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify enableAutomaticUpgrade. */
         interface WithEnableAutomaticUpgrade {
             /**
@@ -328,6 +339,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify settings. */
         interface WithSettings {
             /**
@@ -338,6 +350,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withSettings(Object settings);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify protectedSettings. */
         interface WithProtectedSettings {
             /**
@@ -350,6 +363,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withProtectedSettings(Object protectedSettings);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify instanceView. */
         interface WithInstanceView {
             /**
@@ -360,6 +374,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withInstanceView(VirtualMachineExtensionInstanceView instanceView);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify suppressFailures. */
         interface WithSuppressFailures {
             /**
@@ -374,6 +389,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withSuppressFailures(Boolean suppressFailures);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify protectedSettingsFromKeyVault. */
         interface WithProtectedSettingsFromKeyVault {
             /**
@@ -386,6 +402,7 @@ public interface VirtualMachineExtension {
              */
             WithCreate withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
         }
+
         /** The stage of the VirtualMachineExtension definition allowing to specify provisionAfterExtensions. */
         interface WithProvisionAfterExtensions {
             /**
@@ -399,6 +416,7 @@ public interface VirtualMachineExtension {
             WithCreate withProvisionAfterExtensions(List<String> provisionAfterExtensions);
         }
     }
+
     /**
      * Begins update for the VirtualMachineExtension resource.
      *
@@ -434,6 +452,7 @@ public interface VirtualMachineExtension {
          */
         VirtualMachineExtension apply(Context context);
     }
+
     /** The VirtualMachineExtension update stages. */
     interface UpdateStages {
         /** The stage of the VirtualMachineExtension update allowing to specify tags. */
@@ -446,6 +465,7 @@ public interface VirtualMachineExtension {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify forceUpdateTag. */
         interface WithForceUpdateTag {
             /**
@@ -458,6 +478,7 @@ public interface VirtualMachineExtension {
              */
             Update withForceUpdateTag(String forceUpdateTag);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify publisher. */
         interface WithPublisher {
             /**
@@ -468,6 +489,7 @@ public interface VirtualMachineExtension {
              */
             Update withPublisher(String publisher);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify type. */
         interface WithType {
             /**
@@ -478,6 +500,7 @@ public interface VirtualMachineExtension {
              */
             Update withType(String type);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify typeHandlerVersion. */
         interface WithTypeHandlerVersion {
             /**
@@ -488,6 +511,7 @@ public interface VirtualMachineExtension {
              */
             Update withTypeHandlerVersion(String typeHandlerVersion);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify autoUpgradeMinorVersion. */
         interface WithAutoUpgradeMinorVersion {
             /**
@@ -502,6 +526,7 @@ public interface VirtualMachineExtension {
              */
             Update withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify enableAutomaticUpgrade. */
         interface WithEnableAutomaticUpgrade {
             /**
@@ -514,6 +539,7 @@ public interface VirtualMachineExtension {
              */
             Update withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify settings. */
         interface WithSettings {
             /**
@@ -524,6 +550,7 @@ public interface VirtualMachineExtension {
              */
             Update withSettings(Object settings);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify protectedSettings. */
         interface WithProtectedSettings {
             /**
@@ -536,6 +563,7 @@ public interface VirtualMachineExtension {
              */
             Update withProtectedSettings(Object protectedSettings);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify suppressFailures. */
         interface WithSuppressFailures {
             /**
@@ -550,6 +578,7 @@ public interface VirtualMachineExtension {
              */
             Update withSuppressFailures(Boolean suppressFailures);
         }
+
         /** The stage of the VirtualMachineExtension update allowing to specify protectedSettingsFromKeyVault. */
         interface WithProtectedSettingsFromKeyVault {
             /**
@@ -563,6 +592,7 @@ public interface VirtualMachineExtension {
             Update withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

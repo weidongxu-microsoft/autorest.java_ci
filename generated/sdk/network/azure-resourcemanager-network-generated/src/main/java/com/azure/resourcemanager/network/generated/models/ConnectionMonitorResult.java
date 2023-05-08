@@ -178,11 +178,13 @@ public interface ConnectionMonitorResult {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ConnectionMonitorResult definition stages. */
     interface DefinitionStages {
         /** The first stage of the ConnectionMonitorResult definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -194,6 +196,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withExistingNetworkWatcher(String resourceGroupName, String networkWatcherName);
         }
+
         /**
          * The stage of the ConnectionMonitorResult definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -226,6 +229,7 @@ public interface ConnectionMonitorResult {
              */
             ConnectionMonitorResult create(Context context);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -244,6 +248,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withRegion(String location);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -254,6 +259,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify source. */
         interface WithSource {
             /**
@@ -264,6 +270,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withSource(ConnectionMonitorSource source);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify destination. */
         interface WithDestination {
             /**
@@ -274,6 +281,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withDestination(ConnectionMonitorDestination destination);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify autoStart. */
         interface WithAutoStart {
             /**
@@ -285,6 +293,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withAutoStart(Boolean autoStart);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify monitoringIntervalInSeconds. */
         interface WithMonitoringIntervalInSeconds {
             /**
@@ -295,6 +304,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withMonitoringIntervalInSeconds(Integer monitoringIntervalInSeconds);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify endpoints. */
         interface WithEndpoints {
             /**
@@ -305,6 +315,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withEndpoints(List<ConnectionMonitorEndpoint> endpoints);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify testConfigurations. */
         interface WithTestConfigurations {
             /**
@@ -315,6 +326,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withTestConfigurations(List<ConnectionMonitorTestConfiguration> testConfigurations);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify testGroups. */
         interface WithTestGroups {
             /**
@@ -325,6 +337,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withTestGroups(List<ConnectionMonitorTestGroup> testGroups);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify outputs. */
         interface WithOutputs {
             /**
@@ -335,6 +348,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withOutputs(List<ConnectionMonitorOutput> outputs);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify notes. */
         interface WithNotes {
             /**
@@ -345,6 +359,7 @@ public interface ConnectionMonitorResult {
              */
             WithCreate withNotes(String notes);
         }
+
         /** The stage of the ConnectionMonitorResult definition allowing to specify migrate. */
         interface WithMigrate {
             /**
@@ -357,6 +372,7 @@ public interface ConnectionMonitorResult {
             WithCreate withMigrate(String migrate);
         }
     }
+
     /**
      * Begins update for the ConnectionMonitorResult resource.
      *
@@ -381,6 +397,7 @@ public interface ConnectionMonitorResult {
          */
         ConnectionMonitorResult apply(Context context);
     }
+
     /** The ConnectionMonitorResult update stages. */
     interface UpdateStages {
         /** The stage of the ConnectionMonitorResult update allowing to specify tags. */
@@ -394,6 +411,7 @@ public interface ConnectionMonitorResult {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

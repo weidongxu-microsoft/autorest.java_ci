@@ -84,11 +84,13 @@ public interface ResourceGroup {
     /** The entirety of the ResourceGroup definition. */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation, DefinitionStages.WithCreate {
     }
+
     /** The ResourceGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the ResourceGroup definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ResourceGroup definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -107,6 +109,7 @@ public interface ResourceGroup {
              */
             WithCreate withRegion(String location);
         }
+
         /**
          * The stage of the ResourceGroup definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -128,6 +131,7 @@ public interface ResourceGroup {
              */
             ResourceGroup create(Context context);
         }
+
         /** The stage of the ResourceGroup definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -138,6 +142,7 @@ public interface ResourceGroup {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ResourceGroup definition allowing to specify properties. */
         interface WithProperties {
             /**
@@ -148,6 +153,7 @@ public interface ResourceGroup {
              */
             WithCreate withProperties(ResourceGroupProperties properties);
         }
+
         /** The stage of the ResourceGroup definition allowing to specify managedBy. */
         interface WithManagedBy {
             /**
@@ -159,6 +165,7 @@ public interface ResourceGroup {
             WithCreate withManagedBy(String managedBy);
         }
     }
+
     /**
      * Begins update for the ResourceGroup resource.
      *
@@ -184,6 +191,7 @@ public interface ResourceGroup {
          */
         ResourceGroup apply(Context context);
     }
+
     /** The ResourceGroup update stages. */
     interface UpdateStages {
         /** The stage of the ResourceGroup update allowing to specify tags. */
@@ -196,6 +204,7 @@ public interface ResourceGroup {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the ResourceGroup update allowing to specify name. */
         interface WithName {
             /**
@@ -206,6 +215,7 @@ public interface ResourceGroup {
              */
             Update withName(String name);
         }
+
         /** The stage of the ResourceGroup update allowing to specify properties. */
         interface WithProperties {
             /**
@@ -216,6 +226,7 @@ public interface ResourceGroup {
              */
             Update withProperties(ResourceGroupProperties properties);
         }
+
         /** The stage of the ResourceGroup update allowing to specify managedBy. */
         interface WithManagedBy {
             /**
@@ -227,6 +238,7 @@ public interface ResourceGroup {
             Update withManagedBy(String managedBy);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

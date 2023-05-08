@@ -62,11 +62,13 @@ public interface ScopedResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ScopedResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the ScopedResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ScopedResource definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -78,6 +80,7 @@ public interface ScopedResource {
              */
             WithCreate withExistingPrivateLinkScope(String resourceGroupName, String scopeName);
         }
+
         /**
          * The stage of the ScopedResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -98,6 +101,7 @@ public interface ScopedResource {
              */
             ScopedResource create(Context context);
         }
+
         /** The stage of the ScopedResource definition allowing to specify linkedResourceId. */
         interface WithLinkedResourceId {
             /**
@@ -109,6 +113,7 @@ public interface ScopedResource {
             WithCreate withLinkedResourceId(String linkedResourceId);
         }
     }
+
     /**
      * Begins update for the ScopedResource resource.
      *
@@ -133,6 +138,7 @@ public interface ScopedResource {
          */
         ScopedResource apply(Context context);
     }
+
     /** The ScopedResource update stages. */
     interface UpdateStages {
         /** The stage of the ScopedResource update allowing to specify linkedResourceId. */
@@ -146,6 +152,7 @@ public interface ScopedResource {
             Update withLinkedResourceId(String linkedResourceId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

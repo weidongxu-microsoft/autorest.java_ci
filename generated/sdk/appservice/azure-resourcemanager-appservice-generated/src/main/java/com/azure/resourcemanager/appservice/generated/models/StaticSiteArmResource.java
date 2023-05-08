@@ -237,11 +237,13 @@ public interface StaticSiteArmResource {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The StaticSiteArmResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the StaticSiteArmResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -260,6 +262,7 @@ public interface StaticSiteArmResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -270,6 +273,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the StaticSiteArmResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -304,6 +308,7 @@ public interface StaticSiteArmResource {
              */
             StaticSiteArmResource create(Context context);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -314,6 +319,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -324,6 +330,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withSku(SkuDescription sku);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -334,6 +341,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -344,6 +352,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify repositoryUrl. */
         interface WithRepositoryUrl {
             /**
@@ -354,6 +363,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withRepositoryUrl(String repositoryUrl);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify branch. */
         interface WithBranch {
             /**
@@ -364,6 +374,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withBranch(String branch);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify repositoryToken. */
         interface WithRepositoryToken {
             /**
@@ -376,6 +387,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withRepositoryToken(String repositoryToken);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify buildProperties. */
         interface WithBuildProperties {
             /**
@@ -386,6 +398,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withBuildProperties(StaticSiteBuildProperties buildProperties);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify stagingEnvironmentPolicy. */
         interface WithStagingEnvironmentPolicy {
             /**
@@ -398,6 +411,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withStagingEnvironmentPolicy(StagingEnvironmentPolicy stagingEnvironmentPolicy);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify allowConfigFileUpdates. */
         interface WithAllowConfigFileUpdates {
             /**
@@ -410,6 +424,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withAllowConfigFileUpdates(Boolean allowConfigFileUpdates);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify templateProperties. */
         interface WithTemplateProperties {
             /**
@@ -420,6 +435,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withTemplateProperties(StaticSiteTemplateOptions templateProperties);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify provider. */
         interface WithProvider {
             /**
@@ -432,6 +448,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withProvider(String provider);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify enterpriseGradeCdnStatus. */
         interface WithEnterpriseGradeCdnStatus {
             /**
@@ -444,6 +461,7 @@ public interface StaticSiteArmResource {
              */
             WithCreate withEnterpriseGradeCdnStatus(EnterpriseGradeCdnStatus enterpriseGradeCdnStatus);
         }
+
         /** The stage of the StaticSiteArmResource definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -457,6 +475,7 @@ public interface StaticSiteArmResource {
             WithCreate withPublicNetworkAccess(String publicNetworkAccess);
         }
     }
+
     /**
      * Begins update for the StaticSiteArmResource resource.
      *
@@ -492,6 +511,7 @@ public interface StaticSiteArmResource {
          */
         StaticSiteArmResource apply(Context context);
     }
+
     /** The StaticSiteArmResource update stages. */
     interface UpdateStages {
         /** The stage of the StaticSiteArmResource update allowing to specify kind. */
@@ -504,6 +524,7 @@ public interface StaticSiteArmResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify repositoryUrl. */
         interface WithRepositoryUrl {
             /**
@@ -514,6 +535,7 @@ public interface StaticSiteArmResource {
              */
             Update withRepositoryUrl(String repositoryUrl);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify branch. */
         interface WithBranch {
             /**
@@ -524,6 +546,7 @@ public interface StaticSiteArmResource {
              */
             Update withBranch(String branch);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify repositoryToken. */
         interface WithRepositoryToken {
             /**
@@ -536,6 +559,7 @@ public interface StaticSiteArmResource {
              */
             Update withRepositoryToken(String repositoryToken);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify buildProperties. */
         interface WithBuildProperties {
             /**
@@ -546,6 +570,7 @@ public interface StaticSiteArmResource {
              */
             Update withBuildProperties(StaticSiteBuildProperties buildProperties);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify stagingEnvironmentPolicy. */
         interface WithStagingEnvironmentPolicy {
             /**
@@ -558,6 +583,7 @@ public interface StaticSiteArmResource {
              */
             Update withStagingEnvironmentPolicy(StagingEnvironmentPolicy stagingEnvironmentPolicy);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify allowConfigFileUpdates. */
         interface WithAllowConfigFileUpdates {
             /**
@@ -570,6 +596,7 @@ public interface StaticSiteArmResource {
              */
             Update withAllowConfigFileUpdates(Boolean allowConfigFileUpdates);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify templateProperties. */
         interface WithTemplateProperties {
             /**
@@ -580,6 +607,7 @@ public interface StaticSiteArmResource {
              */
             Update withTemplateProperties(StaticSiteTemplateOptions templateProperties);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify provider. */
         interface WithProvider {
             /**
@@ -592,6 +620,7 @@ public interface StaticSiteArmResource {
              */
             Update withProvider(String provider);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify enterpriseGradeCdnStatus. */
         interface WithEnterpriseGradeCdnStatus {
             /**
@@ -604,6 +633,7 @@ public interface StaticSiteArmResource {
              */
             Update withEnterpriseGradeCdnStatus(EnterpriseGradeCdnStatus enterpriseGradeCdnStatus);
         }
+
         /** The stage of the StaticSiteArmResource update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -617,6 +647,7 @@ public interface StaticSiteArmResource {
             Update withPublicNetworkAccess(String publicNetworkAccess);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

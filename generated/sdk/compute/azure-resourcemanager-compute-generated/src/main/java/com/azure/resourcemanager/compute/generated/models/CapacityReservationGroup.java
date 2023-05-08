@@ -115,11 +115,13 @@ public interface CapacityReservationGroup {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The CapacityReservationGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the CapacityReservationGroup definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the CapacityReservationGroup definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -138,6 +140,7 @@ public interface CapacityReservationGroup {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the CapacityReservationGroup definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -148,6 +151,7 @@ public interface CapacityReservationGroup {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the CapacityReservationGroup definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -168,6 +172,7 @@ public interface CapacityReservationGroup {
              */
             CapacityReservationGroup create(Context context);
         }
+
         /** The stage of the CapacityReservationGroup definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -178,6 +183,7 @@ public interface CapacityReservationGroup {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the CapacityReservationGroup definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -193,6 +199,7 @@ public interface CapacityReservationGroup {
             WithCreate withZones(List<String> zones);
         }
     }
+
     /**
      * Begins update for the CapacityReservationGroup resource.
      *
@@ -217,6 +224,7 @@ public interface CapacityReservationGroup {
          */
         CapacityReservationGroup apply(Context context);
     }
+
     /** The CapacityReservationGroup update stages. */
     interface UpdateStages {
         /** The stage of the CapacityReservationGroup update allowing to specify tags. */
@@ -230,6 +238,7 @@ public interface CapacityReservationGroup {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

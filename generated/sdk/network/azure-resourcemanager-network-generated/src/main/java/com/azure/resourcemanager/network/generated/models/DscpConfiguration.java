@@ -166,11 +166,13 @@ public interface DscpConfiguration {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The DscpConfiguration definition stages. */
     interface DefinitionStages {
         /** The first stage of the DscpConfiguration definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -189,6 +191,7 @@ public interface DscpConfiguration {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -199,6 +202,7 @@ public interface DscpConfiguration {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the DscpConfiguration definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -227,6 +231,7 @@ public interface DscpConfiguration {
              */
             DscpConfiguration create(Context context);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -237,6 +242,7 @@ public interface DscpConfiguration {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify markings. */
         interface WithMarkings {
             /**
@@ -247,6 +253,7 @@ public interface DscpConfiguration {
              */
             WithCreate withMarkings(List<Integer> markings);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify sourceIpRanges. */
         interface WithSourceIpRanges {
             /**
@@ -257,6 +264,7 @@ public interface DscpConfiguration {
              */
             WithCreate withSourceIpRanges(List<QosIpRange> sourceIpRanges);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify destinationIpRanges. */
         interface WithDestinationIpRanges {
             /**
@@ -267,6 +275,7 @@ public interface DscpConfiguration {
              */
             WithCreate withDestinationIpRanges(List<QosIpRange> destinationIpRanges);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify sourcePortRanges. */
         interface WithSourcePortRanges {
             /**
@@ -277,6 +286,7 @@ public interface DscpConfiguration {
              */
             WithCreate withSourcePortRanges(List<QosPortRange> sourcePortRanges);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify destinationPortRanges. */
         interface WithDestinationPortRanges {
             /**
@@ -287,6 +297,7 @@ public interface DscpConfiguration {
              */
             WithCreate withDestinationPortRanges(List<QosPortRange> destinationPortRanges);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify protocol. */
         interface WithProtocol {
             /**
@@ -297,6 +308,7 @@ public interface DscpConfiguration {
              */
             WithCreate withProtocol(ProtocolType protocol);
         }
+
         /** The stage of the DscpConfiguration definition allowing to specify qosDefinitionCollection. */
         interface WithQosDefinitionCollection {
             /**
@@ -308,6 +320,7 @@ public interface DscpConfiguration {
             WithCreate withQosDefinitionCollection(List<QosDefinition> qosDefinitionCollection);
         }
     }
+
     /**
      * Begins update for the DscpConfiguration resource.
      *
@@ -340,6 +353,7 @@ public interface DscpConfiguration {
          */
         DscpConfiguration apply(Context context);
     }
+
     /** The DscpConfiguration update stages. */
     interface UpdateStages {
         /** The stage of the DscpConfiguration update allowing to specify tags. */
@@ -352,6 +366,7 @@ public interface DscpConfiguration {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the DscpConfiguration update allowing to specify markings. */
         interface WithMarkings {
             /**
@@ -362,6 +377,7 @@ public interface DscpConfiguration {
              */
             Update withMarkings(List<Integer> markings);
         }
+
         /** The stage of the DscpConfiguration update allowing to specify sourceIpRanges. */
         interface WithSourceIpRanges {
             /**
@@ -372,6 +388,7 @@ public interface DscpConfiguration {
              */
             Update withSourceIpRanges(List<QosIpRange> sourceIpRanges);
         }
+
         /** The stage of the DscpConfiguration update allowing to specify destinationIpRanges. */
         interface WithDestinationIpRanges {
             /**
@@ -382,6 +399,7 @@ public interface DscpConfiguration {
              */
             Update withDestinationIpRanges(List<QosIpRange> destinationIpRanges);
         }
+
         /** The stage of the DscpConfiguration update allowing to specify sourcePortRanges. */
         interface WithSourcePortRanges {
             /**
@@ -392,6 +410,7 @@ public interface DscpConfiguration {
              */
             Update withSourcePortRanges(List<QosPortRange> sourcePortRanges);
         }
+
         /** The stage of the DscpConfiguration update allowing to specify destinationPortRanges. */
         interface WithDestinationPortRanges {
             /**
@@ -402,6 +421,7 @@ public interface DscpConfiguration {
              */
             Update withDestinationPortRanges(List<QosPortRange> destinationPortRanges);
         }
+
         /** The stage of the DscpConfiguration update allowing to specify protocol. */
         interface WithProtocol {
             /**
@@ -412,6 +432,7 @@ public interface DscpConfiguration {
              */
             Update withProtocol(ProtocolType protocol);
         }
+
         /** The stage of the DscpConfiguration update allowing to specify qosDefinitionCollection. */
         interface WithQosDefinitionCollection {
             /**
@@ -423,6 +444,7 @@ public interface DscpConfiguration {
             Update withQosDefinitionCollection(List<QosDefinition> qosDefinitionCollection);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

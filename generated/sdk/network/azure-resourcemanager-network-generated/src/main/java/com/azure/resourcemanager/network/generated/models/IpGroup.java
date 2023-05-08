@@ -119,11 +119,13 @@ public interface IpGroup {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The IpGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the IpGroup definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the IpGroup definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -142,6 +144,7 @@ public interface IpGroup {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the IpGroup definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -152,6 +155,7 @@ public interface IpGroup {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the IpGroup definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -172,6 +176,7 @@ public interface IpGroup {
              */
             IpGroup create(Context context);
         }
+
         /** The stage of the IpGroup definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -182,6 +187,7 @@ public interface IpGroup {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the IpGroup definition allowing to specify ipAddresses. */
         interface WithIpAddresses {
             /**
@@ -193,6 +199,7 @@ public interface IpGroup {
             WithCreate withIpAddresses(List<String> ipAddresses);
         }
     }
+
     /**
      * Begins update for the IpGroup resource.
      *
@@ -217,6 +224,7 @@ public interface IpGroup {
          */
         IpGroup apply(Context context);
     }
+
     /** The IpGroup update stages. */
     interface UpdateStages {
         /** The stage of the IpGroup update allowing to specify tags. */
@@ -230,6 +238,7 @@ public interface IpGroup {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

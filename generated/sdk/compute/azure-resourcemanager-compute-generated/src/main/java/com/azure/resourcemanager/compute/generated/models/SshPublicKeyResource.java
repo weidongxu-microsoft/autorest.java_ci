@@ -92,11 +92,13 @@ public interface SshPublicKeyResource {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The SshPublicKeyResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the SshPublicKeyResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the SshPublicKeyResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -115,6 +117,7 @@ public interface SshPublicKeyResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the SshPublicKeyResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -125,6 +128,7 @@ public interface SshPublicKeyResource {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the SshPublicKeyResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -145,6 +149,7 @@ public interface SshPublicKeyResource {
              */
             SshPublicKeyResource create(Context context);
         }
+
         /** The stage of the SshPublicKeyResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -155,6 +160,7 @@ public interface SshPublicKeyResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the SshPublicKeyResource definition allowing to specify publicKey. */
         interface WithPublicKey {
             /**
@@ -172,6 +178,7 @@ public interface SshPublicKeyResource {
             WithCreate withPublicKey(String publicKey);
         }
     }
+
     /**
      * Begins update for the SshPublicKeyResource resource.
      *
@@ -196,6 +203,7 @@ public interface SshPublicKeyResource {
          */
         SshPublicKeyResource apply(Context context);
     }
+
     /** The SshPublicKeyResource update stages. */
     interface UpdateStages {
         /** The stage of the SshPublicKeyResource update allowing to specify tags. */
@@ -208,6 +216,7 @@ public interface SshPublicKeyResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the SshPublicKeyResource update allowing to specify publicKey. */
         interface WithPublicKey {
             /**
@@ -225,6 +234,7 @@ public interface SshPublicKeyResource {
             Update withPublicKey(String publicKey);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

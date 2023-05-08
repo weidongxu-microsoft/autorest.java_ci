@@ -210,11 +210,13 @@ public interface StreamingEndpoint {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The StreamingEndpoint definition stages. */
     interface DefinitionStages {
         /** The first stage of the StreamingEndpoint definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -233,6 +235,7 @@ public interface StreamingEndpoint {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -244,6 +247,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withExistingMediaservice(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the StreamingEndpoint definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -277,6 +281,7 @@ public interface StreamingEndpoint {
              */
             StreamingEndpoint create(Context context);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -287,6 +292,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -297,6 +303,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withSku(ArmStreamingEndpointCurrentSku sku);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -307,6 +314,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify scaleUnits. */
         interface WithScaleUnits {
             /**
@@ -318,6 +326,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withScaleUnits(int scaleUnits);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify availabilitySetName. */
         interface WithAvailabilitySetName {
             /**
@@ -329,6 +338,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withAvailabilitySetName(String availabilitySetName);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify accessControl. */
         interface WithAccessControl {
             /**
@@ -339,6 +349,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withAccessControl(StreamingEndpointAccessControl accessControl);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify maxCacheAge. */
         interface WithMaxCacheAge {
             /**
@@ -349,6 +360,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withMaxCacheAge(Long maxCacheAge);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify customHostNames. */
         interface WithCustomHostNames {
             /**
@@ -359,6 +371,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withCustomHostNames(List<String> customHostNames);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify cdnEnabled. */
         interface WithCdnEnabled {
             /**
@@ -369,6 +382,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withCdnEnabled(Boolean cdnEnabled);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify cdnProvider. */
         interface WithCdnProvider {
             /**
@@ -379,6 +393,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withCdnProvider(String cdnProvider);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify cdnProfile. */
         interface WithCdnProfile {
             /**
@@ -389,6 +404,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withCdnProfile(String cdnProfile);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify crossSiteAccessPolicies. */
         interface WithCrossSiteAccessPolicies {
             /**
@@ -399,6 +415,7 @@ public interface StreamingEndpoint {
              */
             WithCreate withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies);
         }
+
         /** The stage of the StreamingEndpoint definition allowing to specify autoStart. */
         interface WithAutoStart {
             /**
@@ -411,6 +428,7 @@ public interface StreamingEndpoint {
             WithCreate withAutoStart(Boolean autoStart);
         }
     }
+
     /**
      * Begins update for the StreamingEndpoint resource.
      *
@@ -447,6 +465,7 @@ public interface StreamingEndpoint {
          */
         StreamingEndpoint apply(Context context);
     }
+
     /** The StreamingEndpoint update stages. */
     interface UpdateStages {
         /** The stage of the StreamingEndpoint update allowing to specify tags. */
@@ -459,6 +478,7 @@ public interface StreamingEndpoint {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify sku. */
         interface WithSku {
             /**
@@ -469,6 +489,7 @@ public interface StreamingEndpoint {
              */
             Update withSku(ArmStreamingEndpointCurrentSku sku);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify description. */
         interface WithDescription {
             /**
@@ -479,6 +500,7 @@ public interface StreamingEndpoint {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify scaleUnits. */
         interface WithScaleUnits {
             /**
@@ -490,6 +512,7 @@ public interface StreamingEndpoint {
              */
             Update withScaleUnits(int scaleUnits);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify availabilitySetName. */
         interface WithAvailabilitySetName {
             /**
@@ -501,6 +524,7 @@ public interface StreamingEndpoint {
              */
             Update withAvailabilitySetName(String availabilitySetName);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify accessControl. */
         interface WithAccessControl {
             /**
@@ -511,6 +535,7 @@ public interface StreamingEndpoint {
              */
             Update withAccessControl(StreamingEndpointAccessControl accessControl);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify maxCacheAge. */
         interface WithMaxCacheAge {
             /**
@@ -521,6 +546,7 @@ public interface StreamingEndpoint {
              */
             Update withMaxCacheAge(Long maxCacheAge);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify customHostNames. */
         interface WithCustomHostNames {
             /**
@@ -531,6 +557,7 @@ public interface StreamingEndpoint {
              */
             Update withCustomHostNames(List<String> customHostNames);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify cdnEnabled. */
         interface WithCdnEnabled {
             /**
@@ -541,6 +568,7 @@ public interface StreamingEndpoint {
              */
             Update withCdnEnabled(Boolean cdnEnabled);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify cdnProvider. */
         interface WithCdnProvider {
             /**
@@ -551,6 +579,7 @@ public interface StreamingEndpoint {
              */
             Update withCdnProvider(String cdnProvider);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify cdnProfile. */
         interface WithCdnProfile {
             /**
@@ -561,6 +590,7 @@ public interface StreamingEndpoint {
              */
             Update withCdnProfile(String cdnProfile);
         }
+
         /** The stage of the StreamingEndpoint update allowing to specify crossSiteAccessPolicies. */
         interface WithCrossSiteAccessPolicies {
             /**
@@ -572,6 +602,7 @@ public interface StreamingEndpoint {
             Update withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

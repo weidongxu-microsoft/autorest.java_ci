@@ -118,11 +118,13 @@ public interface NetworkProfile {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The NetworkProfile definition stages. */
     interface DefinitionStages {
         /** The first stage of the NetworkProfile definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the NetworkProfile definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -141,6 +143,7 @@ public interface NetworkProfile {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the NetworkProfile definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -151,6 +154,7 @@ public interface NetworkProfile {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the NetworkProfile definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -172,6 +176,7 @@ public interface NetworkProfile {
              */
             NetworkProfile create(Context context);
         }
+
         /** The stage of the NetworkProfile definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -182,6 +187,7 @@ public interface NetworkProfile {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the NetworkProfile definition allowing to specify containerNetworkInterfaceConfigurations. */
         interface WithContainerNetworkInterfaceConfigurations {
             /**
@@ -195,6 +201,7 @@ public interface NetworkProfile {
                 List<ContainerNetworkInterfaceConfiguration> containerNetworkInterfaceConfigurations);
         }
     }
+
     /**
      * Begins update for the NetworkProfile resource.
      *
@@ -219,6 +226,7 @@ public interface NetworkProfile {
          */
         NetworkProfile apply(Context context);
     }
+
     /** The NetworkProfile update stages. */
     interface UpdateStages {
         /** The stage of the NetworkProfile update allowing to specify tags. */
@@ -232,6 +240,7 @@ public interface NetworkProfile {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -217,11 +217,13 @@ public interface NetworkVirtualAppliance {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The NetworkVirtualAppliance definition stages. */
     interface DefinitionStages {
         /** The first stage of the NetworkVirtualAppliance definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -240,6 +242,7 @@ public interface NetworkVirtualAppliance {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -250,6 +253,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the NetworkVirtualAppliance definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -282,6 +286,7 @@ public interface NetworkVirtualAppliance {
              */
             NetworkVirtualAppliance create(Context context);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -292,6 +297,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -303,6 +309,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify nvaSku. */
         interface WithNvaSku {
             /**
@@ -313,6 +320,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withNvaSku(VirtualApplianceSkuProperties nvaSku);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify bootStrapConfigurationBlobs. */
         interface WithBootStrapConfigurationBlobs {
             /**
@@ -323,6 +331,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withBootStrapConfigurationBlobs(List<String> bootStrapConfigurationBlobs);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify virtualHub. */
         interface WithVirtualHub {
             /**
@@ -333,6 +342,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withVirtualHub(SubResource virtualHub);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify cloudInitConfigurationBlobs. */
         interface WithCloudInitConfigurationBlobs {
             /**
@@ -343,6 +353,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withCloudInitConfigurationBlobs(List<String> cloudInitConfigurationBlobs);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify cloudInitConfiguration. */
         interface WithCloudInitConfiguration {
             /**
@@ -353,6 +364,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withCloudInitConfiguration(String cloudInitConfiguration);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify virtualApplianceAsn. */
         interface WithVirtualApplianceAsn {
             /**
@@ -365,6 +377,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withVirtualApplianceAsn(Long virtualApplianceAsn);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify sshPublicKey. */
         interface WithSshPublicKey {
             /**
@@ -375,6 +388,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withSshPublicKey(String sshPublicKey);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify additionalNics. */
         interface WithAdditionalNics {
             /**
@@ -385,6 +399,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withAdditionalNics(List<VirtualApplianceAdditionalNicProperties> additionalNics);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify delegation. */
         interface WithDelegation {
             /**
@@ -395,6 +410,7 @@ public interface NetworkVirtualAppliance {
              */
             WithCreate withDelegation(DelegationProperties delegation);
         }
+
         /** The stage of the NetworkVirtualAppliance definition allowing to specify partnerManagedResource. */
         interface WithPartnerManagedResource {
             /**
@@ -406,6 +422,7 @@ public interface NetworkVirtualAppliance {
             WithCreate withPartnerManagedResource(PartnerManagedResourceProperties partnerManagedResource);
         }
     }
+
     /**
      * Begins update for the NetworkVirtualAppliance resource.
      *
@@ -430,6 +447,7 @@ public interface NetworkVirtualAppliance {
          */
         NetworkVirtualAppliance apply(Context context);
     }
+
     /** The NetworkVirtualAppliance update stages. */
     interface UpdateStages {
         /** The stage of the NetworkVirtualAppliance update allowing to specify tags. */
@@ -443,6 +461,7 @@ public interface NetworkVirtualAppliance {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

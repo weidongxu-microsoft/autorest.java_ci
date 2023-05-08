@@ -114,11 +114,13 @@ public interface HybridConnection {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The HybridConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the HybridConnection definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the HybridConnection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -132,6 +134,7 @@ public interface HybridConnection {
             WithCreate withExistingHybridConnectionNamespace(
                 String resourceGroupName, String name, String namespaceName);
         }
+
         /**
          * The stage of the HybridConnection definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -161,6 +164,7 @@ public interface HybridConnection {
              */
             HybridConnection create(Context context);
         }
+
         /** The stage of the HybridConnection definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -171,6 +175,7 @@ public interface HybridConnection {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the HybridConnection definition allowing to specify serviceBusNamespace. */
         interface WithServiceBusNamespace {
             /**
@@ -181,6 +186,7 @@ public interface HybridConnection {
              */
             WithCreate withServiceBusNamespace(String serviceBusNamespace);
         }
+
         /** The stage of the HybridConnection definition allowing to specify relayName. */
         interface WithRelayName {
             /**
@@ -191,6 +197,7 @@ public interface HybridConnection {
              */
             WithCreate withRelayName(String relayName);
         }
+
         /** The stage of the HybridConnection definition allowing to specify relayArmUri. */
         interface WithRelayArmUri {
             /**
@@ -201,6 +208,7 @@ public interface HybridConnection {
              */
             WithCreate withRelayArmUri(String relayArmUri);
         }
+
         /** The stage of the HybridConnection definition allowing to specify hostname. */
         interface WithHostname {
             /**
@@ -211,6 +219,7 @@ public interface HybridConnection {
              */
             WithCreate withHostname(String hostname);
         }
+
         /** The stage of the HybridConnection definition allowing to specify port. */
         interface WithPort {
             /**
@@ -221,6 +230,7 @@ public interface HybridConnection {
              */
             WithCreate withPort(Integer port);
         }
+
         /** The stage of the HybridConnection definition allowing to specify sendKeyName. */
         interface WithSendKeyName {
             /**
@@ -233,6 +243,7 @@ public interface HybridConnection {
              */
             WithCreate withSendKeyName(String sendKeyName);
         }
+
         /** The stage of the HybridConnection definition allowing to specify sendKeyValue. */
         interface WithSendKeyValue {
             /**
@@ -245,6 +256,7 @@ public interface HybridConnection {
              */
             WithCreate withSendKeyValue(String sendKeyValue);
         }
+
         /** The stage of the HybridConnection definition allowing to specify serviceBusSuffix. */
         interface WithServiceBusSuffix {
             /**
@@ -258,6 +270,7 @@ public interface HybridConnection {
             WithCreate withServiceBusSuffix(String serviceBusSuffix);
         }
     }
+
     /**
      * Begins update for the HybridConnection resource.
      *
@@ -289,6 +302,7 @@ public interface HybridConnection {
          */
         HybridConnection apply(Context context);
     }
+
     /** The HybridConnection update stages. */
     interface UpdateStages {
         /** The stage of the HybridConnection update allowing to specify kind. */
@@ -301,6 +315,7 @@ public interface HybridConnection {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the HybridConnection update allowing to specify relayArmUri. */
         interface WithRelayArmUri {
             /**
@@ -311,6 +326,7 @@ public interface HybridConnection {
              */
             Update withRelayArmUri(String relayArmUri);
         }
+
         /** The stage of the HybridConnection update allowing to specify hostname. */
         interface WithHostname {
             /**
@@ -321,6 +337,7 @@ public interface HybridConnection {
              */
             Update withHostname(String hostname);
         }
+
         /** The stage of the HybridConnection update allowing to specify port. */
         interface WithPort {
             /**
@@ -331,6 +348,7 @@ public interface HybridConnection {
              */
             Update withPort(Integer port);
         }
+
         /** The stage of the HybridConnection update allowing to specify sendKeyName. */
         interface WithSendKeyName {
             /**
@@ -343,6 +361,7 @@ public interface HybridConnection {
              */
             Update withSendKeyName(String sendKeyName);
         }
+
         /** The stage of the HybridConnection update allowing to specify sendKeyValue. */
         interface WithSendKeyValue {
             /**
@@ -355,6 +374,7 @@ public interface HybridConnection {
              */
             Update withSendKeyValue(String sendKeyValue);
         }
+
         /** The stage of the HybridConnection update allowing to specify serviceBusSuffix. */
         interface WithServiceBusSuffix {
             /**
@@ -368,6 +388,7 @@ public interface HybridConnection {
             Update withServiceBusSuffix(String serviceBusSuffix);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

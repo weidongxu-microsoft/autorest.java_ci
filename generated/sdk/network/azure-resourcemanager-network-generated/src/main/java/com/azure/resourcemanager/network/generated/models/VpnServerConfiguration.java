@@ -206,11 +206,13 @@ public interface VpnServerConfiguration {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VpnServerConfiguration definition stages. */
     interface DefinitionStages {
         /** The first stage of the VpnServerConfiguration definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -229,6 +231,7 @@ public interface VpnServerConfiguration {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -239,6 +242,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VpnServerConfiguration definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -273,6 +277,7 @@ public interface VpnServerConfiguration {
              */
             VpnServerConfiguration create(Context context);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -283,6 +288,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify namePropertiesName. */
         interface WithNamePropertiesName {
             /**
@@ -294,6 +300,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withNamePropertiesName(String namePropertiesName);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify vpnProtocols. */
         interface WithVpnProtocols {
             /**
@@ -304,6 +311,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withVpnProtocols(List<VpnGatewayTunnelingProtocol> vpnProtocols);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify vpnAuthenticationTypes. */
         interface WithVpnAuthenticationTypes {
             /**
@@ -314,6 +322,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withVpnAuthenticationTypes(List<VpnAuthenticationType> vpnAuthenticationTypes);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify vpnClientRootCertificates. */
         interface WithVpnClientRootCertificates {
             /**
@@ -325,6 +334,7 @@ public interface VpnServerConfiguration {
             WithCreate withVpnClientRootCertificates(
                 List<VpnServerConfigVpnClientRootCertificate> vpnClientRootCertificates);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify vpnClientRevokedCertificates. */
         interface WithVpnClientRevokedCertificates {
             /**
@@ -337,6 +347,7 @@ public interface VpnServerConfiguration {
             WithCreate withVpnClientRevokedCertificates(
                 List<VpnServerConfigVpnClientRevokedCertificate> vpnClientRevokedCertificates);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify radiusServerRootCertificates. */
         interface WithRadiusServerRootCertificates {
             /**
@@ -349,6 +360,7 @@ public interface VpnServerConfiguration {
             WithCreate withRadiusServerRootCertificates(
                 List<VpnServerConfigRadiusServerRootCertificate> radiusServerRootCertificates);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify radiusClientRootCertificates. */
         interface WithRadiusClientRootCertificates {
             /**
@@ -361,6 +373,7 @@ public interface VpnServerConfiguration {
             WithCreate withRadiusClientRootCertificates(
                 List<VpnServerConfigRadiusClientRootCertificate> radiusClientRootCertificates);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify vpnClientIpsecPolicies. */
         interface WithVpnClientIpsecPolicies {
             /**
@@ -371,6 +384,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withVpnClientIpsecPolicies(List<IpsecPolicy> vpnClientIpsecPolicies);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify radiusServerAddress. */
         interface WithRadiusServerAddress {
             /**
@@ -383,6 +397,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withRadiusServerAddress(String radiusServerAddress);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify radiusServerSecret. */
         interface WithRadiusServerSecret {
             /**
@@ -395,6 +410,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withRadiusServerSecret(String radiusServerSecret);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify radiusServers. */
         interface WithRadiusServers {
             /**
@@ -405,6 +421,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withRadiusServers(List<RadiusServer> radiusServers);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify aadAuthenticationParameters. */
         interface WithAadAuthenticationParameters {
             /**
@@ -415,6 +432,7 @@ public interface VpnServerConfiguration {
              */
             WithCreate withAadAuthenticationParameters(AadAuthenticationParameters aadAuthenticationParameters);
         }
+
         /** The stage of the VpnServerConfiguration definition allowing to specify configurationPolicyGroups. */
         interface WithConfigurationPolicyGroups {
             /**
@@ -427,6 +445,7 @@ public interface VpnServerConfiguration {
                 List<VpnServerConfigurationPolicyGroupInner> configurationPolicyGroups);
         }
     }
+
     /**
      * Begins update for the VpnServerConfiguration resource.
      *
@@ -451,6 +470,7 @@ public interface VpnServerConfiguration {
          */
         VpnServerConfiguration apply(Context context);
     }
+
     /** The VpnServerConfiguration update stages. */
     interface UpdateStages {
         /** The stage of the VpnServerConfiguration update allowing to specify tags. */
@@ -464,6 +484,7 @@ public interface VpnServerConfiguration {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -211,11 +211,13 @@ public interface CustomIpPrefix {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The CustomIpPrefix definition stages. */
     interface DefinitionStages {
         /** The first stage of the CustomIpPrefix definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -234,6 +236,7 @@ public interface CustomIpPrefix {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -244,6 +247,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the CustomIpPrefix definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -277,6 +281,7 @@ public interface CustomIpPrefix {
              */
             CustomIpPrefix create(Context context);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -287,6 +292,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -297,6 +303,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -308,6 +315,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify asn. */
         interface WithAsn {
             /**
@@ -318,6 +326,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withAsn(String asn);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify cidr. */
         interface WithCidr {
             /**
@@ -329,6 +338,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withCidr(String cidr);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify signedMessage. */
         interface WithSignedMessage {
             /**
@@ -339,6 +349,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withSignedMessage(String signedMessage);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify authorizationMessage. */
         interface WithAuthorizationMessage {
             /**
@@ -349,6 +360,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withAuthorizationMessage(String authorizationMessage);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify customIpPrefixParent. */
         interface WithCustomIpPrefixParent {
             /**
@@ -359,6 +371,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withCustomIpPrefixParent(SubResource customIpPrefixParent);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify commissionedState. */
         interface WithCommissionedState {
             /**
@@ -369,6 +382,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withCommissionedState(CommissionedState commissionedState);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify expressRouteAdvertise. */
         interface WithExpressRouteAdvertise {
             /**
@@ -379,6 +393,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withExpressRouteAdvertise(Boolean expressRouteAdvertise);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify geo. */
         interface WithGeo {
             /**
@@ -389,6 +404,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withGeo(Geo geo);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify noInternetAdvertise. */
         interface WithNoInternetAdvertise {
             /**
@@ -399,6 +415,7 @@ public interface CustomIpPrefix {
              */
             WithCreate withNoInternetAdvertise(Boolean noInternetAdvertise);
         }
+
         /** The stage of the CustomIpPrefix definition allowing to specify prefixType. */
         interface WithPrefixType {
             /**
@@ -410,6 +427,7 @@ public interface CustomIpPrefix {
             WithCreate withPrefixType(CustomIpPrefixType prefixType);
         }
     }
+
     /**
      * Begins update for the CustomIpPrefix resource.
      *
@@ -434,6 +452,7 @@ public interface CustomIpPrefix {
          */
         CustomIpPrefix apply(Context context);
     }
+
     /** The CustomIpPrefix update stages. */
     interface UpdateStages {
         /** The stage of the CustomIpPrefix update allowing to specify tags. */
@@ -447,6 +466,7 @@ public interface CustomIpPrefix {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

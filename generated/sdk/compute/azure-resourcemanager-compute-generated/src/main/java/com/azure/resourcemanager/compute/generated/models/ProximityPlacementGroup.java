@@ -136,11 +136,13 @@ public interface ProximityPlacementGroup {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ProximityPlacementGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the ProximityPlacementGroup definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ProximityPlacementGroup definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -159,6 +161,7 @@ public interface ProximityPlacementGroup {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ProximityPlacementGroup definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -169,6 +172,7 @@ public interface ProximityPlacementGroup {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ProximityPlacementGroup definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -194,6 +198,7 @@ public interface ProximityPlacementGroup {
              */
             ProximityPlacementGroup create(Context context);
         }
+
         /** The stage of the ProximityPlacementGroup definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -204,6 +209,7 @@ public interface ProximityPlacementGroup {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ProximityPlacementGroup definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -216,6 +222,7 @@ public interface ProximityPlacementGroup {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the ProximityPlacementGroup definition allowing to specify proximityPlacementGroupType. */
         interface WithProximityPlacementGroupType {
             /**
@@ -230,6 +237,7 @@ public interface ProximityPlacementGroup {
              */
             WithCreate withProximityPlacementGroupType(ProximityPlacementGroupType proximityPlacementGroupType);
         }
+
         /** The stage of the ProximityPlacementGroup definition allowing to specify colocationStatus. */
         interface WithColocationStatus {
             /**
@@ -240,6 +248,7 @@ public interface ProximityPlacementGroup {
              */
             WithCreate withColocationStatus(InstanceViewStatus colocationStatus);
         }
+
         /** The stage of the ProximityPlacementGroup definition allowing to specify intent. */
         interface WithIntent {
             /**
@@ -251,6 +260,7 @@ public interface ProximityPlacementGroup {
             WithCreate withIntent(ProximityPlacementGroupPropertiesIntent intent);
         }
     }
+
     /**
      * Begins update for the ProximityPlacementGroup resource.
      *
@@ -275,6 +285,7 @@ public interface ProximityPlacementGroup {
          */
         ProximityPlacementGroup apply(Context context);
     }
+
     /** The ProximityPlacementGroup update stages. */
     interface UpdateStages {
         /** The stage of the ProximityPlacementGroup update allowing to specify tags. */
@@ -288,6 +299,7 @@ public interface ProximityPlacementGroup {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

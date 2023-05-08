@@ -205,11 +205,13 @@ public interface Domain {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Domain definition stages. */
     interface DefinitionStages {
         /** The first stage of the Domain definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Domain definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -228,6 +230,7 @@ public interface Domain {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Domain definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -238,6 +241,7 @@ public interface Domain {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Domain definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -268,6 +272,7 @@ public interface Domain {
              */
             Domain create(Context context);
         }
+
         /** The stage of the Domain definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -278,6 +283,7 @@ public interface Domain {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Domain definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -288,6 +294,7 @@ public interface Domain {
              */
             WithCreate withIdentity(IdentityInfo identity);
         }
+
         /** The stage of the Domain definition allowing to specify inputSchema. */
         interface WithInputSchema {
             /**
@@ -300,6 +307,7 @@ public interface Domain {
              */
             WithCreate withInputSchema(InputSchema inputSchema);
         }
+
         /** The stage of the Domain definition allowing to specify inputSchemaMapping. */
         interface WithInputSchemaMapping {
             /**
@@ -312,6 +320,7 @@ public interface Domain {
              */
             WithCreate withInputSchemaMapping(InputSchemaMapping inputSchemaMapping);
         }
+
         /** The stage of the Domain definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -327,6 +336,7 @@ public interface Domain {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the Domain definition allowing to specify inboundIpRules. */
         interface WithInboundIpRules {
             /**
@@ -339,6 +349,7 @@ public interface Domain {
              */
             WithCreate withInboundIpRules(List<InboundIpRule> inboundIpRules);
         }
+
         /** The stage of the Domain definition allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -353,6 +364,7 @@ public interface Domain {
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the Domain definition allowing to specify autoCreateTopicWithFirstSubscription. */
         interface WithAutoCreateTopicWithFirstSubscription {
             /**
@@ -381,6 +393,7 @@ public interface Domain {
              */
             WithCreate withAutoCreateTopicWithFirstSubscription(Boolean autoCreateTopicWithFirstSubscription);
         }
+
         /** The stage of the Domain definition allowing to specify autoDeleteTopicWithLastSubscription. */
         interface WithAutoDeleteTopicWithLastSubscription {
             /**
@@ -409,6 +422,7 @@ public interface Domain {
              */
             WithCreate withAutoDeleteTopicWithLastSubscription(Boolean autoDeleteTopicWithLastSubscription);
         }
+
         /** The stage of the Domain definition allowing to specify dataResidencyBoundary. */
         interface WithDataResidencyBoundary {
             /**
@@ -420,6 +434,7 @@ public interface Domain {
             WithCreate withDataResidencyBoundary(DataResidencyBoundary dataResidencyBoundary);
         }
     }
+
     /**
      * Begins update for the Domain resource.
      *
@@ -452,6 +467,7 @@ public interface Domain {
          */
         Domain apply(Context context);
     }
+
     /** The Domain update stages. */
     interface UpdateStages {
         /** The stage of the Domain update allowing to specify tags. */
@@ -464,6 +480,7 @@ public interface Domain {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the Domain update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -474,6 +491,7 @@ public interface Domain {
              */
             Update withIdentity(IdentityInfo identity);
         }
+
         /** The stage of the Domain update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -490,6 +508,7 @@ public interface Domain {
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the Domain update allowing to specify inboundIpRules. */
         interface WithInboundIpRules {
             /**
@@ -502,6 +521,7 @@ public interface Domain {
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);
         }
+
         /** The stage of the Domain update allowing to specify disableLocalAuth. */
         interface WithDisableLocalAuth {
             /**
@@ -516,6 +536,7 @@ public interface Domain {
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);
         }
+
         /** The stage of the Domain update allowing to specify autoCreateTopicWithFirstSubscription. */
         interface WithAutoCreateTopicWithFirstSubscription {
             /**
@@ -544,6 +565,7 @@ public interface Domain {
              */
             Update withAutoCreateTopicWithFirstSubscription(Boolean autoCreateTopicWithFirstSubscription);
         }
+
         /** The stage of the Domain update allowing to specify autoDeleteTopicWithLastSubscription. */
         interface WithAutoDeleteTopicWithLastSubscription {
             /**
@@ -572,6 +594,7 @@ public interface Domain {
              */
             Update withAutoDeleteTopicWithLastSubscription(Boolean autoDeleteTopicWithLastSubscription);
         }
+
         /** The stage of the Domain update allowing to specify dataResidencyBoundary. */
         interface WithDataResidencyBoundary {
             /**
@@ -583,6 +606,7 @@ public interface Domain {
             Update withDataResidencyBoundary(DataResidencyBoundary dataResidencyBoundary);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -105,11 +105,13 @@ public interface CloudService {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The CloudService definition stages. */
     interface DefinitionStages {
         /** The first stage of the CloudService definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the CloudService definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -128,6 +130,7 @@ public interface CloudService {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the CloudService definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -138,6 +141,7 @@ public interface CloudService {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the CloudService definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -162,6 +166,7 @@ public interface CloudService {
              */
             CloudService create(Context context);
         }
+
         /** The stage of the CloudService definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -172,6 +177,7 @@ public interface CloudService {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the CloudService definition allowing to specify properties. */
         interface WithProperties {
             /**
@@ -182,6 +188,7 @@ public interface CloudService {
              */
             WithCreate withProperties(CloudServiceProperties properties);
         }
+
         /** The stage of the CloudService definition allowing to specify systemData. */
         interface WithSystemData {
             /**
@@ -192,6 +199,7 @@ public interface CloudService {
              */
             WithCreate withSystemData(SystemData systemData);
         }
+
         /** The stage of the CloudService definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -205,6 +213,7 @@ public interface CloudService {
             WithCreate withZones(List<String> zones);
         }
     }
+
     /**
      * Begins update for the CloudService resource.
      *
@@ -229,6 +238,7 @@ public interface CloudService {
          */
         CloudService apply(Context context);
     }
+
     /** The CloudService update stages. */
     interface UpdateStages {
         /** The stage of the CloudService update allowing to specify tags. */
@@ -242,6 +252,7 @@ public interface CloudService {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

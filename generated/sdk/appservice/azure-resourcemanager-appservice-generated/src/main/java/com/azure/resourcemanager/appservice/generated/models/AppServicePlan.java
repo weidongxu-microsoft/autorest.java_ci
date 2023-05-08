@@ -278,11 +278,13 @@ public interface AppServicePlan {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The AppServicePlan definition stages. */
     interface DefinitionStages {
         /** The first stage of the AppServicePlan definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the AppServicePlan definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -301,6 +303,7 @@ public interface AppServicePlan {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -311,6 +314,7 @@ public interface AppServicePlan {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the AppServicePlan definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -350,6 +354,7 @@ public interface AppServicePlan {
              */
             AppServicePlan create(Context context);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -360,6 +365,7 @@ public interface AppServicePlan {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -370,6 +376,7 @@ public interface AppServicePlan {
              */
             WithCreate withSku(SkuDescription sku);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -380,6 +387,7 @@ public interface AppServicePlan {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -390,6 +398,7 @@ public interface AppServicePlan {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify workerTierName. */
         interface WithWorkerTierName {
             /**
@@ -400,6 +409,7 @@ public interface AppServicePlan {
              */
             WithCreate withWorkerTierName(String workerTierName);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify hostingEnvironmentProfile. */
         interface WithHostingEnvironmentProfile {
             /**
@@ -412,6 +422,7 @@ public interface AppServicePlan {
              */
             WithCreate withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify perSiteScaling. */
         interface WithPerSiteScaling {
             /**
@@ -426,6 +437,7 @@ public interface AppServicePlan {
              */
             WithCreate withPerSiteScaling(Boolean perSiteScaling);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify elasticScaleEnabled. */
         interface WithElasticScaleEnabled {
             /**
@@ -438,6 +450,7 @@ public interface AppServicePlan {
              */
             WithCreate withElasticScaleEnabled(Boolean elasticScaleEnabled);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify maximumElasticWorkerCount. */
         interface WithMaximumElasticWorkerCount {
             /**
@@ -450,6 +463,7 @@ public interface AppServicePlan {
              */
             WithCreate withMaximumElasticWorkerCount(Integer maximumElasticWorkerCount);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify isSpot. */
         interface WithIsSpot {
             /**
@@ -461,6 +475,7 @@ public interface AppServicePlan {
              */
             WithCreate withIsSpot(Boolean isSpot);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify spotExpirationTime. */
         interface WithSpotExpirationTime {
             /**
@@ -472,6 +487,7 @@ public interface AppServicePlan {
              */
             WithCreate withSpotExpirationTime(OffsetDateTime spotExpirationTime);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify freeOfferExpirationTime. */
         interface WithFreeOfferExpirationTime {
             /**
@@ -482,6 +498,7 @@ public interface AppServicePlan {
              */
             WithCreate withFreeOfferExpirationTime(OffsetDateTime freeOfferExpirationTime);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify reserved. */
         interface WithReserved {
             /**
@@ -494,6 +511,7 @@ public interface AppServicePlan {
              */
             WithCreate withReserved(Boolean reserved);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify isXenon. */
         interface WithIsXenon {
             /**
@@ -506,6 +524,7 @@ public interface AppServicePlan {
              */
             WithCreate withIsXenon(Boolean isXenon);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify hyperV. */
         interface WithHyperV {
             /**
@@ -518,6 +537,7 @@ public interface AppServicePlan {
              */
             WithCreate withHyperV(Boolean hyperV);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify targetWorkerCount. */
         interface WithTargetWorkerCount {
             /**
@@ -528,6 +548,7 @@ public interface AppServicePlan {
              */
             WithCreate withTargetWorkerCount(Integer targetWorkerCount);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify targetWorkerSizeId. */
         interface WithTargetWorkerSizeId {
             /**
@@ -538,6 +559,7 @@ public interface AppServicePlan {
              */
             WithCreate withTargetWorkerSizeId(Integer targetWorkerSizeId);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify kubeEnvironmentProfile. */
         interface WithKubeEnvironmentProfile {
             /**
@@ -550,6 +572,7 @@ public interface AppServicePlan {
              */
             WithCreate withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile);
         }
+
         /** The stage of the AppServicePlan definition allowing to specify zoneRedundant. */
         interface WithZoneRedundant {
             /**
@@ -565,6 +588,7 @@ public interface AppServicePlan {
             WithCreate withZoneRedundant(Boolean zoneRedundant);
         }
     }
+
     /**
      * Begins update for the AppServicePlan resource.
      *
@@ -601,6 +625,7 @@ public interface AppServicePlan {
          */
         AppServicePlan apply(Context context);
     }
+
     /** The AppServicePlan update stages. */
     interface UpdateStages {
         /** The stage of the AppServicePlan update allowing to specify kind. */
@@ -613,6 +638,7 @@ public interface AppServicePlan {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the AppServicePlan update allowing to specify workerTierName. */
         interface WithWorkerTierName {
             /**
@@ -623,6 +649,7 @@ public interface AppServicePlan {
              */
             Update withWorkerTierName(String workerTierName);
         }
+
         /** The stage of the AppServicePlan update allowing to specify perSiteScaling. */
         interface WithPerSiteScaling {
             /**
@@ -637,6 +664,7 @@ public interface AppServicePlan {
              */
             Update withPerSiteScaling(Boolean perSiteScaling);
         }
+
         /** The stage of the AppServicePlan update allowing to specify elasticScaleEnabled. */
         interface WithElasticScaleEnabled {
             /**
@@ -649,6 +677,7 @@ public interface AppServicePlan {
              */
             Update withElasticScaleEnabled(Boolean elasticScaleEnabled);
         }
+
         /** The stage of the AppServicePlan update allowing to specify maximumElasticWorkerCount. */
         interface WithMaximumElasticWorkerCount {
             /**
@@ -661,6 +690,7 @@ public interface AppServicePlan {
              */
             Update withMaximumElasticWorkerCount(Integer maximumElasticWorkerCount);
         }
+
         /** The stage of the AppServicePlan update allowing to specify isSpot. */
         interface WithIsSpot {
             /**
@@ -672,6 +702,7 @@ public interface AppServicePlan {
              */
             Update withIsSpot(Boolean isSpot);
         }
+
         /** The stage of the AppServicePlan update allowing to specify spotExpirationTime. */
         interface WithSpotExpirationTime {
             /**
@@ -683,6 +714,7 @@ public interface AppServicePlan {
              */
             Update withSpotExpirationTime(OffsetDateTime spotExpirationTime);
         }
+
         /** The stage of the AppServicePlan update allowing to specify freeOfferExpirationTime. */
         interface WithFreeOfferExpirationTime {
             /**
@@ -693,6 +725,7 @@ public interface AppServicePlan {
              */
             Update withFreeOfferExpirationTime(OffsetDateTime freeOfferExpirationTime);
         }
+
         /** The stage of the AppServicePlan update allowing to specify targetWorkerCount. */
         interface WithTargetWorkerCount {
             /**
@@ -703,6 +736,7 @@ public interface AppServicePlan {
              */
             Update withTargetWorkerCount(Integer targetWorkerCount);
         }
+
         /** The stage of the AppServicePlan update allowing to specify targetWorkerSizeId. */
         interface WithTargetWorkerSizeId {
             /**
@@ -713,6 +747,7 @@ public interface AppServicePlan {
              */
             Update withTargetWorkerSizeId(Integer targetWorkerSizeId);
         }
+
         /** The stage of the AppServicePlan update allowing to specify kubeEnvironmentProfile. */
         interface WithKubeEnvironmentProfile {
             /**
@@ -725,6 +760,7 @@ public interface AppServicePlan {
              */
             Update withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile);
         }
+
         /** The stage of the AppServicePlan update allowing to specify zoneRedundant. */
         interface WithZoneRedundant {
             /**
@@ -740,6 +776,7 @@ public interface AppServicePlan {
             Update withZoneRedundant(Boolean zoneRedundant);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

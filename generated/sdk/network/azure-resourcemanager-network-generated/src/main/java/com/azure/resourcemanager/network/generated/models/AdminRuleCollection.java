@@ -85,11 +85,13 @@ public interface AdminRuleCollection {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The AdminRuleCollection definition stages. */
     interface DefinitionStages {
         /** The first stage of the AdminRuleCollection definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the AdminRuleCollection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -103,6 +105,7 @@ public interface AdminRuleCollection {
             WithCreate withExistingSecurityAdminConfiguration(
                 String resourceGroupName, String networkManagerName, String configurationName);
         }
+
         /**
          * The stage of the AdminRuleCollection definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -123,6 +126,7 @@ public interface AdminRuleCollection {
              */
             AdminRuleCollection create(Context context);
         }
+
         /** The stage of the AdminRuleCollection definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -133,6 +137,7 @@ public interface AdminRuleCollection {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the AdminRuleCollection definition allowing to specify appliesToGroups. */
         interface WithAppliesToGroups {
             /**
@@ -144,6 +149,7 @@ public interface AdminRuleCollection {
             WithCreate withAppliesToGroups(List<NetworkManagerSecurityGroupItem> appliesToGroups);
         }
     }
+
     /**
      * Begins update for the AdminRuleCollection resource.
      *
@@ -168,6 +174,7 @@ public interface AdminRuleCollection {
          */
         AdminRuleCollection apply(Context context);
     }
+
     /** The AdminRuleCollection update stages. */
     interface UpdateStages {
         /** The stage of the AdminRuleCollection update allowing to specify description. */
@@ -180,6 +187,7 @@ public interface AdminRuleCollection {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the AdminRuleCollection update allowing to specify appliesToGroups. */
         interface WithAppliesToGroups {
             /**
@@ -191,6 +199,7 @@ public interface AdminRuleCollection {
             Update withAppliesToGroups(List<NetworkManagerSecurityGroupItem> appliesToGroups);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

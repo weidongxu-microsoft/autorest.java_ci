@@ -187,11 +187,13 @@ public interface MetricAlertResource {
             DefinitionStages.WithCriteria,
             DefinitionStages.WithCreate {
     }
+
     /** The MetricAlertResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the MetricAlertResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -210,6 +212,7 @@ public interface MetricAlertResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -220,6 +223,7 @@ public interface MetricAlertResource {
              */
             WithSeverity withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify severity. */
         interface WithSeverity {
             /**
@@ -230,6 +234,7 @@ public interface MetricAlertResource {
              */
             WithEnabled withSeverity(int severity);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -240,6 +245,7 @@ public interface MetricAlertResource {
              */
             WithScopes withEnabled(boolean enabled);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify scopes. */
         interface WithScopes {
             /**
@@ -250,6 +256,7 @@ public interface MetricAlertResource {
              */
             WithEvaluationFrequency withScopes(List<String> scopes);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify evaluationFrequency. */
         interface WithEvaluationFrequency {
             /**
@@ -262,6 +269,7 @@ public interface MetricAlertResource {
              */
             WithWindowSize withEvaluationFrequency(Duration evaluationFrequency);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify windowSize. */
         interface WithWindowSize {
             /**
@@ -274,6 +282,7 @@ public interface MetricAlertResource {
              */
             WithCriteria withWindowSize(Duration windowSize);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify criteria. */
         interface WithCriteria {
             /**
@@ -284,6 +293,7 @@ public interface MetricAlertResource {
              */
             WithCreate withCriteria(MetricAlertCriteria criteria);
         }
+
         /**
          * The stage of the MetricAlertResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -310,6 +320,7 @@ public interface MetricAlertResource {
              */
             MetricAlertResource create(Context context);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -320,6 +331,7 @@ public interface MetricAlertResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -331,6 +343,7 @@ public interface MetricAlertResource {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify targetResourceType. */
         interface WithTargetResourceType {
             /**
@@ -345,6 +358,7 @@ public interface MetricAlertResource {
              */
             WithCreate withTargetResourceType(String targetResourceType);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify targetResourceRegion. */
         interface WithTargetResourceRegion {
             /**
@@ -358,6 +372,7 @@ public interface MetricAlertResource {
              */
             WithCreate withTargetResourceRegion(String targetResourceRegion);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify autoMitigate. */
         interface WithAutoMitigate {
             /**
@@ -370,6 +385,7 @@ public interface MetricAlertResource {
              */
             WithCreate withAutoMitigate(Boolean autoMitigate);
         }
+
         /** The stage of the MetricAlertResource definition allowing to specify actions. */
         interface WithActions {
             /**
@@ -383,6 +399,7 @@ public interface MetricAlertResource {
             WithCreate withActions(List<MetricAlertAction> actions);
         }
     }
+
     /**
      * Begins update for the MetricAlertResource resource.
      *
@@ -419,6 +436,7 @@ public interface MetricAlertResource {
          */
         MetricAlertResource apply(Context context);
     }
+
     /** The MetricAlertResource update stages. */
     interface UpdateStages {
         /** The stage of the MetricAlertResource update allowing to specify tags. */
@@ -431,6 +449,7 @@ public interface MetricAlertResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify description. */
         interface WithDescription {
             /**
@@ -442,6 +461,7 @@ public interface MetricAlertResource {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify severity. */
         interface WithSeverity {
             /**
@@ -452,6 +472,7 @@ public interface MetricAlertResource {
              */
             Update withSeverity(Integer severity);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -462,6 +483,7 @@ public interface MetricAlertResource {
              */
             Update withEnabled(Boolean enabled);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify scopes. */
         interface WithScopes {
             /**
@@ -472,6 +494,7 @@ public interface MetricAlertResource {
              */
             Update withScopes(List<String> scopes);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify evaluationFrequency. */
         interface WithEvaluationFrequency {
             /**
@@ -484,6 +507,7 @@ public interface MetricAlertResource {
              */
             Update withEvaluationFrequency(Duration evaluationFrequency);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify windowSize. */
         interface WithWindowSize {
             /**
@@ -496,6 +520,7 @@ public interface MetricAlertResource {
              */
             Update withWindowSize(Duration windowSize);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify targetResourceType. */
         interface WithTargetResourceType {
             /**
@@ -508,6 +533,7 @@ public interface MetricAlertResource {
              */
             Update withTargetResourceType(String targetResourceType);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify targetResourceRegion. */
         interface WithTargetResourceRegion {
             /**
@@ -520,6 +546,7 @@ public interface MetricAlertResource {
              */
             Update withTargetResourceRegion(String targetResourceRegion);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify criteria. */
         interface WithCriteria {
             /**
@@ -530,6 +557,7 @@ public interface MetricAlertResource {
              */
             Update withCriteria(MetricAlertCriteria criteria);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify autoMitigate. */
         interface WithAutoMitigate {
             /**
@@ -542,6 +570,7 @@ public interface MetricAlertResource {
              */
             Update withAutoMitigate(Boolean autoMitigate);
         }
+
         /** The stage of the MetricAlertResource update allowing to specify actions. */
         interface WithActions {
             /**
@@ -555,6 +584,7 @@ public interface MetricAlertResource {
             Update withActions(List<MetricAlertAction> actions);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

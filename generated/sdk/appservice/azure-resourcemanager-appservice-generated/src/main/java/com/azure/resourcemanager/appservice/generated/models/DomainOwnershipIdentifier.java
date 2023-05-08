@@ -63,11 +63,13 @@ public interface DomainOwnershipIdentifier {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The DomainOwnershipIdentifier definition stages. */
     interface DefinitionStages {
         /** The first stage of the DomainOwnershipIdentifier definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the DomainOwnershipIdentifier definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -79,6 +81,7 @@ public interface DomainOwnershipIdentifier {
              */
             WithCreate withExistingDomain(String resourceGroupName, String domainName);
         }
+
         /**
          * The stage of the DomainOwnershipIdentifier definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -99,6 +102,7 @@ public interface DomainOwnershipIdentifier {
              */
             DomainOwnershipIdentifier create(Context context);
         }
+
         /** The stage of the DomainOwnershipIdentifier definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -109,6 +113,7 @@ public interface DomainOwnershipIdentifier {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the DomainOwnershipIdentifier definition allowing to specify ownershipId. */
         interface WithOwnershipId {
             /**
@@ -120,6 +125,7 @@ public interface DomainOwnershipIdentifier {
             WithCreate withOwnershipId(String ownershipId);
         }
     }
+
     /**
      * Begins update for the DomainOwnershipIdentifier resource.
      *
@@ -144,6 +150,7 @@ public interface DomainOwnershipIdentifier {
          */
         DomainOwnershipIdentifier apply(Context context);
     }
+
     /** The DomainOwnershipIdentifier update stages. */
     interface UpdateStages {
         /** The stage of the DomainOwnershipIdentifier update allowing to specify kind. */
@@ -156,6 +163,7 @@ public interface DomainOwnershipIdentifier {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the DomainOwnershipIdentifier update allowing to specify ownershipId. */
         interface WithOwnershipId {
             /**
@@ -167,6 +175,7 @@ public interface DomainOwnershipIdentifier {
             Update withOwnershipId(String ownershipId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

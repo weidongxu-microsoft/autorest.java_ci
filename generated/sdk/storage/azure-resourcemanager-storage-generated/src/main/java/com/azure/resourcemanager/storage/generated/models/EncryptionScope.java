@@ -95,11 +95,13 @@ public interface EncryptionScope {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The EncryptionScope definition stages. */
     interface DefinitionStages {
         /** The first stage of the EncryptionScope definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the EncryptionScope definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -113,6 +115,7 @@ public interface EncryptionScope {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the EncryptionScope definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -137,6 +140,7 @@ public interface EncryptionScope {
              */
             EncryptionScope create(Context context);
         }
+
         /** The stage of the EncryptionScope definition allowing to specify source. */
         interface WithSource {
             /**
@@ -149,6 +153,7 @@ public interface EncryptionScope {
              */
             WithCreate withSource(EncryptionScopeSource source);
         }
+
         /** The stage of the EncryptionScope definition allowing to specify state. */
         interface WithState {
             /**
@@ -160,6 +165,7 @@ public interface EncryptionScope {
              */
             WithCreate withState(EncryptionScopeState state);
         }
+
         /** The stage of the EncryptionScope definition allowing to specify keyVaultProperties. */
         interface WithKeyVaultProperties {
             /**
@@ -172,6 +178,7 @@ public interface EncryptionScope {
              */
             WithCreate withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties);
         }
+
         /** The stage of the EncryptionScope definition allowing to specify requireInfrastructureEncryption. */
         interface WithRequireInfrastructureEncryption {
             /**
@@ -185,6 +192,7 @@ public interface EncryptionScope {
             WithCreate withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);
         }
     }
+
     /**
      * Begins update for the EncryptionScope resource.
      *
@@ -213,6 +221,7 @@ public interface EncryptionScope {
          */
         EncryptionScope apply(Context context);
     }
+
     /** The EncryptionScope update stages. */
     interface UpdateStages {
         /** The stage of the EncryptionScope update allowing to specify source. */
@@ -227,6 +236,7 @@ public interface EncryptionScope {
              */
             Update withSource(EncryptionScopeSource source);
         }
+
         /** The stage of the EncryptionScope update allowing to specify state. */
         interface WithState {
             /**
@@ -238,6 +248,7 @@ public interface EncryptionScope {
              */
             Update withState(EncryptionScopeState state);
         }
+
         /** The stage of the EncryptionScope update allowing to specify keyVaultProperties. */
         interface WithKeyVaultProperties {
             /**
@@ -250,6 +261,7 @@ public interface EncryptionScope {
              */
             Update withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties);
         }
+
         /** The stage of the EncryptionScope update allowing to specify requireInfrastructureEncryption. */
         interface WithRequireInfrastructureEncryption {
             /**
@@ -263,6 +275,7 @@ public interface EncryptionScope {
             Update withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

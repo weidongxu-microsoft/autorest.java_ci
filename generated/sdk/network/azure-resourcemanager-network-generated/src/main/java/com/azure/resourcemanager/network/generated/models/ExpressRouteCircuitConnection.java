@@ -110,11 +110,13 @@ public interface ExpressRouteCircuitConnection {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ExpressRouteCircuitConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRouteCircuitConnection definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ExpressRouteCircuitConnection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -127,6 +129,7 @@ public interface ExpressRouteCircuitConnection {
              */
             WithCreate withExistingPeering(String resourceGroupName, String circuitName, String peeringName);
         }
+
         /**
          * The stage of the ExpressRouteCircuitConnection definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -153,6 +156,7 @@ public interface ExpressRouteCircuitConnection {
              */
             ExpressRouteCircuitConnection create(Context context);
         }
+
         /** The stage of the ExpressRouteCircuitConnection definition allowing to specify name. */
         interface WithName {
             /**
@@ -165,6 +169,7 @@ public interface ExpressRouteCircuitConnection {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the ExpressRouteCircuitConnection definition allowing to specify expressRouteCircuitPeering. */
         interface WithExpressRouteCircuitPeering {
             /**
@@ -177,6 +182,7 @@ public interface ExpressRouteCircuitConnection {
              */
             WithCreate withExpressRouteCircuitPeering(SubResource expressRouteCircuitPeering);
         }
+
         /**
          * The stage of the ExpressRouteCircuitConnection definition allowing to specify peerExpressRouteCircuitPeering.
          */
@@ -191,6 +197,7 @@ public interface ExpressRouteCircuitConnection {
              */
             WithCreate withPeerExpressRouteCircuitPeering(SubResource peerExpressRouteCircuitPeering);
         }
+
         /** The stage of the ExpressRouteCircuitConnection definition allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -201,6 +208,7 @@ public interface ExpressRouteCircuitConnection {
              */
             WithCreate withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the ExpressRouteCircuitConnection definition allowing to specify authorizationKey. */
         interface WithAuthorizationKey {
             /**
@@ -211,6 +219,7 @@ public interface ExpressRouteCircuitConnection {
              */
             WithCreate withAuthorizationKey(String authorizationKey);
         }
+
         /**
          * The stage of the ExpressRouteCircuitConnection definition allowing to specify ipv6CircuitConnectionConfig.
          */
@@ -225,6 +234,7 @@ public interface ExpressRouteCircuitConnection {
             WithCreate withIpv6CircuitConnectionConfig(Ipv6CircuitConnectionConfig ipv6CircuitConnectionConfig);
         }
     }
+
     /**
      * Begins update for the ExpressRouteCircuitConnection resource.
      *
@@ -255,6 +265,7 @@ public interface ExpressRouteCircuitConnection {
          */
         ExpressRouteCircuitConnection apply(Context context);
     }
+
     /** The ExpressRouteCircuitConnection update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRouteCircuitConnection update allowing to specify name. */
@@ -269,6 +280,7 @@ public interface ExpressRouteCircuitConnection {
              */
             Update withName(String name);
         }
+
         /** The stage of the ExpressRouteCircuitConnection update allowing to specify expressRouteCircuitPeering. */
         interface WithExpressRouteCircuitPeering {
             /**
@@ -281,6 +293,7 @@ public interface ExpressRouteCircuitConnection {
              */
             Update withExpressRouteCircuitPeering(SubResource expressRouteCircuitPeering);
         }
+
         /** The stage of the ExpressRouteCircuitConnection update allowing to specify peerExpressRouteCircuitPeering. */
         interface WithPeerExpressRouteCircuitPeering {
             /**
@@ -293,6 +306,7 @@ public interface ExpressRouteCircuitConnection {
              */
             Update withPeerExpressRouteCircuitPeering(SubResource peerExpressRouteCircuitPeering);
         }
+
         /** The stage of the ExpressRouteCircuitConnection update allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -303,6 +317,7 @@ public interface ExpressRouteCircuitConnection {
              */
             Update withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the ExpressRouteCircuitConnection update allowing to specify authorizationKey. */
         interface WithAuthorizationKey {
             /**
@@ -313,6 +328,7 @@ public interface ExpressRouteCircuitConnection {
              */
             Update withAuthorizationKey(String authorizationKey);
         }
+
         /** The stage of the ExpressRouteCircuitConnection update allowing to specify ipv6CircuitConnectionConfig. */
         interface WithIpv6CircuitConnectionConfig {
             /**
@@ -325,6 +341,7 @@ public interface ExpressRouteCircuitConnection {
             Update withIpv6CircuitConnectionConfig(Ipv6CircuitConnectionConfig ipv6CircuitConnectionConfig);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

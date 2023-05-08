@@ -71,11 +71,13 @@ public interface RoutingIntent {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The RoutingIntent definition stages. */
     interface DefinitionStages {
         /** The first stage of the RoutingIntent definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the RoutingIntent definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -87,6 +89,7 @@ public interface RoutingIntent {
              */
             WithCreate withExistingVirtualHub(String resourceGroupName, String virtualHubName);
         }
+
         /**
          * The stage of the RoutingIntent definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -107,6 +110,7 @@ public interface RoutingIntent {
              */
             RoutingIntent create(Context context);
         }
+
         /** The stage of the RoutingIntent definition allowing to specify name. */
         interface WithName {
             /**
@@ -119,6 +123,7 @@ public interface RoutingIntent {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the RoutingIntent definition allowing to specify routingPolicies. */
         interface WithRoutingPolicies {
             /**
@@ -130,6 +135,7 @@ public interface RoutingIntent {
             WithCreate withRoutingPolicies(List<RoutingPolicy> routingPolicies);
         }
     }
+
     /**
      * Begins update for the RoutingIntent resource.
      *
@@ -154,6 +160,7 @@ public interface RoutingIntent {
          */
         RoutingIntent apply(Context context);
     }
+
     /** The RoutingIntent update stages. */
     interface UpdateStages {
         /** The stage of the RoutingIntent update allowing to specify name. */
@@ -168,6 +175,7 @@ public interface RoutingIntent {
              */
             Update withName(String name);
         }
+
         /** The stage of the RoutingIntent update allowing to specify routingPolicies. */
         interface WithRoutingPolicies {
             /**
@@ -179,6 +187,7 @@ public interface RoutingIntent {
             Update withRoutingPolicies(List<RoutingPolicy> routingPolicies);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

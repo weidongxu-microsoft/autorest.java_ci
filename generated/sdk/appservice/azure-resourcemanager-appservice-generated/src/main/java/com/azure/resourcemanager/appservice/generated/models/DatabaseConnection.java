@@ -95,11 +95,13 @@ public interface DatabaseConnection {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The DatabaseConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the DatabaseConnection definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the DatabaseConnection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -112,6 +114,7 @@ public interface DatabaseConnection {
              */
             WithCreate withExistingBuild(String resourceGroupName, String name, String environmentName);
         }
+
         /**
          * The stage of the DatabaseConnection definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -137,6 +140,7 @@ public interface DatabaseConnection {
              */
             DatabaseConnection create(Context context);
         }
+
         /** The stage of the DatabaseConnection definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -147,6 +151,7 @@ public interface DatabaseConnection {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the DatabaseConnection definition allowing to specify resourceId. */
         interface WithResourceId {
             /**
@@ -157,6 +162,7 @@ public interface DatabaseConnection {
              */
             WithCreate withResourceId(String resourceId);
         }
+
         /** The stage of the DatabaseConnection definition allowing to specify connectionIdentity. */
         interface WithConnectionIdentity {
             /**
@@ -173,6 +179,7 @@ public interface DatabaseConnection {
              */
             WithCreate withConnectionIdentity(String connectionIdentity);
         }
+
         /** The stage of the DatabaseConnection definition allowing to specify connectionString. */
         interface WithConnectionString {
             /**
@@ -183,6 +190,7 @@ public interface DatabaseConnection {
              */
             WithCreate withConnectionString(String connectionString);
         }
+
         /** The stage of the DatabaseConnection definition allowing to specify region. */
         interface WithRegion {
             /**
@@ -194,6 +202,7 @@ public interface DatabaseConnection {
             WithCreate withRegion(String region);
         }
     }
+
     /**
      * Begins update for the DatabaseConnection resource.
      *
@@ -222,6 +231,7 @@ public interface DatabaseConnection {
          */
         DatabaseConnection apply(Context context);
     }
+
     /** The DatabaseConnection update stages. */
     interface UpdateStages {
         /** The stage of the DatabaseConnection update allowing to specify resourceId. */
@@ -234,6 +244,7 @@ public interface DatabaseConnection {
              */
             Update withResourceId(String resourceId);
         }
+
         /** The stage of the DatabaseConnection update allowing to specify connectionIdentity. */
         interface WithConnectionIdentity {
             /**
@@ -250,6 +261,7 @@ public interface DatabaseConnection {
              */
             Update withConnectionIdentity(String connectionIdentity);
         }
+
         /** The stage of the DatabaseConnection update allowing to specify connectionString. */
         interface WithConnectionString {
             /**
@@ -260,6 +272,7 @@ public interface DatabaseConnection {
              */
             Update withConnectionString(String connectionString);
         }
+
         /** The stage of the DatabaseConnection update allowing to specify region. */
         interface WithRegion {
             /**
@@ -271,6 +284,7 @@ public interface DatabaseConnection {
             Update withRegion(String region);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

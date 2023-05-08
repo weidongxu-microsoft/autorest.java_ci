@@ -64,11 +64,13 @@ public interface ManagementPolicy {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ManagementPolicy definition stages. */
     interface DefinitionStages {
         /** The first stage of the ManagementPolicy definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ManagementPolicy definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -82,6 +84,7 @@ public interface ManagementPolicy {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the ManagementPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -102,6 +105,7 @@ public interface ManagementPolicy {
              */
             ManagementPolicy create(Context context);
         }
+
         /** The stage of the ManagementPolicy definition allowing to specify policy. */
         interface WithPolicy {
             /**
@@ -115,6 +119,7 @@ public interface ManagementPolicy {
             WithCreate withPolicy(ManagementPolicySchema policy);
         }
     }
+
     /**
      * Begins update for the ManagementPolicy resource.
      *
@@ -139,6 +144,7 @@ public interface ManagementPolicy {
          */
         ManagementPolicy apply(Context context);
     }
+
     /** The ManagementPolicy update stages. */
     interface UpdateStages {
         /** The stage of the ManagementPolicy update allowing to specify policy. */
@@ -154,6 +160,7 @@ public interface ManagementPolicy {
             Update withPolicy(ManagementPolicySchema policy);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

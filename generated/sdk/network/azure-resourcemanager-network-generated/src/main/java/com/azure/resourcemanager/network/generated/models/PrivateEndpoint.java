@@ -167,11 +167,13 @@ public interface PrivateEndpoint {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The PrivateEndpoint definition stages. */
     interface DefinitionStages {
         /** The first stage of the PrivateEndpoint definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -190,6 +192,7 @@ public interface PrivateEndpoint {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -200,6 +203,7 @@ public interface PrivateEndpoint {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the PrivateEndpoint definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -229,6 +233,7 @@ public interface PrivateEndpoint {
              */
             PrivateEndpoint create(Context context);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -239,6 +244,7 @@ public interface PrivateEndpoint {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -249,6 +255,7 @@ public interface PrivateEndpoint {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify subnet. */
         interface WithSubnet {
             /**
@@ -259,6 +266,7 @@ public interface PrivateEndpoint {
              */
             WithCreate withSubnet(SubnetInner subnet);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify privateLinkServiceConnections. */
         interface WithPrivateLinkServiceConnections {
             /**
@@ -272,6 +280,7 @@ public interface PrivateEndpoint {
             WithCreate withPrivateLinkServiceConnections(
                 List<PrivateLinkServiceConnection> privateLinkServiceConnections);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify manualPrivateLinkServiceConnections. */
         interface WithManualPrivateLinkServiceConnections {
             /**
@@ -287,6 +296,7 @@ public interface PrivateEndpoint {
             WithCreate withManualPrivateLinkServiceConnections(
                 List<PrivateLinkServiceConnection> manualPrivateLinkServiceConnections);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify customDnsConfigs. */
         interface WithCustomDnsConfigs {
             /**
@@ -297,6 +307,7 @@ public interface PrivateEndpoint {
              */
             WithCreate withCustomDnsConfigs(List<CustomDnsConfigPropertiesFormat> customDnsConfigs);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify applicationSecurityGroups. */
         interface WithApplicationSecurityGroups {
             /**
@@ -309,6 +320,7 @@ public interface PrivateEndpoint {
              */
             WithCreate withApplicationSecurityGroups(List<ApplicationSecurityGroupInner> applicationSecurityGroups);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
             /**
@@ -321,6 +333,7 @@ public interface PrivateEndpoint {
              */
             WithCreate withIpConfigurations(List<PrivateEndpointIpConfiguration> ipConfigurations);
         }
+
         /** The stage of the PrivateEndpoint definition allowing to specify customNetworkInterfaceName. */
         interface WithCustomNetworkInterfaceName {
             /**
@@ -334,6 +347,7 @@ public interface PrivateEndpoint {
             WithCreate withCustomNetworkInterfaceName(String customNetworkInterfaceName);
         }
     }
+
     /**
      * Begins update for the PrivateEndpoint resource.
      *
@@ -367,6 +381,7 @@ public interface PrivateEndpoint {
          */
         PrivateEndpoint apply(Context context);
     }
+
     /** The PrivateEndpoint update stages. */
     interface UpdateStages {
         /** The stage of the PrivateEndpoint update allowing to specify tags. */
@@ -379,6 +394,7 @@ public interface PrivateEndpoint {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -389,6 +405,7 @@ public interface PrivateEndpoint {
              */
             Update withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify subnet. */
         interface WithSubnet {
             /**
@@ -399,6 +416,7 @@ public interface PrivateEndpoint {
              */
             Update withSubnet(SubnetInner subnet);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify privateLinkServiceConnections. */
         interface WithPrivateLinkServiceConnections {
             /**
@@ -411,6 +429,7 @@ public interface PrivateEndpoint {
              */
             Update withPrivateLinkServiceConnections(List<PrivateLinkServiceConnection> privateLinkServiceConnections);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify manualPrivateLinkServiceConnections. */
         interface WithManualPrivateLinkServiceConnections {
             /**
@@ -426,6 +445,7 @@ public interface PrivateEndpoint {
             Update withManualPrivateLinkServiceConnections(
                 List<PrivateLinkServiceConnection> manualPrivateLinkServiceConnections);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify customDnsConfigs. */
         interface WithCustomDnsConfigs {
             /**
@@ -436,6 +456,7 @@ public interface PrivateEndpoint {
              */
             Update withCustomDnsConfigs(List<CustomDnsConfigPropertiesFormat> customDnsConfigs);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify applicationSecurityGroups. */
         interface WithApplicationSecurityGroups {
             /**
@@ -448,6 +469,7 @@ public interface PrivateEndpoint {
              */
             Update withApplicationSecurityGroups(List<ApplicationSecurityGroupInner> applicationSecurityGroups);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
             /**
@@ -460,6 +482,7 @@ public interface PrivateEndpoint {
              */
             Update withIpConfigurations(List<PrivateEndpointIpConfiguration> ipConfigurations);
         }
+
         /** The stage of the PrivateEndpoint update allowing to specify customNetworkInterfaceName. */
         interface WithCustomNetworkInterfaceName {
             /**
@@ -473,6 +496,7 @@ public interface PrivateEndpoint {
             Update withCustomNetworkInterfaceName(String customNetworkInterfaceName);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

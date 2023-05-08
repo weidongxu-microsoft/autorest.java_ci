@@ -91,11 +91,13 @@ public interface ScopeConnection {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ScopeConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the ScopeConnection definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ScopeConnection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -107,6 +109,7 @@ public interface ScopeConnection {
              */
             WithCreate withExistingNetworkManager(String resourceGroupName, String networkManagerName);
         }
+
         /**
          * The stage of the ScopeConnection definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -128,6 +131,7 @@ public interface ScopeConnection {
              */
             ScopeConnection create(Context context);
         }
+
         /** The stage of the ScopeConnection definition allowing to specify tenantId. */
         interface WithTenantId {
             /**
@@ -138,6 +142,7 @@ public interface ScopeConnection {
              */
             WithCreate withTenantId(String tenantId);
         }
+
         /** The stage of the ScopeConnection definition allowing to specify resourceId. */
         interface WithResourceId {
             /**
@@ -148,6 +153,7 @@ public interface ScopeConnection {
              */
             WithCreate withResourceId(String resourceId);
         }
+
         /** The stage of the ScopeConnection definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -159,6 +165,7 @@ public interface ScopeConnection {
             WithCreate withDescription(String description);
         }
     }
+
     /**
      * Begins update for the ScopeConnection resource.
      *
@@ -183,6 +190,7 @@ public interface ScopeConnection {
          */
         ScopeConnection apply(Context context);
     }
+
     /** The ScopeConnection update stages. */
     interface UpdateStages {
         /** The stage of the ScopeConnection update allowing to specify tenantId. */
@@ -195,6 +203,7 @@ public interface ScopeConnection {
              */
             Update withTenantId(String tenantId);
         }
+
         /** The stage of the ScopeConnection update allowing to specify resourceId. */
         interface WithResourceId {
             /**
@@ -205,6 +214,7 @@ public interface ScopeConnection {
              */
             Update withResourceId(String resourceId);
         }
+
         /** The stage of the ScopeConnection update allowing to specify description. */
         interface WithDescription {
             /**
@@ -216,6 +226,7 @@ public interface ScopeConnection {
             Update withDescription(String description);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

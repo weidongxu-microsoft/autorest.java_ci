@@ -286,11 +286,13 @@ public interface VirtualNetworkGatewayConnection {
             DefinitionStages.WithConnectionType,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualNetworkGatewayConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualNetworkGatewayConnection definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -309,6 +311,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -319,6 +322,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithVirtualNetworkGateway1 withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify virtualNetworkGateway1. */
         interface WithVirtualNetworkGateway1 {
             /**
@@ -329,6 +333,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithConnectionType withVirtualNetworkGateway1(VirtualNetworkGatewayInner virtualNetworkGateway1);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionType. */
         interface WithConnectionType {
             /**
@@ -339,6 +344,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withConnectionType(VirtualNetworkGatewayConnectionType connectionType);
         }
+
         /**
          * The stage of the VirtualNetworkGatewayConnection definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -379,6 +385,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             VirtualNetworkGatewayConnection create(Context context);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -389,6 +396,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify authorizationKey. */
         interface WithAuthorizationKey {
             /**
@@ -399,6 +407,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withAuthorizationKey(String authorizationKey);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify virtualNetworkGateway2. */
         interface WithVirtualNetworkGateway2 {
             /**
@@ -409,6 +418,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withVirtualNetworkGateway2(VirtualNetworkGatewayInner virtualNetworkGateway2);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify localNetworkGateway2. */
         interface WithLocalNetworkGateway2 {
             /**
@@ -419,6 +429,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withLocalNetworkGateway2(LocalNetworkGatewayInner localNetworkGateway2);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify ingressNatRules. */
         interface WithIngressNatRules {
             /**
@@ -429,6 +440,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withIngressNatRules(List<SubResource> ingressNatRules);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify egressNatRules. */
         interface WithEgressNatRules {
             /**
@@ -439,6 +451,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withEgressNatRules(List<SubResource> egressNatRules);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionProtocol. */
         interface WithConnectionProtocol {
             /**
@@ -449,6 +462,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withConnectionProtocol(VirtualNetworkGatewayConnectionProtocol connectionProtocol);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify routingWeight. */
         interface WithRoutingWeight {
             /**
@@ -459,6 +473,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withRoutingWeight(Integer routingWeight);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify dpdTimeoutSeconds. */
         interface WithDpdTimeoutSeconds {
             /**
@@ -469,6 +484,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withDpdTimeoutSeconds(Integer dpdTimeoutSeconds);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionMode. */
         interface WithConnectionMode {
             /**
@@ -479,6 +495,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withConnectionMode(VirtualNetworkGatewayConnectionMode connectionMode);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify sharedKey. */
         interface WithSharedKey {
             /**
@@ -489,6 +506,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withSharedKey(String sharedKey);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify peer. */
         interface WithPeer {
             /**
@@ -499,6 +517,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withPeer(SubResource peer);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify enableBgp. */
         interface WithEnableBgp {
             /**
@@ -509,6 +528,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withEnableBgp(Boolean enableBgp);
         }
+
         /**
          * The stage of the VirtualNetworkGatewayConnection definition allowing to specify gatewayCustomBgpIpAddresses.
          */
@@ -524,6 +544,7 @@ public interface VirtualNetworkGatewayConnection {
             WithCreate withGatewayCustomBgpIpAddresses(
                 List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify useLocalAzureIpAddress. */
         interface WithUseLocalAzureIpAddress {
             /**
@@ -534,6 +555,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withUseLocalAzureIpAddress(Boolean useLocalAzureIpAddress);
         }
+
         /**
          * The stage of the VirtualNetworkGatewayConnection definition allowing to specify
          * usePolicyBasedTrafficSelectors.
@@ -547,6 +569,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withUsePolicyBasedTrafficSelectors(Boolean usePolicyBasedTrafficSelectors);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify ipsecPolicies. */
         interface WithIpsecPolicies {
             /**
@@ -557,6 +580,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withIpsecPolicies(List<IpsecPolicy> ipsecPolicies);
         }
+
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify trafficSelectorPolicies. */
         interface WithTrafficSelectorPolicies {
             /**
@@ -568,6 +592,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withTrafficSelectorPolicies(List<TrafficSelectorPolicy> trafficSelectorPolicies);
         }
+
         /**
          * The stage of the VirtualNetworkGatewayConnection definition allowing to specify expressRouteGatewayBypass.
          */
@@ -580,6 +605,7 @@ public interface VirtualNetworkGatewayConnection {
              */
             WithCreate withExpressRouteGatewayBypass(Boolean expressRouteGatewayBypass);
         }
+
         /**
          * The stage of the VirtualNetworkGatewayConnection definition allowing to specify enablePrivateLinkFastPath.
          */
@@ -595,6 +621,7 @@ public interface VirtualNetworkGatewayConnection {
             WithCreate withEnablePrivateLinkFastPath(Boolean enablePrivateLinkFastPath);
         }
     }
+
     /**
      * Begins update for the VirtualNetworkGatewayConnection resource.
      *
@@ -619,6 +646,7 @@ public interface VirtualNetworkGatewayConnection {
          */
         VirtualNetworkGatewayConnection apply(Context context);
     }
+
     /** The VirtualNetworkGatewayConnection update stages. */
     interface UpdateStages {
         /** The stage of the VirtualNetworkGatewayConnection update allowing to specify tags. */
@@ -632,6 +660,7 @@ public interface VirtualNetworkGatewayConnection {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

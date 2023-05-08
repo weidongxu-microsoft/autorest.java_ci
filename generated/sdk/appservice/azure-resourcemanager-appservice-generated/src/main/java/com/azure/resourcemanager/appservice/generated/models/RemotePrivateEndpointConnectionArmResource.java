@@ -86,11 +86,13 @@ public interface RemotePrivateEndpointConnectionArmResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The RemotePrivateEndpointConnectionArmResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the RemotePrivateEndpointConnectionArmResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /**
          * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify parent resource.
          */
@@ -104,6 +106,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
              */
             WithCreate withExistingHostingEnvironment(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the RemotePrivateEndpointConnectionArmResource definition which contains all the minimum
          * required properties for the resource to be created, but also allows for any other optional properties to be
@@ -125,6 +128,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
              */
             RemotePrivateEndpointConnectionArmResource create(Context context);
         }
+
         /** The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -135,6 +139,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
              */
             WithCreate withKind(String kind);
         }
+
         /**
          * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify
          * privateLinkServiceConnectionState.
@@ -150,6 +155,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
                 PrivateLinkConnectionState privateLinkServiceConnectionState);
         }
     }
+
     /**
      * Begins update for the RemotePrivateEndpointConnectionArmResource resource.
      *
@@ -174,6 +180,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
          */
         RemotePrivateEndpointConnectionArmResource apply(Context context);
     }
+
     /** The RemotePrivateEndpointConnectionArmResource update stages. */
     interface UpdateStages {
         /** The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify kind. */
@@ -186,6 +193,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
              */
             Update withKind(String kind);
         }
+
         /**
          * The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify
          * privateLinkServiceConnectionState.
@@ -200,6 +208,7 @@ public interface RemotePrivateEndpointConnectionArmResource {
             Update withPrivateLinkServiceConnectionState(PrivateLinkConnectionState privateLinkServiceConnectionState);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

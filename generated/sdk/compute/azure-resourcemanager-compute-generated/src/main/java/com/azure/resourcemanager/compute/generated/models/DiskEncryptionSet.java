@@ -151,11 +151,13 @@ public interface DiskEncryptionSet {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The DiskEncryptionSet definition stages. */
     interface DefinitionStages {
         /** The first stage of the DiskEncryptionSet definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -174,6 +176,7 @@ public interface DiskEncryptionSet {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -184,6 +187,7 @@ public interface DiskEncryptionSet {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the DiskEncryptionSet definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -210,6 +214,7 @@ public interface DiskEncryptionSet {
              */
             DiskEncryptionSet create(Context context);
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -220,6 +225,7 @@ public interface DiskEncryptionSet {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -232,6 +238,7 @@ public interface DiskEncryptionSet {
              */
             WithCreate withIdentity(EncryptionSetIdentity identity);
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify encryptionType. */
         interface WithEncryptionType {
             /**
@@ -242,6 +249,7 @@ public interface DiskEncryptionSet {
              */
             WithCreate withEncryptionType(DiskEncryptionSetType encryptionType);
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify activeKey. */
         interface WithActiveKey {
             /**
@@ -252,6 +260,7 @@ public interface DiskEncryptionSet {
              */
             WithCreate withActiveKey(KeyForDiskEncryptionSet activeKey);
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify rotationToLatestKeyVersionEnabled. */
         interface WithRotationToLatestKeyVersionEnabled {
             /**
@@ -264,6 +273,7 @@ public interface DiskEncryptionSet {
              */
             WithCreate withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
         }
+
         /** The stage of the DiskEncryptionSet definition allowing to specify federatedClientId. */
         interface WithFederatedClientId {
             /**
@@ -277,6 +287,7 @@ public interface DiskEncryptionSet {
             WithCreate withFederatedClientId(String federatedClientId);
         }
     }
+
     /**
      * Begins update for the DiskEncryptionSet resource.
      *
@@ -307,6 +318,7 @@ public interface DiskEncryptionSet {
          */
         DiskEncryptionSet apply(Context context);
     }
+
     /** The DiskEncryptionSet update stages. */
     interface UpdateStages {
         /** The stage of the DiskEncryptionSet update allowing to specify tags. */
@@ -319,6 +331,7 @@ public interface DiskEncryptionSet {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the DiskEncryptionSet update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -331,6 +344,7 @@ public interface DiskEncryptionSet {
              */
             Update withIdentity(EncryptionSetIdentity identity);
         }
+
         /** The stage of the DiskEncryptionSet update allowing to specify encryptionType. */
         interface WithEncryptionType {
             /**
@@ -341,6 +355,7 @@ public interface DiskEncryptionSet {
              */
             Update withEncryptionType(DiskEncryptionSetType encryptionType);
         }
+
         /** The stage of the DiskEncryptionSet update allowing to specify activeKey. */
         interface WithActiveKey {
             /**
@@ -352,6 +367,7 @@ public interface DiskEncryptionSet {
              */
             Update withActiveKey(KeyForDiskEncryptionSet activeKey);
         }
+
         /** The stage of the DiskEncryptionSet update allowing to specify rotationToLatestKeyVersionEnabled. */
         interface WithRotationToLatestKeyVersionEnabled {
             /**
@@ -364,6 +380,7 @@ public interface DiskEncryptionSet {
              */
             Update withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
         }
+
         /** The stage of the DiskEncryptionSet update allowing to specify federatedClientId. */
         interface WithFederatedClientId {
             /**
@@ -377,6 +394,7 @@ public interface DiskEncryptionSet {
             Update withFederatedClientId(String federatedClientId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

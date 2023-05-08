@@ -107,11 +107,13 @@ public interface PolicyExemption {
             DefinitionStages.WithExemptionCategory,
             DefinitionStages.WithCreate {
     }
+
     /** The PolicyExemption definition stages. */
     interface DefinitionStages {
         /** The first stage of the PolicyExemption definition. */
         interface Blank extends WithScope {
         }
+
         /** The stage of the PolicyExemption definition allowing to specify parent resource. */
         interface WithScope {
             /**
@@ -126,6 +128,7 @@ public interface PolicyExemption {
              */
             WithPolicyAssignmentId withExistingScope(String scope);
         }
+
         /** The stage of the PolicyExemption definition allowing to specify policyAssignmentId. */
         interface WithPolicyAssignmentId {
             /**
@@ -136,6 +139,7 @@ public interface PolicyExemption {
              */
             WithExemptionCategory withPolicyAssignmentId(String policyAssignmentId);
         }
+
         /** The stage of the PolicyExemption definition allowing to specify exemptionCategory. */
         interface WithExemptionCategory {
             /**
@@ -147,6 +151,7 @@ public interface PolicyExemption {
              */
             WithCreate withExemptionCategory(ExemptionCategory exemptionCategory);
         }
+
         /**
          * The stage of the PolicyExemption definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -172,6 +177,7 @@ public interface PolicyExemption {
              */
             PolicyExemption create(Context context);
         }
+
         /** The stage of the PolicyExemption definition allowing to specify policyDefinitionReferenceIds. */
         interface WithPolicyDefinitionReferenceIds {
             /**
@@ -184,6 +190,7 @@ public interface PolicyExemption {
              */
             WithCreate withPolicyDefinitionReferenceIds(List<String> policyDefinitionReferenceIds);
         }
+
         /** The stage of the PolicyExemption definition allowing to specify expiresOn. */
         interface WithExpiresOn {
             /**
@@ -196,6 +203,7 @@ public interface PolicyExemption {
              */
             WithCreate withExpiresOn(OffsetDateTime expiresOn);
         }
+
         /** The stage of the PolicyExemption definition allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -206,6 +214,7 @@ public interface PolicyExemption {
              */
             WithCreate withDisplayName(String displayName);
         }
+
         /** The stage of the PolicyExemption definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -216,6 +225,7 @@ public interface PolicyExemption {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the PolicyExemption definition allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -229,6 +239,7 @@ public interface PolicyExemption {
             WithCreate withMetadata(Object metadata);
         }
     }
+
     /**
      * Begins update for the PolicyExemption resource.
      *
@@ -260,6 +271,7 @@ public interface PolicyExemption {
          */
         PolicyExemption apply(Context context);
     }
+
     /** The PolicyExemption update stages. */
     interface UpdateStages {
         /** The stage of the PolicyExemption update allowing to specify policyAssignmentId. */
@@ -272,6 +284,7 @@ public interface PolicyExemption {
              */
             Update withPolicyAssignmentId(String policyAssignmentId);
         }
+
         /** The stage of the PolicyExemption update allowing to specify policyDefinitionReferenceIds. */
         interface WithPolicyDefinitionReferenceIds {
             /**
@@ -284,6 +297,7 @@ public interface PolicyExemption {
              */
             Update withPolicyDefinitionReferenceIds(List<String> policyDefinitionReferenceIds);
         }
+
         /** The stage of the PolicyExemption update allowing to specify exemptionCategory. */
         interface WithExemptionCategory {
             /**
@@ -295,6 +309,7 @@ public interface PolicyExemption {
              */
             Update withExemptionCategory(ExemptionCategory exemptionCategory);
         }
+
         /** The stage of the PolicyExemption update allowing to specify expiresOn. */
         interface WithExpiresOn {
             /**
@@ -307,6 +322,7 @@ public interface PolicyExemption {
              */
             Update withExpiresOn(OffsetDateTime expiresOn);
         }
+
         /** The stage of the PolicyExemption update allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -317,6 +333,7 @@ public interface PolicyExemption {
              */
             Update withDisplayName(String displayName);
         }
+
         /** The stage of the PolicyExemption update allowing to specify description. */
         interface WithDescription {
             /**
@@ -327,6 +344,7 @@ public interface PolicyExemption {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the PolicyExemption update allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -340,6 +358,7 @@ public interface PolicyExemption {
             Update withMetadata(Object metadata);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

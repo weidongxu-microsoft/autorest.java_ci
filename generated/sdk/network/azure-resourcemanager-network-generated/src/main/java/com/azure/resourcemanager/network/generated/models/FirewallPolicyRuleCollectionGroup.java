@@ -80,11 +80,13 @@ public interface FirewallPolicyRuleCollectionGroup {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The FirewallPolicyRuleCollectionGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the FirewallPolicyRuleCollectionGroup definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the FirewallPolicyRuleCollectionGroup definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -96,6 +98,7 @@ public interface FirewallPolicyRuleCollectionGroup {
              */
             WithCreate withExistingFirewallPolicy(String resourceGroupName, String firewallPolicyName);
         }
+
         /**
          * The stage of the FirewallPolicyRuleCollectionGroup definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -117,6 +120,7 @@ public interface FirewallPolicyRuleCollectionGroup {
              */
             FirewallPolicyRuleCollectionGroup create(Context context);
         }
+
         /** The stage of the FirewallPolicyRuleCollectionGroup definition allowing to specify name. */
         interface WithName {
             /**
@@ -129,6 +133,7 @@ public interface FirewallPolicyRuleCollectionGroup {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the FirewallPolicyRuleCollectionGroup definition allowing to specify priority. */
         interface WithPriority {
             /**
@@ -139,6 +144,7 @@ public interface FirewallPolicyRuleCollectionGroup {
              */
             WithCreate withPriority(Integer priority);
         }
+
         /** The stage of the FirewallPolicyRuleCollectionGroup definition allowing to specify ruleCollections. */
         interface WithRuleCollections {
             /**
@@ -150,6 +156,7 @@ public interface FirewallPolicyRuleCollectionGroup {
             WithCreate withRuleCollections(List<FirewallPolicyRuleCollection> ruleCollections);
         }
     }
+
     /**
      * Begins update for the FirewallPolicyRuleCollectionGroup resource.
      *
@@ -174,6 +181,7 @@ public interface FirewallPolicyRuleCollectionGroup {
          */
         FirewallPolicyRuleCollectionGroup apply(Context context);
     }
+
     /** The FirewallPolicyRuleCollectionGroup update stages. */
     interface UpdateStages {
         /** The stage of the FirewallPolicyRuleCollectionGroup update allowing to specify name. */
@@ -188,6 +196,7 @@ public interface FirewallPolicyRuleCollectionGroup {
              */
             Update withName(String name);
         }
+
         /** The stage of the FirewallPolicyRuleCollectionGroup update allowing to specify priority. */
         interface WithPriority {
             /**
@@ -198,6 +207,7 @@ public interface FirewallPolicyRuleCollectionGroup {
              */
             Update withPriority(Integer priority);
         }
+
         /** The stage of the FirewallPolicyRuleCollectionGroup update allowing to specify ruleCollections. */
         interface WithRuleCollections {
             /**
@@ -209,6 +219,7 @@ public interface FirewallPolicyRuleCollectionGroup {
             Update withRuleCollections(List<FirewallPolicyRuleCollection> ruleCollections);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

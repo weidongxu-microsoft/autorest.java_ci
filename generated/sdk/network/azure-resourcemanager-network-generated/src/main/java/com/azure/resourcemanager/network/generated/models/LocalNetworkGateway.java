@@ -130,11 +130,13 @@ public interface LocalNetworkGateway {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The LocalNetworkGateway definition stages. */
     interface DefinitionStages {
         /** The first stage of the LocalNetworkGateway definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the LocalNetworkGateway definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -153,6 +155,7 @@ public interface LocalNetworkGateway {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the LocalNetworkGateway definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -163,6 +166,7 @@ public interface LocalNetworkGateway {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the LocalNetworkGateway definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -188,6 +192,7 @@ public interface LocalNetworkGateway {
              */
             LocalNetworkGateway create(Context context);
         }
+
         /** The stage of the LocalNetworkGateway definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -198,6 +203,7 @@ public interface LocalNetworkGateway {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the LocalNetworkGateway definition allowing to specify localNetworkAddressSpace. */
         interface WithLocalNetworkAddressSpace {
             /**
@@ -208,6 +214,7 @@ public interface LocalNetworkGateway {
              */
             WithCreate withLocalNetworkAddressSpace(AddressSpace localNetworkAddressSpace);
         }
+
         /** The stage of the LocalNetworkGateway definition allowing to specify gatewayIpAddress. */
         interface WithGatewayIpAddress {
             /**
@@ -218,6 +225,7 @@ public interface LocalNetworkGateway {
              */
             WithCreate withGatewayIpAddress(String gatewayIpAddress);
         }
+
         /** The stage of the LocalNetworkGateway definition allowing to specify fqdn. */
         interface WithFqdn {
             /**
@@ -228,6 +236,7 @@ public interface LocalNetworkGateway {
              */
             WithCreate withFqdn(String fqdn);
         }
+
         /** The stage of the LocalNetworkGateway definition allowing to specify bgpSettings. */
         interface WithBgpSettings {
             /**
@@ -239,6 +248,7 @@ public interface LocalNetworkGateway {
             WithCreate withBgpSettings(BgpSettings bgpSettings);
         }
     }
+
     /**
      * Begins update for the LocalNetworkGateway resource.
      *
@@ -263,6 +273,7 @@ public interface LocalNetworkGateway {
          */
         LocalNetworkGateway apply(Context context);
     }
+
     /** The LocalNetworkGateway update stages. */
     interface UpdateStages {
         /** The stage of the LocalNetworkGateway update allowing to specify tags. */
@@ -276,6 +287,7 @@ public interface LocalNetworkGateway {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

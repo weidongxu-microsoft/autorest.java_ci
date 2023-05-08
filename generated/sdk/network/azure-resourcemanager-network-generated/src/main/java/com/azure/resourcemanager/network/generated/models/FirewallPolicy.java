@@ -202,11 +202,13 @@ public interface FirewallPolicy {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The FirewallPolicy definition stages. */
     interface DefinitionStages {
         /** The first stage of the FirewallPolicy definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -225,6 +227,7 @@ public interface FirewallPolicy {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -235,6 +238,7 @@ public interface FirewallPolicy {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the FirewallPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -268,6 +272,7 @@ public interface FirewallPolicy {
              */
             FirewallPolicy create(Context context);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -278,6 +283,7 @@ public interface FirewallPolicy {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -288,6 +294,7 @@ public interface FirewallPolicy {
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify basePolicy. */
         interface WithBasePolicy {
             /**
@@ -298,6 +305,7 @@ public interface FirewallPolicy {
              */
             WithCreate withBasePolicy(SubResource basePolicy);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify threatIntelMode. */
         interface WithThreatIntelMode {
             /**
@@ -308,6 +316,7 @@ public interface FirewallPolicy {
              */
             WithCreate withThreatIntelMode(AzureFirewallThreatIntelMode threatIntelMode);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify threatIntelWhitelist. */
         interface WithThreatIntelWhitelist {
             /**
@@ -318,6 +327,7 @@ public interface FirewallPolicy {
              */
             WithCreate withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify insights. */
         interface WithInsights {
             /**
@@ -328,6 +338,7 @@ public interface FirewallPolicy {
              */
             WithCreate withInsights(FirewallPolicyInsights insights);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify snat. */
         interface WithSnat {
             /**
@@ -338,6 +349,7 @@ public interface FirewallPolicy {
              */
             WithCreate withSnat(FirewallPolicySnat snat);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify sql. */
         interface WithSql {
             /**
@@ -348,6 +360,7 @@ public interface FirewallPolicy {
              */
             WithCreate withSql(FirewallPolicySql sql);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify dnsSettings. */
         interface WithDnsSettings {
             /**
@@ -358,6 +371,7 @@ public interface FirewallPolicy {
              */
             WithCreate withDnsSettings(DnsSettings dnsSettings);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify explicitProxy. */
         interface WithExplicitProxy {
             /**
@@ -368,6 +382,7 @@ public interface FirewallPolicy {
              */
             WithCreate withExplicitProxy(ExplicitProxy explicitProxy);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify intrusionDetection. */
         interface WithIntrusionDetection {
             /**
@@ -378,6 +393,7 @@ public interface FirewallPolicy {
              */
             WithCreate withIntrusionDetection(FirewallPolicyIntrusionDetection intrusionDetection);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify transportSecurity. */
         interface WithTransportSecurity {
             /**
@@ -388,6 +404,7 @@ public interface FirewallPolicy {
              */
             WithCreate withTransportSecurity(FirewallPolicyTransportSecurity transportSecurity);
         }
+
         /** The stage of the FirewallPolicy definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -399,6 +416,7 @@ public interface FirewallPolicy {
             WithCreate withSku(FirewallPolicySku sku);
         }
     }
+
     /**
      * Begins update for the FirewallPolicy resource.
      *
@@ -423,6 +441,7 @@ public interface FirewallPolicy {
          */
         FirewallPolicy apply(Context context);
     }
+
     /** The FirewallPolicy update stages. */
     interface UpdateStages {
         /** The stage of the FirewallPolicy update allowing to specify tags. */
@@ -436,6 +455,7 @@ public interface FirewallPolicy {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

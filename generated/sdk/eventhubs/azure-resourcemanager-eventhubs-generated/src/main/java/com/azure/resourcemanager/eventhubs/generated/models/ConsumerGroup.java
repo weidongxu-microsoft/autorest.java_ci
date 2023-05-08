@@ -102,11 +102,13 @@ public interface ConsumerGroup {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ConsumerGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the ConsumerGroup definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ConsumerGroup definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -119,6 +121,7 @@ public interface ConsumerGroup {
              */
             WithCreate withExistingEventhub(String resourceGroupName, String namespaceName, String eventHubName);
         }
+
         /**
          * The stage of the ConsumerGroup definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -139,6 +142,7 @@ public interface ConsumerGroup {
              */
             ConsumerGroup create(Context context);
         }
+
         /** The stage of the ConsumerGroup definition allowing to specify userMetadata. */
         interface WithUserMetadata {
             /**
@@ -154,6 +158,7 @@ public interface ConsumerGroup {
             WithCreate withUserMetadata(String userMetadata);
         }
     }
+
     /**
      * Begins update for the ConsumerGroup resource.
      *
@@ -178,6 +183,7 @@ public interface ConsumerGroup {
          */
         ConsumerGroup apply(Context context);
     }
+
     /** The ConsumerGroup update stages. */
     interface UpdateStages {
         /** The stage of the ConsumerGroup update allowing to specify userMetadata. */
@@ -195,6 +201,7 @@ public interface ConsumerGroup {
             Update withUserMetadata(String userMetadata);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -82,11 +82,13 @@ public interface User {
             DefinitionStages.WithUserType,
             DefinitionStages.WithCreate {
     }
+
     /** The User definition stages. */
     interface DefinitionStages {
         /** The first stage of the User definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the User definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -98,6 +100,7 @@ public interface User {
              */
             WithUserType withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName);
         }
+
         /** The stage of the User definition allowing to specify userType. */
         interface WithUserType {
             /**
@@ -108,6 +111,7 @@ public interface User {
              */
             WithCreate withUserType(UserType userType);
         }
+
         /**
          * The stage of the User definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -128,6 +132,7 @@ public interface User {
              */
             User create(Context context);
         }
+
         /** The stage of the User definition allowing to specify encryptedPassword. */
         interface WithEncryptedPassword {
             /**
@@ -139,6 +144,7 @@ public interface User {
             WithCreate withEncryptedPassword(AsymmetricEncryptedSecret encryptedPassword);
         }
     }
+
     /**
      * Begins update for the User resource.
      *
@@ -163,6 +169,7 @@ public interface User {
          */
         User apply(Context context);
     }
+
     /** The User update stages. */
     interface UpdateStages {
         /** The stage of the User update allowing to specify encryptedPassword. */
@@ -175,6 +182,7 @@ public interface User {
              */
             Update withEncryptedPassword(AsymmetricEncryptedSecret encryptedPassword);
         }
+
         /** The stage of the User update allowing to specify userType. */
         interface WithUserType {
             /**
@@ -186,6 +194,7 @@ public interface User {
             Update withUserType(UserType userType);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

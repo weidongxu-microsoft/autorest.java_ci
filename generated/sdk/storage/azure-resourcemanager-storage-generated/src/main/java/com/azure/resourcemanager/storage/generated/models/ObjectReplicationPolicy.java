@@ -87,11 +87,13 @@ public interface ObjectReplicationPolicy {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ObjectReplicationPolicy definition stages. */
     interface DefinitionStages {
         /** The first stage of the ObjectReplicationPolicy definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ObjectReplicationPolicy definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -105,6 +107,7 @@ public interface ObjectReplicationPolicy {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the ObjectReplicationPolicy definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -128,6 +131,7 @@ public interface ObjectReplicationPolicy {
              */
             ObjectReplicationPolicy create(Context context);
         }
+
         /** The stage of the ObjectReplicationPolicy definition allowing to specify sourceAccount. */
         interface WithSourceAccount {
             /**
@@ -140,6 +144,7 @@ public interface ObjectReplicationPolicy {
              */
             WithCreate withSourceAccount(String sourceAccount);
         }
+
         /** The stage of the ObjectReplicationPolicy definition allowing to specify destinationAccount. */
         interface WithDestinationAccount {
             /**
@@ -152,6 +157,7 @@ public interface ObjectReplicationPolicy {
              */
             WithCreate withDestinationAccount(String destinationAccount);
         }
+
         /** The stage of the ObjectReplicationPolicy definition allowing to specify rules. */
         interface WithRules {
             /**
@@ -163,6 +169,7 @@ public interface ObjectReplicationPolicy {
             WithCreate withRules(List<ObjectReplicationPolicyRule> rules);
         }
     }
+
     /**
      * Begins update for the ObjectReplicationPolicy resource.
      *
@@ -188,6 +195,7 @@ public interface ObjectReplicationPolicy {
          */
         ObjectReplicationPolicy apply(Context context);
     }
+
     /** The ObjectReplicationPolicy update stages. */
     interface UpdateStages {
         /** The stage of the ObjectReplicationPolicy update allowing to specify sourceAccount. */
@@ -202,6 +210,7 @@ public interface ObjectReplicationPolicy {
              */
             Update withSourceAccount(String sourceAccount);
         }
+
         /** The stage of the ObjectReplicationPolicy update allowing to specify destinationAccount. */
         interface WithDestinationAccount {
             /**
@@ -214,6 +223,7 @@ public interface ObjectReplicationPolicy {
              */
             Update withDestinationAccount(String destinationAccount);
         }
+
         /** The stage of the ObjectReplicationPolicy update allowing to specify rules. */
         interface WithRules {
             /**
@@ -225,6 +235,7 @@ public interface ObjectReplicationPolicy {
             Update withRules(List<ObjectReplicationPolicyRule> rules);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

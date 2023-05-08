@@ -82,11 +82,13 @@ public interface VnetRoute {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VnetRoute definition stages. */
     interface DefinitionStages {
         /** The first stage of the VnetRoute definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VnetRoute definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -99,6 +101,7 @@ public interface VnetRoute {
              */
             WithCreate withExistingVirtualNetworkConnection(String resourceGroupName, String name, String vnetName);
         }
+
         /**
          * The stage of the VnetRoute definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -123,6 +126,7 @@ public interface VnetRoute {
              */
             VnetRoute create(Context context);
         }
+
         /** The stage of the VnetRoute definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -133,6 +137,7 @@ public interface VnetRoute {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the VnetRoute definition allowing to specify startAddress. */
         interface WithStartAddress {
             /**
@@ -145,6 +150,7 @@ public interface VnetRoute {
              */
             WithCreate withStartAddress(String startAddress);
         }
+
         /** The stage of the VnetRoute definition allowing to specify endAddress. */
         interface WithEndAddress {
             /**
@@ -157,6 +163,7 @@ public interface VnetRoute {
              */
             WithCreate withEndAddress(String endAddress);
         }
+
         /** The stage of the VnetRoute definition allowing to specify routeType. */
         interface WithRouteType {
             /**
@@ -175,6 +182,7 @@ public interface VnetRoute {
             WithCreate withRouteType(RouteType routeType);
         }
     }
+
     /**
      * Begins update for the VnetRoute resource.
      *
@@ -203,6 +211,7 @@ public interface VnetRoute {
          */
         VnetRoute apply(Context context);
     }
+
     /** The VnetRoute update stages. */
     interface UpdateStages {
         /** The stage of the VnetRoute update allowing to specify kind. */
@@ -215,6 +224,7 @@ public interface VnetRoute {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the VnetRoute update allowing to specify startAddress. */
         interface WithStartAddress {
             /**
@@ -227,6 +237,7 @@ public interface VnetRoute {
              */
             Update withStartAddress(String startAddress);
         }
+
         /** The stage of the VnetRoute update allowing to specify endAddress. */
         interface WithEndAddress {
             /**
@@ -239,6 +250,7 @@ public interface VnetRoute {
              */
             Update withEndAddress(String endAddress);
         }
+
         /** The stage of the VnetRoute update allowing to specify routeType. */
         interface WithRouteType {
             /**

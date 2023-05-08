@@ -379,11 +379,13 @@ public interface ApplicationGateway {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ApplicationGateway definition stages. */
     interface DefinitionStages {
         /** The first stage of the ApplicationGateway definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -402,6 +404,7 @@ public interface ApplicationGateway {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -412,6 +415,7 @@ public interface ApplicationGateway {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ApplicationGateway definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -466,6 +470,7 @@ public interface ApplicationGateway {
              */
             ApplicationGateway create(Context context);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -476,6 +481,7 @@ public interface ApplicationGateway {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -487,6 +493,7 @@ public interface ApplicationGateway {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -497,6 +504,7 @@ public interface ApplicationGateway {
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -507,6 +515,7 @@ public interface ApplicationGateway {
              */
             WithCreate withSku(ApplicationGatewaySku sku);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify sslPolicy. */
         interface WithSslPolicy {
             /**
@@ -517,6 +526,7 @@ public interface ApplicationGateway {
              */
             WithCreate withSslPolicy(ApplicationGatewaySslPolicy sslPolicy);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify gatewayIpConfigurations. */
         interface WithGatewayIpConfigurations {
             /**
@@ -531,6 +541,7 @@ public interface ApplicationGateway {
              */
             WithCreate withGatewayIpConfigurations(List<ApplicationGatewayIpConfiguration> gatewayIpConfigurations);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify authenticationCertificates. */
         interface WithAuthenticationCertificates {
             /**
@@ -546,6 +557,7 @@ public interface ApplicationGateway {
             WithCreate withAuthenticationCertificates(
                 List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify trustedRootCertificates. */
         interface WithTrustedRootCertificates {
             /**
@@ -561,6 +573,7 @@ public interface ApplicationGateway {
             WithCreate withTrustedRootCertificates(
                 List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify trustedClientCertificates. */
         interface WithTrustedClientCertificates {
             /**
@@ -576,6 +589,7 @@ public interface ApplicationGateway {
             WithCreate withTrustedClientCertificates(
                 List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify sslCertificates. */
         interface WithSslCertificates {
             /**
@@ -590,6 +604,7 @@ public interface ApplicationGateway {
              */
             WithCreate withSslCertificates(List<ApplicationGatewaySslCertificate> sslCertificates);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify frontendIpConfigurations. */
         interface WithFrontendIpConfigurations {
             /**
@@ -605,6 +620,7 @@ public interface ApplicationGateway {
             WithCreate withFrontendIpConfigurations(
                 List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify frontendPorts. */
         interface WithFrontendPorts {
             /**
@@ -619,6 +635,7 @@ public interface ApplicationGateway {
              */
             WithCreate withFrontendPorts(List<ApplicationGatewayFrontendPort> frontendPorts);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify probes. */
         interface WithProbes {
             /**
@@ -629,6 +646,7 @@ public interface ApplicationGateway {
              */
             WithCreate withProbes(List<ApplicationGatewayProbe> probes);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify backendAddressPools. */
         interface WithBackendAddressPools {
             /**
@@ -643,6 +661,7 @@ public interface ApplicationGateway {
              */
             WithCreate withBackendAddressPools(List<ApplicationGatewayBackendAddressPool> backendAddressPools);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify backendHttpSettingsCollection. */
         interface WithBackendHttpSettingsCollection {
             /**
@@ -658,6 +677,7 @@ public interface ApplicationGateway {
             WithCreate withBackendHttpSettingsCollection(
                 List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify backendSettingsCollection. */
         interface WithBackendSettingsCollection {
             /**
@@ -672,6 +692,7 @@ public interface ApplicationGateway {
              */
             WithCreate withBackendSettingsCollection(List<ApplicationGatewayBackendSettings> backendSettingsCollection);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify httpListeners. */
         interface WithHttpListeners {
             /**
@@ -686,6 +707,7 @@ public interface ApplicationGateway {
              */
             WithCreate withHttpListeners(List<ApplicationGatewayHttpListener> httpListeners);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify listeners. */
         interface WithListeners {
             /**
@@ -700,6 +722,7 @@ public interface ApplicationGateway {
              */
             WithCreate withListeners(List<ApplicationGatewayListener> listeners);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify sslProfiles. */
         interface WithSslProfiles {
             /**
@@ -714,6 +737,7 @@ public interface ApplicationGateway {
              */
             WithCreate withSslProfiles(List<ApplicationGatewaySslProfile> sslProfiles);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify urlPathMaps. */
         interface WithUrlPathMaps {
             /**
@@ -728,6 +752,7 @@ public interface ApplicationGateway {
              */
             WithCreate withUrlPathMaps(List<ApplicationGatewayUrlPathMap> urlPathMaps);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify requestRoutingRules. */
         interface WithRequestRoutingRules {
             /**
@@ -738,6 +763,7 @@ public interface ApplicationGateway {
              */
             WithCreate withRequestRoutingRules(List<ApplicationGatewayRequestRoutingRule> requestRoutingRules);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify routingRules. */
         interface WithRoutingRules {
             /**
@@ -748,6 +774,7 @@ public interface ApplicationGateway {
              */
             WithCreate withRoutingRules(List<ApplicationGatewayRoutingRule> routingRules);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify rewriteRuleSets. */
         interface WithRewriteRuleSets {
             /**
@@ -758,6 +785,7 @@ public interface ApplicationGateway {
              */
             WithCreate withRewriteRuleSets(List<ApplicationGatewayRewriteRuleSet> rewriteRuleSets);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify redirectConfigurations. */
         interface WithRedirectConfigurations {
             /**
@@ -772,6 +800,7 @@ public interface ApplicationGateway {
              */
             WithCreate withRedirectConfigurations(List<ApplicationGatewayRedirectConfiguration> redirectConfigurations);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify webApplicationFirewallConfiguration. */
         interface WithWebApplicationFirewallConfiguration {
             /**
@@ -783,6 +812,7 @@ public interface ApplicationGateway {
             WithCreate withWebApplicationFirewallConfiguration(
                 ApplicationGatewayWebApplicationFirewallConfiguration webApplicationFirewallConfiguration);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify firewallPolicy. */
         interface WithFirewallPolicy {
             /**
@@ -793,6 +823,7 @@ public interface ApplicationGateway {
              */
             WithCreate withFirewallPolicy(SubResource firewallPolicy);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify enableHttp2. */
         interface WithEnableHttp2 {
             /**
@@ -803,6 +834,7 @@ public interface ApplicationGateway {
              */
             WithCreate withEnableHttp2(Boolean enableHttp2);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify enableFips. */
         interface WithEnableFips {
             /**
@@ -813,6 +845,7 @@ public interface ApplicationGateway {
              */
             WithCreate withEnableFips(Boolean enableFips);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify autoscaleConfiguration. */
         interface WithAutoscaleConfiguration {
             /**
@@ -823,6 +856,7 @@ public interface ApplicationGateway {
              */
             WithCreate withAutoscaleConfiguration(ApplicationGatewayAutoscaleConfiguration autoscaleConfiguration);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify privateLinkConfigurations. */
         interface WithPrivateLinkConfigurations {
             /**
@@ -834,6 +868,7 @@ public interface ApplicationGateway {
             WithCreate withPrivateLinkConfigurations(
                 List<ApplicationGatewayPrivateLinkConfiguration> privateLinkConfigurations);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify customErrorConfigurations. */
         interface WithCustomErrorConfigurations {
             /**
@@ -845,6 +880,7 @@ public interface ApplicationGateway {
              */
             WithCreate withCustomErrorConfigurations(List<ApplicationGatewayCustomError> customErrorConfigurations);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify forceFirewallPolicyAssociation. */
         interface WithForceFirewallPolicyAssociation {
             /**
@@ -857,6 +893,7 @@ public interface ApplicationGateway {
              */
             WithCreate withForceFirewallPolicyAssociation(Boolean forceFirewallPolicyAssociation);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify loadDistributionPolicies. */
         interface WithLoadDistributionPolicies {
             /**
@@ -869,6 +906,7 @@ public interface ApplicationGateway {
             WithCreate withLoadDistributionPolicies(
                 List<ApplicationGatewayLoadDistributionPolicy> loadDistributionPolicies);
         }
+
         /** The stage of the ApplicationGateway definition allowing to specify globalConfiguration. */
         interface WithGlobalConfiguration {
             /**
@@ -880,6 +918,7 @@ public interface ApplicationGateway {
             WithCreate withGlobalConfiguration(ApplicationGatewayGlobalConfiguration globalConfiguration);
         }
     }
+
     /**
      * Begins update for the ApplicationGateway resource.
      *
@@ -904,6 +943,7 @@ public interface ApplicationGateway {
          */
         ApplicationGateway apply(Context context);
     }
+
     /** The ApplicationGateway update stages. */
     interface UpdateStages {
         /** The stage of the ApplicationGateway update allowing to specify tags. */
@@ -917,6 +957,7 @@ public interface ApplicationGateway {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

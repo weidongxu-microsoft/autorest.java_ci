@@ -122,11 +122,13 @@ public interface DdosProtectionPlan {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The DdosProtectionPlan definition stages. */
     interface DefinitionStages {
         /** The first stage of the DdosProtectionPlan definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the DdosProtectionPlan definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -145,6 +147,7 @@ public interface DdosProtectionPlan {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the DdosProtectionPlan definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -155,6 +158,7 @@ public interface DdosProtectionPlan {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the DdosProtectionPlan definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -175,6 +179,7 @@ public interface DdosProtectionPlan {
              */
             DdosProtectionPlan create(Context context);
         }
+
         /** The stage of the DdosProtectionPlan definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -186,6 +191,7 @@ public interface DdosProtectionPlan {
             WithCreate withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Begins update for the DdosProtectionPlan resource.
      *
@@ -210,6 +216,7 @@ public interface DdosProtectionPlan {
          */
         DdosProtectionPlan apply(Context context);
     }
+
     /** The DdosProtectionPlan update stages. */
     interface UpdateStages {
         /** The stage of the DdosProtectionPlan update allowing to specify tags. */
@@ -223,6 +230,7 @@ public interface DdosProtectionPlan {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

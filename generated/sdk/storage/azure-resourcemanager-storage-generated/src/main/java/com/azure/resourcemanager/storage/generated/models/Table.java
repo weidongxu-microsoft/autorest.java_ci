@@ -63,11 +63,13 @@ public interface Table {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Table definition stages. */
     interface DefinitionStages {
         /** The first stage of the Table definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Table definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -81,6 +83,7 @@ public interface Table {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the Table definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -101,6 +104,7 @@ public interface Table {
              */
             Table create(Context context);
         }
+
         /** The stage of the Table definition allowing to specify signedIdentifiers. */
         interface WithSignedIdentifiers {
             /**
@@ -112,6 +116,7 @@ public interface Table {
             WithCreate withSignedIdentifiers(List<TableSignedIdentifier> signedIdentifiers);
         }
     }
+
     /**
      * Begins update for the Table resource.
      *
@@ -136,6 +141,7 @@ public interface Table {
          */
         Table apply(Context context);
     }
+
     /** The Table update stages. */
     interface UpdateStages {
         /** The stage of the Table update allowing to specify signedIdentifiers. */
@@ -149,6 +155,7 @@ public interface Table {
             Update withSignedIdentifiers(List<TableSignedIdentifier> signedIdentifiers);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -147,11 +147,13 @@ public interface WebApplicationFirewallPolicy {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The WebApplicationFirewallPolicy definition stages. */
     interface DefinitionStages {
         /** The first stage of the WebApplicationFirewallPolicy definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the WebApplicationFirewallPolicy definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -170,6 +172,7 @@ public interface WebApplicationFirewallPolicy {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the WebApplicationFirewallPolicy definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -180,6 +183,7 @@ public interface WebApplicationFirewallPolicy {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the WebApplicationFirewallPolicy definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -204,6 +208,7 @@ public interface WebApplicationFirewallPolicy {
              */
             WebApplicationFirewallPolicy create(Context context);
         }
+
         /** The stage of the WebApplicationFirewallPolicy definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -214,6 +219,7 @@ public interface WebApplicationFirewallPolicy {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the WebApplicationFirewallPolicy definition allowing to specify policySettings. */
         interface WithPolicySettings {
             /**
@@ -224,6 +230,7 @@ public interface WebApplicationFirewallPolicy {
              */
             WithCreate withPolicySettings(PolicySettings policySettings);
         }
+
         /** The stage of the WebApplicationFirewallPolicy definition allowing to specify customRules. */
         interface WithCustomRules {
             /**
@@ -234,6 +241,7 @@ public interface WebApplicationFirewallPolicy {
              */
             WithCreate withCustomRules(List<WebApplicationFirewallCustomRule> customRules);
         }
+
         /** The stage of the WebApplicationFirewallPolicy definition allowing to specify managedRules. */
         interface WithManagedRules {
             /**
@@ -245,6 +253,7 @@ public interface WebApplicationFirewallPolicy {
             WithCreate withManagedRules(ManagedRulesDefinition managedRules);
         }
     }
+
     /**
      * Begins update for the WebApplicationFirewallPolicy resource.
      *
@@ -273,6 +282,7 @@ public interface WebApplicationFirewallPolicy {
          */
         WebApplicationFirewallPolicy apply(Context context);
     }
+
     /** The WebApplicationFirewallPolicy update stages. */
     interface UpdateStages {
         /** The stage of the WebApplicationFirewallPolicy update allowing to specify tags. */
@@ -285,6 +295,7 @@ public interface WebApplicationFirewallPolicy {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the WebApplicationFirewallPolicy update allowing to specify policySettings. */
         interface WithPolicySettings {
             /**
@@ -295,6 +306,7 @@ public interface WebApplicationFirewallPolicy {
              */
             Update withPolicySettings(PolicySettings policySettings);
         }
+
         /** The stage of the WebApplicationFirewallPolicy update allowing to specify customRules. */
         interface WithCustomRules {
             /**
@@ -305,6 +317,7 @@ public interface WebApplicationFirewallPolicy {
              */
             Update withCustomRules(List<WebApplicationFirewallCustomRule> customRules);
         }
+
         /** The stage of the WebApplicationFirewallPolicy update allowing to specify managedRules. */
         interface WithManagedRules {
             /**
@@ -316,6 +329,7 @@ public interface WebApplicationFirewallPolicy {
             Update withManagedRules(ManagedRulesDefinition managedRules);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

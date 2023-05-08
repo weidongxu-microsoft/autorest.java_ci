@@ -93,11 +93,13 @@ public interface PolicyDefinition {
     /** The entirety of the PolicyDefinition definition. */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithCreate {
     }
+
     /** The PolicyDefinition definition stages. */
     interface DefinitionStages {
         /** The first stage of the PolicyDefinition definition. */
         interface Blank extends WithCreate {
         }
+
         /**
          * The stage of the PolicyDefinition definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -125,6 +127,7 @@ public interface PolicyDefinition {
              */
             PolicyDefinition create(Context context);
         }
+
         /** The stage of the PolicyDefinition definition allowing to specify policyType. */
         interface WithPolicyType {
             /**
@@ -137,6 +140,7 @@ public interface PolicyDefinition {
              */
             WithCreate withPolicyType(PolicyType policyType);
         }
+
         /** The stage of the PolicyDefinition definition allowing to specify mode. */
         interface WithMode {
             /**
@@ -148,6 +152,7 @@ public interface PolicyDefinition {
              */
             WithCreate withMode(String mode);
         }
+
         /** The stage of the PolicyDefinition definition allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -158,6 +163,7 @@ public interface PolicyDefinition {
              */
             WithCreate withDisplayName(String displayName);
         }
+
         /** The stage of the PolicyDefinition definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -168,6 +174,7 @@ public interface PolicyDefinition {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the PolicyDefinition definition allowing to specify policyRule. */
         interface WithPolicyRule {
             /**
@@ -178,6 +185,7 @@ public interface PolicyDefinition {
              */
             WithCreate withPolicyRule(Object policyRule);
         }
+
         /** The stage of the PolicyDefinition definition allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -190,6 +198,7 @@ public interface PolicyDefinition {
              */
             WithCreate withMetadata(Object metadata);
         }
+
         /** The stage of the PolicyDefinition definition allowing to specify parameters. */
         interface WithParameters {
             /**
@@ -203,6 +212,7 @@ public interface PolicyDefinition {
             WithCreate withParameters(Map<String, ParameterDefinitionsValue> parameters);
         }
     }
+
     /**
      * Begins update for the PolicyDefinition resource.
      *
@@ -234,6 +244,7 @@ public interface PolicyDefinition {
          */
         PolicyDefinition apply(Context context);
     }
+
     /** The PolicyDefinition update stages. */
     interface UpdateStages {
         /** The stage of the PolicyDefinition update allowing to specify policyType. */
@@ -248,6 +259,7 @@ public interface PolicyDefinition {
              */
             Update withPolicyType(PolicyType policyType);
         }
+
         /** The stage of the PolicyDefinition update allowing to specify mode. */
         interface WithMode {
             /**
@@ -259,6 +271,7 @@ public interface PolicyDefinition {
              */
             Update withMode(String mode);
         }
+
         /** The stage of the PolicyDefinition update allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -269,6 +282,7 @@ public interface PolicyDefinition {
              */
             Update withDisplayName(String displayName);
         }
+
         /** The stage of the PolicyDefinition update allowing to specify description. */
         interface WithDescription {
             /**
@@ -279,6 +293,7 @@ public interface PolicyDefinition {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the PolicyDefinition update allowing to specify policyRule. */
         interface WithPolicyRule {
             /**
@@ -289,6 +304,7 @@ public interface PolicyDefinition {
              */
             Update withPolicyRule(Object policyRule);
         }
+
         /** The stage of the PolicyDefinition update allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -301,6 +317,7 @@ public interface PolicyDefinition {
              */
             Update withMetadata(Object metadata);
         }
+
         /** The stage of the PolicyDefinition update allowing to specify parameters. */
         interface WithParameters {
             /**
@@ -314,6 +331,7 @@ public interface PolicyDefinition {
             Update withParameters(Map<String, ParameterDefinitionsValue> parameters);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

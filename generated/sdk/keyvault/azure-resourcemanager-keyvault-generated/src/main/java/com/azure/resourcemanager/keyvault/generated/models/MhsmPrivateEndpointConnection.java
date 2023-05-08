@@ -125,11 +125,13 @@ public interface MhsmPrivateEndpointConnection {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The MhsmPrivateEndpointConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the MhsmPrivateEndpointConnection definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -148,6 +150,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -159,6 +162,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             WithCreate withExistingManagedHSM(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the MhsmPrivateEndpointConnection definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -185,6 +189,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             MhsmPrivateEndpointConnection create(Context context);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -195,6 +200,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -205,6 +211,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             WithCreate withSku(ManagedHsmSku sku);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify etag. */
         interface WithEtag {
             /**
@@ -216,6 +223,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             WithCreate withEtag(String etag);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify privateEndpoint. */
         interface WithPrivateEndpoint {
             /**
@@ -226,6 +234,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             WithCreate withPrivateEndpoint(MhsmPrivateEndpoint privateEndpoint);
         }
+
         /**
          * The stage of the MhsmPrivateEndpointConnection definition allowing to specify
          * privateLinkServiceConnectionState.
@@ -240,6 +249,7 @@ public interface MhsmPrivateEndpointConnection {
             WithCreate withPrivateLinkServiceConnectionState(
                 MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify provisioningState. */
         interface WithProvisioningState {
             /**
@@ -251,6 +261,7 @@ public interface MhsmPrivateEndpointConnection {
             WithCreate withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState);
         }
     }
+
     /**
      * Begins update for the MhsmPrivateEndpointConnection resource.
      *
@@ -281,6 +292,7 @@ public interface MhsmPrivateEndpointConnection {
          */
         MhsmPrivateEndpointConnection apply(Context context);
     }
+
     /** The MhsmPrivateEndpointConnection update stages. */
     interface UpdateStages {
         /** The stage of the MhsmPrivateEndpointConnection update allowing to specify tags. */
@@ -293,6 +305,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection update allowing to specify sku. */
         interface WithSku {
             /**
@@ -303,6 +316,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             Update withSku(ManagedHsmSku sku);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection update allowing to specify etag. */
         interface WithEtag {
             /**
@@ -314,6 +328,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             Update withEtag(String etag);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection update allowing to specify privateEndpoint. */
         interface WithPrivateEndpoint {
             /**
@@ -324,6 +339,7 @@ public interface MhsmPrivateEndpointConnection {
              */
             Update withPrivateEndpoint(MhsmPrivateEndpoint privateEndpoint);
         }
+
         /**
          * The stage of the MhsmPrivateEndpointConnection update allowing to specify privateLinkServiceConnectionState.
          */
@@ -337,6 +353,7 @@ public interface MhsmPrivateEndpointConnection {
             Update withPrivateLinkServiceConnectionState(
                 MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState);
         }
+
         /** The stage of the MhsmPrivateEndpointConnection update allowing to specify provisioningState. */
         interface WithProvisioningState {
             /**
@@ -348,6 +365,7 @@ public interface MhsmPrivateEndpointConnection {
             Update withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

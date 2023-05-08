@@ -204,11 +204,13 @@ public interface VirtualNetwork {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualNetwork definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualNetwork definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -227,6 +229,7 @@ public interface VirtualNetwork {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -237,6 +240,7 @@ public interface VirtualNetwork {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VirtualNetwork definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -270,6 +274,7 @@ public interface VirtualNetwork {
              */
             VirtualNetwork create(Context context);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -280,6 +285,7 @@ public interface VirtualNetwork {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -290,6 +296,7 @@ public interface VirtualNetwork {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify addressSpace. */
         interface WithAddressSpace {
             /**
@@ -302,6 +309,7 @@ public interface VirtualNetwork {
              */
             WithCreate withAddressSpace(AddressSpace addressSpace);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify dhcpOptions. */
         interface WithDhcpOptions {
             /**
@@ -314,6 +322,7 @@ public interface VirtualNetwork {
              */
             WithCreate withDhcpOptions(DhcpOptions dhcpOptions);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify flowTimeoutInMinutes. */
         interface WithFlowTimeoutInMinutes {
             /**
@@ -324,6 +333,7 @@ public interface VirtualNetwork {
              */
             WithCreate withFlowTimeoutInMinutes(Integer flowTimeoutInMinutes);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify subnets. */
         interface WithSubnets {
             /**
@@ -334,6 +344,7 @@ public interface VirtualNetwork {
              */
             WithCreate withSubnets(List<SubnetInner> subnets);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify virtualNetworkPeerings. */
         interface WithVirtualNetworkPeerings {
             /**
@@ -344,6 +355,7 @@ public interface VirtualNetwork {
              */
             WithCreate withVirtualNetworkPeerings(List<VirtualNetworkPeeringInner> virtualNetworkPeerings);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify enableDdosProtection. */
         interface WithEnableDdosProtection {
             /**
@@ -357,6 +369,7 @@ public interface VirtualNetwork {
              */
             WithCreate withEnableDdosProtection(Boolean enableDdosProtection);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify enableVmProtection. */
         interface WithEnableVmProtection {
             /**
@@ -369,6 +382,7 @@ public interface VirtualNetwork {
              */
             WithCreate withEnableVmProtection(Boolean enableVmProtection);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify ddosProtectionPlan. */
         interface WithDdosProtectionPlan {
             /**
@@ -379,6 +393,7 @@ public interface VirtualNetwork {
              */
             WithCreate withDdosProtectionPlan(SubResource ddosProtectionPlan);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify bgpCommunities. */
         interface WithBgpCommunities {
             /**
@@ -391,6 +406,7 @@ public interface VirtualNetwork {
              */
             WithCreate withBgpCommunities(VirtualNetworkBgpCommunities bgpCommunities);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify encryption. */
         interface WithEncryption {
             /**
@@ -403,6 +419,7 @@ public interface VirtualNetwork {
              */
             WithCreate withEncryption(VirtualNetworkEncryption encryption);
         }
+
         /** The stage of the VirtualNetwork definition allowing to specify ipAllocations. */
         interface WithIpAllocations {
             /**
@@ -414,6 +431,7 @@ public interface VirtualNetwork {
             WithCreate withIpAllocations(List<SubResource> ipAllocations);
         }
     }
+
     /**
      * Begins update for the VirtualNetwork resource.
      *
@@ -438,6 +456,7 @@ public interface VirtualNetwork {
          */
         VirtualNetwork apply(Context context);
     }
+
     /** The VirtualNetwork update stages. */
     interface UpdateStages {
         /** The stage of the VirtualNetwork update allowing to specify tags. */
@@ -451,6 +470,7 @@ public interface VirtualNetwork {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -118,11 +118,13 @@ public interface GalleryImageVersion {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The GalleryImageVersion definition stages. */
     interface DefinitionStages {
         /** The first stage of the GalleryImageVersion definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the GalleryImageVersion definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -141,6 +143,7 @@ public interface GalleryImageVersion {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the GalleryImageVersion definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -154,6 +157,7 @@ public interface GalleryImageVersion {
              */
             WithCreate withExistingImage(String resourceGroupName, String galleryName, String galleryImageName);
         }
+
         /**
          * The stage of the GalleryImageVersion definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -178,6 +182,7 @@ public interface GalleryImageVersion {
              */
             GalleryImageVersion create(Context context);
         }
+
         /** The stage of the GalleryImageVersion definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -188,6 +193,7 @@ public interface GalleryImageVersion {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the GalleryImageVersion definition allowing to specify publishingProfile. */
         interface WithPublishingProfile {
             /**
@@ -198,6 +204,7 @@ public interface GalleryImageVersion {
              */
             WithCreate withPublishingProfile(GalleryImageVersionPublishingProfile publishingProfile);
         }
+
         /** The stage of the GalleryImageVersion definition allowing to specify storageProfile. */
         interface WithStorageProfile {
             /**
@@ -208,6 +215,7 @@ public interface GalleryImageVersion {
              */
             WithCreate withStorageProfile(GalleryImageVersionStorageProfile storageProfile);
         }
+
         /** The stage of the GalleryImageVersion definition allowing to specify safetyProfile. */
         interface WithSafetyProfile {
             /**
@@ -219,6 +227,7 @@ public interface GalleryImageVersion {
             WithCreate withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile);
         }
     }
+
     /**
      * Begins update for the GalleryImageVersion resource.
      *
@@ -247,6 +256,7 @@ public interface GalleryImageVersion {
          */
         GalleryImageVersion apply(Context context);
     }
+
     /** The GalleryImageVersion update stages. */
     interface UpdateStages {
         /** The stage of the GalleryImageVersion update allowing to specify tags. */
@@ -259,6 +269,7 @@ public interface GalleryImageVersion {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the GalleryImageVersion update allowing to specify publishingProfile. */
         interface WithPublishingProfile {
             /**
@@ -269,6 +280,7 @@ public interface GalleryImageVersion {
              */
             Update withPublishingProfile(GalleryImageVersionPublishingProfile publishingProfile);
         }
+
         /** The stage of the GalleryImageVersion update allowing to specify storageProfile. */
         interface WithStorageProfile {
             /**
@@ -279,6 +291,7 @@ public interface GalleryImageVersion {
              */
             Update withStorageProfile(GalleryImageVersionStorageProfile storageProfile);
         }
+
         /** The stage of the GalleryImageVersion update allowing to specify safetyProfile. */
         interface WithSafetyProfile {
             /**
@@ -290,6 +303,7 @@ public interface GalleryImageVersion {
             Update withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

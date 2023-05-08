@@ -179,11 +179,13 @@ public interface SecurityRule {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The SecurityRule definition stages. */
     interface DefinitionStages {
         /** The first stage of the SecurityRule definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the SecurityRule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -195,6 +197,7 @@ public interface SecurityRule {
              */
             WithCreate withExistingNetworkSecurityGroup(String resourceGroupName, String networkSecurityGroupName);
         }
+
         /**
          * The stage of the SecurityRule definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -232,6 +235,7 @@ public interface SecurityRule {
              */
             SecurityRule create(Context context);
         }
+
         /** The stage of the SecurityRule definition allowing to specify name. */
         interface WithName {
             /**
@@ -244,6 +248,7 @@ public interface SecurityRule {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the SecurityRule definition allowing to specify type. */
         interface WithType {
             /**
@@ -254,6 +259,7 @@ public interface SecurityRule {
              */
             WithCreate withType(String type);
         }
+
         /** The stage of the SecurityRule definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -264,6 +270,7 @@ public interface SecurityRule {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the SecurityRule definition allowing to specify protocol. */
         interface WithProtocol {
             /**
@@ -274,6 +281,7 @@ public interface SecurityRule {
              */
             WithCreate withProtocol(SecurityRuleProtocol protocol);
         }
+
         /** The stage of the SecurityRule definition allowing to specify sourcePortRange. */
         interface WithSourcePortRange {
             /**
@@ -286,6 +294,7 @@ public interface SecurityRule {
              */
             WithCreate withSourcePortRange(String sourcePortRange);
         }
+
         /** The stage of the SecurityRule definition allowing to specify destinationPortRange. */
         interface WithDestinationPortRange {
             /**
@@ -298,6 +307,7 @@ public interface SecurityRule {
              */
             WithCreate withDestinationPortRange(String destinationPortRange);
         }
+
         /** The stage of the SecurityRule definition allowing to specify sourceAddressPrefix. */
         interface WithSourceAddressPrefix {
             /**
@@ -312,6 +322,7 @@ public interface SecurityRule {
              */
             WithCreate withSourceAddressPrefix(String sourceAddressPrefix);
         }
+
         /** The stage of the SecurityRule definition allowing to specify sourceAddressPrefixes. */
         interface WithSourceAddressPrefixes {
             /**
@@ -322,6 +333,7 @@ public interface SecurityRule {
              */
             WithCreate withSourceAddressPrefixes(List<String> sourceAddressPrefixes);
         }
+
         /** The stage of the SecurityRule definition allowing to specify sourceApplicationSecurityGroups. */
         interface WithSourceApplicationSecurityGroups {
             /**
@@ -334,6 +346,7 @@ public interface SecurityRule {
             WithCreate withSourceApplicationSecurityGroups(
                 List<ApplicationSecurityGroupInner> sourceApplicationSecurityGroups);
         }
+
         /** The stage of the SecurityRule definition allowing to specify destinationAddressPrefix. */
         interface WithDestinationAddressPrefix {
             /**
@@ -348,6 +361,7 @@ public interface SecurityRule {
              */
             WithCreate withDestinationAddressPrefix(String destinationAddressPrefix);
         }
+
         /** The stage of the SecurityRule definition allowing to specify destinationAddressPrefixes. */
         interface WithDestinationAddressPrefixes {
             /**
@@ -359,6 +373,7 @@ public interface SecurityRule {
              */
             WithCreate withDestinationAddressPrefixes(List<String> destinationAddressPrefixes);
         }
+
         /** The stage of the SecurityRule definition allowing to specify destinationApplicationSecurityGroups. */
         interface WithDestinationApplicationSecurityGroups {
             /**
@@ -371,6 +386,7 @@ public interface SecurityRule {
             WithCreate withDestinationApplicationSecurityGroups(
                 List<ApplicationSecurityGroupInner> destinationApplicationSecurityGroups);
         }
+
         /** The stage of the SecurityRule definition allowing to specify sourcePortRanges. */
         interface WithSourcePortRanges {
             /**
@@ -381,6 +397,7 @@ public interface SecurityRule {
              */
             WithCreate withSourcePortRanges(List<String> sourcePortRanges);
         }
+
         /** The stage of the SecurityRule definition allowing to specify destinationPortRanges. */
         interface WithDestinationPortRanges {
             /**
@@ -391,6 +408,7 @@ public interface SecurityRule {
              */
             WithCreate withDestinationPortRanges(List<String> destinationPortRanges);
         }
+
         /** The stage of the SecurityRule definition allowing to specify access. */
         interface WithAccess {
             /**
@@ -401,6 +419,7 @@ public interface SecurityRule {
              */
             WithCreate withAccess(SecurityRuleAccess access);
         }
+
         /** The stage of the SecurityRule definition allowing to specify priority. */
         interface WithPriority {
             /**
@@ -415,6 +434,7 @@ public interface SecurityRule {
              */
             WithCreate withPriority(int priority);
         }
+
         /** The stage of the SecurityRule definition allowing to specify direction. */
         interface WithDirection {
             /**
@@ -428,6 +448,7 @@ public interface SecurityRule {
             WithCreate withDirection(SecurityRuleDirection direction);
         }
     }
+
     /**
      * Begins update for the SecurityRule resource.
      *
@@ -469,6 +490,7 @@ public interface SecurityRule {
          */
         SecurityRule apply(Context context);
     }
+
     /** The SecurityRule update stages. */
     interface UpdateStages {
         /** The stage of the SecurityRule update allowing to specify name. */
@@ -483,6 +505,7 @@ public interface SecurityRule {
              */
             Update withName(String name);
         }
+
         /** The stage of the SecurityRule update allowing to specify type. */
         interface WithType {
             /**
@@ -493,6 +516,7 @@ public interface SecurityRule {
              */
             Update withType(String type);
         }
+
         /** The stage of the SecurityRule update allowing to specify description. */
         interface WithDescription {
             /**
@@ -503,6 +527,7 @@ public interface SecurityRule {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the SecurityRule update allowing to specify protocol. */
         interface WithProtocol {
             /**
@@ -513,6 +538,7 @@ public interface SecurityRule {
              */
             Update withProtocol(SecurityRuleProtocol protocol);
         }
+
         /** The stage of the SecurityRule update allowing to specify sourcePortRange. */
         interface WithSourcePortRange {
             /**
@@ -525,6 +551,7 @@ public interface SecurityRule {
              */
             Update withSourcePortRange(String sourcePortRange);
         }
+
         /** The stage of the SecurityRule update allowing to specify destinationPortRange. */
         interface WithDestinationPortRange {
             /**
@@ -537,6 +564,7 @@ public interface SecurityRule {
              */
             Update withDestinationPortRange(String destinationPortRange);
         }
+
         /** The stage of the SecurityRule update allowing to specify sourceAddressPrefix. */
         interface WithSourceAddressPrefix {
             /**
@@ -551,6 +579,7 @@ public interface SecurityRule {
              */
             Update withSourceAddressPrefix(String sourceAddressPrefix);
         }
+
         /** The stage of the SecurityRule update allowing to specify sourceAddressPrefixes. */
         interface WithSourceAddressPrefixes {
             /**
@@ -561,6 +590,7 @@ public interface SecurityRule {
              */
             Update withSourceAddressPrefixes(List<String> sourceAddressPrefixes);
         }
+
         /** The stage of the SecurityRule update allowing to specify sourceApplicationSecurityGroups. */
         interface WithSourceApplicationSecurityGroups {
             /**
@@ -573,6 +603,7 @@ public interface SecurityRule {
             Update withSourceApplicationSecurityGroups(
                 List<ApplicationSecurityGroupInner> sourceApplicationSecurityGroups);
         }
+
         /** The stage of the SecurityRule update allowing to specify destinationAddressPrefix. */
         interface WithDestinationAddressPrefix {
             /**
@@ -587,6 +618,7 @@ public interface SecurityRule {
              */
             Update withDestinationAddressPrefix(String destinationAddressPrefix);
         }
+
         /** The stage of the SecurityRule update allowing to specify destinationAddressPrefixes. */
         interface WithDestinationAddressPrefixes {
             /**
@@ -598,6 +630,7 @@ public interface SecurityRule {
              */
             Update withDestinationAddressPrefixes(List<String> destinationAddressPrefixes);
         }
+
         /** The stage of the SecurityRule update allowing to specify destinationApplicationSecurityGroups. */
         interface WithDestinationApplicationSecurityGroups {
             /**
@@ -610,6 +643,7 @@ public interface SecurityRule {
             Update withDestinationApplicationSecurityGroups(
                 List<ApplicationSecurityGroupInner> destinationApplicationSecurityGroups);
         }
+
         /** The stage of the SecurityRule update allowing to specify sourcePortRanges. */
         interface WithSourcePortRanges {
             /**
@@ -620,6 +654,7 @@ public interface SecurityRule {
              */
             Update withSourcePortRanges(List<String> sourcePortRanges);
         }
+
         /** The stage of the SecurityRule update allowing to specify destinationPortRanges. */
         interface WithDestinationPortRanges {
             /**
@@ -630,6 +665,7 @@ public interface SecurityRule {
              */
             Update withDestinationPortRanges(List<String> destinationPortRanges);
         }
+
         /** The stage of the SecurityRule update allowing to specify access. */
         interface WithAccess {
             /**
@@ -640,6 +676,7 @@ public interface SecurityRule {
              */
             Update withAccess(SecurityRuleAccess access);
         }
+
         /** The stage of the SecurityRule update allowing to specify priority. */
         interface WithPriority {
             /**
@@ -654,6 +691,7 @@ public interface SecurityRule {
              */
             Update withPriority(int priority);
         }
+
         /** The stage of the SecurityRule update allowing to specify direction. */
         interface WithDirection {
             /**
@@ -667,6 +705,7 @@ public interface SecurityRule {
             Update withDirection(SecurityRuleDirection direction);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -76,11 +76,13 @@ public interface VirtualApplianceSite {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VirtualApplianceSite definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualApplianceSite definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VirtualApplianceSite definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -93,6 +95,7 @@ public interface VirtualApplianceSite {
             WithCreate withExistingNetworkVirtualAppliance(
                 String resourceGroupName, String networkVirtualApplianceName);
         }
+
         /**
          * The stage of the VirtualApplianceSite definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -114,6 +117,7 @@ public interface VirtualApplianceSite {
              */
             VirtualApplianceSite create(Context context);
         }
+
         /** The stage of the VirtualApplianceSite definition allowing to specify name. */
         interface WithName {
             /**
@@ -124,6 +128,7 @@ public interface VirtualApplianceSite {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the VirtualApplianceSite definition allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -134,6 +139,7 @@ public interface VirtualApplianceSite {
              */
             WithCreate withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the VirtualApplianceSite definition allowing to specify o365Policy. */
         interface WithO365Policy {
             /**
@@ -145,6 +151,7 @@ public interface VirtualApplianceSite {
             WithCreate withO365Policy(Office365PolicyProperties o365Policy);
         }
     }
+
     /**
      * Begins update for the VirtualApplianceSite resource.
      *
@@ -169,6 +176,7 @@ public interface VirtualApplianceSite {
          */
         VirtualApplianceSite apply(Context context);
     }
+
     /** The VirtualApplianceSite update stages. */
     interface UpdateStages {
         /** The stage of the VirtualApplianceSite update allowing to specify name. */
@@ -181,6 +189,7 @@ public interface VirtualApplianceSite {
              */
             Update withName(String name);
         }
+
         /** The stage of the VirtualApplianceSite update allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -191,6 +200,7 @@ public interface VirtualApplianceSite {
              */
             Update withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the VirtualApplianceSite update allowing to specify o365Policy. */
         interface WithO365Policy {
             /**
@@ -202,6 +212,7 @@ public interface VirtualApplianceSite {
             Update withO365Policy(Office365PolicyProperties o365Policy);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

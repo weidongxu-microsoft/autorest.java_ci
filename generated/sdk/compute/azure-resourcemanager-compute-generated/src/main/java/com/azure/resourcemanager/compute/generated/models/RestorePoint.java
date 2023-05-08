@@ -96,11 +96,13 @@ public interface RestorePoint {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The RestorePoint definition stages. */
     interface DefinitionStages {
         /** The first stage of the RestorePoint definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the RestorePoint definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -112,6 +114,7 @@ public interface RestorePoint {
              */
             WithCreate withExistingRestorePointCollection(String resourceGroupName, String restorePointCollectionName);
         }
+
         /**
          * The stage of the RestorePoint definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -137,6 +140,7 @@ public interface RestorePoint {
              */
             RestorePoint create(Context context);
         }
+
         /** The stage of the RestorePoint definition allowing to specify excludeDisks. */
         interface WithExcludeDisks {
             /**
@@ -149,6 +153,7 @@ public interface RestorePoint {
              */
             WithCreate withExcludeDisks(List<ApiEntityReference> excludeDisks);
         }
+
         /** The stage of the RestorePoint definition allowing to specify sourceMetadata. */
         interface WithSourceMetadata {
             /**
@@ -160,6 +165,7 @@ public interface RestorePoint {
              */
             WithCreate withSourceMetadata(RestorePointSourceMetadata sourceMetadata);
         }
+
         /** The stage of the RestorePoint definition allowing to specify consistencyMode. */
         interface WithConsistencyMode {
             /**
@@ -174,6 +180,7 @@ public interface RestorePoint {
              */
             WithCreate withConsistencyMode(ConsistencyModeTypes consistencyMode);
         }
+
         /** The stage of the RestorePoint definition allowing to specify timeCreated. */
         interface WithTimeCreated {
             /**
@@ -184,6 +191,7 @@ public interface RestorePoint {
              */
             WithCreate withTimeCreated(OffsetDateTime timeCreated);
         }
+
         /** The stage of the RestorePoint definition allowing to specify sourceRestorePoint. */
         interface WithSourceRestorePoint {
             /**
@@ -196,6 +204,7 @@ public interface RestorePoint {
             WithCreate withSourceRestorePoint(ApiEntityReference sourceRestorePoint);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

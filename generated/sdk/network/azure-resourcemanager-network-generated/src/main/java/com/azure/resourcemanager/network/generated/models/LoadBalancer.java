@@ -182,11 +182,13 @@ public interface LoadBalancer {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The LoadBalancer definition stages. */
     interface DefinitionStages {
         /** The first stage of the LoadBalancer definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the LoadBalancer definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -205,6 +207,7 @@ public interface LoadBalancer {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -215,6 +218,7 @@ public interface LoadBalancer {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the LoadBalancer definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -245,6 +249,7 @@ public interface LoadBalancer {
              */
             LoadBalancer create(Context context);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -255,6 +260,7 @@ public interface LoadBalancer {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -265,6 +271,7 @@ public interface LoadBalancer {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -275,6 +282,7 @@ public interface LoadBalancer {
              */
             WithCreate withSku(LoadBalancerSku sku);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify frontendIpConfigurations. */
         interface WithFrontendIpConfigurations {
             /**
@@ -286,6 +294,7 @@ public interface LoadBalancer {
              */
             WithCreate withFrontendIpConfigurations(List<FrontendIpConfigurationInner> frontendIpConfigurations);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify backendAddressPools. */
         interface WithBackendAddressPools {
             /**
@@ -296,6 +305,7 @@ public interface LoadBalancer {
              */
             WithCreate withBackendAddressPools(List<BackendAddressPoolInner> backendAddressPools);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify loadBalancingRules. */
         interface WithLoadBalancingRules {
             /**
@@ -307,6 +317,7 @@ public interface LoadBalancer {
              */
             WithCreate withLoadBalancingRules(List<LoadBalancingRuleInner> loadBalancingRules);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify probes. */
         interface WithProbes {
             /**
@@ -317,6 +328,7 @@ public interface LoadBalancer {
              */
             WithCreate withProbes(List<ProbeInner> probes);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify inboundNatRules. */
         interface WithInboundNatRules {
             /**
@@ -335,6 +347,7 @@ public interface LoadBalancer {
              */
             WithCreate withInboundNatRules(List<InboundNatRuleInner> inboundNatRules);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify inboundNatPools. */
         interface WithInboundNatPools {
             /**
@@ -355,6 +368,7 @@ public interface LoadBalancer {
              */
             WithCreate withInboundNatPools(List<InboundNatPool> inboundNatPools);
         }
+
         /** The stage of the LoadBalancer definition allowing to specify outboundRules. */
         interface WithOutboundRules {
             /**
@@ -366,6 +380,7 @@ public interface LoadBalancer {
             WithCreate withOutboundRules(List<OutboundRuleInner> outboundRules);
         }
     }
+
     /**
      * Begins update for the LoadBalancer resource.
      *
@@ -390,6 +405,7 @@ public interface LoadBalancer {
          */
         LoadBalancer apply(Context context);
     }
+
     /** The LoadBalancer update stages. */
     interface UpdateStages {
         /** The stage of the LoadBalancer update allowing to specify tags. */
@@ -403,6 +419,7 @@ public interface LoadBalancer {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

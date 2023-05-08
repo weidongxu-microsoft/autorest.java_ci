@@ -213,11 +213,13 @@ public interface ExpressRouteCircuit {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ExpressRouteCircuit definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRouteCircuit definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -236,6 +238,7 @@ public interface ExpressRouteCircuit {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -246,6 +249,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ExpressRouteCircuit definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -281,6 +285,7 @@ public interface ExpressRouteCircuit {
              */
             ExpressRouteCircuit create(Context context);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -291,6 +296,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -301,6 +307,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withSku(ExpressRouteCircuitSku sku);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify allowClassicOperations. */
         interface WithAllowClassicOperations {
             /**
@@ -311,6 +318,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withAllowClassicOperations(Boolean allowClassicOperations);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify circuitProvisioningState. */
         interface WithCircuitProvisioningState {
             /**
@@ -321,6 +329,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withCircuitProvisioningState(String circuitProvisioningState);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify serviceProviderProvisioningState. */
         interface WithServiceProviderProvisioningState {
             /**
@@ -333,6 +342,7 @@ public interface ExpressRouteCircuit {
             WithCreate withServiceProviderProvisioningState(
                 ServiceProviderProvisioningState serviceProviderProvisioningState);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify authorizations. */
         interface WithAuthorizations {
             /**
@@ -343,6 +353,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withAuthorizations(List<ExpressRouteCircuitAuthorizationInner> authorizations);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify peerings. */
         interface WithPeerings {
             /**
@@ -353,6 +364,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withPeerings(List<ExpressRouteCircuitPeeringInner> peerings);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify serviceKey. */
         interface WithServiceKey {
             /**
@@ -363,6 +375,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withServiceKey(String serviceKey);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify serviceProviderNotes. */
         interface WithServiceProviderNotes {
             /**
@@ -373,6 +386,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withServiceProviderNotes(String serviceProviderNotes);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify serviceProviderProperties. */
         interface WithServiceProviderProperties {
             /**
@@ -384,6 +398,7 @@ public interface ExpressRouteCircuit {
             WithCreate withServiceProviderProperties(
                 ExpressRouteCircuitServiceProviderProperties serviceProviderProperties);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify expressRoutePort. */
         interface WithExpressRoutePort {
             /**
@@ -396,6 +411,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withExpressRoutePort(SubResource expressRoutePort);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify bandwidthInGbps. */
         interface WithBandwidthInGbps {
             /**
@@ -408,6 +424,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withBandwidthInGbps(Float bandwidthInGbps);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify gatewayManagerEtag. */
         interface WithGatewayManagerEtag {
             /**
@@ -418,6 +435,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withGatewayManagerEtag(String gatewayManagerEtag);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify globalReachEnabled. */
         interface WithGlobalReachEnabled {
             /**
@@ -428,6 +446,7 @@ public interface ExpressRouteCircuit {
              */
             WithCreate withGlobalReachEnabled(Boolean globalReachEnabled);
         }
+
         /** The stage of the ExpressRouteCircuit definition allowing to specify authorizationKey. */
         interface WithAuthorizationKey {
             /**
@@ -439,6 +458,7 @@ public interface ExpressRouteCircuit {
             WithCreate withAuthorizationKey(String authorizationKey);
         }
     }
+
     /**
      * Begins update for the ExpressRouteCircuit resource.
      *
@@ -463,6 +483,7 @@ public interface ExpressRouteCircuit {
          */
         ExpressRouteCircuit apply(Context context);
     }
+
     /** The ExpressRouteCircuit update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRouteCircuit update allowing to specify tags. */
@@ -476,6 +497,7 @@ public interface ExpressRouteCircuit {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

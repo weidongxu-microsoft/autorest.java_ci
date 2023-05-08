@@ -85,11 +85,13 @@ public interface ExpressRoutePortAuthorization {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ExpressRoutePortAuthorization definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRoutePortAuthorization definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ExpressRoutePortAuthorization definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -101,6 +103,7 @@ public interface ExpressRoutePortAuthorization {
              */
             WithCreate withExistingExpressRoutePort(String resourceGroupName, String expressRoutePortName);
         }
+
         /**
          * The stage of the ExpressRoutePortAuthorization definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -121,6 +124,7 @@ public interface ExpressRoutePortAuthorization {
              */
             ExpressRoutePortAuthorization create(Context context);
         }
+
         /** The stage of the ExpressRoutePortAuthorization definition allowing to specify name. */
         interface WithName {
             /**
@@ -134,6 +138,7 @@ public interface ExpressRoutePortAuthorization {
             WithCreate withName(String name);
         }
     }
+
     /**
      * Begins update for the ExpressRoutePortAuthorization resource.
      *
@@ -158,6 +163,7 @@ public interface ExpressRoutePortAuthorization {
          */
         ExpressRoutePortAuthorization apply(Context context);
     }
+
     /** The ExpressRoutePortAuthorization update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRoutePortAuthorization update allowing to specify name. */
@@ -173,6 +179,7 @@ public interface ExpressRoutePortAuthorization {
             Update withName(String name);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

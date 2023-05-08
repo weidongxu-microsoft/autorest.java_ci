@@ -130,11 +130,13 @@ public interface ContainerApp {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ContainerApp definition stages. */
     interface DefinitionStages {
         /** The first stage of the ContainerApp definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ContainerApp definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -153,6 +155,7 @@ public interface ContainerApp {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ContainerApp definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -163,6 +166,7 @@ public interface ContainerApp {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ContainerApp definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -188,6 +192,7 @@ public interface ContainerApp {
              */
             ContainerApp create(Context context);
         }
+
         /** The stage of the ContainerApp definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -198,6 +203,7 @@ public interface ContainerApp {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ContainerApp definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -208,6 +214,7 @@ public interface ContainerApp {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the ContainerApp definition allowing to specify kubeEnvironmentId. */
         interface WithKubeEnvironmentId {
             /**
@@ -218,6 +225,7 @@ public interface ContainerApp {
              */
             WithCreate withKubeEnvironmentId(String kubeEnvironmentId);
         }
+
         /** The stage of the ContainerApp definition allowing to specify configuration. */
         interface WithConfiguration {
             /**
@@ -228,6 +236,7 @@ public interface ContainerApp {
              */
             WithCreate withConfiguration(Configuration configuration);
         }
+
         /** The stage of the ContainerApp definition allowing to specify template. */
         interface WithTemplate {
             /**
@@ -239,6 +248,7 @@ public interface ContainerApp {
             WithCreate withTemplate(Template template);
         }
     }
+
     /**
      * Begins update for the ContainerApp resource.
      *
@@ -267,6 +277,7 @@ public interface ContainerApp {
          */
         ContainerApp apply(Context context);
     }
+
     /** The ContainerApp update stages. */
     interface UpdateStages {
         /** The stage of the ContainerApp update allowing to specify tags. */
@@ -279,6 +290,7 @@ public interface ContainerApp {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the ContainerApp update allowing to specify kind. */
         interface WithKind {
             /**
@@ -289,6 +301,7 @@ public interface ContainerApp {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the ContainerApp update allowing to specify configuration. */
         interface WithConfiguration {
             /**
@@ -299,6 +312,7 @@ public interface ContainerApp {
              */
             Update withConfiguration(Configuration configuration);
         }
+
         /** The stage of the ContainerApp update allowing to specify template. */
         interface WithTemplate {
             /**
@@ -310,6 +324,7 @@ public interface ContainerApp {
             Update withTemplate(Template template);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

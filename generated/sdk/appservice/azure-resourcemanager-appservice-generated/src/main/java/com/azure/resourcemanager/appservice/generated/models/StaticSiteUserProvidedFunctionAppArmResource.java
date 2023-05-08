@@ -79,11 +79,13 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The StaticSiteUserProvidedFunctionAppArmResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the StaticSiteUserProvidedFunctionAppArmResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /**
          * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify parent resource.
          */
@@ -98,6 +100,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             WithCreate withExistingBuild(String resourceGroupName, String name, String environmentName);
         }
+
         /**
          * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition which contains all the minimum
          * required properties for the resource to be created, but also allows for any other optional properties to be
@@ -123,6 +126,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             StaticSiteUserProvidedFunctionAppArmResource create(Context context);
         }
+
         /** The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -133,6 +137,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             WithCreate withKind(String kind);
         }
+
         /**
          * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify
          * functionAppResourceId.
@@ -147,6 +152,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             WithCreate withFunctionAppResourceId(String functionAppResourceId);
         }
+
         /**
          * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify
          * functionAppRegion.
@@ -160,6 +166,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             WithCreate withFunctionAppRegion(String functionAppRegion);
         }
+
         /** The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify isForced. */
         interface WithIsForced {
             /**
@@ -175,6 +182,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
             WithCreate withIsForced(Boolean isForced);
         }
     }
+
     /**
      * Begins update for the StaticSiteUserProvidedFunctionAppArmResource resource.
      *
@@ -203,6 +211,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
          */
         StaticSiteUserProvidedFunctionAppArmResource apply(Context context);
     }
+
     /** The StaticSiteUserProvidedFunctionAppArmResource update stages. */
     interface UpdateStages {
         /** The stage of the StaticSiteUserProvidedFunctionAppArmResource update allowing to specify kind. */
@@ -215,6 +224,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             Update withKind(String kind);
         }
+
         /**
          * The stage of the StaticSiteUserProvidedFunctionAppArmResource update allowing to specify
          * functionAppResourceId.
@@ -229,6 +239,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             Update withFunctionAppResourceId(String functionAppResourceId);
         }
+
         /**
          * The stage of the StaticSiteUserProvidedFunctionAppArmResource update allowing to specify functionAppRegion.
          */
@@ -241,6 +252,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              */
             Update withFunctionAppRegion(String functionAppRegion);
         }
+
         /** The stage of the StaticSiteUserProvidedFunctionAppArmResource update allowing to specify isForced. */
         interface WithIsForced {
             /**
@@ -256,6 +268,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
             Update withIsForced(Boolean isForced);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

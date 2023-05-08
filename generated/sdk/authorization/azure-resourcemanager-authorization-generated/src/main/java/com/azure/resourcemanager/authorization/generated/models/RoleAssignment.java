@@ -80,11 +80,13 @@ public interface RoleAssignment {
             DefinitionStages.WithPrincipalId,
             DefinitionStages.WithCreate {
     }
+
     /** The RoleAssignment definition stages. */
     interface DefinitionStages {
         /** The first stage of the RoleAssignment definition. */
         interface Blank extends WithScope {
         }
+
         /** The stage of the RoleAssignment definition allowing to specify parent resource. */
         interface WithScope {
             /**
@@ -99,6 +101,7 @@ public interface RoleAssignment {
              */
             WithRoleDefinitionId withExistingScope(String scope);
         }
+
         /** The stage of the RoleAssignment definition allowing to specify roleDefinitionId. */
         interface WithRoleDefinitionId {
             /**
@@ -109,6 +112,7 @@ public interface RoleAssignment {
              */
             WithPrincipalId withRoleDefinitionId(String roleDefinitionId);
         }
+
         /** The stage of the RoleAssignment definition allowing to specify principalId. */
         interface WithPrincipalId {
             /**
@@ -121,6 +125,7 @@ public interface RoleAssignment {
              */
             WithCreate withPrincipalId(String principalId);
         }
+
         /**
          * The stage of the RoleAssignment definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -141,6 +146,7 @@ public interface RoleAssignment {
              */
             RoleAssignment create(Context context);
         }
+
         /** The stage of the RoleAssignment definition allowing to specify principalType. */
         interface WithPrincipalType {
             /**
@@ -151,6 +157,7 @@ public interface RoleAssignment {
              */
             WithCreate withPrincipalType(PrincipalType principalType);
         }
+
         /** The stage of the RoleAssignment definition allowing to specify canDelegate. */
         interface WithCanDelegate {
             /**
@@ -162,6 +169,7 @@ public interface RoleAssignment {
             WithCreate withCanDelegate(Boolean canDelegate);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -145,11 +145,13 @@ public interface Zone {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Zone definition stages. */
     interface DefinitionStages {
         /** The first stage of the Zone definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Zone definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -168,6 +170,7 @@ public interface Zone {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Zone definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -178,6 +181,7 @@ public interface Zone {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Zone definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -205,6 +209,7 @@ public interface Zone {
              */
             Zone create(Context context);
         }
+
         /** The stage of the Zone definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -215,6 +220,7 @@ public interface Zone {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Zone definition allowing to specify etag. */
         interface WithEtag {
             /**
@@ -225,6 +231,7 @@ public interface Zone {
              */
             WithCreate withEtag(String etag);
         }
+
         /** The stage of the Zone definition allowing to specify zoneType. */
         interface WithZoneType {
             /**
@@ -235,6 +242,7 @@ public interface Zone {
              */
             WithCreate withZoneType(ZoneType zoneType);
         }
+
         /** The stage of the Zone definition allowing to specify registrationVirtualNetworks. */
         interface WithRegistrationVirtualNetworks {
             /**
@@ -247,6 +255,7 @@ public interface Zone {
              */
             WithCreate withRegistrationVirtualNetworks(List<SubResource> registrationVirtualNetworks);
         }
+
         /** The stage of the Zone definition allowing to specify resolutionVirtualNetworks. */
         interface WithResolutionVirtualNetworks {
             /**
@@ -259,6 +268,7 @@ public interface Zone {
              */
             WithCreate withResolutionVirtualNetworks(List<SubResource> resolutionVirtualNetworks);
         }
+
         /** The stage of the Zone definition allowing to specify ifMatch. */
         interface WithIfMatch {
             /**
@@ -271,6 +281,7 @@ public interface Zone {
              */
             WithCreate withIfMatch(String ifMatch);
         }
+
         /** The stage of the Zone definition allowing to specify ifNoneMatch. */
         interface WithIfNoneMatch {
             /**
@@ -284,6 +295,7 @@ public interface Zone {
             WithCreate withIfNoneMatch(String ifNoneMatch);
         }
     }
+
     /**
      * Begins update for the Zone resource.
      *
@@ -308,6 +320,7 @@ public interface Zone {
          */
         Zone apply(Context context);
     }
+
     /** The Zone update stages. */
     interface UpdateStages {
         /** The stage of the Zone update allowing to specify tags. */
@@ -320,6 +333,7 @@ public interface Zone {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the Zone update allowing to specify ifMatch. */
         interface WithIfMatch {
             /**
@@ -333,6 +347,7 @@ public interface Zone {
             Update withIfMatch(String ifMatch);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

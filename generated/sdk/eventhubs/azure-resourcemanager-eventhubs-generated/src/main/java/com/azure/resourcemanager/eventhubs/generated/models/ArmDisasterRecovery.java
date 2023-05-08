@@ -117,11 +117,13 @@ public interface ArmDisasterRecovery {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ArmDisasterRecovery definition stages. */
     interface DefinitionStages {
         /** The first stage of the ArmDisasterRecovery definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ArmDisasterRecovery definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -133,6 +135,7 @@ public interface ArmDisasterRecovery {
              */
             WithCreate withExistingNamespace(String resourceGroupName, String namespaceName);
         }
+
         /**
          * The stage of the ArmDisasterRecovery definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -153,6 +156,7 @@ public interface ArmDisasterRecovery {
              */
             ArmDisasterRecovery create(Context context);
         }
+
         /** The stage of the ArmDisasterRecovery definition allowing to specify partnerNamespace. */
         interface WithPartnerNamespace {
             /**
@@ -165,6 +169,7 @@ public interface ArmDisasterRecovery {
              */
             WithCreate withPartnerNamespace(String partnerNamespace);
         }
+
         /** The stage of the ArmDisasterRecovery definition allowing to specify alternateName. */
         interface WithAlternateName {
             /**
@@ -176,6 +181,7 @@ public interface ArmDisasterRecovery {
             WithCreate withAlternateName(String alternateName);
         }
     }
+
     /**
      * Begins update for the ArmDisasterRecovery resource.
      *
@@ -200,6 +206,7 @@ public interface ArmDisasterRecovery {
          */
         ArmDisasterRecovery apply(Context context);
     }
+
     /** The ArmDisasterRecovery update stages. */
     interface UpdateStages {
         /** The stage of the ArmDisasterRecovery update allowing to specify partnerNamespace. */
@@ -214,6 +221,7 @@ public interface ArmDisasterRecovery {
              */
             Update withPartnerNamespace(String partnerNamespace);
         }
+
         /** The stage of the ArmDisasterRecovery update allowing to specify alternateName. */
         interface WithAlternateName {
             /**
@@ -225,6 +233,7 @@ public interface ArmDisasterRecovery {
             Update withAlternateName(String alternateName);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

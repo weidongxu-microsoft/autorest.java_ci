@@ -408,11 +408,13 @@ public interface StorageAccount {
             DefinitionStages.WithKind,
             DefinitionStages.WithCreate {
     }
+
     /** The StorageAccount definition stages. */
     interface DefinitionStages {
         /** The first stage of the StorageAccount definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the StorageAccount definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -437,6 +439,7 @@ public interface StorageAccount {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the StorageAccount definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -448,6 +451,7 @@ public interface StorageAccount {
              */
             WithSku withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the StorageAccount definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -458,6 +462,7 @@ public interface StorageAccount {
              */
             WithKind withSku(Sku sku);
         }
+
         /** The stage of the StorageAccount definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -468,6 +473,7 @@ public interface StorageAccount {
              */
             WithCreate withKind(Kind kind);
         }
+
         /**
          * The stage of the StorageAccount definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -514,6 +520,7 @@ public interface StorageAccount {
              */
             StorageAccount create(Context context);
         }
+
         /** The stage of the StorageAccount definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -530,6 +537,7 @@ public interface StorageAccount {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the StorageAccount definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -544,6 +552,7 @@ public interface StorageAccount {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the StorageAccount definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -554,6 +563,7 @@ public interface StorageAccount {
              */
             WithCreate withIdentity(Identity identity);
         }
+
         /** The stage of the StorageAccount definition allowing to specify allowedCopyScope. */
         interface WithAllowedCopyScope {
             /**
@@ -566,6 +576,7 @@ public interface StorageAccount {
              */
             WithCreate withAllowedCopyScope(AllowedCopyScope allowedCopyScope);
         }
+
         /** The stage of the StorageAccount definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -578,6 +589,7 @@ public interface StorageAccount {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the StorageAccount definition allowing to specify sasPolicy. */
         interface WithSasPolicy {
             /**
@@ -588,6 +600,7 @@ public interface StorageAccount {
              */
             WithCreate withSasPolicy(SasPolicy sasPolicy);
         }
+
         /** The stage of the StorageAccount definition allowing to specify keyPolicy. */
         interface WithKeyPolicy {
             /**
@@ -598,6 +611,7 @@ public interface StorageAccount {
              */
             WithCreate withKeyPolicy(KeyPolicy keyPolicy);
         }
+
         /** The stage of the StorageAccount definition allowing to specify customDomain. */
         interface WithCustomDomain {
             /**
@@ -612,6 +626,7 @@ public interface StorageAccount {
              */
             WithCreate withCustomDomain(CustomDomain customDomain);
         }
+
         /** The stage of the StorageAccount definition allowing to specify encryption. */
         interface WithEncryption {
             /**
@@ -623,6 +638,7 @@ public interface StorageAccount {
              */
             WithCreate withEncryption(Encryption encryption);
         }
+
         /** The stage of the StorageAccount definition allowing to specify networkRuleSet. */
         interface WithNetworkRuleSet {
             /**
@@ -633,6 +649,7 @@ public interface StorageAccount {
              */
             WithCreate withNetworkRuleSet(NetworkRuleSet networkRuleSet);
         }
+
         /** The stage of the StorageAccount definition allowing to specify accessTier. */
         interface WithAccessTier {
             /**
@@ -647,6 +664,7 @@ public interface StorageAccount {
              */
             WithCreate withAccessTier(AccessTier accessTier);
         }
+
         /** The stage of the StorageAccount definition allowing to specify azureFilesIdentityBasedAuthentication. */
         interface WithAzureFilesIdentityBasedAuthentication {
             /**
@@ -660,6 +678,7 @@ public interface StorageAccount {
             WithCreate withAzureFilesIdentityBasedAuthentication(
                 AzureFilesIdentityBasedAuthentication azureFilesIdentityBasedAuthentication);
         }
+
         /** The stage of the StorageAccount definition allowing to specify enableHttpsTrafficOnly. */
         interface WithEnableHttpsTrafficOnly {
             /**
@@ -672,6 +691,7 @@ public interface StorageAccount {
              */
             WithCreate withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly);
         }
+
         /** The stage of the StorageAccount definition allowing to specify isSftpEnabled. */
         interface WithIsSftpEnabled {
             /**
@@ -682,6 +702,7 @@ public interface StorageAccount {
              */
             WithCreate withIsSftpEnabled(Boolean isSftpEnabled);
         }
+
         /** The stage of the StorageAccount definition allowing to specify isLocalUserEnabled. */
         interface WithIsLocalUserEnabled {
             /**
@@ -692,6 +713,7 @@ public interface StorageAccount {
              */
             WithCreate withIsLocalUserEnabled(Boolean isLocalUserEnabled);
         }
+
         /** The stage of the StorageAccount definition allowing to specify isHnsEnabled. */
         interface WithIsHnsEnabled {
             /**
@@ -702,6 +724,7 @@ public interface StorageAccount {
              */
             WithCreate withIsHnsEnabled(Boolean isHnsEnabled);
         }
+
         /** The stage of the StorageAccount definition allowing to specify largeFileSharesState. */
         interface WithLargeFileSharesState {
             /**
@@ -714,6 +737,7 @@ public interface StorageAccount {
              */
             WithCreate withLargeFileSharesState(LargeFileSharesState largeFileSharesState);
         }
+
         /** The stage of the StorageAccount definition allowing to specify routingPreference. */
         interface WithRoutingPreference {
             /**
@@ -726,6 +750,7 @@ public interface StorageAccount {
              */
             WithCreate withRoutingPreference(RoutingPreference routingPreference);
         }
+
         /** The stage of the StorageAccount definition allowing to specify allowBlobPublicAccess. */
         interface WithAllowBlobPublicAccess {
             /**
@@ -738,6 +763,7 @@ public interface StorageAccount {
              */
             WithCreate withAllowBlobPublicAccess(Boolean allowBlobPublicAccess);
         }
+
         /** The stage of the StorageAccount definition allowing to specify minimumTlsVersion. */
         interface WithMinimumTlsVersion {
             /**
@@ -750,6 +776,7 @@ public interface StorageAccount {
              */
             WithCreate withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
         }
+
         /** The stage of the StorageAccount definition allowing to specify allowSharedKeyAccess. */
         interface WithAllowSharedKeyAccess {
             /**
@@ -766,6 +793,7 @@ public interface StorageAccount {
              */
             WithCreate withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
         }
+
         /** The stage of the StorageAccount definition allowing to specify enableNfsV3. */
         interface WithEnableNfsV3 {
             /**
@@ -776,6 +804,7 @@ public interface StorageAccount {
              */
             WithCreate withEnableNfsV3(Boolean enableNfsV3);
         }
+
         /** The stage of the StorageAccount definition allowing to specify allowCrossTenantReplication. */
         interface WithAllowCrossTenantReplication {
             /**
@@ -788,6 +817,7 @@ public interface StorageAccount {
              */
             WithCreate withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
         }
+
         /** The stage of the StorageAccount definition allowing to specify defaultToOAuthAuthentication. */
         interface WithDefaultToOAuthAuthentication {
             /**
@@ -800,6 +830,7 @@ public interface StorageAccount {
              */
             WithCreate withDefaultToOAuthAuthentication(Boolean defaultToOAuthAuthentication);
         }
+
         /** The stage of the StorageAccount definition allowing to specify immutableStorageWithVersioning. */
         interface WithImmutableStorageWithVersioning {
             /**
@@ -814,6 +845,7 @@ public interface StorageAccount {
              */
             WithCreate withImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning);
         }
+
         /** The stage of the StorageAccount definition allowing to specify dnsEndpointType. */
         interface WithDnsEndpointType {
             /**
@@ -829,6 +861,7 @@ public interface StorageAccount {
             WithCreate withDnsEndpointType(DnsEndpointType dnsEndpointType);
         }
     }
+
     /**
      * Begins update for the StorageAccount resource.
      *
@@ -878,6 +911,7 @@ public interface StorageAccount {
          */
         StorageAccount apply(Context context);
     }
+
     /** The StorageAccount update stages. */
     interface UpdateStages {
         /** The stage of the StorageAccount update allowing to specify tags. */
@@ -896,6 +930,7 @@ public interface StorageAccount {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the StorageAccount update allowing to specify sku. */
         interface WithSku {
             /**
@@ -909,6 +944,7 @@ public interface StorageAccount {
              */
             Update withSku(Sku sku);
         }
+
         /** The stage of the StorageAccount update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -919,6 +955,7 @@ public interface StorageAccount {
              */
             Update withIdentity(Identity identity);
         }
+
         /** The stage of the StorageAccount update allowing to specify kind. */
         interface WithKind {
             /**
@@ -931,6 +968,7 @@ public interface StorageAccount {
              */
             Update withKind(Kind kind);
         }
+
         /** The stage of the StorageAccount update allowing to specify customDomain. */
         interface WithCustomDomain {
             /**
@@ -945,6 +983,7 @@ public interface StorageAccount {
              */
             Update withCustomDomain(CustomDomain customDomain);
         }
+
         /** The stage of the StorageAccount update allowing to specify encryption. */
         interface WithEncryption {
             /**
@@ -957,6 +996,7 @@ public interface StorageAccount {
              */
             Update withEncryption(Encryption encryption);
         }
+
         /** The stage of the StorageAccount update allowing to specify sasPolicy. */
         interface WithSasPolicy {
             /**
@@ -967,6 +1007,7 @@ public interface StorageAccount {
              */
             Update withSasPolicy(SasPolicy sasPolicy);
         }
+
         /** The stage of the StorageAccount update allowing to specify keyPolicy. */
         interface WithKeyPolicy {
             /**
@@ -977,6 +1018,7 @@ public interface StorageAccount {
              */
             Update withKeyPolicy(KeyPolicy keyPolicy);
         }
+
         /** The stage of the StorageAccount update allowing to specify accessTier. */
         interface WithAccessTier {
             /**
@@ -991,6 +1033,7 @@ public interface StorageAccount {
              */
             Update withAccessTier(AccessTier accessTier);
         }
+
         /** The stage of the StorageAccount update allowing to specify azureFilesIdentityBasedAuthentication. */
         interface WithAzureFilesIdentityBasedAuthentication {
             /**
@@ -1004,6 +1047,7 @@ public interface StorageAccount {
             Update withAzureFilesIdentityBasedAuthentication(
                 AzureFilesIdentityBasedAuthentication azureFilesIdentityBasedAuthentication);
         }
+
         /** The stage of the StorageAccount update allowing to specify enableHttpsTrafficOnly. */
         interface WithEnableHttpsTrafficOnly {
             /**
@@ -1015,6 +1059,7 @@ public interface StorageAccount {
              */
             Update withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly);
         }
+
         /** The stage of the StorageAccount update allowing to specify isSftpEnabled. */
         interface WithIsSftpEnabled {
             /**
@@ -1025,6 +1070,7 @@ public interface StorageAccount {
              */
             Update withIsSftpEnabled(Boolean isSftpEnabled);
         }
+
         /** The stage of the StorageAccount update allowing to specify isLocalUserEnabled. */
         interface WithIsLocalUserEnabled {
             /**
@@ -1035,6 +1081,7 @@ public interface StorageAccount {
              */
             Update withIsLocalUserEnabled(Boolean isLocalUserEnabled);
         }
+
         /** The stage of the StorageAccount update allowing to specify networkRuleSet. */
         interface WithNetworkRuleSet {
             /**
@@ -1045,6 +1092,7 @@ public interface StorageAccount {
              */
             Update withNetworkRuleSet(NetworkRuleSet networkRuleSet);
         }
+
         /** The stage of the StorageAccount update allowing to specify largeFileSharesState. */
         interface WithLargeFileSharesState {
             /**
@@ -1057,6 +1105,7 @@ public interface StorageAccount {
              */
             Update withLargeFileSharesState(LargeFileSharesState largeFileSharesState);
         }
+
         /** The stage of the StorageAccount update allowing to specify routingPreference. */
         interface WithRoutingPreference {
             /**
@@ -1069,6 +1118,7 @@ public interface StorageAccount {
              */
             Update withRoutingPreference(RoutingPreference routingPreference);
         }
+
         /** The stage of the StorageAccount update allowing to specify allowBlobPublicAccess. */
         interface WithAllowBlobPublicAccess {
             /**
@@ -1081,6 +1131,7 @@ public interface StorageAccount {
              */
             Update withAllowBlobPublicAccess(Boolean allowBlobPublicAccess);
         }
+
         /** The stage of the StorageAccount update allowing to specify minimumTlsVersion. */
         interface WithMinimumTlsVersion {
             /**
@@ -1093,6 +1144,7 @@ public interface StorageAccount {
              */
             Update withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
         }
+
         /** The stage of the StorageAccount update allowing to specify allowSharedKeyAccess. */
         interface WithAllowSharedKeyAccess {
             /**
@@ -1109,6 +1161,7 @@ public interface StorageAccount {
              */
             Update withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
         }
+
         /** The stage of the StorageAccount update allowing to specify allowCrossTenantReplication. */
         interface WithAllowCrossTenantReplication {
             /**
@@ -1121,6 +1174,7 @@ public interface StorageAccount {
              */
             Update withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
         }
+
         /** The stage of the StorageAccount update allowing to specify defaultToOAuthAuthentication. */
         interface WithDefaultToOAuthAuthentication {
             /**
@@ -1133,6 +1187,7 @@ public interface StorageAccount {
              */
             Update withDefaultToOAuthAuthentication(Boolean defaultToOAuthAuthentication);
         }
+
         /** The stage of the StorageAccount update allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -1145,6 +1200,7 @@ public interface StorageAccount {
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+
         /** The stage of the StorageAccount update allowing to specify immutableStorageWithVersioning. */
         interface WithImmutableStorageWithVersioning {
             /**
@@ -1159,6 +1215,7 @@ public interface StorageAccount {
              */
             Update withImmutableStorageWithVersioning(ImmutableStorageAccount immutableStorageWithVersioning);
         }
+
         /** The stage of the StorageAccount update allowing to specify allowedCopyScope. */
         interface WithAllowedCopyScope {
             /**
@@ -1171,6 +1228,7 @@ public interface StorageAccount {
              */
             Update withAllowedCopyScope(AllowedCopyScope allowedCopyScope);
         }
+
         /** The stage of the StorageAccount update allowing to specify dnsEndpointType. */
         interface WithDnsEndpointType {
             /**
@@ -1186,6 +1244,7 @@ public interface StorageAccount {
             Update withDnsEndpointType(DnsEndpointType dnsEndpointType);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

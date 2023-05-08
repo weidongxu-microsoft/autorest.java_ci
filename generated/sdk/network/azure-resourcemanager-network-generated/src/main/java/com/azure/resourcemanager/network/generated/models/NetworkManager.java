@@ -125,11 +125,13 @@ public interface NetworkManager {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The NetworkManager definition stages. */
     interface DefinitionStages {
         /** The first stage of the NetworkManager definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the NetworkManager definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -148,6 +150,7 @@ public interface NetworkManager {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the NetworkManager definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -158,6 +161,7 @@ public interface NetworkManager {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the NetworkManager definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -182,6 +186,7 @@ public interface NetworkManager {
              */
             NetworkManager create(Context context);
         }
+
         /** The stage of the NetworkManager definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -192,6 +197,7 @@ public interface NetworkManager {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the NetworkManager definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -202,6 +208,7 @@ public interface NetworkManager {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the NetworkManager definition allowing to specify networkManagerScopes. */
         interface WithNetworkManagerScopes {
             /**
@@ -212,6 +219,7 @@ public interface NetworkManager {
              */
             WithCreate withNetworkManagerScopes(NetworkManagerPropertiesNetworkManagerScopes networkManagerScopes);
         }
+
         /** The stage of the NetworkManager definition allowing to specify networkManagerScopeAccesses. */
         interface WithNetworkManagerScopeAccesses {
             /**
@@ -223,6 +231,7 @@ public interface NetworkManager {
             WithCreate withNetworkManagerScopeAccesses(List<ConfigurationType> networkManagerScopeAccesses);
         }
     }
+
     /**
      * Begins update for the NetworkManager resource.
      *
@@ -247,6 +256,7 @@ public interface NetworkManager {
          */
         NetworkManager apply(Context context);
     }
+
     /** The NetworkManager update stages. */
     interface UpdateStages {
         /** The stage of the NetworkManager update allowing to specify tags. */
@@ -260,6 +270,7 @@ public interface NetworkManager {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

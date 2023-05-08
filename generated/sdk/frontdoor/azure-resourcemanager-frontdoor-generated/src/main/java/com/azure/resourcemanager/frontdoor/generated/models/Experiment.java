@@ -130,11 +130,13 @@ public interface Experiment {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The Experiment definition stages. */
     interface DefinitionStages {
         /** The first stage of the Experiment definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Experiment definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -153,6 +155,7 @@ public interface Experiment {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the Experiment definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -164,6 +167,7 @@ public interface Experiment {
              */
             WithCreate withExistingNetworkExperimentProfile(String resourceGroupName, String profileName);
         }
+
         /**
          * The stage of the Experiment definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -189,6 +193,7 @@ public interface Experiment {
              */
             Experiment create(Context context);
         }
+
         /** The stage of the Experiment definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -199,6 +204,7 @@ public interface Experiment {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Experiment definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -209,6 +215,7 @@ public interface Experiment {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the Experiment definition allowing to specify endpointA. */
         interface WithEndpointA {
             /**
@@ -219,6 +226,7 @@ public interface Experiment {
              */
             WithCreate withEndpointA(Endpoint endpointA);
         }
+
         /** The stage of the Experiment definition allowing to specify endpointB. */
         interface WithEndpointB {
             /**
@@ -229,6 +237,7 @@ public interface Experiment {
              */
             WithCreate withEndpointB(Endpoint endpointB);
         }
+
         /** The stage of the Experiment definition allowing to specify enabledState. */
         interface WithEnabledState {
             /**
@@ -240,6 +249,7 @@ public interface Experiment {
             WithCreate withEnabledState(State enabledState);
         }
     }
+
     /**
      * Begins update for the Experiment resource.
      *
@@ -264,6 +274,7 @@ public interface Experiment {
          */
         Experiment apply(Context context);
     }
+
     /** The Experiment update stages. */
     interface UpdateStages {
         /** The stage of the Experiment update allowing to specify tags. */
@@ -276,6 +287,7 @@ public interface Experiment {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the Experiment update allowing to specify description. */
         interface WithDescription {
             /**
@@ -286,6 +298,7 @@ public interface Experiment {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the Experiment update allowing to specify enabledState. */
         interface WithEnabledState {
             /**
@@ -297,6 +310,7 @@ public interface Experiment {
             Update withEnabledState(State enabledState);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

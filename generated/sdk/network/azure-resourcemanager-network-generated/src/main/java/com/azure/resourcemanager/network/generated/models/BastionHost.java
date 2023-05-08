@@ -166,11 +166,13 @@ public interface BastionHost {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The BastionHost definition stages. */
     interface DefinitionStages {
         /** The first stage of the BastionHost definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the BastionHost definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -189,6 +191,7 @@ public interface BastionHost {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the BastionHost definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -199,6 +202,7 @@ public interface BastionHost {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the BastionHost definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -230,6 +234,7 @@ public interface BastionHost {
              */
             BastionHost create(Context context);
         }
+
         /** The stage of the BastionHost definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -240,6 +245,7 @@ public interface BastionHost {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the BastionHost definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -250,6 +256,7 @@ public interface BastionHost {
              */
             WithCreate withSku(Sku sku);
         }
+
         /** The stage of the BastionHost definition allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
             /**
@@ -260,6 +267,7 @@ public interface BastionHost {
              */
             WithCreate withIpConfigurations(List<BastionHostIpConfiguration> ipConfigurations);
         }
+
         /** The stage of the BastionHost definition allowing to specify dnsName. */
         interface WithDnsName {
             /**
@@ -270,6 +278,7 @@ public interface BastionHost {
              */
             WithCreate withDnsName(String dnsName);
         }
+
         /** The stage of the BastionHost definition allowing to specify scaleUnits. */
         interface WithScaleUnits {
             /**
@@ -280,6 +289,7 @@ public interface BastionHost {
              */
             WithCreate withScaleUnits(Integer scaleUnits);
         }
+
         /** The stage of the BastionHost definition allowing to specify disableCopyPaste. */
         interface WithDisableCopyPaste {
             /**
@@ -290,6 +300,7 @@ public interface BastionHost {
              */
             WithCreate withDisableCopyPaste(Boolean disableCopyPaste);
         }
+
         /** The stage of the BastionHost definition allowing to specify enableFileCopy. */
         interface WithEnableFileCopy {
             /**
@@ -300,6 +311,7 @@ public interface BastionHost {
              */
             WithCreate withEnableFileCopy(Boolean enableFileCopy);
         }
+
         /** The stage of the BastionHost definition allowing to specify enableIpConnect. */
         interface WithEnableIpConnect {
             /**
@@ -310,6 +322,7 @@ public interface BastionHost {
              */
             WithCreate withEnableIpConnect(Boolean enableIpConnect);
         }
+
         /** The stage of the BastionHost definition allowing to specify enableShareableLink. */
         interface WithEnableShareableLink {
             /**
@@ -320,6 +333,7 @@ public interface BastionHost {
              */
             WithCreate withEnableShareableLink(Boolean enableShareableLink);
         }
+
         /** The stage of the BastionHost definition allowing to specify enableTunneling. */
         interface WithEnableTunneling {
             /**
@@ -330,6 +344,7 @@ public interface BastionHost {
              */
             WithCreate withEnableTunneling(Boolean enableTunneling);
         }
+
         /** The stage of the BastionHost definition allowing to specify enableKerberos. */
         interface WithEnableKerberos {
             /**
@@ -341,6 +356,7 @@ public interface BastionHost {
             WithCreate withEnableKerberos(Boolean enableKerberos);
         }
     }
+
     /**
      * Begins update for the BastionHost resource.
      *
@@ -365,6 +381,7 @@ public interface BastionHost {
          */
         BastionHost apply(Context context);
     }
+
     /** The BastionHost update stages. */
     interface UpdateStages {
         /** The stage of the BastionHost update allowing to specify tags. */
@@ -378,6 +395,7 @@ public interface BastionHost {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

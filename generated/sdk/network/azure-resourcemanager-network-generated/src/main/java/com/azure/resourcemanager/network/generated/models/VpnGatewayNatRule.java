@@ -114,11 +114,13 @@ public interface VpnGatewayNatRule {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VpnGatewayNatRule definition stages. */
     interface DefinitionStages {
         /** The first stage of the VpnGatewayNatRule definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VpnGatewayNatRule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -130,6 +132,7 @@ public interface VpnGatewayNatRule {
              */
             WithCreate withExistingVpnGateway(String resourceGroupName, String gatewayName);
         }
+
         /**
          * The stage of the VpnGatewayNatRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -156,6 +159,7 @@ public interface VpnGatewayNatRule {
              */
             VpnGatewayNatRule create(Context context);
         }
+
         /** The stage of the VpnGatewayNatRule definition allowing to specify name. */
         interface WithName {
             /**
@@ -168,6 +172,7 @@ public interface VpnGatewayNatRule {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the VpnGatewayNatRule definition allowing to specify typePropertiesType. */
         interface WithTypePropertiesType {
             /**
@@ -178,6 +183,7 @@ public interface VpnGatewayNatRule {
              */
             WithCreate withTypePropertiesType(VpnNatRuleType typePropertiesType);
         }
+
         /** The stage of the VpnGatewayNatRule definition allowing to specify mode. */
         interface WithMode {
             /**
@@ -188,6 +194,7 @@ public interface VpnGatewayNatRule {
              */
             WithCreate withMode(VpnNatRuleMode mode);
         }
+
         /** The stage of the VpnGatewayNatRule definition allowing to specify internalMappings. */
         interface WithInternalMappings {
             /**
@@ -198,6 +205,7 @@ public interface VpnGatewayNatRule {
              */
             WithCreate withInternalMappings(List<VpnNatRuleMapping> internalMappings);
         }
+
         /** The stage of the VpnGatewayNatRule definition allowing to specify externalMappings. */
         interface WithExternalMappings {
             /**
@@ -208,6 +216,7 @@ public interface VpnGatewayNatRule {
              */
             WithCreate withExternalMappings(List<VpnNatRuleMapping> externalMappings);
         }
+
         /** The stage of the VpnGatewayNatRule definition allowing to specify ipConfigurationId. */
         interface WithIpConfigurationId {
             /**
@@ -219,6 +228,7 @@ public interface VpnGatewayNatRule {
             WithCreate withIpConfigurationId(String ipConfigurationId);
         }
     }
+
     /**
      * Begins update for the VpnGatewayNatRule resource.
      *
@@ -249,6 +259,7 @@ public interface VpnGatewayNatRule {
          */
         VpnGatewayNatRule apply(Context context);
     }
+
     /** The VpnGatewayNatRule update stages. */
     interface UpdateStages {
         /** The stage of the VpnGatewayNatRule update allowing to specify name. */
@@ -263,6 +274,7 @@ public interface VpnGatewayNatRule {
              */
             Update withName(String name);
         }
+
         /** The stage of the VpnGatewayNatRule update allowing to specify typePropertiesType. */
         interface WithTypePropertiesType {
             /**
@@ -273,6 +285,7 @@ public interface VpnGatewayNatRule {
              */
             Update withTypePropertiesType(VpnNatRuleType typePropertiesType);
         }
+
         /** The stage of the VpnGatewayNatRule update allowing to specify mode. */
         interface WithMode {
             /**
@@ -283,6 +296,7 @@ public interface VpnGatewayNatRule {
              */
             Update withMode(VpnNatRuleMode mode);
         }
+
         /** The stage of the VpnGatewayNatRule update allowing to specify internalMappings. */
         interface WithInternalMappings {
             /**
@@ -293,6 +307,7 @@ public interface VpnGatewayNatRule {
              */
             Update withInternalMappings(List<VpnNatRuleMapping> internalMappings);
         }
+
         /** The stage of the VpnGatewayNatRule update allowing to specify externalMappings. */
         interface WithExternalMappings {
             /**
@@ -303,6 +318,7 @@ public interface VpnGatewayNatRule {
              */
             Update withExternalMappings(List<VpnNatRuleMapping> externalMappings);
         }
+
         /** The stage of the VpnGatewayNatRule update allowing to specify ipConfigurationId. */
         interface WithIpConfigurationId {
             /**
@@ -314,6 +330,7 @@ public interface VpnGatewayNatRule {
             Update withIpConfigurationId(String ipConfigurationId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

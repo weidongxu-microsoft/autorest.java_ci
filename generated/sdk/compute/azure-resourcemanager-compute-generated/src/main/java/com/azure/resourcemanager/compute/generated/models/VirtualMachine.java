@@ -348,11 +348,13 @@ public interface VirtualMachine {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualMachine definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualMachine definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualMachine definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -371,6 +373,7 @@ public interface VirtualMachine {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -381,6 +384,7 @@ public interface VirtualMachine {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VirtualMachine definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -428,6 +432,7 @@ public interface VirtualMachine {
              */
             VirtualMachine create(Context context);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -438,6 +443,7 @@ public interface VirtualMachine {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify plan. */
         interface WithPlan {
             /**
@@ -456,6 +462,7 @@ public interface VirtualMachine {
              */
             WithCreate withPlan(Plan plan);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -466,6 +473,7 @@ public interface VirtualMachine {
              */
             WithCreate withIdentity(VirtualMachineIdentity identity);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify zones. */
         interface WithZones {
             /**
@@ -476,6 +484,7 @@ public interface VirtualMachine {
              */
             WithCreate withZones(List<String> zones);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -486,6 +495,7 @@ public interface VirtualMachine {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify hardwareProfile. */
         interface WithHardwareProfile {
             /**
@@ -496,6 +506,7 @@ public interface VirtualMachine {
              */
             WithCreate withHardwareProfile(HardwareProfile hardwareProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify storageProfile. */
         interface WithStorageProfile {
             /**
@@ -506,6 +517,7 @@ public interface VirtualMachine {
              */
             WithCreate withStorageProfile(StorageProfile storageProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify additionalCapabilities. */
         interface WithAdditionalCapabilities {
             /**
@@ -518,6 +530,7 @@ public interface VirtualMachine {
              */
             WithCreate withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify osProfile. */
         interface WithOsProfile {
             /**
@@ -530,6 +543,7 @@ public interface VirtualMachine {
              */
             WithCreate withOsProfile(OSProfile osProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify networkProfile. */
         interface WithNetworkProfile {
             /**
@@ -540,6 +554,7 @@ public interface VirtualMachine {
              */
             WithCreate withNetworkProfile(NetworkProfile networkProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify securityProfile. */
         interface WithSecurityProfile {
             /**
@@ -551,6 +566,7 @@ public interface VirtualMachine {
              */
             WithCreate withSecurityProfile(SecurityProfile securityProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify diagnosticsProfile. */
         interface WithDiagnosticsProfile {
             /**
@@ -562,6 +578,7 @@ public interface VirtualMachine {
              */
             WithCreate withDiagnosticsProfile(DiagnosticsProfile diagnosticsProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify availabilitySet. */
         interface WithAvailabilitySet {
             /**
@@ -590,6 +607,7 @@ public interface VirtualMachine {
              */
             WithCreate withAvailabilitySet(SubResource availabilitySet);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify virtualMachineScaleSet. */
         interface WithVirtualMachineScaleSet {
             /**
@@ -610,6 +628,7 @@ public interface VirtualMachine {
              */
             WithCreate withVirtualMachineScaleSet(SubResource virtualMachineScaleSet);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify proximityPlacementGroup. */
         interface WithProximityPlacementGroup {
             /**
@@ -622,6 +641,7 @@ public interface VirtualMachine {
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify priority. */
         interface WithPriority {
             /**
@@ -633,6 +653,7 @@ public interface VirtualMachine {
              */
             WithCreate withPriority(VirtualMachinePriorityTypes priority);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify evictionPolicy. */
         interface WithEvictionPolicy {
             /**
@@ -649,6 +670,7 @@ public interface VirtualMachine {
              */
             WithCreate withEvictionPolicy(VirtualMachineEvictionPolicyTypes evictionPolicy);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify billingProfile. */
         interface WithBillingProfile {
             /**
@@ -661,6 +683,7 @@ public interface VirtualMachine {
              */
             WithCreate withBillingProfile(BillingProfile billingProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify host. */
         interface WithHost {
             /**
@@ -673,6 +696,7 @@ public interface VirtualMachine {
              */
             WithCreate withHost(SubResource host);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify hostGroup. */
         interface WithHostGroup {
             /**
@@ -687,6 +711,7 @@ public interface VirtualMachine {
              */
             WithCreate withHostGroup(SubResource hostGroup);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify licenseType. */
         interface WithLicenseType {
             /**
@@ -714,6 +739,7 @@ public interface VirtualMachine {
              */
             WithCreate withLicenseType(String licenseType);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify extensionsTimeBudget. */
         interface WithExtensionsTimeBudget {
             /**
@@ -728,6 +754,7 @@ public interface VirtualMachine {
              */
             WithCreate withExtensionsTimeBudget(String extensionsTimeBudget);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify platformFaultDomain. */
         interface WithPlatformFaultDomain {
             /**
@@ -750,6 +777,7 @@ public interface VirtualMachine {
              */
             WithCreate withPlatformFaultDomain(Integer platformFaultDomain);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify scheduledEventsProfile. */
         interface WithScheduledEventsProfile {
             /**
@@ -760,6 +788,7 @@ public interface VirtualMachine {
              */
             WithCreate withScheduledEventsProfile(ScheduledEventsProfile scheduledEventsProfile);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify userData. */
         interface WithUserData {
             /**
@@ -772,6 +801,7 @@ public interface VirtualMachine {
              */
             WithCreate withUserData(String userData);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify capacityReservation. */
         interface WithCapacityReservation {
             /**
@@ -784,6 +814,7 @@ public interface VirtualMachine {
              */
             WithCreate withCapacityReservation(CapacityReservationProfile capacityReservation);
         }
+
         /** The stage of the VirtualMachine definition allowing to specify applicationProfile. */
         interface WithApplicationProfile {
             /**
@@ -797,6 +828,7 @@ public interface VirtualMachine {
             WithCreate withApplicationProfile(ApplicationProfile applicationProfile);
         }
     }
+
     /**
      * Begins update for the VirtualMachine resource.
      *
@@ -847,6 +879,7 @@ public interface VirtualMachine {
          */
         VirtualMachine apply(Context context);
     }
+
     /** The VirtualMachine update stages. */
     interface UpdateStages {
         /** The stage of the VirtualMachine update allowing to specify tags. */
@@ -859,6 +892,7 @@ public interface VirtualMachine {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachine update allowing to specify plan. */
         interface WithPlan {
             /**
@@ -877,6 +911,7 @@ public interface VirtualMachine {
              */
             Update withPlan(Plan plan);
         }
+
         /** The stage of the VirtualMachine update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -887,6 +922,7 @@ public interface VirtualMachine {
              */
             Update withIdentity(VirtualMachineIdentity identity);
         }
+
         /** The stage of the VirtualMachine update allowing to specify zones. */
         interface WithZones {
             /**
@@ -897,6 +933,7 @@ public interface VirtualMachine {
              */
             Update withZones(List<String> zones);
         }
+
         /** The stage of the VirtualMachine update allowing to specify hardwareProfile. */
         interface WithHardwareProfile {
             /**
@@ -907,6 +944,7 @@ public interface VirtualMachine {
              */
             Update withHardwareProfile(HardwareProfile hardwareProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify storageProfile. */
         interface WithStorageProfile {
             /**
@@ -917,6 +955,7 @@ public interface VirtualMachine {
              */
             Update withStorageProfile(StorageProfile storageProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify additionalCapabilities. */
         interface WithAdditionalCapabilities {
             /**
@@ -929,6 +968,7 @@ public interface VirtualMachine {
              */
             Update withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
         }
+
         /** The stage of the VirtualMachine update allowing to specify osProfile. */
         interface WithOsProfile {
             /**
@@ -941,6 +981,7 @@ public interface VirtualMachine {
              */
             Update withOsProfile(OSProfile osProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify networkProfile. */
         interface WithNetworkProfile {
             /**
@@ -951,6 +992,7 @@ public interface VirtualMachine {
              */
             Update withNetworkProfile(NetworkProfile networkProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify securityProfile. */
         interface WithSecurityProfile {
             /**
@@ -962,6 +1004,7 @@ public interface VirtualMachine {
              */
             Update withSecurityProfile(SecurityProfile securityProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify diagnosticsProfile. */
         interface WithDiagnosticsProfile {
             /**
@@ -973,6 +1016,7 @@ public interface VirtualMachine {
              */
             Update withDiagnosticsProfile(DiagnosticsProfile diagnosticsProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify availabilitySet. */
         interface WithAvailabilitySet {
             /**
@@ -1001,6 +1045,7 @@ public interface VirtualMachine {
              */
             Update withAvailabilitySet(SubResource availabilitySet);
         }
+
         /** The stage of the VirtualMachine update allowing to specify virtualMachineScaleSet. */
         interface WithVirtualMachineScaleSet {
             /**
@@ -1021,6 +1066,7 @@ public interface VirtualMachine {
              */
             Update withVirtualMachineScaleSet(SubResource virtualMachineScaleSet);
         }
+
         /** The stage of the VirtualMachine update allowing to specify proximityPlacementGroup. */
         interface WithProximityPlacementGroup {
             /**
@@ -1033,6 +1079,7 @@ public interface VirtualMachine {
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
+
         /** The stage of the VirtualMachine update allowing to specify priority. */
         interface WithPriority {
             /**
@@ -1044,6 +1091,7 @@ public interface VirtualMachine {
              */
             Update withPriority(VirtualMachinePriorityTypes priority);
         }
+
         /** The stage of the VirtualMachine update allowing to specify evictionPolicy. */
         interface WithEvictionPolicy {
             /**
@@ -1060,6 +1108,7 @@ public interface VirtualMachine {
              */
             Update withEvictionPolicy(VirtualMachineEvictionPolicyTypes evictionPolicy);
         }
+
         /** The stage of the VirtualMachine update allowing to specify billingProfile. */
         interface WithBillingProfile {
             /**
@@ -1072,6 +1121,7 @@ public interface VirtualMachine {
              */
             Update withBillingProfile(BillingProfile billingProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify host. */
         interface WithHost {
             /**
@@ -1084,6 +1134,7 @@ public interface VirtualMachine {
              */
             Update withHost(SubResource host);
         }
+
         /** The stage of the VirtualMachine update allowing to specify hostGroup. */
         interface WithHostGroup {
             /**
@@ -1098,6 +1149,7 @@ public interface VirtualMachine {
              */
             Update withHostGroup(SubResource hostGroup);
         }
+
         /** The stage of the VirtualMachine update allowing to specify licenseType. */
         interface WithLicenseType {
             /**
@@ -1125,6 +1177,7 @@ public interface VirtualMachine {
              */
             Update withLicenseType(String licenseType);
         }
+
         /** The stage of the VirtualMachine update allowing to specify extensionsTimeBudget. */
         interface WithExtensionsTimeBudget {
             /**
@@ -1139,6 +1192,7 @@ public interface VirtualMachine {
              */
             Update withExtensionsTimeBudget(String extensionsTimeBudget);
         }
+
         /** The stage of the VirtualMachine update allowing to specify platformFaultDomain. */
         interface WithPlatformFaultDomain {
             /**
@@ -1161,6 +1215,7 @@ public interface VirtualMachine {
              */
             Update withPlatformFaultDomain(Integer platformFaultDomain);
         }
+
         /** The stage of the VirtualMachine update allowing to specify scheduledEventsProfile. */
         interface WithScheduledEventsProfile {
             /**
@@ -1171,6 +1226,7 @@ public interface VirtualMachine {
              */
             Update withScheduledEventsProfile(ScheduledEventsProfile scheduledEventsProfile);
         }
+
         /** The stage of the VirtualMachine update allowing to specify userData. */
         interface WithUserData {
             /**
@@ -1183,6 +1239,7 @@ public interface VirtualMachine {
              */
             Update withUserData(String userData);
         }
+
         /** The stage of the VirtualMachine update allowing to specify capacityReservation. */
         interface WithCapacityReservation {
             /**
@@ -1195,6 +1252,7 @@ public interface VirtualMachine {
              */
             Update withCapacityReservation(CapacityReservationProfile capacityReservation);
         }
+
         /** The stage of the VirtualMachine update allowing to specify applicationProfile. */
         interface WithApplicationProfile {
             /**
@@ -1208,6 +1266,7 @@ public interface VirtualMachine {
             Update withApplicationProfile(ApplicationProfile applicationProfile);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

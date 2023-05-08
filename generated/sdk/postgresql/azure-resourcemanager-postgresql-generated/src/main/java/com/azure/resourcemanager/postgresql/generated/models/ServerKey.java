@@ -77,11 +77,13 @@ public interface ServerKey {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ServerKey definition stages. */
     interface DefinitionStages {
         /** The first stage of the ServerKey definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ServerKey definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -93,6 +95,7 @@ public interface ServerKey {
              */
             WithCreate withExistingServer(String serverName, String resourceGroupName);
         }
+
         /**
          * The stage of the ServerKey definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -113,6 +116,7 @@ public interface ServerKey {
              */
             ServerKey create(Context context);
         }
+
         /** The stage of the ServerKey definition allowing to specify serverKeyType. */
         interface WithServerKeyType {
             /**
@@ -123,6 +127,7 @@ public interface ServerKey {
              */
             WithCreate withServerKeyType(ServerKeyType serverKeyType);
         }
+
         /** The stage of the ServerKey definition allowing to specify uri. */
         interface WithUri {
             /**
@@ -134,6 +139,7 @@ public interface ServerKey {
             WithCreate withUri(String uri);
         }
     }
+
     /**
      * Begins update for the ServerKey resource.
      *
@@ -158,6 +164,7 @@ public interface ServerKey {
          */
         ServerKey apply(Context context);
     }
+
     /** The ServerKey update stages. */
     interface UpdateStages {
         /** The stage of the ServerKey update allowing to specify serverKeyType. */
@@ -170,6 +177,7 @@ public interface ServerKey {
              */
             Update withServerKeyType(ServerKeyType serverKeyType);
         }
+
         /** The stage of the ServerKey update allowing to specify uri. */
         interface WithUri {
             /**
@@ -181,6 +189,7 @@ public interface ServerKey {
             Update withUri(String uri);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

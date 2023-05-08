@@ -130,11 +130,13 @@ public interface LogAnalyticsQueryPackQuery {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The LogAnalyticsQueryPackQuery definition stages. */
     interface DefinitionStages {
         /** The first stage of the LogAnalyticsQueryPackQuery definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -146,6 +148,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             WithCreate withExistingQueryPack(String resourceGroupName, String queryPackName);
         }
+
         /**
          * The stage of the LogAnalyticsQueryPackQuery definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -172,6 +175,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             LogAnalyticsQueryPackQuery create(Context context);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -182,6 +186,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             WithCreate withTags(Map<String, List<String>> tags);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery definition allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -192,6 +197,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             WithCreate withDisplayName(String displayName);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -202,6 +208,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery definition allowing to specify body. */
         interface WithBody {
             /**
@@ -212,6 +219,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             WithCreate withBody(String body);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery definition allowing to specify related. */
         interface WithRelated {
             /**
@@ -222,6 +230,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             WithCreate withRelated(LogAnalyticsQueryPackQueryPropertiesRelated related);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery definition allowing to specify properties. */
         interface WithProperties {
             /**
@@ -233,6 +242,7 @@ public interface LogAnalyticsQueryPackQuery {
             WithCreate withProperties(Object properties);
         }
     }
+
     /**
      * Begins update for the LogAnalyticsQueryPackQuery resource.
      *
@@ -263,6 +273,7 @@ public interface LogAnalyticsQueryPackQuery {
          */
         LogAnalyticsQueryPackQuery apply(Context context);
     }
+
     /** The LogAnalyticsQueryPackQuery update stages. */
     interface UpdateStages {
         /** The stage of the LogAnalyticsQueryPackQuery update allowing to specify tags. */
@@ -275,6 +286,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             Update withTags(Map<String, List<String>> tags);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery update allowing to specify displayName. */
         interface WithDisplayName {
             /**
@@ -285,6 +297,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             Update withDisplayName(String displayName);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery update allowing to specify description. */
         interface WithDescription {
             /**
@@ -295,6 +308,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery update allowing to specify body. */
         interface WithBody {
             /**
@@ -305,6 +319,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             Update withBody(String body);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery update allowing to specify related. */
         interface WithRelated {
             /**
@@ -315,6 +330,7 @@ public interface LogAnalyticsQueryPackQuery {
              */
             Update withRelated(LogAnalyticsQueryPackQueryPropertiesRelated related);
         }
+
         /** The stage of the LogAnalyticsQueryPackQuery update allowing to specify properties. */
         interface WithProperties {
             /**
@@ -326,6 +342,7 @@ public interface LogAnalyticsQueryPackQuery {
             Update withProperties(Object properties);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

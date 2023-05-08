@@ -72,11 +72,13 @@ public interface NetworkInterfaceTapConfiguration {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The NetworkInterfaceTapConfiguration definition stages. */
     interface DefinitionStages {
         /** The first stage of the NetworkInterfaceTapConfiguration definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the NetworkInterfaceTapConfiguration definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -88,6 +90,7 @@ public interface NetworkInterfaceTapConfiguration {
              */
             WithCreate withExistingNetworkInterface(String resourceGroupName, String networkInterfaceName);
         }
+
         /**
          * The stage of the NetworkInterfaceTapConfiguration definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -108,6 +111,7 @@ public interface NetworkInterfaceTapConfiguration {
              */
             NetworkInterfaceTapConfiguration create(Context context);
         }
+
         /** The stage of the NetworkInterfaceTapConfiguration definition allowing to specify name. */
         interface WithName {
             /**
@@ -120,6 +124,7 @@ public interface NetworkInterfaceTapConfiguration {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the NetworkInterfaceTapConfiguration definition allowing to specify virtualNetworkTap. */
         interface WithVirtualNetworkTap {
             /**
@@ -131,6 +136,7 @@ public interface NetworkInterfaceTapConfiguration {
             WithCreate withVirtualNetworkTap(VirtualNetworkTapInner virtualNetworkTap);
         }
     }
+
     /**
      * Begins update for the NetworkInterfaceTapConfiguration resource.
      *
@@ -155,6 +161,7 @@ public interface NetworkInterfaceTapConfiguration {
          */
         NetworkInterfaceTapConfiguration apply(Context context);
     }
+
     /** The NetworkInterfaceTapConfiguration update stages. */
     interface UpdateStages {
         /** The stage of the NetworkInterfaceTapConfiguration update allowing to specify name. */
@@ -169,6 +176,7 @@ public interface NetworkInterfaceTapConfiguration {
              */
             Update withName(String name);
         }
+
         /** The stage of the NetworkInterfaceTapConfiguration update allowing to specify virtualNetworkTap. */
         interface WithVirtualNetworkTap {
             /**
@@ -180,6 +188,7 @@ public interface NetworkInterfaceTapConfiguration {
             Update withVirtualNetworkTap(VirtualNetworkTapInner virtualNetworkTap);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

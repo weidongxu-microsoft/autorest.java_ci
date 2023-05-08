@@ -102,11 +102,13 @@ public interface Profile {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Profile definition stages. */
     interface DefinitionStages {
         /** The first stage of the Profile definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Profile definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -125,6 +127,7 @@ public interface Profile {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Profile definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -135,6 +138,7 @@ public interface Profile {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Profile definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -156,6 +160,7 @@ public interface Profile {
              */
             Profile create(Context context);
         }
+
         /** The stage of the Profile definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -166,6 +171,7 @@ public interface Profile {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Profile definition allowing to specify etag. */
         interface WithEtag {
             /**
@@ -177,6 +183,7 @@ public interface Profile {
              */
             WithCreate withEtag(String etag);
         }
+
         /** The stage of the Profile definition allowing to specify enabledState. */
         interface WithEnabledState {
             /**
@@ -188,6 +195,7 @@ public interface Profile {
             WithCreate withEnabledState(State enabledState);
         }
     }
+
     /**
      * Begins update for the Profile resource.
      *
@@ -212,6 +220,7 @@ public interface Profile {
          */
         Profile apply(Context context);
     }
+
     /** The Profile update stages. */
     interface UpdateStages {
         /** The stage of the Profile update allowing to specify tags. */
@@ -224,6 +233,7 @@ public interface Profile {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the Profile update allowing to specify enabledState. */
         interface WithEnabledState {
             /**
@@ -235,6 +245,7 @@ public interface Profile {
             Update withEnabledState(State enabledState);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

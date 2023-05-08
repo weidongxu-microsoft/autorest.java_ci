@@ -237,11 +237,13 @@ public interface AppServiceCertificateOrder {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The AppServiceCertificateOrder definition stages. */
     interface DefinitionStages {
         /** The first stage of the AppServiceCertificateOrder definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -260,6 +262,7 @@ public interface AppServiceCertificateOrder {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -270,6 +273,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the AppServiceCertificateOrder definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -299,6 +303,7 @@ public interface AppServiceCertificateOrder {
              */
             AppServiceCertificateOrder create(Context context);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -309,6 +314,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -319,6 +325,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify certificates. */
         interface WithCertificates {
             /**
@@ -329,6 +336,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withCertificates(Map<String, AppServiceCertificate> certificates);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify distinguishedName. */
         interface WithDistinguishedName {
             /**
@@ -339,6 +347,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withDistinguishedName(String distinguishedName);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify validityInYears. */
         interface WithValidityInYears {
             /**
@@ -349,6 +358,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withValidityInYears(Integer validityInYears);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify keySize. */
         interface WithKeySize {
             /**
@@ -359,6 +369,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withKeySize(Integer keySize);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify productType. */
         interface WithProductType {
             /**
@@ -369,6 +380,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withProductType(CertificateProductType productType);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify autoRenew. */
         interface WithAutoRenew {
             /**
@@ -381,6 +393,7 @@ public interface AppServiceCertificateOrder {
              */
             WithCreate withAutoRenew(Boolean autoRenew);
         }
+
         /** The stage of the AppServiceCertificateOrder definition allowing to specify csr. */
         interface WithCsr {
             /**
@@ -392,6 +405,7 @@ public interface AppServiceCertificateOrder {
             WithCreate withCsr(String csr);
         }
     }
+
     /**
      * Begins update for the AppServiceCertificateOrder resource.
      *
@@ -416,6 +430,7 @@ public interface AppServiceCertificateOrder {
          */
         AppServiceCertificateOrder apply(Context context);
     }
+
     /** The AppServiceCertificateOrder update stages. */
     interface UpdateStages {
         /** The stage of the AppServiceCertificateOrder update allowing to specify kind. */
@@ -428,6 +443,7 @@ public interface AppServiceCertificateOrder {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the AppServiceCertificateOrder update allowing to specify certificates. */
         interface WithCertificates {
             /**
@@ -438,6 +454,7 @@ public interface AppServiceCertificateOrder {
              */
             Update withCertificates(Map<String, AppServiceCertificate> certificates);
         }
+
         /** The stage of the AppServiceCertificateOrder update allowing to specify autoRenew. */
         interface WithAutoRenew {
             /**
@@ -451,6 +468,7 @@ public interface AppServiceCertificateOrder {
             Update withAutoRenew(Boolean autoRenew);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

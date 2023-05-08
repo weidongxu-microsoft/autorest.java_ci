@@ -202,11 +202,13 @@ public interface ExpressRouteCircuitPeering {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ExpressRouteCircuitPeering definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRouteCircuitPeering definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -218,6 +220,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withExistingExpressRouteCircuit(String resourceGroupName, String circuitName);
         }
+
         /**
          * The stage of the ExpressRouteCircuitPeering definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -256,6 +259,7 @@ public interface ExpressRouteCircuitPeering {
              */
             ExpressRouteCircuitPeering create(Context context);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify name. */
         interface WithName {
             /**
@@ -268,6 +272,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify peeringType. */
         interface WithPeeringType {
             /**
@@ -278,6 +283,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withPeeringType(ExpressRoutePeeringType peeringType);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify state. */
         interface WithState {
             /**
@@ -288,6 +294,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withState(ExpressRoutePeeringState state);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify azureAsn. */
         interface WithAzureAsn {
             /**
@@ -298,6 +305,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withAzureAsn(Integer azureAsn);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify peerAsn. */
         interface WithPeerAsn {
             /**
@@ -308,6 +316,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withPeerAsn(Long peerAsn);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify primaryPeerAddressPrefix. */
         interface WithPrimaryPeerAddressPrefix {
             /**
@@ -318,6 +327,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withPrimaryPeerAddressPrefix(String primaryPeerAddressPrefix);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify secondaryPeerAddressPrefix. */
         interface WithSecondaryPeerAddressPrefix {
             /**
@@ -328,6 +338,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withSecondaryPeerAddressPrefix(String secondaryPeerAddressPrefix);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify primaryAzurePort. */
         interface WithPrimaryAzurePort {
             /**
@@ -338,6 +349,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withPrimaryAzurePort(String primaryAzurePort);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify secondaryAzurePort. */
         interface WithSecondaryAzurePort {
             /**
@@ -348,6 +360,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withSecondaryAzurePort(String secondaryAzurePort);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify sharedKey. */
         interface WithSharedKey {
             /**
@@ -358,6 +371,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withSharedKey(String sharedKey);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify vlanId. */
         interface WithVlanId {
             /**
@@ -368,6 +382,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withVlanId(Integer vlanId);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify microsoftPeeringConfig. */
         interface WithMicrosoftPeeringConfig {
             /**
@@ -378,6 +393,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withMicrosoftPeeringConfig(ExpressRouteCircuitPeeringConfig microsoftPeeringConfig);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify stats. */
         interface WithStats {
             /**
@@ -388,6 +404,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withStats(ExpressRouteCircuitStatsInner stats);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify gatewayManagerEtag. */
         interface WithGatewayManagerEtag {
             /**
@@ -398,6 +415,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withGatewayManagerEtag(String gatewayManagerEtag);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify routeFilter. */
         interface WithRouteFilter {
             /**
@@ -408,6 +426,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withRouteFilter(SubResource routeFilter);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify ipv6PeeringConfig. */
         interface WithIpv6PeeringConfig {
             /**
@@ -418,6 +437,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withIpv6PeeringConfig(Ipv6ExpressRouteCircuitPeeringConfig ipv6PeeringConfig);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify expressRouteConnection. */
         interface WithExpressRouteConnection {
             /**
@@ -428,6 +448,7 @@ public interface ExpressRouteCircuitPeering {
              */
             WithCreate withExpressRouteConnection(ExpressRouteConnectionId expressRouteConnection);
         }
+
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify connections. */
         interface WithConnections {
             /**
@@ -441,6 +462,7 @@ public interface ExpressRouteCircuitPeering {
             WithCreate withConnections(List<ExpressRouteCircuitConnectionInner> connections);
         }
     }
+
     /**
      * Begins update for the ExpressRouteCircuitPeering resource.
      *
@@ -483,6 +505,7 @@ public interface ExpressRouteCircuitPeering {
          */
         ExpressRouteCircuitPeering apply(Context context);
     }
+
     /** The ExpressRouteCircuitPeering update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify name. */
@@ -497,6 +520,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withName(String name);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify peeringType. */
         interface WithPeeringType {
             /**
@@ -507,6 +531,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withPeeringType(ExpressRoutePeeringType peeringType);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify state. */
         interface WithState {
             /**
@@ -517,6 +542,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withState(ExpressRoutePeeringState state);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify azureAsn. */
         interface WithAzureAsn {
             /**
@@ -527,6 +553,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withAzureAsn(Integer azureAsn);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify peerAsn. */
         interface WithPeerAsn {
             /**
@@ -537,6 +564,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withPeerAsn(Long peerAsn);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify primaryPeerAddressPrefix. */
         interface WithPrimaryPeerAddressPrefix {
             /**
@@ -547,6 +575,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withPrimaryPeerAddressPrefix(String primaryPeerAddressPrefix);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify secondaryPeerAddressPrefix. */
         interface WithSecondaryPeerAddressPrefix {
             /**
@@ -557,6 +586,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withSecondaryPeerAddressPrefix(String secondaryPeerAddressPrefix);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify primaryAzurePort. */
         interface WithPrimaryAzurePort {
             /**
@@ -567,6 +597,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withPrimaryAzurePort(String primaryAzurePort);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify secondaryAzurePort. */
         interface WithSecondaryAzurePort {
             /**
@@ -577,6 +608,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withSecondaryAzurePort(String secondaryAzurePort);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify sharedKey. */
         interface WithSharedKey {
             /**
@@ -587,6 +619,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withSharedKey(String sharedKey);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify vlanId. */
         interface WithVlanId {
             /**
@@ -597,6 +630,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withVlanId(Integer vlanId);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify microsoftPeeringConfig. */
         interface WithMicrosoftPeeringConfig {
             /**
@@ -607,6 +641,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withMicrosoftPeeringConfig(ExpressRouteCircuitPeeringConfig microsoftPeeringConfig);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify stats. */
         interface WithStats {
             /**
@@ -617,6 +652,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withStats(ExpressRouteCircuitStatsInner stats);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify gatewayManagerEtag. */
         interface WithGatewayManagerEtag {
             /**
@@ -627,6 +663,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withGatewayManagerEtag(String gatewayManagerEtag);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify routeFilter. */
         interface WithRouteFilter {
             /**
@@ -637,6 +674,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withRouteFilter(SubResource routeFilter);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify ipv6PeeringConfig. */
         interface WithIpv6PeeringConfig {
             /**
@@ -647,6 +685,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withIpv6PeeringConfig(Ipv6ExpressRouteCircuitPeeringConfig ipv6PeeringConfig);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify expressRouteConnection. */
         interface WithExpressRouteConnection {
             /**
@@ -657,6 +696,7 @@ public interface ExpressRouteCircuitPeering {
              */
             Update withExpressRouteConnection(ExpressRouteConnectionId expressRouteConnection);
         }
+
         /** The stage of the ExpressRouteCircuitPeering update allowing to specify connections. */
         interface WithConnections {
             /**
@@ -670,6 +710,7 @@ public interface ExpressRouteCircuitPeering {
             Update withConnections(List<ExpressRouteCircuitConnectionInner> connections);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

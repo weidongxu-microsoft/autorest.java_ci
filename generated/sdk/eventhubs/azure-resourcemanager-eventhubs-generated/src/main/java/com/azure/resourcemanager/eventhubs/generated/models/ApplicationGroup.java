@@ -104,11 +104,13 @@ public interface ApplicationGroup {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ApplicationGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the ApplicationGroup definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ApplicationGroup definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -120,6 +122,7 @@ public interface ApplicationGroup {
              */
             WithCreate withExistingNamespace(String resourceGroupName, String namespaceName);
         }
+
         /**
          * The stage of the ApplicationGroup definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -143,6 +146,7 @@ public interface ApplicationGroup {
              */
             ApplicationGroup create(Context context);
         }
+
         /** The stage of the ApplicationGroup definition allowing to specify isEnabled. */
         interface WithIsEnabled {
             /**
@@ -157,6 +161,7 @@ public interface ApplicationGroup {
              */
             WithCreate withIsEnabled(Boolean isEnabled);
         }
+
         /** The stage of the ApplicationGroup definition allowing to specify clientAppGroupIdentifier. */
         interface WithClientAppGroupIdentifier {
             /**
@@ -169,6 +174,7 @@ public interface ApplicationGroup {
              */
             WithCreate withClientAppGroupIdentifier(String clientAppGroupIdentifier);
         }
+
         /** The stage of the ApplicationGroup definition allowing to specify policies. */
         interface WithPolicies {
             /**
@@ -182,6 +188,7 @@ public interface ApplicationGroup {
             WithCreate withPolicies(List<ApplicationGroupPolicy> policies);
         }
     }
+
     /**
      * Begins update for the ApplicationGroup resource.
      *
@@ -207,6 +214,7 @@ public interface ApplicationGroup {
          */
         ApplicationGroup apply(Context context);
     }
+
     /** The ApplicationGroup update stages. */
     interface UpdateStages {
         /** The stage of the ApplicationGroup update allowing to specify isEnabled. */
@@ -223,6 +231,7 @@ public interface ApplicationGroup {
              */
             Update withIsEnabled(Boolean isEnabled);
         }
+
         /** The stage of the ApplicationGroup update allowing to specify clientAppGroupIdentifier. */
         interface WithClientAppGroupIdentifier {
             /**
@@ -235,6 +244,7 @@ public interface ApplicationGroup {
              */
             Update withClientAppGroupIdentifier(String clientAppGroupIdentifier);
         }
+
         /** The stage of the ApplicationGroup update allowing to specify policies. */
         interface WithPolicies {
             /**
@@ -248,6 +258,7 @@ public interface ApplicationGroup {
             Update withPolicies(List<ApplicationGroupPolicy> policies);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

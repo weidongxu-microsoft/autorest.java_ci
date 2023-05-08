@@ -134,11 +134,13 @@ public interface Job {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Job definition stages. */
     interface DefinitionStages {
         /** The first stage of the Job definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Job definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -151,6 +153,7 @@ public interface Job {
              */
             WithCreate withExistingTransform(String resourceGroupName, String accountName, String transformName);
         }
+
         /**
          * The stage of the Job definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -176,6 +179,7 @@ public interface Job {
              */
             Job create(Context context);
         }
+
         /** The stage of the Job definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -186,6 +190,7 @@ public interface Job {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the Job definition allowing to specify input. */
         interface WithInput {
             /**
@@ -196,6 +201,7 @@ public interface Job {
              */
             WithCreate withInput(JobInput input);
         }
+
         /** The stage of the Job definition allowing to specify outputs. */
         interface WithOutputs {
             /**
@@ -206,6 +212,7 @@ public interface Job {
              */
             WithCreate withOutputs(List<JobOutput> outputs);
         }
+
         /** The stage of the Job definition allowing to specify priority. */
         interface WithPriority {
             /**
@@ -218,6 +225,7 @@ public interface Job {
              */
             WithCreate withPriority(Priority priority);
         }
+
         /** The stage of the Job definition allowing to specify correlationData. */
         interface WithCorrelationData {
             /**
@@ -231,6 +239,7 @@ public interface Job {
             WithCreate withCorrelationData(Map<String, String> correlationData);
         }
     }
+
     /**
      * Begins update for the Job resource.
      *
@@ -260,6 +269,7 @@ public interface Job {
          */
         Job apply(Context context);
     }
+
     /** The Job update stages. */
     interface UpdateStages {
         /** The stage of the Job update allowing to specify description. */
@@ -272,6 +282,7 @@ public interface Job {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the Job update allowing to specify input. */
         interface WithInput {
             /**
@@ -282,6 +293,7 @@ public interface Job {
              */
             Update withInput(JobInput input);
         }
+
         /** The stage of the Job update allowing to specify outputs. */
         interface WithOutputs {
             /**
@@ -292,6 +304,7 @@ public interface Job {
              */
             Update withOutputs(List<JobOutput> outputs);
         }
+
         /** The stage of the Job update allowing to specify priority. */
         interface WithPriority {
             /**
@@ -304,6 +317,7 @@ public interface Job {
              */
             Update withPriority(Priority priority);
         }
+
         /** The stage of the Job update allowing to specify correlationData. */
         interface WithCorrelationData {
             /**
@@ -317,6 +331,7 @@ public interface Job {
             Update withCorrelationData(Map<String, String> correlationData);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -108,11 +108,13 @@ public interface VnetInfoResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VnetInfoResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the VnetInfoResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VnetInfoResource definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -126,6 +128,7 @@ public interface VnetInfoResource {
              */
             WithCreate withExistingSlot(String resourceGroupName, String name, String slot);
         }
+
         /**
          * The stage of the VnetInfoResource definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -151,6 +154,7 @@ public interface VnetInfoResource {
              */
             VnetInfoResource create(Context context);
         }
+
         /** The stage of the VnetInfoResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -161,6 +165,7 @@ public interface VnetInfoResource {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the VnetInfoResource definition allowing to specify vnetResourceId. */
         interface WithVnetResourceId {
             /**
@@ -171,6 +176,7 @@ public interface VnetInfoResource {
              */
             WithCreate withVnetResourceId(String vnetResourceId);
         }
+
         /** The stage of the VnetInfoResource definition allowing to specify certBlob. */
         interface WithCertBlob {
             /**
@@ -183,6 +189,7 @@ public interface VnetInfoResource {
              */
             WithCreate withCertBlob(String certBlob);
         }
+
         /** The stage of the VnetInfoResource definition allowing to specify dnsServers. */
         interface WithDnsServers {
             /**
@@ -195,6 +202,7 @@ public interface VnetInfoResource {
              */
             WithCreate withDnsServers(String dnsServers);
         }
+
         /** The stage of the VnetInfoResource definition allowing to specify isSwift. */
         interface WithIsSwift {
             /**
@@ -206,6 +214,7 @@ public interface VnetInfoResource {
             WithCreate withIsSwift(Boolean isSwift);
         }
     }
+
     /**
      * Begins update for the VnetInfoResource resource.
      *
@@ -235,6 +244,7 @@ public interface VnetInfoResource {
          */
         VnetInfoResource apply(Context context);
     }
+
     /** The VnetInfoResource update stages. */
     interface UpdateStages {
         /** The stage of the VnetInfoResource update allowing to specify kind. */
@@ -247,6 +257,7 @@ public interface VnetInfoResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the VnetInfoResource update allowing to specify vnetResourceId. */
         interface WithVnetResourceId {
             /**
@@ -257,6 +268,7 @@ public interface VnetInfoResource {
              */
             Update withVnetResourceId(String vnetResourceId);
         }
+
         /** The stage of the VnetInfoResource update allowing to specify certBlob. */
         interface WithCertBlob {
             /**
@@ -269,6 +281,7 @@ public interface VnetInfoResource {
              */
             Update withCertBlob(String certBlob);
         }
+
         /** The stage of the VnetInfoResource update allowing to specify dnsServers. */
         interface WithDnsServers {
             /**
@@ -281,6 +294,7 @@ public interface VnetInfoResource {
              */
             Update withDnsServers(String dnsServers);
         }
+
         /** The stage of the VnetInfoResource update allowing to specify isSwift. */
         interface WithIsSwift {
             /**
@@ -292,6 +306,7 @@ public interface VnetInfoResource {
             Update withIsSwift(Boolean isSwift);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

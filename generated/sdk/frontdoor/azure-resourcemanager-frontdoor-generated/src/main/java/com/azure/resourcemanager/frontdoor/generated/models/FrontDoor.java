@@ -185,11 +185,13 @@ public interface FrontDoor {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The FrontDoor definition stages. */
     interface DefinitionStages {
         /** The first stage of the FrontDoor definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the FrontDoor definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -208,6 +210,7 @@ public interface FrontDoor {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the FrontDoor definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -218,6 +221,7 @@ public interface FrontDoor {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the FrontDoor definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -247,6 +251,7 @@ public interface FrontDoor {
              */
             FrontDoor create(Context context);
         }
+
         /** The stage of the FrontDoor definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -257,6 +262,7 @@ public interface FrontDoor {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the FrontDoor definition allowing to specify friendlyName. */
         interface WithFriendlyName {
             /**
@@ -267,6 +273,7 @@ public interface FrontDoor {
              */
             WithCreate withFriendlyName(String friendlyName);
         }
+
         /** The stage of the FrontDoor definition allowing to specify routingRules. */
         interface WithRoutingRules {
             /**
@@ -277,6 +284,7 @@ public interface FrontDoor {
              */
             WithCreate withRoutingRules(List<RoutingRule> routingRules);
         }
+
         /** The stage of the FrontDoor definition allowing to specify loadBalancingSettings. */
         interface WithLoadBalancingSettings {
             /**
@@ -288,6 +296,7 @@ public interface FrontDoor {
              */
             WithCreate withLoadBalancingSettings(List<LoadBalancingSettingsModel> loadBalancingSettings);
         }
+
         /** The stage of the FrontDoor definition allowing to specify healthProbeSettings. */
         interface WithHealthProbeSettings {
             /**
@@ -299,6 +308,7 @@ public interface FrontDoor {
              */
             WithCreate withHealthProbeSettings(List<HealthProbeSettingsModel> healthProbeSettings);
         }
+
         /** The stage of the FrontDoor definition allowing to specify backendPools. */
         interface WithBackendPools {
             /**
@@ -309,6 +319,7 @@ public interface FrontDoor {
              */
             WithCreate withBackendPools(List<BackendPool> backendPools);
         }
+
         /** The stage of the FrontDoor definition allowing to specify frontendEndpoints. */
         interface WithFrontendEndpoints {
             /**
@@ -319,6 +330,7 @@ public interface FrontDoor {
              */
             WithCreate withFrontendEndpoints(List<FrontendEndpointInner> frontendEndpoints);
         }
+
         /** The stage of the FrontDoor definition allowing to specify backendPoolsSettings. */
         interface WithBackendPoolsSettings {
             /**
@@ -329,6 +341,7 @@ public interface FrontDoor {
              */
             WithCreate withBackendPoolsSettings(BackendPoolsSettings backendPoolsSettings);
         }
+
         /** The stage of the FrontDoor definition allowing to specify enabledState. */
         interface WithEnabledState {
             /**
@@ -342,6 +355,7 @@ public interface FrontDoor {
             WithCreate withEnabledState(FrontDoorEnabledState enabledState);
         }
     }
+
     /**
      * Begins update for the FrontDoor resource.
      *
@@ -375,6 +389,7 @@ public interface FrontDoor {
          */
         FrontDoor apply(Context context);
     }
+
     /** The FrontDoor update stages. */
     interface UpdateStages {
         /** The stage of the FrontDoor update allowing to specify tags. */
@@ -387,6 +402,7 @@ public interface FrontDoor {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the FrontDoor update allowing to specify friendlyName. */
         interface WithFriendlyName {
             /**
@@ -397,6 +413,7 @@ public interface FrontDoor {
              */
             Update withFriendlyName(String friendlyName);
         }
+
         /** The stage of the FrontDoor update allowing to specify routingRules. */
         interface WithRoutingRules {
             /**
@@ -407,6 +424,7 @@ public interface FrontDoor {
              */
             Update withRoutingRules(List<RoutingRule> routingRules);
         }
+
         /** The stage of the FrontDoor update allowing to specify loadBalancingSettings. */
         interface WithLoadBalancingSettings {
             /**
@@ -418,6 +436,7 @@ public interface FrontDoor {
              */
             Update withLoadBalancingSettings(List<LoadBalancingSettingsModel> loadBalancingSettings);
         }
+
         /** The stage of the FrontDoor update allowing to specify healthProbeSettings. */
         interface WithHealthProbeSettings {
             /**
@@ -429,6 +448,7 @@ public interface FrontDoor {
              */
             Update withHealthProbeSettings(List<HealthProbeSettingsModel> healthProbeSettings);
         }
+
         /** The stage of the FrontDoor update allowing to specify backendPools. */
         interface WithBackendPools {
             /**
@@ -439,6 +459,7 @@ public interface FrontDoor {
              */
             Update withBackendPools(List<BackendPool> backendPools);
         }
+
         /** The stage of the FrontDoor update allowing to specify frontendEndpoints. */
         interface WithFrontendEndpoints {
             /**
@@ -449,6 +470,7 @@ public interface FrontDoor {
              */
             Update withFrontendEndpoints(List<FrontendEndpointInner> frontendEndpoints);
         }
+
         /** The stage of the FrontDoor update allowing to specify backendPoolsSettings. */
         interface WithBackendPoolsSettings {
             /**
@@ -459,6 +481,7 @@ public interface FrontDoor {
              */
             Update withBackendPoolsSettings(BackendPoolsSettings backendPoolsSettings);
         }
+
         /** The stage of the FrontDoor update allowing to specify enabledState. */
         interface WithEnabledState {
             /**
@@ -472,6 +495,7 @@ public interface FrontDoor {
             Update withEnabledState(FrontDoorEnabledState enabledState);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

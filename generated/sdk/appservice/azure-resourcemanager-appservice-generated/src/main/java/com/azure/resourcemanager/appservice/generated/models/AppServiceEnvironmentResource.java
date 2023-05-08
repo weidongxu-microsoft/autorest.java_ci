@@ -237,11 +237,13 @@ public interface AppServiceEnvironmentResource {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The AppServiceEnvironmentResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the AppServiceEnvironmentResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -260,6 +262,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -270,6 +273,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the AppServiceEnvironmentResource definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -305,6 +309,7 @@ public interface AppServiceEnvironmentResource {
              */
             AppServiceEnvironmentResource create(Context context);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -315,6 +320,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -325,6 +331,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify virtualNetwork. */
         interface WithVirtualNetwork {
             /**
@@ -335,6 +342,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withVirtualNetwork(VirtualNetworkProfile virtualNetwork);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify internalLoadBalancingMode. */
         interface WithInternalLoadBalancingMode {
             /**
@@ -347,6 +355,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify multiSize. */
         interface WithMultiSize {
             /**
@@ -357,6 +366,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withMultiSize(String multiSize);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify ipsslAddressCount. */
         interface WithIpsslAddressCount {
             /**
@@ -368,6 +378,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withIpsslAddressCount(Integer ipsslAddressCount);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify dnsSuffix. */
         interface WithDnsSuffix {
             /**
@@ -378,6 +389,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withDnsSuffix(String dnsSuffix);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify frontEndScaleFactor. */
         interface WithFrontEndScaleFactor {
             /**
@@ -388,6 +400,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withFrontEndScaleFactor(Integer frontEndScaleFactor);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify clusterSettings. */
         interface WithClusterSettings {
             /**
@@ -399,6 +412,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withClusterSettings(List<NameValuePair> clusterSettings);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify userWhitelistedIpRanges. */
         interface WithUserWhitelistedIpRanges {
             /**
@@ -409,6 +423,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify upgradePreference. */
         interface WithUpgradePreference {
             /**
@@ -419,6 +434,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withUpgradePreference(UpgradePreference upgradePreference);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify dedicatedHostCount. */
         interface WithDedicatedHostCount {
             /**
@@ -429,6 +445,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withDedicatedHostCount(Integer dedicatedHostCount);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify zoneRedundant. */
         interface WithZoneRedundant {
             /**
@@ -439,6 +456,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withZoneRedundant(Boolean zoneRedundant);
         }
+
         /**
          * The stage of the AppServiceEnvironmentResource definition allowing to specify customDnsSuffixConfiguration.
          */
@@ -452,6 +470,7 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withCustomDnsSuffixConfiguration(CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration);
         }
+
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify networkingConfiguration. */
         interface WithNetworkingConfiguration {
             /**
@@ -463,6 +482,7 @@ public interface AppServiceEnvironmentResource {
             WithCreate withNetworkingConfiguration(AseV3NetworkingConfigurationInner networkingConfiguration);
         }
     }
+
     /**
      * Begins update for the AppServiceEnvironmentResource resource.
      *
@@ -501,6 +521,7 @@ public interface AppServiceEnvironmentResource {
          */
         AppServiceEnvironmentResource apply(Context context);
     }
+
     /** The AppServiceEnvironmentResource update stages. */
     interface UpdateStages {
         /** The stage of the AppServiceEnvironmentResource update allowing to specify kind. */
@@ -513,6 +534,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify virtualNetwork. */
         interface WithVirtualNetwork {
             /**
@@ -523,6 +545,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withVirtualNetwork(VirtualNetworkProfile virtualNetwork);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify internalLoadBalancingMode. */
         interface WithInternalLoadBalancingMode {
             /**
@@ -535,6 +558,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify multiSize. */
         interface WithMultiSize {
             /**
@@ -545,6 +569,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withMultiSize(String multiSize);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify ipsslAddressCount. */
         interface WithIpsslAddressCount {
             /**
@@ -556,6 +581,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withIpsslAddressCount(Integer ipsslAddressCount);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify dnsSuffix. */
         interface WithDnsSuffix {
             /**
@@ -566,6 +592,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withDnsSuffix(String dnsSuffix);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify frontEndScaleFactor. */
         interface WithFrontEndScaleFactor {
             /**
@@ -576,6 +603,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withFrontEndScaleFactor(Integer frontEndScaleFactor);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify clusterSettings. */
         interface WithClusterSettings {
             /**
@@ -587,6 +615,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withClusterSettings(List<NameValuePair> clusterSettings);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify userWhitelistedIpRanges. */
         interface WithUserWhitelistedIpRanges {
             /**
@@ -597,6 +626,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify upgradePreference. */
         interface WithUpgradePreference {
             /**
@@ -607,6 +637,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withUpgradePreference(UpgradePreference upgradePreference);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify dedicatedHostCount. */
         interface WithDedicatedHostCount {
             /**
@@ -617,6 +648,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withDedicatedHostCount(Integer dedicatedHostCount);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify zoneRedundant. */
         interface WithZoneRedundant {
             /**
@@ -627,6 +659,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withZoneRedundant(Boolean zoneRedundant);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify customDnsSuffixConfiguration. */
         interface WithCustomDnsSuffixConfiguration {
             /**
@@ -638,6 +671,7 @@ public interface AppServiceEnvironmentResource {
              */
             Update withCustomDnsSuffixConfiguration(CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration);
         }
+
         /** The stage of the AppServiceEnvironmentResource update allowing to specify networkingConfiguration. */
         interface WithNetworkingConfiguration {
             /**
@@ -649,6 +683,7 @@ public interface AppServiceEnvironmentResource {
             Update withNetworkingConfiguration(AseV3NetworkingConfigurationInner networkingConfiguration);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

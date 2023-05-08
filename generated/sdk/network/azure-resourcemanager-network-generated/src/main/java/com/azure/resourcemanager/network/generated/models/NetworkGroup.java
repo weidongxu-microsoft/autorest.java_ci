@@ -77,11 +77,13 @@ public interface NetworkGroup {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The NetworkGroup definition stages. */
     interface DefinitionStages {
         /** The first stage of the NetworkGroup definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the NetworkGroup definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -93,6 +95,7 @@ public interface NetworkGroup {
              */
             WithCreate withExistingNetworkManager(String resourceGroupName, String networkManagerName);
         }
+
         /**
          * The stage of the NetworkGroup definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -113,6 +116,7 @@ public interface NetworkGroup {
              */
             NetworkGroup create(Context context);
         }
+
         /** The stage of the NetworkGroup definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -123,6 +127,7 @@ public interface NetworkGroup {
              */
             WithCreate withDescription(String description);
         }
+
         /** The stage of the NetworkGroup definition allowing to specify ifMatch. */
         interface WithIfMatch {
             /**
@@ -137,6 +142,7 @@ public interface NetworkGroup {
             WithCreate withIfMatch(String ifMatch);
         }
     }
+
     /**
      * Begins update for the NetworkGroup resource.
      *
@@ -161,6 +167,7 @@ public interface NetworkGroup {
          */
         NetworkGroup apply(Context context);
     }
+
     /** The NetworkGroup update stages. */
     interface UpdateStages {
         /** The stage of the NetworkGroup update allowing to specify description. */
@@ -173,6 +180,7 @@ public interface NetworkGroup {
              */
             Update withDescription(String description);
         }
+
         /** The stage of the NetworkGroup update allowing to specify ifMatch. */
         interface WithIfMatch {
             /**
@@ -187,6 +195,7 @@ public interface NetworkGroup {
             Update withIfMatch(String ifMatch);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

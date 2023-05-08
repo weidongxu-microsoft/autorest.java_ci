@@ -191,11 +191,13 @@ public interface FileShare {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The FileShare definition stages. */
     interface DefinitionStages {
         /** The first stage of the FileShare definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the FileShare definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -209,6 +211,7 @@ public interface FileShare {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the FileShare definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -236,6 +239,7 @@ public interface FileShare {
              */
             FileShare create(Context context);
         }
+
         /** The stage of the FileShare definition allowing to specify metadata. */
         interface WithMetadata {
             /**
@@ -246,6 +250,7 @@ public interface FileShare {
              */
             WithCreate withMetadata(Map<String, String> metadata);
         }
+
         /** The stage of the FileShare definition allowing to specify shareQuota. */
         interface WithShareQuota {
             /**
@@ -258,6 +263,7 @@ public interface FileShare {
              */
             WithCreate withShareQuota(Integer shareQuota);
         }
+
         /** The stage of the FileShare definition allowing to specify enabledProtocols. */
         interface WithEnabledProtocols {
             /**
@@ -270,6 +276,7 @@ public interface FileShare {
              */
             WithCreate withEnabledProtocols(EnabledProtocols enabledProtocols);
         }
+
         /** The stage of the FileShare definition allowing to specify rootSquash. */
         interface WithRootSquash {
             /**
@@ -280,6 +287,7 @@ public interface FileShare {
              */
             WithCreate withRootSquash(RootSquashType rootSquash);
         }
+
         /** The stage of the FileShare definition allowing to specify accessTier. */
         interface WithAccessTier {
             /**
@@ -292,6 +300,7 @@ public interface FileShare {
              */
             WithCreate withAccessTier(ShareAccessTier accessTier);
         }
+
         /** The stage of the FileShare definition allowing to specify signedIdentifiers. */
         interface WithSignedIdentifiers {
             /**
@@ -302,6 +311,7 @@ public interface FileShare {
              */
             WithCreate withSignedIdentifiers(List<SignedIdentifier> signedIdentifiers);
         }
+
         /** The stage of the FileShare definition allowing to specify expand. */
         interface WithExpand {
             /**
@@ -315,6 +325,7 @@ public interface FileShare {
             WithCreate withExpand(String expand);
         }
     }
+
     /**
      * Begins update for the FileShare resource.
      *
@@ -344,6 +355,7 @@ public interface FileShare {
          */
         FileShare apply(Context context);
     }
+
     /** The FileShare update stages. */
     interface UpdateStages {
         /** The stage of the FileShare update allowing to specify metadata. */
@@ -356,6 +368,7 @@ public interface FileShare {
              */
             Update withMetadata(Map<String, String> metadata);
         }
+
         /** The stage of the FileShare update allowing to specify shareQuota. */
         interface WithShareQuota {
             /**
@@ -368,6 +381,7 @@ public interface FileShare {
              */
             Update withShareQuota(Integer shareQuota);
         }
+
         /** The stage of the FileShare update allowing to specify rootSquash. */
         interface WithRootSquash {
             /**
@@ -378,6 +392,7 @@ public interface FileShare {
              */
             Update withRootSquash(RootSquashType rootSquash);
         }
+
         /** The stage of the FileShare update allowing to specify accessTier. */
         interface WithAccessTier {
             /**
@@ -390,6 +405,7 @@ public interface FileShare {
              */
             Update withAccessTier(ShareAccessTier accessTier);
         }
+
         /** The stage of the FileShare update allowing to specify signedIdentifiers. */
         interface WithSignedIdentifiers {
             /**
@@ -401,6 +417,7 @@ public interface FileShare {
             Update withSignedIdentifiers(List<SignedIdentifier> signedIdentifiers);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

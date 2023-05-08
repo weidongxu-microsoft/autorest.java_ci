@@ -235,11 +235,13 @@ public interface Domain {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Domain definition stages. */
     interface DefinitionStages {
         /** The first stage of the Domain definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Domain definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -258,6 +260,7 @@ public interface Domain {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Domain definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -268,6 +271,7 @@ public interface Domain {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Domain definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -301,6 +305,7 @@ public interface Domain {
              */
             Domain create(Context context);
         }
+
         /** The stage of the Domain definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -311,6 +316,7 @@ public interface Domain {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Domain definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -321,6 +327,7 @@ public interface Domain {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the Domain definition allowing to specify contactAdmin. */
         interface WithContactAdmin {
             /**
@@ -331,6 +338,7 @@ public interface Domain {
              */
             WithCreate withContactAdmin(Contact contactAdmin);
         }
+
         /** The stage of the Domain definition allowing to specify contactBilling. */
         interface WithContactBilling {
             /**
@@ -341,6 +349,7 @@ public interface Domain {
              */
             WithCreate withContactBilling(Contact contactBilling);
         }
+
         /** The stage of the Domain definition allowing to specify contactRegistrant. */
         interface WithContactRegistrant {
             /**
@@ -351,6 +360,7 @@ public interface Domain {
              */
             WithCreate withContactRegistrant(Contact contactRegistrant);
         }
+
         /** The stage of the Domain definition allowing to specify contactTech. */
         interface WithContactTech {
             /**
@@ -361,6 +371,7 @@ public interface Domain {
              */
             WithCreate withContactTech(Contact contactTech);
         }
+
         /** The stage of the Domain definition allowing to specify privacy. */
         interface WithPrivacy {
             /**
@@ -373,6 +384,7 @@ public interface Domain {
              */
             WithCreate withPrivacy(Boolean privacy);
         }
+
         /** The stage of the Domain definition allowing to specify autoRenew. */
         interface WithAutoRenew {
             /**
@@ -385,6 +397,7 @@ public interface Domain {
              */
             WithCreate withAutoRenew(Boolean autoRenew);
         }
+
         /** The stage of the Domain definition allowing to specify consent. */
         interface WithConsent {
             /**
@@ -395,6 +408,7 @@ public interface Domain {
              */
             WithCreate withConsent(DomainPurchaseConsent consent);
         }
+
         /** The stage of the Domain definition allowing to specify dnsType. */
         interface WithDnsType {
             /**
@@ -405,6 +419,7 @@ public interface Domain {
              */
             WithCreate withDnsType(DnsType dnsType);
         }
+
         /** The stage of the Domain definition allowing to specify dnsZoneId. */
         interface WithDnsZoneId {
             /**
@@ -415,6 +430,7 @@ public interface Domain {
              */
             WithCreate withDnsZoneId(String dnsZoneId);
         }
+
         /** The stage of the Domain definition allowing to specify targetDnsType. */
         interface WithTargetDnsType {
             /**
@@ -425,6 +441,7 @@ public interface Domain {
              */
             WithCreate withTargetDnsType(DnsType targetDnsType);
         }
+
         /** The stage of the Domain definition allowing to specify authCode. */
         interface WithAuthCode {
             /**
@@ -436,6 +453,7 @@ public interface Domain {
             WithCreate withAuthCode(String authCode);
         }
     }
+
     /**
      * Begins update for the Domain resource.
      *
@@ -466,6 +484,7 @@ public interface Domain {
          */
         Domain apply(Context context);
     }
+
     /** The Domain update stages. */
     interface UpdateStages {
         /** The stage of the Domain update allowing to specify kind. */
@@ -478,6 +497,7 @@ public interface Domain {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the Domain update allowing to specify privacy. */
         interface WithPrivacy {
             /**
@@ -490,6 +510,7 @@ public interface Domain {
              */
             Update withPrivacy(Boolean privacy);
         }
+
         /** The stage of the Domain update allowing to specify autoRenew. */
         interface WithAutoRenew {
             /**
@@ -502,6 +523,7 @@ public interface Domain {
              */
             Update withAutoRenew(Boolean autoRenew);
         }
+
         /** The stage of the Domain update allowing to specify dnsType. */
         interface WithDnsType {
             /**
@@ -512,6 +534,7 @@ public interface Domain {
              */
             Update withDnsType(DnsType dnsType);
         }
+
         /** The stage of the Domain update allowing to specify dnsZoneId. */
         interface WithDnsZoneId {
             /**
@@ -522,6 +545,7 @@ public interface Domain {
              */
             Update withDnsZoneId(String dnsZoneId);
         }
+
         /** The stage of the Domain update allowing to specify targetDnsType. */
         interface WithTargetDnsType {
             /**
@@ -533,6 +557,7 @@ public interface Domain {
             Update withTargetDnsType(DnsType targetDnsType);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

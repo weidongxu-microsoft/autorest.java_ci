@@ -92,11 +92,13 @@ public interface HubRouteTable {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The HubRouteTable definition stages. */
     interface DefinitionStages {
         /** The first stage of the HubRouteTable definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the HubRouteTable definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -108,6 +110,7 @@ public interface HubRouteTable {
              */
             WithCreate withExistingVirtualHub(String resourceGroupName, String virtualHubName);
         }
+
         /**
          * The stage of the HubRouteTable definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -129,6 +132,7 @@ public interface HubRouteTable {
              */
             HubRouteTable create(Context context);
         }
+
         /** The stage of the HubRouteTable definition allowing to specify name. */
         interface WithName {
             /**
@@ -141,6 +145,7 @@ public interface HubRouteTable {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the HubRouteTable definition allowing to specify routes. */
         interface WithRoutes {
             /**
@@ -151,6 +156,7 @@ public interface HubRouteTable {
              */
             WithCreate withRoutes(List<HubRoute> routes);
         }
+
         /** The stage of the HubRouteTable definition allowing to specify labels. */
         interface WithLabels {
             /**
@@ -162,6 +168,7 @@ public interface HubRouteTable {
             WithCreate withLabels(List<String> labels);
         }
     }
+
     /**
      * Begins update for the HubRouteTable resource.
      *
@@ -186,6 +193,7 @@ public interface HubRouteTable {
          */
         HubRouteTable apply(Context context);
     }
+
     /** The HubRouteTable update stages. */
     interface UpdateStages {
         /** The stage of the HubRouteTable update allowing to specify name. */
@@ -200,6 +208,7 @@ public interface HubRouteTable {
              */
             Update withName(String name);
         }
+
         /** The stage of the HubRouteTable update allowing to specify routes. */
         interface WithRoutes {
             /**
@@ -210,6 +219,7 @@ public interface HubRouteTable {
              */
             Update withRoutes(List<HubRoute> routes);
         }
+
         /** The stage of the HubRouteTable update allowing to specify labels. */
         interface WithLabels {
             /**
@@ -221,6 +231,7 @@ public interface HubRouteTable {
             Update withLabels(List<String> labels);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

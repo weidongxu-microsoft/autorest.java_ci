@@ -457,11 +457,13 @@ public interface Site {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The Site definition stages. */
     interface DefinitionStages {
         /** The first stage of the Site definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the Site definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -480,6 +482,7 @@ public interface Site {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the Site definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -490,6 +493,7 @@ public interface Site {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the Site definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -542,6 +546,7 @@ public interface Site {
              */
             Site create(Context context);
         }
+
         /** The stage of the Site definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -552,6 +557,7 @@ public interface Site {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the Site definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -562,6 +568,7 @@ public interface Site {
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
         }
+
         /** The stage of the Site definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -572,6 +579,7 @@ public interface Site {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the Site definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -582,6 +590,7 @@ public interface Site {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the Site definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -594,6 +603,7 @@ public interface Site {
              */
             WithCreate withEnabled(Boolean enabled);
         }
+
         /** The stage of the Site definition allowing to specify hostnameSslStates. */
         interface WithHostnameSslStates {
             /**
@@ -605,6 +615,7 @@ public interface Site {
              */
             WithCreate withHostnameSslStates(List<HostnameSslState> hostnameSslStates);
         }
+
         /** The stage of the Site definition allowing to specify serverFarmId. */
         interface WithServerFarmId {
             /**
@@ -617,6 +628,7 @@ public interface Site {
              */
             WithCreate withServerFarmId(String serverFarmId);
         }
+
         /** The stage of the Site definition allowing to specify reserved. */
         interface WithReserved {
             /**
@@ -628,6 +640,7 @@ public interface Site {
              */
             WithCreate withReserved(Boolean reserved);
         }
+
         /** The stage of the Site definition allowing to specify isXenon. */
         interface WithIsXenon {
             /**
@@ -638,6 +651,7 @@ public interface Site {
              */
             WithCreate withIsXenon(Boolean isXenon);
         }
+
         /** The stage of the Site definition allowing to specify hyperV. */
         interface WithHyperV {
             /**
@@ -648,6 +662,7 @@ public interface Site {
              */
             WithCreate withHyperV(Boolean hyperV);
         }
+
         /** The stage of the Site definition allowing to specify vnetRouteAllEnabled. */
         interface WithVnetRouteAllEnabled {
             /**
@@ -660,6 +675,7 @@ public interface Site {
              */
             WithCreate withVnetRouteAllEnabled(Boolean vnetRouteAllEnabled);
         }
+
         /** The stage of the Site definition allowing to specify vnetImagePullEnabled. */
         interface WithVnetImagePullEnabled {
             /**
@@ -670,6 +686,7 @@ public interface Site {
              */
             WithCreate withVnetImagePullEnabled(Boolean vnetImagePullEnabled);
         }
+
         /** The stage of the Site definition allowing to specify vnetContentShareEnabled. */
         interface WithVnetContentShareEnabled {
             /**
@@ -680,6 +697,7 @@ public interface Site {
              */
             WithCreate withVnetContentShareEnabled(Boolean vnetContentShareEnabled);
         }
+
         /** The stage of the Site definition allowing to specify siteConfig. */
         interface WithSiteConfig {
             /**
@@ -690,6 +708,7 @@ public interface Site {
              */
             WithCreate withSiteConfig(SiteConfigInner siteConfig);
         }
+
         /** The stage of the Site definition allowing to specify scmSiteAlsoStopped. */
         interface WithScmSiteAlsoStopped {
             /**
@@ -703,6 +722,7 @@ public interface Site {
              */
             WithCreate withScmSiteAlsoStopped(Boolean scmSiteAlsoStopped);
         }
+
         /** The stage of the Site definition allowing to specify hostingEnvironmentProfile. */
         interface WithHostingEnvironmentProfile {
             /**
@@ -713,6 +733,7 @@ public interface Site {
              */
             WithCreate withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile);
         }
+
         /** The stage of the Site definition allowing to specify clientAffinityEnabled. */
         interface WithClientAffinityEnabled {
             /**
@@ -727,6 +748,7 @@ public interface Site {
              */
             WithCreate withClientAffinityEnabled(Boolean clientAffinityEnabled);
         }
+
         /** The stage of the Site definition allowing to specify clientCertEnabled. */
         interface WithClientCertEnabled {
             /**
@@ -741,6 +763,7 @@ public interface Site {
              */
             WithCreate withClientCertEnabled(Boolean clientCertEnabled);
         }
+
         /** The stage of the Site definition allowing to specify clientCertMode. */
         interface WithClientCertMode {
             /**
@@ -757,6 +780,7 @@ public interface Site {
              */
             WithCreate withClientCertMode(ClientCertMode clientCertMode);
         }
+
         /** The stage of the Site definition allowing to specify clientCertExclusionPaths. */
         interface WithClientCertExclusionPaths {
             /**
@@ -768,6 +792,7 @@ public interface Site {
              */
             WithCreate withClientCertExclusionPaths(String clientCertExclusionPaths);
         }
+
         /** The stage of the Site definition allowing to specify hostNamesDisabled. */
         interface WithHostNamesDisabled {
             /**
@@ -782,6 +807,7 @@ public interface Site {
              */
             WithCreate withHostNamesDisabled(Boolean hostNamesDisabled);
         }
+
         /** The stage of the Site definition allowing to specify customDomainVerificationId. */
         interface WithCustomDomainVerificationId {
             /**
@@ -794,6 +820,7 @@ public interface Site {
              */
             WithCreate withCustomDomainVerificationId(String customDomainVerificationId);
         }
+
         /** The stage of the Site definition allowing to specify containerSize. */
         interface WithContainerSize {
             /**
@@ -804,6 +831,7 @@ public interface Site {
              */
             WithCreate withContainerSize(Integer containerSize);
         }
+
         /** The stage of the Site definition allowing to specify dailyMemoryTimeQuota. */
         interface WithDailyMemoryTimeQuota {
             /**
@@ -815,6 +843,7 @@ public interface Site {
              */
             WithCreate withDailyMemoryTimeQuota(Integer dailyMemoryTimeQuota);
         }
+
         /** The stage of the Site definition allowing to specify cloningInfo. */
         interface WithCloningInfo {
             /**
@@ -826,6 +855,7 @@ public interface Site {
              */
             WithCreate withCloningInfo(CloningInfo cloningInfo);
         }
+
         /** The stage of the Site definition allowing to specify httpsOnly. */
         interface WithHttpsOnly {
             /**
@@ -838,6 +868,7 @@ public interface Site {
              */
             WithCreate withHttpsOnly(Boolean httpsOnly);
         }
+
         /** The stage of the Site definition allowing to specify redundancyMode. */
         interface WithRedundancyMode {
             /**
@@ -848,6 +879,7 @@ public interface Site {
              */
             WithCreate withRedundancyMode(RedundancyMode redundancyMode);
         }
+
         /** The stage of the Site definition allowing to specify publicNetworkAccess. */
         interface WithPublicNetworkAccess {
             /**
@@ -860,6 +892,7 @@ public interface Site {
              */
             WithCreate withPublicNetworkAccess(String publicNetworkAccess);
         }
+
         /** The stage of the Site definition allowing to specify storageAccountRequired. */
         interface WithStorageAccountRequired {
             /**
@@ -870,6 +903,7 @@ public interface Site {
              */
             WithCreate withStorageAccountRequired(Boolean storageAccountRequired);
         }
+
         /** The stage of the Site definition allowing to specify keyVaultReferenceIdentity. */
         interface WithKeyVaultReferenceIdentity {
             /**
@@ -881,6 +915,7 @@ public interface Site {
              */
             WithCreate withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
         }
+
         /** The stage of the Site definition allowing to specify virtualNetworkSubnetId. */
         interface WithVirtualNetworkSubnetId {
             /**
@@ -895,6 +930,7 @@ public interface Site {
              */
             WithCreate withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
         }
+
         /** The stage of the Site definition allowing to specify managedEnvironmentId. */
         interface WithManagedEnvironmentId {
             /**
@@ -910,6 +946,7 @@ public interface Site {
             WithCreate withManagedEnvironmentId(String managedEnvironmentId);
         }
     }
+
     /**
      * Begins update for the Site resource.
      *
@@ -954,6 +991,7 @@ public interface Site {
          */
         Site apply(Context context);
     }
+
     /** The Site update stages. */
     interface UpdateStages {
         /** The stage of the Site update allowing to specify kind. */
@@ -966,6 +1004,7 @@ public interface Site {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the Site update allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -976,6 +1015,7 @@ public interface Site {
              */
             Update withIdentity(ManagedServiceIdentity identity);
         }
+
         /** The stage of the Site update allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -988,6 +1028,7 @@ public interface Site {
              */
             Update withEnabled(Boolean enabled);
         }
+
         /** The stage of the Site update allowing to specify hostnameSslStates. */
         interface WithHostnameSslStates {
             /**
@@ -999,6 +1040,7 @@ public interface Site {
              */
             Update withHostnameSslStates(List<HostnameSslState> hostnameSslStates);
         }
+
         /** The stage of the Site update allowing to specify serverFarmId. */
         interface WithServerFarmId {
             /**
@@ -1011,6 +1053,7 @@ public interface Site {
              */
             Update withServerFarmId(String serverFarmId);
         }
+
         /** The stage of the Site update allowing to specify siteConfig. */
         interface WithSiteConfig {
             /**
@@ -1021,6 +1064,7 @@ public interface Site {
              */
             Update withSiteConfig(SiteConfigInner siteConfig);
         }
+
         /** The stage of the Site update allowing to specify scmSiteAlsoStopped. */
         interface WithScmSiteAlsoStopped {
             /**
@@ -1034,6 +1078,7 @@ public interface Site {
              */
             Update withScmSiteAlsoStopped(Boolean scmSiteAlsoStopped);
         }
+
         /** The stage of the Site update allowing to specify clientAffinityEnabled. */
         interface WithClientAffinityEnabled {
             /**
@@ -1048,6 +1093,7 @@ public interface Site {
              */
             Update withClientAffinityEnabled(Boolean clientAffinityEnabled);
         }
+
         /** The stage of the Site update allowing to specify clientCertEnabled. */
         interface WithClientCertEnabled {
             /**
@@ -1062,6 +1108,7 @@ public interface Site {
              */
             Update withClientCertEnabled(Boolean clientCertEnabled);
         }
+
         /** The stage of the Site update allowing to specify clientCertMode. */
         interface WithClientCertMode {
             /**
@@ -1078,6 +1125,7 @@ public interface Site {
              */
             Update withClientCertMode(ClientCertMode clientCertMode);
         }
+
         /** The stage of the Site update allowing to specify clientCertExclusionPaths. */
         interface WithClientCertExclusionPaths {
             /**
@@ -1089,6 +1137,7 @@ public interface Site {
              */
             Update withClientCertExclusionPaths(String clientCertExclusionPaths);
         }
+
         /** The stage of the Site update allowing to specify hostNamesDisabled. */
         interface WithHostNamesDisabled {
             /**
@@ -1103,6 +1152,7 @@ public interface Site {
              */
             Update withHostNamesDisabled(Boolean hostNamesDisabled);
         }
+
         /** The stage of the Site update allowing to specify customDomainVerificationId. */
         interface WithCustomDomainVerificationId {
             /**
@@ -1115,6 +1165,7 @@ public interface Site {
              */
             Update withCustomDomainVerificationId(String customDomainVerificationId);
         }
+
         /** The stage of the Site update allowing to specify containerSize. */
         interface WithContainerSize {
             /**
@@ -1125,6 +1176,7 @@ public interface Site {
              */
             Update withContainerSize(Integer containerSize);
         }
+
         /** The stage of the Site update allowing to specify dailyMemoryTimeQuota. */
         interface WithDailyMemoryTimeQuota {
             /**
@@ -1136,6 +1188,7 @@ public interface Site {
              */
             Update withDailyMemoryTimeQuota(Integer dailyMemoryTimeQuota);
         }
+
         /** The stage of the Site update allowing to specify httpsOnly. */
         interface WithHttpsOnly {
             /**
@@ -1148,6 +1201,7 @@ public interface Site {
              */
             Update withHttpsOnly(Boolean httpsOnly);
         }
+
         /** The stage of the Site update allowing to specify redundancyMode. */
         interface WithRedundancyMode {
             /**
@@ -1158,6 +1212,7 @@ public interface Site {
              */
             Update withRedundancyMode(RedundancyMode redundancyMode);
         }
+
         /** The stage of the Site update allowing to specify storageAccountRequired. */
         interface WithStorageAccountRequired {
             /**
@@ -1168,6 +1223,7 @@ public interface Site {
              */
             Update withStorageAccountRequired(Boolean storageAccountRequired);
         }
+
         /** The stage of the Site update allowing to specify keyVaultReferenceIdentity. */
         interface WithKeyVaultReferenceIdentity {
             /**
@@ -1179,6 +1235,7 @@ public interface Site {
              */
             Update withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
         }
+
         /** The stage of the Site update allowing to specify virtualNetworkSubnetId. */
         interface WithVirtualNetworkSubnetId {
             /**
@@ -1194,6 +1251,7 @@ public interface Site {
             Update withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

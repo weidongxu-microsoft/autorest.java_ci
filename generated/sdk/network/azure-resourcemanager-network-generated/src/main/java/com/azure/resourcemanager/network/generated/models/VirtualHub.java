@@ -254,11 +254,13 @@ public interface VirtualHub {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualHub definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualHub definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualHub definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -277,6 +279,7 @@ public interface VirtualHub {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VirtualHub definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -287,6 +290,7 @@ public interface VirtualHub {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VirtualHub definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -325,6 +329,7 @@ public interface VirtualHub {
              */
             VirtualHub create(Context context);
         }
+
         /** The stage of the VirtualHub definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -335,6 +340,7 @@ public interface VirtualHub {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualHub definition allowing to specify virtualWan. */
         interface WithVirtualWan {
             /**
@@ -345,6 +351,7 @@ public interface VirtualHub {
              */
             WithCreate withVirtualWan(SubResource virtualWan);
         }
+
         /** The stage of the VirtualHub definition allowing to specify vpnGateway. */
         interface WithVpnGateway {
             /**
@@ -355,6 +362,7 @@ public interface VirtualHub {
              */
             WithCreate withVpnGateway(SubResource vpnGateway);
         }
+
         /** The stage of the VirtualHub definition allowing to specify p2SVpnGateway. */
         interface WithP2SVpnGateway {
             /**
@@ -365,6 +373,7 @@ public interface VirtualHub {
              */
             WithCreate withP2SVpnGateway(SubResource p2SVpnGateway);
         }
+
         /** The stage of the VirtualHub definition allowing to specify expressRouteGateway. */
         interface WithExpressRouteGateway {
             /**
@@ -375,6 +384,7 @@ public interface VirtualHub {
              */
             WithCreate withExpressRouteGateway(SubResource expressRouteGateway);
         }
+
         /** The stage of the VirtualHub definition allowing to specify azureFirewall. */
         interface WithAzureFirewall {
             /**
@@ -385,6 +395,7 @@ public interface VirtualHub {
              */
             WithCreate withAzureFirewall(SubResource azureFirewall);
         }
+
         /** The stage of the VirtualHub definition allowing to specify securityPartnerProvider. */
         interface WithSecurityPartnerProvider {
             /**
@@ -396,6 +407,7 @@ public interface VirtualHub {
              */
             WithCreate withSecurityPartnerProvider(SubResource securityPartnerProvider);
         }
+
         /** The stage of the VirtualHub definition allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -406,6 +418,7 @@ public interface VirtualHub {
              */
             WithCreate withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the VirtualHub definition allowing to specify routeTable. */
         interface WithRouteTable {
             /**
@@ -416,6 +429,7 @@ public interface VirtualHub {
              */
             WithCreate withRouteTable(VirtualHubRouteTable routeTable);
         }
+
         /** The stage of the VirtualHub definition allowing to specify securityProviderName. */
         interface WithSecurityProviderName {
             /**
@@ -426,6 +440,7 @@ public interface VirtualHub {
              */
             WithCreate withSecurityProviderName(String securityProviderName);
         }
+
         /** The stage of the VirtualHub definition allowing to specify virtualHubRouteTableV2S. */
         interface WithVirtualHubRouteTableV2S {
             /**
@@ -437,6 +452,7 @@ public interface VirtualHub {
              */
             WithCreate withVirtualHubRouteTableV2S(List<VirtualHubRouteTableV2Inner> virtualHubRouteTableV2S);
         }
+
         /** The stage of the VirtualHub definition allowing to specify sku. */
         interface WithSku {
             /**
@@ -447,6 +463,7 @@ public interface VirtualHub {
              */
             WithCreate withSku(String sku);
         }
+
         /** The stage of the VirtualHub definition allowing to specify virtualRouterAsn. */
         interface WithVirtualRouterAsn {
             /**
@@ -457,6 +474,7 @@ public interface VirtualHub {
              */
             WithCreate withVirtualRouterAsn(Long virtualRouterAsn);
         }
+
         /** The stage of the VirtualHub definition allowing to specify virtualRouterIps. */
         interface WithVirtualRouterIps {
             /**
@@ -467,6 +485,7 @@ public interface VirtualHub {
              */
             WithCreate withVirtualRouterIps(List<String> virtualRouterIps);
         }
+
         /** The stage of the VirtualHub definition allowing to specify allowBranchToBranchTraffic. */
         interface WithAllowBranchToBranchTraffic {
             /**
@@ -477,6 +496,7 @@ public interface VirtualHub {
              */
             WithCreate withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic);
         }
+
         /** The stage of the VirtualHub definition allowing to specify preferredRoutingGateway. */
         interface WithPreferredRoutingGateway {
             /**
@@ -487,6 +507,7 @@ public interface VirtualHub {
              */
             WithCreate withPreferredRoutingGateway(PreferredRoutingGateway preferredRoutingGateway);
         }
+
         /** The stage of the VirtualHub definition allowing to specify hubRoutingPreference. */
         interface WithHubRoutingPreference {
             /**
@@ -497,6 +518,7 @@ public interface VirtualHub {
              */
             WithCreate withHubRoutingPreference(HubRoutingPreference hubRoutingPreference);
         }
+
         /** The stage of the VirtualHub definition allowing to specify virtualRouterAutoScaleConfiguration. */
         interface WithVirtualRouterAutoScaleConfiguration {
             /**
@@ -510,6 +532,7 @@ public interface VirtualHub {
                 VirtualRouterAutoScaleConfiguration virtualRouterAutoScaleConfiguration);
         }
     }
+
     /**
      * Begins update for the VirtualHub resource.
      *
@@ -534,6 +557,7 @@ public interface VirtualHub {
          */
         VirtualHub apply(Context context);
     }
+
     /** The VirtualHub update stages. */
     interface UpdateStages {
         /** The stage of the VirtualHub update allowing to specify tags. */
@@ -547,6 +571,7 @@ public interface VirtualHub {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

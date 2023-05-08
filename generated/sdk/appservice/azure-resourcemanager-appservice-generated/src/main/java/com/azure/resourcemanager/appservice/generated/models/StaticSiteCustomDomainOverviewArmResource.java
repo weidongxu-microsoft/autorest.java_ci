@@ -93,11 +93,13 @@ public interface StaticSiteCustomDomainOverviewArmResource {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The StaticSiteCustomDomainOverviewArmResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the StaticSiteCustomDomainOverviewArmResource definition. */
         interface Blank extends WithParentResource {
         }
+
         /**
          * The stage of the StaticSiteCustomDomainOverviewArmResource definition allowing to specify parent resource.
          */
@@ -111,6 +113,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
              */
             WithCreate withExistingStaticSite(String resourceGroupName, String name);
         }
+
         /**
          * The stage of the StaticSiteCustomDomainOverviewArmResource definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -131,6 +134,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
              */
             StaticSiteCustomDomainOverviewArmResource create(Context context);
         }
+
         /** The stage of the StaticSiteCustomDomainOverviewArmResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -141,6 +145,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
              */
             WithCreate withKind(String kind);
         }
+
         /**
          * The stage of the StaticSiteCustomDomainOverviewArmResource definition allowing to specify validationMethod.
          */
@@ -154,6 +159,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
             WithCreate withValidationMethod(String validationMethod);
         }
     }
+
     /**
      * Begins update for the StaticSiteCustomDomainOverviewArmResource resource.
      *
@@ -178,6 +184,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
          */
         StaticSiteCustomDomainOverviewArmResource apply(Context context);
     }
+
     /** The StaticSiteCustomDomainOverviewArmResource update stages. */
     interface UpdateStages {
         /** The stage of the StaticSiteCustomDomainOverviewArmResource update allowing to specify kind. */
@@ -190,6 +197,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the StaticSiteCustomDomainOverviewArmResource update allowing to specify validationMethod. */
         interface WithValidationMethod {
             /**
@@ -201,6 +209,7 @@ public interface StaticSiteCustomDomainOverviewArmResource {
             Update withValidationMethod(String validationMethod);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

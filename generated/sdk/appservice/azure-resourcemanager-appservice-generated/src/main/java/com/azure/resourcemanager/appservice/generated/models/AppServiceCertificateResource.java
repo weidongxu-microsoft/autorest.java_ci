@@ -110,11 +110,13 @@ public interface AppServiceCertificateResource {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The AppServiceCertificateResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the AppServiceCertificateResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the AppServiceCertificateResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -133,6 +135,7 @@ public interface AppServiceCertificateResource {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the AppServiceCertificateResource definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -144,6 +147,7 @@ public interface AppServiceCertificateResource {
              */
             WithCreate withExistingCertificateOrder(String resourceGroupName, String certificateOrderName);
         }
+
         /**
          * The stage of the AppServiceCertificateResource definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
@@ -168,6 +172,7 @@ public interface AppServiceCertificateResource {
              */
             AppServiceCertificateResource create(Context context);
         }
+
         /** The stage of the AppServiceCertificateResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -178,6 +183,7 @@ public interface AppServiceCertificateResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the AppServiceCertificateResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -188,6 +194,7 @@ public interface AppServiceCertificateResource {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the AppServiceCertificateResource definition allowing to specify keyVaultId. */
         interface WithKeyVaultId {
             /**
@@ -198,6 +205,7 @@ public interface AppServiceCertificateResource {
              */
             WithCreate withKeyVaultId(String keyVaultId);
         }
+
         /** The stage of the AppServiceCertificateResource definition allowing to specify keyVaultSecretName. */
         interface WithKeyVaultSecretName {
             /**
@@ -209,6 +217,7 @@ public interface AppServiceCertificateResource {
             WithCreate withKeyVaultSecretName(String keyVaultSecretName);
         }
     }
+
     /**
      * Begins update for the AppServiceCertificateResource resource.
      *
@@ -233,6 +242,7 @@ public interface AppServiceCertificateResource {
          */
         AppServiceCertificateResource apply(Context context);
     }
+
     /** The AppServiceCertificateResource update stages. */
     interface UpdateStages {
         /** The stage of the AppServiceCertificateResource update allowing to specify kind. */
@@ -245,6 +255,7 @@ public interface AppServiceCertificateResource {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the AppServiceCertificateResource update allowing to specify keyVaultId. */
         interface WithKeyVaultId {
             /**
@@ -255,6 +266,7 @@ public interface AppServiceCertificateResource {
              */
             Update withKeyVaultId(String keyVaultId);
         }
+
         /** The stage of the AppServiceCertificateResource update allowing to specify keyVaultSecretName. */
         interface WithKeyVaultSecretName {
             /**
@@ -266,6 +278,7 @@ public interface AppServiceCertificateResource {
             Update withKeyVaultSecretName(String keyVaultSecretName);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

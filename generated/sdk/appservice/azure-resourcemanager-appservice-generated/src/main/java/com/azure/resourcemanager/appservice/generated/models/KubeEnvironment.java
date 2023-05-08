@@ -169,11 +169,13 @@ public interface KubeEnvironment {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The KubeEnvironment definition stages. */
     interface DefinitionStages {
         /** The first stage of the KubeEnvironment definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -192,6 +194,7 @@ public interface KubeEnvironment {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -202,6 +205,7 @@ public interface KubeEnvironment {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the KubeEnvironment definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -232,6 +236,7 @@ public interface KubeEnvironment {
              */
             KubeEnvironment create(Context context);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -242,6 +247,7 @@ public interface KubeEnvironment {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify extendedLocation. */
         interface WithExtendedLocation {
             /**
@@ -252,6 +258,7 @@ public interface KubeEnvironment {
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -262,6 +269,7 @@ public interface KubeEnvironment {
              */
             WithCreate withKind(String kind);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify internalLoadBalancerEnabled. */
         interface WithInternalLoadBalancerEnabled {
             /**
@@ -272,6 +280,7 @@ public interface KubeEnvironment {
              */
             WithCreate withInternalLoadBalancerEnabled(Boolean internalLoadBalancerEnabled);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify staticIp. */
         interface WithStaticIp {
             /**
@@ -282,6 +291,7 @@ public interface KubeEnvironment {
              */
             WithCreate withStaticIp(String staticIp);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify environmentType. */
         interface WithEnvironmentType {
             /**
@@ -294,6 +304,7 @@ public interface KubeEnvironment {
              */
             WithCreate withEnvironmentType(String environmentType);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify arcConfiguration. */
         interface WithArcConfiguration {
             /**
@@ -306,6 +317,7 @@ public interface KubeEnvironment {
              */
             WithCreate withArcConfiguration(ArcConfiguration arcConfiguration);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify appLogsConfiguration. */
         interface WithAppLogsConfiguration {
             /**
@@ -318,6 +330,7 @@ public interface KubeEnvironment {
              */
             WithCreate withAppLogsConfiguration(AppLogsConfiguration appLogsConfiguration);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify containerAppsConfiguration. */
         interface WithContainerAppsConfiguration {
             /**
@@ -330,6 +343,7 @@ public interface KubeEnvironment {
              */
             WithCreate withContainerAppsConfiguration(ContainerAppsConfiguration containerAppsConfiguration);
         }
+
         /** The stage of the KubeEnvironment definition allowing to specify aksResourceId. */
         interface WithAksResourceId {
             /**
@@ -341,6 +355,7 @@ public interface KubeEnvironment {
             WithCreate withAksResourceId(String aksResourceId);
         }
     }
+
     /**
      * Begins update for the KubeEnvironment resource.
      *
@@ -369,6 +384,7 @@ public interface KubeEnvironment {
          */
         KubeEnvironment apply(Context context);
     }
+
     /** The KubeEnvironment update stages. */
     interface UpdateStages {
         /** The stage of the KubeEnvironment update allowing to specify kind. */
@@ -381,6 +397,7 @@ public interface KubeEnvironment {
              */
             Update withKind(String kind);
         }
+
         /** The stage of the KubeEnvironment update allowing to specify arcConfiguration. */
         interface WithArcConfiguration {
             /**
@@ -393,6 +410,7 @@ public interface KubeEnvironment {
              */
             Update withArcConfiguration(ArcConfiguration arcConfiguration);
         }
+
         /** The stage of the KubeEnvironment update allowing to specify appLogsConfiguration. */
         interface WithAppLogsConfiguration {
             /**
@@ -405,6 +423,7 @@ public interface KubeEnvironment {
              */
             Update withAppLogsConfiguration(AppLogsConfiguration appLogsConfiguration);
         }
+
         /** The stage of the KubeEnvironment update allowing to specify containerAppsConfiguration. */
         interface WithContainerAppsConfiguration {
             /**
@@ -418,6 +437,7 @@ public interface KubeEnvironment {
             Update withContainerAppsConfiguration(ContainerAppsConfiguration containerAppsConfiguration);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

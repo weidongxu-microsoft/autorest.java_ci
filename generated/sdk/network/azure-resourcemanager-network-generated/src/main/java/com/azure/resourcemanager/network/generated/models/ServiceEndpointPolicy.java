@@ -140,11 +140,13 @@ public interface ServiceEndpointPolicy {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ServiceEndpointPolicy definition stages. */
     interface DefinitionStages {
         /** The first stage of the ServiceEndpointPolicy definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ServiceEndpointPolicy definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -163,6 +165,7 @@ public interface ServiceEndpointPolicy {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ServiceEndpointPolicy definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -173,6 +176,7 @@ public interface ServiceEndpointPolicy {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ServiceEndpointPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -197,6 +201,7 @@ public interface ServiceEndpointPolicy {
              */
             ServiceEndpointPolicy create(Context context);
         }
+
         /** The stage of the ServiceEndpointPolicy definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -207,6 +212,7 @@ public interface ServiceEndpointPolicy {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ServiceEndpointPolicy definition allowing to specify serviceEndpointPolicyDefinitions. */
         interface WithServiceEndpointPolicyDefinitions {
             /**
@@ -220,6 +226,7 @@ public interface ServiceEndpointPolicy {
             WithCreate withServiceEndpointPolicyDefinitions(
                 List<ServiceEndpointPolicyDefinitionInner> serviceEndpointPolicyDefinitions);
         }
+
         /** The stage of the ServiceEndpointPolicy definition allowing to specify serviceAlias. */
         interface WithServiceAlias {
             /**
@@ -230,6 +237,7 @@ public interface ServiceEndpointPolicy {
              */
             WithCreate withServiceAlias(String serviceAlias);
         }
+
         /** The stage of the ServiceEndpointPolicy definition allowing to specify contextualServiceEndpointPolicies. */
         interface WithContextualServiceEndpointPolicies {
             /**
@@ -242,6 +250,7 @@ public interface ServiceEndpointPolicy {
             WithCreate withContextualServiceEndpointPolicies(List<String> contextualServiceEndpointPolicies);
         }
     }
+
     /**
      * Begins update for the ServiceEndpointPolicy resource.
      *
@@ -266,6 +275,7 @@ public interface ServiceEndpointPolicy {
          */
         ServiceEndpointPolicy apply(Context context);
     }
+
     /** The ServiceEndpointPolicy update stages. */
     interface UpdateStages {
         /** The stage of the ServiceEndpointPolicy update allowing to specify tags. */
@@ -279,6 +289,7 @@ public interface ServiceEndpointPolicy {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

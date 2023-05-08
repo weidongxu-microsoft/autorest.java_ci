@@ -70,11 +70,13 @@ public interface VirtualNetworkRule {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VirtualNetworkRule definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualNetworkRule definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VirtualNetworkRule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -86,6 +88,7 @@ public interface VirtualNetworkRule {
              */
             WithCreate withExistingServer(String resourceGroupName, String serverName);
         }
+
         /**
          * The stage of the VirtualNetworkRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -107,6 +110,7 @@ public interface VirtualNetworkRule {
              */
             VirtualNetworkRule create(Context context);
         }
+
         /** The stage of the VirtualNetworkRule definition allowing to specify virtualNetworkSubnetId. */
         interface WithVirtualNetworkSubnetId {
             /**
@@ -117,6 +121,7 @@ public interface VirtualNetworkRule {
              */
             WithCreate withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
         }
+
         /** The stage of the VirtualNetworkRule definition allowing to specify ignoreMissingVnetServiceEndpoint. */
         interface WithIgnoreMissingVnetServiceEndpoint {
             /**
@@ -130,6 +135,7 @@ public interface VirtualNetworkRule {
             WithCreate withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint);
         }
     }
+
     /**
      * Begins update for the VirtualNetworkRule resource.
      *
@@ -155,6 +161,7 @@ public interface VirtualNetworkRule {
          */
         VirtualNetworkRule apply(Context context);
     }
+
     /** The VirtualNetworkRule update stages. */
     interface UpdateStages {
         /** The stage of the VirtualNetworkRule update allowing to specify virtualNetworkSubnetId. */
@@ -167,6 +174,7 @@ public interface VirtualNetworkRule {
              */
             Update withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
         }
+
         /** The stage of the VirtualNetworkRule update allowing to specify ignoreMissingVnetServiceEndpoint. */
         interface WithIgnoreMissingVnetServiceEndpoint {
             /**
@@ -180,6 +188,7 @@ public interface VirtualNetworkRule {
             Update withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

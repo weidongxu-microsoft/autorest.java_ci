@@ -105,11 +105,13 @@ public interface DiagnosticSettingsResource {
     /** The entirety of the DiagnosticSettingsResource definition. */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScope, DefinitionStages.WithCreate {
     }
+
     /** The DiagnosticSettingsResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the DiagnosticSettingsResource definition. */
         interface Blank extends WithScope {
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify parent resource. */
         interface WithScope {
             /**
@@ -120,6 +122,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withExistingResourceUri(String resourceUri);
         }
+
         /**
          * The stage of the DiagnosticSettingsResource definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -148,6 +151,7 @@ public interface DiagnosticSettingsResource {
              */
             DiagnosticSettingsResource create(Context context);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify storageAccountId. */
         interface WithStorageAccountId {
             /**
@@ -160,6 +164,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withStorageAccountId(String storageAccountId);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify serviceBusRuleId. */
         interface WithServiceBusRuleId {
             /**
@@ -172,6 +177,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withServiceBusRuleId(String serviceBusRuleId);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify eventHubAuthorizationRuleId. */
         interface WithEventHubAuthorizationRuleId {
             /**
@@ -183,6 +189,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withEventHubAuthorizationRuleId(String eventHubAuthorizationRuleId);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify eventHubName. */
         interface WithEventHubName {
             /**
@@ -195,6 +202,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withEventHubName(String eventHubName);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify metrics. */
         interface WithMetrics {
             /**
@@ -205,6 +213,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withMetrics(List<MetricSettings> metrics);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify logs. */
         interface WithLogs {
             /**
@@ -215,6 +224,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withLogs(List<LogSettings> logs);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify workspaceId. */
         interface WithWorkspaceId {
             /**
@@ -229,6 +239,7 @@ public interface DiagnosticSettingsResource {
              */
             WithCreate withWorkspaceId(String workspaceId);
         }
+
         /** The stage of the DiagnosticSettingsResource definition allowing to specify logAnalyticsDestinationType. */
         interface WithLogAnalyticsDestinationType {
             /**
@@ -246,6 +257,7 @@ public interface DiagnosticSettingsResource {
             WithCreate withLogAnalyticsDestinationType(String logAnalyticsDestinationType);
         }
     }
+
     /**
      * Begins update for the DiagnosticSettingsResource resource.
      *
@@ -278,6 +290,7 @@ public interface DiagnosticSettingsResource {
          */
         DiagnosticSettingsResource apply(Context context);
     }
+
     /** The DiagnosticSettingsResource update stages. */
     interface UpdateStages {
         /** The stage of the DiagnosticSettingsResource update allowing to specify storageAccountId. */
@@ -292,6 +305,7 @@ public interface DiagnosticSettingsResource {
              */
             Update withStorageAccountId(String storageAccountId);
         }
+
         /** The stage of the DiagnosticSettingsResource update allowing to specify serviceBusRuleId. */
         interface WithServiceBusRuleId {
             /**
@@ -304,6 +318,7 @@ public interface DiagnosticSettingsResource {
              */
             Update withServiceBusRuleId(String serviceBusRuleId);
         }
+
         /** The stage of the DiagnosticSettingsResource update allowing to specify eventHubAuthorizationRuleId. */
         interface WithEventHubAuthorizationRuleId {
             /**
@@ -315,6 +330,7 @@ public interface DiagnosticSettingsResource {
              */
             Update withEventHubAuthorizationRuleId(String eventHubAuthorizationRuleId);
         }
+
         /** The stage of the DiagnosticSettingsResource update allowing to specify eventHubName. */
         interface WithEventHubName {
             /**
@@ -327,6 +343,7 @@ public interface DiagnosticSettingsResource {
              */
             Update withEventHubName(String eventHubName);
         }
+
         /** The stage of the DiagnosticSettingsResource update allowing to specify metrics. */
         interface WithMetrics {
             /**
@@ -337,6 +354,7 @@ public interface DiagnosticSettingsResource {
              */
             Update withMetrics(List<MetricSettings> metrics);
         }
+
         /** The stage of the DiagnosticSettingsResource update allowing to specify logs. */
         interface WithLogs {
             /**
@@ -347,6 +365,7 @@ public interface DiagnosticSettingsResource {
              */
             Update withLogs(List<LogSettings> logs);
         }
+
         /** The stage of the DiagnosticSettingsResource update allowing to specify workspaceId. */
         interface WithWorkspaceId {
             /**
@@ -361,6 +380,7 @@ public interface DiagnosticSettingsResource {
              */
             Update withWorkspaceId(String workspaceId);
         }
+
         /** The stage of the DiagnosticSettingsResource update allowing to specify logAnalyticsDestinationType. */
         interface WithLogAnalyticsDestinationType {
             /**
@@ -378,6 +398,7 @@ public interface DiagnosticSettingsResource {
             Update withLogAnalyticsDestinationType(String logAnalyticsDestinationType);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

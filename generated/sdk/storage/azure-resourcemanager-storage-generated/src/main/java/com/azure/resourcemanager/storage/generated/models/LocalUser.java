@@ -109,11 +109,13 @@ public interface LocalUser {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The LocalUser definition stages. */
     interface DefinitionStages {
         /** The first stage of the LocalUser definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the LocalUser definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -127,6 +129,7 @@ public interface LocalUser {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the LocalUser definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -153,6 +156,7 @@ public interface LocalUser {
              */
             LocalUser create(Context context);
         }
+
         /** The stage of the LocalUser definition allowing to specify permissionScopes. */
         interface WithPermissionScopes {
             /**
@@ -163,6 +167,7 @@ public interface LocalUser {
              */
             WithCreate withPermissionScopes(List<PermissionScope> permissionScopes);
         }
+
         /** The stage of the LocalUser definition allowing to specify homeDirectory. */
         interface WithHomeDirectory {
             /**
@@ -173,6 +178,7 @@ public interface LocalUser {
              */
             WithCreate withHomeDirectory(String homeDirectory);
         }
+
         /** The stage of the LocalUser definition allowing to specify sshAuthorizedKeys. */
         interface WithSshAuthorizedKeys {
             /**
@@ -183,6 +189,7 @@ public interface LocalUser {
              */
             WithCreate withSshAuthorizedKeys(List<SshPublicKey> sshAuthorizedKeys);
         }
+
         /** The stage of the LocalUser definition allowing to specify hasSharedKey. */
         interface WithHasSharedKey {
             /**
@@ -194,6 +201,7 @@ public interface LocalUser {
              */
             WithCreate withHasSharedKey(Boolean hasSharedKey);
         }
+
         /** The stage of the LocalUser definition allowing to specify hasSshKey. */
         interface WithHasSshKey {
             /**
@@ -205,6 +213,7 @@ public interface LocalUser {
              */
             WithCreate withHasSshKey(Boolean hasSshKey);
         }
+
         /** The stage of the LocalUser definition allowing to specify hasSshPassword. */
         interface WithHasSshPassword {
             /**
@@ -218,6 +227,7 @@ public interface LocalUser {
             WithCreate withHasSshPassword(Boolean hasSshPassword);
         }
     }
+
     /**
      * Begins update for the LocalUser resource.
      *
@@ -248,6 +258,7 @@ public interface LocalUser {
          */
         LocalUser apply(Context context);
     }
+
     /** The LocalUser update stages. */
     interface UpdateStages {
         /** The stage of the LocalUser update allowing to specify permissionScopes. */
@@ -260,6 +271,7 @@ public interface LocalUser {
              */
             Update withPermissionScopes(List<PermissionScope> permissionScopes);
         }
+
         /** The stage of the LocalUser update allowing to specify homeDirectory. */
         interface WithHomeDirectory {
             /**
@@ -270,6 +282,7 @@ public interface LocalUser {
              */
             Update withHomeDirectory(String homeDirectory);
         }
+
         /** The stage of the LocalUser update allowing to specify sshAuthorizedKeys. */
         interface WithSshAuthorizedKeys {
             /**
@@ -280,6 +293,7 @@ public interface LocalUser {
              */
             Update withSshAuthorizedKeys(List<SshPublicKey> sshAuthorizedKeys);
         }
+
         /** The stage of the LocalUser update allowing to specify hasSharedKey. */
         interface WithHasSharedKey {
             /**
@@ -291,6 +305,7 @@ public interface LocalUser {
              */
             Update withHasSharedKey(Boolean hasSharedKey);
         }
+
         /** The stage of the LocalUser update allowing to specify hasSshKey. */
         interface WithHasSshKey {
             /**
@@ -302,6 +317,7 @@ public interface LocalUser {
              */
             Update withHasSshKey(Boolean hasSshKey);
         }
+
         /** The stage of the LocalUser update allowing to specify hasSshPassword. */
         interface WithHasSshPassword {
             /**
@@ -315,6 +331,7 @@ public interface LocalUser {
             Update withHasSshPassword(Boolean hasSshPassword);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

@@ -128,11 +128,13 @@ public interface StreamingLocator {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The StreamingLocator definition stages. */
     interface DefinitionStages {
         /** The first stage of the StreamingLocator definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the StreamingLocator definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -144,6 +146,7 @@ public interface StreamingLocator {
              */
             WithCreate withExistingMediaService(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the StreamingLocator definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -173,6 +176,7 @@ public interface StreamingLocator {
              */
             StreamingLocator create(Context context);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify assetName. */
         interface WithAssetName {
             /**
@@ -183,6 +187,7 @@ public interface StreamingLocator {
              */
             WithCreate withAssetName(String assetName);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify startTime. */
         interface WithStartTime {
             /**
@@ -193,6 +198,7 @@ public interface StreamingLocator {
              */
             WithCreate withStartTime(OffsetDateTime startTime);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify endTime. */
         interface WithEndTime {
             /**
@@ -203,6 +209,7 @@ public interface StreamingLocator {
              */
             WithCreate withEndTime(OffsetDateTime endTime);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify streamingLocatorId. */
         interface WithStreamingLocatorId {
             /**
@@ -213,6 +220,7 @@ public interface StreamingLocator {
              */
             WithCreate withStreamingLocatorId(UUID streamingLocatorId);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify streamingPolicyName. */
         interface WithStreamingPolicyName {
             /**
@@ -231,6 +239,7 @@ public interface StreamingLocator {
              */
             WithCreate withStreamingPolicyName(String streamingPolicyName);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify defaultContentKeyPolicyName. */
         interface WithDefaultContentKeyPolicyName {
             /**
@@ -242,6 +251,7 @@ public interface StreamingLocator {
              */
             WithCreate withDefaultContentKeyPolicyName(String defaultContentKeyPolicyName);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify contentKeys. */
         interface WithContentKeys {
             /**
@@ -252,6 +262,7 @@ public interface StreamingLocator {
              */
             WithCreate withContentKeys(List<StreamingLocatorContentKey> contentKeys);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify alternativeMediaId. */
         interface WithAlternativeMediaId {
             /**
@@ -262,6 +273,7 @@ public interface StreamingLocator {
              */
             WithCreate withAlternativeMediaId(String alternativeMediaId);
         }
+
         /** The stage of the StreamingLocator definition allowing to specify filters. */
         interface WithFilters {
             /**
@@ -273,6 +285,7 @@ public interface StreamingLocator {
             WithCreate withFilters(List<String> filters);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

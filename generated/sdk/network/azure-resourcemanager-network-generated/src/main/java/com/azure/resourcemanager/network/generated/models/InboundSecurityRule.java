@@ -70,11 +70,13 @@ public interface InboundSecurityRule {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The InboundSecurityRule definition stages. */
     interface DefinitionStages {
         /** The first stage of the InboundSecurityRule definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the InboundSecurityRule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -87,6 +89,7 @@ public interface InboundSecurityRule {
             WithCreate withExistingNetworkVirtualAppliance(
                 String resourceGroupName, String networkVirtualApplianceName);
         }
+
         /**
          * The stage of the InboundSecurityRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -107,6 +110,7 @@ public interface InboundSecurityRule {
              */
             InboundSecurityRule create(Context context);
         }
+
         /** The stage of the InboundSecurityRule definition allowing to specify name. */
         interface WithName {
             /**
@@ -117,6 +121,7 @@ public interface InboundSecurityRule {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the InboundSecurityRule definition allowing to specify rules. */
         interface WithRules {
             /**
@@ -128,6 +133,7 @@ public interface InboundSecurityRule {
             WithCreate withRules(List<InboundSecurityRules> rules);
         }
     }
+
     /**
      * Begins update for the InboundSecurityRule resource.
      *
@@ -152,6 +158,7 @@ public interface InboundSecurityRule {
          */
         InboundSecurityRule apply(Context context);
     }
+
     /** The InboundSecurityRule update stages. */
     interface UpdateStages {
         /** The stage of the InboundSecurityRule update allowing to specify name. */
@@ -164,6 +171,7 @@ public interface InboundSecurityRule {
              */
             Update withName(String name);
         }
+
         /** The stage of the InboundSecurityRule update allowing to specify rules. */
         interface WithRules {
             /**

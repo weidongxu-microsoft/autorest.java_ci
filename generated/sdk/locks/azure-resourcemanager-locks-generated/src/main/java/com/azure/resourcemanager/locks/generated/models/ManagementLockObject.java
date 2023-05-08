@@ -75,11 +75,13 @@ public interface ManagementLockObject {
             DefinitionStages.WithLevel,
             DefinitionStages.WithCreate {
     }
+
     /** The ManagementLockObject definition stages. */
     interface DefinitionStages {
         /** The first stage of the ManagementLockObject definition. */
         interface Blank extends WithResourceGroup {
         }
+
         /** The stage of the ManagementLockObject definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -90,6 +92,7 @@ public interface ManagementLockObject {
              */
             WithLevel withExistingResourceGroup(String resourceGroupName);
         }
+
         /** The stage of the ManagementLockObject definition allowing to specify level. */
         interface WithLevel {
             /**
@@ -104,6 +107,7 @@ public interface ManagementLockObject {
              */
             WithCreate withLevel(LockLevel level);
         }
+
         /**
          * The stage of the ManagementLockObject definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -124,6 +128,7 @@ public interface ManagementLockObject {
              */
             ManagementLockObject create(Context context);
         }
+
         /** The stage of the ManagementLockObject definition allowing to specify notes. */
         interface WithNotes {
             /**
@@ -134,6 +139,7 @@ public interface ManagementLockObject {
              */
             WithCreate withNotes(String notes);
         }
+
         /** The stage of the ManagementLockObject definition allowing to specify owners. */
         interface WithOwners {
             /**
@@ -145,6 +151,7 @@ public interface ManagementLockObject {
             WithCreate withOwners(List<ManagementLockOwner> owners);
         }
     }
+
     /**
      * Begins update for the ManagementLockObject resource.
      *
@@ -169,6 +176,7 @@ public interface ManagementLockObject {
          */
         ManagementLockObject apply(Context context);
     }
+
     /** The ManagementLockObject update stages. */
     interface UpdateStages {
         /** The stage of the ManagementLockObject update allowing to specify level. */
@@ -185,6 +193,7 @@ public interface ManagementLockObject {
              */
             Update withLevel(LockLevel level);
         }
+
         /** The stage of the ManagementLockObject update allowing to specify notes. */
         interface WithNotes {
             /**
@@ -195,6 +204,7 @@ public interface ManagementLockObject {
              */
             Update withNotes(String notes);
         }
+
         /** The stage of the ManagementLockObject update allowing to specify owners. */
         interface WithOwners {
             /**
@@ -206,6 +216,7 @@ public interface ManagementLockObject {
             Update withOwners(List<ManagementLockOwner> owners);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

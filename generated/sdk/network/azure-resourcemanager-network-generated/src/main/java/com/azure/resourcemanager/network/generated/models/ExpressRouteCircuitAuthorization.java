@@ -78,11 +78,13 @@ public interface ExpressRouteCircuitAuthorization {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The ExpressRouteCircuitAuthorization definition stages. */
     interface DefinitionStages {
         /** The first stage of the ExpressRouteCircuitAuthorization definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the ExpressRouteCircuitAuthorization definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -94,6 +96,7 @@ public interface ExpressRouteCircuitAuthorization {
              */
             WithCreate withExistingExpressRouteCircuit(String resourceGroupName, String circuitName);
         }
+
         /**
          * The stage of the ExpressRouteCircuitAuthorization definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
@@ -117,6 +120,7 @@ public interface ExpressRouteCircuitAuthorization {
              */
             ExpressRouteCircuitAuthorization create(Context context);
         }
+
         /** The stage of the ExpressRouteCircuitAuthorization definition allowing to specify name. */
         interface WithName {
             /**
@@ -129,6 +133,7 @@ public interface ExpressRouteCircuitAuthorization {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the ExpressRouteCircuitAuthorization definition allowing to specify authorizationKey. */
         interface WithAuthorizationKey {
             /**
@@ -139,6 +144,7 @@ public interface ExpressRouteCircuitAuthorization {
              */
             WithCreate withAuthorizationKey(String authorizationKey);
         }
+
         /** The stage of the ExpressRouteCircuitAuthorization definition allowing to specify authorizationUseStatus. */
         interface WithAuthorizationUseStatus {
             /**
@@ -150,6 +156,7 @@ public interface ExpressRouteCircuitAuthorization {
             WithCreate withAuthorizationUseStatus(AuthorizationUseStatus authorizationUseStatus);
         }
     }
+
     /**
      * Begins update for the ExpressRouteCircuitAuthorization resource.
      *
@@ -175,6 +182,7 @@ public interface ExpressRouteCircuitAuthorization {
          */
         ExpressRouteCircuitAuthorization apply(Context context);
     }
+
     /** The ExpressRouteCircuitAuthorization update stages. */
     interface UpdateStages {
         /** The stage of the ExpressRouteCircuitAuthorization update allowing to specify name. */
@@ -189,6 +197,7 @@ public interface ExpressRouteCircuitAuthorization {
              */
             Update withName(String name);
         }
+
         /** The stage of the ExpressRouteCircuitAuthorization update allowing to specify authorizationKey. */
         interface WithAuthorizationKey {
             /**
@@ -199,6 +208,7 @@ public interface ExpressRouteCircuitAuthorization {
              */
             Update withAuthorizationKey(String authorizationKey);
         }
+
         /** The stage of the ExpressRouteCircuitAuthorization update allowing to specify authorizationUseStatus. */
         interface WithAuthorizationUseStatus {
             /**
@@ -210,6 +220,7 @@ public interface ExpressRouteCircuitAuthorization {
             Update withAuthorizationUseStatus(AuthorizationUseStatus authorizationUseStatus);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

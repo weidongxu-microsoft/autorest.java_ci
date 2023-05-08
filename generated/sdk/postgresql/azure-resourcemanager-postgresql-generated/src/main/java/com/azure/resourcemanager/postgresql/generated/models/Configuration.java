@@ -90,11 +90,13 @@ public interface Configuration {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Configuration definition stages. */
     interface DefinitionStages {
         /** The first stage of the Configuration definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Configuration definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -106,6 +108,7 @@ public interface Configuration {
              */
             WithCreate withExistingServer(String resourceGroupName, String serverName);
         }
+
         /**
          * The stage of the Configuration definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
@@ -126,6 +129,7 @@ public interface Configuration {
              */
             Configuration create(Context context);
         }
+
         /** The stage of the Configuration definition allowing to specify value. */
         interface WithValue {
             /**
@@ -136,6 +140,7 @@ public interface Configuration {
              */
             WithCreate withValue(String value);
         }
+
         /** The stage of the Configuration definition allowing to specify source. */
         interface WithSource {
             /**
@@ -147,6 +152,7 @@ public interface Configuration {
             WithCreate withSource(String source);
         }
     }
+
     /**
      * Begins update for the Configuration resource.
      *
@@ -171,6 +177,7 @@ public interface Configuration {
          */
         Configuration apply(Context context);
     }
+
     /** The Configuration update stages. */
     interface UpdateStages {
         /** The stage of the Configuration update allowing to specify value. */
@@ -183,6 +190,7 @@ public interface Configuration {
              */
             Update withValue(String value);
         }
+
         /** The stage of the Configuration update allowing to specify source. */
         interface WithSource {
             /**
@@ -194,6 +202,7 @@ public interface Configuration {
             Update withSource(String source);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

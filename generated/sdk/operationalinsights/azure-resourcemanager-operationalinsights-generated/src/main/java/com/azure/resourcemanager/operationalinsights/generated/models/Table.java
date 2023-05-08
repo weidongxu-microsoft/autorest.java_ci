@@ -147,11 +147,13 @@ public interface Table {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Table definition stages. */
     interface DefinitionStages {
         /** The first stage of the Table definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Table definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -163,6 +165,7 @@ public interface Table {
              */
             WithCreate withExistingWorkspace(String resourceGroupName, String workspaceName);
         }
+
         /**
          * The stage of the Table definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -189,6 +192,7 @@ public interface Table {
              */
             Table create(Context context);
         }
+
         /** The stage of the Table definition allowing to specify retentionInDays. */
         interface WithRetentionInDays {
             /**
@@ -201,6 +205,7 @@ public interface Table {
              */
             WithCreate withRetentionInDays(Integer retentionInDays);
         }
+
         /** The stage of the Table definition allowing to specify totalRetentionInDays. */
         interface WithTotalRetentionInDays {
             /**
@@ -213,6 +218,7 @@ public interface Table {
              */
             WithCreate withTotalRetentionInDays(Integer totalRetentionInDays);
         }
+
         /** The stage of the Table definition allowing to specify searchResults. */
         interface WithSearchResults {
             /**
@@ -223,6 +229,7 @@ public interface Table {
              */
             WithCreate withSearchResults(SearchResults searchResults);
         }
+
         /** The stage of the Table definition allowing to specify restoredLogs. */
         interface WithRestoredLogs {
             /**
@@ -233,6 +240,7 @@ public interface Table {
              */
             WithCreate withRestoredLogs(RestoredLogs restoredLogs);
         }
+
         /** The stage of the Table definition allowing to specify plan. */
         interface WithPlan {
             /**
@@ -244,6 +252,7 @@ public interface Table {
              */
             WithCreate withPlan(TablePlanEnum plan);
         }
+
         /** The stage of the Table definition allowing to specify schema. */
         interface WithSchema {
             /**
@@ -255,6 +264,7 @@ public interface Table {
             WithCreate withSchema(Schema schema);
         }
     }
+
     /**
      * Begins update for the Table resource.
      *
@@ -285,6 +295,7 @@ public interface Table {
          */
         Table apply(Context context);
     }
+
     /** The Table update stages. */
     interface UpdateStages {
         /** The stage of the Table update allowing to specify retentionInDays. */
@@ -299,6 +310,7 @@ public interface Table {
              */
             Update withRetentionInDays(Integer retentionInDays);
         }
+
         /** The stage of the Table update allowing to specify totalRetentionInDays. */
         interface WithTotalRetentionInDays {
             /**
@@ -311,6 +323,7 @@ public interface Table {
              */
             Update withTotalRetentionInDays(Integer totalRetentionInDays);
         }
+
         /** The stage of the Table update allowing to specify searchResults. */
         interface WithSearchResults {
             /**
@@ -321,6 +334,7 @@ public interface Table {
              */
             Update withSearchResults(SearchResults searchResults);
         }
+
         /** The stage of the Table update allowing to specify restoredLogs. */
         interface WithRestoredLogs {
             /**
@@ -331,6 +345,7 @@ public interface Table {
              */
             Update withRestoredLogs(RestoredLogs restoredLogs);
         }
+
         /** The stage of the Table update allowing to specify plan. */
         interface WithPlan {
             /**
@@ -342,6 +357,7 @@ public interface Table {
              */
             Update withPlan(TablePlanEnum plan);
         }
+
         /** The stage of the Table update allowing to specify schema. */
         interface WithSchema {
             /**
@@ -353,6 +369,7 @@ public interface Table {
             Update withSchema(Schema schema);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

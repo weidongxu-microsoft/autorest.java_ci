@@ -119,11 +119,13 @@ public interface ActivityLogAlertResource {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The ActivityLogAlertResource definition stages. */
     interface DefinitionStages {
         /** The first stage of the ActivityLogAlertResource definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -142,6 +144,7 @@ public interface ActivityLogAlertResource {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -152,6 +155,7 @@ public interface ActivityLogAlertResource {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the ActivityLogAlertResource definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -178,6 +182,7 @@ public interface ActivityLogAlertResource {
              */
             ActivityLogAlertResource create(Context context);
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -188,6 +193,7 @@ public interface ActivityLogAlertResource {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify scopes. */
         interface WithScopes {
             /**
@@ -202,6 +208,7 @@ public interface ActivityLogAlertResource {
              */
             WithCreate withScopes(List<String> scopes);
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -214,6 +221,7 @@ public interface ActivityLogAlertResource {
              */
             WithCreate withEnabled(Boolean enabled);
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify condition. */
         interface WithCondition {
             /**
@@ -224,6 +232,7 @@ public interface ActivityLogAlertResource {
              */
             WithCreate withCondition(ActivityLogAlertAllOfCondition condition);
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify actions. */
         interface WithActions {
             /**
@@ -234,6 +243,7 @@ public interface ActivityLogAlertResource {
              */
             WithCreate withActions(ActivityLogAlertActionList actions);
         }
+
         /** The stage of the ActivityLogAlertResource definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -245,6 +255,7 @@ public interface ActivityLogAlertResource {
             WithCreate withDescription(String description);
         }
     }
+
     /**
      * Begins update for the ActivityLogAlertResource resource.
      *
@@ -269,6 +280,7 @@ public interface ActivityLogAlertResource {
          */
         ActivityLogAlertResource apply(Context context);
     }
+
     /** The ActivityLogAlertResource update stages. */
     interface UpdateStages {
         /** The stage of the ActivityLogAlertResource update allowing to specify tags. */
@@ -281,6 +293,7 @@ public interface ActivityLogAlertResource {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the ActivityLogAlertResource update allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -294,6 +307,7 @@ public interface ActivityLogAlertResource {
             Update withEnabled(Boolean enabled);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

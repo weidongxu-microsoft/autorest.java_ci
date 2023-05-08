@@ -87,11 +87,13 @@ public interface RouteMap {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The RouteMap definition stages. */
     interface DefinitionStages {
         /** The first stage of the RouteMap definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the RouteMap definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -103,6 +105,7 @@ public interface RouteMap {
              */
             WithCreate withExistingVirtualHub(String resourceGroupName, String virtualHubName);
         }
+
         /**
          * The stage of the RouteMap definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -126,6 +129,7 @@ public interface RouteMap {
              */
             RouteMap create(Context context);
         }
+
         /** The stage of the RouteMap definition allowing to specify associatedInboundConnections. */
         interface WithAssociatedInboundConnections {
             /**
@@ -138,6 +142,7 @@ public interface RouteMap {
              */
             WithCreate withAssociatedInboundConnections(List<String> associatedInboundConnections);
         }
+
         /** The stage of the RouteMap definition allowing to specify associatedOutboundConnections. */
         interface WithAssociatedOutboundConnections {
             /**
@@ -150,6 +155,7 @@ public interface RouteMap {
              */
             WithCreate withAssociatedOutboundConnections(List<String> associatedOutboundConnections);
         }
+
         /** The stage of the RouteMap definition allowing to specify rules. */
         interface WithRules {
             /**
@@ -161,6 +167,7 @@ public interface RouteMap {
             WithCreate withRules(List<RouteMapRule> rules);
         }
     }
+
     /**
      * Begins update for the RouteMap resource.
      *
@@ -188,6 +195,7 @@ public interface RouteMap {
          */
         RouteMap apply(Context context);
     }
+
     /** The RouteMap update stages. */
     interface UpdateStages {
         /** The stage of the RouteMap update allowing to specify associatedInboundConnections. */
@@ -202,6 +210,7 @@ public interface RouteMap {
              */
             Update withAssociatedInboundConnections(List<String> associatedInboundConnections);
         }
+
         /** The stage of the RouteMap update allowing to specify associatedOutboundConnections. */
         interface WithAssociatedOutboundConnections {
             /**
@@ -214,6 +223,7 @@ public interface RouteMap {
              */
             Update withAssociatedOutboundConnections(List<String> associatedOutboundConnections);
         }
+
         /** The stage of the RouteMap update allowing to specify rules. */
         interface WithRules {
             /**
@@ -225,6 +235,7 @@ public interface RouteMap {
             Update withRules(List<RouteMapRule> rules);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

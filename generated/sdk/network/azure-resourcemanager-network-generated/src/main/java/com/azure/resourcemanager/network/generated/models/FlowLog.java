@@ -144,11 +144,13 @@ public interface FlowLog {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The FlowLog definition stages. */
     interface DefinitionStages {
         /** The first stage of the FlowLog definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the FlowLog definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -167,6 +169,7 @@ public interface FlowLog {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the FlowLog definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -178,6 +181,7 @@ public interface FlowLog {
              */
             WithCreate withExistingNetworkWatcher(String resourceGroupName, String networkWatcherName);
         }
+
         /**
          * The stage of the FlowLog definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -205,6 +209,7 @@ public interface FlowLog {
              */
             FlowLog create(Context context);
         }
+
         /** The stage of the FlowLog definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -215,6 +220,7 @@ public interface FlowLog {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the FlowLog definition allowing to specify targetResourceId. */
         interface WithTargetResourceId {
             /**
@@ -225,6 +231,7 @@ public interface FlowLog {
              */
             WithCreate withTargetResourceId(String targetResourceId);
         }
+
         /** The stage of the FlowLog definition allowing to specify storageId. */
         interface WithStorageId {
             /**
@@ -235,6 +242,7 @@ public interface FlowLog {
              */
             WithCreate withStorageId(String storageId);
         }
+
         /** The stage of the FlowLog definition allowing to specify enabled. */
         interface WithEnabled {
             /**
@@ -245,6 +253,7 @@ public interface FlowLog {
              */
             WithCreate withEnabled(Boolean enabled);
         }
+
         /** The stage of the FlowLog definition allowing to specify retentionPolicy. */
         interface WithRetentionPolicy {
             /**
@@ -255,6 +264,7 @@ public interface FlowLog {
              */
             WithCreate withRetentionPolicy(RetentionPolicyParameters retentionPolicy);
         }
+
         /** The stage of the FlowLog definition allowing to specify format. */
         interface WithFormat {
             /**
@@ -265,6 +275,7 @@ public interface FlowLog {
              */
             WithCreate withFormat(FlowLogFormatParameters format);
         }
+
         /** The stage of the FlowLog definition allowing to specify flowAnalyticsConfiguration. */
         interface WithFlowAnalyticsConfiguration {
             /**
@@ -277,6 +288,7 @@ public interface FlowLog {
             WithCreate withFlowAnalyticsConfiguration(TrafficAnalyticsProperties flowAnalyticsConfiguration);
         }
     }
+
     /**
      * Begins update for the FlowLog resource.
      *
@@ -301,6 +313,7 @@ public interface FlowLog {
          */
         FlowLog apply(Context context);
     }
+
     /** The FlowLog update stages. */
     interface UpdateStages {
         /** The stage of the FlowLog update allowing to specify tags. */
@@ -314,6 +327,7 @@ public interface FlowLog {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

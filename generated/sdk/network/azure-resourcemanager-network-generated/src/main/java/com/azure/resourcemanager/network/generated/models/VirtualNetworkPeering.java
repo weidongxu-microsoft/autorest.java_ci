@@ -164,11 +164,13 @@ public interface VirtualNetworkPeering {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The VirtualNetworkPeering definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualNetworkPeering definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -180,6 +182,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withExistingVirtualNetwork(String resourceGroupName, String virtualNetworkName);
         }
+
         /**
          * The stage of the VirtualNetworkPeering definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -214,6 +217,7 @@ public interface VirtualNetworkPeering {
              */
             VirtualNetworkPeering create(Context context);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify name. */
         interface WithName {
             /**
@@ -226,6 +230,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify type. */
         interface WithType {
             /**
@@ -236,6 +241,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withType(String type);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify allowVirtualNetworkAccess. */
         interface WithAllowVirtualNetworkAccess {
             /**
@@ -248,6 +254,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withAllowVirtualNetworkAccess(Boolean allowVirtualNetworkAccess);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify allowForwardedTraffic. */
         interface WithAllowForwardedTraffic {
             /**
@@ -260,6 +267,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withAllowForwardedTraffic(Boolean allowForwardedTraffic);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify allowGatewayTransit. */
         interface WithAllowGatewayTransit {
             /**
@@ -272,6 +280,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withAllowGatewayTransit(Boolean allowGatewayTransit);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify useRemoteGateways. */
         interface WithUseRemoteGateways {
             /**
@@ -288,6 +297,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withUseRemoteGateways(Boolean useRemoteGateways);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify remoteVirtualNetwork. */
         interface WithRemoteVirtualNetwork {
             /**
@@ -302,6 +312,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withRemoteVirtualNetwork(SubResource remoteVirtualNetwork);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify remoteAddressSpace. */
         interface WithRemoteAddressSpace {
             /**
@@ -313,6 +324,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withRemoteAddressSpace(AddressSpace remoteAddressSpace);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify remoteVirtualNetworkAddressSpace. */
         interface WithRemoteVirtualNetworkAddressSpace {
             /**
@@ -325,6 +337,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withRemoteVirtualNetworkAddressSpace(AddressSpace remoteVirtualNetworkAddressSpace);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify remoteBgpCommunities. */
         interface WithRemoteBgpCommunities {
             /**
@@ -336,6 +349,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withRemoteBgpCommunities(VirtualNetworkBgpCommunities remoteBgpCommunities);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify peeringState. */
         interface WithPeeringState {
             /**
@@ -346,6 +360,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withPeeringState(VirtualNetworkPeeringState peeringState);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify peeringSyncLevel. */
         interface WithPeeringSyncLevel {
             /**
@@ -356,6 +371,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withPeeringSyncLevel(VirtualNetworkPeeringLevel peeringSyncLevel);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify doNotVerifyRemoteGateways. */
         interface WithDoNotVerifyRemoteGateways {
             /**
@@ -367,6 +383,7 @@ public interface VirtualNetworkPeering {
              */
             WithCreate withDoNotVerifyRemoteGateways(Boolean doNotVerifyRemoteGateways);
         }
+
         /** The stage of the VirtualNetworkPeering definition allowing to specify syncRemoteAddressSpace. */
         interface WithSyncRemoteAddressSpace {
             /**
@@ -380,6 +397,7 @@ public interface VirtualNetworkPeering {
             WithCreate withSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace);
         }
     }
+
     /**
      * Begins update for the VirtualNetworkPeering resource.
      *
@@ -418,6 +436,7 @@ public interface VirtualNetworkPeering {
          */
         VirtualNetworkPeering apply(Context context);
     }
+
     /** The VirtualNetworkPeering update stages. */
     interface UpdateStages {
         /** The stage of the VirtualNetworkPeering update allowing to specify name. */
@@ -432,6 +451,7 @@ public interface VirtualNetworkPeering {
              */
             Update withName(String name);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify type. */
         interface WithType {
             /**
@@ -442,6 +462,7 @@ public interface VirtualNetworkPeering {
              */
             Update withType(String type);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify allowVirtualNetworkAccess. */
         interface WithAllowVirtualNetworkAccess {
             /**
@@ -454,6 +475,7 @@ public interface VirtualNetworkPeering {
              */
             Update withAllowVirtualNetworkAccess(Boolean allowVirtualNetworkAccess);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify allowForwardedTraffic. */
         interface WithAllowForwardedTraffic {
             /**
@@ -466,6 +488,7 @@ public interface VirtualNetworkPeering {
              */
             Update withAllowForwardedTraffic(Boolean allowForwardedTraffic);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify allowGatewayTransit. */
         interface WithAllowGatewayTransit {
             /**
@@ -478,6 +501,7 @@ public interface VirtualNetworkPeering {
              */
             Update withAllowGatewayTransit(Boolean allowGatewayTransit);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify useRemoteGateways. */
         interface WithUseRemoteGateways {
             /**
@@ -494,6 +518,7 @@ public interface VirtualNetworkPeering {
              */
             Update withUseRemoteGateways(Boolean useRemoteGateways);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify remoteVirtualNetwork. */
         interface WithRemoteVirtualNetwork {
             /**
@@ -508,6 +533,7 @@ public interface VirtualNetworkPeering {
              */
             Update withRemoteVirtualNetwork(SubResource remoteVirtualNetwork);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify remoteAddressSpace. */
         interface WithRemoteAddressSpace {
             /**
@@ -519,6 +545,7 @@ public interface VirtualNetworkPeering {
              */
             Update withRemoteAddressSpace(AddressSpace remoteAddressSpace);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify remoteVirtualNetworkAddressSpace. */
         interface WithRemoteVirtualNetworkAddressSpace {
             /**
@@ -531,6 +558,7 @@ public interface VirtualNetworkPeering {
              */
             Update withRemoteVirtualNetworkAddressSpace(AddressSpace remoteVirtualNetworkAddressSpace);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify remoteBgpCommunities. */
         interface WithRemoteBgpCommunities {
             /**
@@ -542,6 +570,7 @@ public interface VirtualNetworkPeering {
              */
             Update withRemoteBgpCommunities(VirtualNetworkBgpCommunities remoteBgpCommunities);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify peeringState. */
         interface WithPeeringState {
             /**
@@ -552,6 +581,7 @@ public interface VirtualNetworkPeering {
              */
             Update withPeeringState(VirtualNetworkPeeringState peeringState);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify peeringSyncLevel. */
         interface WithPeeringSyncLevel {
             /**
@@ -562,6 +592,7 @@ public interface VirtualNetworkPeering {
              */
             Update withPeeringSyncLevel(VirtualNetworkPeeringLevel peeringSyncLevel);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify doNotVerifyRemoteGateways. */
         interface WithDoNotVerifyRemoteGateways {
             /**
@@ -573,6 +604,7 @@ public interface VirtualNetworkPeering {
              */
             Update withDoNotVerifyRemoteGateways(Boolean doNotVerifyRemoteGateways);
         }
+
         /** The stage of the VirtualNetworkPeering update allowing to specify syncRemoteAddressSpace. */
         interface WithSyncRemoteAddressSpace {
             /**
@@ -586,6 +618,7 @@ public interface VirtualNetworkPeering {
             Update withSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

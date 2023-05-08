@@ -199,11 +199,13 @@ public interface Subnet {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The Subnet definition stages. */
     interface DefinitionStages {
         /** The first stage of the Subnet definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the Subnet definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -215,6 +217,7 @@ public interface Subnet {
              */
             WithCreate withExistingVirtualNetwork(String resourceGroupName, String virtualNetworkName);
         }
+
         /**
          * The stage of the Subnet definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
@@ -249,6 +252,7 @@ public interface Subnet {
              */
             Subnet create(Context context);
         }
+
         /** The stage of the Subnet definition allowing to specify name. */
         interface WithName {
             /**
@@ -261,6 +265,7 @@ public interface Subnet {
              */
             WithCreate withName(String name);
         }
+
         /** The stage of the Subnet definition allowing to specify type. */
         interface WithType {
             /**
@@ -271,6 +276,7 @@ public interface Subnet {
              */
             WithCreate withType(String type);
         }
+
         /** The stage of the Subnet definition allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -281,6 +287,7 @@ public interface Subnet {
              */
             WithCreate withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the Subnet definition allowing to specify addressPrefixes. */
         interface WithAddressPrefixes {
             /**
@@ -291,6 +298,7 @@ public interface Subnet {
              */
             WithCreate withAddressPrefixes(List<String> addressPrefixes);
         }
+
         /** The stage of the Subnet definition allowing to specify networkSecurityGroup. */
         interface WithNetworkSecurityGroup {
             /**
@@ -301,6 +309,7 @@ public interface Subnet {
              */
             WithCreate withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup);
         }
+
         /** The stage of the Subnet definition allowing to specify routeTable. */
         interface WithRouteTable {
             /**
@@ -311,6 +320,7 @@ public interface Subnet {
              */
             WithCreate withRouteTable(RouteTableInner routeTable);
         }
+
         /** The stage of the Subnet definition allowing to specify natGateway. */
         interface WithNatGateway {
             /**
@@ -321,6 +331,7 @@ public interface Subnet {
              */
             WithCreate withNatGateway(SubResource natGateway);
         }
+
         /** The stage of the Subnet definition allowing to specify serviceEndpoints. */
         interface WithServiceEndpoints {
             /**
@@ -331,6 +342,7 @@ public interface Subnet {
              */
             WithCreate withServiceEndpoints(List<ServiceEndpointPropertiesFormat> serviceEndpoints);
         }
+
         /** The stage of the Subnet definition allowing to specify serviceEndpointPolicies. */
         interface WithServiceEndpointPolicies {
             /**
@@ -341,6 +353,7 @@ public interface Subnet {
              */
             WithCreate withServiceEndpointPolicies(List<ServiceEndpointPolicyInner> serviceEndpointPolicies);
         }
+
         /** The stage of the Subnet definition allowing to specify ipAllocations. */
         interface WithIpAllocations {
             /**
@@ -351,6 +364,7 @@ public interface Subnet {
              */
             WithCreate withIpAllocations(List<SubResource> ipAllocations);
         }
+
         /** The stage of the Subnet definition allowing to specify delegations. */
         interface WithDelegations {
             /**
@@ -361,6 +375,7 @@ public interface Subnet {
              */
             WithCreate withDelegations(List<Delegation> delegations);
         }
+
         /** The stage of the Subnet definition allowing to specify privateEndpointNetworkPolicies. */
         interface WithPrivateEndpointNetworkPolicies {
             /**
@@ -374,6 +389,7 @@ public interface Subnet {
             WithCreate withPrivateEndpointNetworkPolicies(
                 VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies);
         }
+
         /** The stage of the Subnet definition allowing to specify privateLinkServiceNetworkPolicies. */
         interface WithPrivateLinkServiceNetworkPolicies {
             /**
@@ -387,6 +403,7 @@ public interface Subnet {
             WithCreate withPrivateLinkServiceNetworkPolicies(
                 VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies);
         }
+
         /** The stage of the Subnet definition allowing to specify applicationGatewayIpConfigurations. */
         interface WithApplicationGatewayIpConfigurations {
             /**
@@ -401,6 +418,7 @@ public interface Subnet {
                 List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations);
         }
     }
+
     /**
      * Begins update for the Subnet resource.
      *
@@ -439,6 +457,7 @@ public interface Subnet {
          */
         Subnet apply(Context context);
     }
+
     /** The Subnet update stages. */
     interface UpdateStages {
         /** The stage of the Subnet update allowing to specify name. */
@@ -453,6 +472,7 @@ public interface Subnet {
              */
             Update withName(String name);
         }
+
         /** The stage of the Subnet update allowing to specify type. */
         interface WithType {
             /**
@@ -463,6 +483,7 @@ public interface Subnet {
              */
             Update withType(String type);
         }
+
         /** The stage of the Subnet update allowing to specify addressPrefix. */
         interface WithAddressPrefix {
             /**
@@ -473,6 +494,7 @@ public interface Subnet {
              */
             Update withAddressPrefix(String addressPrefix);
         }
+
         /** The stage of the Subnet update allowing to specify addressPrefixes. */
         interface WithAddressPrefixes {
             /**
@@ -483,6 +505,7 @@ public interface Subnet {
              */
             Update withAddressPrefixes(List<String> addressPrefixes);
         }
+
         /** The stage of the Subnet update allowing to specify networkSecurityGroup. */
         interface WithNetworkSecurityGroup {
             /**
@@ -493,6 +516,7 @@ public interface Subnet {
              */
             Update withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup);
         }
+
         /** The stage of the Subnet update allowing to specify routeTable. */
         interface WithRouteTable {
             /**
@@ -503,6 +527,7 @@ public interface Subnet {
              */
             Update withRouteTable(RouteTableInner routeTable);
         }
+
         /** The stage of the Subnet update allowing to specify natGateway. */
         interface WithNatGateway {
             /**
@@ -513,6 +538,7 @@ public interface Subnet {
              */
             Update withNatGateway(SubResource natGateway);
         }
+
         /** The stage of the Subnet update allowing to specify serviceEndpoints. */
         interface WithServiceEndpoints {
             /**
@@ -523,6 +549,7 @@ public interface Subnet {
              */
             Update withServiceEndpoints(List<ServiceEndpointPropertiesFormat> serviceEndpoints);
         }
+
         /** The stage of the Subnet update allowing to specify serviceEndpointPolicies. */
         interface WithServiceEndpointPolicies {
             /**
@@ -533,6 +560,7 @@ public interface Subnet {
              */
             Update withServiceEndpointPolicies(List<ServiceEndpointPolicyInner> serviceEndpointPolicies);
         }
+
         /** The stage of the Subnet update allowing to specify ipAllocations. */
         interface WithIpAllocations {
             /**
@@ -543,6 +571,7 @@ public interface Subnet {
              */
             Update withIpAllocations(List<SubResource> ipAllocations);
         }
+
         /** The stage of the Subnet update allowing to specify delegations. */
         interface WithDelegations {
             /**
@@ -553,6 +582,7 @@ public interface Subnet {
              */
             Update withDelegations(List<Delegation> delegations);
         }
+
         /** The stage of the Subnet update allowing to specify privateEndpointNetworkPolicies. */
         interface WithPrivateEndpointNetworkPolicies {
             /**
@@ -566,6 +596,7 @@ public interface Subnet {
             Update withPrivateEndpointNetworkPolicies(
                 VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies);
         }
+
         /** The stage of the Subnet update allowing to specify privateLinkServiceNetworkPolicies. */
         interface WithPrivateLinkServiceNetworkPolicies {
             /**
@@ -579,6 +610,7 @@ public interface Subnet {
             Update withPrivateLinkServiceNetworkPolicies(
                 VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies);
         }
+
         /** The stage of the Subnet update allowing to specify applicationGatewayIpConfigurations. */
         interface WithApplicationGatewayIpConfigurations {
             /**
@@ -593,6 +625,7 @@ public interface Subnet {
                 List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

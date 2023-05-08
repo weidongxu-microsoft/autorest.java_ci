@@ -126,11 +126,13 @@ public interface RouteTable {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The RouteTable definition stages. */
     interface DefinitionStages {
         /** The first stage of the RouteTable definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the RouteTable definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -149,6 +151,7 @@ public interface RouteTable {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the RouteTable definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -159,6 +162,7 @@ public interface RouteTable {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the RouteTable definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -182,6 +186,7 @@ public interface RouteTable {
              */
             RouteTable create(Context context);
         }
+
         /** The stage of the RouteTable definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -192,6 +197,7 @@ public interface RouteTable {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the RouteTable definition allowing to specify routes. */
         interface WithRoutes {
             /**
@@ -202,6 +208,7 @@ public interface RouteTable {
              */
             WithCreate withRoutes(List<RouteInner> routes);
         }
+
         /** The stage of the RouteTable definition allowing to specify disableBgpRoutePropagation. */
         interface WithDisableBgpRoutePropagation {
             /**
@@ -215,6 +222,7 @@ public interface RouteTable {
             WithCreate withDisableBgpRoutePropagation(Boolean disableBgpRoutePropagation);
         }
     }
+
     /**
      * Begins update for the RouteTable resource.
      *
@@ -239,6 +247,7 @@ public interface RouteTable {
          */
         RouteTable apply(Context context);
     }
+
     /** The RouteTable update stages. */
     interface UpdateStages {
         /** The stage of the RouteTable update allowing to specify tags. */
@@ -252,6 +261,7 @@ public interface RouteTable {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

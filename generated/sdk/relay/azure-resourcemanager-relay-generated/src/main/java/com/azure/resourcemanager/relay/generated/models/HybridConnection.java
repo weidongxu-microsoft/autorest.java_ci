@@ -118,11 +118,13 @@ public interface HybridConnection {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The HybridConnection definition stages. */
     interface DefinitionStages {
         /** The first stage of the HybridConnection definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the HybridConnection definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -134,6 +136,7 @@ public interface HybridConnection {
              */
             WithCreate withExistingNamespace(String resourceGroupName, String namespaceName);
         }
+
         /**
          * The stage of the HybridConnection definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -155,6 +158,7 @@ public interface HybridConnection {
              */
             HybridConnection create(Context context);
         }
+
         /** The stage of the HybridConnection definition allowing to specify requiresClientAuthorization. */
         interface WithRequiresClientAuthorization {
             /**
@@ -167,6 +171,7 @@ public interface HybridConnection {
              */
             WithCreate withRequiresClientAuthorization(Boolean requiresClientAuthorization);
         }
+
         /** The stage of the HybridConnection definition allowing to specify userMetadata. */
         interface WithUserMetadata {
             /**
@@ -182,6 +187,7 @@ public interface HybridConnection {
             WithCreate withUserMetadata(String userMetadata);
         }
     }
+
     /**
      * Begins update for the HybridConnection resource.
      *
@@ -206,6 +212,7 @@ public interface HybridConnection {
          */
         HybridConnection apply(Context context);
     }
+
     /** The HybridConnection update stages. */
     interface UpdateStages {
         /** The stage of the HybridConnection update allowing to specify requiresClientAuthorization. */
@@ -220,6 +227,7 @@ public interface HybridConnection {
              */
             Update withRequiresClientAuthorization(Boolean requiresClientAuthorization);
         }
+
         /** The stage of the HybridConnection update allowing to specify userMetadata. */
         interface WithUserMetadata {
             /**
@@ -235,6 +243,7 @@ public interface HybridConnection {
             Update withUserMetadata(String userMetadata);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

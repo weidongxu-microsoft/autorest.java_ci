@@ -202,11 +202,13 @@ public interface VirtualMachineRunCommand {
             DefinitionStages.WithParentResource,
             DefinitionStages.WithCreate {
     }
+
     /** The VirtualMachineRunCommand definition stages. */
     interface DefinitionStages {
         /** The first stage of the VirtualMachineRunCommand definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -225,6 +227,7 @@ public interface VirtualMachineRunCommand {
              */
             WithParentResource withRegion(String location);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -236,6 +239,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withExistingVirtualMachine(String resourceGroupName, String vmName);
         }
+
         /**
          * The stage of the VirtualMachineRunCommand definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -269,6 +273,7 @@ public interface VirtualMachineRunCommand {
              */
             VirtualMachineRunCommand create(Context context);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -279,6 +284,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify source. */
         interface WithSource {
             /**
@@ -289,6 +295,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withSource(VirtualMachineRunCommandScriptSource source);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify parameters. */
         interface WithParameters {
             /**
@@ -299,6 +306,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withParameters(List<RunCommandInputParameter> parameters);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify protectedParameters. */
         interface WithProtectedParameters {
             /**
@@ -309,6 +317,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withProtectedParameters(List<RunCommandInputParameter> protectedParameters);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify asyncExecution. */
         interface WithAsyncExecution {
             /**
@@ -321,6 +330,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withAsyncExecution(Boolean asyncExecution);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify runAsUser. */
         interface WithRunAsUser {
             /**
@@ -331,6 +341,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withRunAsUser(String runAsUser);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify runAsPassword. */
         interface WithRunAsPassword {
             /**
@@ -342,6 +353,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withRunAsPassword(String runAsPassword);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify timeoutInSeconds. */
         interface WithTimeoutInSeconds {
             /**
@@ -352,6 +364,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withTimeoutInSeconds(Integer timeoutInSeconds);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify outputBlobUri. */
         interface WithOutputBlobUri {
             /**
@@ -366,6 +379,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withOutputBlobUri(String outputBlobUri);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify errorBlobUri. */
         interface WithErrorBlobUri {
             /**
@@ -380,6 +394,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withErrorBlobUri(String errorBlobUri);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify outputBlobManagedIdentity. */
         interface WithOutputBlobManagedIdentity {
             /**
@@ -398,6 +413,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withOutputBlobManagedIdentity(RunCommandManagedIdentity outputBlobManagedIdentity);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify errorBlobManagedIdentity. */
         interface WithErrorBlobManagedIdentity {
             /**
@@ -416,6 +432,7 @@ public interface VirtualMachineRunCommand {
              */
             WithCreate withErrorBlobManagedIdentity(RunCommandManagedIdentity errorBlobManagedIdentity);
         }
+
         /** The stage of the VirtualMachineRunCommand definition allowing to specify treatFailureAsDeploymentFailure. */
         interface WithTreatFailureAsDeploymentFailure {
             /**
@@ -437,6 +454,7 @@ public interface VirtualMachineRunCommand {
             WithCreate withTreatFailureAsDeploymentFailure(Boolean treatFailureAsDeploymentFailure);
         }
     }
+
     /**
      * Begins update for the VirtualMachineRunCommand resource.
      *
@@ -474,6 +492,7 @@ public interface VirtualMachineRunCommand {
          */
         VirtualMachineRunCommand apply(Context context);
     }
+
     /** The VirtualMachineRunCommand update stages. */
     interface UpdateStages {
         /** The stage of the VirtualMachineRunCommand update allowing to specify tags. */
@@ -486,6 +505,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withTags(Map<String, String> tags);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify source. */
         interface WithSource {
             /**
@@ -496,6 +516,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withSource(VirtualMachineRunCommandScriptSource source);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify parameters. */
         interface WithParameters {
             /**
@@ -506,6 +527,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withParameters(List<RunCommandInputParameter> parameters);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify protectedParameters. */
         interface WithProtectedParameters {
             /**
@@ -516,6 +538,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withProtectedParameters(List<RunCommandInputParameter> protectedParameters);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify asyncExecution. */
         interface WithAsyncExecution {
             /**
@@ -528,6 +551,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withAsyncExecution(Boolean asyncExecution);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify runAsUser. */
         interface WithRunAsUser {
             /**
@@ -538,6 +562,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withRunAsUser(String runAsUser);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify runAsPassword. */
         interface WithRunAsPassword {
             /**
@@ -549,6 +574,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withRunAsPassword(String runAsPassword);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify timeoutInSeconds. */
         interface WithTimeoutInSeconds {
             /**
@@ -559,6 +585,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withTimeoutInSeconds(Integer timeoutInSeconds);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify outputBlobUri. */
         interface WithOutputBlobUri {
             /**
@@ -573,6 +600,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withOutputBlobUri(String outputBlobUri);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify errorBlobUri. */
         interface WithErrorBlobUri {
             /**
@@ -587,6 +615,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withErrorBlobUri(String errorBlobUri);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify outputBlobManagedIdentity. */
         interface WithOutputBlobManagedIdentity {
             /**
@@ -605,6 +634,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withOutputBlobManagedIdentity(RunCommandManagedIdentity outputBlobManagedIdentity);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify errorBlobManagedIdentity. */
         interface WithErrorBlobManagedIdentity {
             /**
@@ -623,6 +653,7 @@ public interface VirtualMachineRunCommand {
              */
             Update withErrorBlobManagedIdentity(RunCommandManagedIdentity errorBlobManagedIdentity);
         }
+
         /** The stage of the VirtualMachineRunCommand update allowing to specify treatFailureAsDeploymentFailure. */
         interface WithTreatFailureAsDeploymentFailure {
             /**
@@ -644,6 +675,7 @@ public interface VirtualMachineRunCommand {
             Update withTreatFailureAsDeploymentFailure(Boolean treatFailureAsDeploymentFailure);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

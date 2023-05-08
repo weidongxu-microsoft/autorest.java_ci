@@ -78,11 +78,13 @@ public interface FileServiceProperties {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The FileServiceProperties definition stages. */
     interface DefinitionStages {
         /** The first stage of the FileServiceProperties definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the FileServiceProperties definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -96,6 +98,7 @@ public interface FileServiceProperties {
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
+
         /**
          * The stage of the FileServiceProperties definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
@@ -119,6 +122,7 @@ public interface FileServiceProperties {
              */
             FileServiceProperties create(Context context);
         }
+
         /** The stage of the FileServiceProperties definition allowing to specify cors. */
         interface WithCors {
             /**
@@ -133,6 +137,7 @@ public interface FileServiceProperties {
              */
             WithCreate withCors(CorsRules cors);
         }
+
         /** The stage of the FileServiceProperties definition allowing to specify shareDeleteRetentionPolicy. */
         interface WithShareDeleteRetentionPolicy {
             /**
@@ -143,6 +148,7 @@ public interface FileServiceProperties {
              */
             WithCreate withShareDeleteRetentionPolicy(DeleteRetentionPolicy shareDeleteRetentionPolicy);
         }
+
         /** The stage of the FileServiceProperties definition allowing to specify protocolSettings. */
         interface WithProtocolSettings {
             /**
@@ -154,6 +160,7 @@ public interface FileServiceProperties {
             WithCreate withProtocolSettings(ProtocolSettings protocolSettings);
         }
     }
+
     /**
      * Begins update for the FileServiceProperties resource.
      *
@@ -179,6 +186,7 @@ public interface FileServiceProperties {
          */
         FileServiceProperties apply(Context context);
     }
+
     /** The FileServiceProperties update stages. */
     interface UpdateStages {
         /** The stage of the FileServiceProperties update allowing to specify cors. */
@@ -195,6 +203,7 @@ public interface FileServiceProperties {
              */
             Update withCors(CorsRules cors);
         }
+
         /** The stage of the FileServiceProperties update allowing to specify shareDeleteRetentionPolicy. */
         interface WithShareDeleteRetentionPolicy {
             /**
@@ -205,6 +214,7 @@ public interface FileServiceProperties {
              */
             Update withShareDeleteRetentionPolicy(DeleteRetentionPolicy shareDeleteRetentionPolicy);
         }
+
         /** The stage of the FileServiceProperties update allowing to specify protocolSettings. */
         interface WithProtocolSettings {
             /**
@@ -216,6 +226,7 @@ public interface FileServiceProperties {
             Update withProtocolSettings(ProtocolSettings protocolSettings);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

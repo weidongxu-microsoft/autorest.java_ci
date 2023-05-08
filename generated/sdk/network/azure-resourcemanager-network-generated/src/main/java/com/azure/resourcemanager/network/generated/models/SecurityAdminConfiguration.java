@@ -85,11 +85,13 @@ public interface SecurityAdminConfiguration {
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
+
     /** The SecurityAdminConfiguration definition stages. */
     interface DefinitionStages {
         /** The first stage of the SecurityAdminConfiguration definition. */
         interface Blank extends WithParentResource {
         }
+
         /** The stage of the SecurityAdminConfiguration definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
@@ -101,6 +103,7 @@ public interface SecurityAdminConfiguration {
              */
             WithCreate withExistingNetworkManager(String resourceGroupName, String networkManagerName);
         }
+
         /**
          * The stage of the SecurityAdminConfiguration definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
@@ -122,6 +125,7 @@ public interface SecurityAdminConfiguration {
              */
             SecurityAdminConfiguration create(Context context);
         }
+
         /** The stage of the SecurityAdminConfiguration definition allowing to specify description. */
         interface WithDescription {
             /**
@@ -132,6 +136,7 @@ public interface SecurityAdminConfiguration {
              */
             WithCreate withDescription(String description);
         }
+
         /**
          * The stage of the SecurityAdminConfiguration definition allowing to specify
          * applyOnNetworkIntentPolicyBasedServices.
@@ -148,6 +153,7 @@ public interface SecurityAdminConfiguration {
                 List<NetworkIntentPolicyBasedService> applyOnNetworkIntentPolicyBasedServices);
         }
     }
+
     /**
      * Begins update for the SecurityAdminConfiguration resource.
      *
@@ -172,6 +178,7 @@ public interface SecurityAdminConfiguration {
          */
         SecurityAdminConfiguration apply(Context context);
     }
+
     /** The SecurityAdminConfiguration update stages. */
     interface UpdateStages {
         /** The stage of the SecurityAdminConfiguration update allowing to specify description. */
@@ -184,6 +191,7 @@ public interface SecurityAdminConfiguration {
              */
             Update withDescription(String description);
         }
+
         /**
          * The stage of the SecurityAdminConfiguration update allowing to specify
          * applyOnNetworkIntentPolicyBasedServices.
@@ -200,6 +208,7 @@ public interface SecurityAdminConfiguration {
                 List<NetworkIntentPolicyBasedService> applyOnNetworkIntentPolicyBasedServices);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *

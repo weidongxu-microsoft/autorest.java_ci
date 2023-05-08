@@ -156,11 +156,13 @@ public interface VpnGateway {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithCreate {
     }
+
     /** The VpnGateway definition stages. */
     interface DefinitionStages {
         /** The first stage of the VpnGateway definition. */
         interface Blank extends WithLocation {
         }
+
         /** The stage of the VpnGateway definition allowing to specify location. */
         interface WithLocation {
             /**
@@ -179,6 +181,7 @@ public interface VpnGateway {
              */
             WithResourceGroup withRegion(String location);
         }
+
         /** The stage of the VpnGateway definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
@@ -189,6 +192,7 @@ public interface VpnGateway {
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
         }
+
         /**
          * The stage of the VpnGateway definition which contains all the minimum required properties for the resource to
          * be created, but also allows for any other optional properties to be specified.
@@ -217,6 +221,7 @@ public interface VpnGateway {
              */
             VpnGateway create(Context context);
         }
+
         /** The stage of the VpnGateway definition allowing to specify tags. */
         interface WithTags {
             /**
@@ -227,6 +232,7 @@ public interface VpnGateway {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+
         /** The stage of the VpnGateway definition allowing to specify virtualHub. */
         interface WithVirtualHub {
             /**
@@ -237,6 +243,7 @@ public interface VpnGateway {
              */
             WithCreate withVirtualHub(SubResource virtualHub);
         }
+
         /** The stage of the VpnGateway definition allowing to specify connections. */
         interface WithConnections {
             /**
@@ -247,6 +254,7 @@ public interface VpnGateway {
              */
             WithCreate withConnections(List<VpnConnectionInner> connections);
         }
+
         /** The stage of the VpnGateway definition allowing to specify bgpSettings. */
         interface WithBgpSettings {
             /**
@@ -257,6 +265,7 @@ public interface VpnGateway {
              */
             WithCreate withBgpSettings(BgpSettings bgpSettings);
         }
+
         /** The stage of the VpnGateway definition allowing to specify vpnGatewayScaleUnit. */
         interface WithVpnGatewayScaleUnit {
             /**
@@ -267,6 +276,7 @@ public interface VpnGateway {
              */
             WithCreate withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit);
         }
+
         /** The stage of the VpnGateway definition allowing to specify enableBgpRouteTranslationForNat. */
         interface WithEnableBgpRouteTranslationForNat {
             /**
@@ -278,6 +288,7 @@ public interface VpnGateway {
              */
             WithCreate withEnableBgpRouteTranslationForNat(Boolean enableBgpRouteTranslationForNat);
         }
+
         /** The stage of the VpnGateway definition allowing to specify isRoutingPreferenceInternet. */
         interface WithIsRoutingPreferenceInternet {
             /**
@@ -290,6 +301,7 @@ public interface VpnGateway {
              */
             WithCreate withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet);
         }
+
         /** The stage of the VpnGateway definition allowing to specify natRules. */
         interface WithNatRules {
             /**
@@ -301,6 +313,7 @@ public interface VpnGateway {
             WithCreate withNatRules(List<VpnGatewayNatRuleInner> natRules);
         }
     }
+
     /**
      * Begins update for the VpnGateway resource.
      *
@@ -325,6 +338,7 @@ public interface VpnGateway {
          */
         VpnGateway apply(Context context);
     }
+
     /** The VpnGateway update stages. */
     interface UpdateStages {
         /** The stage of the VpnGateway update allowing to specify tags. */
@@ -338,6 +352,7 @@ public interface VpnGateway {
             Update withTags(Map<String, String> tags);
         }
     }
+
     /**
      * Refreshes the resource to sync with Azure.
      *
