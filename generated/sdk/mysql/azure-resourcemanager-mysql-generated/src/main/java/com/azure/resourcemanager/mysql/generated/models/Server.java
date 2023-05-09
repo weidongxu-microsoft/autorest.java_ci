@@ -501,7 +501,8 @@ public interface Server {
             UpdateStages.WithHighAvailability,
             UpdateStages.WithMaintenanceWindow,
             UpdateStages.WithReplicationRole,
-            UpdateStages.WithDataEncryption {
+            UpdateStages.WithDataEncryption,
+            UpdateStages.WithNetwork {
         /**
          * Executes the update request.
          *
@@ -639,6 +640,17 @@ public interface Server {
              * @return the next definition stage.
              */
             Update withDataEncryption(DataEncryption dataEncryption);
+        }
+
+        /** The stage of the Server update allowing to specify network. */
+        interface WithNetwork {
+            /**
+             * Specifies the network property: Network related properties of a server.
+             *
+             * @param network Network related properties of a server.
+             * @return the next definition stage.
+             */
+            Update withNetwork(Network network);
         }
     }
 
