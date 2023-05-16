@@ -85,7 +85,9 @@ public final class StorageQueueEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Get the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds.
+     * Get the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value
+     * cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is
+     * Infinite.
      *
      * @return the queueMessageTimeToLiveInSeconds value.
      */
@@ -94,7 +96,9 @@ public final class StorageQueueEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Set the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds.
+     * Set the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value
+     * cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is
+     * Infinite.
      *
      * @param queueMessageTimeToLiveInSeconds the queueMessageTimeToLiveInSeconds value to set.
      * @return the StorageQueueEventSubscriptionDestination object itself.

@@ -13,6 +13,9 @@ public final class ChannelType extends ExpandableStringEnum<ChannelType> {
     /** Static value PartnerTopic for ChannelType. */
     public static final ChannelType PARTNER_TOPIC = fromString("PartnerTopic");
 
+    /** Static value PartnerDestination for ChannelType. */
+    public static final ChannelType PARTNER_DESTINATION = fromString("PartnerDestination");
+
     /**
      * Creates a new instance of ChannelType value.
      *

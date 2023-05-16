@@ -80,6 +80,14 @@ public interface PartnerNamespace {
     String partnerRegistrationFullyQualifiedId();
 
     /**
+     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * partner namespace.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    TlsVersion minimumTlsVersionAllowed();
+
+    /**
      * Gets the endpoint property: Endpoint for the partner namespace.
      *
      * @return the endpoint value.
@@ -201,6 +209,7 @@ public interface PartnerNamespace {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithPartnerRegistrationFullyQualifiedId,
+                DefinitionStages.WithMinimumTlsVersionAllowed,
                 DefinitionStages.WithPublicNetworkAccess,
                 DefinitionStages.WithInboundIpRules,
                 DefinitionStages.WithDisableLocalAuth,
@@ -245,6 +254,19 @@ public interface PartnerNamespace {
              * @return the next definition stage.
              */
             WithCreate withPartnerRegistrationFullyQualifiedId(String partnerRegistrationFullyQualifiedId);
+        }
+
+        /** The stage of the PartnerNamespace definition allowing to specify minimumTlsVersionAllowed. */
+        interface WithMinimumTlsVersionAllowed {
+            /**
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
+             * to this partner namespace.
+             *
+             * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this partner
+             *     namespace.
+             * @return the next definition stage.
+             */
+            WithCreate withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed);
         }
 
         /** The stage of the PartnerNamespace definition allowing to specify publicNetworkAccess. */
@@ -322,6 +344,7 @@ public interface PartnerNamespace {
         extends UpdateStages.WithTags,
             UpdateStages.WithPublicNetworkAccess,
             UpdateStages.WithInboundIpRules,
+            UpdateStages.WithMinimumTlsVersionAllowed,
             UpdateStages.WithDisableLocalAuth {
         /**
          * Executes the update request.
@@ -380,6 +403,18 @@ public interface PartnerNamespace {
              * @return the next definition stage.
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);
+        }
+
+        /** The stage of the PartnerNamespace update allowing to specify minimumTlsVersionAllowed. */
+        interface WithMinimumTlsVersionAllowed {
+            /**
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
+             * to this domain.
+             *
+             * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this domain.
+             * @return the next definition stage.
+             */
+            Update withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed);
         }
 
         /** The stage of the PartnerNamespace update allowing to specify disableLocalAuth. */

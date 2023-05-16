@@ -6,8 +6,10 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.models.DataResidencyBoundary;
+import com.azure.resourcemanager.eventgrid.generated.models.EventTypeInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -29,6 +31,12 @@ public final class DomainUpdateParameterProperties {
      */
     @JsonProperty(value = "inboundIpRules")
     private List<InboundIpRule> inboundIpRules;
+
+    /*
+     * Minimum TLS version of the publisher allowed to publish to this domain
+     */
+    @JsonProperty(value = "minimumTlsVersionAllowed")
+    private TlsVersion minimumTlsVersionAllowed;
 
     /*
      * This boolean is used to enable or disable local auth. Default value is false. When the property is set to true,
@@ -79,6 +87,12 @@ public final class DomainUpdateParameterProperties {
     @JsonProperty(value = "dataResidencyBoundary")
     private DataResidencyBoundary dataResidencyBoundary;
 
+    /*
+     * The eventTypeInfo for the domain.
+     */
+    @JsonProperty(value = "eventTypeInfo")
+    private EventTypeInfo eventTypeInfo;
+
     /** Creates an instance of DomainUpdateParameterProperties class. */
     public DomainUpdateParameterProperties() {
     }
@@ -128,6 +142,28 @@ public final class DomainUpdateParameterProperties {
      */
     public DomainUpdateParameterProperties withInboundIpRules(List<InboundIpRule> inboundIpRules) {
         this.inboundIpRules = inboundIpRules;
+        return this;
+    }
+
+    /**
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.minimumTlsVersionAllowed;
+    }
+
+    /**
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
+     * @return the DomainUpdateParameterProperties object itself.
+     */
+    public DomainUpdateParameterProperties withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        this.minimumTlsVersionAllowed = minimumTlsVersionAllowed;
         return this;
     }
 
@@ -250,6 +286,26 @@ public final class DomainUpdateParameterProperties {
     }
 
     /**
+     * Get the eventTypeInfo property: The eventTypeInfo for the domain.
+     *
+     * @return the eventTypeInfo value.
+     */
+    public EventTypeInfo eventTypeInfo() {
+        return this.eventTypeInfo;
+    }
+
+    /**
+     * Set the eventTypeInfo property: The eventTypeInfo for the domain.
+     *
+     * @param eventTypeInfo the eventTypeInfo value to set.
+     * @return the DomainUpdateParameterProperties object itself.
+     */
+    public DomainUpdateParameterProperties withEventTypeInfo(EventTypeInfo eventTypeInfo) {
+        this.eventTypeInfo = eventTypeInfo;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -257,6 +313,9 @@ public final class DomainUpdateParameterProperties {
     public void validate() {
         if (inboundIpRules() != null) {
             inboundIpRules().forEach(e -> e.validate());
+        }
+        if (eventTypeInfo() != null) {
+            eventTypeInfo().validate();
         }
     }
 }

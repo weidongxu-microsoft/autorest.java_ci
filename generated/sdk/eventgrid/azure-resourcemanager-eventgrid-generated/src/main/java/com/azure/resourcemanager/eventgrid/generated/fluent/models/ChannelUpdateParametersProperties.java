@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.eventgrid.generated.models.PartnerUpdateDestinationInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerUpdateTopicInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -19,6 +20,12 @@ public final class ChannelUpdateParametersProperties {
      */
     @JsonProperty(value = "expirationTimeIfNotActivatedUtc")
     private OffsetDateTime expirationTimeIfNotActivatedUtc;
+
+    /*
+     * Partner destination properties which can be updated if the channel is of type PartnerDestination.
+     */
+    @JsonProperty(value = "partnerDestinationInfo")
+    private PartnerUpdateDestinationInfo partnerDestinationInfo;
 
     /*
      * Partner topic properties which can be updated if the channel is of type PartnerTopic.
@@ -56,6 +63,29 @@ public final class ChannelUpdateParametersProperties {
     }
 
     /**
+     * Get the partnerDestinationInfo property: Partner destination properties which can be updated if the channel is of
+     * type PartnerDestination.
+     *
+     * @return the partnerDestinationInfo value.
+     */
+    public PartnerUpdateDestinationInfo partnerDestinationInfo() {
+        return this.partnerDestinationInfo;
+    }
+
+    /**
+     * Set the partnerDestinationInfo property: Partner destination properties which can be updated if the channel is of
+     * type PartnerDestination.
+     *
+     * @param partnerDestinationInfo the partnerDestinationInfo value to set.
+     * @return the ChannelUpdateParametersProperties object itself.
+     */
+    public ChannelUpdateParametersProperties withPartnerDestinationInfo(
+        PartnerUpdateDestinationInfo partnerDestinationInfo) {
+        this.partnerDestinationInfo = partnerDestinationInfo;
+        return this;
+    }
+
+    /**
      * Get the partnerTopicInfo property: Partner topic properties which can be updated if the channel is of type
      * PartnerTopic.
      *
@@ -83,6 +113,9 @@ public final class ChannelUpdateParametersProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (partnerDestinationInfo() != null) {
+            partnerDestinationInfo().validate();
+        }
         if (partnerTopicInfo() != null) {
             partnerTopicInfo().validate();
         }

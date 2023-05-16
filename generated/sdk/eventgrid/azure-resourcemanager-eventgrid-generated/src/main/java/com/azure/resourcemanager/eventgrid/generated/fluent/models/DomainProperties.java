@@ -7,10 +7,12 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.models.DataResidencyBoundary;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainProvisioningState;
+import com.azure.resourcemanager.eventgrid.generated.models.EventTypeInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -18,7 +20,7 @@ import java.util.List;
 @Fluent
 public final class DomainProperties {
     /*
-     * List of private endpoint connections.
+     * The privateEndpointConnections property.
      */
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
@@ -28,6 +30,12 @@ public final class DomainProperties {
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private DomainProvisioningState provisioningState;
+
+    /*
+     * Minimum TLS version of the publisher allowed to publish to this domain
+     */
+    @JsonProperty(value = "minimumTlsVersionAllowed")
+    private TlsVersion minimumTlsVersionAllowed;
 
     /*
      * Endpoint for the Event Grid Domain Resource which is used for publishing the events.
@@ -41,6 +49,13 @@ public final class DomainProperties {
      */
     @JsonProperty(value = "inputSchema")
     private InputSchema inputSchema;
+
+    /*
+     * Event Type Information for the domain. This information is provided by the publisher and can be used by the
+     * subscriber to view different types of events that are published.
+     */
+    @JsonProperty(value = "eventTypeInfo")
+    private EventTypeInfo eventTypeInfo;
 
     /*
      * Information about the InputSchemaMapping which specified the info about mapping event payload.
@@ -123,7 +138,7 @@ public final class DomainProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: List of private endpoint connections.
+     * Get the privateEndpointConnections property: The privateEndpointConnections property.
      *
      * @return the privateEndpointConnections value.
      */
@@ -138,6 +153,28 @@ public final class DomainProperties {
      */
     public DomainProvisioningState provisioningState() {
         return this.provisioningState;
+    }
+
+    /**
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.minimumTlsVersionAllowed;
+    }
+
+    /**
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
+     * @return the DomainProperties object itself.
+     */
+    public DomainProperties withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        this.minimumTlsVersionAllowed = minimumTlsVersionAllowed;
+        return this;
     }
 
     /**
@@ -168,6 +205,28 @@ public final class DomainProperties {
      */
     public DomainProperties withInputSchema(InputSchema inputSchema) {
         this.inputSchema = inputSchema;
+        return this;
+    }
+
+    /**
+     * Get the eventTypeInfo property: Event Type Information for the domain. This information is provided by the
+     * publisher and can be used by the subscriber to view different types of events that are published.
+     *
+     * @return the eventTypeInfo value.
+     */
+    public EventTypeInfo eventTypeInfo() {
+        return this.eventTypeInfo;
+    }
+
+    /**
+     * Set the eventTypeInfo property: Event Type Information for the domain. This information is provided by the
+     * publisher and can be used by the subscriber to view different types of events that are published.
+     *
+     * @param eventTypeInfo the eventTypeInfo value to set.
+     * @return the DomainProperties object itself.
+     */
+    public DomainProperties withEventTypeInfo(EventTypeInfo eventTypeInfo) {
+        this.eventTypeInfo = eventTypeInfo;
         return this;
     }
 
@@ -372,6 +431,9 @@ public final class DomainProperties {
     public void validate() {
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());
+        }
+        if (eventTypeInfo() != null) {
+            eventTypeInfo().validate();
         }
         if (inputSchemaMapping() != null) {
             inputSchemaMapping().validate();

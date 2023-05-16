@@ -9,6 +9,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicRoutingMode;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -34,6 +35,12 @@ public final class PartnerNamespaceProperties {
      */
     @JsonProperty(value = "partnerRegistrationFullyQualifiedId")
     private String partnerRegistrationFullyQualifiedId;
+
+    /*
+     * Minimum TLS version of the publisher allowed to publish to this partner namespace
+     */
+    @JsonProperty(value = "minimumTlsVersionAllowed")
+    private TlsVersion minimumTlsVersionAllowed;
 
     /*
      * Endpoint for the partner namespace.
@@ -116,6 +123,28 @@ public final class PartnerNamespaceProperties {
     public PartnerNamespaceProperties withPartnerRegistrationFullyQualifiedId(
         String partnerRegistrationFullyQualifiedId) {
         this.partnerRegistrationFullyQualifiedId = partnerRegistrationFullyQualifiedId;
+        return this;
+    }
+
+    /**
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * partner namespace.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.minimumTlsVersionAllowed;
+    }
+
+    /**
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * partner namespace.
+     *
+     * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
+     * @return the PartnerNamespaceProperties object itself.
+     */
+    public PartnerNamespaceProperties withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        this.minimumTlsVersionAllowed = minimumTlsVersionAllowed;
         return this;
     }
 

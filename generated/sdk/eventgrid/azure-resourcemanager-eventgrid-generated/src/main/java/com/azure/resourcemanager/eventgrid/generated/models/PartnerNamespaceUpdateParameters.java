@@ -115,6 +115,31 @@ public final class PartnerNamespaceUpdateParameters {
     }
 
     /**
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.innerProperties() == null ? null : this.innerProperties().minimumTlsVersionAllowed();
+    }
+
+    /**
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
+     * @return the PartnerNamespaceUpdateParameters object itself.
+     */
+    public PartnerNamespaceUpdateParameters withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new PartnerNamespaceUpdateParameterProperties();
+        }
+        this.innerProperties().withMinimumTlsVersionAllowed(minimumTlsVersionAllowed);
+        return this;
+    }
+
+    /**
      * Get the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
      * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
      * the partner namespace.

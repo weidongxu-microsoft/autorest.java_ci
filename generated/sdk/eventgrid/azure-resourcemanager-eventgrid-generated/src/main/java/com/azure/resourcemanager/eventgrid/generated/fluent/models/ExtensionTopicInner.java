@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ExtensionTopicInner extends ProxyResource {
     /*
-     * Properties of the extension topic
+     * Properties of the extension topic.
      */
     @JsonProperty(value = "properties")
     private ExtensionTopicProperties innerProperties;

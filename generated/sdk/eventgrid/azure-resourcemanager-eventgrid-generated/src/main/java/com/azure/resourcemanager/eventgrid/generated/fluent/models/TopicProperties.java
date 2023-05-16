@@ -6,10 +6,12 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.models.DataResidencyBoundary;
+import com.azure.resourcemanager.eventgrid.generated.models.EventTypeInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -34,6 +36,19 @@ public final class TopicProperties {
      */
     @JsonProperty(value = "endpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String endpoint;
+
+    /*
+     * Event Type Information for the user topic. This information is provided by the publisher and can be used by the
+     * subscriber to view different types of events that are published.
+     */
+    @JsonProperty(value = "eventTypeInfo")
+    private EventTypeInfo eventTypeInfo;
+
+    /*
+     * Minimum TLS version of the publisher allowed to publish to this topic
+     */
+    @JsonProperty(value = "minimumTlsVersionAllowed")
+    private TlsVersion minimumTlsVersionAllowed;
 
     /*
      * This determines the format that Event Grid should expect for incoming events published to the topic.
@@ -111,6 +126,48 @@ public final class TopicProperties {
      */
     public String endpoint() {
         return this.endpoint;
+    }
+
+    /**
+     * Get the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the
+     * publisher and can be used by the subscriber to view different types of events that are published.
+     *
+     * @return the eventTypeInfo value.
+     */
+    public EventTypeInfo eventTypeInfo() {
+        return this.eventTypeInfo;
+    }
+
+    /**
+     * Set the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the
+     * publisher and can be used by the subscriber to view different types of events that are published.
+     *
+     * @param eventTypeInfo the eventTypeInfo value to set.
+     * @return the TopicProperties object itself.
+     */
+    public TopicProperties withEventTypeInfo(EventTypeInfo eventTypeInfo) {
+        this.eventTypeInfo = eventTypeInfo;
+        return this;
+    }
+
+    /**
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this topic.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.minimumTlsVersionAllowed;
+    }
+
+    /**
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this topic.
+     *
+     * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
+     * @return the TopicProperties object itself.
+     */
+    public TopicProperties withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        this.minimumTlsVersionAllowed = minimumTlsVersionAllowed;
+        return this;
     }
 
     /**
@@ -266,6 +323,9 @@ public final class TopicProperties {
     public void validate() {
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());
+        }
+        if (eventTypeInfo() != null) {
+            eventTypeInfo().validate();
         }
         if (inputSchemaMapping() != null) {
             inputSchemaMapping().validate();

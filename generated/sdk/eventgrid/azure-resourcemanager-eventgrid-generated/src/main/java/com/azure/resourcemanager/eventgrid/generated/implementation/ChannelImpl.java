@@ -12,6 +12,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.Channel;
 import com.azure.resourcemanager.eventgrid.generated.models.ChannelProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.ChannelType;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFullUrl;
+import com.azure.resourcemanager.eventgrid.generated.models.PartnerDestinationInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.ReadinessState;
 import java.time.OffsetDateTime;
@@ -43,6 +44,10 @@ public final class ChannelImpl implements Channel, Channel.Definition, Channel.U
 
     public PartnerTopicInfo partnerTopicInfo() {
         return this.innerModel().partnerTopicInfo();
+    }
+
+    public PartnerDestinationInfo partnerDestinationInfo() {
+        return this.innerModel().partnerDestinationInfo();
     }
 
     public String messageForActivation() {
@@ -185,6 +190,11 @@ public final class ChannelImpl implements Channel, Channel.Definition, Channel.U
 
     public ChannelImpl withPartnerTopicInfo(PartnerTopicInfo partnerTopicInfo) {
         this.innerModel().withPartnerTopicInfo(partnerTopicInfo);
+        return this;
+    }
+
+    public ChannelImpl withPartnerDestinationInfo(PartnerDestinationInfo partnerDestinationInfo) {
+        this.innerModel().withPartnerDestinationInfo(partnerDestinationInfo);
         return this;
     }
 

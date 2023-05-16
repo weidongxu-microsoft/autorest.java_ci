@@ -32,6 +32,10 @@ public final class ChannelProvisioningState extends ExpandableStringEnum<Channel
     public static final ChannelProvisioningState IDLE_DUE_TO_MIRRORED_PARTNER_TOPIC_DELETION =
         fromString("IdleDueToMirroredPartnerTopicDeletion");
 
+    /** Static value IdleDueToMirroredPartnerDestinationDeletion for ChannelProvisioningState. */
+    public static final ChannelProvisioningState IDLE_DUE_TO_MIRRORED_PARTNER_DESTINATION_DELETION =
+        fromString("IdleDueToMirroredPartnerDestinationDeletion");
+
     /**
      * Creates a new instance of ChannelProvisioningState value.
      *

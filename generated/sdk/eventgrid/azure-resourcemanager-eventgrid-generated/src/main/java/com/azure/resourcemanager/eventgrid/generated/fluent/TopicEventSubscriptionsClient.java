@@ -24,7 +24,7 @@ public interface TopicEventSubscriptionsClient {
      * <p>Get all delivery attributes for an event subscription for topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the domain topic.
+     * @param topicName Name of the topic.
      * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -42,7 +42,7 @@ public interface TopicEventSubscriptionsClient {
      * <p>Get all delivery attributes for an event subscription for topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the domain topic.
+     * @param topicName Name of the topic.
      * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -59,7 +59,7 @@ public interface TopicEventSubscriptionsClient {
      * <p>Get properties of an event subscription of a topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the partner topic.
+     * @param topicName Name of the topic.
      * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
      *     3 and 100 characters in length and use alphanumeric letters only.
      * @param context The context to associate with this operation.
@@ -78,7 +78,7 @@ public interface TopicEventSubscriptionsClient {
      * <p>Get properties of an event subscription of a topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the partner topic.
+     * @param topicName Name of the topic.
      * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
      *     3 and 100 characters in length and use alphanumeric letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

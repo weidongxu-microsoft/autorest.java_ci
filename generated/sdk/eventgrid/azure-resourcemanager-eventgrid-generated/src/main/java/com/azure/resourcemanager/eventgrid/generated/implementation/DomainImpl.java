@@ -16,12 +16,15 @@ import com.azure.resourcemanager.eventgrid.generated.models.DomainProvisioningSt
 import com.azure.resourcemanager.eventgrid.generated.models.DomainRegenerateKeyRequest;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainSharedAccessKeys;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainUpdateParameters;
+import com.azure.resourcemanager.eventgrid.generated.models.EventTypeInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -57,12 +60,16 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         }
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
+    public ResourceSku sku() {
+        return this.innerModel().sku();
     }
 
     public IdentityInfo identity() {
         return this.innerModel().identity();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public List<PrivateEndpointConnection> privateEndpointConnections() {
@@ -83,12 +90,20 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this.innerModel().provisioningState();
     }
 
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.innerModel().minimumTlsVersionAllowed();
+    }
+
     public String endpoint() {
         return this.innerModel().endpoint();
     }
 
     public InputSchema inputSchema() {
         return this.innerModel().inputSchema();
+    }
+
+    public EventTypeInfo eventTypeInfo() {
+        return this.innerModel().eventTypeInfo();
     }
 
     public InputSchemaMapping inputSchemaMapping() {
@@ -272,6 +287,16 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         }
     }
 
+    public DomainImpl withSku(ResourceSku sku) {
+        if (isInCreateMode()) {
+            this.innerModel().withSku(sku);
+            return this;
+        } else {
+            this.updateDomainUpdateParameters.withSku(sku);
+            return this;
+        }
+    }
+
     public DomainImpl withIdentity(IdentityInfo identity) {
         if (isInCreateMode()) {
             this.innerModel().withIdentity(identity);
@@ -282,9 +307,29 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         }
     }
 
+    public DomainImpl withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        if (isInCreateMode()) {
+            this.innerModel().withMinimumTlsVersionAllowed(minimumTlsVersionAllowed);
+            return this;
+        } else {
+            this.updateDomainUpdateParameters.withMinimumTlsVersionAllowed(minimumTlsVersionAllowed);
+            return this;
+        }
+    }
+
     public DomainImpl withInputSchema(InputSchema inputSchema) {
         this.innerModel().withInputSchema(inputSchema);
         return this;
+    }
+
+    public DomainImpl withEventTypeInfo(EventTypeInfo eventTypeInfo) {
+        if (isInCreateMode()) {
+            this.innerModel().withEventTypeInfo(eventTypeInfo);
+            return this;
+        } else {
+            this.updateDomainUpdateParameters.withEventTypeInfo(eventTypeInfo);
+            return this;
+        }
     }
 
     public DomainImpl withInputSchemaMapping(InputSchemaMapping inputSchemaMapping) {

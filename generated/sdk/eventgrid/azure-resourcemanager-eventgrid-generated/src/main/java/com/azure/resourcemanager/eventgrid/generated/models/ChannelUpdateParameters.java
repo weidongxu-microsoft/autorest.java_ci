@@ -59,6 +59,31 @@ public final class ChannelUpdateParameters {
     }
 
     /**
+     * Get the partnerDestinationInfo property: Partner destination properties which can be updated if the channel is of
+     * type PartnerDestination.
+     *
+     * @return the partnerDestinationInfo value.
+     */
+    public PartnerUpdateDestinationInfo partnerDestinationInfo() {
+        return this.innerProperties() == null ? null : this.innerProperties().partnerDestinationInfo();
+    }
+
+    /**
+     * Set the partnerDestinationInfo property: Partner destination properties which can be updated if the channel is of
+     * type PartnerDestination.
+     *
+     * @param partnerDestinationInfo the partnerDestinationInfo value to set.
+     * @return the ChannelUpdateParameters object itself.
+     */
+    public ChannelUpdateParameters withPartnerDestinationInfo(PartnerUpdateDestinationInfo partnerDestinationInfo) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ChannelUpdateParametersProperties();
+        }
+        this.innerProperties().withPartnerDestinationInfo(partnerDestinationInfo);
+        return this;
+    }
+
+    /**
      * Get the partnerTopicInfo property: Partner topic properties which can be updated if the channel is of type
      * PartnerTopic.
      *

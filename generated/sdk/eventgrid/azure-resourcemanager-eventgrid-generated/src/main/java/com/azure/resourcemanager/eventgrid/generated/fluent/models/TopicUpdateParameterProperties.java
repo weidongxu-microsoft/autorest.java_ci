@@ -6,8 +6,10 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.models.DataResidencyBoundary;
+import com.azure.resourcemanager.eventgrid.generated.models.EventTypeInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -31,6 +33,12 @@ public final class TopicUpdateParameterProperties {
     private List<InboundIpRule> inboundIpRules;
 
     /*
+     * Minimum TLS version of the publisher allowed to publish to this domain
+     */
+    @JsonProperty(value = "minimumTlsVersionAllowed")
+    private TlsVersion minimumTlsVersionAllowed;
+
+    /*
      * This boolean is used to enable or disable local auth. Default value is false. When the property is set to true,
      * only AAD token will be used to authenticate if user is allowed to publish to the topic.
      */
@@ -42,6 +50,12 @@ public final class TopicUpdateParameterProperties {
      */
     @JsonProperty(value = "dataResidencyBoundary")
     private DataResidencyBoundary dataResidencyBoundary;
+
+    /*
+     * The eventTypeInfo for the topic.
+     */
+    @JsonProperty(value = "eventTypeInfo")
+    private EventTypeInfo eventTypeInfo;
 
     /** Creates an instance of TopicUpdateParameterProperties class. */
     public TopicUpdateParameterProperties() {
@@ -96,6 +110,28 @@ public final class TopicUpdateParameterProperties {
     }
 
     /**
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.minimumTlsVersionAllowed;
+    }
+
+    /**
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
+     *
+     * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
+     * @return the TopicUpdateParameterProperties object itself.
+     */
+    public TopicUpdateParameterProperties withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        this.minimumTlsVersionAllowed = minimumTlsVersionAllowed;
+        return this;
+    }
+
+    /**
      * Get the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
      * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
      * the topic.
@@ -140,6 +176,26 @@ public final class TopicUpdateParameterProperties {
     }
 
     /**
+     * Get the eventTypeInfo property: The eventTypeInfo for the topic.
+     *
+     * @return the eventTypeInfo value.
+     */
+    public EventTypeInfo eventTypeInfo() {
+        return this.eventTypeInfo;
+    }
+
+    /**
+     * Set the eventTypeInfo property: The eventTypeInfo for the topic.
+     *
+     * @param eventTypeInfo the eventTypeInfo value to set.
+     * @return the TopicUpdateParameterProperties object itself.
+     */
+    public TopicUpdateParameterProperties withEventTypeInfo(EventTypeInfo eventTypeInfo) {
+        this.eventTypeInfo = eventTypeInfo;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -147,6 +203,9 @@ public final class TopicUpdateParameterProperties {
     public void validate() {
         if (inboundIpRules() != null) {
             inboundIpRules().forEach(e -> e.validate());
+        }
+        if (eventTypeInfo() != null) {
+            eventTypeInfo().validate();
         }
     }
 }

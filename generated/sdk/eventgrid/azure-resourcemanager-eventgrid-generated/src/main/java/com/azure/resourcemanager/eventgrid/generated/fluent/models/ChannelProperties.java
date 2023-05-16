@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.models.ChannelProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.ChannelType;
+import com.azure.resourcemanager.eventgrid.generated.models.PartnerDestinationInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.ReadinessState;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,6 +28,13 @@ public final class ChannelProperties {
      */
     @JsonProperty(value = "partnerTopicInfo")
     private PartnerTopicInfo partnerTopicInfo;
+
+    /*
+     * This property should be populated when channelType is PartnerDestination and represents information about the
+     * partner destination resource corresponding to the channel.
+     */
+    @JsonProperty(value = "partnerDestinationInfo")
+    private PartnerDestinationInfo partnerDestinationInfo;
 
     /*
      * Context or helpful message that can be used during the approval process by the subscriber.
@@ -96,6 +104,28 @@ public final class ChannelProperties {
      */
     public ChannelProperties withPartnerTopicInfo(PartnerTopicInfo partnerTopicInfo) {
         this.partnerTopicInfo = partnerTopicInfo;
+        return this;
+    }
+
+    /**
+     * Get the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination
+     * and represents information about the partner destination resource corresponding to the channel.
+     *
+     * @return the partnerDestinationInfo value.
+     */
+    public PartnerDestinationInfo partnerDestinationInfo() {
+        return this.partnerDestinationInfo;
+    }
+
+    /**
+     * Set the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination
+     * and represents information about the partner destination resource corresponding to the channel.
+     *
+     * @param partnerDestinationInfo the partnerDestinationInfo value to set.
+     * @return the ChannelProperties object itself.
+     */
+    public ChannelProperties withPartnerDestinationInfo(PartnerDestinationInfo partnerDestinationInfo) {
+        this.partnerDestinationInfo = partnerDestinationInfo;
         return this;
     }
 
@@ -191,6 +221,9 @@ public final class ChannelProperties {
     public void validate() {
         if (partnerTopicInfo() != null) {
             partnerTopicInfo().validate();
+        }
+        if (partnerDestinationInfo() != null) {
+            partnerDestinationInfo().validate();
         }
     }
 }

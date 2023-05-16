@@ -24,7 +24,8 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     private String queueName;
 
     /*
-     * Storage queue message time to live in seconds.
+     * Storage queue message time to live in seconds. This value cannot be zero or negative with the exception of using
+     * -1 to indicate that the Time To Live of the message is Infinite.
      */
     @JsonProperty(value = "queueMessageTimeToLiveInSeconds")
     private Long queueMessageTimeToLiveInSeconds;
@@ -78,7 +79,9 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Get the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds.
+     * Get the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value
+     * cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is
+     * Infinite.
      *
      * @return the queueMessageTimeToLiveInSeconds value.
      */
@@ -87,7 +90,9 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Set the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds.
+     * Set the queueMessageTimeToLiveInSeconds property: Storage queue message time to live in seconds. This value
+     * cannot be zero or negative with the exception of using -1 to indicate that the Time To Live of the message is
+     * Infinite.
      *
      * @param queueMessageTimeToLiveInSeconds the queueMessageTimeToLiveInSeconds value to set.
      * @return the StorageQueueEventSubscriptionDestinationProperties object itself.

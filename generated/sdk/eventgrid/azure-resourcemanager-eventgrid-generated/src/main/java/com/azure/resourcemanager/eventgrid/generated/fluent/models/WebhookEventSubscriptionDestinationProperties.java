@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryAttributeMapping;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -55,6 +56,12 @@ public final class WebhookEventSubscriptionDestinationProperties {
      */
     @JsonProperty(value = "deliveryAttributeMappings")
     private List<DeliveryAttributeMapping> deliveryAttributeMappings;
+
+    /*
+     * Minimum TLS version that should be supported by webhook endpoint
+     */
+    @JsonProperty(value = "minimumTlsVersionAllowed")
+    private TlsVersion minimumTlsVersionAllowed;
 
     /** Creates an instance of WebhookEventSubscriptionDestinationProperties class. */
     public WebhookEventSubscriptionDestinationProperties() {
@@ -195,6 +202,27 @@ public final class WebhookEventSubscriptionDestinationProperties {
     public WebhookEventSubscriptionDestinationProperties withDeliveryAttributeMappings(
         List<DeliveryAttributeMapping> deliveryAttributeMappings) {
         this.deliveryAttributeMappings = deliveryAttributeMappings;
+        return this;
+    }
+
+    /**
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version that should be supported by webhook endpoint.
+     *
+     * @return the minimumTlsVersionAllowed value.
+     */
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.minimumTlsVersionAllowed;
+    }
+
+    /**
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version that should be supported by webhook endpoint.
+     *
+     * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
+     * @return the WebhookEventSubscriptionDestinationProperties object itself.
+     */
+    public WebhookEventSubscriptionDestinationProperties withMinimumTlsVersionAllowed(
+        TlsVersion minimumTlsVersionAllowed) {
+        this.minimumTlsVersionAllowed = minimumTlsVersionAllowed;
         return this;
     }
 

@@ -19,6 +19,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceUpda
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicRoutingMode;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -79,6 +80,10 @@ public final class PartnerNamespaceImpl
 
     public String partnerRegistrationFullyQualifiedId() {
         return this.innerModel().partnerRegistrationFullyQualifiedId();
+    }
+
+    public TlsVersion minimumTlsVersionAllowed() {
+        return this.innerModel().minimumTlsVersionAllowed();
     }
 
     public String endpoint() {
@@ -259,6 +264,16 @@ public final class PartnerNamespaceImpl
     public PartnerNamespaceImpl withPartnerRegistrationFullyQualifiedId(String partnerRegistrationFullyQualifiedId) {
         this.innerModel().withPartnerRegistrationFullyQualifiedId(partnerRegistrationFullyQualifiedId);
         return this;
+    }
+
+    public PartnerNamespaceImpl withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed) {
+        if (isInCreateMode()) {
+            this.innerModel().withMinimumTlsVersionAllowed(minimumTlsVersionAllowed);
+            return this;
+        } else {
+            this.updatePartnerNamespaceUpdateParameters.withMinimumTlsVersionAllowed(minimumTlsVersionAllowed);
+            return this;
+        }
     }
 
     public PartnerNamespaceImpl withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
