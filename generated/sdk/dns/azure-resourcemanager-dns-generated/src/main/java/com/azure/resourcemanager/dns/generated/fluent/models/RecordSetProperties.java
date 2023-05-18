@@ -10,11 +10,14 @@ import com.azure.resourcemanager.dns.generated.models.ARecord;
 import com.azure.resourcemanager.dns.generated.models.AaaaRecord;
 import com.azure.resourcemanager.dns.generated.models.CaaRecord;
 import com.azure.resourcemanager.dns.generated.models.CnameRecord;
+import com.azure.resourcemanager.dns.generated.models.DsRecord;
 import com.azure.resourcemanager.dns.generated.models.MxRecord;
+import com.azure.resourcemanager.dns.generated.models.NaptrRecord;
 import com.azure.resourcemanager.dns.generated.models.NsRecord;
 import com.azure.resourcemanager.dns.generated.models.PtrRecord;
 import com.azure.resourcemanager.dns.generated.models.SoaRecord;
 import com.azure.resourcemanager.dns.generated.models.SrvRecord;
+import com.azure.resourcemanager.dns.generated.models.TlsaRecord;
 import com.azure.resourcemanager.dns.generated.models.TxtRecord;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -114,6 +117,24 @@ public final class RecordSetProperties {
      */
     @JsonProperty(value = "caaRecords")
     private List<CaaRecord> caaRecords;
+
+    /*
+     * The list of DS records in the record set.
+     */
+    @JsonProperty(value = "DSRecords")
+    private List<DsRecord> dsRecords;
+
+    /*
+     * The list of TLSA records in the record set.
+     */
+    @JsonProperty(value = "TLSARecords")
+    private List<TlsaRecord> tlsaRecords;
+
+    /*
+     * The list of NAPTR records in the record set.
+     */
+    @JsonProperty(value = "NAPTRRecords")
+    private List<NaptrRecord> naptrRecords;
 
     /** Creates an instance of RecordSetProperties class. */
     public RecordSetProperties() {
@@ -398,6 +419,66 @@ public final class RecordSetProperties {
     }
 
     /**
+     * Get the dsRecords property: The list of DS records in the record set.
+     *
+     * @return the dsRecords value.
+     */
+    public List<DsRecord> dsRecords() {
+        return this.dsRecords;
+    }
+
+    /**
+     * Set the dsRecords property: The list of DS records in the record set.
+     *
+     * @param dsRecords the dsRecords value to set.
+     * @return the RecordSetProperties object itself.
+     */
+    public RecordSetProperties withDsRecords(List<DsRecord> dsRecords) {
+        this.dsRecords = dsRecords;
+        return this;
+    }
+
+    /**
+     * Get the tlsaRecords property: The list of TLSA records in the record set.
+     *
+     * @return the tlsaRecords value.
+     */
+    public List<TlsaRecord> tlsaRecords() {
+        return this.tlsaRecords;
+    }
+
+    /**
+     * Set the tlsaRecords property: The list of TLSA records in the record set.
+     *
+     * @param tlsaRecords the tlsaRecords value to set.
+     * @return the RecordSetProperties object itself.
+     */
+    public RecordSetProperties withTlsaRecords(List<TlsaRecord> tlsaRecords) {
+        this.tlsaRecords = tlsaRecords;
+        return this;
+    }
+
+    /**
+     * Get the naptrRecords property: The list of NAPTR records in the record set.
+     *
+     * @return the naptrRecords value.
+     */
+    public List<NaptrRecord> naptrRecords() {
+        return this.naptrRecords;
+    }
+
+    /**
+     * Set the naptrRecords property: The list of NAPTR records in the record set.
+     *
+     * @param naptrRecords the naptrRecords value to set.
+     * @return the RecordSetProperties object itself.
+     */
+    public RecordSetProperties withNaptrRecords(List<NaptrRecord> naptrRecords) {
+        this.naptrRecords = naptrRecords;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -432,6 +513,15 @@ public final class RecordSetProperties {
         }
         if (caaRecords() != null) {
             caaRecords().forEach(e -> e.validate());
+        }
+        if (dsRecords() != null) {
+            dsRecords().forEach(e -> e.validate());
+        }
+        if (tlsaRecords() != null) {
+            tlsaRecords().forEach(e -> e.validate());
+        }
+        if (naptrRecords() != null) {
+            naptrRecords().forEach(e -> e.validate());
         }
     }
 }

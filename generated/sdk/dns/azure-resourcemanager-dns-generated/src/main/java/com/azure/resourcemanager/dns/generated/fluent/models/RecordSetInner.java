@@ -11,11 +11,14 @@ import com.azure.resourcemanager.dns.generated.models.ARecord;
 import com.azure.resourcemanager.dns.generated.models.AaaaRecord;
 import com.azure.resourcemanager.dns.generated.models.CaaRecord;
 import com.azure.resourcemanager.dns.generated.models.CnameRecord;
+import com.azure.resourcemanager.dns.generated.models.DsRecord;
 import com.azure.resourcemanager.dns.generated.models.MxRecord;
+import com.azure.resourcemanager.dns.generated.models.NaptrRecord;
 import com.azure.resourcemanager.dns.generated.models.NsRecord;
 import com.azure.resourcemanager.dns.generated.models.PtrRecord;
 import com.azure.resourcemanager.dns.generated.models.SoaRecord;
 import com.azure.resourcemanager.dns.generated.models.SrvRecord;
+import com.azure.resourcemanager.dns.generated.models.TlsaRecord;
 import com.azure.resourcemanager.dns.generated.models.TxtRecord;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -383,6 +386,75 @@ public final class RecordSetInner extends ProxyResource {
             this.innerProperties = new RecordSetProperties();
         }
         this.innerProperties().withCaaRecords(caaRecords);
+        return this;
+    }
+
+    /**
+     * Get the dsRecords property: The list of DS records in the record set.
+     *
+     * @return the dsRecords value.
+     */
+    public List<DsRecord> dsRecords() {
+        return this.innerProperties() == null ? null : this.innerProperties().dsRecords();
+    }
+
+    /**
+     * Set the dsRecords property: The list of DS records in the record set.
+     *
+     * @param dsRecords the dsRecords value to set.
+     * @return the RecordSetInner object itself.
+     */
+    public RecordSetInner withDsRecords(List<DsRecord> dsRecords) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new RecordSetProperties();
+        }
+        this.innerProperties().withDsRecords(dsRecords);
+        return this;
+    }
+
+    /**
+     * Get the tlsaRecords property: The list of TLSA records in the record set.
+     *
+     * @return the tlsaRecords value.
+     */
+    public List<TlsaRecord> tlsaRecords() {
+        return this.innerProperties() == null ? null : this.innerProperties().tlsaRecords();
+    }
+
+    /**
+     * Set the tlsaRecords property: The list of TLSA records in the record set.
+     *
+     * @param tlsaRecords the tlsaRecords value to set.
+     * @return the RecordSetInner object itself.
+     */
+    public RecordSetInner withTlsaRecords(List<TlsaRecord> tlsaRecords) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new RecordSetProperties();
+        }
+        this.innerProperties().withTlsaRecords(tlsaRecords);
+        return this;
+    }
+
+    /**
+     * Get the naptrRecords property: The list of NAPTR records in the record set.
+     *
+     * @return the naptrRecords value.
+     */
+    public List<NaptrRecord> naptrRecords() {
+        return this.innerProperties() == null ? null : this.innerProperties().naptrRecords();
+    }
+
+    /**
+     * Set the naptrRecords property: The list of NAPTR records in the record set.
+     *
+     * @param naptrRecords the naptrRecords value to set.
+     * @return the RecordSetInner object itself.
+     */
+    public RecordSetInner withNaptrRecords(List<NaptrRecord> naptrRecords) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new RecordSetProperties();
+        }
+        this.innerProperties().withNaptrRecords(naptrRecords);
         return this;
     }
 

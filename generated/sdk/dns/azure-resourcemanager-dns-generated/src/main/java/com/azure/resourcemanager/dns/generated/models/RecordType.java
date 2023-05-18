@@ -37,7 +37,16 @@ public enum RecordType {
     SRV("SRV"),
 
     /** Enum value TXT. */
-    TXT("TXT");
+    TXT("TXT"),
+
+    /** Enum value TLSA. */
+    TLSA("TLSA"),
+
+    /** Enum value DS. */
+    DS("DS"),
+
+    /** Enum value NAPTR. */
+    NAPTR("NAPTR");
 
     /** The actual serialized value for a RecordType instance. */
     private final String value;

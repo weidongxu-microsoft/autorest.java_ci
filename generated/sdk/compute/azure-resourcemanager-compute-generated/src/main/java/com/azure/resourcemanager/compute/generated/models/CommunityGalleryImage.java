@@ -64,11 +64,11 @@ public interface CommunityGalleryImage {
     OffsetDateTime endOfLifeDate();
 
     /**
-     * Gets the identifier property: This is the gallery image definition identifier.
+     * Gets the identifier property: This is the community gallery image definition identifier.
      *
      * @return the identifier value.
      */
-    GalleryImageIdentifier identifier();
+    CommunityGalleryImageIdentifier identifier();
 
     /**
      * Gets the recommended property: The properties describe the recommended machine configuration for this Image

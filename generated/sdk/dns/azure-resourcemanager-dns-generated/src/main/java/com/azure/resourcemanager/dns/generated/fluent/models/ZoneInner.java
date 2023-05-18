@@ -7,6 +7,8 @@ package com.azure.resourcemanager.dns.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
+import com.azure.core.management.SystemData;
+import com.azure.resourcemanager.dns.generated.models.SigningKey;
 import com.azure.resourcemanager.dns.generated.models.ZoneType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -26,6 +28,12 @@ public final class ZoneInner extends Resource {
      */
     @JsonProperty(value = "properties")
     private ZoneProperties innerProperties;
+
+    /*
+     * Metadata pertaining to creation and last modification of the resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /** Creates an instance of ZoneInner class. */
     public ZoneInner() {
@@ -58,6 +66,15 @@ public final class ZoneInner extends Resource {
      */
     private ZoneProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /** {@inheritDoc} */
@@ -185,6 +202,15 @@ public final class ZoneInner extends Resource {
         }
         this.innerProperties().withResolutionVirtualNetworks(resolutionVirtualNetworks);
         return this;
+    }
+
+    /**
+     * Get the signingKeys property: The list of signing keys.
+     *
+     * @return the signingKeys value.
+     */
+    public List<SigningKey> signingKeys() {
+        return this.innerProperties() == null ? null : this.innerProperties().signingKeys();
     }
 
     /**

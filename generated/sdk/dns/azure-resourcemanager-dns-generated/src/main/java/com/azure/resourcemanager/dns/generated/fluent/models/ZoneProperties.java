@@ -6,6 +6,7 @@ package com.azure.resourcemanager.dns.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
+import com.azure.resourcemanager.dns.generated.models.SigningKey;
 import com.azure.resourcemanager.dns.generated.models.ZoneType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -60,6 +61,12 @@ public final class ZoneProperties {
      */
     @JsonProperty(value = "resolutionVirtualNetworks")
     private List<SubResource> resolutionVirtualNetworks;
+
+    /*
+     * The list of signing keys.
+     */
+    @JsonProperty(value = "signingKeys", access = JsonProperty.Access.WRITE_ONLY)
+    private List<SigningKey> signingKeys;
 
     /** Creates an instance of ZoneProperties class. */
     public ZoneProperties() {
@@ -170,10 +177,22 @@ public final class ZoneProperties {
     }
 
     /**
+     * Get the signingKeys property: The list of signing keys.
+     *
+     * @return the signingKeys value.
+     */
+    public List<SigningKey> signingKeys() {
+        return this.signingKeys;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (signingKeys() != null) {
+            signingKeys().forEach(e -> e.validate());
+        }
     }
 }

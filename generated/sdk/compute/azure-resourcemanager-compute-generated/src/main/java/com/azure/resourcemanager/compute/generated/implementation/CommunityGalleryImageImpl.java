@@ -7,9 +7,9 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageInner;
 import com.azure.resourcemanager.compute.generated.models.Architecture;
 import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImage;
+import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImageIdentifier;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
-import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
 import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.ImagePurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemStateTypes;
@@ -59,7 +59,7 @@ public final class CommunityGalleryImageImpl implements CommunityGalleryImage {
         return this.innerModel().endOfLifeDate();
     }
 
-    public GalleryImageIdentifier identifier() {
+    public CommunityGalleryImageIdentifier identifier() {
         return this.innerModel().identifier();
     }
 

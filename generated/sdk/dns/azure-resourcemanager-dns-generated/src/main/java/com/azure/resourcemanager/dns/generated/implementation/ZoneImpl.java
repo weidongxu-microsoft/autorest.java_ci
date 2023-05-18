@@ -6,8 +6,10 @@ package com.azure.resourcemanager.dns.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
+import com.azure.resourcemanager.dns.generated.models.SigningKey;
 import com.azure.resourcemanager.dns.generated.models.Zone;
 import com.azure.resourcemanager.dns.generated.models.ZoneType;
 import com.azure.resourcemanager.dns.generated.models.ZoneUpdate;
@@ -49,6 +51,10 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this.innerModel().etag();
     }
 
+    public SystemData systemData() {
+        return this.innerModel().systemData();
+    }
+
     public Long maxNumberOfRecordSets() {
         return this.innerModel().maxNumberOfRecordSets();
     }
@@ -85,6 +91,15 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
 
     public List<SubResource> resolutionVirtualNetworks() {
         List<SubResource> inner = this.innerModel().resolutionVirtualNetworks();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<SigningKey> signingKeys() {
+        List<SigningKey> inner = this.innerModel().signingKeys();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

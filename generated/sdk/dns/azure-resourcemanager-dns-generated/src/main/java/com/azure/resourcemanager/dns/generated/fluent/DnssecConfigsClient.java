@@ -11,52 +11,77 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
-import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
-import com.azure.resourcemanager.dns.generated.models.ZoneUpdate;
+import com.azure.resourcemanager.dns.generated.fluent.models.DnssecConfigInner;
 
-/** An instance of this class provides access to all the operations defined in ZonesClient. */
-public interface ZonesClient {
+/** An instance of this class provides access to all the operations defined in DnssecConfigsClient. */
+public interface DnssecConfigsClient {
     /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
-     *     Other values will be ignored.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of represents the DNSSEC configuration.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<DnssecConfigInner>, DnssecConfigInner> beginCreateOrUpdate(
+        String resourceGroupName, String zoneName);
+
+    /**
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response}.
+     * @return the {@link SyncPoller} for polling of represents the DNSSEC configuration.
      */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ZoneInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String zoneName,
-        ZoneInner parameters,
-        String ifMatch,
-        String ifNoneMatch,
-        Context context);
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<DnssecConfigInner>, DnssecConfigInner> beginCreateOrUpdate(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context);
 
     /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
+     * @return represents the DNSSEC configuration.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ZoneInner createOrUpdate(String resourceGroupName, String zoneName, ZoneInner parameters);
+    DnssecConfigInner createOrUpdate(String resourceGroupName, String zoneName);
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the DNSSEC configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DnssecConfigInner createOrUpdate(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context);
+
+    /**
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -69,12 +94,12 @@ public interface ZonesClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String zoneName);
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -86,7 +111,7 @@ public interface ZonesClient {
         String resourceGroupName, String zoneName, String ifMatch, Context context);
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -98,12 +123,12 @@ public interface ZonesClient {
     void delete(String resourceGroupName, String zoneName);
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -113,7 +138,7 @@ public interface ZonesClient {
     void delete(String resourceGroupName, String zoneName, String ifMatch, Context context);
 
     /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     * Gets the DNSSEC configuration.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -121,102 +146,48 @@ public interface ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone along with {@link Response}.
+     * @return the DNSSEC configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ZoneInner> getByResourceGroupWithResponse(String resourceGroupName, String zoneName, Context context);
+    Response<DnssecConfigInner> getWithResponse(String resourceGroupName, String zoneName, Context context);
 
     /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     * Gets the DNSSEC configuration.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
+     * @return the DNSSEC configuration.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ZoneInner getByResourceGroup(String resourceGroupName, String zoneName);
+    DnssecConfigInner get(String resourceGroupName, String zoneName);
 
     /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response}.
+     * @return the response to a List DNSSEC configurations operation as paginated response with {@link PagedIterable}.
      */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ZoneInner> updateWithResponse(
-        String resourceGroupName, String zoneName, ZoneUpdate parameters, String ifMatch, Context context);
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<DnssecConfigInner> listByDnsZone(String resourceGroupName, String zoneName);
 
     /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ZoneInner update(String resourceGroupName, String zoneName, ZoneUpdate parameters);
-
-    /**
-     * Lists the DNS zones within a resource group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ZoneInner> listByResourceGroup(String resourceGroupName);
-
-    /**
-     * Lists the DNS zones within a resource group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
+     * @return the response to a List DNSSEC configurations operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ZoneInner> listByResourceGroup(String resourceGroupName, Integer top, Context context);
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ZoneInner> list();
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @param top The maximum number of DNS zones to return. If not specified, returns up to 100 zones.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ZoneInner> list(Integer top, Context context);
+    PagedIterable<DnssecConfigInner> listByDnsZone(String resourceGroupName, String zoneName, Context context);
 }

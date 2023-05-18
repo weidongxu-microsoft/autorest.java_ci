@@ -6,6 +6,7 @@ package com.azure.resourcemanager.dns.generated.models;
 
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
 import java.util.List;
@@ -54,6 +55,13 @@ public interface Zone {
      * @return the etag value.
      */
     String etag();
+
+    /**
+     * Gets the systemData property: Metadata pertaining to creation and last modification of the resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
 
     /**
      * Gets the maxNumberOfRecordSets property: The maximum number of record sets that can be created in this DNS zone.
@@ -109,6 +117,13 @@ public interface Zone {
      * @return the resolutionVirtualNetworks value.
      */
     List<SubResource> resolutionVirtualNetworks();
+
+    /**
+     * Gets the signingKeys property: The list of signing keys.
+     *
+     * @return the signingKeys value.
+     */
+    List<SigningKey> signingKeys();
 
     /**
      * Gets the region of the resource.
@@ -176,7 +191,7 @@ public interface Zone {
             /**
              * Specifies resourceGroupName.
              *
-             * @param resourceGroupName The name of the resource group.
+             * @param resourceGroupName The name of the resource group. The name is case insensitive.
              * @return the next definition stage.
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);

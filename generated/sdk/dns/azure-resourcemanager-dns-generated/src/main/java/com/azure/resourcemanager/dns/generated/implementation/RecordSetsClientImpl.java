@@ -214,7 +214,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Updates a record set within a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -289,7 +289,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Updates a record set within a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -363,7 +363,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Updates a record set within a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -390,7 +390,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Updates a record set within a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -421,7 +421,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Updates a record set within a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -445,13 +445,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone.
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
+     * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
@@ -525,13 +525,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone.
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
+     * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
@@ -604,13 +604,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone.
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
+     * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -633,13 +633,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone.
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
+     * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
@@ -675,13 +675,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone.
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
+     * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -710,13 +710,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone.
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
-     *     deleted when the DNS zone is deleted).
+     * @param recordType The type of DNS record in this record set.
      * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
      *     last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -777,13 +777,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone.
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
-     *     deleted when the DNS zone is deleted).
+     * @param recordType The type of DNS record in this record set.
      * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
      *     last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
@@ -843,13 +843,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone.
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
-     *     deleted when the DNS zone is deleted).
+     * @param recordType The type of DNS record in this record set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -864,13 +864,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone.
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
-     *     deleted when the DNS zone is deleted).
+     * @param recordType The type of DNS record in this record set.
      * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
      *     last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
@@ -892,13 +892,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone.
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
-     *     deleted when the DNS zone is deleted).
+     * @param recordType The type of DNS record in this record set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -912,7 +912,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Gets a record set.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -971,7 +971,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Gets a record set.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -1032,7 +1032,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Gets a record set.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -1051,7 +1051,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Gets a record set.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -1074,7 +1074,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Gets a record set.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
@@ -1092,9 +1092,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists the record sets of a specified type in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param recordType The type of record sets to enumerate.
+     * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
      *     enumerations. If this parameter is specified, Enumeration will return only records that end with
@@ -1161,9 +1161,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists the record sets of a specified type in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param recordType The type of record sets to enumerate.
+     * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
      *     enumerations. If this parameter is specified, Enumeration will return only records that end with
@@ -1233,9 +1233,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists the record sets of a specified type in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param recordType The type of record sets to enumerate.
+     * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
      *     enumerations. If this parameter is specified, Enumeration will return only records that end with
@@ -1256,9 +1256,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists the record sets of a specified type in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param recordType The type of record sets to enumerate.
+     * @param recordType The type of DNS record in this record set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1277,9 +1277,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists the record sets of a specified type in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param recordType The type of record sets to enumerate.
+     * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
      *     enumerations. If this parameter is specified, Enumeration will return only records that end with
@@ -1306,9 +1306,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists the record sets of a specified type in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param recordType The type of record sets to enumerate.
+     * @param recordType The type of DNS record in this record set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1324,9 +1324,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists the record sets of a specified type in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param recordType The type of record sets to enumerate.
+     * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
      *     enumerations. If this parameter is specified, Enumeration will return only records that end with
@@ -1352,7 +1352,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1416,7 +1416,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1478,7 +1478,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1500,7 +1500,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1519,7 +1519,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1542,7 +1542,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1559,7 +1559,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1580,7 +1580,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1644,7 +1644,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1706,7 +1706,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1728,7 +1728,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1747,7 +1747,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
@@ -1770,7 +1770,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1787,7 +1787,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     /**
      * Lists all record sets in a DNS zone.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
      * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set

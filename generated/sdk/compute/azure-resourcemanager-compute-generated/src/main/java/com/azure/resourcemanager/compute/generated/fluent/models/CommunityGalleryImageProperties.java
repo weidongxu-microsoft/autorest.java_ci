@@ -7,9 +7,9 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.Architecture;
+import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImageIdentifier;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
-import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
 import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.ImagePurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemStateTypes;
@@ -44,10 +44,10 @@ public final class CommunityGalleryImageProperties {
     private OffsetDateTime endOfLifeDate;
 
     /*
-     * This is the gallery image definition identifier.
+     * This is the community gallery image definition identifier.
      */
     @JsonProperty(value = "identifier", required = true)
-    private GalleryImageIdentifier identifier;
+    private CommunityGalleryImageIdentifier identifier;
 
     /*
      * The properties describe the recommended machine configuration for this Image Definition. These properties are
@@ -171,21 +171,21 @@ public final class CommunityGalleryImageProperties {
     }
 
     /**
-     * Get the identifier property: This is the gallery image definition identifier.
+     * Get the identifier property: This is the community gallery image definition identifier.
      *
      * @return the identifier value.
      */
-    public GalleryImageIdentifier identifier() {
+    public CommunityGalleryImageIdentifier identifier() {
         return this.identifier;
     }
 
     /**
-     * Set the identifier property: This is the gallery image definition identifier.
+     * Set the identifier property: This is the community gallery image definition identifier.
      *
      * @param identifier the identifier value to set.
      * @return the CommunityGalleryImageProperties object itself.
      */
-    public CommunityGalleryImageProperties withIdentifier(GalleryImageIdentifier identifier) {
+    public CommunityGalleryImageProperties withIdentifier(CommunityGalleryImageIdentifier identifier) {
         this.identifier = identifier;
         return this;
     }

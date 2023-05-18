@@ -10,12 +10,15 @@ import com.azure.resourcemanager.dns.generated.models.ARecord;
 import com.azure.resourcemanager.dns.generated.models.AaaaRecord;
 import com.azure.resourcemanager.dns.generated.models.CaaRecord;
 import com.azure.resourcemanager.dns.generated.models.CnameRecord;
+import com.azure.resourcemanager.dns.generated.models.DsRecord;
 import com.azure.resourcemanager.dns.generated.models.MxRecord;
+import com.azure.resourcemanager.dns.generated.models.NaptrRecord;
 import com.azure.resourcemanager.dns.generated.models.NsRecord;
 import com.azure.resourcemanager.dns.generated.models.PtrRecord;
 import com.azure.resourcemanager.dns.generated.models.RecordSet;
 import com.azure.resourcemanager.dns.generated.models.SoaRecord;
 import com.azure.resourcemanager.dns.generated.models.SrvRecord;
+import com.azure.resourcemanager.dns.generated.models.TlsaRecord;
 import com.azure.resourcemanager.dns.generated.models.TxtRecord;
 import java.util.Collections;
 import java.util.List;
@@ -145,6 +148,33 @@ public final class RecordSetImpl implements RecordSet {
 
     public List<CaaRecord> caaRecords() {
         List<CaaRecord> inner = this.innerModel().caaRecords();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<DsRecord> dsRecords() {
+        List<DsRecord> inner = this.innerModel().dsRecords();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<TlsaRecord> tlsaRecords() {
+        List<TlsaRecord> inner = this.innerModel().tlsaRecords();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<NaptrRecord> naptrRecords() {
+        List<NaptrRecord> inner = this.innerModel().naptrRecords();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

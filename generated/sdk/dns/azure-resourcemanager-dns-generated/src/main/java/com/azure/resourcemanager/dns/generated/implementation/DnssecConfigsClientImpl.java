@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.dns.generated.implementation;
 
-import com.azure.core.annotation.BodyParam;
 import com.azure.core.annotation.Delete;
 import com.azure.core.annotation.ExpectedResponses;
 import com.azure.core.annotation.Get;
@@ -12,7 +11,6 @@ import com.azure.core.annotation.HeaderParam;
 import com.azure.core.annotation.Headers;
 import com.azure.core.annotation.Host;
 import com.azure.core.annotation.HostParam;
-import com.azure.core.annotation.Patch;
 import com.azure.core.annotation.PathParam;
 import com.azure.core.annotation.Put;
 import com.azure.core.annotation.QueryParam;
@@ -32,45 +30,45 @@ import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
-import com.azure.resourcemanager.dns.generated.fluent.ZonesClient;
-import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
-import com.azure.resourcemanager.dns.generated.models.ZoneListResult;
-import com.azure.resourcemanager.dns.generated.models.ZoneUpdate;
+import com.azure.resourcemanager.dns.generated.fluent.DnssecConfigsClient;
+import com.azure.resourcemanager.dns.generated.fluent.models.DnssecConfigInner;
+import com.azure.resourcemanager.dns.generated.models.DnssecConfigListResult;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ZonesClient. */
-public final class ZonesClientImpl implements ZonesClient {
+/** An instance of this class provides access to all the operations defined in DnssecConfigsClient. */
+public final class DnssecConfigsClientImpl implements DnssecConfigsClient {
     /** The proxy service used to perform REST calls. */
-    private final ZonesService service;
+    private final DnssecConfigsService service;
 
     /** The service client containing this operation class. */
     private final DnsManagementClientImpl client;
 
     /**
-     * Initializes an instance of ZonesClientImpl.
+     * Initializes an instance of DnssecConfigsClientImpl.
      *
      * @param client the instance of the service client containing this operation class.
      */
-    ZonesClientImpl(DnsManagementClientImpl client) {
-        this.service = RestProxy.create(ZonesService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+    DnssecConfigsClientImpl(DnsManagementClientImpl client) {
+        this.service =
+            RestProxy.create(DnssecConfigsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
     /**
-     * The interface defining all the services for DnsManagementClientZones to be used by the proxy service to perform
-     * REST calls.
+     * The interface defining all the services for DnsManagementClientDnssecConfigs to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
-    @ServiceInterface(name = "DnsManagementClientZ")
-    public interface ZonesService {
+    @ServiceInterface(name = "DnsManagementClientD")
+    public interface DnssecConfigsService {
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/dnssecConfigs/default")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ZoneInner>> createOrUpdate(
+        Mono<Response<Flux<ByteBuffer>>> createOrUpdate(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("zoneName") String zoneName,
@@ -78,13 +76,12 @@ public final class ZonesClientImpl implements ZonesClient {
             @HeaderParam("If-None-Match") String ifNoneMatch,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") ZoneInner parameters,
             @HeaderParam("Accept") String accept,
             Context context);
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/dnssecConfigs/default")
         @ExpectedResponses({200, 202, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> delete(
@@ -99,10 +96,10 @@ public final class ZonesClientImpl implements ZonesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/dnssecConfigs/default")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ZoneInner>> getByResourceGroup(
+        Mono<Response<DnssecConfigInner>> get(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("zoneName") String zoneName,
@@ -112,41 +109,14 @@ public final class ZonesClientImpl implements ZonesClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}")
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/dnssecConfigs")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ZoneInner>> update(
+        Mono<Response<DnssecConfigListResult>> listByDnsZone(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("zoneName") String zoneName,
-            @HeaderParam("If-Match") String ifMatch,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") ZoneUpdate parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ZoneListResult>> listByResourceGroup(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("$top") Integer top,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Network/dnszones")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ZoneListResult>> list(
-            @HostParam("$host") String endpoint,
-            @QueryParam("$top") Integer top,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @HeaderParam("Accept") String accept,
@@ -156,17 +126,7 @@ public final class ZonesClientImpl implements ZonesClient {
         @Get("{nextLink}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ZoneListResult>> listByResourceGroupNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Get("{nextLink}")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ZoneListResult>> listNext(
+        Mono<Response<DnssecConfigListResult>> listByDnsZoneNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -174,23 +134,22 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
-     *     Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents the DNSSEC configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ZoneInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String zoneName, ZoneInner parameters, String ifMatch, String ifNoneMatch) {
+    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -209,11 +168,6 @@ public final class ZonesClientImpl implements ZonesClient {
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
         }
         final String accept = "application/json";
         return FluxUtil
@@ -228,36 +182,29 @@ public final class ZonesClientImpl implements ZonesClient {
                             ifNoneMatch,
                             this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
-                            parameters,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
-     *     Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents the DNSSEC configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ZoneInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName,
-        String zoneName,
-        ZoneInner parameters,
-        String ifMatch,
-        String ifNoneMatch,
-        Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -277,11 +224,6 @@ public final class ZonesClientImpl implements ZonesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
-        }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -293,84 +235,243 @@ public final class ZonesClientImpl implements ZonesClient {
                 ifNoneMatch,
                 this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
-                parameters,
                 accept,
                 context);
     }
 
     /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone on successful completion of {@link Mono}.
+     * @return the {@link PollerFlux} for polling of represents the DNSSEC configuration.
      */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ZoneInner> createOrUpdateAsync(String resourceGroupName, String zoneName, ZoneInner parameters) {
-        final String ifMatch = null;
-        final String ifNoneMatch = null;
-        return createOrUpdateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch, ifNoneMatch)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<DnssecConfigInner>, DnssecConfigInner> beginCreateOrUpdateAsync(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch) {
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            createOrUpdateWithResponseAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch);
+        return this
+            .client
+            .<DnssecConfigInner, DnssecConfigInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                DnssecConfigInner.class,
+                DnssecConfigInner.class,
+                this.client.getContext());
     }
 
     /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
-     *     Other values will be ignored.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of represents the DNSSEC configuration.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<DnssecConfigInner>, DnssecConfigInner> beginCreateOrUpdateAsync(
+        String resourceGroupName, String zoneName) {
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            createOrUpdateWithResponseAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch);
+        return this
+            .client
+            .<DnssecConfigInner, DnssecConfigInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                DnssecConfigInner.class,
+                DnssecConfigInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response}.
+     * @return the {@link PollerFlux} for polling of represents the DNSSEC configuration.
      */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ZoneInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String zoneName,
-        ZoneInner parameters,
-        String ifMatch,
-        String ifNoneMatch,
-        Context context) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch, ifNoneMatch, context)
-            .block();
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<DnssecConfigInner>, DnssecConfigInner> beginCreateOrUpdateAsync(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            createOrUpdateWithResponseAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch, context);
+        return this
+            .client
+            .<DnssecConfigInner, DnssecConfigInner>getLroResult(
+                mono, this.client.getHttpPipeline(), DnssecConfigInner.class, DnssecConfigInner.class, context);
     }
 
     /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
+     * @return the {@link SyncPoller} for polling of represents the DNSSEC configuration.
      */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ZoneInner createOrUpdate(String resourceGroupName, String zoneName, ZoneInner parameters) {
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<DnssecConfigInner>, DnssecConfigInner> beginCreateOrUpdate(
+        String resourceGroupName, String zoneName) {
         final String ifMatch = null;
         final String ifNoneMatch = null;
-        return createOrUpdateWithResponse(resourceGroupName, zoneName, parameters, ifMatch, ifNoneMatch, Context.NONE)
-            .getValue();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch).getSyncPoller();
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Creates or updates the DNSSEC configuration on a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of represents the DNSSEC configuration.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<DnssecConfigInner>, DnssecConfigInner> beginCreateOrUpdate(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context) {
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the DNSSEC configuration on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DnssecConfigInner> createOrUpdateAsync(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch) {
+        return beginCreateOrUpdateAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the DNSSEC configuration on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DnssecConfigInner> createOrUpdateAsync(String resourceGroupName, String zoneName) {
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return beginCreateOrUpdateAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the DNSSEC configuration on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DnssecConfigInner> createOrUpdateAsync(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context) {
+        return beginCreateOrUpdateAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the DNSSEC configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DnssecConfigInner createOrUpdate(String resourceGroupName, String zoneName) {
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return createOrUpdateAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch).block();
+    }
+
+    /**
+     * Creates or updates the DNSSEC configuration on a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     *     DNSSEC configuration. Other values will be ignored.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the DNSSEC configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DnssecConfigInner createOrUpdate(
+        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context) {
+        return createOrUpdateAsync(resourceGroupName, zoneName, ifMatch, ifNoneMatch, context).block();
+    }
+
+    /**
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -416,12 +517,12 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -465,12 +566,12 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -487,7 +588,7 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -507,12 +608,12 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -530,7 +631,7 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -546,12 +647,12 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -565,12 +666,12 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -584,7 +685,7 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -602,12 +703,12 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -622,7 +723,7 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -637,12 +738,12 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -654,17 +755,17 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     * Gets the DNSSEC configuration.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return the DNSSEC configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ZoneInner>> getByResourceGroupWithResponseAsync(String resourceGroupName, String zoneName) {
+    private Mono<Response<DnssecConfigInner>> getWithResponseAsync(String resourceGroupName, String zoneName) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -689,7 +790,7 @@ public final class ZonesClientImpl implements ZonesClient {
             .withContext(
                 context ->
                     service
-                        .getByResourceGroup(
+                        .get(
                             this.client.getEndpoint(),
                             resourceGroupName,
                             zoneName,
@@ -701,7 +802,7 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     * Gets the DNSSEC configuration.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -709,10 +810,10 @@ public final class ZonesClientImpl implements ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return the DNSSEC configuration along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ZoneInner>> getByResourceGroupWithResponseAsync(
+    private Mono<Response<DnssecConfigInner>> getWithResponseAsync(
         String resourceGroupName, String zoneName, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -736,7 +837,7 @@ public final class ZonesClientImpl implements ZonesClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .getByResourceGroup(
+            .get(
                 this.client.getEndpoint(),
                 resourceGroupName,
                 zoneName,
@@ -747,23 +848,22 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     * Gets the DNSSEC configuration.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone on successful completion of {@link Mono}.
+     * @return the DNSSEC configuration on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ZoneInner> getByResourceGroupAsync(String resourceGroupName, String zoneName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, zoneName)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    private Mono<DnssecConfigInner> getAsync(String resourceGroupName, String zoneName) {
+        return getWithResponseAsync(resourceGroupName, zoneName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     * Gets the DNSSEC configuration.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -771,45 +871,42 @@ public final class ZonesClientImpl implements ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone along with {@link Response}.
+     * @return the DNSSEC configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ZoneInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String zoneName, Context context) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, zoneName, context).block();
+    public Response<DnssecConfigInner> getWithResponse(String resourceGroupName, String zoneName, Context context) {
+        return getWithResponseAsync(resourceGroupName, zoneName, context).block();
     }
 
     /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     * Gets the DNSSEC configuration.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
+     * @return the DNSSEC configuration.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ZoneInner getByResourceGroup(String resourceGroupName, String zoneName) {
-        return getByResourceGroupWithResponse(resourceGroupName, zoneName, Context.NONE).getValue();
+    public DnssecConfigInner get(String resourceGroupName, String zoneName) {
+        return getWithResponse(resourceGroupName, zoneName, Context.NONE).getValue();
     }
 
     /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ZoneInner>> updateWithResponseAsync(
-        String resourceGroupName, String zoneName, ZoneUpdate parameters, String ifMatch) {
+    private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneSinglePageAsync(
+        String resourceGroupName, String zoneName) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -829,46 +926,46 @@ public final class ZonesClientImpl implements ZonesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
-        }
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .update(
+                        .listByDnsZone(
                             this.client.getEndpoint(),
                             resourceGroupName,
                             zoneName,
-                            ifMatch,
                             this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
-                            parameters,
                             accept,
                             context))
+            .<PagedResponse<DnssecConfigInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
+     *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ZoneInner>> updateWithResponseAsync(
-        String resourceGroupName, String zoneName, ZoneUpdate parameters, String ifMatch, Context context) {
+    private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneSinglePageAsync(
+        String resourceGroupName, String zoneName, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -888,173 +985,13 @@ public final class ZonesClientImpl implements ZonesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
-        }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .update(
+            .listByDnsZone(
                 this.client.getEndpoint(),
                 resourceGroupName,
                 zoneName,
-                ifMatch,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
-    }
-
-    /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ZoneInner> updateAsync(String resourceGroupName, String zoneName, ZoneUpdate parameters) {
-        final String ifMatch = null;
-        return updateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ZoneInner> updateWithResponse(
-        String resourceGroupName, String zoneName, ZoneUpdate parameters, String ifMatch, Context context) {
-        return updateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch, context).block();
-    }
-
-    /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ZoneInner update(String resourceGroupName, String zoneName, ZoneUpdate parameters) {
-        final String ifMatch = null;
-        return updateWithResponse(resourceGroupName, zoneName, parameters, ifMatch, Context.NONE).getValue();
-    }
-
-    /**
-     * Lists the DNS zones within a resource group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listByResourceGroupSinglePageAsync(String resourceGroupName, Integer top) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByResourceGroup(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            top,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
-            .<PagedResponse<ZoneInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Lists the DNS zones within a resource group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName, Integer top, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .listByResourceGroup(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                top,
                 this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
@@ -1071,251 +1008,70 @@ public final class ZonesClientImpl implements ZonesClient {
     }
 
     /**
-     * Lists the DNS zones within a resource group.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedFlux}.
+     * @return the response to a List DNSSEC configurations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ZoneInner> listByResourceGroupAsync(String resourceGroupName, Integer top) {
+    private PagedFlux<DnssecConfigInner> listByDnsZoneAsync(String resourceGroupName, String zoneName) {
         return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName, top),
-            nextLink -> listByResourceGroupNextSinglePageAsync(nextLink));
+            () -> listByDnsZoneSinglePageAsync(resourceGroupName, zoneName),
+            nextLink -> listByDnsZoneNextSinglePageAsync(nextLink));
     }
 
     /**
-     * Lists the DNS zones within a resource group.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedFlux}.
+     * @return the response to a List DNSSEC configurations operation as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ZoneInner> listByResourceGroupAsync(String resourceGroupName) {
-        final Integer top = null;
+    private PagedFlux<DnssecConfigInner> listByDnsZoneAsync(
+        String resourceGroupName, String zoneName, Context context) {
         return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName, top),
-            nextLink -> listByResourceGroupNextSinglePageAsync(nextLink));
+            () -> listByDnsZoneSinglePageAsync(resourceGroupName, zoneName, context),
+            nextLink -> listByDnsZoneNextSinglePageAsync(nextLink, context));
     }
 
     /**
-     * Lists the DNS zones within a resource group.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param context The context to associate with this operation.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedFlux}.
+     * @return the response to a List DNSSEC configurations operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ZoneInner> listByResourceGroupAsync(String resourceGroupName, Integer top, Context context) {
-        return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName, top, context),
-            nextLink -> listByResourceGroupNextSinglePageAsync(nextLink, context));
+    public PagedIterable<DnssecConfigInner> listByDnsZone(String resourceGroupName, String zoneName) {
+        return new PagedIterable<>(listByDnsZoneAsync(resourceGroupName, zoneName));
     }
 
     /**
-     * Lists the DNS zones within a resource group.
+     * Lists the DNSSEC configurations in a DNS zone.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ZoneInner> listByResourceGroup(String resourceGroupName) {
-        final Integer top = null;
-        return new PagedIterable<>(listByResourceGroupAsync(resourceGroupName, top));
-    }
-
-    /**
-     * Lists the DNS zones within a resource group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
+     * @return the response to a List DNSSEC configurations operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ZoneInner> listByResourceGroup(String resourceGroupName, Integer top, Context context) {
-        return new PagedIterable<>(listByResourceGroupAsync(resourceGroupName, top, context));
-    }
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @param top The maximum number of DNS zones to return. If not specified, returns up to 100 zones.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listSinglePageAsync(Integer top) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            top,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
-            .<PagedResponse<ZoneInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @param top The maximum number of DNS zones to return. If not specified, returns up to 100 zones.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listSinglePageAsync(Integer top, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .list(
-                this.client.getEndpoint(),
-                top,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
-    }
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @param top The maximum number of DNS zones to return. If not specified, returns up to 100 zones.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedFlux}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ZoneInner> listAsync(Integer top) {
-        return new PagedFlux<>(() -> listSinglePageAsync(top), nextLink -> listNextSinglePageAsync(nextLink));
-    }
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedFlux}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ZoneInner> listAsync() {
-        final Integer top = null;
-        return new PagedFlux<>(() -> listSinglePageAsync(top), nextLink -> listNextSinglePageAsync(nextLink));
-    }
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @param top The maximum number of DNS zones to return. If not specified, returns up to 100 zones.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedFlux}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ZoneInner> listAsync(Integer top, Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(top, context), nextLink -> listNextSinglePageAsync(nextLink, context));
-    }
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ZoneInner> list() {
-        final Integer top = null;
-        return new PagedIterable<>(listAsync(top));
-    }
-
-    /**
-     * Lists the DNS zones in all resource groups in a subscription.
-     *
-     * @param top The maximum number of DNS zones to return. If not specified, returns up to 100 zones.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation as paginated response with {@link PagedIterable}.
-     */
-    @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ZoneInner> list(Integer top, Context context) {
-        return new PagedIterable<>(listAsync(top, context));
+    public PagedIterable<DnssecConfigInner> listByDnsZone(String resourceGroupName, String zoneName, Context context) {
+        return new PagedIterable<>(listByDnsZoneAsync(resourceGroupName, zoneName, context));
     }
 
     /**
@@ -1326,11 +1082,11 @@ public final class ZonesClientImpl implements ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
+    private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneNextSinglePageAsync(String nextLink) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
@@ -1342,9 +1098,8 @@ public final class ZonesClientImpl implements ZonesClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context -> service.listByResourceGroupNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<ZoneInner>>map(
+            .withContext(context -> service.listByDnsZoneNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<DnssecConfigInner>>map(
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(),
@@ -1365,11 +1120,11 @@ public final class ZonesClientImpl implements ZonesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
+     * @return the response to a List DNSSEC configurations operation along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {
+    private Mono<PagedResponse<DnssecConfigInner>> listByDnsZoneNextSinglePageAsync(String nextLink, Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
@@ -1382,82 +1137,7 @@ public final class ZonesClientImpl implements ZonesClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByResourceGroupNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
-    }
-
-    /**
-     * Get the next page of items.
-     *
-     * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listNextSinglePageAsync(String nextLink) {
-        if (nextLink == null) {
-            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
-        }
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<ZoneInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Get the next page of items.
-     *
-     * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a Zone List or ListAll operation along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ZoneInner>> listNextSinglePageAsync(String nextLink, Context context) {
-        if (nextLink == null) {
-            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
-        }
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .listByDnsZoneNext(nextLink, this.client.getEndpoint(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

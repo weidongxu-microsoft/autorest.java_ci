@@ -26,9 +26,11 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.dns.generated.fluent.DnsManagementClient;
 import com.azure.resourcemanager.dns.generated.implementation.DnsManagementClientBuilder;
 import com.azure.resourcemanager.dns.generated.implementation.DnsResourceReferencesImpl;
+import com.azure.resourcemanager.dns.generated.implementation.DnssecConfigsImpl;
 import com.azure.resourcemanager.dns.generated.implementation.RecordSetsImpl;
 import com.azure.resourcemanager.dns.generated.implementation.ZonesImpl;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferences;
+import com.azure.resourcemanager.dns.generated.models.DnssecConfigs;
 import com.azure.resourcemanager.dns.generated.models.RecordSets;
 import com.azure.resourcemanager.dns.generated.models.Zones;
 import java.time.Duration;
@@ -40,6 +42,8 @@ import java.util.stream.Collectors;
 
 /** Entry point to DnsManager. The DNS Management Client. */
 public final class DnsManager {
+    private DnssecConfigs dnssecConfigs;
+
     private RecordSets recordSets;
 
     private Zones zones;
@@ -266,6 +270,18 @@ public final class DnsManager {
                     .build();
             return new DnsManager(httpPipeline, profile, defaultPollInterval);
         }
+    }
+
+    /**
+     * Gets the resource collection API of DnssecConfigs.
+     *
+     * @return Resource collection API of DnssecConfigs.
+     */
+    public DnssecConfigs dnssecConfigs() {
+        if (this.dnssecConfigs == null) {
+            this.dnssecConfigs = new DnssecConfigsImpl(clientObject.getDnssecConfigs(), this);
+        }
+        return dnssecConfigs;
     }
 
     /**

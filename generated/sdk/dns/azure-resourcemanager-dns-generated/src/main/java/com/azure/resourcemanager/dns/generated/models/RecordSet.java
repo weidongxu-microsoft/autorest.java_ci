@@ -145,6 +145,27 @@ public interface RecordSet {
     List<CaaRecord> caaRecords();
 
     /**
+     * Gets the dsRecords property: The list of DS records in the record set.
+     *
+     * @return the dsRecords value.
+     */
+    List<DsRecord> dsRecords();
+
+    /**
+     * Gets the tlsaRecords property: The list of TLSA records in the record set.
+     *
+     * @return the tlsaRecords value.
+     */
+    List<TlsaRecord> tlsaRecords();
+
+    /**
+     * Gets the naptrRecords property: The list of NAPTR records in the record set.
+     *
+     * @return the naptrRecords value.
+     */
+    List<NaptrRecord> naptrRecords();
+
+    /**
      * Gets the inner com.azure.resourcemanager.dns.generated.fluent.models.RecordSetInner object.
      *
      * @return the inner object.
