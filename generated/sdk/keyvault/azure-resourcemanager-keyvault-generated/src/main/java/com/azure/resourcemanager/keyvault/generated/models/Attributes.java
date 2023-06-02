@@ -6,6 +6,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 /** The object attributes managed by the KeyVault service. */
 @Fluent
@@ -69,8 +72,11 @@ public class Attributes {
      *
      * @return the notBefore value.
      */
-    public Long notBefore() {
-        return this.notBefore;
+    public OffsetDateTime notBefore() {
+        if (this.notBefore == null) {
+            return null;
+        }
+        return OffsetDateTime.ofInstant(Instant.ofEpochSecond(this.notBefore), ZoneOffset.UTC);
     }
 
     /**
@@ -79,8 +85,12 @@ public class Attributes {
      * @param notBefore the notBefore value to set.
      * @return the Attributes object itself.
      */
-    public Attributes withNotBefore(Long notBefore) {
-        this.notBefore = notBefore;
+    public Attributes withNotBefore(OffsetDateTime notBefore) {
+        if (notBefore == null) {
+            this.notBefore = null;
+        } else {
+            this.notBefore = notBefore.toEpochSecond();
+        }
         return this;
     }
 
@@ -89,8 +99,11 @@ public class Attributes {
      *
      * @return the expires value.
      */
-    public Long expires() {
-        return this.expires;
+    public OffsetDateTime expires() {
+        if (this.expires == null) {
+            return null;
+        }
+        return OffsetDateTime.ofInstant(Instant.ofEpochSecond(this.expires), ZoneOffset.UTC);
     }
 
     /**
@@ -99,8 +112,12 @@ public class Attributes {
      * @param expires the expires value to set.
      * @return the Attributes object itself.
      */
-    public Attributes withExpires(Long expires) {
-        this.expires = expires;
+    public Attributes withExpires(OffsetDateTime expires) {
+        if (expires == null) {
+            this.expires = null;
+        } else {
+            this.expires = expires.toEpochSecond();
+        }
         return this;
     }
 
@@ -109,8 +126,11 @@ public class Attributes {
      *
      * @return the created value.
      */
-    public Long created() {
-        return this.created;
+    public OffsetDateTime created() {
+        if (this.created == null) {
+            return null;
+        }
+        return OffsetDateTime.ofInstant(Instant.ofEpochSecond(this.created), ZoneOffset.UTC);
     }
 
     /**
@@ -118,8 +138,11 @@ public class Attributes {
      *
      * @return the updated value.
      */
-    public Long updated() {
-        return this.updated;
+    public OffsetDateTime updated() {
+        if (this.updated == null) {
+            return null;
+        }
+        return OffsetDateTime.ofInstant(Instant.ofEpochSecond(this.updated), ZoneOffset.UTC);
     }
 
     /**
