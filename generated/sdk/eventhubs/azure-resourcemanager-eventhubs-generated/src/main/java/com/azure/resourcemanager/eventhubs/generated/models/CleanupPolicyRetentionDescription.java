@@ -13,8 +13,8 @@ public final class CleanupPolicyRetentionDescription extends ExpandableStringEnu
     /** Static value Delete for CleanupPolicyRetentionDescription. */
     public static final CleanupPolicyRetentionDescription DELETE = fromString("Delete");
 
-    /** Static value Compaction for CleanupPolicyRetentionDescription. */
-    public static final CleanupPolicyRetentionDescription COMPACTION = fromString("Compaction");
+    /** Static value Compact for CleanupPolicyRetentionDescription. */
+    public static final CleanupPolicyRetentionDescription COMPACT = fromString("Compact");
 
     /**
      * Creates a new instance of CleanupPolicyRetentionDescription value.
