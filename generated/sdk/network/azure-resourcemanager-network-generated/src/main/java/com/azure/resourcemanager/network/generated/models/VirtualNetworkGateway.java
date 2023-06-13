@@ -238,6 +238,14 @@ public interface VirtualNetworkGateway {
     Boolean allowRemoteVnetTraffic();
 
     /**
+     * Gets the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are
+     * multiple Express Route Gateways in the vnet.
+     *
+     * @return the adminState value.
+     */
+    AdminState adminState();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -335,7 +343,8 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithNatRules,
                 DefinitionStages.WithEnableBgpRouteTranslationForNat,
                 DefinitionStages.WithAllowVirtualWanTraffic,
-                DefinitionStages.WithAllowRemoteVnetTraffic {
+                DefinitionStages.WithAllowRemoteVnetTraffic,
+                DefinitionStages.WithAdminState {
             /**
              * Executes the create request.
              *
@@ -615,6 +624,19 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withAllowRemoteVnetTraffic(Boolean allowRemoteVnetTraffic);
+        }
+
+        /** The stage of the VirtualNetworkGateway definition allowing to specify adminState. */
+        interface WithAdminState {
+            /**
+             * Specifies the adminState property: Property to indicate if the Express Route Gateway serves traffic when
+             * there are multiple Express Route Gateways in the vnet.
+             *
+             * @param adminState Property to indicate if the Express Route Gateway serves traffic when there are
+             *     multiple Express Route Gateways in the vnet.
+             * @return the next definition stage.
+             */
+            WithCreate withAdminState(AdminState adminState);
         }
     }
 

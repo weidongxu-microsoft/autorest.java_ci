@@ -43,6 +43,10 @@ public final class NetworkGroupImpl implements NetworkGroup, NetworkGroup.Defini
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGuid() {
+        return this.innerModel().resourceGuid();
+    }
+
     public String resourceGroupName() {
         return resourceGroupName;
     }

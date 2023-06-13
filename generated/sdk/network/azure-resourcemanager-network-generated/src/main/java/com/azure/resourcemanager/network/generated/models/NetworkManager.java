@@ -91,6 +91,13 @@ public interface NetworkManager {
     ProvisioningState provisioningState();
 
     /**
+     * Gets the resourceGuid property: Unique identifier for this resource.
+     *
+     * @return the resourceGuid value.
+     */
+    String resourceGuid();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.

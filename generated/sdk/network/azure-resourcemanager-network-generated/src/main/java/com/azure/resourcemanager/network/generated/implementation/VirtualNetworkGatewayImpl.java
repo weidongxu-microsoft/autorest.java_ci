@@ -12,6 +12,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkG
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayNatRuleInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientIPsecParametersInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
+import com.azure.resourcemanager.network.generated.models.AdminState;
 import com.azure.resourcemanager.network.generated.models.BgpPeerStatusListResult;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
@@ -187,6 +188,10 @@ public final class VirtualNetworkGatewayImpl
 
     public Boolean allowRemoteVnetTraffic() {
         return this.innerModel().allowRemoteVnetTraffic();
+    }
+
+    public AdminState adminState() {
+        return this.innerModel().adminState();
     }
 
     public Region region() {
@@ -579,6 +584,11 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withAllowRemoteVnetTraffic(Boolean allowRemoteVnetTraffic) {
         this.innerModel().withAllowRemoteVnetTraffic(allowRemoteVnetTraffic);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withAdminState(AdminState adminState) {
+        this.innerModel().withAdminState(adminState);
         return this;
     }
 

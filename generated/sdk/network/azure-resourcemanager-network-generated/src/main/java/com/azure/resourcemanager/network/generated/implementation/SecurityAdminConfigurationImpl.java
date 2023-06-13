@@ -56,6 +56,10 @@ public final class SecurityAdminConfigurationImpl
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGuid() {
+        return this.innerModel().resourceGuid();
+    }
+
     public String resourceGroupName() {
         return resourceGroupName;
     }

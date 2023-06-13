@@ -37,6 +37,7 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRout
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySku;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicy;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicyName;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslProfile;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrustedClientCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrustedRootCertificate;
@@ -356,6 +357,10 @@ public final class ApplicationGatewayImpl
 
     public ApplicationGatewayGlobalConfiguration globalConfiguration() {
         return this.innerModel().globalConfiguration();
+    }
+
+    public ApplicationGatewaySslPolicyName defaultPredefinedSslPolicy() {
+        return this.innerModel().defaultPredefinedSslPolicy();
     }
 
     public Region region() {

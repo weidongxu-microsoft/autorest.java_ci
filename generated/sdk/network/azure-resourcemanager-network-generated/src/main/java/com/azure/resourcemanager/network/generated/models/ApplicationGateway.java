@@ -345,6 +345,14 @@ public interface ApplicationGateway {
     ApplicationGatewayGlobalConfiguration globalConfiguration();
 
     /**
+     * Gets the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application
+     * gateway resource.
+     *
+     * @return the defaultPredefinedSslPolicy value.
+     */
+    ApplicationGatewaySslPolicyName defaultPredefinedSslPolicy();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.

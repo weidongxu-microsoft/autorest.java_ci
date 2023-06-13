@@ -76,6 +76,10 @@ public final class NetworkManagerImpl implements NetworkManager, NetworkManager.
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGuid() {
+        return this.innerModel().resourceGuid();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }

@@ -9,6 +9,7 @@ import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
+import com.azure.resourcemanager.network.generated.models.AdminState;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -633,6 +634,31 @@ public final class VirtualNetworkGatewayInner extends Resource {
             this.innerProperties = new VirtualNetworkGatewayPropertiesFormat();
         }
         this.innerProperties().withAllowRemoteVnetTraffic(allowRemoteVnetTraffic);
+        return this;
+    }
+
+    /**
+     * Get the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are
+     * multiple Express Route Gateways in the vnet.
+     *
+     * @return the adminState value.
+     */
+    public AdminState adminState() {
+        return this.innerProperties() == null ? null : this.innerProperties().adminState();
+    }
+
+    /**
+     * Set the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are
+     * multiple Express Route Gateways in the vnet.
+     *
+     * @param adminState the adminState value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withAdminState(AdminState adminState) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualNetworkGatewayPropertiesFormat();
+        }
+        this.innerProperties().withAdminState(adminState);
         return this;
     }
 

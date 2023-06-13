@@ -29,6 +29,7 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRout
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySku;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicy;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicyName;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslProfile;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrustedClientCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrustedRootCertificate;
@@ -266,6 +267,12 @@ public final class ApplicationGatewayPropertiesFormat {
      */
     @JsonProperty(value = "globalConfiguration")
     private ApplicationGatewayGlobalConfiguration globalConfiguration;
+
+    /*
+     * The default predefined SSL Policy applied on the application gateway resource.
+     */
+    @JsonProperty(value = "defaultPredefinedSslPolicy", access = JsonProperty.Access.WRITE_ONLY)
+    private ApplicationGatewaySslPolicyName defaultPredefinedSslPolicy;
 
     /** Creates an instance of ApplicationGatewayPropertiesFormat class. */
     public ApplicationGatewayPropertiesFormat() {
@@ -1004,6 +1011,16 @@ public final class ApplicationGatewayPropertiesFormat {
         ApplicationGatewayGlobalConfiguration globalConfiguration) {
         this.globalConfiguration = globalConfiguration;
         return this;
+    }
+
+    /**
+     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application gateway
+     * resource.
+     *
+     * @return the defaultPredefinedSslPolicy value.
+     */
+    public ApplicationGatewaySslPolicyName defaultPredefinedSslPolicy() {
+        return this.defaultPredefinedSslPolicy;
     }
 
     /**

@@ -96,6 +96,13 @@ public interface ConnectivityConfiguration {
     DeleteExistingPeering deleteExistingPeering();
 
     /**
+     * Gets the resourceGuid property: Unique identifier for this resource.
+     *
+     * @return the resourceGuid value.
+     */
+    String resourceGuid();
+
+    /**
      * Gets the name of the resource group.
      *
      * @return the name of the resource group.

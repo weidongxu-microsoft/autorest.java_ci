@@ -81,6 +81,10 @@ public final class ConnectivityConfigurationImpl
         return this.innerModel().deleteExistingPeering();
     }
 
+    public String resourceGuid() {
+        return this.innerModel().resourceGuid();
+    }
+
     public String resourceGroupName() {
         return resourceGroupName;
     }

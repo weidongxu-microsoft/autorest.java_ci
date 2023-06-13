@@ -30,6 +30,7 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayRout
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySku;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicy;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPolicyName;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslProfile;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrustedClientCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrustedRootCertificate;
@@ -992,6 +993,16 @@ public final class ApplicationGatewayInner extends Resource {
         }
         this.innerProperties().withGlobalConfiguration(globalConfiguration);
         return this;
+    }
+
+    /**
+     * Get the defaultPredefinedSslPolicy property: The default predefined SSL Policy applied on the application gateway
+     * resource.
+     *
+     * @return the defaultPredefinedSslPolicy value.
+     */
+    public ApplicationGatewaySslPolicyName defaultPredefinedSslPolicy() {
+        return this.innerProperties() == null ? null : this.innerProperties().defaultPredefinedSslPolicy();
     }
 
     /**
