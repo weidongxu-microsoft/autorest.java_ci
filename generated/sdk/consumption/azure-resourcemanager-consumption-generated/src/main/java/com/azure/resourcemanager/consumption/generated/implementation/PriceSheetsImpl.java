@@ -9,7 +9,9 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.PriceSheetsClient;
+import com.azure.resourcemanager.consumption.generated.fluent.models.OperationStatusInner;
 import com.azure.resourcemanager.consumption.generated.fluent.models.PriceSheetResultInner;
+import com.azure.resourcemanager.consumption.generated.models.OperationStatus;
 import com.azure.resourcemanager.consumption.generated.models.PriceSheetResult;
 import com.azure.resourcemanager.consumption.generated.models.PriceSheets;
 
@@ -68,6 +70,27 @@ public final class PriceSheetsImpl implements PriceSheets {
         PriceSheetResultInner inner = this.serviceClient().getByBillingPeriod(billingPeriodName);
         if (inner != null) {
             return new PriceSheetResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public OperationStatus downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName) {
+        OperationStatusInner inner =
+            this.serviceClient().downloadByBillingAccountPeriod(billingAccountId, billingPeriodName);
+        if (inner != null) {
+            return new OperationStatusImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public OperationStatus downloadByBillingAccountPeriod(
+        String billingAccountId, String billingPeriodName, Context context) {
+        OperationStatusInner inner =
+            this.serviceClient().downloadByBillingAccountPeriod(billingAccountId, billingPeriodName, context);
+        if (inner != null) {
+            return new OperationStatusImpl(inner, this.manager());
         } else {
             return null;
         }

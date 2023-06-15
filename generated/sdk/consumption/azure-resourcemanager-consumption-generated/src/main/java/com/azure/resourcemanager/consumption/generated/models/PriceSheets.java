@@ -66,4 +66,29 @@ public interface PriceSheets {
      * @return the price sheet for a scope by subscriptionId and billing period.
      */
     PriceSheetResult getByBillingPeriod(String billingPeriodName);
+
+    /**
+     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
+     *
+     * @param billingAccountId BillingAccount ID.
+     * @param billingPeriodName Billing Period Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the long running operation.
+     */
+    OperationStatus downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName);
+
+    /**
+     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
+     *
+     * @param billingAccountId BillingAccount ID.
+     * @param billingPeriodName Billing Period Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the long running operation.
+     */
+    OperationStatus downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName, Context context);
 }
