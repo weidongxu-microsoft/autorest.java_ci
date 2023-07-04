@@ -194,7 +194,10 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         String tagsConverted =
             (tags == null)
                 ? null
-                : tags.stream().map(value -> Objects.toString(value, "")).collect(Collectors.joining(","));
+                : tags
+                    .stream()
+                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
+                    .collect(Collectors.joining(","));
         return FluxUtil
             .withContext(
                 context ->
@@ -258,7 +261,10 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         String tagsConverted =
             (tags == null)
                 ? null
-                : tags.stream().map(value -> Objects.toString(value, "")).collect(Collectors.joining(","));
+                : tags
+                    .stream()
+                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
+                    .collect(Collectors.joining(","));
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
@@ -415,7 +421,10 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         String tagsConverted =
             (tags == null)
                 ? null
-                : tags.stream().map(value -> Objects.toString(value, "")).collect(Collectors.joining(","));
+                : tags
+                    .stream()
+                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
+                    .collect(Collectors.joining(","));
         return FluxUtil
             .withContext(
                 context ->
@@ -473,7 +482,10 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         String tagsConverted =
             (tags == null)
                 ? null
-                : tags.stream().map(value -> Objects.toString(value, "")).collect(Collectors.joining(","));
+                : tags
+                    .stream()
+                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
+                    .collect(Collectors.joining(","));
         context = this.client.mergeContext(context);
         return service
             .list(

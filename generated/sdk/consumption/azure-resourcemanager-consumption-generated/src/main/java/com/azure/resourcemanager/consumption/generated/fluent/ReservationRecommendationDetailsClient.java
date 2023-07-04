@@ -32,6 +32,8 @@ public interface ReservationRecommendationDetailsClient {
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
      * @param product Filter the products for which reservation recommendation results are generated. Examples:
      *     Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
+     * @param filter Used to filter reservation recommendation details by: properties/subscriptionId can be specified
+     *     for billing account and billing profile paths.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -46,6 +48,7 @@ public interface ReservationRecommendationDetailsClient {
         Term term,
         LookBackPeriod lookBackPeriod,
         String product,
+        String filter,
         Context context);
 
     /**

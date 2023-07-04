@@ -28,6 +28,7 @@ import com.azure.resourcemanager.azurekusto.generated.implementation.AttachedDat
 import com.azure.resourcemanager.azurekusto.generated.implementation.ClusterPrincipalAssignmentsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.ClustersImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.DataConnectionsImpl;
+import com.azure.resourcemanager.azurekusto.generated.implementation.DatabaseOperationsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.DatabasePrincipalAssignmentsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.DatabasesImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.KustoManagementClientBuilder;
@@ -43,6 +44,7 @@ import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseCon
 import com.azure.resourcemanager.azurekusto.generated.models.ClusterPrincipalAssignments;
 import com.azure.resourcemanager.azurekusto.generated.models.Clusters;
 import com.azure.resourcemanager.azurekusto.generated.models.DataConnections;
+import com.azure.resourcemanager.azurekusto.generated.models.DatabaseOperations;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalAssignments;
 import com.azure.resourcemanager.azurekusto.generated.models.Databases;
 import com.azure.resourcemanager.azurekusto.generated.models.ManagedPrivateEndpoints;
@@ -77,6 +79,8 @@ public final class KustoManager {
     private AttachedDatabaseConfigurations attachedDatabaseConfigurations;
 
     private ManagedPrivateEndpoints managedPrivateEndpoints;
+
+    private DatabaseOperations databaseOperations;
 
     private DatabasePrincipalAssignments databasePrincipalAssignments;
 
@@ -389,6 +393,18 @@ public final class KustoManager {
                 new ManagedPrivateEndpointsImpl(clientObject.getManagedPrivateEndpoints(), this);
         }
         return managedPrivateEndpoints;
+    }
+
+    /**
+     * Gets the resource collection API of DatabaseOperations.
+     *
+     * @return Resource collection API of DatabaseOperations.
+     */
+    public DatabaseOperations databaseOperations() {
+        if (this.databaseOperations == null) {
+            this.databaseOperations = new DatabaseOperationsImpl(clientObject.getDatabaseOperations(), this);
+        }
+        return databaseOperations;
     }
 
     /**

@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
-import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.azurekusto.generated.fluent.OperationsResultsLocationsClient;
 import com.azure.resourcemanager.azurekusto.generated.models.OperationsResultsLocations;
+import com.azure.resourcemanager.azurekusto.generated.models.OperationsResultsLocationsGetResponse;
 
 public final class OperationsResultsLocationsImpl implements OperationsResultsLocations {
     private static final ClientLogger LOGGER = new ClientLogger(OperationsResultsLocationsImpl.class);
@@ -24,7 +24,7 @@ public final class OperationsResultsLocationsImpl implements OperationsResultsLo
         this.serviceManager = serviceManager;
     }
 
-    public Response<Void> getWithResponse(String location, String operationId, Context context) {
+    public OperationsResultsLocationsGetResponse getWithResponse(String location, String operationId, Context context) {
         return this.serviceClient().getWithResponse(location, operationId, context);
     }
 

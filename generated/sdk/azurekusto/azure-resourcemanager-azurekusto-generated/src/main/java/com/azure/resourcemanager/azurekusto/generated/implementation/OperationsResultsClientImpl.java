@@ -69,8 +69,8 @@ public final class OperationsResultsClientImpl implements OperationsResultsClien
     /**
      * Returns operation results.
      *
-     * @param location Azure location (region) name.
-     * @param operationId The Guid of the operation ID.
+     * @param location The name of Azure region.
+     * @param operationId The ID of an ongoing async operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -115,8 +115,8 @@ public final class OperationsResultsClientImpl implements OperationsResultsClien
     /**
      * Returns operation results.
      *
-     * @param location Azure location (region) name.
-     * @param operationId The Guid of the operation ID.
+     * @param location The name of Azure region.
+     * @param operationId The ID of an ongoing async operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -160,8 +160,8 @@ public final class OperationsResultsClientImpl implements OperationsResultsClien
     /**
      * Returns operation results.
      *
-     * @param location Azure location (region) name.
-     * @param operationId The Guid of the operation ID.
+     * @param location The name of Azure region.
+     * @param operationId The ID of an ongoing async operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -175,8 +175,8 @@ public final class OperationsResultsClientImpl implements OperationsResultsClien
     /**
      * Returns operation results.
      *
-     * @param location Azure location (region) name.
-     * @param operationId The Guid of the operation ID.
+     * @param location The name of Azure region.
+     * @param operationId The ID of an ongoing async operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -191,8 +191,8 @@ public final class OperationsResultsClientImpl implements OperationsResultsClien
     /**
      * Returns operation results.
      *
-     * @param location Azure location (region) name.
-     * @param operationId The Guid of the operation ID.
+     * @param location The name of Azure region.
+     * @param operationId The ID of an ongoing async operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

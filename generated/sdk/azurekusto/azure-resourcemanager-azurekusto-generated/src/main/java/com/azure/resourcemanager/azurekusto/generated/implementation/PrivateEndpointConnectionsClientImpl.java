@@ -130,7 +130,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Returns the list of private endpoint connections.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -183,7 +183,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Returns the list of private endpoint connections.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -234,7 +234,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Returns the list of private endpoint connections.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -249,7 +249,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Returns the list of private endpoint connections.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -266,7 +266,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Returns the list of private endpoint connections.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -281,7 +281,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Returns the list of private endpoint connections.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -298,7 +298,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Gets a private endpoint connection.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -354,7 +354,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Gets a private endpoint connection.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
@@ -408,7 +408,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Gets a private endpoint connection.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -426,7 +426,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Gets a private endpoint connection.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
@@ -444,7 +444,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Gets a private endpoint connection.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -461,7 +461,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -527,7 +527,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -592,7 +592,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -623,7 +623,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -658,7 +658,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -681,7 +681,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -707,7 +707,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -730,7 +730,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -756,7 +756,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -777,7 +777,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Approve or reject a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param parameters A private endpoint connection.
@@ -801,7 +801,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -857,7 +857,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
@@ -911,7 +911,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -933,7 +933,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
@@ -956,7 +956,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -973,7 +973,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
@@ -993,7 +993,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1011,7 +1011,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
@@ -1031,7 +1031,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1046,7 +1046,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     /**
      * Deletes a private endpoint connection with a given name.
      *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.

@@ -37,9 +37,12 @@ public final class ReservationRecommendationDetailsImpl implements ReservationRe
         Term term,
         LookBackPeriod lookBackPeriod,
         String product,
+        String filter,
         Context context) {
         Response<ReservationRecommendationDetailsModelInner> inner =
-            this.serviceClient().getWithResponse(resourceScope, scope, region, term, lookBackPeriod, product, context);
+            this
+                .serviceClient()
+                .getWithResponse(resourceScope, scope, region, term, lookBackPeriod, product, filter, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),

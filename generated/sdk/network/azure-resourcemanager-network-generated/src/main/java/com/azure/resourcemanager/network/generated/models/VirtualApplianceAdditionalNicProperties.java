@@ -21,7 +21,7 @@ public final class VirtualApplianceAdditionalNicProperties {
     private String name;
 
     /*
-     * Flag (truealse) for Intent for Public Ip on additional nic
+     * Flag (true or false) for Intent for Public Ip on additional nic
      */
     @JsonProperty(value = "hasPublicIp")
     private Boolean hasPublicIp;
@@ -51,7 +51,7 @@ public final class VirtualApplianceAdditionalNicProperties {
     }
 
     /**
-     * Get the hasPublicIp property: Flag (truealse) for Intent for Public Ip on additional nic.
+     * Get the hasPublicIp property: Flag (true or false) for Intent for Public Ip on additional nic.
      *
      * @return the hasPublicIp value.
      */
@@ -60,7 +60,7 @@ public final class VirtualApplianceAdditionalNicProperties {
     }
 
     /**
-     * Set the hasPublicIp property: Flag (truealse) for Intent for Public Ip on additional nic.
+     * Set the hasPublicIp property: Flag (true or false) for Intent for Public Ip on additional nic.
      *
      * @param hasPublicIp the hasPublicIp value to set.
      * @return the VirtualApplianceAdditionalNicProperties object itself.
