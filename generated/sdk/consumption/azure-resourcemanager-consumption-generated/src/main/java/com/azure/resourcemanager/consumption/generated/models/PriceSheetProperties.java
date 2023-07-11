@@ -66,6 +66,12 @@ public final class PriceSheetProperties {
     @JsonProperty(value = "offerId", access = JsonProperty.Access.WRITE_ONLY)
     private String offerId;
 
+    /*
+     * SavingsPlan Details
+     */
+    @JsonProperty(value = "savingsPlan", access = JsonProperty.Access.WRITE_ONLY)
+    private SavingsPlan savingsPlan;
+
     /** Creates an instance of PriceSheetProperties class. */
     public PriceSheetProperties() {
     }
@@ -153,6 +159,15 @@ public final class PriceSheetProperties {
     }
 
     /**
+     * Get the savingsPlan property: SavingsPlan Details.
+     *
+     * @return the savingsPlan value.
+     */
+    public SavingsPlan savingsPlan() {
+        return this.savingsPlan;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -160,6 +175,9 @@ public final class PriceSheetProperties {
     public void validate() {
         if (meterDetails() != null) {
             meterDetails().validate();
+        }
+        if (savingsPlan() != null) {
+            savingsPlan().validate();
         }
     }
 }
