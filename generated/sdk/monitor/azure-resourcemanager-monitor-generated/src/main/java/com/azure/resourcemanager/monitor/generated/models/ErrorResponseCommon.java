@@ -27,7 +27,7 @@ public final class ErrorResponseCommon extends ManagementError {
      *
      * @return the details value.
      */
-    public List<ErrorResponseCommon> getDetails() {
+    public List<ErrorResponseCommon> details() {
         return this.details;
     }
 
@@ -37,8 +37,8 @@ public final class ErrorResponseCommon extends ManagementError {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (getDetails() != null) {
-            getDetails().forEach(e -> e.validate());
+        if (details() != null) {
+            details().forEach(e -> e.validate());
         }
     }
 }
