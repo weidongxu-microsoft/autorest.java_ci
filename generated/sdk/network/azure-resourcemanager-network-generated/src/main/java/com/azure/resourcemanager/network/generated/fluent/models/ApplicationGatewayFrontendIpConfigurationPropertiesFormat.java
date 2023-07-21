@@ -49,6 +49,12 @@ public final class ApplicationGatewayFrontendIpConfigurationPropertiesFormat {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
+    /*
+     * Reference to the application gateway http listeners.
+     */
+    @JsonProperty(value = "httpListeners", access = JsonProperty.Access.WRITE_ONLY)
+    private SubResource httpListeners;
+
     /** Creates an instance of ApplicationGatewayFrontendIpConfigurationPropertiesFormat class. */
     public ApplicationGatewayFrontendIpConfigurationPropertiesFormat() {
     }
@@ -162,6 +168,15 @@ public final class ApplicationGatewayFrontendIpConfigurationPropertiesFormat {
      */
     public ProvisioningState provisioningState() {
         return this.provisioningState;
+    }
+
+    /**
+     * Get the httpListeners property: Reference to the application gateway http listeners.
+     *
+     * @return the httpListeners value.
+     */
+    public SubResource httpListeners() {
+        return this.httpListeners;
     }
 
     /**

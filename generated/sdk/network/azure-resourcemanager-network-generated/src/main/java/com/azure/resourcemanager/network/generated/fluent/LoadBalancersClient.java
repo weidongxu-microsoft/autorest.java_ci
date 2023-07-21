@@ -13,7 +13,9 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressInboundNatRulePortMappingsInner;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInner;
+import com.azure.resourcemanager.network.generated.fluent.models.MigratedPoolsInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerVipSwapRequest;
+import com.azure.resourcemanager.network.generated.models.MigrateLoadBalancerToIpBasedRequest;
 import com.azure.resourcemanager.network.generated.models.QueryInboundNatRulePortMappingRequest;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
@@ -373,4 +375,33 @@ public interface LoadBalancersClient {
         String backendPoolName,
         QueryInboundNatRulePortMappingRequest parameters,
         Context context);
+
+    /**
+     * Migrate load balancer to IP Based.
+     *
+     * @param groupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param parameters Parameters supplied to the migrateToIpBased Api.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response for a migrateToIpBased API along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<MigratedPoolsInner> migrateToIpBasedWithResponse(
+        String groupName, String loadBalancerName, MigrateLoadBalancerToIpBasedRequest parameters, Context context);
+
+    /**
+     * Migrate load balancer to IP Based.
+     *
+     * @param groupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response for a migrateToIpBased API.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    MigratedPoolsInner migrateToIpBased(String groupName, String loadBalancerName);
 }

@@ -10,6 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStatusInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
+import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountMigrationInner;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.AccountSasParameters;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
@@ -268,6 +269,14 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().dnsEndpointType();
     }
 
+    public Boolean isSkuConversionBlocked() {
+        return this.innerModel().isSkuConversionBlocked();
+    }
+
+    public Boolean accountMigrationInProgress() {
+        return this.innerModel().accountMigrationInProgress();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -428,6 +437,16 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public void failover(FailoverType failoverType, Context context) {
         serviceManager.storageAccounts().failover(resourceGroupName, accountName, failoverType, context);
+    }
+
+    public void customerInitiatedMigration(StorageAccountMigrationInner parameters) {
+        serviceManager.storageAccounts().customerInitiatedMigration(resourceGroupName, accountName, parameters);
+    }
+
+    public void customerInitiatedMigration(StorageAccountMigrationInner parameters, Context context) {
+        serviceManager
+            .storageAccounts()
+            .customerInitiatedMigration(resourceGroupName, accountName, parameters, context);
     }
 
     public BlobRestoreStatus restoreBlobRanges(BlobRestoreParameters parameters) {

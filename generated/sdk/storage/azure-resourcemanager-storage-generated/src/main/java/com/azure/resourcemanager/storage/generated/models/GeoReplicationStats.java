@@ -37,6 +37,24 @@ public final class GeoReplicationStats {
     @JsonProperty(value = "canFailover", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean canFailover;
 
+    /*
+     * A boolean flag which indicates whether or not planned account failover is supported for the account.
+     */
+    @JsonProperty(value = "canPlannedFailover", access = JsonProperty.Access.WRITE_ONLY)
+    private Boolean canPlannedFailover;
+
+    /*
+     * The redundancy type of the account after an account failover is performed.
+     */
+    @JsonProperty(value = "postFailoverRedundancy", access = JsonProperty.Access.WRITE_ONLY)
+    private PostFailoverRedundancy postFailoverRedundancy;
+
+    /*
+     * The redundancy type of the account after a planned account failover is performed.
+     */
+    @JsonProperty(value = "postPlannedFailoverRedundancy", access = JsonProperty.Access.WRITE_ONLY)
+    private PostPlannedFailoverRedundancy postPlannedFailoverRedundancy;
+
     /** Creates an instance of GeoReplicationStats class. */
     public GeoReplicationStats() {
     }
@@ -73,6 +91,36 @@ public final class GeoReplicationStats {
      */
     public Boolean canFailover() {
         return this.canFailover;
+    }
+
+    /**
+     * Get the canPlannedFailover property: A boolean flag which indicates whether or not planned account failover is
+     * supported for the account.
+     *
+     * @return the canPlannedFailover value.
+     */
+    public Boolean canPlannedFailover() {
+        return this.canPlannedFailover;
+    }
+
+    /**
+     * Get the postFailoverRedundancy property: The redundancy type of the account after an account failover is
+     * performed.
+     *
+     * @return the postFailoverRedundancy value.
+     */
+    public PostFailoverRedundancy postFailoverRedundancy() {
+        return this.postFailoverRedundancy;
+    }
+
+    /**
+     * Get the postPlannedFailoverRedundancy property: The redundancy type of the account after a planned account
+     * failover is performed.
+     *
+     * @return the postPlannedFailoverRedundancy value.
+     */
+    public PostPlannedFailoverRedundancy postPlannedFailoverRedundancy() {
+        return this.postPlannedFailoverRedundancy;
     }
 
     /**

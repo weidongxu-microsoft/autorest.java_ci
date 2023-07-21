@@ -165,6 +165,33 @@ public interface LoadBalancers {
         Context context);
 
     /**
+     * Migrate load balancer to IP Based.
+     *
+     * @param groupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param parameters Parameters supplied to the migrateToIpBased Api.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response for a migrateToIpBased API along with {@link Response}.
+     */
+    Response<MigratedPools> migrateToIpBasedWithResponse(
+        String groupName, String loadBalancerName, MigrateLoadBalancerToIpBasedRequest parameters, Context context);
+
+    /**
+     * Migrate load balancer to IP Based.
+     *
+     * @param groupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response for a migrateToIpBased API.
+     */
+    MigratedPools migrateToIpBased(String groupName, String loadBalancerName);
+
+    /**
      * Gets the specified load balancer.
      *
      * @param id the resource ID.

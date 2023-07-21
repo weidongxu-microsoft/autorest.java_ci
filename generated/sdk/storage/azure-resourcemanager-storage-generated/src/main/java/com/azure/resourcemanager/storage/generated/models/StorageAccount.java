@@ -8,6 +8,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
+import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountMigrationInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -283,7 +284,7 @@ public interface StorageAccount {
 
     /**
      * Gets the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is true for this property.
+     * storage account. The default interpretation is false for this property.
      *
      * @return the allowBlobPublicAccess value.
      */
@@ -314,8 +315,10 @@ public interface StorageAccount {
     Boolean enableNfsV3();
 
     /**
-     * Gets the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. The default
-     * interpretation is true for this property.
+     * Gets the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this
+     * property to true for new or existing accounts only if object replication policies will involve storage accounts
+     * in different AAD tenants. The default interpretation is false for new accounts to follow best security practices
+     * by default.
      *
      * @return the allowCrossTenantReplication value.
      */
@@ -370,6 +373,22 @@ public interface StorageAccount {
      * @return the dnsEndpointType value.
      */
     DnsEndpointType dnsEndpointType();
+
+    /**
+     * Gets the isSkuConversionBlocked property: This property will be set to true or false on an event of ongoing
+     * migration. Default value is null.
+     *
+     * @return the isSkuConversionBlocked value.
+     */
+    Boolean isSkuConversionBlocked();
+
+    /**
+     * Gets the accountMigrationInProgress property: If customer initiated account migration is in progress, the value
+     * will be true else it will be null.
+     *
+     * @return the accountMigrationInProgress value.
+     */
+    Boolean accountMigrationInProgress();
 
     /**
      * Gets the region of the resource.
@@ -755,10 +774,10 @@ public interface StorageAccount {
         interface WithAllowBlobPublicAccess {
             /**
              * Specifies the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers
-             * in the storage account. The default interpretation is true for this property..
+             * in the storage account. The default interpretation is false for this property..
              *
              * @param allowBlobPublicAccess Allow or disallow public access to all blobs or containers in the storage
-             *     account. The default interpretation is true for this property.
+             *     account. The default interpretation is false for this property.
              * @return the next definition stage.
              */
             WithCreate withAllowBlobPublicAccess(Boolean allowBlobPublicAccess);
@@ -809,10 +828,14 @@ public interface StorageAccount {
         interface WithAllowCrossTenantReplication {
             /**
              * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object
-             * replication. The default interpretation is true for this property..
+             * replication. Set this property to true for new or existing accounts only if object replication policies
+             * will involve storage accounts in different AAD tenants. The default interpretation is false for new
+             * accounts to follow best security practices by default..
              *
-             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. The default
-             *     interpretation is true for this property.
+             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. Set this
+             *     property to true for new or existing accounts only if object replication policies will involve
+             *     storage accounts in different AAD tenants. The default interpretation is false for new accounts to
+             *     follow best security practices by default.
              * @return the next definition stage.
              */
             WithCreate withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
@@ -1123,10 +1146,10 @@ public interface StorageAccount {
         interface WithAllowBlobPublicAccess {
             /**
              * Specifies the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers
-             * in the storage account. The default interpretation is true for this property..
+             * in the storage account. The default interpretation is false for this property..
              *
              * @param allowBlobPublicAccess Allow or disallow public access to all blobs or containers in the storage
-             *     account. The default interpretation is true for this property.
+             *     account. The default interpretation is false for this property.
              * @return the next definition stage.
              */
             Update withAllowBlobPublicAccess(Boolean allowBlobPublicAccess);
@@ -1166,10 +1189,14 @@ public interface StorageAccount {
         interface WithAllowCrossTenantReplication {
             /**
              * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object
-             * replication. The default interpretation is true for this property..
+             * replication. Set this property to true for new or existing accounts only if object replication policies
+             * will involve storage accounts in different AAD tenants. The default interpretation is false for new
+             * accounts to follow best security practices by default..
              *
-             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. The default
-             *     interpretation is true for this property.
+             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. Set this
+             *     property to true for new or existing accounts only if object replication policies will involve
+             *     storage accounts in different AAD tenants. The default interpretation is false for new accounts to
+             *     follow best security practices by default.
              * @return the next definition stage.
              */
             Update withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
@@ -1385,6 +1412,33 @@ public interface StorageAccount {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void failover(FailoverType failoverType, Context context);
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param parameters The request parameters required to perform storage account migration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void customerInitiatedMigration(StorageAccountMigrationInner parameters);
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param parameters The request parameters required to perform storage account migration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void customerInitiatedMigration(StorageAccountMigrationInner parameters, Context context);
 
     /**
      * Restore blobs in the specified blob ranges.

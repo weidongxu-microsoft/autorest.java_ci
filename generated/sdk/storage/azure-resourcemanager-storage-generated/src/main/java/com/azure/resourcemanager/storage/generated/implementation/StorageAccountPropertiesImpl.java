@@ -214,6 +214,14 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
         return this.innerModel().dnsEndpointType();
     }
 
+    public Boolean isSkuConversionBlocked() {
+        return this.innerModel().isSkuConversionBlocked();
+    }
+
+    public Boolean accountMigrationInProgress() {
+        return this.innerModel().accountMigrationInProgress();
+    }
+
     public StorageAccountPropertiesInner innerModel() {
         return this.innerObject;
     }

@@ -16,6 +16,7 @@ import com.azure.resourcemanager.storage.generated.fluent.models.ListAccountSasR
 import com.azure.resourcemanager.storage.generated.fluent.models.ListServiceSasResponseInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountListKeysResultInner;
+import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountMigrationInner;
 import com.azure.resourcemanager.storage.generated.models.AccountSasParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
@@ -24,11 +25,13 @@ import com.azure.resourcemanager.storage.generated.models.FailoverType;
 import com.azure.resourcemanager.storage.generated.models.ListAccountSasResponse;
 import com.azure.resourcemanager.storage.generated.models.ListKeyExpand;
 import com.azure.resourcemanager.storage.generated.models.ListServiceSasResponse;
+import com.azure.resourcemanager.storage.generated.models.MigrationName;
 import com.azure.resourcemanager.storage.generated.models.ServiceSasParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccount;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountCheckNameAvailabilityParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountExpand;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountListKeysResult;
+import com.azure.resourcemanager.storage.generated.models.StorageAccountMigration;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountRegenerateKeyParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccounts;
 
@@ -251,6 +254,44 @@ public final class StorageAccountsImpl implements StorageAccounts {
 
     public void abortHierarchicalNamespaceMigration(String resourceGroupName, String accountName, Context context) {
         this.serviceClient().abortHierarchicalNamespaceMigration(resourceGroupName, accountName, context);
+    }
+
+    public void customerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters) {
+        this.serviceClient().customerInitiatedMigration(resourceGroupName, accountName, parameters);
+    }
+
+    public void customerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters, Context context) {
+        this.serviceClient().customerInitiatedMigration(resourceGroupName, accountName, parameters, context);
+    }
+
+    public Response<StorageAccountMigration> getCustomerInitiatedMigrationWithResponse(
+        String resourceGroupName, String accountName, MigrationName migrationName, Context context) {
+        Response<StorageAccountMigrationInner> inner =
+            this
+                .serviceClient()
+                .getCustomerInitiatedMigrationWithResponse(resourceGroupName, accountName, migrationName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StorageAccountMigrationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StorageAccountMigration getCustomerInitiatedMigration(
+        String resourceGroupName, String accountName, MigrationName migrationName) {
+        StorageAccountMigrationInner inner =
+            this.serviceClient().getCustomerInitiatedMigration(resourceGroupName, accountName, migrationName);
+        if (inner != null) {
+            return new StorageAccountMigrationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public BlobRestoreStatus restoreBlobRanges(

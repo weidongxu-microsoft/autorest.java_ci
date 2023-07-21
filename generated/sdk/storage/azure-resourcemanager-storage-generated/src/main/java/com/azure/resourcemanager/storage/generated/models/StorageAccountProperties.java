@@ -216,7 +216,7 @@ public interface StorageAccountProperties {
 
     /**
      * Gets the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
-     * storage account. The default interpretation is true for this property.
+     * storage account. The default interpretation is false for this property.
      *
      * @return the allowBlobPublicAccess value.
      */
@@ -247,8 +247,10 @@ public interface StorageAccountProperties {
     Boolean enableNfsV3();
 
     /**
-     * Gets the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. The default
-     * interpretation is true for this property.
+     * Gets the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this
+     * property to true for new or existing accounts only if object replication policies will involve storage accounts
+     * in different AAD tenants. The default interpretation is false for new accounts to follow best security practices
+     * by default.
      *
      * @return the allowCrossTenantReplication value.
      */
@@ -303,6 +305,22 @@ public interface StorageAccountProperties {
      * @return the dnsEndpointType value.
      */
     DnsEndpointType dnsEndpointType();
+
+    /**
+     * Gets the isSkuConversionBlocked property: This property will be set to true or false on an event of ongoing
+     * migration. Default value is null.
+     *
+     * @return the isSkuConversionBlocked value.
+     */
+    Boolean isSkuConversionBlocked();
+
+    /**
+     * Gets the accountMigrationInProgress property: If customer initiated account migration is in progress, the value
+     * will be true else it will be null.
+     *
+     * @return the accountMigrationInProgress value.
+     */
+    Boolean accountMigrationInProgress();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountPropertiesInner object.

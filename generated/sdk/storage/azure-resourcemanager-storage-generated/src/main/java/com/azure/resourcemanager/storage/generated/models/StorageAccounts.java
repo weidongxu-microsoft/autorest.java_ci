@@ -7,6 +7,7 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountMigrationInner;
 
 /** Resource collection API of StorageAccounts. */
 public interface StorageAccounts {
@@ -384,6 +385,76 @@ public interface StorageAccounts {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void abortHierarchicalNamespaceMigration(String resourceGroupName, String accountName, Context context);
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void customerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters);
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void customerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters, Context context);
+
+    /**
+     * Gets the status of the ongoing migration for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param migrationName The name of the Storage Account Migration. It should always be 'default'.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the ongoing migration for the specified storage account along with {@link Response}.
+     */
+    Response<StorageAccountMigration> getCustomerInitiatedMigrationWithResponse(
+        String resourceGroupName, String accountName, MigrationName migrationName, Context context);
+
+    /**
+     * Gets the status of the ongoing migration for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param migrationName The name of the Storage Account Migration. It should always be 'default'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the ongoing migration for the specified storage account.
+     */
+    StorageAccountMigration getCustomerInitiatedMigration(
+        String resourceGroupName, String accountName, MigrationName migrationName);
 
     /**
      * Restore blobs in the specified blob ranges.

@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.models.GatewayLoadBalancerTun
 import com.azure.resourcemanager.network.generated.models.LoadBalancerBackendAddress;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
+import com.azure.resourcemanager.network.generated.models.SyncMode;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -117,6 +118,10 @@ public final class BackendAddressPoolImpl
 
     public SubResource virtualNetwork() {
         return this.innerModel().virtualNetwork();
+    }
+
+    public SyncMode syncMode() {
+        return this.innerModel().syncMode();
     }
 
     public Region region() {
@@ -264,6 +269,11 @@ public final class BackendAddressPoolImpl
 
     public BackendAddressPoolImpl withVirtualNetwork(SubResource virtualNetwork) {
         this.innerModel().withVirtualNetwork(virtualNetwork);
+        return this;
+    }
+
+    public BackendAddressPoolImpl withSyncMode(SyncMode syncMode) {
+        this.innerModel().withSyncMode(syncMode);
         return this;
     }
 }

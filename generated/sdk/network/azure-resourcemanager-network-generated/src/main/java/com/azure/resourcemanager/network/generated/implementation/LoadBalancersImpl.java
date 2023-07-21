@@ -12,10 +12,13 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressInboundNatRulePortMappingsInner;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInner;
+import com.azure.resourcemanager.network.generated.fluent.models.MigratedPoolsInner;
 import com.azure.resourcemanager.network.generated.models.BackendAddressInboundNatRulePortMappings;
 import com.azure.resourcemanager.network.generated.models.LoadBalancer;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerVipSwapRequest;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
+import com.azure.resourcemanager.network.generated.models.MigrateLoadBalancerToIpBasedRequest;
+import com.azure.resourcemanager.network.generated.models.MigratedPools;
 import com.azure.resourcemanager.network.generated.models.QueryInboundNatRulePortMappingRequest;
 
 public final class LoadBalancersImpl implements LoadBalancers {
@@ -119,6 +122,30 @@ public final class LoadBalancersImpl implements LoadBalancers {
                 .listInboundNatRulePortMappings(groupName, loadBalancerName, backendPoolName, parameters, context);
         if (inner != null) {
             return new BackendAddressInboundNatRulePortMappingsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<MigratedPools> migrateToIpBasedWithResponse(
+        String groupName, String loadBalancerName, MigrateLoadBalancerToIpBasedRequest parameters, Context context) {
+        Response<MigratedPoolsInner> inner =
+            this.serviceClient().migrateToIpBasedWithResponse(groupName, loadBalancerName, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new MigratedPoolsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MigratedPools migrateToIpBased(String groupName, String loadBalancerName) {
+        MigratedPoolsInner inner = this.serviceClient().migrateToIpBased(groupName, loadBalancerName);
+        if (inner != null) {
+            return new MigratedPoolsImpl(inner, this.manager());
         } else {
             return null;
         }

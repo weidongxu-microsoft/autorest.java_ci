@@ -34,6 +34,12 @@ public final class AllowedMethods extends ExpandableStringEnum<AllowedMethods> {
     /** Static value PATCH for AllowedMethods. */
     public static final AllowedMethods PATCH = fromString("PATCH");
 
+    /** Static value CONNECT for AllowedMethods. */
+    public static final AllowedMethods CONNECT = fromString("CONNECT");
+
+    /** Static value TRACE for AllowedMethods. */
+    public static final AllowedMethods TRACE = fromString("TRACE");
+
     /**
      * Creates a new instance of AllowedMethods value.
      *

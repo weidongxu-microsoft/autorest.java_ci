@@ -40,10 +40,12 @@ import com.azure.resourcemanager.storage.generated.fluent.models.ListAccountSasR
 import com.azure.resourcemanager.storage.generated.fluent.models.ListServiceSasResponseInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountListKeysResultInner;
+import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountMigrationInner;
 import com.azure.resourcemanager.storage.generated.models.AccountSasParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreParameters;
 import com.azure.resourcemanager.storage.generated.models.FailoverType;
 import com.azure.resourcemanager.storage.generated.models.ListKeyExpand;
+import com.azure.resourcemanager.storage.generated.models.MigrationName;
 import com.azure.resourcemanager.storage.generated.models.ServiceSasParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountCheckNameAvailabilityParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountCreateParameters;
@@ -273,6 +275,36 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("accountName") String accountName,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/startAccountMigration")
+        @ExpectedResponses({200, 202})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Flux<ByteBuffer>>> customerInitiatedMigration(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("accountName") String accountName,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @BodyParam("application/json") StorageAccountMigrationInner parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/accountMigrations/{migrationName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<StorageAccountMigrationInner>> getCustomerInitiatedMigration(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("accountName") String accountName,
+            @PathParam("migrationName") MigrationName migrationName,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @HeaderParam("Accept") String accept,
@@ -3253,6 +3285,490 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public void abortHierarchicalNamespaceMigration(String resourceGroupName, String accountName, Context context) {
         abortHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName, context).block();
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> customerInitiatedMigrationWithResponseAsync(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (accountName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .customerInitiatedMigration(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            accountName,
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            parameters,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> customerInitiatedMigrationWithResponseAsync(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (accountName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .customerInitiatedMigration(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                accountName,
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                parameters,
+                accept,
+                context);
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginCustomerInitiatedMigrationAsync(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            customerInitiatedMigrationWithResponseAsync(resourceGroupName, accountName, parameters);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginCustomerInitiatedMigrationAsync(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            customerInitiatedMigrationWithResponseAsync(resourceGroupName, accountName, parameters, context);
+        return this
+            .client
+            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginCustomerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters) {
+        return this.beginCustomerInitiatedMigrationAsync(resourceGroupName, accountName, parameters).getSyncPoller();
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginCustomerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters, Context context) {
+        return this
+            .beginCustomerInitiatedMigrationAsync(resourceGroupName, accountName, parameters, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> customerInitiatedMigrationAsync(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters) {
+        return beginCustomerInitiatedMigrationAsync(resourceGroupName, accountName, parameters)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> customerInitiatedMigrationAsync(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters, Context context) {
+        return beginCustomerInitiatedMigrationAsync(resourceGroupName, accountName, parameters, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void customerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters) {
+        customerInitiatedMigrationAsync(resourceGroupName, accountName, parameters).block();
+    }
+
+    /**
+     * Account Migration request can be triggered for a storage account to change its redundancy level. The migration
+     * updates the non-zonal redundant storage account to a zonal redundant account or vice-versa in order to have
+     * better reliability and availability. Zone-redundant storage (ZRS) replicates your storage account synchronously
+     * across three Azure availability zones in the primary region.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The request parameters required to perform storage account migration.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void customerInitiatedMigration(
+        String resourceGroupName, String accountName, StorageAccountMigrationInner parameters, Context context) {
+        customerInitiatedMigrationAsync(resourceGroupName, accountName, parameters, context).block();
+    }
+
+    /**
+     * Gets the status of the ongoing migration for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param migrationName The name of the Storage Account Migration. It should always be 'default'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the ongoing migration for the specified storage account along with {@link Response} on
+     *     successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<StorageAccountMigrationInner>> getCustomerInitiatedMigrationWithResponseAsync(
+        String resourceGroupName, String accountName, MigrationName migrationName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (accountName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
+        }
+        if (migrationName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter migrationName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getCustomerInitiatedMigration(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            accountName,
+                            migrationName,
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Gets the status of the ongoing migration for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param migrationName The name of the Storage Account Migration. It should always be 'default'.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the ongoing migration for the specified storage account along with {@link Response} on
+     *     successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<StorageAccountMigrationInner>> getCustomerInitiatedMigrationWithResponseAsync(
+        String resourceGroupName, String accountName, MigrationName migrationName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (accountName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter accountName is required and cannot be null."));
+        }
+        if (migrationName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter migrationName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getCustomerInitiatedMigration(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                accountName,
+                migrationName,
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context);
+    }
+
+    /**
+     * Gets the status of the ongoing migration for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param migrationName The name of the Storage Account Migration. It should always be 'default'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the ongoing migration for the specified storage account on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<StorageAccountMigrationInner> getCustomerInitiatedMigrationAsync(
+        String resourceGroupName, String accountName, MigrationName migrationName) {
+        return getCustomerInitiatedMigrationWithResponseAsync(resourceGroupName, accountName, migrationName)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Gets the status of the ongoing migration for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param migrationName The name of the Storage Account Migration. It should always be 'default'.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the ongoing migration for the specified storage account along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<StorageAccountMigrationInner> getCustomerInitiatedMigrationWithResponse(
+        String resourceGroupName, String accountName, MigrationName migrationName, Context context) {
+        return getCustomerInitiatedMigrationWithResponseAsync(resourceGroupName, accountName, migrationName, context)
+            .block();
+    }
+
+    /**
+     * Gets the status of the ongoing migration for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param migrationName The name of the Storage Account Migration. It should always be 'default'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the ongoing migration for the specified storage account.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageAccountMigrationInner getCustomerInitiatedMigration(
+        String resourceGroupName, String accountName, MigrationName migrationName) {
+        return getCustomerInitiatedMigrationWithResponse(resourceGroupName, accountName, migrationName, Context.NONE)
+            .getValue();
     }
 
     /**

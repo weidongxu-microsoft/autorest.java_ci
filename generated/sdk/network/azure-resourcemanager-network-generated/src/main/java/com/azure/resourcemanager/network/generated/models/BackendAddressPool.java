@@ -122,6 +122,13 @@ public interface BackendAddressPool {
     SubResource virtualNetwork();
 
     /**
+     * Gets the syncMode property: Backend address synchronous mode for the backend pool.
+     *
+     * @return the syncMode value.
+     */
+    SyncMode syncMode();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -182,7 +189,8 @@ public interface BackendAddressPool {
                 DefinitionStages.WithTunnelInterfaces,
                 DefinitionStages.WithLoadBalancerBackendAddresses,
                 DefinitionStages.WithDrainPeriodInSeconds,
-                DefinitionStages.WithVirtualNetwork {
+                DefinitionStages.WithVirtualNetwork,
+                DefinitionStages.WithSyncMode {
             /**
              * Executes the create request.
              *
@@ -276,6 +284,17 @@ public interface BackendAddressPool {
              */
             WithCreate withVirtualNetwork(SubResource virtualNetwork);
         }
+
+        /** The stage of the BackendAddressPool definition allowing to specify syncMode. */
+        interface WithSyncMode {
+            /**
+             * Specifies the syncMode property: Backend address synchronous mode for the backend pool.
+             *
+             * @param syncMode Backend address synchronous mode for the backend pool.
+             * @return the next definition stage.
+             */
+            WithCreate withSyncMode(SyncMode syncMode);
+        }
     }
 
     /**
@@ -291,7 +310,8 @@ public interface BackendAddressPool {
             UpdateStages.WithTunnelInterfaces,
             UpdateStages.WithLoadBalancerBackendAddresses,
             UpdateStages.WithDrainPeriodInSeconds,
-            UpdateStages.WithVirtualNetwork {
+            UpdateStages.WithVirtualNetwork,
+            UpdateStages.WithSyncMode {
         /**
          * Executes the update request.
          *
@@ -367,6 +387,17 @@ public interface BackendAddressPool {
              * @return the next definition stage.
              */
             Update withVirtualNetwork(SubResource virtualNetwork);
+        }
+
+        /** The stage of the BackendAddressPool update allowing to specify syncMode. */
+        interface WithSyncMode {
+            /**
+             * Specifies the syncMode property: Backend address synchronous mode for the backend pool.
+             *
+             * @param syncMode Backend address synchronous mode for the backend pool.
+             * @return the next definition stage.
+             */
+            Update withSyncMode(SyncMode syncMode);
         }
     }
 

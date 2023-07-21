@@ -221,6 +221,15 @@ public final class ApplicationGatewayFrontendIpConfiguration extends SubResource
     }
 
     /**
+     * Get the httpListeners property: Reference to the application gateway http listeners.
+     *
+     * @return the httpListeners value.
+     */
+    public SubResource httpListeners() {
+        return this.innerProperties() == null ? null : this.innerProperties().httpListeners();
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
