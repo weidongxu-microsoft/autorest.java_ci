@@ -78,7 +78,7 @@ public final class TableInner extends ProxyResource {
     }
 
     /**
-     * Get the totalRetentionInDays property: The table total retention in days, between 4 and 2555. Setting this
+     * Get the totalRetentionInDays property: The table total retention in days, between 4 and 2556. Setting this
      * property to -1 will default to table retention.
      *
      * @return the totalRetentionInDays value.
@@ -88,7 +88,7 @@ public final class TableInner extends ProxyResource {
     }
 
     /**
-     * Set the totalRetentionInDays property: The table total retention in days, between 4 and 2555. Setting this
+     * Set the totalRetentionInDays property: The table total retention in days, between 4 and 2556. Setting this
      * property to -1 will default to table retention.
      *
      * @param totalRetentionInDays the totalRetentionInDays value to set.

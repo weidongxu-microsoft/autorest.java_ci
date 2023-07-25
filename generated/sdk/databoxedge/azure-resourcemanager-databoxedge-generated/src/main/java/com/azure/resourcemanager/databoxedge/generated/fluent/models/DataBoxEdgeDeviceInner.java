@@ -391,6 +391,15 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
     }
 
     /**
+     * Get the kubernetesWorkloadProfile property: Kubernetes Workload Profile.
+     *
+     * @return the kubernetesWorkloadProfile value.
+     */
+    public String kubernetesWorkloadProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().kubernetesWorkloadProfile();
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

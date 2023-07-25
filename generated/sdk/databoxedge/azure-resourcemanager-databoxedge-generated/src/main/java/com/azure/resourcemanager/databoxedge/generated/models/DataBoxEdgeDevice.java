@@ -214,6 +214,13 @@ public interface DataBoxEdgeDevice {
     DataResidency dataResidency();
 
     /**
+     * Gets the kubernetesWorkloadProfile property: Kubernetes Workload Profile.
+     *
+     * @return the kubernetesWorkloadProfile value.
+     */
+    String kubernetesWorkloadProfile();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.

@@ -126,6 +126,12 @@ public final class DataBoxEdgeDeviceProperties {
     @JsonProperty(value = "dataResidency")
     private DataResidency dataResidency;
 
+    /*
+     * Kubernetes Workload Profile
+     */
+    @JsonProperty(value = "kubernetesWorkloadProfile", access = JsonProperty.Access.WRITE_ONLY)
+    private String kubernetesWorkloadProfile;
+
     /** Creates an instance of DataBoxEdgeDeviceProperties class. */
     public DataBoxEdgeDeviceProperties() {
     }
@@ -301,6 +307,15 @@ public final class DataBoxEdgeDeviceProperties {
     public DataBoxEdgeDeviceProperties withDataResidency(DataResidency dataResidency) {
         this.dataResidency = dataResidency;
         return this;
+    }
+
+    /**
+     * Get the kubernetesWorkloadProfile property: Kubernetes Workload Profile.
+     *
+     * @return the kubernetesWorkloadProfile value.
+     */
+    public String kubernetesWorkloadProfile() {
+        return this.kubernetesWorkloadProfile;
     }
 
     /**

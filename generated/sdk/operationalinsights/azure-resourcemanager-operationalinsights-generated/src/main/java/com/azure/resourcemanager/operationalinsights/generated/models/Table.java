@@ -47,7 +47,7 @@ public interface Table {
     Integer retentionInDays();
 
     /**
-     * Gets the totalRetentionInDays property: The table total retention in days, between 4 and 2555. Setting this
+     * Gets the totalRetentionInDays property: The table total retention in days, between 4 and 2556. Setting this
      * property to -1 will default to table retention.
      *
      * @return the totalRetentionInDays value.
@@ -209,10 +209,10 @@ public interface Table {
         /** The stage of the Table definition allowing to specify totalRetentionInDays. */
         interface WithTotalRetentionInDays {
             /**
-             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 2555.
+             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 2556.
              * Setting this property to -1 will default to table retention..
              *
-             * @param totalRetentionInDays The table total retention in days, between 4 and 2555. Setting this property
+             * @param totalRetentionInDays The table total retention in days, between 4 and 2556. Setting this property
              *     to -1 will default to table retention.
              * @return the next definition stage.
              */
@@ -314,10 +314,10 @@ public interface Table {
         /** The stage of the Table update allowing to specify totalRetentionInDays. */
         interface WithTotalRetentionInDays {
             /**
-             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 2555.
+             * Specifies the totalRetentionInDays property: The table total retention in days, between 4 and 2556.
              * Setting this property to -1 will default to table retention..
              *
-             * @param totalRetentionInDays The table total retention in days, between 4 and 2555. Setting this property
+             * @param totalRetentionInDays The table total retention in days, between 4 and 2556. Setting this property
              *     to -1 will default to table retention.
              * @return the next definition stage.
              */

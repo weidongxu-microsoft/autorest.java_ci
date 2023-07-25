@@ -158,6 +158,10 @@ public final class DataBoxEdgeDeviceImpl
         return this.innerModel().dataResidency();
     }
 
+    public String kubernetesWorkloadProfile() {
+        return this.innerModel().kubernetesWorkloadProfile();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
