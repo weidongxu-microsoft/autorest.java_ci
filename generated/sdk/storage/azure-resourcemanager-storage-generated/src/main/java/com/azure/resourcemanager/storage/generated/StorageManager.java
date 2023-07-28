@@ -580,8 +580,10 @@ public final class StorageManager {
     }
 
     /**
-     * @return Wrapped service client StorageManagementClient providing direct access to the underlying auto-generated
-     *     API implementation, based on Azure REST API.
+     * Gets wrapped service client StorageManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client StorageManagementClient.
      */
     public StorageManagementClient serviceClient() {
         return this.clientObject;

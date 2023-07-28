@@ -2444,8 +2444,10 @@ public final class NetworkManager {
     }
 
     /**
-     * @return Wrapped service client NetworkManagementClient providing direct access to the underlying auto-generated
-     *     API implementation, based on Azure REST API.
+     * Gets wrapped service client NetworkManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client NetworkManagementClient.
      */
     public NetworkManagementClient serviceClient() {
         return this.clientObject;

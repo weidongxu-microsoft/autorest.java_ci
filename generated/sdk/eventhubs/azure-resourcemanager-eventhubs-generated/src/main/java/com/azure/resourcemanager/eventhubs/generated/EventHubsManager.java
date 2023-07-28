@@ -474,8 +474,10 @@ public final class EventHubsManager {
     }
 
     /**
-     * @return Wrapped service client EventHubManagementClient providing direct access to the underlying auto-generated
-     *     API implementation, based on Azure REST API.
+     * Gets wrapped service client EventHubManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client EventHubManagementClient.
      */
     public EventHubManagementClient serviceClient() {
         return this.clientObject;

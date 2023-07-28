@@ -507,8 +507,10 @@ public final class KustoManager {
     }
 
     /**
-     * @return Wrapped service client KustoManagementClient providing direct access to the underlying auto-generated API
-     *     implementation, based on Azure REST API.
+     * Gets wrapped service client KustoManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client KustoManagementClient.
      */
     public KustoManagementClient serviceClient() {
         return this.clientObject;

@@ -375,8 +375,10 @@ public final class AuthorizationManager {
     }
 
     /**
-     * @return Wrapped service client AuthorizationManagementClient providing direct access to the underlying
-     *     auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client AuthorizationManagementClient providing direct access to the underlying
+     * auto-generated API implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client AuthorizationManagementClient.
      */
     public AuthorizationManagementClient serviceClient() {
         return this.clientObject;

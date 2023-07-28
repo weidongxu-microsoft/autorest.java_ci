@@ -48,7 +48,8 @@ public interface SqlVirtualMachine {
     Map<String, String> tags();
 
     /**
-     * Gets the identity property: Azure Active Directory identity of the server.
+     * Gets the identity property: DO NOT USE. This value will be deprecated. Azure Active Directory identity of the
+     * server.
      *
      * @return the identity value.
      */
@@ -318,9 +319,10 @@ public interface SqlVirtualMachine {
         /** The stage of the SqlVirtualMachine definition allowing to specify identity. */
         interface WithIdentity {
             /**
-             * Specifies the identity property: Azure Active Directory identity of the server..
+             * Specifies the identity property: DO NOT USE. This value will be deprecated. Azure Active Directory
+             * identity of the server..
              *
-             * @param identity Azure Active Directory identity of the server.
+             * @param identity DO NOT USE. This value will be deprecated. Azure Active Directory identity of the server.
              * @return the next definition stage.
              */
             WithCreate withIdentity(ResourceIdentity identity);

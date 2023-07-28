@@ -369,8 +369,10 @@ public final class ResourceManager {
     }
 
     /**
-     * @return Wrapped service client ResourceManagementClient providing direct access to the underlying auto-generated
-     *     API implementation, based on Azure REST API.
+     * Gets wrapped service client ResourceManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client ResourceManagementClient.
      */
     public ResourceManagementClient serviceClient() {
         return this.clientObject;

@@ -354,8 +354,10 @@ public final class RelayManager {
     }
 
     /**
-     * @return Wrapped service client RelayApi providing direct access to the underlying auto-generated API
-     *     implementation, based on Azure REST API.
+     * Gets wrapped service client RelayApi providing direct access to the underlying auto-generated API implementation,
+     * based on Azure REST API.
+     *
+     * @return Wrapped service client RelayApi.
      */
     public RelayApi serviceClient() {
         return this.clientObject;

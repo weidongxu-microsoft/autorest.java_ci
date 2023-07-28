@@ -554,8 +554,10 @@ public final class PostgreSqlManager {
     }
 
     /**
-     * @return Wrapped service client PostgreSqlManagementClient providing direct access to the underlying
-     *     auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client PostgreSqlManagementClient providing direct access to the underlying auto-generated
+     * API implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client PostgreSqlManagementClient.
      */
     public PostgreSqlManagementClient serviceClient() {
         return this.clientObject;

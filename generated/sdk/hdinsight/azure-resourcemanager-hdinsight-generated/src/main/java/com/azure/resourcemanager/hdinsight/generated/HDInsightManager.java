@@ -435,8 +435,10 @@ public final class HDInsightManager {
     }
 
     /**
-     * @return Wrapped service client HDInsightManagementClient providing direct access to the underlying auto-generated
-     *     API implementation, based on Azure REST API.
+     * Gets wrapped service client HDInsightManagementClient providing direct access to the underlying auto-generated
+     * API implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client HDInsightManagementClient.
      */
     public HDInsightManagementClient serviceClient() {
         return this.clientObject;

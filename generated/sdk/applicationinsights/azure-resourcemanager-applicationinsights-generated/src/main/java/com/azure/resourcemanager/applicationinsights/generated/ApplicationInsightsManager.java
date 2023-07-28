@@ -553,8 +553,10 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * @return Wrapped service client ApplicationInsightsManagementClient providing direct access to the underlying
-     *     auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client ApplicationInsightsManagementClient providing direct access to the underlying
+     * auto-generated API implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client ApplicationInsightsManagementClient.
      */
     public ApplicationInsightsManagementClient serviceClient() {
         return this.clientObject;

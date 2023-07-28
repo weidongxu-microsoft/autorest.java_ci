@@ -439,8 +439,10 @@ public final class KeyVaultManager {
     }
 
     /**
-     * @return Wrapped service client KeyVaultManagementClient providing direct access to the underlying auto-generated
-     *     API implementation, based on Azure REST API.
+     * Gets wrapped service client KeyVaultManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client KeyVaultManagementClient.
      */
     public KeyVaultManagementClient serviceClient() {
         return this.clientObject;

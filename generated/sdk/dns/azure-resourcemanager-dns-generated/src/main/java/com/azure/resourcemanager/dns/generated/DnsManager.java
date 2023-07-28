@@ -321,8 +321,10 @@ public final class DnsManager {
     }
 
     /**
-     * @return Wrapped service client DnsManagementClient providing direct access to the underlying auto-generated API
-     *     implementation, based on Azure REST API.
+     * Gets wrapped service client DnsManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client DnsManagementClient.
      */
     public DnsManagementClient serviceClient() {
         return this.clientObject;

@@ -345,8 +345,10 @@ public final class SqlVirtualMachineManager {
     }
 
     /**
-     * @return Wrapped service client SqlVirtualMachineManagementClient providing direct access to the underlying
-     *     auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client SqlVirtualMachineManagementClient providing direct access to the underlying
+     * auto-generated API implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client SqlVirtualMachineManagementClient.
      */
     public SqlVirtualMachineManagementClient serviceClient() {
         return this.clientObject;

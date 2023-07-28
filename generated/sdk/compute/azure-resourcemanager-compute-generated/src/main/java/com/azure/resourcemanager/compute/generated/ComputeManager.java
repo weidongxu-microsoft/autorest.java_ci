@@ -1065,8 +1065,10 @@ public final class ComputeManager {
     }
 
     /**
-     * @return Wrapped service client ComputeManagementClient providing direct access to the underlying auto-generated
-     *     API implementation, based on Azure REST API.
+     * Gets wrapped service client ComputeManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client ComputeManagementClient.
      */
     public ComputeManagementClient serviceClient() {
         return this.clientObject;

@@ -294,8 +294,10 @@ public final class MySqlManager {
     }
 
     /**
-     * @return Wrapped service client MySqlManagementClient providing direct access to the underlying auto-generated API
-     *     implementation, based on Azure REST API.
+     * Gets wrapped service client MySqlManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
+     *
+     * @return Wrapped service client MySqlManagementClient.
      */
     public MySqlManagementClient serviceClient() {
         return this.clientObject;
