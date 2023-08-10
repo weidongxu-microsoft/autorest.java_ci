@@ -221,6 +221,10 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this.innerModel().optimizedForFrequentAttach();
     }
 
+    public OffsetDateTime lastOwnershipUpdateTime() {
+        return this.innerModel().lastOwnershipUpdateTime();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }

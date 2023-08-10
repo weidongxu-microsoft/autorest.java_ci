@@ -327,6 +327,15 @@ public interface Disk {
     Boolean optimizedForFrequentAttach();
 
     /**
+     * Gets the lastOwnershipUpdateTime property: The UTC time when the ownership state of the disk was last changed
+     * i.e., the time the disk was last attached or detached from a VM or the time when the VM to which the disk was
+     * attached was deallocated or started.
+     *
+     * @return the lastOwnershipUpdateTime value.
+     */
+    OffsetDateTime lastOwnershipUpdateTime();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
