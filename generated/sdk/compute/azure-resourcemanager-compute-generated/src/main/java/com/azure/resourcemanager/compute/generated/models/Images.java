@@ -65,7 +65,8 @@ public interface Images {
     Image getByResourceGroup(String resourceGroupName, String imageName);
 
     /**
-     * Gets the list of images under a resource group.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      *
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,7 +78,8 @@ public interface Images {
     PagedIterable<Image> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Gets the list of images under a resource group.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      *
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.

@@ -203,7 +203,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -247,7 +247,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -351,7 +351,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -407,7 +407,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -535,7 +535,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -594,7 +594,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -702,7 +702,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -761,7 +761,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -861,7 +861,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -912,7 +912,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1005,7 +1005,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1057,7 +1057,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1154,7 +1154,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1207,7 +1207,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-03-01";
+        final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
