@@ -195,6 +195,13 @@ public interface EHNamespace {
     String alternateName();
 
     /**
+     * Gets the geoDataReplication property: Geo Data Replication settings for the namespace.
+     *
+     * @return the geoDataReplication value.
+     */
+    GeoDataReplicationProperties geoDataReplication();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -284,7 +291,8 @@ public interface EHNamespace {
                 DefinitionStages.WithEncryption,
                 DefinitionStages.WithPrivateEndpointConnections,
                 DefinitionStages.WithDisableLocalAuth,
-                DefinitionStages.WithAlternateName {
+                DefinitionStages.WithAlternateName,
+                DefinitionStages.WithGeoDataReplication {
             /**
              * Executes the create request.
              *
@@ -463,6 +471,17 @@ public interface EHNamespace {
              */
             WithCreate withAlternateName(String alternateName);
         }
+
+        /** The stage of the EHNamespace definition allowing to specify geoDataReplication. */
+        interface WithGeoDataReplication {
+            /**
+             * Specifies the geoDataReplication property: Geo Data Replication settings for the namespace.
+             *
+             * @param geoDataReplication Geo Data Replication settings for the namespace.
+             * @return the next definition stage.
+             */
+            WithCreate withGeoDataReplication(GeoDataReplicationProperties geoDataReplication);
+        }
     }
 
     /**
@@ -487,7 +506,8 @@ public interface EHNamespace {
             UpdateStages.WithEncryption,
             UpdateStages.WithPrivateEndpointConnections,
             UpdateStages.WithDisableLocalAuth,
-            UpdateStages.WithAlternateName {
+            UpdateStages.WithAlternateName,
+            UpdateStages.WithGeoDataReplication {
         /**
          * Executes the update request.
          *
@@ -668,6 +688,17 @@ public interface EHNamespace {
              */
             Update withAlternateName(String alternateName);
         }
+
+        /** The stage of the EHNamespace update allowing to specify geoDataReplication. */
+        interface WithGeoDataReplication {
+            /**
+             * Specifies the geoDataReplication property: Geo Data Replication settings for the namespace.
+             *
+             * @param geoDataReplication Geo Data Replication settings for the namespace.
+             * @return the next definition stage.
+             */
+            Update withGeoDataReplication(GeoDataReplicationProperties geoDataReplication);
+        }
     }
 
     /**
@@ -684,4 +715,25 @@ public interface EHNamespace {
      * @return the refreshed resource.
      */
     EHNamespace refresh(Context context);
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void failover(FailOver parameters);
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void failover(FailOver parameters, Context context);
 }

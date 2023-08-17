@@ -43,6 +43,7 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSe
 import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRuleListResult;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityParameter;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespaceListResult;
+import com.azure.resourcemanager.eventhubs.generated.models.FailOver;
 import com.azure.resourcemanager.eventhubs.generated.models.RegenerateAccessKeyParameters;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
@@ -153,6 +154,21 @@ public final class NamespacesClientImpl implements NamespacesClient {
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @BodyParam("application/json") EHNamespaceInner parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/failover")
+        @ExpectedResponses({202})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Flux<ByteBuffer>>> failover(
+            @HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("namespaceName") String namespaceName,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") FailOver parameters,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -1455,6 +1471,262 @@ public final class NamespacesClientImpl implements NamespacesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public EHNamespaceInner update(String resourceGroupName, String namespaceName, EHNamespaceInner parameters) {
         return updateWithResponse(resourceGroupName, namespaceName, parameters, Context.NONE).getValue();
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> failoverWithResponseAsync(
+        String resourceGroupName, String namespaceName, FailOver parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .failover(
+                            this.client.getEndpoint(),
+                            this.client.getSubscriptionId(),
+                            resourceGroupName,
+                            namespaceName,
+                            this.client.getApiVersion(),
+                            parameters,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> failoverWithResponseAsync(
+        String resourceGroupName, String namespaceName, FailOver parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .failover(
+                this.client.getEndpoint(),
+                this.client.getSubscriptionId(),
+                resourceGroupName,
+                namespaceName,
+                this.client.getApiVersion(),
+                parameters,
+                accept,
+                context);
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginFailoverAsync(
+        String resourceGroupName, String namespaceName, FailOver parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono = failoverWithResponseAsync(resourceGroupName, namespaceName, parameters);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginFailoverAsync(
+        String resourceGroupName, String namespaceName, FailOver parameters, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            failoverWithResponseAsync(resourceGroupName, namespaceName, parameters, context);
+        return this
+            .client
+            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginFailover(
+        String resourceGroupName, String namespaceName, FailOver parameters) {
+        return this.beginFailoverAsync(resourceGroupName, namespaceName, parameters).getSyncPoller();
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginFailover(
+        String resourceGroupName, String namespaceName, FailOver parameters, Context context) {
+        return this.beginFailoverAsync(resourceGroupName, namespaceName, parameters, context).getSyncPoller();
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> failoverAsync(String resourceGroupName, String namespaceName, FailOver parameters) {
+        return beginFailoverAsync(resourceGroupName, namespaceName, parameters)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> failoverAsync(
+        String resourceGroupName, String namespaceName, FailOver parameters, Context context) {
+        return beginFailoverAsync(resourceGroupName, namespaceName, parameters, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void failover(String resourceGroupName, String namespaceName, FailOver parameters) {
+        failoverAsync(resourceGroupName, namespaceName, parameters).block();
+    }
+
+    /**
+     * GeoDR Failover.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void failover(String resourceGroupName, String namespaceName, FailOver parameters, Context context) {
+        failoverAsync(resourceGroupName, namespaceName, parameters, context).block();
     }
 
     /**

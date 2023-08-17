@@ -146,6 +146,20 @@ public interface LotSummary {
     String etagPropertiesEtag();
 
     /**
+     * Gets the orgType property: The organization type of the lot.
+     *
+     * @return the orgType value.
+     */
+    OrgType orgType();
+
+    /**
+     * Gets the usedAmount property: Amount consumed from the commitment.
+     *
+     * @return the usedAmount value.
+     */
+    Amount usedAmount();
+
+    /**
      * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.LotSummaryInner object.
      *
      * @return the inner object.

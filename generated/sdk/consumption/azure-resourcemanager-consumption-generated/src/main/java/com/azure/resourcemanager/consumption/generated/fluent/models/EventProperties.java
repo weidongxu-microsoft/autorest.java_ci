@@ -52,7 +52,8 @@ public final class EventProperties {
     private Amount charges;
 
     /*
-     * The balance after the event.
+     * The balance after the event, Note: This will not be returned for Contributor Organization Type in Multi-Entity
+     * consumption commitment
      */
     @JsonProperty(value = "closedBalance", access = JsonProperty.Access.WRITE_ONLY)
     private Amount closedBalance;
@@ -222,7 +223,8 @@ public final class EventProperties {
     }
 
     /**
-     * Get the closedBalance property: The balance after the event.
+     * Get the closedBalance property: The balance after the event, Note: This will not be returned for Contributor
+     * Organization Type in Multi-Entity consumption commitment.
      *
      * @return the closedBalance value.
      */

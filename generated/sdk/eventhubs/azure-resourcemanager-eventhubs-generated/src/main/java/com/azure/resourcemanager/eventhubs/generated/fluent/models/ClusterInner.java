@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterSku;
+import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
@@ -95,6 +96,15 @@ public final class ClusterInner extends Resource {
      */
     public String createdAt() {
         return this.innerProperties() == null ? null : this.innerProperties().createdAt();
+    }
+
+    /**
+     * Get the provisioningState property: Provisioning state of the Cluster.
+     *
+     * @return the provisioningState value.
+     */
+    public ProvisioningState provisioningState() {
+        return this.innerProperties() == null ? null : this.innerProperties().provisioningState();
     }
 
     /**

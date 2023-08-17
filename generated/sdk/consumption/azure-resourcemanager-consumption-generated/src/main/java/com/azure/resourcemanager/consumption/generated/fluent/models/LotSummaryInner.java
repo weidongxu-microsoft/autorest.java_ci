@@ -9,6 +9,7 @@ import com.azure.core.management.ProxyResource;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.LotSource;
+import com.azure.resourcemanager.consumption.generated.models.OrgType;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.azure.resourcemanager.consumption.generated.models.Status;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -200,6 +201,24 @@ public final class LotSummaryInner extends ProxyResource {
      */
     public String etagPropertiesEtag() {
         return this.innerProperties() == null ? null : this.innerProperties().etag();
+    }
+
+    /**
+     * Get the orgType property: The organization type of the lot.
+     *
+     * @return the orgType value.
+     */
+    public OrgType orgType() {
+        return this.innerProperties() == null ? null : this.innerProperties().orgType();
+    }
+
+    /**
+     * Get the usedAmount property: Amount consumed from the commitment.
+     *
+     * @return the usedAmount value.
+     */
+    public Amount usedAmount() {
+        return this.innerProperties() == null ? null : this.innerProperties().usedAmount();
     }
 
     /**

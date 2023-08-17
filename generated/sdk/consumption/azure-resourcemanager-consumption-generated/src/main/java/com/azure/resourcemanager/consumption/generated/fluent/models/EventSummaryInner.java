@@ -120,7 +120,8 @@ public final class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the closedBalance property: The balance after the event.
+     * Get the closedBalance property: The balance after the event, Note: This will not be returned for Contributor
+     * Organization Type in Multi-Entity consumption commitment.
      *
      * @return the closedBalance value.
      */

@@ -69,6 +69,13 @@ public interface Cluster {
     String createdAt();
 
     /**
+     * Gets the provisioningState property: Provisioning state of the Cluster.
+     *
+     * @return the provisioningState value.
+     */
+    ProvisioningState provisioningState();
+
+    /**
      * Gets the updatedAt property: The UTC time when the Event Hubs Cluster was last updated.
      *
      * @return the updatedAt value.

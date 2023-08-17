@@ -46,6 +46,31 @@ public final class NetworkSecurityPerimeterConfigurationProperties {
     @JsonProperty(value = "profile", access = JsonProperty.Access.WRITE_ONLY)
     private NetworkSecurityPerimeterConfigurationPropertiesProfile profile;
 
+    /*
+     * True if the EventHub namespace is backed by another Azure resource and not visible to end users.
+     */
+    @JsonProperty(value = "isBackingResource", access = JsonProperty.Access.WRITE_ONLY)
+    private Boolean isBackingResource;
+
+    /*
+     * Indicates that the NSP controls related to backing association are only applicable to a specific feature in
+     * backing resource's data plane.
+     */
+    @JsonProperty(value = "applicableFeatures", access = JsonProperty.Access.WRITE_ONLY)
+    private List<String> applicableFeatures;
+
+    /*
+     * Source Resource Association name
+     */
+    @JsonProperty(value = "parentAssociationName", access = JsonProperty.Access.WRITE_ONLY)
+    private String parentAssociationName;
+
+    /*
+     * ARM Id of source resource
+     */
+    @JsonProperty(value = "sourceResourceId", access = JsonProperty.Access.WRITE_ONLY)
+    private String sourceResourceId;
+
     /** Creates an instance of NetworkSecurityPerimeterConfigurationProperties class. */
     public NetworkSecurityPerimeterConfigurationProperties() {
     }
@@ -117,6 +142,44 @@ public final class NetworkSecurityPerimeterConfigurationProperties {
      */
     public NetworkSecurityPerimeterConfigurationPropertiesProfile profile() {
         return this.profile;
+    }
+
+    /**
+     * Get the isBackingResource property: True if the EventHub namespace is backed by another Azure resource and not
+     * visible to end users.
+     *
+     * @return the isBackingResource value.
+     */
+    public Boolean isBackingResource() {
+        return this.isBackingResource;
+    }
+
+    /**
+     * Get the applicableFeatures property: Indicates that the NSP controls related to backing association are only
+     * applicable to a specific feature in backing resource's data plane.
+     *
+     * @return the applicableFeatures value.
+     */
+    public List<String> applicableFeatures() {
+        return this.applicableFeatures;
+    }
+
+    /**
+     * Get the parentAssociationName property: Source Resource Association name.
+     *
+     * @return the parentAssociationName value.
+     */
+    public String parentAssociationName() {
+        return this.parentAssociationName;
+    }
+
+    /**
+     * Get the sourceResourceId property: ARM Id of source resource.
+     *
+     * @return the sourceResourceId value.
+     */
+    public String sourceResourceId() {
+        return this.sourceResourceId;
     }
 
     /**

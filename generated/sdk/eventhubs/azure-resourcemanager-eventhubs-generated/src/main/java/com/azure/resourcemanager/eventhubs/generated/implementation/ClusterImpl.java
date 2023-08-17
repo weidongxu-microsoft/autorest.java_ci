@@ -10,6 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterInner;
 import com.azure.resourcemanager.eventhubs.generated.models.Cluster;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterSku;
+import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningState;
 import java.util.Collections;
 import java.util.Map;
 
@@ -53,6 +54,10 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
 
     public String createdAt() {
         return this.innerModel().createdAt();
+    }
+
+    public ProvisioningState provisioningState() {
+        return this.innerModel().provisioningState();
     }
 
     public String updatedAt() {

@@ -122,6 +122,44 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
     }
 
     /**
+     * Get the isBackingResource property: True if the EventHub namespace is backed by another Azure resource and not
+     * visible to end users.
+     *
+     * @return the isBackingResource value.
+     */
+    public Boolean isBackingResource() {
+        return this.innerProperties() == null ? null : this.innerProperties().isBackingResource();
+    }
+
+    /**
+     * Get the applicableFeatures property: Indicates that the NSP controls related to backing association are only
+     * applicable to a specific feature in backing resource's data plane.
+     *
+     * @return the applicableFeatures value.
+     */
+    public List<String> applicableFeatures() {
+        return this.innerProperties() == null ? null : this.innerProperties().applicableFeatures();
+    }
+
+    /**
+     * Get the parentAssociationName property: Source Resource Association name.
+     *
+     * @return the parentAssociationName value.
+     */
+    public String parentAssociationName() {
+        return this.innerProperties() == null ? null : this.innerProperties().parentAssociationName();
+    }
+
+    /**
+     * Get the sourceResourceId property: ARM Id of source resource.
+     *
+     * @return the sourceResourceId value.
+     */
+    public String sourceResourceId() {
+        return this.innerProperties() == null ? null : this.innerProperties().sourceResourceId();
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

@@ -21,6 +21,7 @@ import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityParameter;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
+import com.azure.resourcemanager.eventhubs.generated.models.FailOver;
 import com.azure.resourcemanager.eventhubs.generated.models.Namespaces;
 import com.azure.resourcemanager.eventhubs.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.eventhubs.generated.models.NetworkRuleSetListResult;
@@ -89,6 +90,14 @@ public final class NamespacesImpl implements Namespaces {
         } else {
             return null;
         }
+    }
+
+    public void failover(String resourceGroupName, String namespaceName, FailOver parameters) {
+        this.serviceClient().failover(resourceGroupName, namespaceName, parameters);
+    }
+
+    public void failover(String resourceGroupName, String namespaceName, FailOver parameters, Context context) {
+        this.serviceClient().failover(resourceGroupName, namespaceName, parameters, context);
     }
 
     public Response<NetworkRuleSet> createOrUpdateNetworkRuleSetWithResponse(

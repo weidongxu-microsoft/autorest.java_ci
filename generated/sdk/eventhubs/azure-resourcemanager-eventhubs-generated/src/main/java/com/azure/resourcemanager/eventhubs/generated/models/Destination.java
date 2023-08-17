@@ -19,6 +19,12 @@ public final class Destination {
     private String name;
 
     /*
+     * A value that indicates whether capture description is enabled.
+     */
+    @JsonProperty(value = "identity")
+    private CaptureIdentity identity;
+
+    /*
      * Properties describing the storage account, blob container and archive name format for capture destination
      */
     @JsonProperty(value = "properties")
@@ -45,6 +51,26 @@ public final class Destination {
      */
     public Destination withName(String name) {
         this.name = name;
+        return this;
+    }
+
+    /**
+     * Get the identity property: A value that indicates whether capture description is enabled.
+     *
+     * @return the identity value.
+     */
+    public CaptureIdentity identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: A value that indicates whether capture description is enabled.
+     *
+     * @param identity the identity value to set.
+     * @return the Destination object itself.
+     */
+    public Destination withIdentity(CaptureIdentity identity) {
+        this.identity = identity;
         return this;
     }
 
@@ -206,6 +232,9 @@ public final class Destination {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (identity() != null) {
+            identity().validate();
+        }
         if (innerProperties() != null) {
             innerProperties().validate();
         }

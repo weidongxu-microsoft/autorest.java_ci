@@ -8,6 +8,7 @@ import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.LotSource;
+import com.azure.resourcemanager.consumption.generated.models.OrgType;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.azure.resourcemanager.consumption.generated.models.Status;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -106,6 +107,18 @@ public final class LotProperties {
      */
     @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
+
+    /*
+     * The organization type of the lot.
+     */
+    @JsonProperty(value = "orgType", access = JsonProperty.Access.WRITE_ONLY)
+    private OrgType orgType;
+
+    /*
+     * Amount consumed from the commitment.
+     */
+    @JsonProperty(value = "usedAmount", access = JsonProperty.Access.WRITE_ONLY)
+    private Amount usedAmount;
 
     /** Creates an instance of LotProperties class. */
     public LotProperties() {
@@ -249,6 +262,24 @@ public final class LotProperties {
     }
 
     /**
+     * Get the orgType property: The organization type of the lot.
+     *
+     * @return the orgType value.
+     */
+    public OrgType orgType() {
+        return this.orgType;
+    }
+
+    /**
+     * Get the usedAmount property: Amount consumed from the commitment.
+     *
+     * @return the usedAmount value.
+     */
+    public Amount usedAmount() {
+        return this.usedAmount;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -268,6 +299,9 @@ public final class LotProperties {
         }
         if (reseller() != null) {
             reseller().validate();
+        }
+        if (usedAmount() != null) {
+            usedAmount().validate();
         }
     }
 }

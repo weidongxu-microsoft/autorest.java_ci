@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Event Hubs Cluster properties supplied in responses in List or Get operations. */
@@ -15,6 +16,12 @@ public final class ClusterProperties {
      */
     @JsonProperty(value = "createdAt", access = JsonProperty.Access.WRITE_ONLY)
     private String createdAt;
+
+    /*
+     * Provisioning state of the Cluster.
+     */
+    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
+    private ProvisioningState provisioningState;
 
     /*
      * The UTC time when the Event Hubs Cluster was last updated.
@@ -51,6 +58,15 @@ public final class ClusterProperties {
      */
     public String createdAt() {
         return this.createdAt;
+    }
+
+    /**
+     * Get the provisioningState property: Provisioning state of the Cluster.
+     *
+     * @return the provisioningState value.
+     */
+    public ProvisioningState provisioningState() {
+        return this.provisioningState;
     }
 
     /**

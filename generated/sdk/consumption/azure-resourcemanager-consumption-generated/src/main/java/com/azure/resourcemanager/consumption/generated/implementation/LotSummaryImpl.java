@@ -9,6 +9,7 @@ import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.LotSource;
 import com.azure.resourcemanager.consumption.generated.models.LotSummary;
+import com.azure.resourcemanager.consumption.generated.models.OrgType;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.azure.resourcemanager.consumption.generated.models.Status;
 import java.time.OffsetDateTime;
@@ -99,6 +100,14 @@ public final class LotSummaryImpl implements LotSummary {
 
     public String etagPropertiesEtag() {
         return this.innerModel().etagPropertiesEtag();
+    }
+
+    public OrgType orgType() {
+        return this.innerModel().orgType();
+    }
+
+    public Amount usedAmount() {
+        return this.innerModel().usedAmount();
     }
 
     public LotSummaryInner innerModel() {
