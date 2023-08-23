@@ -36,6 +36,10 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this.innerModel().type();
     }
 
+    public String size() {
+        return this.innerModel().size();
+    }
+
     public Integer priority() {
         return this.innerModel().priority();
     }

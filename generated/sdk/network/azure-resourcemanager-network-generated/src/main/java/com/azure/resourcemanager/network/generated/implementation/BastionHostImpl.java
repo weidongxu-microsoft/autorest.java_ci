@@ -5,10 +5,12 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionHostInner;
 import com.azure.resourcemanager.network.generated.models.BastionHost;
 import com.azure.resourcemanager.network.generated.models.BastionHostIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.BastionHostPropertiesFormatNetworkAcls;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.Sku;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
@@ -65,6 +67,14 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
 
     public String dnsName() {
         return this.innerModel().dnsName();
+    }
+
+    public SubResource virtualNetwork() {
+        return this.innerModel().virtualNetwork();
+    }
+
+    public BastionHostPropertiesFormatNetworkAcls networkAcls() {
+        return this.innerModel().networkAcls();
     }
 
     public ProvisioningState provisioningState() {
@@ -237,6 +247,16 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
 
     public BastionHostImpl withDnsName(String dnsName) {
         this.innerModel().withDnsName(dnsName);
+        return this;
+    }
+
+    public BastionHostImpl withVirtualNetwork(SubResource virtualNetwork) {
+        this.innerModel().withVirtualNetwork(virtualNetwork);
+        return this;
+    }
+
+    public BastionHostImpl withNetworkAcls(BastionHostPropertiesFormatNetworkAcls networkAcls) {
+        this.innerModel().withNetworkAcls(networkAcls);
         return this;
     }
 

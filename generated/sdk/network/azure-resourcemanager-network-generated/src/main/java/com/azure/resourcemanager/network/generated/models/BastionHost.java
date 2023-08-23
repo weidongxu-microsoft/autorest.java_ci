@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionHostInner;
 import java.util.List;
@@ -74,6 +75,21 @@ public interface BastionHost {
      * @return the dnsName value.
      */
     String dnsName();
+
+    /**
+     * Gets the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host
+     * only.
+     *
+     * @return the virtualNetwork value.
+     */
+    SubResource virtualNetwork();
+
+    /**
+     * Gets the networkAcls property: The networkAcls property.
+     *
+     * @return the networkAcls value.
+     */
+    BastionHostPropertiesFormatNetworkAcls networkAcls();
 
     /**
      * Gets the provisioningState property: The provisioning state of the bastion host resource.
@@ -212,6 +228,8 @@ public interface BastionHost {
                 DefinitionStages.WithSku,
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithDnsName,
+                DefinitionStages.WithVirtualNetwork,
+                DefinitionStages.WithNetworkAcls,
                 DefinitionStages.WithScaleUnits,
                 DefinitionStages.WithDisableCopyPaste,
                 DefinitionStages.WithEnableFileCopy,
@@ -277,6 +295,29 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             WithCreate withDnsName(String dnsName);
+        }
+
+        /** The stage of the BastionHost definition allowing to specify virtualNetwork. */
+        interface WithVirtualNetwork {
+            /**
+             * Specifies the virtualNetwork property: Reference to an existing virtual network required for Developer
+             * Bastion Host only..
+             *
+             * @param virtualNetwork Reference to an existing virtual network required for Developer Bastion Host only.
+             * @return the next definition stage.
+             */
+            WithCreate withVirtualNetwork(SubResource virtualNetwork);
+        }
+
+        /** The stage of the BastionHost definition allowing to specify networkAcls. */
+        interface WithNetworkAcls {
+            /**
+             * Specifies the networkAcls property: The networkAcls property..
+             *
+             * @param networkAcls The networkAcls property.
+             * @return the next definition stage.
+             */
+            WithCreate withNetworkAcls(BastionHostPropertiesFormatNetworkAcls networkAcls);
         }
 
         /** The stage of the BastionHost definition allowing to specify scaleUnits. */

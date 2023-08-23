@@ -220,7 +220,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -271,7 +271,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -455,7 +455,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -506,7 +506,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -607,7 +607,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -665,7 +665,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -880,7 +880,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -938,7 +938,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1033,7 +1033,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1087,7 +1087,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1192,7 +1192,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1234,7 +1234,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1343,7 +1343,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             request.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1405,7 +1405,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             request.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -63,6 +63,14 @@ public interface FirewallPolicy {
     String id();
 
     /**
+     * Gets the size property: A read-only string that represents the size of the FirewallPolicyPropertiesFormat in MB.
+     * (ex 0.5MB).
+     *
+     * @return the size value.
+     */
+    String size();
+
+    /**
      * Gets the ruleCollectionGroups property: List of references to FirewallPolicyRuleCollectionGroups.
      *
      * @return the ruleCollectionGroups value.

@@ -21,6 +21,7 @@ import com.azure.resourcemanager.network.generated.models.P2SVpnConnectionReques
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGateway;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayAutoScaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayNatRule;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayPolicyGroup;
@@ -76,6 +77,10 @@ public final class VirtualNetworkGatewayImpl
 
     public String id() {
         return this.innerModel().id();
+    }
+
+    public VirtualNetworkGatewayAutoScaleConfiguration autoScaleConfiguration() {
+        return this.innerModel().autoScaleConfiguration();
     }
 
     public List<VirtualNetworkGatewayIpConfiguration> ipConfigurations() {
@@ -483,6 +488,12 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withExtendedLocation(ExtendedLocation extendedLocation) {
         this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withAutoScaleConfiguration(
+        VirtualNetworkGatewayAutoScaleConfiguration autoScaleConfiguration) {
+        this.innerModel().withAutoScaleConfiguration(autoScaleConfiguration);
         return this;
     }
 

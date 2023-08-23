@@ -182,6 +182,15 @@ public interface Subnet {
     List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
+     * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
+     * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
+     * existing subnet.
+     *
+     * @return the defaultOutboundAccess value.
+     */
+    Boolean defaultOutboundAccess();
+
+    /**
      * Gets the name of the resource group.
      *
      * @return the name of the resource group.
@@ -236,7 +245,8 @@ public interface Subnet {
                 DefinitionStages.WithDelegations,
                 DefinitionStages.WithPrivateEndpointNetworkPolicies,
                 DefinitionStages.WithPrivateLinkServiceNetworkPolicies,
-                DefinitionStages.WithApplicationGatewayIpConfigurations {
+                DefinitionStages.WithApplicationGatewayIpConfigurations,
+                DefinitionStages.WithDefaultOutboundAccess {
             /**
              * Executes the create request.
              *
@@ -417,6 +427,21 @@ public interface Subnet {
             WithCreate withApplicationGatewayIpConfigurations(
                 List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations);
         }
+
+        /** The stage of the Subnet definition allowing to specify defaultOutboundAccess. */
+        interface WithDefaultOutboundAccess {
+            /**
+             * Specifies the defaultOutboundAccess property: Set this property to false to disable default outbound
+             * connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and
+             * cannot be updated for an existing subnet..
+             *
+             * @param defaultOutboundAccess Set this property to false to disable default outbound connectivity for all
+             *     VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated
+             *     for an existing subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withDefaultOutboundAccess(Boolean defaultOutboundAccess);
+        }
     }
 
     /**
@@ -441,7 +466,8 @@ public interface Subnet {
             UpdateStages.WithDelegations,
             UpdateStages.WithPrivateEndpointNetworkPolicies,
             UpdateStages.WithPrivateLinkServiceNetworkPolicies,
-            UpdateStages.WithApplicationGatewayIpConfigurations {
+            UpdateStages.WithApplicationGatewayIpConfigurations,
+            UpdateStages.WithDefaultOutboundAccess {
         /**
          * Executes the update request.
          *
@@ -623,6 +649,21 @@ public interface Subnet {
              */
             Update withApplicationGatewayIpConfigurations(
                 List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations);
+        }
+
+        /** The stage of the Subnet update allowing to specify defaultOutboundAccess. */
+        interface WithDefaultOutboundAccess {
+            /**
+             * Specifies the defaultOutboundAccess property: Set this property to false to disable default outbound
+             * connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and
+             * cannot be updated for an existing subnet..
+             *
+             * @param defaultOutboundAccess Set this property to false to disable default outbound connectivity for all
+             *     VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated
+             *     for an existing subnet.
+             * @return the next definition stage.
+             */
+            Update withDefaultOutboundAccess(Boolean defaultOutboundAccess);
         }
     }
 

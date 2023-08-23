@@ -168,7 +168,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -225,7 +225,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -327,7 +327,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
                     new IllegalArgumentException(
                         "Parameter networkManagerConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -374,7 +374,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
                     new IllegalArgumentException(
                         "Parameter networkManagerConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -465,7 +465,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
                     new IllegalArgumentException(
                         "Parameter networkManagerConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -511,7 +511,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
                     new IllegalArgumentException(
                         "Parameter networkManagerConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -599,7 +599,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
             return Mono
                 .error(new IllegalArgumentException("Parameter managementGroupId is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -648,7 +648,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
             return Mono
                 .error(new IllegalArgumentException("Parameter managementGroupId is required and cannot be null."));
         }
-        final String apiVersion = "2023-04-01";
+        final String apiVersion = "2023-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

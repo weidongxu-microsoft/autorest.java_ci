@@ -66,6 +66,13 @@ public interface VirtualNetworkGateway {
     String id();
 
     /**
+     * Gets the autoScaleConfiguration property: Autoscale configuration for virutal network gateway.
+     *
+     * @return the autoScaleConfiguration value.
+     */
+    VirtualNetworkGatewayAutoScaleConfiguration autoScaleConfiguration();
+
+    /**
      * Gets the ipConfigurations property: IP configurations for virtual network gateway.
      *
      * @return the ipConfigurations value.
@@ -324,6 +331,7 @@ public interface VirtualNetworkGateway {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithExtendedLocation,
+                DefinitionStages.WithAutoScaleConfiguration,
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithGatewayType,
                 DefinitionStages.WithVpnType,
@@ -381,6 +389,17 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
+        }
+
+        /** The stage of the VirtualNetworkGateway definition allowing to specify autoScaleConfiguration. */
+        interface WithAutoScaleConfiguration {
+            /**
+             * Specifies the autoScaleConfiguration property: Autoscale configuration for virutal network gateway.
+             *
+             * @param autoScaleConfiguration Autoscale configuration for virutal network gateway.
+             * @return the next definition stage.
+             */
+            WithCreate withAutoScaleConfiguration(VirtualNetworkGatewayAutoScaleConfiguration autoScaleConfiguration);
         }
 
         /** The stage of the VirtualNetworkGateway definition allowing to specify ipConfigurations. */

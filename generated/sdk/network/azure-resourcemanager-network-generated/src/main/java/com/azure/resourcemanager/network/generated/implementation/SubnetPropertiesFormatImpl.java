@@ -204,6 +204,10 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
         }
     }
 
+    public Boolean defaultOutboundAccess() {
+        return this.innerModel().defaultOutboundAccess();
+    }
+
     public SubnetPropertiesFormatInner innerModel() {
         return this.innerObject;
     }

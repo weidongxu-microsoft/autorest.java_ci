@@ -40,6 +40,14 @@ public interface FirewallPolicyRuleCollectionGroup {
     String type();
 
     /**
+     * Gets the size property: A read-only string that represents the size of the
+     * FirewallPolicyRuleCollectionGroupProperties in MB. (ex 1.2MB).
+     *
+     * @return the size value.
+     */
+    String size();
+
+    /**
      * Gets the priority property: Priority of the Firewall Policy Rule Collection Group resource.
      *
      * @return the priority value.

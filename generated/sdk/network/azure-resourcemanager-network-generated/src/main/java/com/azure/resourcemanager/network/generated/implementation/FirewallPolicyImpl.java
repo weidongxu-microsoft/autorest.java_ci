@@ -64,6 +64,10 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this.innerModel().id();
     }
 
+    public String size() {
+        return this.innerModel().size();
+    }
+
     public List<SubResource> ruleCollectionGroups() {
         List<SubResource> inner = this.innerModel().ruleCollectionGroups();
         if (inner != null) {

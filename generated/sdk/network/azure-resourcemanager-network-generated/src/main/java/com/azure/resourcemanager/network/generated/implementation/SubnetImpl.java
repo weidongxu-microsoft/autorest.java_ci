@@ -216,6 +216,10 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         }
     }
 
+    public Boolean defaultOutboundAccess() {
+        return this.innerModel().defaultOutboundAccess();
+    }
+
     public String resourceGroupName() {
         return resourceGroupName;
     }
@@ -416,6 +420,11 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
     public SubnetImpl withApplicationGatewayIpConfigurations(
         List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations) {
         this.innerModel().withApplicationGatewayIpConfigurations(applicationGatewayIpConfigurations);
+        return this;
+    }
+
+    public SubnetImpl withDefaultOutboundAccess(Boolean defaultOutboundAccess) {
+        this.innerModel().withDefaultOutboundAccess(defaultOutboundAccess);
         return this;
     }
 }

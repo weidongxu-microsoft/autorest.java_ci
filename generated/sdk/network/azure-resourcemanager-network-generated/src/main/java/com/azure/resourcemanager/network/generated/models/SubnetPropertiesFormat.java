@@ -149,6 +149,15 @@ public interface SubnetPropertiesFormat {
     List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
+     * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
+     * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
+     * existing subnet.
+     *
+     * @return the defaultOutboundAccess value.
+     */
+    Boolean defaultOutboundAccess();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SubnetPropertiesFormatInner object.
      *
      * @return the inner object.
