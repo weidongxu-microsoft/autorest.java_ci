@@ -7,13 +7,16 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** The type of action. */
+/** The type of the action. */
 public enum KeyRotationPolicyActionType {
-    /** Enum value rotate. */
-    ROTATE("rotate"),
+    /** Enum value Rotate. */
+    ROTATE("Rotate"),
 
-    /** Enum value notify. */
-    NOTIFY("notify");
+    /** Enum value rotate. */
+    ROTATE_1("rotate"),
+
+    /** Enum value Notify. */
+    NOTIFY("Notify");
 
     /** The actual serialized value for a KeyRotationPolicyActionType instance. */
     private final String value;

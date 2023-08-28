@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ManagedHsmAction {
     /*
-     * The type of action.
+     * The type of the action.
      */
     @JsonProperty(value = "type")
     private KeyRotationPolicyActionType type;
@@ -21,7 +21,7 @@ public final class ManagedHsmAction {
     }
 
     /**
-     * Get the type property: The type of action.
+     * Get the type property: The type of the action.
      *
      * @return the type value.
      */
@@ -30,7 +30,7 @@ public final class ManagedHsmAction {
     }
 
     /**
-     * Set the type property: The type of action.
+     * Set the type property: The type of the action.
      *
      * @param type the type value to set.
      * @return the ManagedHsmAction object itself.
