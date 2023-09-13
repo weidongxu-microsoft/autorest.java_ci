@@ -4,222 +4,125 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
+import com.azure.core.annotation.Fluent;
+import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.azure.core.util.Context;
-import com.azure.resourcemanager.mysql.generated.fluent.models.PrivateEndpointConnectionInner;
+import com.azure.resourcemanager.mysql.generated.fluent.models.PrivateEndpointConnectionProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** An immutable client-side representation of PrivateEndpointConnection. */
-public interface PrivateEndpointConnection {
-    /**
-     * Gets the id property: Fully qualified resource Id for the resource.
-     *
-     * @return the id value.
+/** The private endpoint connection resource. */
+@Fluent
+public final class PrivateEndpointConnection extends ProxyResource {
+    /*
+     * Resource properties.
      */
-    String id();
+    @JsonProperty(value = "properties")
+    private PrivateEndpointConnectionProperties innerProperties;
+
+    /*
+     * Azure Resource Manager metadata containing createdBy and modifiedBy information.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
+    /** Creates an instance of PrivateEndpointConnection class. */
+    public PrivateEndpointConnection() {
+    }
 
     /**
-     * Gets the name property: The name of the resource.
+     * Get the innerProperties property: Resource properties.
      *
-     * @return the name value.
+     * @return the innerProperties value.
      */
-    String name();
+    private PrivateEndpointConnectionProperties innerProperties() {
+        return this.innerProperties;
+    }
 
     /**
-     * Gets the type property: The type of the resource.
-     *
-     * @return the type value.
-     */
-    String type();
-
-    /**
-     * Gets the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+     * Get the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
      *
      * @return the systemData value.
      */
-    SystemData systemData();
+    public SystemData systemData() {
+        return this.systemData;
+    }
 
     /**
-     * Gets the groupIds property: The group ids for the private endpoint resource.
+     * Get the groupIds property: The group ids for the private endpoint resource.
      *
      * @return the groupIds value.
      */
-    List<String> groupIds();
+    public List<String> groupIds() {
+        return this.innerProperties() == null ? null : this.innerProperties().groupIds();
+    }
 
     /**
-     * Gets the privateEndpoint property: The private endpoint resource.
+     * Get the privateEndpoint property: The private endpoint resource.
      *
      * @return the privateEndpoint value.
      */
-    PrivateEndpoint privateEndpoint();
+    public PrivateEndpoint privateEndpoint() {
+        return this.innerProperties() == null ? null : this.innerProperties().privateEndpoint();
+    }
 
     /**
-     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
-     * connection between service consumer and provider.
+     * Set the privateEndpoint property: The private endpoint resource.
+     *
+     * @param privateEndpoint the privateEndpoint value to set.
+     * @return the PrivateEndpointConnection object itself.
+     */
+    public PrivateEndpointConnection withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new PrivateEndpointConnectionProperties();
+        }
+        this.innerProperties().withPrivateEndpoint(privateEndpoint);
+        return this;
+    }
+
+    /**
+     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection
+     * between service consumer and provider.
      *
      * @return the privateLinkServiceConnectionState value.
      */
-    PrivateLinkServiceConnectionState privateLinkServiceConnectionState();
+    public PrivateLinkServiceConnectionState privateLinkServiceConnectionState() {
+        return this.innerProperties() == null ? null : this.innerProperties().privateLinkServiceConnectionState();
+    }
 
     /**
-     * Gets the provisioningState property: The provisioning state of the private endpoint connection resource.
+     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection
+     * between service consumer and provider.
+     *
+     * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
+     * @return the PrivateEndpointConnection object itself.
+     */
+    public PrivateEndpointConnection withPrivateLinkServiceConnectionState(
+        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new PrivateEndpointConnectionProperties();
+        }
+        this.innerProperties().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
+        return this;
+    }
+
+    /**
+     * Get the provisioningState property: The provisioning state of the private endpoint connection resource.
      *
      * @return the provisioningState value.
      */
-    PrivateEndpointConnectionProvisioningState provisioningState();
-
-    /**
-     * Gets the name of the resource group.
-     *
-     * @return the name of the resource group.
-     */
-    String resourceGroupName();
-
-    /**
-     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.PrivateEndpointConnectionInner object.
-     *
-     * @return the inner object.
-     */
-    PrivateEndpointConnectionInner innerModel();
-
-    /** The entirety of the PrivateEndpointConnection definition. */
-    interface Definition
-        extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
-    }
-
-    /** The PrivateEndpointConnection definition stages. */
-    interface DefinitionStages {
-        /** The first stage of the PrivateEndpointConnection definition. */
-        interface Blank extends WithParentResource {
-        }
-
-        /** The stage of the PrivateEndpointConnection definition allowing to specify parent resource. */
-        interface WithParentResource {
-            /**
-             * Specifies resourceGroupName, serverName.
-             *
-             * @param resourceGroupName The name of the resource group. The name is case insensitive.
-             * @param serverName The name of the server.
-             * @return the next definition stage.
-             */
-            WithCreate withExistingFlexibleServer(String resourceGroupName, String serverName);
-        }
-
-        /**
-         * The stage of the PrivateEndpointConnection definition which contains all the minimum required properties for
-         * the resource to be created, but also allows for any other optional properties to be specified.
-         */
-        interface WithCreate
-            extends DefinitionStages.WithPrivateEndpoint, DefinitionStages.WithPrivateLinkServiceConnectionState {
-            /**
-             * Executes the create request.
-             *
-             * @return the created resource.
-             */
-            PrivateEndpointConnection create();
-
-            /**
-             * Executes the create request.
-             *
-             * @param context The context to associate with this operation.
-             * @return the created resource.
-             */
-            PrivateEndpointConnection create(Context context);
-        }
-
-        /** The stage of the PrivateEndpointConnection definition allowing to specify privateEndpoint. */
-        interface WithPrivateEndpoint {
-            /**
-             * Specifies the privateEndpoint property: The private endpoint resource..
-             *
-             * @param privateEndpoint The private endpoint resource.
-             * @return the next definition stage.
-             */
-            WithCreate withPrivateEndpoint(PrivateEndpoint privateEndpoint);
-        }
-
-        /**
-         * The stage of the PrivateEndpointConnection definition allowing to specify privateLinkServiceConnectionState.
-         */
-        interface WithPrivateLinkServiceConnectionState {
-            /**
-             * Specifies the privateLinkServiceConnectionState property: A collection of information about the state of
-             * the connection between service consumer and provider..
-             *
-             * @param privateLinkServiceConnectionState A collection of information about the state of the connection
-             *     between service consumer and provider.
-             * @return the next definition stage.
-             */
-            WithCreate withPrivateLinkServiceConnectionState(
-                PrivateLinkServiceConnectionState privateLinkServiceConnectionState);
-        }
+    public PrivateEndpointConnectionProvisioningState provisioningState() {
+        return this.innerProperties() == null ? null : this.innerProperties().provisioningState();
     }
 
     /**
-     * Begins update for the PrivateEndpointConnection resource.
+     * Validates the instance.
      *
-     * @return the stage of resource update.
+     * @throws IllegalArgumentException thrown if the instance is not valid.
      */
-    PrivateEndpointConnection.Update update();
-
-    /** The template for PrivateEndpointConnection update. */
-    interface Update extends UpdateStages.WithPrivateEndpoint, UpdateStages.WithPrivateLinkServiceConnectionState {
-        /**
-         * Executes the update request.
-         *
-         * @return the updated resource.
-         */
-        PrivateEndpointConnection apply();
-
-        /**
-         * Executes the update request.
-         *
-         * @param context The context to associate with this operation.
-         * @return the updated resource.
-         */
-        PrivateEndpointConnection apply(Context context);
-    }
-
-    /** The PrivateEndpointConnection update stages. */
-    interface UpdateStages {
-        /** The stage of the PrivateEndpointConnection update allowing to specify privateEndpoint. */
-        interface WithPrivateEndpoint {
-            /**
-             * Specifies the privateEndpoint property: The private endpoint resource..
-             *
-             * @param privateEndpoint The private endpoint resource.
-             * @return the next definition stage.
-             */
-            Update withPrivateEndpoint(PrivateEndpoint privateEndpoint);
-        }
-
-        /** The stage of the PrivateEndpointConnection update allowing to specify privateLinkServiceConnectionState. */
-        interface WithPrivateLinkServiceConnectionState {
-            /**
-             * Specifies the privateLinkServiceConnectionState property: A collection of information about the state of
-             * the connection between service consumer and provider..
-             *
-             * @param privateLinkServiceConnectionState A collection of information about the state of the connection
-             *     between service consumer and provider.
-             * @return the next definition stage.
-             */
-            Update withPrivateLinkServiceConnectionState(
-                PrivateLinkServiceConnectionState privateLinkServiceConnectionState);
+    public void validate() {
+        if (innerProperties() != null) {
+            innerProperties().validate();
         }
     }
-
-    /**
-     * Refreshes the resource to sync with Azure.
-     *
-     * @return the refreshed resource.
-     */
-    PrivateEndpointConnection refresh();
-
-    /**
-     * Refreshes the resource to sync with Azure.
-     *
-     * @param context The context to associate with this operation.
-     * @return the refreshed resource.
-     */
-    PrivateEndpointConnection refresh(Context context);
 }

@@ -45,16 +45,128 @@ public interface MySqlManagementClient {
     Duration getDefaultPollInterval();
 
     /**
-     * Gets the PrivateEndpointConnectionsClient object to access its operations.
+     * Gets the AzureADAdministratorsClient object to access its operations.
      *
-     * @return the PrivateEndpointConnectionsClient object.
+     * @return the AzureADAdministratorsClient object.
      */
-    PrivateEndpointConnectionsClient getPrivateEndpointConnections();
+    AzureADAdministratorsClient getAzureADAdministrators();
 
     /**
-     * Gets the PrivateLinkResourcesClient object to access its operations.
+     * Gets the BackupsClient object to access its operations.
      *
-     * @return the PrivateLinkResourcesClient object.
+     * @return the BackupsClient object.
      */
-    PrivateLinkResourcesClient getPrivateLinkResources();
+    BackupsClient getBackups();
+
+    /**
+     * Gets the BackupAndExportsClient object to access its operations.
+     *
+     * @return the BackupAndExportsClient object.
+     */
+    BackupAndExportsClient getBackupAndExports();
+
+    /**
+     * Gets the ConfigurationsClient object to access its operations.
+     *
+     * @return the ConfigurationsClient object.
+     */
+    ConfigurationsClient getConfigurations();
+
+    /**
+     * Gets the DatabasesClient object to access its operations.
+     *
+     * @return the DatabasesClient object.
+     */
+    DatabasesClient getDatabases();
+
+    /**
+     * Gets the FirewallRulesClient object to access its operations.
+     *
+     * @return the FirewallRulesClient object.
+     */
+    FirewallRulesClient getFirewallRules();
+
+    /**
+     * Gets the ServersClient object to access its operations.
+     *
+     * @return the ServersClient object.
+     */
+    ServersClient getServers();
+
+    /**
+     * Gets the ReplicasClient object to access its operations.
+     *
+     * @return the ReplicasClient object.
+     */
+    ReplicasClient getReplicas();
+
+    /**
+     * Gets the ServersMigrationsClient object to access its operations.
+     *
+     * @return the ServersMigrationsClient object.
+     */
+    ServersMigrationsClient getServersMigrations();
+
+    /**
+     * Gets the LogFilesClient object to access its operations.
+     *
+     * @return the LogFilesClient object.
+     */
+    LogFilesClient getLogFiles();
+
+    /**
+     * Gets the LocationBasedCapabilitiesClient object to access its operations.
+     *
+     * @return the LocationBasedCapabilitiesClient object.
+     */
+    LocationBasedCapabilitiesClient getLocationBasedCapabilities();
+
+    /**
+     * Gets the LocationBasedCapabilitySetsClient object to access its operations.
+     *
+     * @return the LocationBasedCapabilitySetsClient object.
+     */
+    LocationBasedCapabilitySetsClient getLocationBasedCapabilitySets();
+
+    /**
+     * Gets the CheckVirtualNetworkSubnetUsagesClient object to access its operations.
+     *
+     * @return the CheckVirtualNetworkSubnetUsagesClient object.
+     */
+    CheckVirtualNetworkSubnetUsagesClient getCheckVirtualNetworkSubnetUsages();
+
+    /**
+     * Gets the CheckNameAvailabilitiesClient object to access its operations.
+     *
+     * @return the CheckNameAvailabilitiesClient object.
+     */
+    CheckNameAvailabilitiesClient getCheckNameAvailabilities();
+
+    /**
+     * Gets the CheckNameAvailabilityWithoutLocationsClient object to access its operations.
+     *
+     * @return the CheckNameAvailabilityWithoutLocationsClient object.
+     */
+    CheckNameAvailabilityWithoutLocationsClient getCheckNameAvailabilityWithoutLocations();
+
+    /**
+     * Gets the OperationResultsClient object to access its operations.
+     *
+     * @return the OperationResultsClient object.
+     */
+    OperationResultsClient getOperationResults();
+
+    /**
+     * Gets the GetPrivateDnsZoneSuffixesClient object to access its operations.
+     *
+     * @return the GetPrivateDnsZoneSuffixesClient object.
+     */
+    GetPrivateDnsZoneSuffixesClient getGetPrivateDnsZoneSuffixes();
+
+    /**
+     * Gets the OperationsClient object to access its operations.
+     *
+     * @return the OperationsClient object.
+     */
+    OperationsClient getOperations();
 }
