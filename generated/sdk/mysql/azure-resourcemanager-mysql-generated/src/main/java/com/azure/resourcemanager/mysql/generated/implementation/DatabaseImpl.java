@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mysql.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.mysql.generated.models.Database;
@@ -23,6 +24,10 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String charset() {

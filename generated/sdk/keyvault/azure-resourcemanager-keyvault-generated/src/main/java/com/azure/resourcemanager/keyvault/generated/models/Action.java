@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Action {
     /*
-     * The type of the action.
+     * The type of the action. The value should be compared case-insensitively.
      */
     @JsonProperty(value = "type")
     private KeyRotationPolicyActionType type;
@@ -21,7 +21,7 @@ public final class Action {
     }
 
     /**
-     * Get the type property: The type of the action.
+     * Get the type property: The type of the action. The value should be compared case-insensitively.
      *
      * @return the type value.
      */
@@ -30,7 +30,7 @@ public final class Action {
     }
 
     /**
-     * Set the type property: The type of the action.
+     * Set the type property: The type of the action. The value should be compared case-insensitively.
      *
      * @param type the type value to set.
      * @return the Action object itself.

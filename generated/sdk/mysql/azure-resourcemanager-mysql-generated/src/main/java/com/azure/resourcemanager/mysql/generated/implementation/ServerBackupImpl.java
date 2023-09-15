@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerBackupInner;
 import com.azure.resourcemanager.mysql.generated.models.ServerBackup;
 import java.time.OffsetDateTime;
@@ -29,6 +30,10 @@ public final class ServerBackupImpl implements ServerBackup {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String backupType() {

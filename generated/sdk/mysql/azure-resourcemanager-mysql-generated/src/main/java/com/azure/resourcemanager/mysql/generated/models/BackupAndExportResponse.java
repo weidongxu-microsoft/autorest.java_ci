@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.management.exception.ManagementError;
 import com.azure.resourcemanager.mysql.generated.fluent.models.BackupAndExportResponseInner;
 import java.time.OffsetDateTime;
@@ -58,6 +59,13 @@ public interface BackupAndExportResponse {
      * @return the percentComplete value.
      */
     Double percentComplete();
+
+    /**
+     * Gets the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
 
     /**
      * Gets the error property: The error object.
