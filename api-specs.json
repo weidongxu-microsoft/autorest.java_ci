@@ -102,6 +102,7 @@
     },
     "resourcegraph": {
         "source": "specification/resourcegraph/resource-manager/readme.md",
+        "tag": "package-2021-03",
         "namespace": "com.azure.resourcemanager.resourcegraph.generated",
         "output": "sdk/resourcegraph/azure-resourcemanager-resourcegraph-generated"
     },
